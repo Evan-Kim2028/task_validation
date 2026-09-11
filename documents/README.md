@@ -20,6 +20,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md) | Explanation | Retain-tail numbers and hello-world execution |
 | [00-roadmap.md](00-roadmap.md) | Explanation | Where we are on the 1K→100K path |
 | [15-openai-reconstruction.md](15-openai-reconstruction.md) | Explanation | SWE-Bench Pro / OpenAI / June Kim reconstruction |
+| [16-narrow-openai-recovery.md](16-narrow-openai-recovery.md) | Explanation | Yes/no: recover OpenAI's Pro rejection |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

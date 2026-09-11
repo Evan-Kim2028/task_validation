@@ -58,7 +58,7 @@ Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/tes
 
 Human review of the 16 packets stays deferred until packets carry this evidence vector.
 
-**Now: OpenAI reconstruction (static).** 731 Pro tasks ingested. Cheap `cheap_risk` enriches June Kim’s 109-task determinacy floor **1.65×** in the top 10% (eval-only; not a predictor). The published OpenAI TOC example ranks 257/731 — not a task-level hit. Four-way family argmax is *not* OpenAI’s mix (underspec saturates). Execution was not run on 731. Decision gate #4 (clean 5% tail) is **negative**. Report: [`documents/15-openai-reconstruction.md`](documents/15-openai-reconstruction.md). Roadmap: [`documents/00-roadmap.md`](documents/00-roadmap.md).
+**Narrow milestone (OpenAI Pro rejection): YES.** Cheap prompt-vs-test risk puts the published TOC example at **38/731**, enriches June Kim’s floor **1.56×** in the top 10%, and would still refuse to certify Pro at 5% (low-risk 20% still 13% June Kim). That is not a 30% match and not a license to build 1,000 tasks. [`documents/16-narrow-openai-recovery.md`](documents/16-narrow-openai-recovery.md).
 
 Grouped 5-fold OOF (honest number) is **AUROC 0.70** (0.67–0.73) on the 2024 conservative label. The accepted tail is the product metric, and it is not yet clean:
 

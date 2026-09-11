@@ -277,11 +277,12 @@ def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
     prefixes = parse_june_kim_claims(Path(args.claims_md))
     hits = match_prefixes([r["task_id"] for r in rows], prefixes)
     positive = set(hits)
-    # High cheap_risk first = more suspicious.
-    ranked_high = sorted(rows, key=lambda r: -float(r["features"]["cheap_risk"]))
-    ranked_low = sorted(rows, key=lambda r: float(r["features"]["cheap_risk"]))
+    # Primary milestone ranking: prompt-vs-test (OpenAI's object), not
+    # Scale requirements which often restate hidden pins.
+    ranked_high = sorted(rows, key=lambda r: -float(r["features"].get("openai_style_risk") or r["features"]["cheap_risk"]))
+    ranked_low = sorted(rows, key=lambda r: float(r["features"].get("openai_style_risk") or r["features"]["cheap_risk"]))
     y_kim = [1 if r["task_id"] in positive else 0 for r in rows]
-    scores = [float(r["features"]["cheap_risk"]) for r in rows]
+    scores = [float(r["features"].get("openai_style_risk") or r["features"]["cheap_risk"]) for r in rows]
     # retain lowest risk → residual June Kim rate
     retain = retain_curve(y_kim, scores)
     fam = {}
@@ -328,8 +329,19 @@ def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
             "n": len(rows),
             "percentile_from_top": (openai_rank / len(rows)) if openai_rank else None,
             "family": openai_ex[0]["suspected_family"] if openai_ex else None,
-            "cheap_risk": openai_ex[0]["features"]["cheap_risk"] if openai_ex else None,
-            "note": "OpenAI TOC whitespace example. Aggregate 30% is not a task-id set.",
+            "cheap_risk": openai_ex[0]["features"].get("cheap_risk") if openai_ex else None,
+            "openai_style_risk": openai_ex[0]["features"].get("openai_style_risk") if openai_ex else None,
+            "prompt_missing_lit_frac": openai_ex[0]["features"].get("prompt_missing_lit_frac") if openai_ex else None,
+            "requirements_defers_to_tests": openai_ex[0]["features"].get("requirements_defers_to_tests") if openai_ex else None,
+            "note": "OpenAI TOC example. Rank is by openai_style_risk (prompt vs tests).",
+        },
+        "prompt_vs_test_flags": {
+            "n_prompt_missing_lit_frac_ge_0.3": sum(
+                1 for r in rows if float(r["features"].get("prompt_missing_lit_frac") or 0) >= 0.3
+            ),
+            "n_requirements_defers_to_tests": sum(
+                1 for r in rows if float(r["features"].get("requirements_defers_to_tests") or 0) >= 1.0
+            ),
         },
         "constraints": {
             "used_audit_labels_as_predictors": False,

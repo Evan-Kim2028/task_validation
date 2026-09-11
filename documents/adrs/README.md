@@ -14,3 +14,4 @@
 | [0010](0010-execution-cost-gate.md) | Harbor cost gate before SWE-bench Docker | Accepted | execution |
 | [0011](0011-external-audits-are-eval-only.md) | OpenAI / June Kim labels are evaluation-only | Accepted | reconstruction |
 | [0012](0012-do-not-fit-the-thirty-percent.md) | Do not optimize to OpenAI's ~30% | Accepted | reconstruction |
+| [0013](0013-narrow-openai-recovery.md) | Recover OpenAI's Pro rejection, not a general validator | Accepted | narrow milestone |

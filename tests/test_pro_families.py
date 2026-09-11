@@ -23,6 +23,22 @@ def test_strict_string_not_in_spec():
     }
 
 
+def test_openai_style_uses_prompt_not_requirements():
+    rec = {
+        "problem_statement": "Refactor TOC parsing. Entries should be a consistent structured format.",
+        "requirements": 'TocEntry.to_markdown must render exact spacing: level=0 => " | Chapter 1 | 1" enforced by the tests.',
+        "interface": "TocEntry.to_markdown()",
+        "patch": "diff --git a/a.py b/a.py\n@@ -1 +1 @@\n-x\n+y\n",
+        "test_patch": 'assert e.to_markdown() == " | Chapter 1 | 1"\n',
+        "fail_to_pass": '["test_md"]',
+        "pass_to_pass": "[]",
+    }
+    f = pro_family_features(rec)
+    assert f["requirements_defers_to_tests"] == 1.0
+    assert f["prompt_missing_lit_frac"] > 0.0
+    assert f["openai_style_risk"] > f["cheap_risk"] or f["openai_style_risk"] >= 0.4
+
+
 def test_prefix_match_truncated_claims():
     ids = [
         "instance_internetarchive__openlibrary-e1e502986a3b003899a8347ac8a7ff7b08cbfc39-v08d8"

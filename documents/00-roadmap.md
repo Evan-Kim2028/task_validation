@@ -52,7 +52,7 @@ PART 2: synthetic generation
 | Cheap artifacts + first ranker | done |
 | Grouped OOF + retain-tail | done |
 | Hello-world Harbor runner | done |
-| **OpenAI signal-to-noise reconstruction** | **static pass done; execution not run; gate #4 negative** |
+| **Narrow: recover OpenAI's Pro rejection** | **YES (A∧B∧C).** Named example rank 38/731; June Kim 1.56×; would not certify at 5%. Not a 30% match. |
 | Lakehouse mutation cost gate | not started |
 | SWE-bench ~50 execution | blocked on cost gate |
 | TB 2.1 maintenance gold | not started |

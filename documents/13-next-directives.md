@@ -26,7 +26,7 @@ ML may say “I trust this task.” It may not make the population-validity clai
 
 Human packets are **after** full evidence vectors, not before.
 
-Reconstruction (Pro 731 static + June Kim overlap) landed in [15-openai-reconstruction.md](15-openai-reconstruction.md). Decision gate #4 is negative: do not start population sampling. Next is evidence (lakehouse cost, then a small Pro execution subset).
+Narrow recovery of OpenAI’s Pro rejection: [16-narrow-openai-recovery.md](16-narrow-openai-recovery.md). Verdict YES on A∧B∧C. Still do not start the 1,000-task build: we can *reject* this population, not yet *certify* a clean tail.
 
 ## Two parallel bottlenecks
 
