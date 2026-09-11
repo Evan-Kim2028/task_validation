@@ -19,5 +19,6 @@
 | `pro_reconstruction.json` | June Kim overlap / retain / OpenAI example rank |
 | `vev_ablation_conservative.json` | A (OOF logistic) vs B (untrained spec gap) retain-tail |
 | `hello_world_vev.json` | Harbor VEV with execution primitives filled |
+| `causal_ablation.summary.json` | 150-task A–E retain-tail (static assays) |
 
 Rebuild the full notes table from the OpenAI zip via `ingest-swe`. That file is gitignored (`swe_verified.jsonl`).

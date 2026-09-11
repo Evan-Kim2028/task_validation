@@ -22,6 +22,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [15-openai-reconstruction.md](15-openai-reconstruction.md) | Explanation | SWE-Bench Pro / OpenAI / June Kim reconstruction |
 | [16-narrow-openai-recovery.md](16-narrow-openai-recovery.md) | Explanation | Yes/no: recover OpenAI's Pro rejection |
 | [17-validity-evidence-vector.md](17-validity-evidence-vector.md) | Reference | Nine invariants and A–G ablation |
+| [18-causal-consistency.md](18-causal-consistency.md) | Explanation | Three assays; drop failed static constructions |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

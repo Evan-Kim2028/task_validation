@@ -16,3 +16,4 @@
 | [0012](0012-do-not-fit-the-thirty-percent.md) | Do not optimize to OpenAI's ~30% | Accepted | reconstruction |
 | [0013](0013-narrow-openai-recovery.md) | Recover OpenAI's Pro rejection, not a general validator | Accepted | narrow milestone |
 | [0014](0014-validity-evidence-vector.md) | VEV invariants, not more proxy features | Accepted | evidence layer |
+| [0015](0015-pause-vev-causal-assays.md) | Pause VEV expansion; causal consistency assays | Accepted | causal layer |

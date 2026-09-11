@@ -58,7 +58,7 @@ Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/tes
 
 Human review of the 16 packets stays deferred until packets carry this evidence vector.
 
-**VEV (invariants, not more ML features).** Nine bounded primitives. Untrained spec-gap (B) does **not** beat the existing logistic (A) on retain 5%/20% (0.56 vs 0.34 residual). Execution primitives filled on hello-world only. No production model. [`documents/17-validity-evidence-vector.md`](documents/17-validity-evidence-vector.md).
+**Causal consistency:** nine-invariant expansion paused. Static change-causality and provenance **fail** as rankers of 2024 labels (AUROC 0.41 / 0.42 on n=150). Drop those constructions. Executable fail-before/pass-after not run. [`documents/18-causal-consistency.md`](documents/18-causal-consistency.md).
 
 Grouped 5-fold OOF (honest number) is **AUROC 0.70** (0.67–0.73) on the 2024 conservative label. The accepted tail is the product metric, and it is not yet clean:
 

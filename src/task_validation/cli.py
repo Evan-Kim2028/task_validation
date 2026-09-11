@@ -392,6 +392,20 @@ def _cmd_vev_harbor(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_ablate_causal(args: argparse.Namespace) -> int:
+    from task_validation.model.ablate_causal import ablate_causal
+
+    report = ablate_causal(Path(args.parquet), Path(args.oof), n=args.n)
+    slim = {k: v for k, v in report.items() if k != "profiles"}
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report) + "\n", encoding="utf-8")
+    Path(str(args.out).replace(".json", ".summary.json")).write_text(
+        json.dumps(slim, indent=2) + "\n", encoding="utf-8"
+    )
+    print(json.dumps(slim, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -487,6 +501,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--tests", default="")
     p.add_argument("--out", required=True)
     p.set_defaults(func=_cmd_vev_harbor)
+
+    p = sub.add_parser("ablate-causal", help="Change causality / provenance / discrimination vs proxy")
+    p.add_argument("--parquet", required=True)
+    p.add_argument("--oof", required=True)
+    p.add_argument("--n", type=int, default=150)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_ablate_causal)
 
     args = parser.parse_args(argv)
     return args.func(args)

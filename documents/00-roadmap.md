@@ -53,7 +53,8 @@ PART 2: synthetic generation
 | Grouped OOF + retain-tail | done |
 | Hello-world Harbor runner | done |
 | **Narrow: recover OpenAI's Pro rejection** | **YES (A∧B∧C).** Named example rank 38/731; June Kim 1.56×; would not certify at 5%. Not a 30% match. |
-| **Validity Evidence Vector (invariants, not proxies)** | **Schema + untrained spec-gap ablation.** B does not beat A on 5%/20% retain. C–G only on hello-world. No production model. |
+| **Validity Evidence Vector (invariants, not proxies)** | **Paused.** Spec-gap lost to proxies. Do not expand the nine list. |
+| **Causal consistency (3 assays)** | **Static B/C dropped** (AUROC 0.41/0.42). Executable fail-before/pass-after not run. |
 | Lakehouse mutation cost gate | not started |
 | SWE-bench ~50 execution | blocked on cost gate |
 | TB 2.1 maintenance gold | not started |
