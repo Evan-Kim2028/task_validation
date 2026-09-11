@@ -258,6 +258,91 @@ def _cmd_run_harbor_evidence(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_ingest_pro(args: argparse.Namespace) -> int:
+    from task_validation.ingest.swe_pro import ingest_pro
+
+    report = ingest_pro(Path(args.parquet), Path(args.out))
+    print(json.dumps(report, indent=2))
+    return 0 if report["n"] else 1
+
+
+def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
+    from task_validation.ingest.external_audits import enrichment, match_prefixes, parse_june_kim_claims
+    from task_validation.model.risk_coverage import retain_curve
+
+    rows = []
+    with Path(args.pro).open(encoding="utf-8") as fh:
+        for line in fh:
+            rows.append(json.loads(line))
+    prefixes = parse_june_kim_claims(Path(args.claims_md))
+    hits = match_prefixes([r["task_id"] for r in rows], prefixes)
+    positive = set(hits)
+    # High cheap_risk first = more suspicious.
+    ranked_high = sorted(rows, key=lambda r: -float(r["features"]["cheap_risk"]))
+    ranked_low = sorted(rows, key=lambda r: float(r["features"]["cheap_risk"]))
+    y_kim = [1 if r["task_id"] in positive else 0 for r in rows]
+    scores = [float(r["features"]["cheap_risk"]) for r in rows]
+    # retain lowest risk → residual June Kim rate
+    retain = retain_curve(y_kim, scores)
+    fam = {}
+    n_any_flag = 0
+    mean_scores = {
+        "family_strict": 0.0,
+        "family_underspec": 0.0,
+        "family_low_coverage": 0.0,
+        "family_misleading": 0.0,
+        "cheap_risk": 0.0,
+    }
+    for r in rows:
+        fam[r["suspected_family"]] = fam.get(r["suspected_family"], 0) + 1
+        if r.get("family_flags"):
+            n_any_flag += 1
+        for k in mean_scores:
+            mean_scores[k] += float(r["features"][k])
+    n = max(len(rows), 1)
+    mean_scores = {k: v / n for k, v in mean_scores.items()}
+    fam_in_kim = {}
+    for r in rows:
+        if r["task_id"] in positive:
+            fam_in_kim[r["suspected_family"]] = fam_in_kim.get(r["suspected_family"], 0) + 1
+    openai_ex = [r for r in rows if "77c16d53" in r["task_id"]]
+    openai_rank = None
+    if openai_ex:
+        order = [r["task_id"] for r in ranked_high]
+        openai_rank = order.index(openai_ex[0]["task_id"]) + 1
+    report = {
+        "n_pro": len(rows),
+        "n_june_kim_prefixes": len(prefixes),
+        "n_june_kim_matched": len(positive),
+        "june_kim_base_rate": len(positive) / len(rows) if rows else None,
+        "n_any_family_flag": n_any_flag,
+        "mean_family_scores": mean_scores,
+        "suspected_family_counts": fam,
+        "june_kim_by_our_family": fam_in_kim,
+        "enrichment_high_risk": enrichment([r["task_id"] for r in ranked_high], positive, (0.10, 0.15, 0.20, 0.30)),
+        "retain_june_kim_in_low_risk": retain,
+        "openai_published_example": {
+            "pattern": "77c16d53",
+            "matched_ids": [r["task_id"] for r in openai_ex],
+            "rank_by_cheap_risk_desc": openai_rank,
+            "n": len(rows),
+            "percentile_from_top": (openai_rank / len(rows)) if openai_rank else None,
+            "family": openai_ex[0]["suspected_family"] if openai_ex else None,
+            "cheap_risk": openai_ex[0]["features"]["cheap_risk"] if openai_ex else None,
+            "note": "OpenAI TOC whitespace example. Aggregate 30% is not a task-id set.",
+        },
+        "constraints": {
+            "used_audit_labels_as_predictors": False,
+            "optimized_to_30pct": False,
+            "executed_docker": False,
+        },
+    }
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -328,6 +413,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--max-mutants", type=int, default=4)
     p.add_argument("--skip-mutants", action="store_true")
     p.set_defaults(func=_cmd_run_harbor_evidence)
+
+    p = sub.add_parser("ingest-pro", help="Ingest SWE-Bench Pro public 731 + family features")
+    p.add_argument("--parquet", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_ingest_pro)
+
+    p = sub.add_parser("reconstruct-pro", help="Score Pro and compare to June Kim IDs (eval only)")
+    p.add_argument("--pro", required=True)
+    p.add_argument("--claims-md", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_reconstruct_pro)
 
     args = parser.parse_args(argv)
     return args.func(args)

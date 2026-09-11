@@ -26,6 +26,8 @@ ML may say “I trust this task.” It may not make the population-validity clai
 
 Human packets are **after** full evidence vectors, not before.
 
+Reconstruction (Pro 731 static + June Kim overlap) landed in [15-openai-reconstruction.md](15-openai-reconstruction.md). Decision gate #4 is negative: do not start population sampling. Next is evidence (lakehouse cost, then a small Pro execution subset).
+
 ## Two parallel bottlenecks
 
 **Statistical.** Does the ranker create a *clean accepted tail*? Report residual invalidity among the lowest-risk 1%, 5%, 10%, 20%. That number decides whether certification is economical.

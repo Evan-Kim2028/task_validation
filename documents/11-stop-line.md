@@ -2,7 +2,7 @@
 
 Human labeling of the 16 Harbor packets is **still deferred**. Cheap artifacts rank (OOF AUROC ~0.70) but do not clean the 2024 conservative tail to a certifiable residual. Next engineering step is the Harbor execution runner on lakehouse, not six humans.
 
-See [13-next-directives.md](13-next-directives.md) and [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md).
+See [13-next-directives.md](13-next-directives.md), [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md), and [15-openai-reconstruction.md](15-openai-reconstruction.md). Decision gate: do not sample a population until the evidence layer can clean a tail.
 
 ## Ready for a human
 

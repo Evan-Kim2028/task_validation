@@ -15,5 +15,7 @@
 | `swe_rater_targets.jsonl` | conservative / majority / unanimous + votes |
 | `oof_*.json` | grouped-CV metrics, retain curves, SRC |
 | `hello_world_evidence.json` | first live Harbor oracle/nop/mutant run |
+| `swe_pro_features.jsonl` | SWE-Bench Pro 731 cheap family features |
+| `pro_reconstruction.json` | June Kim overlap / retain / OpenAI example rank |
 
 Rebuild the full notes table from the OpenAI zip via `ingest-swe`. That file is gitignored (`swe_verified.jsonl`).
