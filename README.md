@@ -58,7 +58,7 @@ Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/tes
 
 Human review of the 16 packets stays deferred until packets carry this evidence vector.
 
-**Narrow milestone (OpenAI Pro rejection): YES.** Cheap prompt-vs-test risk puts the published TOC example at **38/731**, enriches June Kim’s floor **1.56×** in the top 10%, and would still refuse to certify Pro at 5% (low-risk 20% still 13% June Kim). That is not a 30% match and not a license to build 1,000 tasks. [`documents/16-narrow-openai-recovery.md`](documents/16-narrow-openai-recovery.md).
+**VEV (invariants, not more ML features).** Nine bounded primitives. Untrained spec-gap (B) does **not** beat the existing logistic (A) on retain 5%/20% (0.56 vs 0.34 residual). Execution primitives filled on hello-world only. No production model. [`documents/17-validity-evidence-vector.md`](documents/17-validity-evidence-vector.md).
 
 Grouped 5-fold OOF (honest number) is **AUROC 0.70** (0.67–0.73) on the 2024 conservative label. The accepted tail is the product metric, and it is not yet clean:
 

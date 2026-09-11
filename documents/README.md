@@ -21,6 +21,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [00-roadmap.md](00-roadmap.md) | Explanation | Where we are on the 1K→100K path |
 | [15-openai-reconstruction.md](15-openai-reconstruction.md) | Explanation | SWE-Bench Pro / OpenAI / June Kim reconstruction |
 | [16-narrow-openai-recovery.md](16-narrow-openai-recovery.md) | Explanation | Yes/no: recover OpenAI's Pro rejection |
+| [17-validity-evidence-vector.md](17-validity-evidence-vector.md) | Reference | Nine invariants and A–G ablation |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

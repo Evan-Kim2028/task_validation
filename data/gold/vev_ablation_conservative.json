@@ -1,0 +1,129 @@
+{
+  "n": 1699,
+  "base_rate": 0.6827545615067687,
+  "n_spec_sufficiency_fail": 1686,
+  "A_current_oof_logistic": {
+    "name": "A",
+    "auroc": 0.6973490179770968,
+    "retain_curve": [
+      {
+        "retain_frac": 0.01,
+        "n_retained": 17,
+        "n_invalid": 5,
+        "residual_invalid": 0.29411764705882354
+      },
+      {
+        "retain_frac": 0.02,
+        "n_retained": 34,
+        "n_invalid": 13,
+        "residual_invalid": 0.38235294117647056
+      },
+      {
+        "retain_frac": 0.05,
+        "n_retained": 85,
+        "n_invalid": 29,
+        "residual_invalid": 0.3411764705882353
+      },
+      {
+        "retain_frac": 0.1,
+        "n_retained": 170,
+        "n_invalid": 62,
+        "residual_invalid": 0.36470588235294116
+      },
+      {
+        "retain_frac": 0.2,
+        "n_retained": 340,
+        "n_invalid": 146,
+        "residual_invalid": 0.4294117647058823
+      },
+      {
+        "retain_frac": 0.3,
+        "n_retained": 510,
+        "n_invalid": 249,
+        "residual_invalid": 0.48823529411764705
+      },
+      {
+        "retain_frac": 0.5,
+        "n_retained": 850,
+        "n_invalid": 477,
+        "residual_invalid": 0.5611764705882353
+      },
+      {
+        "retain_frac": 0.7,
+        "n_retained": 1189,
+        "n_invalid": 725,
+        "residual_invalid": 0.6097560975609756
+      },
+      {
+        "retain_frac": 1.0,
+        "n_retained": 1699,
+        "n_invalid": 1160,
+        "residual_invalid": 0.6827545615067687
+      }
+    ],
+    "note": "retain_curve sorts *ascending* (low score kept). For A, low p_logistic is kept; we invert A so high-invalid ranks last."
+  },
+  "B_spec_gap_untrained": {
+    "name": "B",
+    "auroc": 0.4861605143624848,
+    "retain_curve": [
+      {
+        "retain_frac": 0.01,
+        "n_retained": 17,
+        "n_invalid": 4,
+        "residual_invalid": 0.23529411764705882
+      },
+      {
+        "retain_frac": 0.02,
+        "n_retained": 34,
+        "n_invalid": 12,
+        "residual_invalid": 0.35294117647058826
+      },
+      {
+        "retain_frac": 0.05,
+        "n_retained": 85,
+        "n_invalid": 48,
+        "residual_invalid": 0.5647058823529412
+      },
+      {
+        "retain_frac": 0.1,
+        "n_retained": 170,
+        "n_invalid": 110,
+        "residual_invalid": 0.6470588235294118
+      },
+      {
+        "retain_frac": 0.2,
+        "n_retained": 340,
+        "n_invalid": 241,
+        "residual_invalid": 0.7088235294117647
+      },
+      {
+        "retain_frac": 0.3,
+        "n_retained": 510,
+        "n_invalid": 359,
+        "residual_invalid": 0.703921568627451
+      },
+      {
+        "retain_frac": 0.5,
+        "n_retained": 850,
+        "n_invalid": 561,
+        "residual_invalid": 0.66
+      },
+      {
+        "retain_frac": 0.7,
+        "n_retained": 1189,
+        "n_invalid": 788,
+        "residual_invalid": 0.6627417998317914
+      },
+      {
+        "retain_frac": 1.0,
+        "n_retained": 1699,
+        "n_invalid": 1160,
+        "residual_invalid": 0.6827545615067687
+      }
+    ],
+    "note": "retain_curve sorts *ascending* (low score kept). For A, low p_logistic is kept; we invert A so high-invalid ranks last."
+  },
+  "primary_metric": "residual_invalid at retain 5% and 20%",
+  "trained_model_used_for_B": false
+}

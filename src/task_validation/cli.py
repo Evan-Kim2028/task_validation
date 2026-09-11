@@ -355,6 +355,43 @@ def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_ablate_vev(args: argparse.Namespace) -> int:
+    from task_validation.model.ablate_vev import ablate
+
+    report = ablate(
+        features_path=Path(args.features),
+        oof_path=Path(args.oof),
+        parquet_path=Path(args.parquet),
+    )
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+def _cmd_vev_harbor(args: argparse.Namespace) -> int:
+    from task_validation.evidence.harbor_vev import fill_execution
+    from task_validation.evidence.spec_atoms import spec_from_record
+    from task_validation.evidence.vev import ValidityEvidenceVector, vev_from_spec
+
+    report = json.loads(Path(args.report).read_text(encoding="utf-8"))
+    instruction = Path(args.instruction).read_text(encoding="utf-8") if args.instruction else ""
+    tests = Path(args.tests).read_text(encoding="utf-8") if args.tests else ""
+    spec = spec_from_record(
+        {
+            "problem_statement": instruction,
+            "test_patch": tests,
+            "FAIL_TO_PASS": "[]",
+        }
+    )
+    vev = vev_from_spec(report.get("task_id") or "harbor", spec)
+    fill_execution(vev, report)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(vev.to_dict(), indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(vev.to_dict(), indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -436,6 +473,20 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--claims-md", required=True)
     p.add_argument("--out", required=True)
     p.set_defaults(func=_cmd_reconstruct_pro)
+
+    p = sub.add_parser("ablate-vev", help="Untrained spec-gap vs OOF logistic retain-tail")
+    p.add_argument("--features", required=True)
+    p.add_argument("--oof", required=True)
+    p.add_argument("--parquet", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_ablate_vev)
+
+    p = sub.add_parser("vev-from-harbor", help="Build a VEV from a Harbor evidence JSON")
+    p.add_argument("--report", required=True)
+    p.add_argument("--instruction", default="")
+    p.add_argument("--tests", default="")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_vev_harbor)
 
     args = parser.parse_args(argv)
     return args.func(args)
