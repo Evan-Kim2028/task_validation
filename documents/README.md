@@ -16,6 +16,8 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [10-eval-tasks-bridge.md](10-eval-tasks-bridge.md) | Explanation | You need how this repo relates to `eval_tasks` |
 | [11-stop-line.md](11-stop-line.md) | How-to | You need what is ready vs deferred |
 | [12-empirical-bridge.md](12-empirical-bridge.md) | Explanation | You need the first evidence→label experiment |
+| [13-next-directives.md](13-next-directives.md) | How-to | Frozen sequence after the bridge |
+| [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md) | Explanation | Retain-tail numbers and hello-world execution |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

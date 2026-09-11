@@ -58,6 +58,18 @@ Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/tes
 
 Human review of the 16 packets stays deferred until packets carry this evidence vector.
 
+Grouped 5-fold OOF (honest number) is **AUROC 0.70** (0.67–0.73) on the 2024 conservative label. The accepted tail is the product metric, and it is not yet clean:
+
+| Y | Base invalid | Residual in lowest-risk 5% | Residual in lowest-risk 20% |
+| --- | ---: | ---: | ---: |
+| conservative (≥1 rater) | 0.68 | 0.34 | 0.43 |
+| majority (≥2/3) | 0.45 | 0.15 | 0.22 |
+| unanimous (3/3) | 0.23 | 0.06 | 0.09 |
+
+Fleiss κ on the per-rater material bit is **0.39**. Cheap artifacts cannot put a 20% UCB on the conservative tail; execution evidence is required. Details: [`documents/14-risk-coverage-and-labels.md`](documents/14-risk-coverage-and-labels.md). Sequence freeze: [`documents/13-next-directives.md`](documents/13-next-directives.md).
+
+Hello-world cheap runner: oracle 1.0 twice, nop 0.0, wrong-output mutant killed, ~32s/trial.
+
 ## What already ran
 
 On the 1,699 SWE-bench Verified ensemble labels (2024 conservative protocol):

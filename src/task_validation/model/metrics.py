@@ -6,19 +6,27 @@ import math
 
 
 def auroc(y: list[int], scores: list[float]) -> float | None:
-    pos = [s for s, t in zip(scores, y) if t == 1]
-    neg = [s for s, t in zip(scores, y) if t == 0]
-    if not pos or not neg:
-        return None
-    # Mann-Whitney U / (n_pos * n_neg)
-    wins = 0.0
-    for p in pos:
-        for n in neg:
-            if p > n:
-                wins += 1.0
-            elif p == n:
-                wins += 0.5
-    return wins / (len(pos) * len(neg))
+    try:
+        from sklearn.metrics import roc_auc_score
+        import numpy as np
+
+        y_a = np.asarray(y)
+        if y_a.min() == y_a.max():
+            return None
+        return float(roc_auc_score(y_a, scores))
+    except ImportError:
+        pos = [s for s, t in zip(scores, y) if t == 1]
+        neg = [s for s, t in zip(scores, y) if t == 0]
+        if not pos or not neg:
+            return None
+        wins = 0.0
+        for p in pos:
+            for n in neg:
+                if p > n:
+                    wins += 1.0
+                elif p == n:
+                    wins += 0.5
+        return wins / (len(pos) * len(neg))
 
 
 def auprc(y: list[int], scores: list[float]) -> float | None:

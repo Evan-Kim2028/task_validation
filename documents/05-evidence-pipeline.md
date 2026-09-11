@@ -34,6 +34,10 @@ Instruction, environment, tests, reference, traces. ABA and BenchGuard show this
 
 Harbor ingest records: instruction, task.toml, solution, tests, environment, canary GUID, separate-verifier mode, test file count, instruction length. That is the only evidence this repo computes without Docker.
 
+## Live runner
+
+`task-validation run-harbor-evidence` runs oracle (optionally twice), nop, and file-revert / wrong-output mutants through Harbor+Docker. First measured task: hello-world, ~32s per trial, mutation kill rate 1.0. See [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md).
+
 ## What we will not do in Part 1
 
 We will not generate new synthetic tasks to feed this pipeline. Existing populations only.

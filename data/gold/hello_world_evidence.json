@@ -1,0 +1,247 @@
+{
+  "task_id": "hello-world",
+  "path": "/home/evan/Documents/eval_tasks/tasks/hello-world",
+  "static": {
+    "instruction_chars": 257,
+    "n_test_py": 1,
+    "n_env_py": 0,
+    "n_sol_py": 0,
+    "sol_env_name_overlap": 0,
+    "separate_verifier": true,
+    "has_tests_dockerfile": true,
+    "has_solve_sh": true,
+    "test_stmt_id_overlap": 0.35714285714285715,
+    "test_only_id_frac": 0.6428571428571429,
+    "env_copies_solution": false,
+    "env_copies_tests": false,
+    "test_sh_mentions_nobody": false,
+    "test_sh_default_reward_zero": true,
+    "dockerfile_has_user": false,
+    "allow_network": false,
+    "canary_in_instruction": true,
+    "canary_in_tests": true
+  },
+  "oracle": [
+    {
+      "cmd": [
+        "harbor",
+        "run",
+        "-p",
+        "/home/evan/Documents/eval_tasks/tasks/hello-world",
+        "--agent",
+        "oracle",
+        "--env",
+        "docker",
+        "--yes",
+        "-n",
+        "1",
+        "--job-name",
+        "hello-world-oracle-20260911T222635-0",
+        "-o",
+        "/tmp/tv-harbor-hello/jobs"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 32.640654745000575,
+      "reward": 1.0,
+      "stderr_tail": ""
+    },
+    {
+      "cmd": [
+        "harbor",
+        "run",
+        "-p",
+        "/home/evan/Documents/eval_tasks/tasks/hello-world",
+        "--agent",
+        "oracle",
+        "--env",
+        "docker",
+        "--yes",
+        "-n",
+        "1",
+        "--job-name",
+        "hello-world-oracle-20260911T222635-1",
+        "-o",
+        "/tmp/tv-harbor-hello/jobs"
+      ],
+      "returncode": 0,
+      "elapsed_sec": 31.87480069599951,
+      "reward": 1.0,
+      "stderr_tail": ""
+    }
+  ],
+  "nop": {
+    "cmd": [
+      "harbor",
+      "run",
+      "-p",
+      "/home/evan/Documents/eval_tasks/tasks/hello-world",
+      "--agent",
+      "nop",
+      "--env",
+      "docker",
+      "--yes",
+      "-n",
+      "1",
+      "--job-name",
+      "hello-world-nop-20260911T222635",
+      "-o",
+      "/tmp/tv-harbor-hello/jobs"
+    ],
+    "returncode": 0,
+    "elapsed_sec": 31.078061235999485,
+    "reward": 0.0,
+    "stderr_tail": ""
+  },
+  "deterministic": true,
+  "mutants": [
+    {
+      "mutant_id": "hello-world-m0",
+      "mutation_type": "wrong_output",
+      "solution": "solution/solve.sh",
+      "verifier_reward": 0.0,
+      "killed": true,
+      "elapsed_sec": 31.875174946999323,
+      "runtime": 31.875174946999323
+    }
+  ],
+  "mutation_kill_rate": 1.0,
+  "n_mutants_tested": 1,
+  "n_mutants_killed": 1,
+  "checks": [
+    {
+      "name": "static_package",
+      "source": "static",
+      "passed": true,
+      "detail": {
+        "instruction_chars": 257,
+        "n_test_py": 1,
+        "n_env_py": 0,
+        "n_sol_py": 0,
+        "sol_env_name_overlap": 0,
+        "separate_verifier": true,
+        "has_tests_dockerfile": true,
+        "has_solve_sh": true,
+        "test_stmt_id_overlap": 0.35714285714285715,
+        "test_only_id_frac": 0.6428571428571429,
+        "env_copies_solution": false,
+        "env_copies_tests": false,
+        "test_sh_mentions_nobody": false,
+        "test_sh_default_reward_zero": true,
+        "dockerfile_has_user": false,
+        "allow_network": false,
+        "canary_in_instruction": true,
+        "canary_in_tests": true
+      }
+    },
+    {
+      "name": "oracle_0",
+      "source": "official_verifier",
+      "passed": true,
+      "detail": {
+        "cmd": [
+          "harbor",
+          "run",
+          "-p",
+          "/home/evan/Documents/eval_tasks/tasks/hello-world",
+          "--agent",
+          "oracle",
+          "--env",
+          "docker",
+          "--yes",
+          "-n",
+          "1",
+          "--job-name",
+          "hello-world-oracle-20260911T222635-0",
+          "-o",
+          "/tmp/tv-harbor-hello/jobs"
+        ],
+        "returncode": 0,
+        "elapsed_sec": 32.640654745000575,
+        "reward": 1.0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "oracle_1",
+      "source": "official_verifier",
+      "passed": true,
+      "detail": {
+        "cmd": [
+          "harbor",
+          "run",
+          "-p",
+          "/home/evan/Documents/eval_tasks/tasks/hello-world",
+          "--agent",
+          "oracle",
+          "--env",
+          "docker",
+          "--yes",
+          "-n",
+          "1",
+          "--job-name",
+          "hello-world-oracle-20260911T222635-1",
+          "-o",
+          "/tmp/tv-harbor-hello/jobs"
+        ],
+        "returncode": 0,
+        "elapsed_sec": 31.87480069599951,
+        "reward": 1.0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "nop",
+      "source": "official_verifier",
+      "passed": true,
+      "detail": {
+        "cmd": [
+          "harbor",
+          "run",
+          "-p",
+          "/home/evan/Documents/eval_tasks/tasks/hello-world",
+          "--agent",
+          "nop",
+          "--env",
+          "docker",
+          "--yes",
+          "-n",
+          "1",
+          "--job-name",
+          "hello-world-nop-20260911T222635",
+          "-o",
+          "/tmp/tv-harbor-hello/jobs"
+        ],
+        "returncode": 0,
+        "elapsed_sec": 31.078061235999485,
+        "reward": 0.0,
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "oracle_deterministic",
+      "source": "oracle_derived",
+      "passed": true,
+      "detail": {
+        "rewards": [
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "mutant_0",
+      "source": "mutation",
+      "passed": true,
+      "detail": {
+        "mutant_id": "hello-world-m0",
+        "mutation_type": "wrong_output",
+        "solution": "solution/solve.sh",
+        "verifier_reward": 0.0,
+        "killed": true,
+        "elapsed_sec": 31.875174946999323,
+        "runtime": 31.875174946999323
+      }
+    }
+  ],
+  "wrong_impl_accepted_rate": 0.0
+}

@@ -12,5 +12,8 @@
 | `coverage_n100_r2000.json` | 2,000-rep coverage at n=100 |
 | `coverage_n100_p02.json` | 2,000-rep coverage on a 2% invalid population |
 | `sample_size_ucb.json` | n required for UCB < epsilon |
+| `swe_rater_targets.jsonl` | conservative / majority / unanimous + votes |
+| `oof_*.json` | grouped-CV metrics, retain curves, SRC |
+| `hello_world_evidence.json` | first live Harbor oracle/nop/mutant run |
 
 Rebuild the full notes table from the OpenAI zip via `ingest-swe`. That file is gitignored (`swe_verified.jsonl`).

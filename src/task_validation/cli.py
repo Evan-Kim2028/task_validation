@@ -197,6 +197,67 @@ def _cmd_attach_harbor(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_rater_targets(args: argparse.Namespace) -> int:
+    from task_validation.ingest.swe_raters import build_targets
+
+    summary = build_targets(Path(args.csv), Path(args.out))
+    meta = Path(args.out).with_suffix(".summary.json")
+    meta.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(summary, indent=2))
+    return 0
+
+
+def _cmd_oof_eval(args: argparse.Namespace) -> int:
+    from task_validation.model.fit import load_feature_table
+    from task_validation.model.oof import grouped_oof, write_oof
+
+    rows = load_feature_table(Path(args.features))
+    if args.targets:
+        by = {}
+        with Path(args.targets).open(encoding="utf-8") as fh:
+            for line in fh:
+                rec = json.loads(line)
+                by[rec["task_id"]] = rec
+        y_key = args.y_key
+        merged = []
+        for r in rows:
+            t = by.get(r["task_id"])
+            if t is None:
+                continue
+            r = dict(r)
+            r["y"] = t[y_key]
+            r["openai_2024_conservative"] = t["openai_2024_conservative"]
+            r["majority_invalid"] = t["majority_invalid"]
+            r["unanimous_invalid"] = t["unanimous_invalid"]
+            merged.append(r)
+        rows = merged
+    report = grouped_oof(rows, y_key="y")
+    write_oof(report, Path(args.out))
+    slim = {k: v for k, v in report.items() if k != "oof"}
+    print(json.dumps(slim, indent=2)[:8000])
+    return 0
+
+
+def _cmd_run_harbor_evidence(args: argparse.Namespace) -> int:
+    from task_validation.evidence.runner import run_static_execution_mutation
+
+    task_dir = Path(args.task)
+    work = Path(args.work)
+    report = run_static_execution_mutation(
+        task_dir,
+        work,
+        timeout=args.timeout,
+        n_oracle=args.n_oracle,
+        run_mutants=not args.skip_mutants,
+        max_mutants=args.max_mutants,
+    )
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({k: report[k] for k in report if k not in {"static", "oracle", "nop", "checks"}}, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -245,6 +306,28 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--jobs-root", default="")
     p.add_argument("--out", required=True)
     p.set_defaults(func=_cmd_attach_harbor)
+
+    p = sub.add_parser("rater-targets", help="Build conservative/majority/unanimous labels + IAA")
+    p.add_argument("--csv", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_rater_targets)
+
+    p = sub.add_parser("oof-eval", help="Grouped-CV OOF, retain curves, SRC, calibration")
+    p.add_argument("--features", required=True)
+    p.add_argument("--targets", default="")
+    p.add_argument("--y-key", default="openai_2024_conservative")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_oof_eval)
+
+    p = sub.add_parser("run-harbor-evidence", help="Oracle/nop/determinism/mutants via Harbor")
+    p.add_argument("--task", required=True)
+    p.add_argument("--work", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--timeout", type=int, default=180)
+    p.add_argument("--n-oracle", type=int, default=2)
+    p.add_argument("--max-mutants", type=int, default=4)
+    p.add_argument("--skip-mutants", action="store_true")
+    p.set_defaults(func=_cmd_run_harbor_evidence)
 
     args = parser.parse_args(argv)
     return args.func(args)

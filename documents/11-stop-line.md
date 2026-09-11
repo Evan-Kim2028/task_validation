@@ -1,8 +1,8 @@
 # Stop line
 
-Human labeling of the 16 Harbor packets is **still deferred**. The missing piece was not more human opinions. It was whether cheap machine evidence predicts the 1,699 labels we already have.
+Human labeling of the 16 Harbor packets is **still deferred**. Cheap artifacts rank (OOF AUROC ~0.70) but do not clean the 2024 conservative tail to a certifiable residual. Next engineering step is the Harbor execution runner on lakehouse, not six humans.
 
-Do not start the 6-packet pilot until `data/gold/risk_model_by_repo.json` exists and the packet includes the cheap evidence vector.
+See [13-next-directives.md](13-next-directives.md) and [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md).
 
 ## Ready for a human
 

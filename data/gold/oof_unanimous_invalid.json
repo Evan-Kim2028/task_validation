@@ -1,0 +1,595 @@
+{
+  "n_splits": 5,
+  "n_groups": 12,
+  "y_key": "y",
+  "logistic": {
+    "model": "logistic",
+    "y_key": "y",
+    "n": 1699,
+    "base_rate": 0.22954679223072397,
+    "auroc": 0.6737164795988325,
+    "auprc": 0.39111175383891866,
+    "brier": 0.2443070489537227,
+    "log_loss": 0.6926120663335208,
+    "auroc_ci": {
+      "mean": 0.6737648555959237,
+      "lo": 0.645685400081845,
+      "hi": 0.7002539013122012,
+      "n_boot": 400
+    },
+    "auprc_ci": {
+      "mean": 0.3916657403895518,
+      "lo": 0.3489298393081318,
+      "hi": 0.43692497437936273,
+      "n_boot": 400
+    },
+    "brier_ci": {
+      "mean": 0.24434571075099243,
+      "lo": 0.23681905042926057,
+      "hi": 0.2544034861430757,
+      "n_boot": 400
+    },
+    "calibration": {
+      "intercept": -1.3162534094276446,
+      "slope": 0.6426733873023908
+    },
+    "reliability": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "n": 34,
+        "mean_p": 0.04273664703646565,
+        "mean_y": 0.029411764705882353
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "n": 46,
+        "mean_p": 0.16486470841611278,
+        "mean_y": 0.08695652173913043
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "n": 156,
+        "mean_p": 0.25754289254841134,
+        "mean_y": 0.08333333333333333
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "n": 323,
+        "mean_p": 0.357256213821569,
+        "mean_y": 0.14551083591331268
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "n": 317,
+        "mean_p": 0.4499485410868445,
+        "mean_y": 0.2302839116719243
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "n": 326,
+        "mean_p": 0.548552634602816,
+        "mean_y": 0.2116564417177914
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "n": 252,
+        "mean_p": 0.6459265185442417,
+        "mean_y": 0.30158730158730157
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "n": 113,
+        "mean_p": 0.743488974121606,
+        "mean_y": 0.4247787610619469
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "n": 82,
+        "mean_p": 0.8401188090729486,
+        "mean_y": 0.3780487804878049
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "n": 50,
+        "mean_p": 0.9424559267874657,
+        "mean_y": 0.56
+      }
+    ],
+    "retain_curve": [
+      {
+        "retain_frac": 0.01,
+        "n_retained": 17,
+        "n_invalid": 0,
+        "residual_invalid": 0.0
+      },
+      {
+        "retain_frac": 0.02,
+        "n_retained": 34,
+        "n_invalid": 1,
+        "residual_invalid": 0.029411764705882353
+      },
+      {
+        "retain_frac": 0.05,
+        "n_retained": 85,
+        "n_invalid": 5,
+        "residual_invalid": 0.058823529411764705
+      },
+      {
+        "retain_frac": 0.1,
+        "n_retained": 170,
+        "n_invalid": 11,
+        "residual_invalid": 0.06470588235294118
+      },
+      {
+        "retain_frac": 0.2,
+        "n_retained": 340,
+        "n_invalid": 31,
+        "residual_invalid": 0.09117647058823529
+      },
+      {
+        "retain_frac": 0.3,
+        "n_retained": 510,
+        "n_invalid": 54,
+        "residual_invalid": 0.10588235294117647
+      },
+      {
+        "retain_frac": 0.5,
+        "n_retained": 850,
+        "n_invalid": 132,
+        "residual_invalid": 0.15529411764705883
+      },
+      {
+        "retain_frac": 0.7,
+        "n_retained": 1189,
+        "n_invalid": 204,
+        "residual_invalid": 0.17157275021026072
+      },
+      {
+        "retain_frac": 1.0,
+        "n_retained": 1699,
+        "n_invalid": 390,
+        "residual_invalid": 0.22954679223072397
+      }
+    ],
+    "threshold_curve": [
+      {
+        "threshold": 0.2,
+        "n_retained": 80,
+        "retain_frac": 0.047086521483225424,
+        "n_invalid": 5,
+        "residual_invalid": 0.0625
+      },
+      {
+        "threshold": 0.3,
+        "n_retained": 236,
+        "retain_frac": 0.13890523837551502,
+        "n_invalid": 18,
+        "residual_invalid": 0.07627118644067797
+      },
+      {
+        "threshold": 0.4,
+        "n_retained": 559,
+        "retain_frac": 0.32901706886403764,
+        "n_invalid": 65,
+        "residual_invalid": 0.11627906976744186
+      },
+      {
+        "threshold": 0.5,
+        "n_retained": 876,
+        "retain_frac": 0.5155974102413184,
+        "n_invalid": 138,
+        "residual_invalid": 0.15753424657534246
+      },
+      {
+        "threshold": 0.6,
+        "n_retained": 1202,
+        "retain_frac": 0.707474985285462,
+        "n_invalid": 207,
+        "residual_invalid": 0.17221297836938437
+      },
+      {
+        "threshold": 0.7,
+        "n_retained": 1454,
+        "retain_frac": 0.8557975279576221,
+        "n_invalid": 283,
+        "residual_invalid": 0.19463548830811556
+      }
+    ],
+    "src_alpha_0.20": {
+      "calibration": {
+        "lambda": 0.3693415860182536,
+        "n_accept": 57,
+        "k_invalid": 6,
+        "ucb": 0.19722251980693634,
+        "alpha": 0.2,
+        "calib_residual": 0.10526315789473684
+      },
+      "eval": {
+        "n_accept": 373,
+        "retain_frac": 0.2437908496732026,
+        "n_invalid": 34,
+        "residual_invalid": 0.09115281501340483,
+        "lambda": 0.3693415860182536
+      },
+      "note": "alpha is residual-invalidity *filter* target on the accepted tail, not a population UCB."
+    },
+    "calibrated_logistic_eval": {
+      "retain_curve": [
+        {
+          "retain_frac": 0.01,
+          "n_retained": 15,
+          "n_invalid": 0,
+          "residual_invalid": 0.0
+        },
+        {
+          "retain_frac": 0.02,
+          "n_retained": 31,
+          "n_invalid": 0,
+          "residual_invalid": 0.0
+        },
+        {
+          "retain_frac": 0.05,
+          "n_retained": 76,
+          "n_invalid": 4,
+          "residual_invalid": 0.05263157894736842
+        },
+        {
+          "retain_frac": 0.1,
+          "n_retained": 153,
+          "n_invalid": 9,
+          "residual_invalid": 0.058823529411764705
+        },
+        {
+          "retain_frac": 0.2,
+          "n_retained": 306,
+          "n_invalid": 26,
+          "residual_invalid": 0.08496732026143791
+        },
+        {
+          "retain_frac": 0.3,
+          "n_retained": 459,
+          "n_invalid": 50,
+          "residual_invalid": 0.10893246187363835
+        },
+        {
+          "retain_frac": 0.5,
+          "n_retained": 765,
+          "n_invalid": 117,
+          "residual_invalid": 0.15294117647058825
+        },
+        {
+          "retain_frac": 0.7,
+          "n_retained": 1071,
+          "n_invalid": 176,
+          "residual_invalid": 0.16433239962651727
+        },
+        {
+          "retain_frac": 1.0,
+          "n_retained": 1530,
+          "n_invalid": 335,
+          "residual_invalid": 0.21895424836601307
+        }
+      ],
+      "src_alpha_0.20": {
+        "calibration": {
+          "lambda": 0.24270649910466557,
+          "n_accept": 57,
+          "k_invalid": 6,
+          "ucb": 0.19722251980693634,
+          "alpha": 0.2,
+          "calib_residual": 0.10526315789473684
+        },
+        "eval": {
+          "n_accept": 373,
+          "retain_frac": 0.2437908496732026,
+          "n_invalid": 34,
+          "residual_invalid": 0.09115281501340483,
+          "lambda": 0.24270649910466557
+        }
+      }
+    }
+  },
+  "hgb": {
+    "model": "hgb",
+    "y_key": "y",
+    "n": 1699,
+    "base_rate": 0.22954679223072397,
+    "auroc": 0.6461479696773814,
+    "auprc": 0.3506967381124331,
+    "brier": 0.17719247534523766,
+    "log_loss": 0.5409674997893414,
+    "auroc_ci": {
+      "mean": 0.6452627044173705,
+      "lo": 0.6126107235460881,
+      "hi": 0.6779990988579321,
+      "n_boot": 400
+    },
+    "auprc_ci": {
+      "mean": 0.34926895215790266,
+      "lo": 0.3113260307059672,
+      "hi": 0.3894944379340076,
+      "n_boot": 400
+    },
+    "brier_ci": {
+      "mean": 0.17693875464494738,
+      "lo": 0.16597967258397292,
+      "hi": 0.18950527318028537,
+      "n_boot": 400
+    },
+    "calibration": {
+      "intercept": -0.6611873855260988,
+      "slope": 0.4706612703262627
+    },
+    "reliability": [
+      {
+        "lo": 0.0,
+        "hi": 0.1,
+        "n": 336,
+        "mean_p": 0.05855350693155717,
+        "mean_y": 0.10714285714285714
+      },
+      {
+        "lo": 0.1,
+        "hi": 0.2,
+        "n": 481,
+        "mean_p": 0.1500382479319061,
+        "mean_y": 0.18711018711018712
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.3,
+        "n": 342,
+        "mean_p": 0.24770472734305413,
+        "mean_y": 0.2543859649122807
+      },
+      {
+        "lo": 0.3,
+        "hi": 0.4,
+        "n": 221,
+        "mean_p": 0.34763758983954146,
+        "mean_y": 0.27601809954751133
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.5,
+        "n": 138,
+        "mean_p": 0.4456939758538823,
+        "mean_y": 0.2463768115942029
+      },
+      {
+        "lo": 0.5,
+        "hi": 0.6,
+        "n": 78,
+        "mean_p": 0.5454043002726209,
+        "mean_y": 0.3974358974358974
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.7,
+        "n": 46,
+        "mean_p": 0.6436689745378902,
+        "mean_y": 0.4782608695652174
+      },
+      {
+        "lo": 0.7,
+        "hi": 0.8,
+        "n": 28,
+        "mean_p": 0.74700663683857,
+        "mean_y": 0.4642857142857143
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.9,
+        "n": 22,
+        "mean_p": 0.8380567944878146,
+        "mean_y": 0.6363636363636364
+      },
+      {
+        "lo": 0.9,
+        "hi": 1.0,
+        "n": 7,
+        "mean_p": 0.9445151662930255,
+        "mean_y": 0.2857142857142857
+      }
+    ],
+    "retain_curve": [
+      {
+        "retain_frac": 0.01,
+        "n_retained": 17,
+        "n_invalid": 1,
+        "residual_invalid": 0.058823529411764705
+      },
+      {
+        "retain_frac": 0.02,
+        "n_retained": 34,
+        "n_invalid": 1,
+        "residual_invalid": 0.029411764705882353
+      },
+      {
+        "retain_frac": 0.05,
+        "n_retained": 85,
+        "n_invalid": 10,
+        "residual_invalid": 0.11764705882352941
+      },
+      {
+        "retain_frac": 0.1,
+        "n_retained": 170,
+        "n_invalid": 18,
+        "residual_invalid": 0.10588235294117647
+      },
+      {
+        "retain_frac": 0.2,
+        "n_retained": 340,
+        "n_invalid": 37,
+        "residual_invalid": 0.10882352941176471
+      },
+      {
+        "retain_frac": 0.3,
+        "n_retained": 510,
+        "n_invalid": 63,
+        "residual_invalid": 0.12352941176470589
+      },
+      {
+        "retain_frac": 0.5,
+        "n_retained": 850,
+        "n_invalid": 130,
+        "residual_invalid": 0.15294117647058825
+      },
+      {
+        "retain_frac": 0.7,
+        "n_retained": 1189,
+        "n_invalid": 228,
+        "residual_invalid": 0.191757779646762
+      },
+      {
+        "retain_frac": 1.0,
+        "n_retained": 1699,
+        "n_invalid": 390,
+        "residual_invalid": 0.22954679223072397
+      }
+    ],
+    "threshold_curve": [
+      {
+        "threshold": 0.2,
+        "n_retained": 817,
+        "retain_frac": 0.48087110064743965,
+        "n_invalid": 126,
+        "residual_invalid": 0.15422276621787026
+      },
+      {
+        "threshold": 0.3,
+        "n_retained": 1159,
+        "retain_frac": 0.6821659799882284,
+        "n_invalid": 213,
+        "residual_invalid": 0.18377911993097498
+      },
+      {
+        "threshold": 0.4,
+        "n_retained": 1380,
+        "retain_frac": 0.8122424955856387,
+        "n_invalid": 274,
+        "residual_invalid": 0.19855072463768117
+      },
+      {
+        "threshold": 0.5,
+        "n_retained": 1518,
+        "retain_frac": 0.8934667451442024,
+        "n_invalid": 308,
+        "residual_invalid": 0.2028985507246377
+      },
+      {
+        "threshold": 0.6,
+        "n_retained": 1596,
+        "retain_frac": 0.9393761035903473,
+        "n_invalid": 339,
+        "residual_invalid": 0.212406015037594
+      },
+      {
+        "threshold": 0.7,
+        "n_retained": 1642,
+        "retain_frac": 0.9664508534432019,
+        "n_invalid": 361,
+        "residual_invalid": 0.21985383678440926
+      }
+    ],
+    "src_alpha_0.20": {
+      "calibration": {
+        "lambda": null,
+        "n_accept": 0,
+        "k_invalid": 0,
+        "ucb": 1.0,
+        "alpha": 0.2
+      },
+      "eval": {
+        "n_accept": 0,
+        "retain_frac": 0.0,
+        "residual_invalid": null,
+        "lambda": null
+      },
+      "note": "alpha is residual-invalidity *filter* target on the accepted tail, not a population UCB."
+    },
+    "calibrated_logistic_eval": {
+      "retain_curve": [
+        {
+          "retain_frac": 0.01,
+          "n_retained": 15,
+          "n_invalid": 1,
+          "residual_invalid": 0.06666666666666667
+        },
+        {
+          "retain_frac": 0.02,
+          "n_retained": 31,
+          "n_invalid": 2,
+          "residual_invalid": 0.06451612903225806
+        },
+        {
+          "retain_frac": 0.05,
+          "n_retained": 76,
+          "n_invalid": 8,
+          "residual_invalid": 0.10526315789473684
+        },
+        {
+          "retain_frac": 0.1,
+          "n_retained": 153,
+          "n_invalid": 15,
+          "residual_invalid": 0.09803921568627451
+        },
+        {
+          "retain_frac": 0.2,
+          "n_retained": 306,
+          "n_invalid": 33,
+          "residual_invalid": 0.10784313725490197
+        },
+        {
+          "retain_frac": 0.3,
+          "n_retained": 459,
+          "n_invalid": 54,
+          "residual_invalid": 0.11764705882352941
+        },
+        {
+          "retain_frac": 0.5,
+          "n_retained": 765,
+          "n_invalid": 116,
+          "residual_invalid": 0.15163398692810456
+        },
+        {
+          "retain_frac": 0.7,
+          "n_retained": 1071,
+          "n_invalid": 200,
+          "residual_invalid": 0.18674136321195145
+        },
+        {
+          "retain_frac": 1.0,
+          "n_retained": 1530,
+          "n_invalid": 335,
+          "residual_invalid": 0.21895424836601307
+        }
+      ],
+      "src_alpha_0.20": {
+        "calibration": {
+          "lambda": null,
+          "n_accept": 0,
+          "k_invalid": 0,
+          "ucb": 1.0,
+          "alpha": 0.2
+        },
+        "eval": {
+          "n_accept": 0,
+          "retain_frac": 0.0,
+          "residual_invalid": null,
+          "lambda": null
+        }
+      }
+    }
+  }
+}
