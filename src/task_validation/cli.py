@@ -67,6 +67,15 @@ def _cmd_simulate(args: argparse.Namespace) -> int:
     n = args.n
     reps = args.replicates
     seed = args.seed
+    if args.low_prevalence is not None:
+        from task_validation.sampling.simulate import subsample_low_prevalence
+
+        population = subsample_low_prevalence(population, args.low_prevalence, seed)
+        true_p = sum(population.values()) / len(population)
+        # Recompute strata/risks on the subset.
+        strata = {i: strata[i] for i in population}
+        risks = {i: risks.get(i, 0.0) for i in population}
+        _ = true_p
     results = {
         "srs": simulate_srs(population, n, reps, seed),
         "stratified": simulate_stratified(population, strata, n, reps, seed),
@@ -127,6 +136,67 @@ def _cmd_build_queue(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_join_swe(args: argparse.Namespace) -> int:
+    from task_validation.ingest.swe_join import join_parquet
+
+    report = join_parquet(Path(args.gold), Path(args.parquet), Path(args.out))
+    print(json.dumps(report, indent=2))
+    return 0 if report["n_matched"] else 1
+
+
+def _cmd_fit_risk(args: argparse.Namespace) -> int:
+    from task_validation.model.fit import fit_and_eval, load_feature_table
+
+    rows = load_feature_table(Path(args.features))
+    report = fit_and_eval(rows, seed=args.seed)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+def _cmd_attach_harbor(args: argparse.Namespace) -> int:
+    from task_validation.evidence.harbor_jobs import collect_job_outcomes
+    from task_validation.evidence.harbor_static import harbor_cheap_features
+    from task_validation.evidence.mutation import harbor_file_mutants
+
+    gold_path = Path(args.gold)
+    tasks_root = Path(args.tasks_root)
+    jobs = collect_job_outcomes(Path(args.jobs_root)) if args.jobs_root else {}
+    n = 0
+    n_oracle = 0
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with gold_path.open(encoding="utf-8") as fh, out_path.open("w", encoding="utf-8") as out:
+        for line in fh:
+            rec = json.loads(line)
+            rel = rec.get("artifacts", {}).get("relpath") or rec["task_id"]
+            task_dir = tasks_root / rel
+            slug = Path(rel).name
+            if task_dir.is_dir():
+                rec.setdefault("evidence", {})
+                rec["evidence"]["static_checks"] = {
+                    **(rec["evidence"].get("static_checks") or {}),
+                    **{k: v for k, v in harbor_cheap_features(task_dir).items()},
+                }
+                mutants = harbor_file_mutants(task_dir)
+                rec["evidence"]["mutation_score"] = None
+                rec["evidence"].setdefault("extra", {})
+                rec["evidence"]["extra"]["n_file_mutants"] = len(mutants)
+            outcome = jobs.get(slug) or {}
+            if "oracle" in outcome:
+                rec["evidence"]["oracle_pass"] = outcome["oracle"] == 1.0
+                n_oracle += 1
+            if "nop" in outcome:
+                rec["evidence"]["nop_fail"] = outcome["nop"] == 0.0
+            if "cheat" in outcome:
+                rec["evidence"]["exploit_probe_rejected"] = outcome["cheat"] == 0.0
+            out.write(json.dumps(rec) + "\n")
+            n += 1
+    print(json.dumps({"n": n, "n_with_oracle_job": n_oracle, "n_job_slugs": len(jobs), "out": str(out_path)}, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -147,6 +217,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--n", type=int, default=100)
     p.add_argument("--replicates", type=int, default=200)
     p.add_argument("--seed", default="evalqa-gold-v0")
+    p.add_argument("--low-prevalence", type=float, default=None)
     p.set_defaults(func=_cmd_simulate)
 
     p = sub.add_parser("build-queue", help="Write human-review packets and stop")
@@ -155,6 +226,25 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--complete-only", action="store_true")
     p.add_argument("--skip", default="tasks/hello-world,hello-world")
     p.set_defaults(func=_cmd_build_queue)
+
+    p = sub.add_parser("join-swe", help="Join SWE-bench parquet artifacts onto 2024 labels")
+    p.add_argument("--gold", required=True)
+    p.add_argument("--parquet", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_join_swe)
+
+    p = sub.add_parser("fit-risk", help="Train logistic + HGB on cheap features only")
+    p.add_argument("--features", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--seed", default="evalqa-risk-v0")
+    p.set_defaults(func=_cmd_fit_risk)
+
+    p = sub.add_parser("attach-harbor", help="Attach jobs + static + mutant menu to Harbor gold")
+    p.add_argument("--gold", required=True)
+    p.add_argument("--tasks-root", required=True)
+    p.add_argument("--jobs-root", default="")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_attach_harbor)
 
     args = parser.parse_args(argv)
     return args.func(args)

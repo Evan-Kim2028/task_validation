@@ -60,6 +60,6 @@ On the 1,699 SWE-bench 2024 labels, true p = 0.683. 200 replicates.
 | 100 | Stratified by repo | 0.680 | 0.754 | 0.945 |
 | 100 | Hybrid (SRS arm) | 0.685 | 0.781 | 0.985 |
 
-SRS and hybrid-SRS-arm sit at or above nominal 95%. Stratified at n=100 was 94.5% on 200 replicates (binomial noise around 95% is about ±3 pp). Re-run at 2,000 replicates before arguing calibration of the stratified normal UCB.
+At 2,000 replicates, SRS and hybrid-SRS-arm sit at or above nominal 95% on both the raw 68% population and a constructed 2% population. The stratified normal+FPC bound **undercover** at 2% invalidity (coverage 0.90). That estimator is not a release rule until it is replaced or shown to cover.
 
-This is a high-prevalence population. Certification of an *accepted* set targets p near 0–5%, where n=100 still yields a wide bound (zero events → UCB ≈ 3%).
+Certification of an *accepted* set targets p near 0–5%, where n=100 still yields a wide bound (zero events → UCB ≈ 3%). Sequential stopping lives in `sampling/sequential.py`: release when UCB < epsilon; reject when even a census cannot meet epsilon.

@@ -109,6 +109,25 @@ def simulate_stratified(
     )
 
 
+def subsample_low_prevalence(
+    population: dict[str, int],
+    target_p: float,
+    seed: str,
+) -> dict[str, int]:
+    """Build a rarer-invalid population from a labeled set, for QC-style coverage."""
+    from task_validation.sampling.designs import _rng
+
+    valid = [i for i, y in population.items() if y == 0]
+    invalid = [i for i, y in population.items() if y == 1]
+    if not valid:
+        return dict(population)
+    n_inv = int(round(target_p * len(valid) / max(1.0 - target_p, 1e-9)))
+    n_inv = max(1, min(n_inv, len(invalid)))
+    rng = _rng(seed + ":lowp")
+    keep_inv = rng.sample(invalid, n_inv)
+    return {i: 0 for i in valid} | {i: 1 for i in keep_inv}
+
+
 def simulate_hybrid_discovery(
     population: dict[str, int],
     strata: dict[str, str],

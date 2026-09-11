@@ -28,6 +28,12 @@ Do not tweet "we certified SWE-bench at 68% invalid." We *used* the 2024 labels 
 
 User plan treated TVB as the negative class. Search could not open OpenReview `QdDcI0Ftvo`. Nearby names are different papers. Leave a hole in the gold table.
 
+## First risk model (same day, second pass)
+
+Cheap artifact features, repo holdout, n_test=150, base rate 0.71 invalid. Logistic AUROC 0.76. `match=` and deprecation in tests/gold patch push toward invalid, reproduction hint toward valid. That matches the 2024 rubric's "narrow tests" story without using the rubric scores as X.
+
+Stratified UCB coverage 0.90 at 2% prevalence / 2000 reps. Do not ship that bound.
+
 ## Harbor-Index
 
 Paper arXiv 2609.04298, site, hub dataset `harbor-index/harbor-index-1.0`. GitHub README still says 80 in one sentence; site and paper say 82. Funnel numbers 6627 / 1311 / 307 / 100 / 82 confirmed.

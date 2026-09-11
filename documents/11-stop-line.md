@@ -1,6 +1,8 @@
 # Stop line
 
-The pipeline is stopped at human validation. Packets are unlabeled.
+Human labeling of the 16 Harbor packets is **still deferred**. The missing piece was not more human opinions. It was whether cheap machine evidence predicts the 1,699 labels we already have.
+
+Do not start the 6-packet pilot until `data/gold/risk_model_by_repo.json` exists and the packet includes the cheap evidence vector.
 
 ## Ready for a human
 

@@ -23,4 +23,4 @@ If the model says tasks 913, 1427, and 8921 look suspicious, that is a queue. Th
 
 ## Status in this checkout
 
-No trained model. SWE-bench gold has labels and almost no execution features. Using the 2024 severity axes as X to predict `filter_out` would be circular (`filter_out` is defined from those axes). Coverage simulations that need a *risk* score used FAIL_TO_PASS severity only as a **weak proxy** for H2 discovery, and the UCB was still computed from the SRS arm. That proxy is not a production model.
+First model is trained on frozen cheap artifact features. Severity axes are excluded by `assert_no_leakage`. Held-out-repo logistic AUROC is 0.76. Invalid-among-accepted is still high on this 68% invalid population. Docker mutation kill-rate is not yet in X. See [12-empirical-bridge.md](12-empirical-bridge.md).

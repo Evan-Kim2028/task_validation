@@ -17,7 +17,7 @@ Notes:
 
 ## Phase 1. Human-ground-truth corpus
 
-**Partial.** SWE-bench 1,699 ensemble rows ingested. Provenance tagged `EXPERT_VERIFIED`. Compact JSONL committed.
+**Done for SWE-bench 2024.** 1,699 ensemble rows ingested and joined to public test artifacts (1,699/1,699). Provenance tagged `EXPERT_VERIFIED`.
 
 Deferred: TB maintenance history, Harbor-Index as external validation, any TVB dump that later appears.
 
@@ -25,7 +25,7 @@ Note: 1,160/1,699 invalid under the 2024 filter is the right Y for "can we recov
 
 ## Phase 2. Evidence pipeline
 
-**Schema and Harbor static ingest: done.** Oracle/nop/cheat/mutation/fuzz/LLM audit: not run from this repo.
+**Cheap SWE artifacts: done.** Harbor static + job attach + file-mutant menu: done. Docker mutation *execution* and 1,699 SWE-bench gold-eval: not done.
 
 `eval_tasks` already has oracle 1.0 and nop 0.0 on every complete package we queued, in local gitignored `jobs/`. Those rewards are **not** copied here (possible secrets, large traces). Packets say `oracle_pass: None` unless a later attach step reads `jobs/**/reward.txt` with an explicit allowlist.
 
@@ -33,7 +33,7 @@ Note from `eval_tasks`: mutation Q2a is design-only. Cheat coverage is two tasks
 
 ## Phase 3. Risk model
 
-**Not trained.** Circular if we predict `filter_out` from the severities that define it. Needs execution features on a labeled set, or a second gold source.
+**First non-circular model trained.** Repo-holdout logistic AUROC 0.76. Not a certifier. Needs execution features and a second gold source before H2.
 
 ## Phase 4. Freeze
 

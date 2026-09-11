@@ -16,14 +16,14 @@ Synthetic task generation is Part 2. This repo does not generate new tasks.
 
 ## Current stop line
 
-The pipeline stops at human review. Sixteen Harbor tasks from `eval_tasks` have packets in [`data/review_queue/packets/`](data/review_queue/packets/). Verdicts are blank. Do not fill them with a model.
-
-How to review: [`documents/08-human-review-protocol.md`](documents/08-human-review-protocol.md) and [`data/review_queue/README.md`](data/review_queue/README.md).
+Human labeling of the 16 Harbor packets is deferred until those packets include the cheap evidence vector. Do not fill verdicts with a model. See [`documents/11-stop-line.md`](documents/11-stop-line.md).
 
 ## Quick start
 
 ```sh
-python3 -m pytest tests
+uv venv .venv --python python3
+uv pip install --python .venv/bin/python -e '.[dev,fit]'
+PYTHONPATH=src .venv/bin/python -m pytest tests
 PYTHONPATH=src python3 -m task_validation.cli ingest-swe \
   --csv data/raw/swe-bench-verified/ensembled_annotations_public.csv \
   --out data/gold/swe_verified.jsonl
@@ -40,15 +40,35 @@ curl -fsSL -o /tmp/swe-ann.zip \
 unzip -o /tmp/swe-ann.zip -d data/raw/swe-bench-verified
 ```
 
+## Empirical bridge (2026-09-11)
+
+Cheap SWE-bench artifact features, **not** the human severity axes, predict the 2024 `filter_out` label at **logistic AUROC 0.76** on held-out repositories (150 tasks). That is the first non-circular H1 number. It is a ranker, not a certificate. Reproduce:
+
+```sh
+PYTHONPATH=src .venv/bin/python -m task_validation.cli join-swe \
+  --gold data/gold/swe_verified_compact.jsonl \
+  --parquet data/raw/swe-bench/test.parquet \
+  --out data/gold/swe_verified_features.jsonl
+PYTHONPATH=src .venv/bin/python -m task_validation.cli fit-risk \
+  --features data/gold/swe_verified_features.jsonl \
+  --out data/gold/risk_model_by_repo.json
+```
+
+Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/test-00000-of-00001.parquet`. Harbor oracle/nop/cheat from local `eval_tasks/jobs` are attached in `data/gold/eval_tasks_with_evidence.jsonl` (lakehouse: oracle pass, nop fail, cheat rejected, 3 file mutants).
+
+Human review of the 16 packets stays deferred until packets carry this evidence vector.
+
 ## What already ran
 
 On the 1,699 SWE-bench Verified ensemble labels (2024 conservative protocol):
 
 | Design | n | Replicates | True invalid rate | Mean UCB | Nominal 95% coverage |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Simple random | 100 | 200 | 0.683 | 0.758 | 0.97 |
-| Stratified by repo | 100 | 200 | 0.683 | 0.754 | 0.945 |
-| Hybrid (UCB from SRS arm) | 100 | 200 | 0.683 | 0.781 | 0.985 |
+| Simple random | 100 | 2000 | 0.683 | 0.756 | 0.958 |
+| Stratified by repo | 100 | 2000 | 0.683 | 0.757 | 0.955 |
+| Hybrid (UCB from SRS arm) | 100 | 2000 | 0.683 | 0.778 | 0.964 |
+| SRS on ~2% invalid population | 100 | 2000 | 0.02 | 0.058 | 1.00 |
+| Stratified on ~2% invalid | 100 | 2000 | 0.02 | 0.040 | **0.90** |
 
 That population is *mostly invalid* under the 2024 filter. The simulation checks whether the bound covers. It is not a certificate of SWE-bench Verified residual error. OpenAI's 2026 59.4% figure is 138 hard unsolved tasks, not a probability sample of the 500.
 
