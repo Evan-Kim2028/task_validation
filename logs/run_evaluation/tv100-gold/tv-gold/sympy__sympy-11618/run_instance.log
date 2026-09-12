@@ -1,0 +1,69 @@
+2026-09-12 00:45:36,051 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:46:02,225 - INFO - Creating container for sympy__sympy-11618...
+2026-09-12 00:46:03,076 - INFO - Container for sympy__sympy-11618 created: 66c2c1252da5f4343ccdfb34fac9b05978aec9738557f94997d6d0a6e5bc4507
+2026-09-12 00:46:03,391 - INFO - Container for sympy__sympy-11618 started: 66c2c1252da5f4343ccdfb34fac9b05978aec9738557f94997d6d0a6e5bc4507
+2026-09-12 00:46:03,391 - INFO - Intermediate patch for sympy__sympy-11618 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-11618/patch.diff, now applying to container...
+2026-09-12 00:46:03,560 - INFO - >>>>> Applied Patch:
+Checking patch sympy/geometry/point.py...
+Applied patch sympy/geometry/point.py cleanly.
+
+2026-09-12 00:46:03,794 - INFO - Git diff before:
+diff --git a/sympy/geometry/point.py b/sympy/geometry/point.py
+index 593048464..5b0c3aafe 100644
+--- a/sympy/geometry/point.py
++++ b/sympy/geometry/point.py
+@@ -266,6 +266,20 @@ def distance(self, p):
+         sqrt(x**2 + y**2)
+ 
+         """
++        if type(p) is not type(self):
++            if len(p) == len(self):
++                return sqrt(sum([(a - b)**2 for a, b in zip(
++                    self.args, p.args if isinstance(p, Point) else p)]))
++            else:
++                p1 = [0] * max(len(p), len(self))
++                p2 = p.args if len(p.args) > len(self.args) else self.args
++
++                for i in range(min(len(p), len(self))):
++                    p1[i] = p.args[i] if len(p) < len(self) else self.args[i]
++
++                return sqrt(sum([(a - b)**2 for a, b in zip(
++                    p1, p2)]))
++
+         return sqrt(sum([(a - b)**2 for a, b in zip(
+             self.args, p.args if isinstance(p, Point) else p)]))
+2026-09-12 00:46:03,794 - INFO - Eval script for sympy__sympy-11618 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-11618/eval.sh; copying to container...
+2026-09-12 00:46:13,844 - INFO - Test runtime: 9.99 seconds
+2026-09-12 00:46:13,845 - INFO - Test output for sympy__sympy-11618 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-11618/test_output.txt
+2026-09-12 00:46:13,898 - INFO - Git diff after:
+diff --git a/sympy/geometry/point.py b/sympy/geometry/point.py
+index 593048464..5b0c3aafe 100644
+--- a/sympy/geometry/point.py
++++ b/sympy/geometry/point.py
+@@ -266,6 +266,20 @@ def distance(self, p):
+         sqrt(x**2 + y**2)
+ 
+         """
++        if type(p) is not type(self):
++            if len(p) == len(self):
++                return sqrt(sum([(a - b)**2 for a, b in zip(
++                    self.args, p.args if isinstance(p, Point) else p)]))
++            else:
++                p1 = [0] * max(len(p), len(self))
++                p2 = p.args if len(p.args) > len(self.args) else self.args
++
++                for i in range(min(len(p), len(self))):
++                    p1[i] = p.args[i] if len(p) < len(self) else self.args[i]
++
++                return sqrt(sum([(a - b)**2 for a, b in zip(
++                    p1, p2)]))
++
+         return sqrt(sum([(a - b)**2 for a, b in zip(
+             self.args, p.args if isinstance(p, Point) else p)]))
+2026-09-12 00:46:13,898 - INFO - Grading answer for sympy__sympy-11618...
+2026-09-12 00:46:13,905 - INFO - report: {'sympy__sympy-11618': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_issue_11617'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_point3D', 'test_Point2D', 'test_issue_9214', 'test_transform'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-11618: resolved: True
+2026-09-12 00:46:13,905 - INFO - Attempting to stop container sweb.eval.sympy__sympy-11618.tv100-gold...
+2026-09-12 00:46:29,156 - INFO - Container sweb.eval.sympy__sympy-11618.tv100-gold stopped successfully.
+2026-09-12 00:46:29,156 - INFO - Attempting to remove container sweb.eval.sympy__sympy-11618.tv100-gold...
+2026-09-12 00:46:29,211 - INFO - Container sweb.eval.sympy__sympy-11618.tv100-gold removed successfully.

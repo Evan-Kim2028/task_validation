@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15474",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1121
+  },
+  "response": {
+    "id": "gen-1789187604-T260CP2nxvAUrdDcVXOB",
+    "object": "chat.completion",
+    "created": 1789187604,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that reversing contenttypes 0002 on a non-default database leaves ContentType.name null, which points to using the schema editor connection when iterating ContentTypes. The FAIL_TO_PASS test only asserts that add_legacy_name uses the other alias (via AttributeError) rather than checking populated names after migrate, so it is slightly narrower than the reported symptom.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about unapplying ContentType migration 0002 not populating the legacy name field on a non-default database.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about unapplying ContentType migration 0002 not populating the legacy name field on a non-default database.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_55385e62-33df-93ef-b068-5af23078e42b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1401,
+      "completion_tokens": 491,
+      "total_tokens": 1892,
+      "cost": 0.005556,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005556,
+        "upstream_inference_prompt_cost": 0.00261,
+        "upstream_inference_completions_cost": 0.002946
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 358,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that reversing contenttypes 0002 on a non-default database leaves ContentType.name null, which points to using the schema editor connection when iterating ContentTypes. The FAIL_TO_PASS test only asserts that add_legacy_name uses the other alias (via AttributeError) rather than checking populated names after migrate, so it is slightly narrower than the reported symptom.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that reversing contenttypes 0002 on a non-default database leaves ContentType.name null, which points to using the schema editor connection when iterating ContentTypes. The FAIL_TO_PASS test only asserts that add_legacy_name uses the other alias (via AttributeError) rather than checking populated names after migrate, so it is slightly narrower than the reported symptom.",
+  "prompt_tokens": 1401,
+  "completion_tokens": 491,
+  "total_tokens": 1892,
+  "cost_usd": 0.005748,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

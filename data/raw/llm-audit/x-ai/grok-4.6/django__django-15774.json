@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15774",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1557
+  },
+  "response": {
+    "id": "gen-1789191675-6B8rkrxU6umDxOQ6P9O7",
+    "object": "chat.completion",
+    "created": 1789191675,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue asks for case-insensitive Accept-Language handling and cites parse_accept_lang_header, but the FAIL_TO_PASS tests instead require get_supported_language_variant and get_language_from_path to match mixed-case LANGUAGES keys and to return the original requested casing. A reasonable fix of header parsing alone would miss those unstated APIs and return-value conventions.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Django detecting HTTP Accept-Language header in a case-sensitive manner. It should be case-insensitive.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django detecting HTTP Accept-Language header in a case-sensitive manner. It should be case-insensitive.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dd35d9f0-d906-9e39-9b60-e9dc2188931e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2066,
+      "completion_tokens": 630,
+      "total_tokens": 2696,
+      "cost": 0.007528,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007528,
+        "upstream_inference_prompt_cost": 0.003748,
+        "upstream_inference_completions_cost": 0.00378
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 492,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue asks for case-insensitive Accept-Language handling and cites parse_accept_lang_header, but the FAIL_TO_PASS tests instead require get_supported_language_variant and get_language_from_path to match mixed-case LANGUAGES keys and to return the original requested casing. A reasonable fix of header parsing alone would miss those unstated APIs and return-value conventions.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue asks for case-insensitive Accept-Language handling and cites parse_accept_lang_header, but the FAIL_TO_PASS tests instead require get_supported_language_variant and get_language_from_path to match mixed-case LANGUAGES keys and to return the original requested casing. A reasonable fix of header parsing alone would miss those unstated APIs and return-value conventions.",
+  "prompt_tokens": 2066,
+  "completion_tokens": 630,
+  "total_tokens": 2696,
+  "cost_usd": 0.007911999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14430",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3543
+  },
+  "response": {
+    "id": "gen-1789191423-kVWVefcVKahOC868gPqe",
+    "object": "chat.completion",
+    "created": 1789191423,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only describes Coalesce(Sum(...), Value(0)) returning None on EmptyResultSet and a vague suggestion to special-case Coalesce with Value. The FAIL_TO_PASS tests also require Count empty values, nested/multi-arg Coalesce, skipping queries vs forcing them for RawSQL/custom Func, and an empty_aggregate_value protocol that is not stated in the issue.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Coalesce in aggregations being ignored when EmptyResultSet is returned. The tests go beyond just Coalesce with Value(0) - they test Count returning 0, empty_aggregate_value, nested ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Coalesce in aggregations being ignored when EmptyResultSet is returned. The tests go beyond just Coalesce with Value(0) - they test Count returning 0, empty_aggregate_value, nested ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Kw11I2y9te/PD/rrSHlnYvNwyko999LWZiNmMzBEMbedPpZUwdR1Bqu21wrqCKGE7mEevKlraQRzgXrnzmkef00ta+10ije1twPPMbT46+5LvV2YKeD+Qssyc15pirPWf5nhKzbE67sojDHnrfAox5olwJ6SuBT3uHvBiaBpFp8Xc/RnWC5o4SCzW6D9d39b6mC+PWZEt1UW0fe+UuLa+UqU7SfFvP2i4EzIEUfY6oD6wivSWyMHbUAckdhSgghWYiznLlhk7P6/o0Z6fJt4hSqES1UqtJ3PJW7XYT5uq2Dp9TyuykETUdj+9r7VM26v+oxL8LLSQzZz6a/TNbWBRKwTn9OlUGXhx04sYuv2RP13jSfiseR3LmxTQLhcRiRNMOg+GnhZCX2Uz+Q9BB/HShKNm6E7UP4e8agicut2EOhAf0BvpRn99XvBjm/sifGwyx4p9+/xgZ2gyhwGzLnxa3OeW8mRJfhqHcPfpgq+YiqQuCNtItDED3W+FcKPlRviEiGThG5eJkUEMb5TCu5T/kE0sFRWQrn0tOPHoJ6b34bHWcCMyBxHqDT89haz+uF6Zm6kkfDwavXAe7+37ZGLLOmKALPlc/hlOK+RaepRAimcQbtPr17uX2+uccPTgq5X6NNPOrWh8P3011Ci8lPJm2U0sNLqGzycPBerXeWEL0yEodvphiaCCxZGzRyhgpgaph2mrxWphYOXGpYA93wksx30CQ7eNR5TmmBbeFMbLxJbyUTXjCZWzo0jDGlXqL1lQHg3TPUth8FvZUnNOZ7HT7t5ceQdsCAvGtoWz+Yj6VWGU5N2STk5TfpFe3XVC2+aqvHW6/OoC+MZHc86l2P75SqegTsMfX7DZANDykz7n7lqjKkiSgU20Sqvb/eXjmE65eqbkkSVaSwZkoTvu1pGJEv2w2BVg8PrTU8aiSkGlvTspyOvVdE6gibDpaKr1CQG8PA/8NFNjYsxVyqHDaj85+rXwaJw7Ya7ZSuH98n5s6vV/AFgjDnbMcPs21ggPLkoCNT7WjuvqRbNji16Z+cqiqCX4mJc08ecbE5skhhU3RcOd9wj6h3BPgV8WW2XTKW7waDyN56lnWrVzEROCwbN8RWUs6tdfABytKoqdFn0b7ICY73hwMSN6HrAozkBb4Mt0lA6LADtgG4vpRaHwV7maFqoIhxLMUvAbrS/mmj2WeL8M1euozSHRjGnZmMxMwqIA9ZffteLFXVGpYhBSB0zFgeguZ6gBlV7viycErbBjxgJBQI+v6QxbhHD8FTqmtsrtw1UU0f8yC2c8hMSZu5GIIYVmwU4sacRKEKmJ1edZ6P2HTE3a+5KQp6yA2w6zrEwWw7Tbq3i8baErek68MK7+zK/WQhpew.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d813a706-ddb7-90ef-99d8-65ad97af19fe",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4019,
+      "completion_tokens": 379,
+      "total_tokens": 4398,
+      "cost": 0.009928,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009928,
+        "upstream_inference_prompt_cost": 0.007654,
+        "upstream_inference_completions_cost": 0.002274
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 242,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only describes Coalesce(Sum(...), Value(0)) returning None on EmptyResultSet and a vague suggestion to special-case Coalesce with Value. The FAIL_TO_PASS tests also require Count empty values, nested/multi-arg Coalesce, skipping queries vs forcing them for RawSQL/custom Func, and an empty_aggregate_value protocol that is not stated in the issue.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only describes Coalesce(Sum(...), Value(0)) returning None on EmptyResultSet and a vague suggestion to special-case Coalesce with Value. The FAIL_TO_PASS tests also require Count empty values, nested/multi-arg Coalesce, skipping queries vs forcing them for RawSQL/custom Func, and an empty_aggregate_value protocol that is not stated in the issue.",
+  "prompt_tokens": 4019,
+  "completion_tokens": 379,
+  "total_tokens": 4398,
+  "cost_usd": 0.010312,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

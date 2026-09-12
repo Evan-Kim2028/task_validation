@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15111",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1530
+  },
+  "response": {
+    "id": "gen-1789191542-3wqZsudyYB2v7jMJyfaL",
+    "object": "chat.completion",
+    "created": 1789191542,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue states that remote template fetches must send a User-Agent of Django/DJANGO_VERSION instead of urllib's default. The FAIL_TO_PASS test only checks that header on a startproject URL download, which matches the stated requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: django-admin start[project|app] should send a proper User-Agent header when fetching HTTP(S) URLs for templates. It specifies setting User-Agent to Django/DJANGO_VERSION.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: django-admin start[project|app] should send a proper User-Agent header when fetching HTTP(S) URLs for templates. It specifies setting User-Agent to Django/DJANGO_VERSION.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "vPmIp/NF6MIlsAas5MoOz5U0NoWaTduUOIAm+RVau+qqJLLNMyZQzSHxwi5c11HAE88mhpd6PhWAZJ4X57LDHGF+PyknEqkq5Kd3W4Tjdu0MtQ5bdueFwYaj99hP3DB8k7hx41+jAKrvpAOzkXsZVUwK1WFwrd3e49s9IoU+YnkK1eFl54HgUnQQ5b5I6spUKVHih54ADmGC2+UTl1T36Crxq9fEknkoXtQIFEn4IEVw/rEPOtMXg8Ykth/4895lDergqlsmGTbqvB4p7cjlEDQa3JDCsRrd93iandNHsw8qOgXi9CIYmgwz4FoWkMcyKzqz7n1mZPHhAg4PNc9fJuXlswMXoHVF+RnsizO5XrLbsSGHiLAgvNWCnnELdoTYw5wzQk+9sTGmRI9dO/vvijmOqp/7m+6+v9QD0nohdtRtagTNIcxnPZPlY3FWLbS1C80tZ8/mebv0yfHLoPPVGSsGvmIb0j5IZi5k7GvG385s5uQi/oqqckbD6oqSkVP/tVUhz/jnrbab+6Nr7phZt0R50E2nls5ncqndkyP/ChQcQpeT/WzZElTt3Mc28+Q4/XthgWtZh+2OnIp3sKFwif4tFrmvXZ4RFO8jDz2yF3uvj5fAQ72BxkRCk5ldk7qyqp4v1/k5DAZ6m07uZbrxbjkwtImar72fD5+FdkU/pT8H4Pi1sChTHH2YBRutMSX8TNJhhaJjn3o.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2ba5744a-c5f9-95e2-9e4b-a508301e45b8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1863,
+      "completion_tokens": 231,
+      "total_tokens": 2094,
+      "cost": 0.004728,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004728,
+        "upstream_inference_prompt_cost": 0.003342,
+        "upstream_inference_completions_cost": 0.001386
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 126,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue states that remote template fetches must send a User-Agent of Django/DJANGO_VERSION instead of urllib's default. The FAIL_TO_PASS test only checks that header on a startproject URL download, which matches the stated requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue states that remote template fetches must send a User-Agent of Django/DJANGO_VERSION instead of urllib's default. The FAIL_TO_PASS test only checks that header on a startproject URL download, which matches the stated requirement.",
+  "prompt_tokens": 1863,
+  "completion_tokens": 231,
+  "total_tokens": 2094,
+  "cost_usd": 0.005112,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

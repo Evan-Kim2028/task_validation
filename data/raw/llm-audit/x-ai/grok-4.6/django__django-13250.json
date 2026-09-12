@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13250",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3219
+  },
+  "response": {
+    "id": "gen-1789191175-oTzecCRE01a92eOCHLHy",
+    "object": "chat.completion",
+    "created": 1789191175,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue reports broken nested JSON containment on SQLite and even questions whether Python emulation is feasible, so a reasonable fix could implement nested matching rather than disabling the lookups. The FAIL_TO_PASS tests instead require a new feature flag and a specific NotSupportedError message, which the issue never states.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about JSONField's __contains and __contained_by lookups not working with nested values on SQLite. The author isn't sure if it's feasible to emulate in Python.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about JSONField's __contains and __contained_by lookups not working with nested values on SQLite. The author isn't sure if it's feasible to emulate in Python.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7fd96c93-5f42-945e-9ce6-b0cce3af07c5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3922,
+      "completion_tokens": 482,
+      "total_tokens": 4404,
+      "cost": 0.010352,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010352,
+        "upstream_inference_prompt_cost": 0.00746,
+        "upstream_inference_completions_cost": 0.002892
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 367,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue reports broken nested JSON containment on SQLite and even questions whether Python emulation is feasible, so a reasonable fix could implement nested matching rather than disabling the lookups. The FAIL_TO_PASS tests instead require a new feature flag and a specific NotSupportedError message, which the issue never states.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue reports broken nested JSON containment on SQLite and even questions whether Python emulation is feasible, so a reasonable fix could implement nested matching rather than disabling the lookups. The FAIL_TO_PASS tests instead require a new feature flag and a specific NotSupportedError message, which the issue never states.",
+  "prompt_tokens": 3922,
+  "completion_tokens": 482,
+  "total_tokens": 4404,
+  "cost_usd": 0.010736,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

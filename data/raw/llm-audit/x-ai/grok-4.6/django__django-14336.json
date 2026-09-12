@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14336",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1203
+  },
+  "response": {
+    "id": "gen-1789191396-F2mqQYX69dodThjEeacm",
+    "object": "chat.completion",
+    "created": 1789191396,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to make subquery column aliases consistent across case-sensitive databases, without requiring lowercase colN or quoting. The FAIL_TO_PASS test asserts a quoted lowercase col1 alias on a different query, so a valid consistent ColN (or unquoted) fix would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about case sensitivity of subquery aliases: 'Col%d' vs 'col%d'. The gold patch changes 'Col%d' to quoted 'col%d'.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about case sensitivity of subquery aliases: 'Col%d' vs 'col%d'. The gold patch changes 'Col%d' to quoted 'col%d'.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5fe8776e-3a40-9cf2-b387-a3876cfacab2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1595,
+      "completion_tokens": 499,
+      "total_tokens": 2094,
+      "cost": 0.0058,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0058,
+        "upstream_inference_prompt_cost": 0.002806,
+        "upstream_inference_completions_cost": 0.002994
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 386,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to make subquery column aliases consistent across case-sensitive databases, without requiring lowercase colN or quoting. The FAIL_TO_PASS test asserts a quoted lowercase col1 alias on a different query, so a valid consistent ColN (or unquoted) fix would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to make subquery column aliases consistent across case-sensitive databases, without requiring lowercase colN or quoting. The FAIL_TO_PASS test asserts a quoted lowercase col1 alias on a different query, so a valid consistent ColN (or unquoted) fix would fail.",
+  "prompt_tokens": 1595,
+  "completion_tokens": 499,
+  "total_tokens": 2094,
+  "cost_usd": 0.006184,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13032",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2302
+  },
+  "response": {
+    "id": "gen-1789190634-gAfojMRSsZAi3GX1LWb0",
+    "object": "chat.completion",
+    "created": 1789190634,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly specifies that ignored inputs must be retained and that a 1-D interval should bind to the non-ignored input, which a competent engineer can implement. The extra CompoundBoundingBox __repr__ expectation is a related consequence of the same mapping but is not stated in the issue, so it is only a mild extra constraint.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about ModelBoundingBox incorrectly handling ignored inputs. The FAIL_TO_PASS tests include more than just the issue - they also change CompoundBoundingBox repr and add test_complex_compou...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ModelBoundingBox incorrectly handling ignored inputs. The FAIL_TO_PASS tests include more than just the issue - they also change CompoundBoundingBox repr and add test_complex_compou...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "k7ry7yemOpTTcmvNQrWMv/xJDMIecT5UWFM5RX6tOfXwtUCn9eDG98mTU44j+gtZml7k0luhyU+qaCRWu3bcKoyA7BEC/UPNVeRRz37NXm4DL5CsZ7PzTnJbiNXbP2qopD1W8FtCYgRn0viraA3MY+1LQ9BxoBLEKwub3Cu+OwwaReL4ODnf4xQq5A+pcILctkAPqb9JfCbKVJPAoirbPp3KUK9mMalM+VL5HCwmJ5I/O4z1vTqIeo6vviYgy2uAQu1G+Xq/45AWAiRrhkdd4DJyE7uKAxRv2Xf2PcIcNW2xxrm7U7XV6vXW8MntUr1H0IuwXpF9xmp9wb57UmMAOEd9itNZe3yGytYk/Xr3hQKRoHvOF8qI9ALEkd1uOPoAiL6OTxmT1tMb1KWK1kmZvuNhUlby07UhbyM91fxCjTFlnIeApoSsKg8kllxqehWcRvc7YBNzAudJ0CqumB4vqaLfQbdp6QQljeTRchhFrLQWXNiJIKM8AyJl6XiRE+Ead34YR5w50680vA4TRsQEj3o3SheVkWA3NcN2/eN3ulI3+n6BZythQaupXZZmk4KhaRgkDKC6EC4RcIUdqjyx3l+majPv1n6hpWp44GSPF7nEG+z/4gD7bOcmWzohInqhY99UCk77IMto5uy0RN0d6Phek/eoT7vyCW2fzi4ykVAlRKyLsp2+i0lP2gAKTAuOnu80p7NAgEMeoua8UT/ODXF1yD1PklNicU4ROg9O6jqE+KKX/kkBJCD/T945BaBiTfIxcerESpkzy9PXSgGwzNZZILX0pEcN+oJZXk9IMmbtV8gUQ3nHXhQJ8Yf0HUGIkU0hZlnXpBklZ4lZfblqF/2G2WSvOLqxgsG5gBhlXH7nbJwB+oSKrl5tXpNnvWBuLBYC9L1YouSYxHOxzDMQp6MilUFV+pYlZCowxRyJR3zpN8nAAaNGZXUsXn6+XtiIUVTjbVLRw7aRN1VIL6JsowSWVNQugb/xEFUqMqdC1NRXhWvKm6iHOEJ4HjIC8e+DZ6F0E5jE85rYIqHdFeH/ly2y0yviV8hBEqooGmA+MvVkcyCkOu4r9RhXJ/izeMbzdRnY3gGF5/EP7JvAOWWjL/JUgfupYggi8+PQz17q5K4Xlr7rrUP9LbR6etBYgo6V31ePzTap8NkRbiugQ/p4ZkrcfipoVlpS5HMyYYx4kbTQZTvgUzlLV/BeH0TJq0TV6aKXOLuUvC7XNu37rtzoY7zJhM24e2R0kuk2sb+NDL1Tf8EuTK2X+c/6JXfSO5ViV4d3MlS1J3W7CRXjCuAeiuARMUdnu3i/9A/xPLKwXKQEyQWp9Be6M2rxr+sA2A33wt+cjFCCxQwwHgTvTdysR71G4Qqf4wyV7EiUgO0GruRHQ2FCBxloU6ZeqM+qd98VdTVso8GB6goTyqL2Rx+wglIQyDqr/l07UauuDvNcdRyQ0ro3BXjPjs/ir/btXjMJcPpT0q5ZlOQ+PSJJbtv75TVczx/HYDY9TQrx5c0TcOwbPkpfCVx74w0oqvFJY+YnqKPFk+poIhHnsLp9yEUBgZ4SKbdKXGv1APuyXDAbdWGuO/LWo4Uq4kBc8Q9vt0rv9c0WkE3emzUm0GWA/16eT2h5xm4hsq/Pkai9Jc6ohivhNiEl/KKjm8w4mDo4CqKNx3yNiHAzIgh5Za3G6Oqu0RSjo6ZKYwY+Yx0uKKIOt3Oec5cfMxcpfDtl2LcguJ7rKdSaqYXcoxwHx7UM6dXc95KmOU1QHAfRmuPWaYKdag7XLMtNVEKgp/snfx+5OrRD1XDV7aMVTySOkqkDd63T8+9pWpSSskekg05tKjTwzXqKq0amDN2+Wlk9aDhjIHv1rjsohzDVXCLv6A6D012K46qIwJA5nbjYEwFs57jW2/KF2r8I3lPjffg3obadfNgAiqEpBqFxJFYYiMFe3vzC+HRpkjPJFB5Klah4k+gJjJLagQ+ococLQJUQAHn18P1n9K9YEDAE1A4sw2vqyK8ai9JUdqyfwpvx3SMtlqfTLCglrNhsvlvYmk3h6I+ly03y7q0eV+/H1Gec6d+HyfA8F5Q723ji31RvRi2qJRVxA6mr.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_99ac340b-7154-9a20-9d06-fb0144f47306",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 473,
+      "total_tokens": 3258,
+      "cost": 0.008216,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008216,
+        "upstream_inference_prompt_cost": 0.005378,
+        "upstream_inference_completions_cost": 0.002838
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 350,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly specifies that ignored inputs must be retained and that a 1-D interval should bind to the non-ignored input, which a competent engineer can implement. The extra CompoundBoundingBox __repr__ expectation is a related consequence of the same mapping but is not stated in the issue, so it is only a mild extra constraint.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly specifies that ignored inputs must be retained and that a 1-D interval should bind to the non-ignored input, which a competent engineer can implement. The extra CompoundBoundingBox __repr__ expectation is a related consequence of the same mapping but is not stated in the issue, so it is only a mild extra constraint.",
+  "prompt_tokens": 2785,
+  "completion_tokens": 473,
+  "total_tokens": 3258,
+  "cost_usd": 0.008407999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

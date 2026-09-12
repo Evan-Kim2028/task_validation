@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15503",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2100
+  },
+  "response": {
+    "id": "gen-1789191615-hN09n9kyQ5tP3vLmChae",
+    "object": "chat.completion",
+    "created": 1789191615,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that has_key/has_keys/has_any_keys fail for numeric-looking JSON object keys on non-Postgres backends, which is enough for a competent engineer to implement the intended lookup behavior. The FAIL_TO_PASS cases add nested paths and array-index combinations beyond the ticket example, so they are slightly narrower/richer than the written repro but still check the same bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_60a37eab-b4d6-9c8a-9e6c-f7497065a52c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2697,
+      "completion_tokens": 515,
+      "total_tokens": 3212,
+      "cost": 0.008292,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008292,
+        "upstream_inference_prompt_cost": 0.005202,
+        "upstream_inference_completions_cost": 0.00309
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 375,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that has_key/has_keys/has_any_keys fail for numeric-looking JSON object keys on non-Postgres backends, which is enough for a competent engineer to implement the intended lookup behavior. The FAIL_TO_PASS cases add nested paths and array-index combinations beyond the ticket example, so they are slightly narrower/richer than the written repro but still check the same bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that has_key/has_keys/has_any_keys fail for numeric-looking JSON object keys on non-Postgres backends, which is enough for a competent engineer to implement the intended lookup behavior. The FAIL_TO_PASS cases add nested paths and array-index combinations beyond the ticket example, so they are slightly narrower/richer than the written repro but still check the same bug.",
+  "prompt_tokens": 2697,
+  "completion_tokens": 515,
+  "total_tokens": 3212,
+  "cost_usd": 0.008483999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12669",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2066
+  },
+  "response": {
+    "id": "gen-1789191074-YknNu3Bv8Qk6urJ9DgTn",
+    "object": "chat.completion",
+    "created": 1789191074,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests target deprecation of dotted aliases and new FieldError text, not the UUID hyphen case in the issue.\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to allow hyphens in ORDER_PATTERN so UUID-like order_by names validate; it does not specify deprecating raw column aliases or changing invalid-order errors to names_to_path FieldErrors. The listed tests therefore require unstated warning text and validation behavior a reasonable fix of the reported bug would not implement.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about adding proper field validation to QuerySet.order_by, specifically allowing hyphens in UUID columns for order_by.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding proper field validation to QuerySet.order_by, specifically allowing hyphens in UUID columns for order_by.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "OqWhAdDAb1fMGH36oReweCOdslQp25lArse4lpIr7iUj7Kc1TfLb6XmVPDQbgDZYN8AS2INe0cr3KhdWfr/KgW5utW0kCIvKQcYYVvbzKVHppQs5bZTNlQ971ei0cnaxEfztYZNwciUXo0fEN9MRxW4MdMmDxXm2hnsJpPW00MZwt9DBUV4uUzdQFHt/qUrBli8GWnPZuXpXomQBjHssVx01Af/+GRIBbIzxSA+5nzKGDvfJRMWhnY1RvAYRVPaEZCrnzyanVB50XX+e/LO/YOox1rNSRzMArAOiygPFLLWZl60i/PWqCnL5LEYmarv5u0Hj8yYdY9/OUeOnRC+9V22oV/ng3nsNd7T22oS4pD32WzP++aYIZGZzt6llaz5skR/MCeiolY0TgGOaBDLTh8GdHZwq69gww9LlT4uJvoONKyVc1VdVw2UVNNwVAQ9nfe1v30MB56KQRegnkaGHxD4EZtW1iBwMUeF2aJCivZBY4NQofMxSAthgcOlxeTnVGlO16XXRaBmg4DmnRIZ/+n7cnnF1+o+cZV7V7vsmC27xyyiP6TuDFH47z931NCCzz5GdWfR1KL49JHAXzSuJvBmWHSNduVX9iD4CfgkqBZUDYVurhTgoiS4Srvb8n88UxThA0GIA9Dy9GjU6KuVCY31lqpNR3ewF6H0Rq7Lc3l6T9nKpWt4eDycjvd04pAjiu65UPWI9Aa3kZ4KBgWZI6IwlqEsFwSSXBjqUQpzrU261L64e9AXknDstw3d3aM+Oy5bmJq20B3s2lzTgqPrnpmo5LLcASkB6tPjmPwnwSDgvAJwXf8e6HO/HV556j6SF67iyfpmaLOIkHKRKT+2y3JcPUWTgnSuL8uLeuwbRGncp0gaw11al6ta/Z4kV8OqwI5fVfGwyTL0tAQWfZ0UzcXjq+JAovUDqAb7z5M0z4bFWX0X8JLDMFTphOj7v37aEQzsPuR0oNOO7fq7u9x272o/xkuCwGaoDCKFZM4v5PxkdJQJxjwF1+QyhUvYuj5NzxPnh0YwEfN5pTaVhnN3vgtTM2n93Ys0t/wa9ncXCC/+gHwE4qp+FNxG/EDXOWc5/mfCbQ7cKZk8v0R8obBRra+2AZqRjYVAg8RGKK2WMeV0Qo4+f6p02RjbUB02ax698qoO5xLEN6TBkIh84ACf4rIAorVmHkQMF9YO4YhCAbL2s4JKJZsV3wBMkWtoZvk2pC76uOSOhkcSyK2j9DM+z1S8/s8YMISKfgmts9g1tev10ok+08GyRF2o0LrZoU5UlOF0xo3fhaZkW3c0xs0K623fyK1gq8KAwkivSO4pEUcL13/H9wIR/W6VlBw87DNLErU+HeP3NbCdMqinYtvj9kjnqvvB+cwT2LtDscaeaOsR1Cl+6O5hpAGMvKirXzs6drsqtOscove0MaIdcb5vYPkJV/q84qO/6Jc5wwXfCTrI7AzlOXm2eeFPQIwwDJvotCBZkTevnMNU9B5iUDwABbRsA5AWATgy0sVyg9GIm4SfPGDini+6NADG/vhqO0Cx7mlvNRkyrret3Y68UCvTsNqKx86bXVJN0ONXhCvu4dLpffZX1amLCjfHhO4valVGi8axJP3gp5kpnSj9AwjG3U44zaTfYpnEJbSPYMQcSLAV/wwuzbPvecSb3IEbJO/V7TPh+FeHeIe0KoDZwYG/FepVezN9qD5fcIzmpz4przVclrq4RIs23HQtbMnQWl5USwKjt9spcjFGT3Rbn+JdP2uzHyPu1idrarHi/O6h+qYKI7tArqnRcX3E.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_64bacf88-8394-976c-83f3-ba4330d2161b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2449,
+      "completion_tokens": 451,
+      "total_tokens": 2900,
+      "cost": 0.007412,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007412,
+        "upstream_inference_prompt_cost": 0.004706,
+        "upstream_inference_completions_cost": 0.002706
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 298,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests target deprecation of dotted aliases and new FieldError text, not the UUID hyphen case in the issue.",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to allow hyphens in ORDER_PATTERN so UUID-like order_by names validate; it does not specify deprecating raw column aliases or changing invalid-order errors to names_to_path FieldErrors. The listed tests therefore require unstated warning text and validation behavior a reasonable fix of the reported bug would not implement.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests target deprecation of dotted aliases and new FieldError text, not the UUID hyphen case in the issue.",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to allow hyphens in ORDER_PATTERN so UUID-like order_by names validate; it does not specify deprecating raw column aliases or changing invalid-order errors to names_to_path FieldErrors. The listed tests therefore require unstated warning text and validation behavior a reasonable fix of the reported bug would not implement.",
+  "prompt_tokens": 2449,
+  "completion_tokens": 451,
+  "total_tokens": 2900,
+  "cost_usd": 0.007604,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14681",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2763
+  },
+  "response": {
+    "id": "gen-1789191472-bvJ4QpRt5fqzZBgHM4tD",
+    "object": "chat.completion",
+    "created": 1789191472,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that filesystem/storage errors during upload not be reported as CSRF failures, which matches letting OSError propagate. The tests also require UnreadablePostError to keep being swallowed as a CSRF miss, which is existing middleware behavior not stated in the issue.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about CSRF failure being incorrectly reported when there's a storage problem during file upload. Expected: filesystem error instead of CSRF 403.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The gold patch correctly distinguishes UnreadablePostError (still caught as CSRF failure) from OSError (propagates as expected for storage issues). The issue description focuses on filesystem errors surfacing but doesn't explicitly require preserving the UnreadablePostError handling for broken connections.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CSRF failure being incorrectly reported when there's a storage problem during file upload. Expected: filesystem error instead of CSRF 403.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The gold patch correctly distinguishes UnreadablePostError (still caught as CSRF failure) from OSError (propagates as expected for storage issues). The issue description focuses on filesystem errors surfacing but doesn't explicitly require preserving the UnreadablePostError handling for broken connections.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_56870a53-408e-935c-8926-1c20413417bf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3185,
+      "completion_tokens": 728,
+      "total_tokens": 3913,
+      "cost": 0.010354,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010354,
+        "upstream_inference_prompt_cost": 0.005986,
+        "upstream_inference_completions_cost": 0.004368
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 620,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that filesystem/storage errors during upload not be reported as CSRF failures, which matches letting OSError propagate. The tests also require UnreadablePostError to keep being swallowed as a CSRF miss, which is existing middleware behavior not stated in the issue.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that filesystem/storage errors during upload not be reported as CSRF failures, which matches letting OSError propagate. The tests also require UnreadablePostError to keep being swallowed as a CSRF miss, which is existing middleware behavior not stated in the issue.",
+  "prompt_tokens": 3185,
+  "completion_tokens": 728,
+  "total_tokens": 3913,
+  "cost_usd": 0.010738000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

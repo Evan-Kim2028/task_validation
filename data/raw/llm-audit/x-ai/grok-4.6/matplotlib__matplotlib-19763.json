@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-19763",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2476
+  },
+  "response": {
+    "id": "gen-1789191898-pGmJcxBEtjB8n2YxLUMj",
+    "object": "chat.completion",
+    "created": 1789191898,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS only requires calling a renamed _onmove and does not check the reported nbagg/cursor/CPU bug.\", \"confidence\": 0.82, \"rationale\": \"The issue describes disappearing MultiCursor and CPU load on nbagg with useblit=False, which a senior engineer could reasonably fix without a public-API rename. The tests instead require the unstated private _onmove name and never assert the reported behavior.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_65c4fe76-9f41-9d19-a672-9341b7175d22",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3049,
+      "completion_tokens": 575,
+      "total_tokens": 3624,
+      "cost": 0.009356,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009356,
+        "upstream_inference_prompt_cost": 0.005906,
+        "upstream_inference_completions_cost": 0.00345
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 440,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS only requires calling a renamed _onmove and does not check the reported nbagg/cursor/CPU bug.",
+    "confidence": 0.82,
+    "rationale": "The issue describes disappearing MultiCursor and CPU load on nbagg with useblit=False, which a senior engineer could reasonably fix without a public-API rename. The tests instead require the unstated private _onmove name and never assert the reported behavior.",
+    "p_invalid": 0.9
+  },
+  "s": 2.25,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS only requires calling a renamed _onmove and does not check the reported nbagg/cursor/CPU bug.",
+  "confidence": 0.82,
+  "rationale": "The issue describes disappearing MultiCursor and CPU load on nbagg with useblit=False, which a senior engineer could reasonably fix without a public-API rename. The tests instead require the unstated private _onmove name and never assert the reported behavior.",
+  "prompt_tokens": 3049,
+  "completion_tokens": 575,
+  "total_tokens": 3624,
+  "cost_usd": 0.009548000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

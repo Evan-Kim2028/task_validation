@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1921",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 960
+  },
+  "response": {
+    "id": "gen-1789192155-HYvlkEptEmoKZUdUwoVU",
+    "object": "chat.completion",
+    "created": 1789192155,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS includes several unrelated existing tests not added by the test patch\", \"confidence\": 0.78, \"rationale\": \"The issue clearly specifies that session default headers set to None should be omitted rather than sent as the string None, matching the documented per-request behavior. The listed FAIL_TO_PASS set is not a fair check of that issue because it includes multiple unrelated tests beyond the single new header test.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"FAIL_TO_PASS list includes unrelated tests like digest auth and netrc that likely fail due to gold patch's global None filtering, not the issue\",\n  \"confidence \": 0.75,\n  \"rationale\": \"Issue description and docs clearly specify behavior for session headers set to None. Relevant test matches issue exactly. Extra FAIL_TO_PASS tests suggest dataset noise rather than specification gaps.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"FAIL_TO_PASS list includes unrelated tests like digest auth and netrc that likely fail due to gold patch's global None filtering, not the issue\",\n  \"confidence \": 0.75,\n  \"rationale\": \"Issue description and docs clearly specify behavior for session headers set to None. Relevant test matches issue exactly. Extra FAIL_TO_PASS tests suggest dataset noise rather than specification gaps.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1fa46c0f-3dbc-934b-bc43-40e1d8d10c8e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1293,
+      "completion_tokens": 854,
+      "total_tokens": 2147,
+      "cost": 0.007518,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007518,
+        "upstream_inference_prompt_cost": 0.002394,
+        "upstream_inference_completions_cost": 0.005124
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 723,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS includes several unrelated existing tests not added by the test patch",
+    "confidence": 0.78,
+    "rationale": "The issue clearly specifies that session default headers set to None should be omitted rather than sent as the string None, matching the documented per-request behavior. The listed FAIL_TO_PASS set is not a fair check of that issue because it includes multiple unrelated tests beyond the single new header test.",
+    "p_invalid": 0.85
+  },
+  "s": 2.25,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS includes several unrelated existing tests not added by the test patch",
+  "confidence": 0.78,
+  "rationale": "The issue clearly specifies that session default headers set to None should be omitted rather than sent as the string None, matching the documented per-request behavior. The listed FAIL_TO_PASS set is not a fair check of that issue because it includes multiple unrelated tests beyond the single new header test.",
+  "prompt_tokens": 1293,
+  "completion_tokens": 854,
+  "total_tokens": 2147,
+  "cost_usd": 0.00771,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

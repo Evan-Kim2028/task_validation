@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-10466",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "b031109a-f2ac-9fc5-b5b7-70c66852dc26",
+    "object": "chat.completion",
+    "created": 1789194125,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to drop duplicate (source, line) locations on gettext messages, which a competent engineer can implement from the report and suggested unique-set approach. The FAIL_TO_PASS test fairly checks uniqueness and distinct files/lines but also pins a specific location order that the issue never stated.\", \"p_invalid\": 0.25}",
+          "reasoning_content": "The issue is about duplicate locations in gettext Message.locations. The user wants unique locations.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test requires specific sorted order of locations; issue didn't specify ordering\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2503,
+      "completion_tokens": 117,
+      "total_tokens": 3038,
+      "prompt_tokens_details": {
+        "text_tokens": 2503,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 418,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25323200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to drop duplicate (source, line) locations on gettext messages, which a competent engineer can implement from the report and suggested unique-set approach. The FAIL_TO_PASS test fairly checks uniqueness and distinct files/lines but also pins a specific location order that the issue never stated.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to drop duplicate (source, line) locations on gettext messages, which a competent engineer can implement from the report and suggested unique-set approach. The FAIL_TO_PASS test fairly checks uniqueness and distinct files/lines but also pins a specific location order that the issue never stated.",
+  "prompt_tokens": 2503,
+  "completion_tokens": 535,
+  "total_tokens": 3038,
+  "cost_usd": 0.008216000000000001,
+  "cost_in_usd_ticks": 25323200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1672
+}

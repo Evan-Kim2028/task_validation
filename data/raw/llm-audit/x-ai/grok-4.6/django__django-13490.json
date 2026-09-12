@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13490",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1495
+  },
+  "response": {
+    "id": "gen-1789191238-Hi6gMdwihX4BmVBANSsp",
+    "object": "chat.completion",
+    "created": 1789191238,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to reject get() with filters after union/intersection/difference, but does not specify exception type or wording. The FAIL_TO_PASS test requires NotSupportedError and an exact message string, which a valid implementation could miss.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cdb01133-7d2b-9d08-8ac3-f046b91547fd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1882,
+      "completion_tokens": 670,
+      "total_tokens": 2552,
+      "cost": 0.0074,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0074,
+        "upstream_inference_prompt_cost": 0.00338,
+        "upstream_inference_completions_cost": 0.00402
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 565,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to reject get() with filters after union/intersection/difference, but does not specify exception type or wording. The FAIL_TO_PASS test requires NotSupportedError and an exact message string, which a valid implementation could miss.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to reject get() with filters after union/intersection/difference, but does not specify exception type or wording. The FAIL_TO_PASS test requires NotSupportedError and an exact message string, which a valid implementation could miss.",
+  "prompt_tokens": 1882,
+  "completion_tokens": 670,
+  "total_tokens": 2552,
+  "cost_usd": 0.007784,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

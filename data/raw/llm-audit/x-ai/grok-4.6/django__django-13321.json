@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13321",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 8203
+  },
+  "response": {
+    "id": "gen-1789191196-MzQ2tsM5yUvdbMhph94y",
+    "object": "chat.completion",
+    "created": 1789191196,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that invalid/legacy session payloads must not crash and should yield an empty session, which a competent engineer can implement by catching decode errors. The FAIL_TO_PASS change mainly adds that extra invalid payload and slightly tightens an already-present security log assertion rather than introducing unrelated behavior.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about decoding invalid session data crashing with binascii.Error: Incorrect padding. The expected behavior is that invalid session data shouldn't crash, similar to existing handling.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about decoding invalid session data crashing with binascii.Error: Incorrect padding. The expected behavior is that invalid session data shouldn't crash, similar to existing handling.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8d6dd303-3ec1-9a8b-856f-d811aec34e3f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9266,
+      "completion_tokens": 603,
+      "total_tokens": 9869,
+      "cost": 0.021766,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.021766,
+        "upstream_inference_prompt_cost": 0.018148,
+        "upstream_inference_completions_cost": 0.003618
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 487,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that invalid/legacy session payloads must not crash and should yield an empty session, which a competent engineer can implement by catching decode errors. The FAIL_TO_PASS change mainly adds that extra invalid payload and slightly tightens an already-present security log assertion rather than introducing unrelated behavior.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that invalid/legacy session payloads must not crash and should yield an empty session, which a competent engineer can implement by catching decode errors. The FAIL_TO_PASS change mainly adds that extra invalid payload and slightly tightens an already-present security log assertion rather than introducing unrelated behavior.",
+  "prompt_tokens": 9266,
+  "completion_tokens": 603,
+  "total_tokens": 9869,
+  "cost_usd": 0.02215,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

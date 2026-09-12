@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-22767",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1490
+  },
+  "response": {
+    "id": "gen-1789191944-fIPTHyO5RVxFrcP7J14H",
+    "object": "chat.completion",
+    "created": 1789191944,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS requires raising ValueError on filled contours, opposite of the issue's expected successful contourf result.\", \"confidence\": 0.92, \"rationale\": \"The issue asks to fix the default indices so contourf find_nearest_contour works and returns a nearest-point tuple, not to reject filled contours. The only FAIL_TO_PASS test asserts a specific ValueError message that a faithful implementation of the reported bug would not raise.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about find_nearest_contour having a wrong default for indices - should be range(len(self.layers)) instead of range(len(self.levels)). The reproduction uses contourf and gets IndexError.\n\n...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about find_nearest_contour having a wrong default for indices - should be range(len(self.layers)) instead of range(len(self.levels)). The reproduction uses contourf and gets IndexError.\n\n...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "43K+dRa3Id7bWStl+1RkJa0jsNM8SGc2PegDDgjelqwHIx2h8Ml9RyyGrUXLQKmY3jOoAZLBob7EvaKxTLCyUpmwh5G/u17wZvyWjsqsYFePY1DuP67eHaTzrQ5zkWzDRVa3ObhObQEMEww4qRkXgjGc7oXeH2Tf5ealnPUeEb3l6L3SVizFXyJsglfGcy4FmjGzjyGVLYOsCPINkeQrsNbhqwpQa05hcYO9YA1ITLnNOmrImpFPgaAQ3EeqtlV6EZjrFsm3ZKmEI+508FaRpUeCbcXeo7EJEazeihu/V0gX8Ujwkckv/UZVcLMBruWGFPbTvEnOWLTdyupQII22538ekgewzJxQH7y3DLvuJh7YIsCZqdoUderCZsbM7kTK7ruSE8JAdskt1u4tW4e65Q64Rumi7hynu/unbWqpQ8qkwbMar6SC0eZlPpaDcmNseAq07YUhfAoPHBEZRRy46i+N4TbzHxWBOafRVnkOWKmKzc7GZyGjfeijy8Qozp4yf9qBehhc4tUQ/kbE7PeEN5+xSCDP2l8LlvIAPBy4gMhEQLjgi2cTnet0LYXUgF6VW/biLbFDYK5neNvitQ1arbvCjxAnaxYgz5nw8I2x3e3EruNRWOIfoYOwsCkpDk6tl0ZOv6bCeOQmXAhdJ/3vhfAphjTGUe7cE1c8CnetIwXbpxqyHYa3S4nV/ga0o/KQUSaPFvwKLaMyc4SLxnalLosxgfra6Fjhyr0fV5NPKKP0qSgfcHpNBomot6bUPp/szj5EM6yoFeTboYNVuXKTFel2o6F++cyGHvilo1EM0SbgU1fLzO67DXMcMoltpTEoARi3wOlySxjD/vi8/VAxeQrUv23tmVcSc5NWluUE74yByktrrti9dAta6woWgobTrOzBmAaDo6U0nhKK0TgECdXxlpjBypLIz19dM9AocBYqpT4B9enW2reHnFYs11mmmrOs4unrwhjwYetZWKmRf99Cw7mR4/2QoMFS+yi5AW2nox3QBeSTQRQhOTJ+S+4CsCxB0sKIs/d9agrirbMhlAbc8sFVUY5XkRStViTc0MW7fe6fclC9aT1sMFhPBQoELJZQcIkrTfglqvWk2qRVdQ8BP58iLwpesf00DOh4JAG+UobiTBJNoAouWhSP3XXHCfGTZ0+6CdzgO55hfMImk7vUWAmnu6FK5z/HSC1r4j4lHzveohyQYoifGVCYeYqY5R6VPCmVGx5OMuhSy7BPD7rW/loMr9a4f2FJTUkfxOrHcfBzdYV6tfu5TCIRhb6fRo28VXd3BkkSVgQYNUplTQaesLV7jr5fkzBuulE202nA9qwCcKXHpJB04vyToCktvWFL4w14y0JvqRlSwUNiJdQPRzaIHsSrxqkNFg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_44d9230b-23c9-91f7-a74c-a3e90d0d7a55",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2012,
+      "completion_tokens": 353,
+      "total_tokens": 2365,
+      "cost": 0.00595,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00595,
+        "upstream_inference_prompt_cost": 0.003832,
+        "upstream_inference_completions_cost": 0.002118
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 217,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS requires raising ValueError on filled contours, opposite of the issue's expected successful contourf result.",
+    "confidence": 0.92,
+    "rationale": "The issue asks to fix the default indices so contourf find_nearest_contour works and returns a nearest-point tuple, not to reject filled contours. The only FAIL_TO_PASS test asserts a specific ValueError message that a faithful implementation of the reported bug would not raise.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS requires raising ValueError on filled contours, opposite of the issue's expected successful contourf result.",
+  "confidence": 0.92,
+  "rationale": "The issue asks to fix the default indices so contourf find_nearest_contour works and returns a nearest-point tuple, not to reject filled contours. The only FAIL_TO_PASS test asserts a specific ValueError message that a faithful implementation of the reported bug would not raise.",
+  "prompt_tokens": 2012,
+  "completion_tokens": 353,
+  "total_tokens": 2365,
+  "cost_usd": 0.006142,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

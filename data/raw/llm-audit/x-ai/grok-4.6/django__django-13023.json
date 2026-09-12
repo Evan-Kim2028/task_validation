@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13023",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1028
+  },
+  "response": {
+    "id": "gen-1789191123-AKeKTfc2FZa01S9SQcqv",
+    "object": "chat.completion",
+    "created": 1789191123,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that DecimalField.to_python convert TypeError on non-decimal inputs such as dicts into ValidationError, which a competent engineer would implement by broadening the except in to_python. The FAIL_TO_PASS suite is only slightly broader (more types, clean(), existing invalid message) and would still pass a straightforward TypeError catch.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about DecimalField.to_python() raising TypeError on dict values instead of ValidationError. The tests check many invalid values: (), [], {}, set(), object(), complex(), strings, bytes, us...{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about DecimalField.to_python() raising TypeError on dict values instead of ValidationError. The tests check many invalid values: (), [], {}, set(), object(), complex(), strings, bytes, us...{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9cadf865-595a-9737-a596-11235d048ffa",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1325,
+      "completion_tokens": 655,
+      "total_tokens": 1980,
+      "cost": 0.006388,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006388,
+        "upstream_inference_prompt_cost": 0.002458,
+        "upstream_inference_completions_cost": 0.00393
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 528,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that DecimalField.to_python convert TypeError on non-decimal inputs such as dicts into ValidationError, which a competent engineer would implement by broadening the except in to_python. The FAIL_TO_PASS suite is only slightly broader (more types, clean(), existing invalid message) and would still pass a straightforward TypeError catch.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that DecimalField.to_python convert TypeError on non-decimal inputs such as dicts into ValidationError, which a competent engineer would implement by broadening the except in to_python. The FAIL_TO_PASS suite is only slightly broader (more types, clean(), existing invalid message) and would still pass a straightforward TypeError catch.",
+  "prompt_tokens": 1325,
+  "completion_tokens": 655,
+  "total_tokens": 1980,
+  "cost_usd": 0.006580000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

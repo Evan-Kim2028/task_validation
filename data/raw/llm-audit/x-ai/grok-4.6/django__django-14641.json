@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14641",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2115
+  },
+  "response": {
+    "id": "gen-1789191468-H6Xjn8MdMJCQZkL38Fsc",
+    "object": "chat.completion",
+    "created": 1789191468,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to relocate BoundField.initial datetime/time microsecond stripping into BaseForm.get_initial_for_field, which a competent engineer can implement from the cited code. Tests also require stripping for non-callable initials, while the issue text suggests placing the logic under the callable branch, so a literal reading could fail those cases.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about moving special-case logic from BoundField.initial() to BaseForm.get_initial_for_field(). The tests check that get_initial_for_field now strips microseconds from datetime/time when t...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about moving special-case logic from BoundField.initial() to BaseForm.get_initial_for_field(). The tests check that get_initial_for_field now strips microseconds from datetime/time when t...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b30c7c70-2203-9a62-9695-e49c60a439f7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2608,
+      "completion_tokens": 565,
+      "total_tokens": 3173,
+      "cost": 0.008222,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008222,
+        "upstream_inference_prompt_cost": 0.004832,
+        "upstream_inference_completions_cost": 0.00339
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 440,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to relocate BoundField.initial datetime/time microsecond stripping into BaseForm.get_initial_for_field, which a competent engineer can implement from the cited code. Tests also require stripping for non-callable initials, while the issue text suggests placing the logic under the callable branch, so a literal reading could fail those cases.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to relocate BoundField.initial datetime/time microsecond stripping into BaseForm.get_initial_for_field, which a competent engineer can implement from the cited code. Tests also require stripping for non-callable initials, while the issue text suggests placing the logic under the callable branch, so a literal reading could fail those cases.",
+  "prompt_tokens": 2608,
+  "completion_tokens": 565,
+  "total_tokens": 3173,
+  "cost_usd": 0.008606,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

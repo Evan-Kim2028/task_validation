@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-20374",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3938
+  },
+  "response": {
+    "id": "gen-1789191898-j25OEFHKyXaI7IBgaDX2",
+    "object": "chat.completion",
+    "created": 1789191898,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes the include/rebuild mismatch and the :context: NameError, and even proposes always treating context plots as out of date plus include-aware staleness. The FAIL_TO_PASS suite additionally asserts specific mtime/non-regeneration behavior for non-context plots and an included plot update, which a slightly different valid fix might miss.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about plot_directive being confused by include directives, specifically with the context option. The expected outcome is that context-dependent plots should always be considered out of da...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about plot_directive being confused by include directives, specifically with the context option. The expected outcome is that context-dependent plots should always be considered out of da...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_273da73c-6b42-986d-ab7b-a714520aad37",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4732,
+      "completion_tokens": 694,
+      "total_tokens": 5426,
+      "cost": 0.013244,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.013244,
+        "upstream_inference_prompt_cost": 0.00908,
+        "upstream_inference_completions_cost": 0.004164
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 566,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes the include/rebuild mismatch and the :context: NameError, and even proposes always treating context plots as out of date plus include-aware staleness. The FAIL_TO_PASS suite additionally asserts specific mtime/non-regeneration behavior for non-context plots and an included plot update, which a slightly different valid fix might miss.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes the include/rebuild mismatch and the :context: NameError, and even proposes always treating context plots as out of date plus include-aware staleness. The FAIL_TO_PASS suite additionally asserts specific mtime/non-regeneration behavior for non-context plots and an included plot update, which a slightly different valid fix might miss.",
+  "prompt_tokens": 4732,
+  "completion_tokens": 694,
+  "total_tokens": 5426,
+  "cost_usd": 0.013628000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

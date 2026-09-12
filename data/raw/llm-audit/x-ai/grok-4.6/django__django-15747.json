@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15747",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2243
+  },
+  "response": {
+    "id": "gen-1789191670-28kDwCpqgR3hITkUmLTV",
+    "object": "chat.completion",
+    "created": 1789191670,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that update succeed when the queryset is ordered by annotated fields and does not distinguish aggregates, m2m expressions, or a required error string. The FAIL_TO_PASS tests demand a specific FieldError message for aggregate ordering and success for m2m Abs annotations, which a valid fix of the reported admin/update failure need not implement.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.update() raising FieldError when ordered by an annotated field. The user wants this to work for non-aggregate annotations.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.update() raising FieldError when ordered by an annotated field. The user wants this to work for non-aggregate annotations.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_feac8642-dde3-9f1c-a221-5d2d6a7f021b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2694,
+      "completion_tokens": 495,
+      "total_tokens": 3189,
+      "cost": 0.008166,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008166,
+        "upstream_inference_prompt_cost": 0.005196,
+        "upstream_inference_completions_cost": 0.00297
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 368,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that update succeed when the queryset is ordered by annotated fields and does not distinguish aggregates, m2m expressions, or a required error string. The FAIL_TO_PASS tests demand a specific FieldError message for aggregate ordering and success for m2m Abs annotations, which a valid fix of the reported admin/update failure need not implement.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that update succeed when the queryset is ordered by annotated fields and does not distinguish aggregates, m2m expressions, or a required error string. The FAIL_TO_PASS tests demand a specific FieldError message for aggregate ordering and success for m2m Abs annotations, which a valid fix of the reported admin/update failure need not implement.",
+  "prompt_tokens": 2694,
+  "completion_tokens": 495,
+  "total_tokens": 3189,
+  "cost_usd": 0.008357999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

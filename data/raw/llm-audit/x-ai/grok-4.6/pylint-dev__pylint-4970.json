@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-4970",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 883
+  },
+  "response": {
+    "id": "gen-1789192807-BHZbmDp2Y7PSdZnqJPoo",
+    "object": "chat.completion",
+    "created": 1789192807,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue asks that pylint's min-similarity-lines=0 disable duplicate-code checking, but the only FAIL_TO_PASS test drives the standalone similar CLI with --duplicates=0 and empty stdout. A valid pylint-only fix would miss that unstated interface and fail the test.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about setting min-similarity-lines to 0 should disable duplicate code checking. The test uses similar.Run with --duplicates=0 and expects no output and exit code 0.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about setting min-similarity-lines to 0 should disable duplicate code checking. The test uses similar.Run with --duplicates=0 and expects no output and exit code 0.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ad3b153b-074b-9b49-8a1e-d62f5e0745b7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1195,
+      "completion_tokens": 461,
+      "total_tokens": 1656,
+      "cost": 0.004772,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004772,
+        "upstream_inference_prompt_cost": 0.002006,
+        "upstream_inference_completions_cost": 0.002766
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 347,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue asks that pylint's min-similarity-lines=0 disable duplicate-code checking, but the only FAIL_TO_PASS test drives the standalone similar CLI with --duplicates=0 and empty stdout. A valid pylint-only fix would miss that unstated interface and fail the test.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue asks that pylint's min-similarity-lines=0 disable duplicate-code checking, but the only FAIL_TO_PASS test drives the standalone similar CLI with --duplicates=0 and empty stdout. A valid pylint-only fix would miss that unstated interface and fail the test.",
+  "prompt_tokens": 1195,
+  "completion_tokens": 461,
+  "total_tokens": 1656,
+  "cost_usd": 0.005156,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

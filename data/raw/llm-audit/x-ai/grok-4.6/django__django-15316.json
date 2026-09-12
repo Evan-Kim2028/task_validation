@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15316",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1412
+  },
+  "response": {
+    "id": "gen-1789191575-TD0C4ltoFB851JrZFdES",
+    "object": "chat.completion",
+    "created": 1789191575,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS includes unrelated test_template_detail_path_traversal not implied by the issue or gold patch.\", \"confidence\": 0.72, \"rationale\": \"The issue only states that non-capturing groups are broken, but stripping them from the simplified path is the obvious intended behavior and matches the added cases. An extra FAIL_TO_PASS test is unrelated to simplify_regex, so the task is not a fair specification of that issue alone.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about simplify_regex() not handling non-capturing groups. The tests specify expected behavior: non-capturing groups should be removed entirely from the simplified path.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about simplify_regex() not handling non-capturing groups. The tests specify expected behavior: non-capturing groups should be removed entirely from the simplified path.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "8MdYRk9fhaTTRIerLDgyV+juNfxZ7PK5c7yCMZ7Nus+surHypP8Lr2PZ4FzfMO99Yh//QPYwyXYn3ZiMpR5Hosj272qHA2uYTyjg5C5lHeYP6DZ737XCozDtbWG6GsrwtXihVCN6DsNN7I2P7J5fHXqvJOUua/Y3qBzd7JPu9XT5cpJ/iIjmn/vtoVNqHlhbODjBIQgsic9cI9KuPmiq2mNgzh6P0KpmXhBjoZcBizs3hKULyz7ORYt7fQ8uI4dJMMcixesaoLxrVZDuFJSmq+P6WRQdheI41rvXI4rvjsX7UZ5NVE7hzYsX/q636qdur/Te55Jxw9ReKMewzcj/arO1/81c4fn36lG+eZwLcgWAU+yF+dJ6y7fTMDoDhRoL8oDThxueFeCReHam2pH2oANUhqfvZ1+b+7d/NikELq5oFZsQyS24SC7IIBos7TIXpf4G+Vwin4DRSIbuepeZOk5aiWUljd8Rs49D8XPMTdl7lM81wxou6AOPXUXh2xbI7/tVqseO0jTvkpRHCSlWPeVaQksJPFEi9WvM4a1igxPJj3ZTfTQonQMQ8z0eklUoIav6zYUGhIT6rJVRlfrq6w8nJUn3mXHBKDiSQp9RNXkEnJDqWqMhP+6LOolGxVoHGNKKy1tN3OJAXjg6sVgfSwLbSS6AtiuLKV33yBNEiURpYTsLKMcJdChdM9M1Nc6OoHrXLfkZCqGb2/8w7CyYdi1mx8/o+JQbdcJv07y2Wwn8tIAoSEaCL6x+48yUAV41R6y+S2M5K1MPa+1lzXj6V3VprWMnnSiQ4bTVIXz7e89QEALGNwtwoIWSSqfbl9n+Oa42Mt6SDvhVoKvpPHTNXOBp4kpAKQmwOTpMd1pMmgnelz8g1rdiq3btCqu5W4sBnSntO+LiXDcIcdKg74ljW/gW1m+NS6qbquCHcAGv2evv85KcXXAt/UTdFW5mEJ/Bf1oMS1Hj3bKw5b3GuAbsLMTlXchlj5Q+gR1vpXlaoCr5kN6U18l9kxdflI/ykxNRPzNckJ22D7jYIbX2CRuP1ugR2d7KqVzResZFMss4LcN2JU75jdNTG6DmmB2rjtbiG68OMWcLIYhDj4ssb5HVYSuNaID2dWn1KA1cpTzxgLKhG4U9N4/8Uyd8kGl7wEWPGYWuR7GdPC0yqwY5D4Ugi56S1r0KPjTxHROkYCOq/NaScZ6a6KftkDPVp0vwWp6EV5kWfuwW2edzi87wAYQdd0pqzTqANOqkhAe0BK+zhjqR891cfFcS9BfJea3ZbYElcZSFMyX/4Yk701Pt+/RW5RwclKEDAr311ONznPkB6dCyAAgy3CCOJN7oBSGOLnpGLBj6N2ymFo6wtIE29n9Kd/vn09lxs2U0SLdiXHYQ42nCjfEYCQmDpcOUDxY9PeiSwMubLN6XREe7e72PX7uF/ZhhJgFLp3fGcugguYL5O8XyYzuB6hDADcEw5ATwJTQR9jMbzlrCgZ21yPQBv1eMTR1jaFg5to8I9ROF5ALKuiAe3YFtKiF1esv9hTdLgVG6miLfwXuGMVVjwfNXsSTa9odpdMwaE0iGdgyZYsM58Fz8X2bv5OC41yfqTmXhiAo7ZyU5cuFCYigE336m8ZF8qI11SW6ByEZDJ4SjM09ITCYf+0nheEGdCHiz3LHSWbfLcjXoyba6EvNJJQU6DtxP7bDoCt+zJRXWn0m/n+m8yTKrHynR6+05kTZX1naFMTLzVYKAIzspGlaUqVua9V0pDvUpqnoIpSzpZxCQ2eSh/OQxfdLcPOzcw/eRzdFMzWYI3Wtzghrs5vv3+ePCAvJjSgppt9NM2tImD8EJOrAYMBJxZwRQgE8hJwnp5zzxnVi33MlvAmzhs2vXJoD0axj74c4NCpCPeqRCJfrHQ3loUCLmCKmBQISkEfiQWPouHf9WA3rSxloM7iY8Gky5eFYzocWy+7OT8TKK/QNl/JVlPfh+ZDjtPIslrNS+kpVDlWGJUT3vWyVzJfe5VYdPPvRkoX13agliVmOrEQ7SyOfII4WL4ICV65CVOYVFDY3OSBna2uZRjpnQPSMKp8gjM2gz7063YN35aIpR827EpWaTwbyajsf0KjOGKWa4Cxc06NobKgOWXAgzBPeIBrEPrNEFzmlKl2oTV5Wkv2SvibLblLPwMQ2XRK8hDKGL/eGNBtQ0UtlB04psDwf3xlEw8B8thBEjP4a90BTq4DHjdY6EI0X9I7kKqSfoD43aI+Iznwe5W5u8w9GFbNm7NCRBXJIpaK+y0ug+ogddYoU03MoaoHrYpO9ldRac93gMDd5VoJSEQ+vGiUXAvoIBW4bPtdDxhhUYAgllso5st6sLHH62rK2qxJxSm62glz2zn3oJcjUNNbg9y+z0tJCQh+2XVTin4x80NjIwE+JeBzlFE7ZRqJrGuA66ZVebKnab2OiffKFsvH9C0oFt4E1JEb9Gdm8vZsrVvCMK.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_89adc070-4f22-9d0c-b89c-45378ef36fa2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1978,
+      "completion_tokens": 547,
+      "total_tokens": 2525,
+      "cost": 0.006854,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006854,
+        "upstream_inference_prompt_cost": 0.003572,
+        "upstream_inference_completions_cost": 0.003282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 408,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS includes unrelated test_template_detail_path_traversal not implied by the issue or gold patch.",
+    "confidence": 0.72,
+    "rationale": "The issue only states that non-capturing groups are broken, but stripping them from the simplified path is the obvious intended behavior and matches the added cases. An extra FAIL_TO_PASS test is unrelated to simplify_regex, so the task is not a fair specification of that issue alone.",
+    "p_invalid": 0.85
+  },
+  "s": 1.25,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS includes unrelated test_template_detail_path_traversal not implied by the issue or gold patch.",
+  "confidence": 0.72,
+  "rationale": "The issue only states that non-capturing groups are broken, but stripping them from the simplified path is the obvious intended behavior and matches the added cases. An extra FAIL_TO_PASS test is unrelated to simplify_regex, so the task is not a fair specification of that issue alone.",
+  "prompt_tokens": 1978,
+  "completion_tokens": 547,
+  "total_tokens": 2525,
+  "cost_usd": 0.007238,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7499",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1718
+  },
+  "response": {
+    "id": "gen-1789192900-gbkSFLTbswr7MEDFgxI1",
+    "object": "chat.completion",
+    "created": 1789192900,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for a more helpful hint when match strings look identical due to regex metacharacters and even sketches a UserWarning, not a specific AssertionError rewrite. The FAIL_TO_PASS tests lock in unstated wording (Regex pattern, trailing period, exact re.escape hint only when pattern equals the exception text), so a reasonable alternative fix would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue asks for a more helpful error when pytest.raises match fails because the string looks identical but is treated as regex (parentheses). They suggest a warning about non-regex passed to match,...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a more helpful error when pytest.raises match fails because the string looks identical but is treated as regex (parentheses). They suggest a warning about non-regex passed to match,...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "uMjM6sZVMkGaz9bPSFqiBSvLDyCjrsPzJWO3kousP0iTX6Lh1QgWW9pZ19vPgwptFQXN5M58r3RGXrvt9hhfOR4Aqob3U/UIBueUB9PrbR1f6BGFdoucsrNA8ubz3PU56AI8m9tDzEFFnDWQweJsdNhvCAica5R5wy1JWqrVK6EiU7jKijGaS58468BV1aV+FbG0vWnHDc1vE48NGojMK39IZh1fx3FDN/zoe/SPWMbwK1A3Rv6gcLvJgRpiJYEhpOWvKOQH+YtzojwS+mUBaTQQl6jHlyEzzpyz52F2F0U3cTCvQlB36OwWxKM33werMHIKo4YVWXFpbUVJi5Aq3pIU+y0AmYraUVuYq9gMCM/qeAnqOuYOjAFWtdn38T8y6eDLiPTqncc/WoskK6sRPyJQcSknENLPrEztY6aPGk8vplb6RBT6bA8a5mfKDc1lK0XO1pWIOv6n7vVfxXf6POgASrBhae/oIbGLodOb6g4Uv6OSSkOMN9psWJ0t8+vH6Qjyw6iRvU4GoazWZPkm9OR5xvcMMy82zLAYruO5KiWYm+UuWuiLs3BSIAcsXemr2Njm4gOJeRtsWNHsY7T9722nEVPRsPJsL9wQkwy9musr1Aa918bSErkCf5+JT0uxqNELuNqMXCmTl4ndvSwFZCJN6gE0Xhbz5zEPxNQ4ADOe1aQzFLX2X8G12UZj4j/4fVG5OvMQYDd5OCdGZkoxtYVZpYM4ePcHhcFl0nEM6y8AtShF25SlcotVzh3nYFNiYcyDG5KNFuVjINiufpyWNbfKP0BaHRxFhy/8/VzC4Z/ReGFbP5vuYCjUU+/i/ENHVNnGdcUJt68theSAu8Gb27h0Y5P39AfcFnJ6hEe1ckYgLw/vMz5Q8DrMBrE1F+zCWAKDN5mx+UaOzfAPyID8BL8KKl7y/loGwpOEctrWztZj0vxcYKTLGG4XjFFvx3bmRMeQ9SHAaGiwgiyDGydZ1e9wD9Fr8pZy6rIaJJ583m1Yh8//YXiKRP62SyBRzDt4YUFxEwdlNp2nh6v5pvxsCdgvNTznDiYLQCWyRmznyZ2AojIHI5k0H08O4joaNyAfGPXBv1sQQxTuJM1fXj15+yvObMTq5wvZaDxcW5uR25tT/NMas1QI2Kbr9ZkAPP6UdwUjktP27OHKC4A1oA/PfohYU0f9Cu5b5OhXi6uRimvmc06oMpjAeVz76Hotbp67boiNxDrWzlq855vggWx793VOY/NwsaSWNahJQe1Wah/V//54XF3TfuUZ7Ldn42Z7gqEj5x6yxg/wMPnEuxK0QT2WLmxR7q3wSxvrjZMd+6PSsFKDeOncckdZ7KN8so1fXMSAQDO1D9BMAZjsn30iRpN1vu7GIRM3l8/8AiRWs42UFl9Mzlf7cQmuH03KSnsq5FVVr+/bxs0hzyLBqqDPIvsM88hApzStQvb//79qz5nk4wbPZkjN6AkpBNuJSZao7Mth3mXZFnaeQlibLm7q7rZ0EltL4DknQrINFKPRNR8TPMIWwGFMTntb/UkdraMGOZYsXrqusbvExFnKwdnfEQzZoMcDCb9yNhWNe2u5o8AM2gyoW5M6e7gzfat1.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_72e37a05-eb1a-9bad-b5c7-20be502ee904",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2003,
+      "completion_tokens": 397,
+      "total_tokens": 2400,
+      "cost": 0.006004,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006004,
+        "upstream_inference_prompt_cost": 0.003622,
+        "upstream_inference_completions_cost": 0.002382
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 268,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for a more helpful hint when match strings look identical due to regex metacharacters and even sketches a UserWarning, not a specific AssertionError rewrite. The FAIL_TO_PASS tests lock in unstated wording (Regex pattern, trailing period, exact re.escape hint only when pattern equals the exception text), so a reasonable alternative fix would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for a more helpful hint when match strings look identical due to regex metacharacters and even sketches a UserWarning, not a specific AssertionError rewrite. The FAIL_TO_PASS tests lock in unstated wording (Regex pattern, trailing period, exact re.escape hint only when pattern equals the exception text), so a reasonable alternative fix would fail.",
+  "prompt_tokens": 2003,
+  "completion_tokens": 397,
+  "total_tokens": 2400,
+  "cost_usd": 0.006388,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

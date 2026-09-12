@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14999",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1217
+  },
+  "response": {
+    "id": "gen-1789191514-cAiFjd5RyM7tf5LzJL5S",
+    "object": "chat.completion",
+    "created": 1789191514,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly requires RenameModel to be a no-op when db_table is already set so the physical table name does not change. The FAIL_TO_PASS test only checks that forwards and backwards issue no SQL, which is a fair reading of that no-op requirement.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is: \"RenameModel with db_table should be a noop.\" A RenameModel operation that already has db_table defined must be a noop. In Postgres it drops and recreates FKs, in sqlite it recreates the...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: \"RenameModel with db_table should be a noop.\" A RenameModel operation that already has db_table defined must be a noop. In Postgres it drops and recreates FKs, in sqlite it recreates the...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qkpzfSg5pnlcT7p5hfgqlE8x9Jtda/HviowzUtfACSZxqVEybHDGz7cv2/naToQVsLL1289s+3bWXm58bic11iUvllETE46rxF80gOnQGV9rnoXbyOQqhdBzIku3HLzNhIJ96Vnt9vO7MvnMgv7USw+LOc6no3UX6MKzov0hKI8lcokkQ95t/wE+GQgkVFilWn4YWea8AKnhqtw7kGsehU2A1fnpr/Gke1Tz3c3Qw9cy1evjnd8ry5mns8nDpRf0AlzuVOlbjwK+WE2osxlyQB3U/Mk0OyyoU7h3ufWdRYA7GHGZ722NGG0qQy/hLILilykfhpBpGJJVH1zVMboTBGfmrdlZh0VEaRnHbAJT7L9eGaoeLcsqJknI+Hbk46uieu3GtkqCIDZzXY5QfdtEOo90c7JMjyJIq4rBEzAVVTFqIv9K02nTpiPovB7rRuzT0fNGXMB2mvcHq8LKQQFzftpwkVNAJDPhikUPOU+lKqSuF4Oc3DwKd+Sbxw7qItTwNVr7tSqQbvyuxd6ZU4sf4fOtqFCPAvfVYVsc1PFrIMOvmy5bnkib17j/dQPN+yq7NK/IWt892EoMzRO3ouWqjZk3EQNAN2Cmxz5OPi0mhYKC07O/vFp92joC7cy9Pw12w8c/o4UtVz532xrMueraM/pmn+rX+RiFdeU6f3Mb/QBxOKdBHHUPTIxdEcoxytSRlojjmuhSAZIDkA3KUgelHIUQhxRqvrcdCX+OitEcSAqTJqEbjnWG1JbiY28Le1LmTbGJu1hJxVZgdE3loh1ZnoGnBFX5nNJTAyKL7lUJEyjfcJCcWerblznYB8IRmVIY8g9D8GkxAgkKTL/A6XuxxROiMmVcmpV6yj3FzsLk81aQn/f34df+MEphLvGzijMCY2dbSOkE424E48j3ZU4PyeebWV8P9Fg4VRSJIHCPFdT+5CQtIF/RhhbdmG5br9vbXZPCsUCje3nU8PzeyYUNeVrBqAAuYtfVc2Cao6m6m+W5o1duLZMOySEPgzsn7ZARx/8uCltQEoAx0a4RvGqnbuiOX/pKcFs5t35mNii86JE2HPLxAKoxeX33aH89NSqlHF1EWdvyFTW+MM3LSRl4N8yiBPuJ9/INpfDa723jzqcEzhPECyPNY43VbrSs7P2zmnUSVo2OlggxLpN7vkLGDXf8tE2aDk+CxATaKjeRW5A9ZVeMc8TKcKQKlH1Ab6dhG9dOb4Y8LkyH+/U0kvPKokUIoLeRawLSeK1bRQmZ9sTleZmTnmWwPvjNeEj9WtggiAPl9pAOlgR78VgIHlE9Rs8FhmNrWbCd8jFsTm4pvi6hyHHhoD3ryQwb98FTSvpsKqZKQgpPPUbZ5bCndhNd3AYz66Xd8syVcQJosRN370hqvZmYdEYch/4AyNoTXtbnLAa5XGuT6hbHM+9/JqDtxQCqBX9k7PIn241MZIb/g2LZvGiHhG5S/wVkPO/IFHfvKk1OyuWO2IRtf7vbhK+bIlcvjp/t6WnvoYhR.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_14df11e1-ac0f-9288-9bc1-502c52b47e6a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1545,
+      "completion_tokens": 382,
+      "total_tokens": 1927,
+      "cost": 0.00519,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00519,
+        "upstream_inference_prompt_cost": 0.002898,
+        "upstream_inference_completions_cost": 0.002292
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 270,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly requires RenameModel to be a no-op when db_table is already set so the physical table name does not change. The FAIL_TO_PASS test only checks that forwards and backwards issue no SQL, which is a fair reading of that no-op requirement.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly requires RenameModel to be a no-op when db_table is already set so the physical table name does not change. The FAIL_TO_PASS test only checks that forwards and backwards issue no SQL, which is a fair reading of that no-op requirement.",
+  "prompt_tokens": 1545,
+  "completion_tokens": 382,
+  "total_tokens": 1927,
+  "cost_usd": 0.005382,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

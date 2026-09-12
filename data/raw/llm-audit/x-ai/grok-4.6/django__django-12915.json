@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12915",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2030
+  },
+  "response": {
+    "id": "gen-1789187548-ZyPRtKHcDR1aotqnlVhb",
+    "object": "chat.completion",
+    "created": 1789187548,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue names the missing get_response_async on ASGIStaticFilesHandler and shows the traceback, so the intended fix is to add an async counterpart of the existing get_response/serve path. The FAIL_TO_PASS tests only check that async serving returns 200/404 and that a static file is delivered over ASGI, which follows directly from that request.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about adding get_response_async for ASGIStaticFilesHandler because StaticFilesHandlerMixin is missing the async response function.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding get_response_async for ASGIStaticFilesHandler because StaticFilesHandlerMixin is missing the async response function.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "tK2ULsK/B5To2AqTRQzVsY2Y+mW8uOsp6GzrgvYA2sS96DopRqwnHbrWfqcqFkWvPlEUEs49BOlUK53kDMxLXf5v2Sz0E2RwtV4mfPijq2QTS2F6/4flnyroX4q0dxqBa2zVDWJ10lg+6XtpfDSUOYyN7An+FA+Lha+kX3WificuoMtdyH4l/8LiSzCp+iZ3O0Vj5vcBky95npCGUZjJdSq1j1ZdMOjywnOtgmcZ5MUuisO73lFgetkukui9I6OBe+1D2FhFiqFpd3eb0wJ4F/bCRC6T/OT3EsD15XBUaE0pOc/AUROHep7FqIAB8FH7Ek9x67MgsB2UhN1ZfsIJ1zmnh2AAbbxp7K/g3rQDi69gSgaYkw+oUHkSlETBnivVBGEsVL7m/9UzpgmSbOzeUuSq2tc3C8gyIwpIAuaPNhcL7yZPoWms1uhl4amNC18iFiMq7JVohscUKEta/8QEsKDfcn+e/WtO67YNnws3tsjDbkykhX5k7IAuqxF9XaBJGoEqZD8ZilcrI9hjhueGVTDU1/IS/G8cq46GMufPwVvDYnyvxEEjdEYc823LRW+wjefhXNWTJDcdSKlACWsc/I1CeL+0ay73NhugjuCUJ9M9IMvnp7nAsXetC23Ze7G7KAb7/Jr3Vd5hVhwDBXeIEctHYkPcy/tl+PDOORJBEnn3MyYyZZ1NmL8U0H6axT1RJ6YBTx5urUWRfxAei/4Ws1nRdl4Lgkpg2IGisOrC7avO1JQ0QJYeIw4wsSkgBQl5Sychsqkx4dvXKjIMO4iO2fXsf6BIqLmEs/AxyCzNkpfS6Sgg7NaZ1+vw50Td1Kf9KBhIpOunVky2KTtdNq9Dp8gevywuj9l9CeyVVMgUGtiuHE1DlAxl6q2g/BtNtS+seV4LLtPmvO8VG47brAVwVC5V6OlhiS1TFLBieUsuHSsLCR/aL57bBYjdx1rb1DLqMbwx/3UUn4E78XfVw8RVp1dvij7zVy7WbFKxSZNfma5wB7mp66sSlxoh6NylUf8xiAvX+skpzAici+M5sXp+xNmH2i3O69rgpi+ZbtmsI6yasbyDrV+FVWwtjozuFBB50/Xrxobr/rh0T0F0gobc1t91KXpu36Pciahgg02AZ6A2lPfEp1kp/GwOPWhdoPWpPUoyhPex38mC+fuVnUerJjGM1C39GUsAKQJMyNkOlaFcLnqYxbpos4XnoP+qkg99Dh48zAK1GmAyqblqEcdOYGyeXtfR3zusN3wzB09eGBhei8Gy8J3ok8a9lzT89wfzY9f5P3Jrh826XBF9DX4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b2ff8d13-3f65-9afe-9435-22b461b054cd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2474,
+      "completion_tokens": 346,
+      "total_tokens": 2820,
+      "cost": 0.006832,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006832,
+        "upstream_inference_prompt_cost": 0.004756,
+        "upstream_inference_completions_cost": 0.002076
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 215,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue names the missing get_response_async on ASGIStaticFilesHandler and shows the traceback, so the intended fix is to add an async counterpart of the existing get_response/serve path. The FAIL_TO_PASS tests only check that async serving returns 200/404 and that a static file is delivered over ASGI, which follows directly from that request.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue names the missing get_response_async on ASGIStaticFilesHandler and shows the traceback, so the intended fix is to add an async counterpart of the existing get_response/serve path. The FAIL_TO_PASS tests only check that async serving returns 200/404 and that a static file is delivered over ASGI, which follows directly from that request.",
+  "prompt_tokens": 2474,
+  "completion_tokens": 346,
+  "total_tokens": 2820,
+  "cost_usd": 0.007024000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

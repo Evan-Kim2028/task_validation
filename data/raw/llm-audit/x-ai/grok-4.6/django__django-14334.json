@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14334",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1092
+  },
+  "response": {
+    "id": "gen-1789191395-m3vwbxsf8vmR4es8ofXI",
+    "object": "chat.completion",
+    "created": 1789191395,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue names the faulty function and the expected choice of zh-hant over zh-hans for zh-Hant-HK when both scripts are in LANGUAGES, which is enough for a senior engineer to implement hyphen-suffix fallback. The FAIL_TO_PASS cases are the natural generalization of that behavior rather than unstated extras.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about LocaleMiddleware not recognizing zh-Hant-HK properly from accept-language header. When both zh-hans and zh-hant are in LANGUAGES, it chooses the first instead of the second.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LocaleMiddleware not recognizing zh-Hant-HK properly from accept-language header. When both zh-hans and zh-hant are in LANGUAGES, it chooses the first instead of the second.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qS/TiIVsipFINMjYO84tpJErL+R01FbOv4De+DbffZhVAWkZ+BVRo/nPTRzZNXZP80hxcMTa/OPyla0JnTZBAZLMS8CNDkzXr+dTnheY4SRNflKnfGchpaPWwQq33qJUgXGD+AtqNvxAAn155PsQijPDw5Jm4VhIzrVAmyB0QCo/HQS5OWyL0zYUl9gtY/WZFKXN3WSo6nDw8Tl7+nYUyt9LRQSWmshiLu27ThSwfn7Rn/94Dn6zoM6EWG/RZDzwvXSnpP9mKJxBF0gvIwbdo5TnYlX+9y6hAxphaKyzZIqGAz4MbihMb/S6DSQuYKHUSr79lMfB8uxXTpsvTLi+BgP8aRTqeg5rAJaOv2W26Pyi4fqVGlLdfuL+Gb28ZBR2ljIOEpGzGpcoVGZ8o5mJ68AwMuDVpeKMsgvUtzDwIj4O/KKJ3hcvPxtPAdezqHNmHSUAcpMfivStGU75uZjm5iyH5Em5OO3umqENcSHEkNZaEy2wC35i8bTYDngizi3quuM68hr4n4vq1al8VxJEgrdgACziBkqYnNkRfY9zCecL0pMbK1HsCA3LQPdl1drVx2mbzDBziy7BRjFKeSE7bWi8YaC089uAMBCM8VqZ5EpR/slMpCzUUOFxRMrGu3D+8yOdLCO8qL0J8vAA7vGWbnowQDHIeAWDCmJyuYcQDulCPEWwfIRa/c7kVgvROTggBnzE7qaG3b1O+y6UvrdDKQldCFO4CyXN2MfhYoYEZK7NHpkNLUVkQCyDA7c9pfxeT0MDTsONsiXblJtykE8ccG0vMukqJAU19m0VJHhQjiy36Wx6QcC4Yx1GFIfsu3SMGWWUUPLyCCkHFc1OnRFmvBcVDwk2NRyVMfUGSTEA8dCWli6zMr9EGrtYbakO5EQTqdD6ZHUssTL7PBk0CNV8nplSZgY8u/J5UwiFMKnQHhz3TNEY1OtIUDq9wxynCu6GEthfplF1Dxk2bR0B54MCMkbjAMiDS5e3JG8S5Fhaog1vP9UNfB4+QqfLxnHUnnYaXL2Im7BecP4l0bq2V8F4jy5616h7TXKLH4WQ8WTrPv8cPtEZ+9SxHegll+pznScAbNPNWsCmrZboU+/k/+peaMwtvzbggVWXBUPU6QyY7Igmih2gCx7Ft3+Hvz4e31HfFZ4uM/gYOEfYo0ajAmD/ZxW0+6OwMQjQFJJEUkMqi3S5N/U0tKXqy//YCLI9ZiDSWtlmuJWQXL13FvNsE1uS3lds665sriziGg+FX5tKXI+C2UgvILCs4003SrFak62KQW6idxU+iUU5dXFbuBZWMhMWGP6QH1VrSgzbyA4fpllt/FHsu1q57YPHjU2q06QcNHUy6rfFI2iDoXvp8mQ1M+GQ77uUVPwc3KtAiv2LUHRJTglRipgEWPe+BBnAKhl8Q2HrccgQJ9oecStmOwvDvup0sd7hO0OdS1FxlnkyYwg8A4qt6o7KKiGacaiAp9oR/vJTBEEgNVUufyT/rThYTJV+woMqx3wjDjfYICYO/i6FVTx75svSTt/wc83cJtmoGsOfNwePyQg6IO8DRQtgtW1CwIIojFRxEZ0SizfQhYXyCyKv6m+VyF0yCWJktY8FFB6PoK0oeCCSm3qPv793QonOgUlIm+U.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_df691d8d-7f0b-9d49-98d1-5b1d30cc5ee2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1466,
+      "completion_tokens": 416,
+      "total_tokens": 1882,
+      "cost": 0.005236,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005236,
+        "upstream_inference_prompt_cost": 0.00274,
+        "upstream_inference_completions_cost": 0.002496
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 292,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue names the faulty function and the expected choice of zh-hant over zh-hans for zh-Hant-HK when both scripts are in LANGUAGES, which is enough for a senior engineer to implement hyphen-suffix fallback. The FAIL_TO_PASS cases are the natural generalization of that behavior rather than unstated extras.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue names the faulty function and the expected choice of zh-hant over zh-hans for zh-Hant-HK when both scripts are in LANGUAGES, which is enough for a senior engineer to implement hyphen-suffix fallback. The FAIL_TO_PASS cases are the natural generalization of that behavior rather than unstated extras.",
+  "prompt_tokens": 1466,
+  "completion_tokens": 416,
+  "total_tokens": 1882,
+  "cost_usd": 0.005428,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

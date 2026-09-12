@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13684",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1922
+  },
+  "response": {
+    "id": "gen-1789191290-IWBPI9Co94Neo2uxa6dy",
+    "object": "chat.completion",
+    "created": 1789191290,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only sketches a rephrased error and optionally dropping the built-in backend hint, without locking exact wording. The FAIL_TO_PASS test asserts one specific combined message that a reasonable implementation of the request would not have to match.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about a misleading error when loading a database backend fails with ImportError. The user suggests rephrasing the error message.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about a misleading error when loading a database backend fails with ImportError. The user suggests rephrasing the error message.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c7f47efd-d4cc-932e-8aee-a4b55d65d628",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2422,
+      "completion_tokens": 618,
+      "total_tokens": 3040,
+      "cost": 0.00836,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00836,
+        "upstream_inference_prompt_cost": 0.004652,
+        "upstream_inference_completions_cost": 0.003708
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 514,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only sketches a rephrased error and optionally dropping the built-in backend hint, without locking exact wording. The FAIL_TO_PASS test asserts one specific combined message that a reasonable implementation of the request would not have to match.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only sketches a rephrased error and optionally dropping the built-in backend hint, without locking exact wording. The FAIL_TO_PASS test asserts one specific combined message that a reasonable implementation of the request would not have to match.",
+  "prompt_tokens": 2422,
+  "completion_tokens": 618,
+  "total_tokens": 3040,
+  "cost_usd": 0.008551999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

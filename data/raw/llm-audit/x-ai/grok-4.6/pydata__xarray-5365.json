@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-5365",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4357
+  },
+  "response": {
+    "id": "gen-1789192575-EvvTxbBVjReJL5IYdsJm",
+    "object": "chat.completion",
+    "created": 1789192575,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only sketches a numpy.cross wrapper for length-3 spatial dims, while the tests require 1- and 2-length vectors, coord-based zero-filling/alignment, Variables, and dask. A competent implementation of the posted snippet would fail those cases, so the FAIL_TO_PASS suite is not fairly implied by the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue requests an xarray.cross wrapper of numpy.cross. The user's implementation only handles length 3, but tests require:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue requests an xarray.cross wrapper of numpy.cross. The user's implementation only handles length 3, but tests require:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "YPUtEJ8pqt8oSjpi0WmDxeqRA8Td2GOLoP3tK5Zg19F6yqU6MNowX9i/LFsX9/Nlkr9LFAVykqHdvbFUj6uWCaI2y2AwbEtyO5u1xSRxYSZK/EelRmkIeQj3mSF79mrD0KPfvocwL0ZCNGWpM+vFH2YPFuruK9QvsDE7nfnD6L7Gkqw/d9FrrEPkbWYcsD7vakTYUiQYif49Zk+nbPxBcXudjeFhdptBJ11zE6ZuE2AhLVDAzptJVPSV27pbNgVH1Cv8osb1QhLoOBcwMxcfXALr6EMVW+vs9Mi1E50Ce0oZqDi8AfEU0YzrrjnwoM2j8bbn+X2fyScyJ7e/WoL9U1mQ/KtYDbQ/bIZMj6mQNHNlN26SnYLGBHJ9MUnZugP3ckVgRimJ+4vjjqwSs7qd8bKLjp5UZ03VuHRnYFQO9kbRtvOdoAVx2P5amlA4Rff0ha1xTjpbBZ2AtXdCQC26mIlqs2DDKQl7J2/nABr4DkR57K2HZ8wOCG4z5+gtRDKjXnQhO8XTYbfJ/2M5W4gOzpPnVUDZQ2YsGQ9uWYm1p/FbKs1OQUN/xKKlDFst1scvw/uGyg4U/VpStRvuZ6rxlbSkkqeKqNeCNEa95nYKRcioMZ6HqX6VLD/ocsvjVMHsv249l5lGlA4ynghYQwCKFhyplFfMnX6D++8guQjyPuZSfSvUVuyjcb+zuV1kPCiH20L8FsmpdG29ryta5RLeU7MVDVI1QzvtT5hlAsR1sB/IHYEHXP+py++goo5Rd745fM2hI5GfCK8ZR78gITOucvbdX//tHRq3A7UfMAWtAODh1rkvm9OocVPA8gBHd9BUACmjgw8io8EWTta/uGlSDfIDKeBV1/NcRVW5XCKhTfJMw6Xd246z6uf9P/6+UH6ejNo9ZbXKRbuvzf3eBlMiL4ZDhdWaofrx5IsVc/BU0WOO7WnZnqB5isnPB5HL8TXQMlSxq6+9cfim/IcBZWXy5yo7sNA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8887bd40-0838-9188-9231-b41aeca8a44b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5958,
+      "completion_tokens": 312,
+      "total_tokens": 6270,
+      "cost": 0.013596,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.013596,
+        "upstream_inference_prompt_cost": 0.011724,
+        "upstream_inference_completions_cost": 0.001872
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 184,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only sketches a numpy.cross wrapper for length-3 spatial dims, while the tests require 1- and 2-length vectors, coord-based zero-filling/alignment, Variables, and dask. A competent implementation of the posted snippet would fail those cases, so the FAIL_TO_PASS suite is not fairly implied by the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only sketches a numpy.cross wrapper for length-3 spatial dims, while the tests require 1- and 2-length vectors, coord-based zero-filling/alignment, Variables, and dask. A competent implementation of the posted snippet would fail those cases, so the FAIL_TO_PASS suite is not fairly implied by the issue.",
+  "prompt_tokens": 5958,
+  "completion_tokens": 312,
+  "total_tokens": 6270,
+  "cost_usd": 0.013788,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

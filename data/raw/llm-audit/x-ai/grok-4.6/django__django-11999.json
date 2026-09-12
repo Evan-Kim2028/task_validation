@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11999",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 953
+  },
+  "response": {
+    "id": "gen-1789190968-6lwbbsz0WbxtbAsvpjfe",
+    "object": "chat.completion",
+    "created": 1789190968,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that a user-defined get_FIELD_display method should take precedence over the auto-generated helper. The FAIL_TO_PASS test checks exactly that override on a model matching the report.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about not being able to override get_FOO_display() in Django 2.2+. The user wants to override this function.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about not being able to override get_FOO_display() in Django 2.2+. The user wants to override this function.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "hfDkmDjbQQh6EmkiqEdPO6dPJdTSg3lUBrOnsN7R4B4EjYMRfX4ds+MmpNeKBO8R6g0ym/l01WDpNQYQJ5pd9TZrAIfDapNxaLjVthT6eGcGGbwaRW9oRtcXJOvg0EHoPV4oMssUZS3a2xM9OJXIUn6XvDZh+Obs7JD1izj/eH8dw3DxzJdbIOfkdrMpxoD3RMw9vq/Mh+s413CFZ3dVqAukhDO5tCGvHEHDva+Jdq1aq96t44CVwnmJsrYib2AoIoaHgkcxIDl+WtRGORPBEjyzZIVQLlqgROo3u0cGJdho5VFclRPLdvkyMda8+xL6e5e7odSjYjhUp/khrGS8ZVFdHmjvmobqh3JILLWR6cyV9S52R4BgYEKPVOw4ssb/JcA6fZm/siBNDMD9hqloG+Pml3+zy58PUdJnhJZrfLPhvhyLeeSDYEVFmRV/Bm6KGPyBo1s24tH9nHoQCIFN74xtzjdwvz3p3njN3im2iYldtN/NlD0nZzgGa628iet2m5m78KGzLBCR3NHWGWSXysR7XUYUn5i6owQgfEOAnkefKm88WXHC40KdnPxnSGkb3I4rRYjK6iE/WJPDVBRN5EapS5XU8DGtk2PpfyOL+bcjka7oaWKtx8aM2IvpETV3kqOxLkNYrxE4CNXvIld1y3hwg1k5zRTYF6DtZgwjvT+VXrC13olU9AHr2QlSValhyeBSebFtrN1Ue/AcN14xGYBkS3KTgjW3WLzxGimy6c9CwVryjqlCZBgM8G1ZbWgYE3+hwveGtYL2UWKF/ov8AUlabny339kHeZSAN/1Ty/UUuTvpFJ6WvyxhSMHhby6iJ8VCG/7tUietE3onHIez5rW3jvtMEBKcNi2NeFah6V0VxsIlqkhSqKwdr6vws6jBbLm3j7xGgs7a8RIxrNWOJzCAyNIJbLSWNYWmvMbhVJznNRawMEGKeW4/6nILIKkU+lFbx0eTNrQlON6Ocin8Nw1T3d+qsJL47UxttGdjizWxUNnP0PUrre04y9I2auGJibgCwC+hmgBQHxbpoOU1DPFH+z/fIta87EmwY3JzC7BtMOh1DuYoN7A9hZaUgHD/rmL8NXc3ZJ7ZjHqVk+grxhHxKQ2TbutwyfoXYZe0T0ghnkV2j3OOdsC9pzEouqEy5z2BTehq.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6ef5dbf4-3164-908d-bc90-b0bc97c5ca9e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1319,
+      "completion_tokens": 299,
+      "total_tokens": 1618,
+      "cost": 0.004048,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004048,
+        "upstream_inference_prompt_cost": 0.002254,
+        "upstream_inference_completions_cost": 0.001794
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 201,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that a user-defined get_FIELD_display method should take precedence over the auto-generated helper. The FAIL_TO_PASS test checks exactly that override on a model matching the report.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that a user-defined get_FIELD_display method should take precedence over the auto-generated helper. The FAIL_TO_PASS test checks exactly that override on a model matching the report.",
+  "prompt_tokens": 1319,
+  "completion_tokens": 299,
+  "total_tokens": 1618,
+  "cost_usd": 0.004432,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

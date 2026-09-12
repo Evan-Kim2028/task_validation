@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-2922",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 23941
+  },
+  "response": {
+    "id": "gen-1789192210-OKrh8Hw1soRAh5nNIbQG",
+    "object": "chat.completion",
+    "created": 1789192210,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue only vaguely asks for a weighted average helper such as ds.average() and does not specify API, methods, NaN rules, or errors. The FAIL_TO_PASS suite requires an unstated weighted() object with sum/mean/sum_of_weights, exact messages, skipna, keep_attrs, and broadcasting behavior that a valid average() implementation would not satisfy.\", \"p_invalid\": 0.97}",
+          "refusal": null,
+          "reasoning": "The issue is just \"add average function\" for weighted averages like `ds.average()`. The tests require a full `weighted()` API with sum, mean, sum_of_weights, specific error messages, keep_attrs behavi...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is just \"add average function\" for weighted averages like `ds.average()`. The tests require a full `weighted()` API with sum, mean, sum_of_weights, specific error messages, keep_attrs behavi...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "/fS8LvJQHDStm9ftkOolua0tbBXGqzbfsaXtOP58Vww8tyVQETgpW9D75qDPmMAvyUTfnNZjpgkFRHRGBkc/BYvT4eUGohaUz7LbgLhE4Qornar4q+EPd2POL69FtqHkSm/51mAa1PffijZ7DsG4cxUsCKKK/YlZaR7MbxtJOy81OdSRabiJk7l1rclU1PcL6BROHmIuDH1e+7VmLLayBW9L6f8BKNfwt5NYL8B/MehY3krLK0aIysiT7aLKZJ3CS8+DN+0ElMxg3MkIp3zTiWC8Ex7vWbkTTbhBI/2hLQMaI5KRhjUjyWv/e8nWQA2KttZytmaVGCnhiV2V732IhuxjSfZPuTW2FPv4bhjcAUMvAzVq8AHkCIVS0sybs5cblVwWZTMEy5EANjq6k+UAzDk5EikXR6RCut9XNsTntOyKqlEegKPRNO9FQZk2o1vz8rheMDOHCHdE6sP557bELlMds/s+Ea8xW39X0/q1W6g8om6f775EwAfMffv3irYD+mMYaseR7Izp9GtIQiuP/vSIQsIqW+JQKtkE+SoxWsWPxSf+XyK22mYvGI0c9b0UcdWx40lneBYEBnykr/66fUbQ47Ey5jMB+ClHLmF6ZcS1vmHmtPn2EKHEryYcjVzdQ9mkm9w/fAo8SDoBUAen5g+sxg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_215c6aea-872e-99e5-8647-d9357377c19a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 32133,
+      "completion_tokens": 258,
+      "total_tokens": 32391,
+      "cost": 0.065622,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.065622,
+        "upstream_inference_prompt_cost": 0.064074,
+        "upstream_inference_completions_cost": 0.001548
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 124,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue only vaguely asks for a weighted average helper such as ds.average() and does not specify API, methods, NaN rules, or errors. The FAIL_TO_PASS suite requires an unstated weighted() object with sum/mean/sum_of_weights, exact messages, skipna, keep_attrs, and broadcasting behavior that a valid average() implementation would not satisfy.",
+    "p_invalid": 0.97
+  },
+  "s": 3.0,
+  "p_invalid": 0.97,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue only vaguely asks for a weighted average helper such as ds.average() and does not specify API, methods, NaN rules, or errors. The FAIL_TO_PASS suite requires an unstated weighted() object with sum/mean/sum_of_weights, exact messages, skipna, keep_attrs, and broadcasting behavior that a valid average() implementation would not satisfy.",
+  "prompt_tokens": 32133,
+  "completion_tokens": 258,
+  "total_tokens": 32391,
+  "cost_usd": 0.065814,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": true,
+    "gold_patch": true
+  },
+  "cached": false,
+  "error": null
+}

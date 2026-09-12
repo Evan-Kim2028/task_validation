@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13220",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3651
+  },
+  "response": {
+    "id": "gen-1789191170-dcO3shBwx6ZP0SFRPPDZ",
+    "object": "chat.completion",
+    "created": 1789191170,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for identical ValidationErrors to compare equal with order-independent messages, without specifying codes, params, nested dicts, wrapping in lists/dicts, or hashing. The FAIL_TO_PASS tests encode those extra equality and hash rules, so a reasonable implementation of the stated request would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks for ValidationError equality when created identically, ideally independent of order of errors. Tests also require __hash__, nested comparison, codes, params, dict vs list wrapping not e...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for ValidationError equality when created identically, ideally independent of order of errors. Tests also require __hash__, nested comparison, codes, params, dict vs list wrapping not e...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RGimOo1bNsWGVuWPHU7sWsymSl3HyXVb2QlYwq2riKGlxoSTfyKkaoKnpEGlgw8qSeSlS8CicyXUpzmTDgPbRliX0E23GZaYrcXxXJQMwuQiFVcF+6lQy4aNSMAmcceQi47WfcOhT+ka7ZorGUSbyZkwYtAIAYSVWJqqOYVbH/l/zNhUWgs8kzJKg9AVJXKi5+Rso06R4Wf1PsQ25KsU3cjVY+eKRdGJqjoabWXfyAkVT+Z0+idRGYhnReGaAHgsfuX+C9sL22k+yRvP3bVYWBntnWxnGsDjhBRBHOrpsZC+3gje9meLWb+stAf7eUg6V87yvfKYiNLv9LLshjBYHb3Mo+MkqQnhYk2omqQBf97/MHFetFF1bdYxtE/6onhAVF92XTkKlajfNI/VvNJ/rALTbWhhVlqIh0RFiOwY5xkV2YzXLv5M2TbpDzjPcVA9d3PcS49jEBniMIQ9YIVlLEiQ2CnaGlJAiYRKhf4ltynYIR8rw7/IsQ1d4IKD3GNrBgoEl2GPsWmm3sb3p3F0Z/Ynz7r2vV5Z2bTrhd5NNAG1DjhQUeBYcelmcbnhoKw38SiDOhwB6eEBP/CA6Ej7txV4vA/L8BVmE/8x+4wZ2QPYjyZMNfu9iHjM/l2VJF92f1ouYquH/hF9cPNHJB8CGMZSJDtmi/jT0Ew7lopCrMl46sPTXwzaXU7PSviQrDUHyfrKPpXeWGpY3jGdifrZvWH5TDplfht/tKd+HhNHIReh7ylGjy9H3aM9aLN/ZARJZTR8bjrbsfvX5PJmc5Fa/n6XeGVU4yS0iRA6Ym1cMxOJnvdZNSS+svX/8KmI29ukpxF2nzKKNSA6fbIFXbpdaiKzMYIwwpjf2UEM7MKLY3i0//YJ3GhJUBva8PZrOJUEPBm//xXvKqtrTID3yVxF7PjXyGalHagkvXPMHSlFwD1ky7Uq0eHd/45Lin50ZAreVejCBVY0VUUWCApyq2BvApSWBmjZfuQ/y/PkY7GZCkkO0kz/7zu4bIy1ZxFodWpJpRqVtj2ioFbNI5VyN5tFKulKzmuAKDbmbibqumX0mBd31BfI3TQ27w/l4DTLdKp+SCmVxjvD7hBFZi2gjj9U9YhQpvhQUn8JdCIM76d1jptJSiuGkWwxC2aqBv+jHf+BKDqKwkAbkC1idlghiH0HIchPagBksuTvlXjK4x6tRQLtCUUKozTHVlhvri3ZS8ob7WO/C7j4rLigW+6hGCddOSKpLZxhgGuzR4Bw6VY4MeJxSw4Nsjgmwq+GGkc9Fg99Uq4Obp/SJojgZr/0Cm+cgKRAvxPIaWZ6BlDmZHzlnCRrsrpJjul7DEaj1u4dd0VYGiu9avuC5339Gf8ptkpZtdiBiua94Rtr7cnMrV7o6cGz.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_be095976-71b2-9220-805d-873680a4bf53",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4325,
+      "completion_tokens": 335,
+      "total_tokens": 4660,
+      "cost": 0.010276,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010276,
+        "upstream_inference_prompt_cost": 0.008266,
+        "upstream_inference_completions_cost": 0.00201
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 218,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for identical ValidationErrors to compare equal with order-independent messages, without specifying codes, params, nested dicts, wrapping in lists/dicts, or hashing. The FAIL_TO_PASS tests encode those extra equality and hash rules, so a reasonable implementation of the stated request would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for identical ValidationErrors to compare equal with order-independent messages, without specifying codes, params, nested dicts, wrapping in lists/dicts, or hashing. The FAIL_TO_PASS tests encode those extra equality and hash rules, so a reasonable implementation of the stated request would fail.",
+  "prompt_tokens": 4325,
+  "completion_tokens": 335,
+  "total_tokens": 4660,
+  "cost_usd": 0.01066,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

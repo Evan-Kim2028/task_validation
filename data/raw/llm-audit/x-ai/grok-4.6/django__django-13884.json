@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13884",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1410
+  },
+  "response": {
+    "id": "gen-1789191343-SbEPsTS7Yh43QHu7yAvi",
+    "object": "chat.completion",
+    "created": 1789191343,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that set_language must not unquote the referer in a way that turns encoded query values like %26 into a raw &, and it even includes the expected redirect URL. The FAIL_TO_PASS case checks that same preservation while still using an encoded path, which is consistent with the reported bug and existing referer behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_721e555b-2223-9e20-b2ee-a4f6ffdb3b0e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1853,
+      "completion_tokens": 726,
+      "total_tokens": 2579,
+      "cost": 0.00787,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00787,
+        "upstream_inference_prompt_cost": 0.003514,
+        "upstream_inference_completions_cost": 0.004356
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 601,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that set_language must not unquote the referer in a way that turns encoded query values like %26 into a raw &, and it even includes the expected redirect URL. The FAIL_TO_PASS case checks that same preservation while still using an encoded path, which is consistent with the reported bug and existing referer behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that set_language must not unquote the referer in a way that turns encoded query values like %26 into a raw &, and it even includes the expected redirect URL. The FAIL_TO_PASS case checks that same preservation while still using an encoded path, which is consistent with the reported bug and existing referer behavior.",
+  "prompt_tokens": 1853,
+  "completion_tokens": 726,
+  "total_tokens": 2579,
+  "cost_usd": 0.008062,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

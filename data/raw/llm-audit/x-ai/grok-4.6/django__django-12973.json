@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12973",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1097
+  },
+  "response": {
+    "id": "gen-1789191120-gjDPbSVPQ52rDCmuE9ri",
+    "object": "chat.completion",
+    "created": 1789191120,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to attach a hint on admin.E410 that SessionMiddleware must precede AuthenticationMiddleware, which a competent engineer would implement. The FAIL_TO_PASS test still requires one exact hint string that is not specified in the issue, so other valid wording would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about adding a hint to E410 about AuthenticationMiddleware. The user wants the error message for E410 to include a hint about inserting SessionMiddleware before AuthenticationMiddleware.\n...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding a hint to E410 about AuthenticationMiddleware. The user wants the error message for E410 to include a hint about inserting SessionMiddleware before AuthenticationMiddleware.\n...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fc251c65-5354-95d0-9a3c-0aa60713601d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1288,
+      "completion_tokens": 548,
+      "total_tokens": 1836,
+      "cost": 0.00548,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00548,
+        "upstream_inference_prompt_cost": 0.002192,
+        "upstream_inference_completions_cost": 0.003288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 437,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to attach a hint on admin.E410 that SessionMiddleware must precede AuthenticationMiddleware, which a competent engineer would implement. The FAIL_TO_PASS test still requires one exact hint string that is not specified in the issue, so other valid wording would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to attach a hint on admin.E410 that SessionMiddleware must precede AuthenticationMiddleware, which a competent engineer would implement. The FAIL_TO_PASS test still requires one exact hint string that is not specified in the issue, so other valid wording would fail.",
+  "prompt_tokens": 1288,
+  "completion_tokens": 548,
+  "total_tokens": 1836,
+  "cost_usd": 0.005863999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

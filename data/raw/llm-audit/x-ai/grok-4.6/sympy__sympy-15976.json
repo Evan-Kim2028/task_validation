@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-15976",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "c59d85b6-4a1a-9d48-868c-b4f74fb5336a",
+    "object": "chat.completion",
+    "created": 1789194550,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only reports that presentation MathML hides symbols like x2 in Safari and does not describe the required MathML tree or that split names such as x^2 must drop the wrapping mi. The FAIL_TO_PASS assertions only check that unstated msub/msup/msubsup root structure and would fail a reasonable fix aimed at trailing digits without that exact layout.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5068,
+      "completion_tokens": 132,
+      "total_tokens": 5696,
+      "prompt_tokens_details": {
+        "text_tokens": 5068,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 496,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 44009600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only reports that presentation MathML hides symbols like x2 in Safari and does not describe the required MathML tree or that split names such as x^2 must drop the wrapping mi. The FAIL_TO_PASS assertions only check that unstated msub/msup/msubsup root structure and would fail a reasonable fix aimed at trailing digits without that exact layout.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only reports that presentation MathML hides symbols like x2 in Safari and does not describe the required MathML tree or that split names such as x^2 must drop the wrapping mi. The FAIL_TO_PASS assertions only check that unstated msub/msup/msubsup root structure and would fail a reasonable fix aimed at trailing digits without that exact layout.",
+  "prompt_tokens": 5068,
+  "completion_tokens": 628,
+  "total_tokens": 5696,
+  "cost_usd": 0.013904,
+  "cost_in_usd_ticks": 44009600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3287
+}

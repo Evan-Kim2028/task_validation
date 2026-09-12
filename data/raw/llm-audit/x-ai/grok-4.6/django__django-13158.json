@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13158",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1152
+  },
+  "response": {
+    "id": "gen-1789191157-bt7I8Zq74jrl330lvcA6",
+    "object": "chat.completion",
+    "created": 1789191157,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that none() on a union/combined queryset incorrectly returns all matching rows instead of an empty result, which is enough for a competent engineer to implement. The FAIL_TO_PASS test directly checks that union().none() is empty while leaving the original union intact.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.none() on combined queries returning all results. The user describes using union() vs OR, and when submitting empty form, all objects get added instead of none.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.none() on combined queries returning all results. The user describes using union() vs OR, and when submitting empty form, all objects get added instead of none.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "NA1fEIKRzU/8KDsNfuwtdZGS40JGChTJZTy4oRy8i3Z0YnpkqR7iMCfxKBjG989BadWzJ14rN7NOsrvMq9uqZbAaags7OtK5Jcrfoh/QBiEmkbbh2HGuKWdmT+gbbdj8k4bDMU6O2SkYIZ/qKnkiKe/7vU/YA3k5QyJlBCLcnYueT4m8pHw8s6yaWPWhG2Hue6KCQkeMbk0tFe4JurCAUD8M5UFdKn82Q6+Oc4Gl0nv6XaFxA57TAyuJZTlGn5expV8BPb31gEiXpF3zHSMYnAnSNrk/wPRDhCEcvDTPE5vj+B+/4DP9SoATsCA4ziWp7Q2UqODwAGZoeNqTU8GxR3rkdtWl2dxIApfsgL41z9AVWisRGwbhNqD6D3ZeD2yrsGt9acO3unm9tJ6x/Gl4n90eW9XaTJfhB9iCc22uCRCkIHhmY+QKUmasDqPBgeKkvuPy/IefTJ1mlwwVwPH69TZ/6Q0r5Viyk5+bebjWmxe7Tey3m1RFdx/+6fEXbAcvC8wj/8BbE9RKR44ENWfsvmhAsA/q//YA8zLAICEIu9V+Zehu5f4DCgxTWtHTAJZsBzB96VBAXzjzvwWLwL3koBv9eU7sWZdWqTDuQLHg+qLFD1BAzj6eY21sB49dTY3++b/HsetRB8CB9w+y/f0vBjN8Mh/KCbgMZr7K5hbcAEIVZQiIrRsNUh8R7IiuvVup6vtGst3HRf6ndqQADKtd8E4Ts8NRV+c5mvvsjA0RJlA4nyN3PXG+AlVI8N2n94Px/u4ppr4ooyYo1uYHcyoM3HqivPVn6WsSlhFpBDUlQ7OT0QnZDPH6WWiEKWQ/4YKUjdLzNK+L0Dj9uUTMnyz/u3er3xpARIrJyOev0KY7INOBzZaRQ4xP+zE00zPH6rVyB92y5W8Q9rIu58BJZ+9cX0krfVF7hpJG/FLk1bRDSnCwWfxUikEhb+gQT7HxpIDqYtgqodvy5by4PAfih/s7xfrZw6yJ0Zi2NAeIl+ACxpsF9C47MlxawOcbnRFi37V3GXb34w+94ptzNlNh0AgRoSKe1Hl34bNnToh1rfzKmnik1SPpOqI33/I+/0yYiaHEVaShEdtEsiTWuxB1bj2jBua7e3QqhoLjUWbLKeEWqgSMGdcOxffFlNiBRcqF5GvvS709O1o3mCR5/vcIH0VwM5LXvshwx66DD49Oh6M2hDi4JNrvv3qgNv7mNCv8SPYQXa7IGvND7WyFvLMfS2ZMRx7CR4GgGbNTzTR2P2Ak.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0f2f444e-80c5-9f43-aff2-e599c9c7b11c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1504,
+      "completion_tokens": 357,
+      "total_tokens": 1861,
+      "cost": 0.004766,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004766,
+        "upstream_inference_prompt_cost": 0.002624,
+        "upstream_inference_completions_cost": 0.002142
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 245,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that none() on a union/combined queryset incorrectly returns all matching rows instead of an empty result, which is enough for a competent engineer to implement. The FAIL_TO_PASS test directly checks that union().none() is empty while leaving the original union intact.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that none() on a union/combined queryset incorrectly returns all matching rows instead of an empty result, which is enough for a competent engineer to implement. The FAIL_TO_PASS test directly checks that union().none() is empty while leaving the original union intact.",
+  "prompt_tokens": 1504,
+  "completion_tokens": 357,
+  "total_tokens": 1861,
+  "cost_usd": 0.00515,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

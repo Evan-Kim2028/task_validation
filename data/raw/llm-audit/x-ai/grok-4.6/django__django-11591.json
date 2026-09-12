@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11591",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2020
+  },
+  "response": {
+    "id": "gen-1789190893-XLEa0UASg050lZI5YupO",
+    "object": "chat.completion",
+    "created": 1789190893,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks for a descriptive error on unsupported combinator follow-ups but does not name the exact methods, exception type, or message text that the tests assert. Those tests therefore require unstated API details and would fail many otherwise reasonable implementations.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue asks to raise a descriptive error on unsupported operations following QuerySet.union(), intersection(), and difference(). Documentation says only LIMIT, OFFSET, and ORDER BY are allowed.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to raise a descriptive error on unsupported operations following QuerySet.union(), intersection(), and difference(). Documentation says only LIMIT, OFFSET, and ORDER BY are allowed.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f8140972-1376-98fa-b3e6-d428f2968d63",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2333,
+      "completion_tokens": 460,
+      "total_tokens": 2793,
+      "cost": 0.007234,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007234,
+        "upstream_inference_prompt_cost": 0.004474,
+        "upstream_inference_completions_cost": 0.00276
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 356,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks for a descriptive error on unsupported combinator follow-ups but does not name the exact methods, exception type, or message text that the tests assert. Those tests therefore require unstated API details and would fail many otherwise reasonable implementations.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks for a descriptive error on unsupported combinator follow-ups but does not name the exact methods, exception type, or message text that the tests assert. Those tests therefore require unstated API details and would fail many otherwise reasonable implementations.",
+  "prompt_tokens": 2333,
+  "completion_tokens": 460,
+  "total_tokens": 2793,
+  "cost_usd": 0.007426,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

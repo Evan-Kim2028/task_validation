@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11276",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6606
+  },
+  "response": {
+    "id": "gen-1789190837-rG05If687h74jtqxfXRW",
+    "object": "chat.completion",
+    "created": 1789190837,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly asks to replace django.utils.html.escape with stdlib html.escape and documents the apostrophe encoding change. FAIL_TO_PASS tests only assert that documented output difference and related HTML that goes through escape.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about replacing django.utils.html.escape() with Python's html.escape(). It mentions the apostrophe encoding change from &#39; to &#x27; as a backwards incompatible change.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about replacing django.utils.html.escape() with Python's html.escape(). It mentions the apostrophe encoding change from &#39; to &#x27; as a backwards incompatible change.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "4SvnCjdFHyOtiaBnMxnDFh5thojfK3ik2AjkFBMx3H4RlvgW2lrUfu8dFh9izJzY4RJq7tUCsQF+t2jCAbgQjPzL0XJHVAaxZEwWF8gT9Xk3LXSHm9N3mf1BA2V3le1t0yU/D3EjTQiOjQFohR4BPD88G0gN4VhjbKmDCdvx8mxiQrG4Ahp2mnoR45+Ev6nNpWRzULvbyS7umh4PHMctnfdIfi6nV40Ieefg6FFxiEWqc1oLPFenn7vKwuabN7rgAx4I4OTCJznnKSCB1+Z0+c72FyO7QfmhA+bNjb5RYbAHM3dDM1Gb+2PiOqeXxFiBDwSSIeZ9DRwK2+75FzPU7tVUOjD8zpk66LqlFFm8x30h8z7Q+zUuhlfsnsG5l5YlmkCh/eB4KZd8x4nce3wA+TiKmEaa4fFqW/dRiZPdPaP48lmxbqi/K1BpaHCiBQ8GlXhuwRaCZQv/rpGw8F2mtsy1HPfv/K4c2l8NdKgFUexLwqiqKK/fvN6A/TxCgrxrnypzIgpX6SaF4/rhE0gPO7NDoq5hpUQ92kQ2vEiqehYK7ao/tQlfOvPdHt1qouoV+XVG/YAfSOrK8wIkUOMtHM68PqY0ol1XWzaWJZ2TilJtQdeo3QIkVOPUnZpZ2KzmxD1hewiPHERtkzSxCWBywZESRfTjXu+416LMLhFfE+oY8YJ6IkdXMVMVM5fKGCukMo3dJcmct1Qwmusp8m254KNmQYTOWpn/3zG8+LSfTOGg+HHHI9uHsSS22rzANo90lSmXBxfX29OEkGvZ49zzPYaJH8xOGsfsdU1Bn7DoeA2Q6PAFNxWXPOkjoKPUjZp408HqcH/ULoIJG+H1ICLoX+FlwxBgDel3NVLfvqeKp778QsdFsZ7sEu8sZvmN8mKALvBLvKU5JIlgkwvkYlrkVNa1xYGb0R7/NxLEnh//TOlwX8+TJzhfh0o3fb2yUBWnsbDDkry8uvpsyBJpC4oqsithqlIx0wzVpPa0ppEVsElki0rhBRuemAguSBMrqxUlz5A5nt5N76Z+CJSNga7NtSzR6JSn/+EfsEBatuXXhJA+A/64lcYXBGdvFWbBWOsrhDGr8i+bUXi7EnwZuubUzwds/l20wtFFQfkZPcuJxp9Unb/zJ2UTAZjykwsxmeg9p2ujFbGGrrbj03I9tfM9g16aGi2EueLrQwxJY/5+a/zAAUe5e+Cqp0cLYjMCZJnako27tkic+XvSalQDX6pqDDbBFHtagC7u/q2t6yRzFOjvsbVTee/ENC9Bo3tZ/yFwx4Dhvn2m9bi2vholdA1MXbYKG6o7AMpVtmp5qFo4sQRDZiy1NjBPy9OsQU95wTUpJIv3UXJ8B+JjZBpz9BFLd/BjlZB5jr/c1FwlEpoTUqPq+bTbQI4VWYJn8raKKuoe.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bfecd7ce-4cfd-9ca3-9d5c-8278402f161d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 8344,
+      "completion_tokens": 340,
+      "total_tokens": 8684,
+      "cost": 0.018344,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.018344,
+        "upstream_inference_prompt_cost": 0.016304,
+        "upstream_inference_completions_cost": 0.00204
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 239,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly asks to replace django.utils.html.escape with stdlib html.escape and documents the apostrophe encoding change. FAIL_TO_PASS tests only assert that documented output difference and related HTML that goes through escape.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly asks to replace django.utils.html.escape with stdlib html.escape and documents the apostrophe encoding change. FAIL_TO_PASS tests only assert that documented output difference and related HTML that goes through escape.",
+  "prompt_tokens": 8344,
+  "completion_tokens": 340,
+  "total_tokens": 8684,
+  "cost_usd": 0.018727999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

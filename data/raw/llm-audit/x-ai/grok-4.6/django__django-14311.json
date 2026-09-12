@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14311",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1137
+  },
+  "response": {
+    "id": "gen-1789191389-upqEvWTS2cqJ5l5lbk8L",
+    "object": "chat.completion",
+    "created": 1789191389,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that python -m on a dotted non-package module must keep the full module name rather than stripping to the parent package. The FAIL_TO_PASS test checks exactly that reconstruction of child arguments and does not impose extra unstated API or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing autoreloading of `python -m custom_module runserver` when custom_module is a dotted module that's not a package with __main__.py.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing autoreloading of `python -m custom_module runserver` when custom_module is a dotted module that's not a package with __main__.py.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "MAEZ4bqlQCD1q7z5wyK4mrUtFxjVWWqgzCfUsdgvhv04fApDWT9+oBJ9GNu0A5kwG2pJkb7ZYX9zo87zMIOwHDbS47j8mFVsQumr88R48Z/hchme4/Fo4fy60aI6/KaHp+FtcA6weQcXn97XstTXK8HqE645wPs8laMez+AxH2M3NrQgljKY1VzHTYW3hiPdujh5jk3y77FJBPxloIbk5L2Z2GZ5/QSi6gfNW4ISn+CBOohpYnNm9yJNuLLx4uz/JmrYfNYZtyh1RdP67/IyxwItAx/Qnk8oVf1toNyiwt9k7VVeOUmXt5IOudOwW0BTcQNkY6gpQad2uWWUw08Gy1FTYam3T0I0FzMlfWpe5dsghodRjF+XuRxvL+ymr6M2dsA2Tj0MoMNSfD9Lev1hIdnNmPkXbCN6LdP8iDyR88zWTQhmf65+Mlye/JumgKjUNB4Xr4xwuFgTCqV1J32zS/a9TUWkdDYWFvEXsMZnnQEgZFmwAWmSOQrWjoRnVluYQAnBsqv6XYkgwTXHbj/GMAi8mwAwQGVOANJt3vJWpNKWtKU/7OuHw+zTpJdVuP0nD3+Ax5D7x8V8z1Qd+hPHy60TaPvVwvlIS1zMl2e8MQ8ryTnSDtRSfNkVsPOES4kLmdKm+Xt+hg825ebzb90YlonQCOPZEhYAIpMvaEEhnXgLQFIJncLjUQomaZMw8agwT+fz0zL3L6ZKJ/Uwvf/4tgZPYDtaEj+ikU3+62IuCdu1JP/+22k+w/pPPhypGSciXeJVZGONDCoNnKFPZ1B45TQQrUcdBEuo3jk6oiSkRLKU89qXzbGqsU2XHXjQz0JODVWZEb+Ey7PqH0apmzgQ2gVPLT0zKfytWsTgU7HGnCGjhd5rkso/XOFUxRT3ZXGgCObHtKkStK6uVuC6Aic8UXRRKRISsOQCgkMi3u8h+GzDv5mDR6wxGm0B/2S7ujtCIsFvVCve3TK9Em6frUBOeA3rdPvvlf6u7rH4Skp+stk8aMgvM3BjqMcYv+JDYgsO28ZHE/nbdP6YHdRJOFkqb2jaEVU8jYIrYKYAla30UG3fY4fD/olUGSAnMswiXmlHFhN8+7IIpCcrjeZ753LAseWuEvp9smzGUXKpNE6ifdTFIF7K2Cp4YRH8hZMAjJ0zY2cuD8Ejo7ma6on79M7RmDwJUBwcKBfJE5hLYXe/hom2YutM5F26KeaNS7MybIZ8GMbG7j5Ct7/Xm/EHp9r7sBA2BYZK5d4WwoGsBmKN64c5zK8XbKRAWH4UIcGQy+Y2RRg7WSBiozrOEY0t4DL5Faum2elJeYHWDU4hGfi3YEaXzHUECLkpf1byPpl7L36yp739g4vglhpgQ6N+rUw6cd5HZ49qb6oV0oBaHxeZ2MnaD2syj3V+bCPSGw05/4zZmgY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f3363e35-34dd-9913-854f-56f2a80781d5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1544,
+      "completion_tokens": 369,
+      "total_tokens": 1913,
+      "cost": 0.00511,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00511,
+        "upstream_inference_prompt_cost": 0.002896,
+        "upstream_inference_completions_cost": 0.002214
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 260,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that python -m on a dotted non-package module must keep the full module name rather than stripping to the parent package. The FAIL_TO_PASS test checks exactly that reconstruction of child arguments and does not impose extra unstated API or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that python -m on a dotted non-package module must keep the full module name rather than stripping to the parent package. The FAIL_TO_PASS test checks exactly that reconstruction of child arguments and does not impose extra unstated API or messages.",
+  "prompt_tokens": 1544,
+  "completion_tokens": 369,
+  "total_tokens": 1913,
+  "cost_usd": 0.005302,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

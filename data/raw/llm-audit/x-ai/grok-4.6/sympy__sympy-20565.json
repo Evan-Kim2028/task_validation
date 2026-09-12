@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-20565",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "eec12f21-a55f-9077-ab69-f0d00126b239",
+    "object": "chat.completion",
+    "created": 1789194755,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly asks that Rationals.contains(0.5) be True, which a competent engineer would implement. The FAIL_TO_PASS test instead requires an unevaluated Contains object, so any solution matching the issue would fail.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1462,
+      "completion_tokens": 104,
+      "total_tokens": 1927,
+      "prompt_tokens_details": {
+        "text_tokens": 1462,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 361,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 16163600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly asks that Rationals.contains(0.5) be True, which a competent engineer would implement. The FAIL_TO_PASS test instead requires an unevaluated Contains object, so any solution matching the issue would fail.",
+    "p_invalid": 0.95
+  },
+  "s": 3.0,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly asks that Rationals.contains(0.5) be True, which a competent engineer would implement. The FAIL_TO_PASS test instead requires an unevaluated Contains object, so any solution matching the issue would fail.",
+  "prompt_tokens": 1462,
+  "completion_tokens": 465,
+  "total_tokens": 1927,
+  "cost_usd": 0.005714,
+  "cost_in_usd_ticks": 16163600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 705
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15512",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1446
+  },
+  "response": {
+    "id": "gen-1789187612-QD1Q9OYvCneYXWnlvTX1",
+    "object": "chat.completion",
+    "created": 1789187612,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue cites the documented non-convergence contract and a concrete example, so a competent engineer knows to return all-1 labels (and empty centers) when the algorithm does not converge. The FAIL_TO_PASS test uses that example but only asserts labels_, so a valid fix that also emptied cluster_centers_indices_ is not required and a labels-only change would pass.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about AffinityPropagation not returning empty cluster_center_indices and -1 labels when it doesn't converge, contrary to the documentation.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AffinityPropagation not returning empty cluster_center_indices and -1 labels when it doesn't converge, contrary to the documentation.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "CFJFg1r6YRu9Ys0SaM//Kc9AUiQFsHGio5jJMS8gzya7DycP0w+yw3xEqpa1/M4iuYM2nciHhKGUwGcQYFOrZE/UrFg5MVHmi2oP0+CflkMLI4qoB2vB4R0yCkEB9WAo07uEo8f/Jwh2F/lerzFGCXw3N7ge38dadMqT4iA/4lLWf8pAKXpQR0cN+d/3agjZgwCDnOL5dNyUKQHLftWtafE2TsV7AWJT6j3a0XPmJ02YbKU/0IROVlBIDGF7AynzBHOn+WgulMOS9EbIwZBAIF1CamTuXvwFuik46aJ/vjKulKqOo/P3+vtit6DvmxiBQ/9rVl+kA24KFustMCTg34+zjmoNstuf2mcT6kd/NowZ0XXczH+poqQv4TWfNjwGG7BBpXd8Al/5vc9igc49qNHXySPeBn/X9k1hmJFqznkrQpHbbIzbYYX1dfkaWac8V7A66UYzkwsOz7tPgvFNvSoLoiY+w26X9rfPj5N1t/9bdgYMMj0aMkyakMp4Q7VDfpsPx6qawIRioJprgtEAu6XMeo1BrIJ5rmLi301gpQvHPTpje92QkZd46b0CMKEoHFgPif7OsRAWLH2x1nF4+pcu1236Bi4GVPUAriNeXM/aKxjucA6r8YLgnNwlkR6OA1POt7Fk+0NACLbAVHTnkhhphiBFf4Svjeaw60X+4XevBC+rmgiwtbtcmKGfJIWdGndwPnWZx1cy6eB1pFaJ/OgT9ifQCx/Mq57/8ioif40Nrt+AUXYiE5aBz1ZQfKvhZQRhvxfJV7jjub991gg8+1n/fTyJD5fS7Nxg9tcxc1EPPAiJ8dL4Dmlclnks7IuRqeJF3Z9DewE3t3Efb3nE6NKyeMP+dCuh7w2hIL7tbEaciF72vf9dVnWmF0Qcx7BO09g3rMxpaGmhRceBylmgPam/Zx9ehNA56QpCyz2Stwss4MR6sOwiUo3b792np3X111eXkV9O43NcbethZQlGFP494lgkk5+U22eP6RRN+7k9SFCy7rCCQMV7d77dTT1KCV2If7Z9Nxmm+f5QRERQdla+3OEW209zYmH82MW5Pd4X2+qX6NCoU1r3zi9w8IUK9S2wcI+8/5bbdDNKEJJoqdgfvUdeVB4x4jahbcGohHVWy2uvcvLlKd7WY/oGeUyNj+bgVgKp1xKX5YF6yvbQbv2orcWSeGk9EbeqfNancWio5VKIfyDOA26aArjA+oOkpqzSY85mzUVTgqUd1h+m4NdrusRWvNj5cZO3Dc2CWAX7Fs6VGIYYDVEh14EEAM8LN1m/jcFEx/EBwYGKQu0PCDuvJuywPojBER59uV/r6c0qiDCaKFvifLoqOeeb685QtN8942abKDPriQl9/kr3OOXPNbDAh+4mibSPC8ssoVTth3nQ3xWywnP/4V/sIARnoNAnJ/mscYldebbGiz5Q1BsP1DHKQBxCoOMGYaY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_24139b06-2264-9e6c-b87d-7c53ad31f2ce",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1919,
+      "completion_tokens": 379,
+      "total_tokens": 2298,
+      "cost": 0.00592,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00592,
+        "upstream_inference_prompt_cost": 0.003646,
+        "upstream_inference_completions_cost": 0.002274
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 247,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue cites the documented non-convergence contract and a concrete example, so a competent engineer knows to return all-1 labels (and empty centers) when the algorithm does not converge. The FAIL_TO_PASS test uses that example but only asserts labels_, so a valid fix that also emptied cluster_centers_indices_ is not required and a labels-only change would pass.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue cites the documented non-convergence contract and a concrete example, so a competent engineer knows to return all-1 labels (and empty centers) when the algorithm does not converge. The FAIL_TO_PASS test uses that example but only asserts labels_, so a valid fix that also emptied cluster_centers_indices_ is not required and a labels-only change would pass.",
+  "prompt_tokens": 1919,
+  "completion_tokens": 379,
+  "total_tokens": 2298,
+  "cost_usd": 0.006111999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

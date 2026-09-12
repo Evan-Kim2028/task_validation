@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-7762",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2942
+  },
+  "response": {
+    "id": "gen-1789192454-NCo3m7gK8kKFqJBF4BAY",
+    "object": "chat.completion",
+    "created": 1789192454,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that HTTP headers become configurable, without naming the option or defining URL matching, wildcards, or merge-vs-replace with the default Accept header. The FAIL_TO_PASS test requires exactly linkcheck_request_headers, specific candidate keys including trailing-slash and *, and merge behavior that a valid alternative implementation would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue asks to make HTTP headers configurable for linkcheck. The tests require a specific config name `linkcheck_request_headers` with URL prefix matching including trailing slash variants and a \"*...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to make HTTP headers configurable for linkcheck. The tests require a specific config name `linkcheck_request_headers` with URL prefix matching including trailing slash variants and a \"*...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Zo+LMShn6/z9KExEQG6OgL6F5ev68obo/Bx2Sy8aeKNsH/vku4IzUAiySFLqGnaMnz+DZkSxpKl37LuM2rN2ly84ObI8CgNHQeoLECQj1w8IID6mkN8akHXsm0alz81GNOhG2V8tM6LcuUn6HOtehy1HsKas75sTLIoxZUO+vsDer6+gtg4Z/TtaNq6JJvUst/BQCNhaPj1A5l+/4Xxz0eCU/GFyQscF6Gf1l650xDoOHIanQzSuCT1wHH1p/Do4NyyODSAWFPZNVOFUX+dLVOtOxb8vN0U4gtGRCfBa3N2gipwsESqDqQqSvggGegwoFP3NLQXDsnPx27IT2r8kld7GsVEIf+xPonXgMOC9pVBeJGTqQYTQPbhdEQgEFKrVkTTMDlNz6U/tpwXF/nkdB7oxQ3XomWAJ8WKWxFjUfiDAUFzgs0cRs8md8u/8vrFrOwLfVbF/XBqroH13mCjeLRYGNcrwpDKruaCsSVsxes8GPN36CQglKlwM7aBMokNWuRNVvHHDB6xyExwdVayywS3shQSU91+42oIStVgMmugQNC91Wu1guBJ80JYvAHRAFFp7Y5ZdGDoRvFLdbImPZxHwodRkXcgCZu+9G6B0XMq0r9TfAc1mXfO2i/eG0b4iRDnHaLvalRUvVSuhvgmF40wZeGmPD6KP1FlaZf1nkV3Xbfz/ysFgWxdHNKCocsvbrpebzyq7Gko34TujcstjNyYgVS3UOWsOKpBBTvh8EsmOpq9ZVVAXoseaKU//7mXA70AS9J7CjgDxZt4QuZVuoIqwnm1Jvi6LZyaNdhJoGF7TvNec7hosEG2wr3GKbfGm1R9w2Emcrjk7vOJL8ZIwUDsnklVZSibtwY5yf5ti4rH5vgxKrlBYwolsuV21rJucE3Uf76woxAusPK/vyZ+SOJ9VskHBMN40Gm3+v3hX6cnJPro.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_da4dc40a-73d5-931a-ad55-237764712c0d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4054,
+      "completion_tokens": 275,
+      "total_tokens": 4329,
+      "cost": 0.009758,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009758,
+        "upstream_inference_prompt_cost": 0.008108,
+        "upstream_inference_completions_cost": 0.00165
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 150,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that HTTP headers become configurable, without naming the option or defining URL matching, wildcards, or merge-vs-replace with the default Accept header. The FAIL_TO_PASS test requires exactly linkcheck_request_headers, specific candidate keys including trailing-slash and *, and merge behavior that a valid alternative implementation would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that HTTP headers become configurable, without naming the option or defining URL matching, wildcards, or merge-vs-replace with the default Accept header. The FAIL_TO_PASS test requires exactly linkcheck_request_headers, specific candidate keys including trailing-slash and *, and merge behavior that a valid alternative implementation would fail.",
+  "prompt_tokens": 4054,
+  "completion_tokens": 275,
+  "total_tokens": 4329,
+  "cost_usd": 0.009758,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

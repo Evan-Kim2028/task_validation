@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13841",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2979
+  },
+  "response": {
+    "id": "gen-1789191340-9SPIUgTQdqjVo8Ck00FG",
+    "object": "chat.completion",
+    "created": 1789191340,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks to stop using __file__ at import/class-definition time in named modules and even sketches acceptable approaches, so a competent engineer can implement it with only minor design choices. The single FAIL_TO_PASS test fairly checks the version/__file__ case but is slightly narrower than the full ticket because it does not cover the other modules.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about accessing __file__ lazily rather than at module level in Django for frozen Python environments.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about accessing __file__ lazily rather than at module level in Django for frozen Python environments.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3049b750-cf5a-9823-8644-631c2713f306",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3364,
+      "completion_tokens": 502,
+      "total_tokens": 3866,
+      "cost": 0.009548,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009548,
+        "upstream_inference_prompt_cost": 0.006536,
+        "upstream_inference_completions_cost": 0.003012
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 374,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks to stop using __file__ at import/class-definition time in named modules and even sketches acceptable approaches, so a competent engineer can implement it with only minor design choices. The single FAIL_TO_PASS test fairly checks the version/__file__ case but is slightly narrower than the full ticket because it does not cover the other modules.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks to stop using __file__ at import/class-definition time in named modules and even sketches acceptable approaches, so a competent engineer can implement it with only minor design choices. The single FAIL_TO_PASS test fairly checks the version/__file__ case but is slightly narrower than the full ticket because it does not cover the other modules.",
+  "prompt_tokens": 3364,
+  "completion_tokens": 502,
+  "total_tokens": 3866,
+  "cost_usd": 0.009739999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

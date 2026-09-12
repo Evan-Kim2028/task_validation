@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11772",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1514
+  },
+  "response": {
+    "id": "gen-1789190929-bCXv1hOqtl9axopbyF6p",
+    "object": "chat.completion",
+    "created": 1789190929,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue is a design discussion that proposes dropping quote, hashing via update, and switching to SHA256, without pinning the hash algorithm or the exact bytes hashed. The FAIL_TO_PASS tests require specific MD5 hexdigests of an unstated encoding (str(arg) plus a colon after every value), so a reasonable SHA256 or join-based implementation matching the writeup would fail.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit specification validity of a SWE-bench task.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit specification validity of a SWE-bench task.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "kyAEy7zOLpWRtnl/Rds871W6Vh1j2G8ZUCpZjYHVzmUa46WkNVLh0lQOmIKzJ40xLpbWIBn8yh8188T9GdK30nVAa5qG9+iPBhs51uaTlg13koUgoOZbRWK7INYLP5DsV6h7zN/zrnfPPFKPAWxCM79Q/WvrBw3pWw7e5u+KfIGmJZiCI+lFiSVGnzisWGngJ3RmbLAKs4mV2s9LawvRsWO39gv12L2yGA074oNs0zWN9NDhcvk4cbrpwJFhxtMshKEEj0o7qku2XThlqOcqJPSJrurwENHbokQr8lz+VK0IlkGD9MAWrOC34tFllCNAarictraU+aIInL0pptuNyfCBJggLraYThzJUQcOpsiaki6h01x7HYacI9QZMVho8TkDHOoETJ3GnasMeptLGJHXC6cS7AB1ijC7c2j+c1UlhTO/io5V1teRqulpD1hdiqH5+j6qFJBQpbxlz+5zlRTDJCRhDjVpYhVAMOZE76Kr7pTWirmqmTjz4OZNOwaAAPJQa5A6pox1dIhD/7i97AsD/elzdMvVBafEdny4CUw71LZDWBAtPPawt3ZjP0bWvvbxOuHMUo8TTSKBZfxEqr9g4x4MxPzjfmz/Ktvq27agumKklYT9bgiAMgHo0vZIbwxgQmxMHnKHpMpI2NS5BtQwsNPPlqISYc0GZF0x/+k2A6KbpsUoj/I/hxrbI1HRjFBsKd0X49ssaoiO53mZ8gEwS4+OnhvBxNvhSgZmWAoGTZA7KjpRD23Tp7GbPmBZ7ZF+K8PElykIq2CWxZrYgmgD5l0PSPFjGjSQEhuZmBOMzrjgT0SFIanbLhSicBvS3XdD/Sig6s86r8JVZjtmVi4tBdcP2JMaM4uUrDY9s9yiY8crPNNFmkANHEfuRfiQUcnjOnIkbXTUlBjQZ2Vg1k+8XSIJGMtczG34ZIkBv5QE3RJ13UH4ShjaoszJDG5NDC0lWjXoESDY8uYr9fWG6R67sP6e+Cer+kqQSZ9jDxNy3g8Se1SkIJ/APHbymafR5tr8SyAuUM9xOQNrHpCtRGLnl/LWPP8Bju9Bi2V1UT+3bnLonpZS0+zmsZM6KFikQigDrgEVuuckiqkaY18szy0oYFLONEVpe/Ul5QAnDuR3Col1fKbtX3J1YKzb0HuTO3AADQqc6+Jvr2b5eaaK9z4WXeK2wusjqkVU/oooMz0gFX/s2h2OKX9XQlpOEqXkLi4cJl2wzIg/Dc0lLJs+JcRYy9rQ2Orhyuvenxwgg+HrUo60eK+8olH2r6bnQJEVlvYV6zJGhfCgx+fD4ZwfcK6kKkyRYwuG8zc+6q/p7Wlf4w5yppuXGDrowHdaTK43VcR6JJM0oUVLoTrcp8wCww0yauMx/gVPdN2SaHNPQNK6tBt/yu27xmpAm6Ec/cE7aAD4CO59hBFvk+Mzaxd+G0IKyov6yVK32J4SUxJ3TbkO2E9tHLSqmioBcTQDjMluy3WTefKi4hZGDoRAyStjsKDPW5Rxety91yHITIf6eIMm8uZ/IrXStU7f069jWPjUOIXqK/3HAkjB2VNOv1cSTz1UMRbcph5qDOkEs0GbF4AS36CawPAbGaNQK5E3Vp7J1au6d5DjnQ6R0XICNckKea8PCaE2j5MupJ1GZSfJjc/Fag3ssxtJWkKf2DzTFnh20JcsrvIrF45Mu6xTJrxgGGZfP1E4SC6mp+nEwVjWL0wNpcHS81++VgC/XwAGHW4L0pc1K6agSvI68pJ0yELx/xbCFQXpm4tJI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8e078711-e5de-9148-a6a4-04a945bd5a47",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2058,
+      "completion_tokens": 447,
+      "total_tokens": 2505,
+      "cost": 0.006414,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006414,
+        "upstream_inference_prompt_cost": 0.003732,
+        "upstream_inference_completions_cost": 0.002682
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue is a design discussion that proposes dropping quote, hashing via update, and switching to SHA256, without pinning the hash algorithm or the exact bytes hashed. The FAIL_TO_PASS tests require specific MD5 hexdigests of an unstated encoding (str(arg) plus a colon after every value), so a reasonable SHA256 or join-based implementation matching the writeup would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue is a design discussion that proposes dropping quote, hashing via update, and switching to SHA256, without pinning the hash algorithm or the exact bytes hashed. The FAIL_TO_PASS tests require specific MD5 hexdigests of an unstated encoding (str(arg) plus a colon after every value), so a reasonable SHA256 or join-based implementation matching the writeup would fail.",
+  "prompt_tokens": 2058,
+  "completion_tokens": 447,
+  "total_tokens": 2505,
+  "cost_usd": 0.006798,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

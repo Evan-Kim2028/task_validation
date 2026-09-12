@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11754",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1927
+  },
+  "response": {
+    "id": "gen-1789190927-rHjZi7bs4K7DvXaGwzKy",
+    "object": "chat.completion",
+    "created": 1789190927,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The updated issue clearly asks for a DEFAULT_EXCEPTION_REPORTER setting and a pluggable reporter analogous to the existing filter, which a senior engineer would implement via request.exception_reporter_class. The tests still pin that exact request attribute and setting path rather than the originally mentioned technical_500_response parameter or handler500/partial example.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue asks for:\n1. Allow ExceptionReporter subclass in technical_500_response - move to a parameter{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue mentions parameter on technical_500_response but tests and gold patch use request.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for:\n1. Allow ExceptionReporter subclass in technical_500_response - move to a parameter{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue mentions parameter on technical_500_response but tests and gold patch use request.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9cc45799-855b-9086-a1f7-2c851987e45b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2320,
+      "completion_tokens": 600,
+      "total_tokens": 2920,
+      "cost": 0.008048,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008048,
+        "upstream_inference_prompt_cost": 0.004448,
+        "upstream_inference_completions_cost": 0.0036
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 475,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The updated issue clearly asks for a DEFAULT_EXCEPTION_REPORTER setting and a pluggable reporter analogous to the existing filter, which a senior engineer would implement via request.exception_reporter_class. The tests still pin that exact request attribute and setting path rather than the originally mentioned technical_500_response parameter or handler500/partial example.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The updated issue clearly asks for a DEFAULT_EXCEPTION_REPORTER setting and a pluggable reporter analogous to the existing filter, which a senior engineer would implement via request.exception_reporter_class. The tests still pin that exact request attribute and setting path rather than the originally mentioned technical_500_response parameter or handler500/partial example.",
+  "prompt_tokens": 2320,
+  "completion_tokens": 600,
+  "total_tokens": 2920,
+  "cost_usd": 0.00824,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

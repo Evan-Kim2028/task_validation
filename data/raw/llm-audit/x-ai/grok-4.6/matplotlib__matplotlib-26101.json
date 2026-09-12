@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26101",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1124
+  },
+  "response": {
+    "id": "gen-1789192082-cnjzY030zEf1lMwY32Ss",
+    "object": "chat.completion",
+    "created": 1789192082,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that mathtext markers be center-aligned like ordinary markers, which a competent engineer can implement from the report. The FAIL_TO_PASS check is a reasonable image comparison of centering, though it uses a bullet-vs-circle pair and a tuned tolerance rather than the reported star case.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses bullet vs circle with specific tol=1.86; issue mentions star marker\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses bullet vs circle with specific tol=1.86; issue mentions star marker\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a18160f7-9d6b-9872-bce9-3ac599b04cc1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1550,
+      "completion_tokens": 517,
+      "total_tokens": 2067,
+      "cost": 0.005818,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005818,
+        "upstream_inference_prompt_cost": 0.002716,
+        "upstream_inference_completions_cost": 0.003102
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 400,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that mathtext markers be center-aligned like ordinary markers, which a competent engineer can implement from the report. The FAIL_TO_PASS check is a reasonable image comparison of centering, though it uses a bullet-vs-circle pair and a tuned tolerance rather than the reported star case.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that mathtext markers be center-aligned like ordinary markers, which a competent engineer can implement from the report. The FAIL_TO_PASS check is a reasonable image comparison of centering, though it uses a bullet-vs-circle pair and a tuned tolerance rather than the reported star case.",
+  "prompt_tokens": 1550,
+  "completion_tokens": 517,
+  "total_tokens": 2067,
+  "cost_usd": 0.006202,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

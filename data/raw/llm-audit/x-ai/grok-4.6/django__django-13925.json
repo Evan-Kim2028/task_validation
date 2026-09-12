@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13925",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2414
+  },
+  "response": {
+    "id": "gen-1789191345-F75M1PesSWRqILHx2qgV",
+    "object": "chat.completion",
+    "created": 1789191345,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that W042 should not fire on models that inherit an already-defined primary key from a parent, which is exactly what the two FAIL_TO_PASS tests encode. Those tests check the reported inheritance cases without requiring unstated APIs or message details beyond the existing warning.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about models.W042 being raised on inherited manually specified primary keys. Users with models inheriting PKs from parents get false warnings in Django 3.2.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about models.W042 being raised on inherited manually specified primary keys. Users with models inheriting PKs from parents get false warnings in Django 3.2.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+wb6y3IZlyPQu9UzUMBm+qFT7gHF1f7LSXIC0m/Cpkvd0hLXe4Fb4bjJJMoPIgSQop+eItEfAGtfX8/igA5c33OJ2qNffJ3wrPVzz1xtlSA8vqk+fzp7ycxLp9xIBBJcfYL+T46745TJYx4qVsWbLEpSl5jmlGdHj8tbs/UjVtt7ZGynyZEbZ36rj+aI70hGtCQQxBSubSDXPKvne1TNyU/F5ua1xP6+pCDSNrjjUYtZLqoNCMEyXmdTGzqmfq561EJFgX0+EAQpBLR1lrqwk2EMNfdLW2K+kDhYexNgdcI9THtC8WLZ0M+Ebjc4FUigfmsmFuqY2rAkgMIgfZoIaeW64c6nS98nJ3YO5eJ2E4t1e8+kWRtvi56gLPXNfCz2R0cWMiSI0nVfLPfklS9zw5UnD4z6eOzOImLZ36fUKvEyWA8h3WzVnnl7xY23iCz0PKmhIji1QVBaGnTSagAkR4ZkNQDpJhfFCz83MZj/knLATkAFJIfZotoeipIDQixyuF2RSsGEUmAIDqJLkjFofRyDK1NEWbHF3axVIM2zAfU73xFAP5TEP1bpdM5mio26NdTGY6QsjLKDbEs8Xab3PlJGEwpI9wWBIOnUax43JAIffDwJJfbhWoWhvSboT9WtC3BKpn/uxObut1o0IvPLjMV4Y0DJMl+G/DV6POOJbGt7oaKicNwPgXBkWs9FJYVILUcnmHqLc154d+/dgLyeJEqPNIqVjSAbZSiLfXHPKb4XK8m4uh3U0xLzVlVgsIfbTXcqP1h8BJ6oP3xr3UzH3Vbcu62C/KsqNBcEDYzVKUB2ueSlK0xPqwHld5sGyEwPfbusTuS22LjPJRdlyUGa35SvC4iZm/c9f+Ggl/7W2XOjmbzIpWFEFIXqIuos79PMVesnzqI2FHfdz4emYfVEyCkW072uqLKhJfhpBLeoJu5T3Q4rcmR6t47S4ThayOd5FMOo4gBGQaulD3o/x3vpf3UVt1nYjFhM6lQxkduAwEh+juHBF6u3SiBAXJqRgJGan/oF3e/IJqT5/RP0slhj5rOXRNtYyB0m9Veg/OTRsPtQWqy+4vdKnIN4U6xeS4aMoe9UNUPlGT3JUzjzPmvkAY9b4JB5eL2DioxJYJvx857DmnJj+OkYDGKtTfBbGVaBAfulSBPbQKFEEyOG8GKy9Gy7zUyyvqyjpxs/8jZh52AsRnGNaH07LaIgKsZeQfs5STHufvLQX7KZ8tripDKsU6tR1VpcLZYCjYXecIbdjpOZPrsJPTs/mKqBWftEH4Ys7Eu7efmstP1eI4ifG804R5uYevT08qEQUMbaoRFzgFMgSjK6tP+eafoFSFcvIkNJjK10U40HaGQzu7kJZLsN2AAtP/GLxfgSwNQXTQ6Tj8jSPB2fHfvKSZHPfejWw2CSRm6jGxIjmHvWij+F4jWNnTL4l7iV9x3NxfPCu5mv3LLR09PRokkavg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_04e07218-9d0c-90d0-be77-3a5322c64bd5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2868,
+      "completion_tokens": 377,
+      "total_tokens": 3245,
+      "cost": 0.007806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007806,
+        "upstream_inference_prompt_cost": 0.005544,
+        "upstream_inference_completions_cost": 0.002262
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 263,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that W042 should not fire on models that inherit an already-defined primary key from a parent, which is exactly what the two FAIL_TO_PASS tests encode. Those tests check the reported inheritance cases without requiring unstated APIs or message details beyond the existing warning.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that W042 should not fire on models that inherit an already-defined primary key from a parent, which is exactly what the two FAIL_TO_PASS tests encode. Those tests check the reported inheritance cases without requiring unstated APIs or message details beyond the existing warning.",
+  "prompt_tokens": 2868,
+  "completion_tokens": 377,
+  "total_tokens": 3245,
+  "cost_usd": 0.007998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7571",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1323
+  },
+  "response": {
+    "id": "gen-1789192920-mcSG98hvMUXWmieZN0Ga",
+    "object": "chat.completion",
+    "created": 1789192920,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue states that caplog.set_level must restore the handler log level after the test, matching documented behavior and a minimal two-test repro. The FAIL_TO_PASS test only asserts that handler.level returns to the initial 0 across tests after set_level, which is exactly that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: caplog.set_level doesn't restore the handler level after the test. Documentation says log levels set are restored automatically.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: caplog.set_level doesn't restore the handler level after the test. Documentation says log levels set are restored automatically.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "r/v9qR6fq6OEoWaxGN9Bt7PaSSbGI8MEZpkQLCjqc4TwCOJu8mi0aumjRB/J+qs5tQfkF+pjS/sWYOi1N5s1ez7FCGeQkOBr/uf+1KQ25GQpv9TevFRqFb5+YsZk0bX83qLhIysRqGyEe6dx0zE1HgC5fGWXossE/WG3pm2av/kNkT91CeJZPOyEqMETgNW2ossAYK4lI638BqcThrHoWviOt06GgnoJLF7TPbDA9TmQ3l9JQZMtITyh0J946MDGsLleeyUHQvRtEruga6UAbo9HfBj7mSKrxgaUgA+r2cCh7t2i5Qjs4/2/oZBdjbxC7zSd4JlsOxwopKBQxgO2ZV6bKuE1yEvtL9I4uMI+STr0Jjidk5En64q1wiXZygW4GYNo1gOq7QSx89ozknT3ar4rGKBwXJYzMJZXYRYK+Q+yHgW0wpFctDGZgTOlMTm0wysPZuT4pGh+uI5V8z4tBxwf5FhoZ7S6GrPjkGhbRY+nyF/3k8ToE2SP2ycIycHAKcfAaZYbG/k1X5iKwhdptIsSFh3puN7zVFZG5evsxKpggglRvxH6w4dgWh+mhfkca4eHPOzMRT2k4a3sTD2nDc3b05m8dzy3F/YMqe9obKDshX5J3QMpW3GxZuJuXdODONj8CMcFHxizxwkQ6j8fu98keGpFK+saFD160eCcFBz37ZssYumUmuIiU3werWbVz2uW.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dbae1573-73b3-95f0-9182-eff847c0e0bb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1726,
+      "completion_tokens": 238,
+      "total_tokens": 1964,
+      "cost": 0.004496,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004496,
+        "upstream_inference_prompt_cost": 0.003068,
+        "upstream_inference_completions_cost": 0.001428
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 121,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue states that caplog.set_level must restore the handler log level after the test, matching documented behavior and a minimal two-test repro. The FAIL_TO_PASS test only asserts that handler.level returns to the initial 0 across tests after set_level, which is exactly that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue states that caplog.set_level must restore the handler log level after the test, matching documented behavior and a minimal two-test repro. The FAIL_TO_PASS test only asserts that handler.level returns to the initial 0 across tests after set_level, which is exactly that requirement.",
+  "prompt_tokens": 1726,
+  "completion_tokens": 238,
+  "total_tokens": 1964,
+  "cost_usd": 0.00488,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

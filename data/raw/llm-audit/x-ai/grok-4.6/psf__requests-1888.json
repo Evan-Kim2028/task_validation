@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1888",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1459
+  },
+  "response": {
+    "id": "gen-1789192153-btX4rWkyHIhB1xijr3iQ",
+    "object": "chat.completion",
+    "created": 1789192153,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS tests are unrelated to the 301/pyOpenSSL redirect bug and omit the issue's own test.\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes Unicode redirect URLs being passed into pyOpenSSL and the needed native/bytes conversion. The given FAIL_TO_PASS names do not exercise that behavior and therefore do not fairly check the reported bug.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about 301 redirects with pyopenssl/SNI causing TypeError because Unicode is passed instead of bytes.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"Issue is clear on Unicode vs bytes handling in redirects with pyopenssl.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about 301 redirects with pyopenssl/SNI causing TypeError because Unicode is passed instead of bytes.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"Issue is clear on Unicode vs bytes handling in redirects with pyopenssl.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a8d8a7bd-de51-9788-aa3f-197e031c9a83",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1859,
+      "completion_tokens": 612,
+      "total_tokens": 2471,
+      "cost": 0.007198,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007198,
+        "upstream_inference_prompt_cost": 0.003526,
+        "upstream_inference_completions_cost": 0.003672
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 485,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS tests are unrelated to the 301/pyOpenSSL redirect bug and omit the issue's own test.",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes Unicode redirect URLs being passed into pyOpenSSL and the needed native/bytes conversion. The given FAIL_TO_PASS names do not exercise that behavior and therefore do not fairly check the reported bug.",
+    "p_invalid": 0.9
+  },
+  "s": 2.25,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS tests are unrelated to the 301/pyOpenSSL redirect bug and omit the issue's own test.",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes Unicode redirect URLs being passed into pyOpenSSL and the needed native/bytes conversion. The given FAIL_TO_PASS names do not exercise that behavior and therefore do not fairly check the reported bug.",
+  "prompt_tokens": 1859,
+  "completion_tokens": 612,
+  "total_tokens": 2471,
+  "cost_usd": 0.00739,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

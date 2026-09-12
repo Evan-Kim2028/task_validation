@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12091",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2957
+  },
+  "response": {
+    "id": "gen-1789190976-bBgH89BNw4I2l7x5KY0C",
+    "object": "chat.completion",
+    "created": 1789190976,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to deprecate HttpRequest.is_ajax and notes Accept as a better alternative, without requiring specific replacements in set_language or the 500 reporter. The FAIL_TO_PASS tests encode that unstated Accept-header behavior, so a deprecation-only solution would fail them.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about deprecating HttpRequest.is_ajax. The tests include deprecation tests and also changes to i18n and debug views that switch from is_ajax to Accept header.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about deprecating HttpRequest.is_ajax. The tests include deprecation tests and also changes to i18n and debug views that switch from is_ajax to Accept header.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ksbWGhPs16gwNezhlhnX8jeuXvg7txsazJTyLq9QWmDGMBBbCaC/+14XSoX3TQLfMBp7eNYlDrknWQ0IdZuFRsUHsxMcv7MWiGXHMvWN+DU/dAQK3mccVl1jvMTuLuObBb/NGB3HQJRc0Ddy/2xhhgrANhwfox9DkXDrWf1c47IgOILIYHHsRUr91RSRiP6h7vQRUPjeEaUweuEIAfr+fdJwLCeMfpku0vfIR61mujbgYcgsCk5ZbqZOX7SG8ifzL2uBk9psFJ22bmlM0IkCvmY4S25PLsm6+4oflzr14W5DSN4bOoSudzuiX+89xpLli97bVKlRLIzGbDelr3z46oV08pRFo04YLjRSkf1IFX/PheVeNrY36lP/CC3RT6j13R52W+JW90QIui2De3H9VFU19f7d0gBkMZxvLRDRe7YCI8ULJHH3R3X49hvZ3Zz8kxa3xXchRyY1cnIXoIMFYc3V1UWamCY/kEpCYRtThiR6SXP+QI+R0+Hpmb/Pd8rh/IgdC7R5R/B0/aRLrQ5Mu3lMK+415JmK2t5fIRGkvsamUo16DCGCovV+cZvKAWlBYFE/P0A2uwir9s61oi0zUqJGvrvXQ/IUAidZw+k+Q1BV1BsF8H1G3pE0GhGOAGak0Px1KIeL9ezicZTIzNWYtYZVrkPvkxLbuQjWcdj7N0//PyLpOSLWFjnmqc2S4bh2lGc6owWCyS6A8p2zUi1S5zjITeUAHHyJje8qnryHfpUGHTW4P7ZvnUK+ZZBURo+THg2BRmCDY1PAZDh2iTS1KMgDL2FtdPC+3Sn8Aqtg8740l93PpAcy53mFDGjTYqD/pzRHJozuAA/RrMdeTFlOz8SCqBwOwemWOjRG59KR0dF5y4+JSqNp1YEyBW+zhd4XGGbFK3riC2HzqVHk0qPDERsYGYBSqduFVp25d8x9iJG2grBGnav0RZPekdFK2leeR0NDosn+mBJPZG7MXjhjhVHrhrzK7LMcVRbuFaDCup9xXjjuIAdyiVjdM9xbNl4b3X3WhL8Yaakw0uAef6lrWpufu9zRhoWTUYBXxntnHr5cNGGv6Ii7w3DWqQhnsEEufWidQHEE0i+fRkXKFQIHNnIrE2tWBlte+T9ZLFyZw53sYlONTQCxTvii2J7RSFbdSIXjeIj2tZ4d0D49S7/y8jEZtspAAmfmxMpHFlthvs4Y0ACrLHLtULIKeTPiNh4osF6RqCDMCPt56YClimSG9Q/U0/uUNSmRrR6yxBjQEVlFPb14xpba+0tZaiQBPdbuerTPLv2PuvsoiNhGGVYTTdd82GRyORcmmSrXU3xX1fpFEdreGK9khn9ntCk2G2gPdbeVaGved1Ulbc8JxxIpCrZd5u7IYb4Gre04Jzg/7oNQ4J4gd9PiRS2/bA+YBIhEbnEW6Nk7LtCaBQYyXrOpMy4kqvRZ93L9gra/mp7o8TqCIdb6FAzSrLTyMiQ3F1ITQIqwHKxBjLJBUx6cRsG8IC/j0bPl4LNYCnWUmfe9Yc5lSpu2nuKoB3Az6qVf8Daerw06QYfww3q457HgMiudeRFwI7fKGC+JVF2yugRPVmmqB118DK7Y9lzgmsPrl5QVB3hbAKPn6+WTAt3Hr+jHf7Zdbs12zX5WpD7mWipaFqqI3YCAqRLSQypuS8utQW8nVBdkvx1VdREWqZgPVEKBa343JK+/sZn70fhTIlhjUh9LFBZLFq66o4PpYhlDFTtBOYv4olD6Dy7y2vsIuoPdhV/EuOI1lI6XQR3dynJPJM4Dr4CGDPFrrNaRJ0aMdby8Cr0zYfu/1c2R7dhJOJsfhVAcI4DD9/+mbnQl3hK+lzI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cd04b793-ca1b-9048-8807-75fcc01804ed",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3553,
+      "completion_tokens": 441,
+      "total_tokens": 3994,
+      "cost": 0.009368,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009368,
+        "upstream_inference_prompt_cost": 0.006722,
+        "upstream_inference_completions_cost": 0.002646
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 326,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to deprecate HttpRequest.is_ajax and notes Accept as a better alternative, without requiring specific replacements in set_language or the 500 reporter. The FAIL_TO_PASS tests encode that unstated Accept-header behavior, so a deprecation-only solution would fail them.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to deprecate HttpRequest.is_ajax and notes Accept as a better alternative, without requiring specific replacements in set_language or the 500 reporter. The FAIL_TO_PASS tests encode that unstated Accept-header behavior, so a deprecation-only solution would fail them.",
+  "prompt_tokens": 3553,
+  "completion_tokens": 441,
+  "total_tokens": 3994,
+  "cost_usd": 0.009752,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

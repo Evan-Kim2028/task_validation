@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9015",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "927585e0-fc62-9ff4-a9b6-b5f97c65cc3e",
+    "object": "chat.completion",
+    "created": 1789194278,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue describes autodoc linking of TracebackType versus a local property, not that sphinx.util.typing.restify/stringify must emit types.TracebackType. A valid autodoc/name-resolution fix would not satisfy those exact assertions, so the FAIL_TO_PASS tests demand unstated helper behavior.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2529,
+      "completion_tokens": 121,
+      "total_tokens": 3120,
+      "prompt_tokens_details": {
+        "text_tokens": 2529,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 470,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25989600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue describes autodoc linking of TracebackType versus a local property, not that sphinx.util.typing.restify/stringify must emit types.TracebackType. A valid autodoc/name-resolution fix would not satisfy those exact assertions, so the FAIL_TO_PASS tests demand unstated helper behavior.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue describes autodoc linking of TracebackType versus a local property, not that sphinx.util.typing.restify/stringify must emit types.TracebackType. A valid autodoc/name-resolution fix would not satisfy those exact assertions, so the FAIL_TO_PASS tests demand unstated helper behavior.",
+  "prompt_tokens": 2529,
+  "completion_tokens": 591,
+  "total_tokens": 3120,
+  "cost_usd": 0.008604,
+  "cost_in_usd_ticks": 25989600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1697
+}

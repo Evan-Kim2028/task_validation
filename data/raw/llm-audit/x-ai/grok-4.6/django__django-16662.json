@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16662",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1035
+  },
+  "response": {
+    "id": "gen-1789191807-vAIVs1C2e7x9UyImfVyN",
+    "object": "chat.completion",
+    "created": 1789191807,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states that generated migrations must put import-module lines before from-import lines and then sort by module, matching Django style and isort defaults, with a concrete example. The FAIL_TO_PASS test only asserts that exact ordering for datetime, time, and django.db imports, which is what the issue describes.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: migration imports should have all `import` statements before `from` statements, then sorted by module. The test checks exactly that with datetime, time, and django.db imports.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: migration imports should have all `import` statements before `from` statements, then sorted by module. The test checks exactly that with datetime, time, and django.db imports.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "31WZk6+iZSXC493vItP3LuyhKRPKLOoSXJZXJ7iRZC+TQkdjoACMEs4MKHDAjFn4t70PvfYCfX8e87xfXMacAH9O8Sh0wyGuezLngDXJbLda4/fc2Pb1oZax8WdY+hBoImxfDYuce6v6k/xab/OyNBSdwGHrPBAqaDn3UHTFmFawnoremUp+j7mUQEID1YbKIM/DyhDrb/jCPMxPBLoI2Mx/4qqncU2lQLGepcLeMkTO/CxgMGSuaJiDW8F08/jX3HAPedVr1yehBCOluhADH+ZMgt0D/avNChzO5+WeYFyTSEiSuYVqnV2e6KQlh90yUrl93Wj6HgJOixWJllL2caEsfQm7a4V8eiZ/YaOYsin/QWRgxcQgDySuqpx3AuRydPI2RU59GbgRjN+uQe35MXO981ZnQHr6o5Kq7Te0PAoJsCQcC7k8tkBDNduW2TuKZqG2bT10mNBolqR+PhpvkQhOLs3GOOr0VaxMJ0EhKN2z+DvGy8LbRDn3cScp8Eo0y1mQd34.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_03a77f0e-63ef-9eaa-82e9-347bef3d531d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1265,
+      "completion_tokens": 217,
+      "total_tokens": 1482,
+      "cost": 0.003448,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003448,
+        "upstream_inference_prompt_cost": 0.002146,
+        "upstream_inference_completions_cost": 0.001302
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 96,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states that generated migrations must put import-module lines before from-import lines and then sort by module, matching Django style and isort defaults, with a concrete example. The FAIL_TO_PASS test only asserts that exact ordering for datetime, time, and django.db imports, which is what the issue describes.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states that generated migrations must put import-module lines before from-import lines and then sort by module, matching Django style and isort defaults, with a concrete example. The FAIL_TO_PASS test only asserts that exact ordering for datetime, time, and django.db imports, which is what the issue describes.",
+  "prompt_tokens": 1265,
+  "completion_tokens": 217,
+  "total_tokens": 1482,
+  "cost_usd": 0.0038319999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

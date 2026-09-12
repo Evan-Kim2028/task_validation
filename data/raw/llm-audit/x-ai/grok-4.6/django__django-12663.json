@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12663",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1809
+  },
+  "response": {
+    "id": "gen-1789191074-jXA3pRWIXhSqiAs18Utu",
+    "object": "chat.completion",
+    "created": 1789191074,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue reproduces a TypeError when filtering a subquery annotation with SimpleLazyObject and shows the expected prior behavior, so a competent engineer knows the lookup must accept that value. The FAIL_TO_PASS test is the same scenario (subquery annotation filtered by a lazy related object) and does not impose extra unstated API.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about SimpleLazyObject with nested subquery annotation failing. The test checks filtering a subquery annotation by a SimpleLazyObject.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SimpleLazyObject with nested subquery annotation failing. The test checks filtering a subquery annotation by a SimpleLazyObject.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fNlC5157B76N+2IeB1O6kYmIik3G+wOUCY2fQD4fydJ4nFkYiWZDMVBPF4HL4Kr9Wry89ptuoi1K/OXhOetucXWYsNJ1R72a9sumwVWXJBNcZTX8Sps3T6o1kPlJEH5CexnXwQbhOOocqgX4RehoZ/inSXBiRbMMoVDbMwgVKHt13KZ9K+E7PZpmehByBNncz5u6V6ASFMtEDjPVE/xPn7hbpMKv0uXn4v0GsRZZjs2XvSS26QrUYEdrJVk8um8tc6KtqTZgiJDW2/cQQH6vG4Uwnoi1UDALkxkNkTo1BeX9QbxmNxrcSed2GFCuwJei0qiSolXG3uNDKqJS75U8pk87WXxWXIi2GcrJYGwVJ1ADj89nwoliMPauAF/TC8H0pW8wWzoUCi5BxmTsAZiD2pglKiuc7ZBBUsHObiQS2gOtf4/N+LcMF8qaquvbLaT4XBefbr8huVP8iGGbPIf6hvop84nL7Ou0sg0YQvTtuBMOX6uEEhaXMl8ei50nmFs5mPW4QJdoVNWmGzqxht83Oxt7Aav/oZDo2A+s5L4RRwtmtbV9Ri9HndNikQXPL7u2j5MZOFr9yX0yP/AxG0dfh18K+3bvHMwfKnQ2q6dqmbaOIyA1frsPRsuW7aMOLy+b3bT2Sh7k2KCH3flxWeOgofzAgJ0ugU3+5JWTF4dcZ3Ot9B17ojYJ20HOuhf0PbrSnCA2u6yYbbF7WloU1BF+hFJTPzDKr1jpfzlPACLrY8yYYgfqYPMDtTHKffP31YVg3iTl5QUH+ieLj6X8dPpCA2RzMJQX+RCLwuLauIAcPaNrn5mt6PiRLITy5b4Sjcq5umKaRToXFo2acuVI2mKBRJYbsN5L3N+gaDzVoiEKq26h7wehvcwV/xhXOaIevK2xj2xCG2dS99k2j4gz4eOpjLdB7lr47bo9uXqTat5LsdEi+WujyyWUKluZhS5EedTP56//AD0ouEqW009cv3eLqIqq/8+V6DCJme8IAKYCex998kRFD7matr1q+chzGduaM/tqE3GAGW3nZlLnlQrg1rfCzhAX3F1bzo3dta85mrymoNpSPDwRT3Zfft7GvbINWsVvGj5lzctMkQtg3aD944HkARwgnpr3CV71QQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b7eea48e-7d7c-9aae-b2c3-89070dbbc1ac",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2331,
+      "completion_tokens": 284,
+      "total_tokens": 2615,
+      "cost": 0.006366,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006366,
+        "upstream_inference_prompt_cost": 0.004662,
+        "upstream_inference_completions_cost": 0.001704
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue reproduces a TypeError when filtering a subquery annotation with SimpleLazyObject and shows the expected prior behavior, so a competent engineer knows the lookup must accept that value. The FAIL_TO_PASS test is the same scenario (subquery annotation filtered by a lazy related object) and does not impose extra unstated API.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue reproduces a TypeError when filtering a subquery annotation with SimpleLazyObject and shows the expected prior behavior, so a competent engineer knows the lookup must accept that value. The FAIL_TO_PASS test is the same scenario (subquery annotation filtered by a lazy related object) and does not impose extra unstated API.",
+  "prompt_tokens": 2331,
+  "completion_tokens": 284,
+  "total_tokens": 2615,
+  "cost_usd": 0.006365999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

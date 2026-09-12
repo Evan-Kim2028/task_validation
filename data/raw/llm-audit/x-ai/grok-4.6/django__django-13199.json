@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13199",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2413
+  },
+  "response": {
+    "id": "gen-1789191163-SnEY1EalpRrRIs7vrt3C",
+    "object": "chat.completion",
+    "created": 1789191163,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that delete_cookie emit SameSite (and that messages/sessions keep it when expiring cookies), which a competent engineer would implement by threading samesite like set_cookie. The FAIL_TO_PASS suite is only slightly narrower in requiring an explicit samesite kwarg and SESSION_COOKIE_SAMESITE on session/message deletes rather than a settings-only default.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about HttpResponse.delete_cookie() preserving samesite. The tests require:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about HttpResponse.delete_cookie() preserving samesite. The tests require:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7266e4c6-bedd-999a-9037-d49871371b90",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2839,
+      "completion_tokens": 670,
+      "total_tokens": 3509,
+      "cost": 0.009506,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009506,
+        "upstream_inference_prompt_cost": 0.005486,
+        "upstream_inference_completions_cost": 0.00402
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 534,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that delete_cookie emit SameSite (and that messages/sessions keep it when expiring cookies), which a competent engineer would implement by threading samesite like set_cookie. The FAIL_TO_PASS suite is only slightly narrower in requiring an explicit samesite kwarg and SESSION_COOKIE_SAMESITE on session/message deletes rather than a settings-only default.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that delete_cookie emit SameSite (and that messages/sessions keep it when expiring cookies), which a competent engineer would implement by threading samesite like set_cookie. The FAIL_TO_PASS suite is only slightly narrower in requiring an explicit samesite kwarg and SESSION_COOKIE_SAMESITE on session/message deletes rather than a settings-only default.",
+  "prompt_tokens": 2839,
+  "completion_tokens": 670,
+  "total_tokens": 3509,
+  "cost_usd": 0.009698,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

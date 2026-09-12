@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14016",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1019
+  },
+  "response": {
+    "id": "gen-1789191361-cREwXpaFoK5wv7Pc9zTx",
+    "object": "chat.completion",
+    "created": 1789191361,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly reports that combining a Q containing an unpickleable value with an empty Q raises TypeError and should not crash, which is exactly what the added assertions exercise. Including the analogous & case is a small, obvious extension of the same combine-empty path rather than unstated extra behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about TypeError when applying | operator to a Q object with non-pickleable types like dict_keys.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about TypeError when applying | operator to a Q object with non-pickleable types like dict_keys.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "eT7tTTH6/jR7PTih3g0W+eEayxNZiidndhtqsRY49b6UyJHTKKB74t+00XHVr85Og7pMd8winMjDEpbCbODsg/HYEummRssY1C6/GOaVxqt28tYglimskYr13zdQGn8KTnOFLf7PywlbizL/1rDumMVs49Jua4TMG9O+lIEP+t77d4fBwK8ecKBB2h2GiAY3nQsFL4740lu2+1G5Q8u3vZKCRHpREW02hpoyw2WPlzEWT4KhUgGjUZmc8zDiPr/ijv8C1nK3dTQbExGp3Wf/S7wHjF2+Wo2NFKHQfbgibLSStwAp0yrb5sPm/0pTjpc55Y1317mQfsfki7rDXA48J9+qru8Cq3ny6BqD+lsjwoAx0fT1hVRiYGL6CMBGJ+8bepYDuPqOe/eizG6nTu39Xd3EGdiAQfK/nk5urwI2UFbvfJidnaVCXZeEc7epIkenk15r6vvF/HsTshbE/xs3I47KQv/szH6fYQF8zx5JJ7zhO87HbVIevWKBIj9qvvTqKpzpF560lDOubt28L04sM+IJsi1Mkwf2qZ9mBCr/K/PtOFoiOZJuHsY/pelQjK5qHFixvGtOg5CZ2J9+sW2qk2PckvEw2XwjIxyUPVDK9y3TbK1QnJXANm8rqCBvoAo49B3vK6UYR/OC1lK9aPVfaF3qAnTaOK4QIKc6P96fNb3KsndEbtne79KZcvGcB+pRyJgy0Lj3NMlqn2BW5Ui2yrmBV/Acwm0l8r/yWNRjpQpOfHru0zlo0QXRFPnHZ1+vCgNt3IkzAqeyH2+2/O3eeKg3ZQokmvus3kzZU6dv/6jwezDrNPKcaaPyxI9E4N7qt97/kObxcdlS79shEJEozoKr46ZWp6ue5YHwlALqp3I+psJvjP3aFf073P1eAg4expmxKVOp3WD/Ol5jq12sT7BDQKWVa66M8pqzdC+Hz1IXnvBq4STmGA0MUqcjKFM7keDFfc3ES//0CR5VU/fjcWGYXmJ28t9svOcoDGQXjTo+sLq13whoZAcb5xy5h/nTyweqFJQy12vY8rAr6E0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2b27a7c0-51c6-9301-95cd-7b0bcf71b74b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1400,
+      "completion_tokens": 290,
+      "total_tokens": 1690,
+      "cost": 0.004156,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004156,
+        "upstream_inference_prompt_cost": 0.002416,
+        "upstream_inference_completions_cost": 0.00174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 175,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly reports that combining a Q containing an unpickleable value with an empty Q raises TypeError and should not crash, which is exactly what the added assertions exercise. Including the analogous & case is a small, obvious extension of the same combine-empty path rather than unstated extra behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly reports that combining a Q containing an unpickleable value with an empty Q raises TypeError and should not crash, which is exactly what the added assertions exercise. Including the analogous & case is a small, obvious extension of the same combine-empty path rather than unstated extra behavior.",
+  "prompt_tokens": 1400,
+  "completion_tokens": 290,
+  "total_tokens": 1690,
+  "cost_usd": 0.00454,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

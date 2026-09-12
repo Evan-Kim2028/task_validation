@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11177",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3397
+  },
+  "response": {
+    "id": "gen-1789187518-FrnEbc4HxU0pjNJsJUif",
+    "object": "chat.completion",
+    "created": 1789187518,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only describes intermittent StatReloader misses on repeated .py edits and does not mention thread naming or duplicate snapshot paths. FAIL_TO_PASS still requires the unstated django-main-thread name and a specific snapshot_files duplicate-dedup contract, so a reasonable mtime-loop fix of the reported bug would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about Django 2.2 autoreloader failing intermittently without watchman. Tests are:\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Thread naming test unrelated to intermittent reload issue; gold patch includes unrelated changes like echo_on and urlconf swallowing\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django 2.2 autoreloader failing intermittently without watchman. Tests are:\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Thread naming test unrelated to intermittent reload issue; gold patch includes unrelated changes like echo_on and urlconf swallowing\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e4574cf2-c831-9f4d-ab7b-447d0e211660",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3965,
+      "completion_tokens": 493,
+      "total_tokens": 4458,
+      "cost": 0.010696,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010696,
+        "upstream_inference_prompt_cost": 0.007738,
+        "upstream_inference_completions_cost": 0.002958
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 370,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only describes intermittent StatReloader misses on repeated .py edits and does not mention thread naming or duplicate snapshot paths. FAIL_TO_PASS still requires the unstated django-main-thread name and a specific snapshot_files duplicate-dedup contract, so a reasonable mtime-loop fix of the reported bug would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only describes intermittent StatReloader misses on repeated .py edits and does not mention thread naming or duplicate snapshot paths. FAIL_TO_PASS still requires the unstated django-main-thread name and a specific snapshot_files duplicate-dedup contract, so a reasonable mtime-loop fix of the reported bug would fail.",
+  "prompt_tokens": 3965,
+  "completion_tokens": 493,
+  "total_tokens": 4458,
+  "cost_usd": 0.010888,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

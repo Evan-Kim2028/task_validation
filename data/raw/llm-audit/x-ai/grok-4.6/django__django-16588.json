@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16588",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1039
+  },
+  "response": {
+    "id": "gen-1789191796-79UZgxmsRQoOUp20tzdm",
+    "object": "chat.completion",
+    "created": 1789191796,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly reports a crash on zero values like 0.0000 and shows the failing precision calculation, implying the filter should format them as ordinary zeros. The FAIL_TO_PASS cases only assert those documented inputs produce the expected decimal strings and do not require unstated extras.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about floatformat() crashing on \"0.0000\". The tests add cases for that exact scenario and similar ones.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about floatformat() crashing on \"0.0000\". The tests add cases for that exact scenario and similar ones.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "t7sE23R8NzASTNbfCQDC1r/to/pCnCsSPHY4b9aYpyiENBdoUY+3xzxUXc43hIgUJNdLBtBhV5Giqg92OC2R0D78cDvp7qkTYVQOsvCOgjkBtRmNaIwtsAlrJL2rQUkTbzDbUnJqWNlJA04ZcQtWEa/smRRYRv7Ovg5Woc+zW7uUQLaa5tqmsKvVkOB9A7l/rd4i39Z2poVvOgiRV9iW46FtnswXyatxcd+uugJ7Q04ECJNZPjMqF7y7F1YIlx2k3PxJS8MRoPSn8kwQXdXudhCUxdCftLG8zJRFbaBUFo9vA5Dp28OXKY2pPUOTYMGLVEy/5I9OiwcJnTBq2zhh+YIz1/GoZRCSdtfpPp1DkNrbVpmAytxPlD1Mvt1k5Got7WqzEvaQqIV495ngWE5/eb6JpMgTIUyT5+6Qzq4n9qv0inVC+WqJBFzVlmY8dBWkZ41vsl93QiQhYypRVBtEVs8Cf2ihLMqgWu1eltek9U9NXwZItJHkCbBw5XYRObU/wiXTbfNoyo63EFwCYImqJOluvOaKU46xaR4W8ylikSCsVWJxUHo120zYDvnA8qiYLIkncgwc3qIn5qT9IOWsEwx3iVGzHZHVb97gMjQmI2Ax4wmwBm2ql8NsfkEKD/OxDx4y2Qdovb8rdrBoe+9TBH6VF63/sy3H6jYtYPockH0FJIxjSyzFhJ4HwTbsLILSjyOajC9CF9z3gohH4xjTqaCUCLQxxIj/bfxQyMKF1P4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_398aa7d5-335d-921a-ae81-bdb73bf60c2b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1449,
+      "completion_tokens": 251,
+      "total_tokens": 1700,
+      "cost": 0.00402,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00402,
+        "upstream_inference_prompt_cost": 0.002514,
+        "upstream_inference_completions_cost": 0.001506
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 139,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly reports a crash on zero values like 0.0000 and shows the failing precision calculation, implying the filter should format them as ordinary zeros. The FAIL_TO_PASS cases only assert those documented inputs produce the expected decimal strings and do not require unstated extras.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly reports a crash on zero values like 0.0000 and shows the failing precision calculation, implying the filter should format them as ordinary zeros. The FAIL_TO_PASS cases only assert those documented inputs produce the expected decimal strings and do not require unstated extras.",
+  "prompt_tokens": 1449,
+  "completion_tokens": 251,
+  "total_tokens": 1700,
+  "cost_usd": 0.004404,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10881",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2387
+  },
+  "response": {
+    "id": "gen-1789187911-5hBgxQYPxVxJmS9WREjo",
+    "object": "chat.completion",
+    "created": 1789187911,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for a non-convergence warning on LogisticRegression when max_iter is hit, without specifying warning class, solvers, or SVM estimators. FAIL_TO_PASS also requires ConvergenceWarning from LinearSVC/LinearSVR and from LogisticRegression across solvers, which a valid LR-only fix would miss.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about LogisticRegression not warning when it doesn't converge. The user wants a warning when max_iter is reached without convergence.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LogisticRegression not warning when it doesn't converge. The user wants a warning when max_iter is reached without convergence.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_be21cb13-aed7-979c-b242-4cff46dcbe6e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2944,
+      "completion_tokens": 482,
+      "total_tokens": 3426,
+      "cost": 0.008396,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008396,
+        "upstream_inference_prompt_cost": 0.005504,
+        "upstream_inference_completions_cost": 0.002892
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 363,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for a non-convergence warning on LogisticRegression when max_iter is hit, without specifying warning class, solvers, or SVM estimators. FAIL_TO_PASS also requires ConvergenceWarning from LinearSVC/LinearSVR and from LogisticRegression across solvers, which a valid LR-only fix would miss.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for a non-convergence warning on LogisticRegression when max_iter is hit, without specifying warning class, solvers, or SVM estimators. FAIL_TO_PASS also requires ConvergenceWarning from LinearSVC/LinearSVR and from LogisticRegression across solvers, which a valid LR-only fix would miss.",
+  "prompt_tokens": 2944,
+  "completion_tokens": 482,
+  "total_tokens": 3426,
+  "cost_usd": 0.00878,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

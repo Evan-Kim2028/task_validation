@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-14471",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1934
+  },
+  "response": {
+    "id": "gen-1789191890-L41D7jbmBHqJUL6uVsvo",
+    "object": "chat.completion",
+    "created": 1789191890,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS checks switch_backend close-on-change, not the reported plt.figure canvas destruction.\", \"confidence\": 0.82, \"rationale\": \"The issue describes pyplot figure creation destroying non-pyplot Qt canvases and never states switch_backend semantics. The test therefore demands unstated backend-switch closing rules rather than the reported coexistence behavior.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about FigureCanvasQT objects being destroyed by plt.figure. The tests are about switch_backend_no_close - switching backend to the same backend shouldn't close figures, but switching to a...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Issue describes plt.figure destroying canvases via FigureCanvasQT.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FigureCanvasQT objects being destroyed by plt.figure. The tests are about switch_backend_no_close - switching backend to the same backend shouldn't close figures, but switching to a...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Issue describes plt.figure destroying canvases via FigureCanvasQT.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d76b5c97-0f09-90d8-89bf-94ab657092fe",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2297,
+      "completion_tokens": 491,
+      "total_tokens": 2788,
+      "cost": 0.007156,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007156,
+        "upstream_inference_prompt_cost": 0.00421,
+        "upstream_inference_completions_cost": 0.002946
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 372,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS checks switch_backend close-on-change, not the reported plt.figure canvas destruction.",
+    "confidence": 0.82,
+    "rationale": "The issue describes pyplot figure creation destroying non-pyplot Qt canvases and never states switch_backend semantics. The test therefore demands unstated backend-switch closing rules rather than the reported coexistence behavior.",
+    "p_invalid": 0.88
+  },
+  "s": 2.25,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS checks switch_backend close-on-change, not the reported plt.figure canvas destruction.",
+  "confidence": 0.82,
+  "rationale": "The issue describes pyplot figure creation destroying non-pyplot Qt canvases and never states switch_backend semantics. The test therefore demands unstated backend-switch closing rules rather than the reported coexistence behavior.",
+  "prompt_tokens": 2297,
+  "completion_tokens": 491,
+  "total_tokens": 2788,
+  "cost_usd": 0.00754,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

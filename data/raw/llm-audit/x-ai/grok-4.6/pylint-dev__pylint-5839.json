@@ -1,0 +1,83 @@
+{
+  "task_id": "pylint-dev__pylint-5839",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "cac4658b-5c02-9d9e-a71f-abc4915fe529",
+    "object": "chat.completion",
+    "created": 1789193713,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that old deleted msgids/symbols cannot be reused, without specifying a DELETED_MESSAGES catalog, its tuple/NamedTuple shape, or enforcement via register_message_definition. The FAIL_TO_PASS test hard-requires that unstated constant and registration API, so many valid collision-prevention designs would fail.\", \"p_invalid\": 0.82}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3971,
+      "completion_tokens": 123,
+      "total_tokens": 4505,
+      "prompt_tokens_details": {
+        "text_tokens": 3971,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 411,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 37896400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that old deleted msgids/symbols cannot be reused, without specifying a DELETED_MESSAGES catalog, its tuple/NamedTuple shape, or enforcement via register_message_definition. The FAIL_TO_PASS test hard-requires that unstated constant and registration API, so many valid collision-prevention designs would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that old deleted msgids/symbols cannot be reused, without specifying a DELETED_MESSAGES catalog, its tuple/NamedTuple shape, or enforcement via register_message_definition. The FAIL_TO_PASS test hard-requires that unstated constant and registration API, so many valid collision-prevention designs would fail.",
+  "prompt_tokens": 3971,
+  "completion_tokens": 534,
+  "total_tokens": 4505,
+  "cost_usd": 0.011146,
+  "cost_in_usd_ticks": 37896400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2752
+}

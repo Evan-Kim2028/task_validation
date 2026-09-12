@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16142",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2035
+  },
+  "response": {
+    "id": "gen-1789191739-7sMeFWRjR1BHuz9m8iHU",
+    "object": "chat.completion",
+    "created": 1789191739,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue only asks get_language_from_request to return None and leave default fallback to middleware, but the FAIL_TO_PASS tests also require specific LocaleMiddleware redirect behavior for Accept-Language and cookies on unprefixed URLs. A reasonable implementation of the stated API change plus a simple LANGUAGE_CODE fallback would not necessarily satisfy those tests.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about get_language_from_request not falling back to settings.LANGUAGE_CODE, returning None instead.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch changes LocaleMiddleware logic, redirects, and adds get_fallback_language; issue only specifies get_language_from_request returning None for middleware fallback.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about get_language_from_request not falling back to settings.LANGUAGE_CODE, returning None instead.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch changes LocaleMiddleware logic, redirects, and adds get_fallback_language; issue only specifies get_language_from_request returning None for middleware fallback.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "lsRaUUJaShvZjoay8WW6W8E8WaVuxAazc7NUrGrWrJ6FMA5J6rdQSc9lbHjcZts3XfpztyELULBVfIxUorgmpH+GI9vTkgTGUI0rznJNppX/mYlVLgGIMdDcB/RB5W5z77uuZFNffpIOq3gRp6laSjkeQo3aZXRzPl3ShoLQSjC2PPfKoZnN9WkI96oD6w8ugd9iyclB/3mes2dgXwrzVeXEJnLshr/jSv6AxvGL5Tefg6vF1h2WBhavSB179Q1miDmh+xBW+lVWhvHetlBCJahrepV53n4FQGSw0kxNQcCs36lSfOw6psoZeY0uxCnYBB16tqEzAXqb3aFueWRMCtHxzHPzAE4rFhmNbEQaLTk1lrxeJ8jH25wYihY4UOpo8yqhlmw2WD+/UMscJYNn3BVXkzdxDN4egWcUrn6lDQfBuvgHnPbzPPJJNbaqYCvgzlXLKc53tCEIaAm9uFCT3xIpeMSrMBD3tX23UPy6bwowmMh4/bWFocOM/9ymd0hmZ6kJkRhaIyr1vC3hohfYGaaJRUsghvNBT/TBvDnzG+J8cHtZUURPXa8E5HTnnpaWT3Jn8lY/dPifPkg/S13AVNx3fNyUoEdP/Z3hYV39RNESxlUyBJtnscIUcSU6b2UcdjaD/lK0Rb6XeJZIJcdRlgQuhM2azO4s5hyjL37sEcbVJwUio0U/VTj97RxnM5k+c/4xC3x/STbGXa3hgyrWd9/FhDKXPkmP0QSnaH5kNfFIC/4YUfYONkvJbStYzWAtHlD4ra2XG8BivwQbVSBDTCvmkXSuvA2wxJLT+rJrSs0ETFXkfafAHVzZXPE4l5swrGe5FC//xVO2rTP2EVM84CJC710voFHNciQ+GwjxWh/+acvxqyNPPR/+6Q/AfVP9E6Efv5ZB1yNzeLGacD8XGzb3lkXcNu0MKeU6U9QHRx+3J7O5m9OVpsallrdPBX9sEzXGlFKZit+SVPwUoKRb1lMiDKeSe96HTfgc6UDQkwx1b4QXkCkSMaddR1Z2NlZ0DGQN2aEtTHYWRIVc2i3TkzBLbDDgoyFgJftASCrfTyEitVU1dC8mAW+tBrU/nzrslkLCQKDguO6AeMUm6ujNbB30D4QRsH2XiJstEwZQMzOHZSk440sJXmdZhLeHDB9zKFhiINcBERNKykIPXV01/M23CGy7OaCoZMCmbF+JSWLh5ft2xARh8bEhynrVHV+L5qdNJ323Qsfi92ZsWmvP/a0BRuHkJXDpa98ivU/YFd9huhAJ5wnOimMy4aAhzbqixtLQVzdNH3di7mPyrT2/ugUYCF08iz5WEabK3WHew9Z8EkAl4mg/u4MluEjkmaR35JHkFqQG1qgfn2G7K2SSHeP7dsrErb56PrNaBAFq8uNnu+Nh5G7nEfJHYOA26lh2eALT0PJuzahNAXJ0X4SRW4/sAoSWogWVo5h/RVSF0PkXsvMKD3eF87qgZ1A0wbJWeo0sSDd18eryxMFY1yHb/L5aFCXX7efyrHYnyyNf/EStaUQqda2lyvACAwGE4B/Fb1A1TuL6nPQLMClz4B55EhDuvcbH9fN8q3mCCh1EwNN2elTg6H0z7RUx3acb+0BlmMsy2/O6P4bxwbkxTbXa4ePMYYD6DmrFGnve4s/Py7AOgqQQO2Lopi0z6FOotfkvNobToNPzuD6IsBQlKA7hwNrLjctNXsY3hLwQUG9AiH3hhw9sSXcZr/UlVRSlgXGf0Fzl1UmyQMzxOK5bOtnSBvZ9kxzHVifgo63I687vNU+zN3zVePMWqjSBpiB665Ua8n5nvi1Ylw2pfcU+3Wrx8FJliqoGXqjx6EDrWj5PR9UWEq7WuGmsht410lDdX47iDRnMr3N3Ehn8rHjDx2qehROe7GBKN1r2xP+rkwa426KVqNoKl6vZ/6drgTLsJAALYAqyhpYJ/45/oZly8dEGNEyq/zQ9BNeQcQDxAixriQ6KpsaiJw/ElIZ8iLN3gknPgFjoJv9tp32HrbSC9vJFb5wipq5kayReXbK03QLXBHHdtdpbBxF9pepNx2Z6PtPD0boXMNuWf9rB6EB//9t2dXfNtXganTggnMmbQ3kb2WBb4Rgi1unk3kaw4epBGIWPkjqaF12TIb98rUm3DEYM1dsDd9UUVJRvqDDTFbNwxoU05XiGeVykpFyn817x/0vjCLy7xCY3VCg9BxA7+WESGDzid8Zyd4t82qNoghSyW+k5dnAqRgCM/+/vwbb6qZWFUhpnyn9Hm+6ovQ1Lc2+UIysrbKlOBoZ96NaIvCllGfNkg0Hba8rHn3hLz1uKwlmIW7OWwMxeX4XDyURHxat0dFoeeuLilLMpc4X5wBwFuFBkToakBAbze+GtMgJsNFYKEA/RPQdF+jThsA25bLL2SHUcDYqjhUSnGnJuvBMFS8Rx1RJxqCxXABkXZjMAwBIzzY0tCnS14DZKBw9aM2Gn60/d9/CxrHw++DelHKuPFPUx8u2WQgndlH5dYqQfoVt62k85lWSm+JtrgcXDXplweIXSnvcUK29PuqMiPi/rGhEGxtGi7V+0CICm7bkf23hO+nZpfwZU+6sNMsuZgL/UqHhtaLjhubkzBft+Ih+P5cNp4GYg4TANKIP8rxY7aDxhfBROJnvSTgbChSPbltIB+IhqBnDge6HcYXRBaTEuR7FjX9XR3sSMOl3oO1meX4seaReTag1SQ9eamc1Pr6fl7TU/xYx/PLTkmLlksExbqEEywe0E6A4Ub7hH0DQwbfSp+6NjdAUoNUFoOkLK51cvyYaGrSeBwMxPF7I12Qm9hPy4SKnTPCfgUzvjm8jWyLkHPvH9o2ak4Bb2P9vbwo/bjogZchY8DyYqAkhhNYqSf6qcMGzY+m/qOOArYpIeD/vnnKg2svA8EiEQJqSyxz+Ljbe1hdGnUBpuahraDxhG9C1MGcumT7LzYZyrBqpjS3ex1FwtBTct/1qeqsrKYeH3rRTwLZtD9XQypgI/7M9/yyW1BVX8XvQ+fJzkFR0vC1I+cy67wuv9ZOOgSceoldRTjGoY9KMOyQHW4tRqCAX3HIV4BMIsdZL3DxhNeux5444qrlW/MxDQQL7gK1gJGoQBnyLEq2tKMVZwzTNXkKo68BCj5oo6AiSNJNeQQlzKwS33PWcw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4f66ffdd-d5f6-9f5b-8ab8-b9e3f151b6da",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2364,
+      "completion_tokens": 629,
+      "total_tokens": 2993,
+      "cost": 0.008118,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008118,
+        "upstream_inference_prompt_cost": 0.004344,
+        "upstream_inference_completions_cost": 0.003774
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 504,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue only asks get_language_from_request to return None and leave default fallback to middleware, but the FAIL_TO_PASS tests also require specific LocaleMiddleware redirect behavior for Accept-Language and cookies on unprefixed URLs. A reasonable implementation of the stated API change plus a simple LANGUAGE_CODE fallback would not necessarily satisfy those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue only asks get_language_from_request to return None and leave default fallback to middleware, but the FAIL_TO_PASS tests also require specific LocaleMiddleware redirect behavior for Accept-Language and cookies on unprefixed URLs. A reasonable implementation of the stated API change plus a simple LANGUAGE_CODE fallback would not necessarily satisfy those tests.",
+  "prompt_tokens": 2364,
+  "completion_tokens": 629,
+  "total_tokens": 2993,
+  "cost_usd": 0.008502,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

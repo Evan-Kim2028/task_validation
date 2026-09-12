@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23987",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1124
+  },
+  "response": {
+    "id": "gen-1789191979-mvOzVHWJHMdx6NVHqfBi",
+    "object": "chat.completion",
+    "created": 1789191979,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that constrained_layout=False not enable a layout engine or emit the subplots_adjust warning, which a competent engineer can implement. The FAIL_TO_PASS test never asserts the warning and instead checks get_constrained_layout for dict arguments not described in the issue, so it is slightly narrower/off-target but still aligned with the intended fix.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about a UserWarning when using constrained_layout=False with subplots_adjust. The expected outcome is no warning.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about a UserWarning when using constrained_layout=False with subplots_adjust. The expected outcome is no warning.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4bca9030-5174-97a6-b19b-c5188c7b67a9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1465,
+      "completion_tokens": 591,
+      "total_tokens": 2056,
+      "cost": 0.006092,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006092,
+        "upstream_inference_prompt_cost": 0.002546,
+        "upstream_inference_completions_cost": 0.003546
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 460,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that constrained_layout=False not enable a layout engine or emit the subplots_adjust warning, which a competent engineer can implement. The FAIL_TO_PASS test never asserts the warning and instead checks get_constrained_layout for dict arguments not described in the issue, so it is slightly narrower/off-target but still aligned with the intended fix.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that constrained_layout=False not enable a layout engine or emit the subplots_adjust warning, which a competent engineer can implement. The FAIL_TO_PASS test never asserts the warning and instead checks get_constrained_layout for dict arguments not described in the issue, so it is slightly narrower/off-target but still aligned with the intended fix.",
+  "prompt_tokens": 1465,
+  "completion_tokens": 591,
+  "total_tokens": 2056,
+  "cost_usd": 0.006476,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

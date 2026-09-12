@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15278",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1246
+  },
+  "response": {
+    "id": "gen-1789191569-zeF9ne3R14V55iHnUmG6",
+    "object": "chat.completion",
+    "created": 1789191569,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that adding a nullable OneToOneField on SQLite fails because UNIQUE cannot be added via ALTER TABLE, so a competent engineer would special-case unique/PK columns. The FAIL_TO_PASS test only requires that such an add succeeds and the column is nullable, which matches the reported crash.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about adding a nullable OneToOneField crashing on SQLite because of UNIQUE column.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding a nullable OneToOneField crashing on SQLite because of UNIQUE column.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "k0mibsFz2WTjMdoXpaMjPjBebm56oFS+Hocc82bMhe5GH3zi0qszbKuX7Xps6fcmfxrdaDeEQ1y78WeT+CYxKogp3Hl6BXlsiCQrIReCxaK+lkZ9l/g79kuZl2TgmoFlksCr8EBiZ2DrLMkfHs1prSQVxDkvlAJY4D8ybA9AWNLTEEdcRag6BHDnG5y+kXBFb73ykMmtFoOA4vu3BD6x/sVP5s0UWcFoBxhJqwA4Yr+EeAQVtrA52ICs8ZYrBwBsBaSHDzkD0Aqa890vuxQJEBzj0FLDUFfCIBWMcrao3f6e/2G1D41mMbIjmMb89kUcURDzIzaIH7jYh+wkv6agKcRnuUj8gKGR2uPVZfZv6qDzfbwScMXHwAJWMWAa9p8lOBnIryi8fdTvG9/Sg7NrytgZlARoRfxAaHVPtoGR+y1MnBp9j7EgnXOyLxV9UELna92m6Eh5savv6FHXisvqhW1mfEwW6uhQ1RlCnEHLXBBd43j9vBahH0CfIW7/wc1gzuQDHguUVfM/ZqIlS8UFhTs6noG9z5UAhGG5GyaUfqCllx6KN1XZ/a31GH/j+FgPZDu0djoWciT8K67W2RQamRCAjN4HBtMAWV35funj6a2Togmn3W36/luqHlZ1/azSYGWuxkG5Ac+ctOZjHz/IzxpKSTScBRz/fF7ArYgX042IGxwMyQLrzTirzpb+zV9/YxcYTXH9QZA9cvPr6T6swHlJFmmF/yssdzHjKw2YZD8wKku9DiOK3wl9j9jCldFauVSlaE1tHeRf7lMbbOv5KmIWoDOaZS1RwnxJharenQMHaeNekFZSnitBaqDgHCkWLTKL6DMjsMgBbZayOd/L97JzxbbHnVOU2BWPvHwTKqhKbB9xtDFUoGA+l27BiyD6G9TvG645+8i6xJgHNWVgcYZ3Vax1yw5Dmc09FueuH5EssMe+zEcThfvEBdfG/pgFsZ5VoKziu21KMZRUKkD5Re+nUyfV4o++7F6gRMdtx2U9QMyoBBtfhzoE/8pj/D/X11TNWqm9Y7aVDeFzNIBpQkZH9RSbR24Ug0Je7NOu2IvZ8UBEXloNJ/3LirpTuxIaIS7Mq3/6L4WE+DCYYuFv9iWtAicicB3ywXIZSoEeDTsUdMjZ4PV1TbKBEj6vo7MTuXw8eDOilcQf01CO8AIyHc5X6F6YcyTM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2a5f129e-8465-9a06-a04e-c9091ab086b0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1588,
+      "completion_tokens": 318,
+      "total_tokens": 1906,
+      "cost": 0.004892,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004892,
+        "upstream_inference_prompt_cost": 0.002984,
+        "upstream_inference_completions_cost": 0.001908
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 199,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that adding a nullable OneToOneField on SQLite fails because UNIQUE cannot be added via ALTER TABLE, so a competent engineer would special-case unique/PK columns. The FAIL_TO_PASS test only requires that such an add succeeds and the column is nullable, which matches the reported crash.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that adding a nullable OneToOneField on SQLite fails because UNIQUE cannot be added via ALTER TABLE, so a competent engineer would special-case unique/PK columns. The FAIL_TO_PASS test only requires that such an add succeeds and the column is nullable, which matches the reported crash.",
+  "prompt_tokens": 1588,
+  "completion_tokens": 318,
+  "total_tokens": 1906,
+  "cost_usd": 0.005084,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

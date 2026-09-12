@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-7234",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "43aa1e9d-5e6a-9c96-89e2-e9c51fad7137",
+    "object": "chat.completion",
+    "created": 1789194149,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to list singledispatch overloads with the master docstring and optional links, without specifying autodoc RST shape, extra signatures, injected first-argument annotations, or omitting overload docs. The FAIL_TO_PASS tests lock in that exact multi-signature header format and docstring-only-master behavior, so many reasonable implementations of the request would fail.\", \"p_invalid\": 0.9}",
+          "reasoning_content": "The issue asks for autodoc support for singledispatch functions - picking up overloads and listing them together with the master function docstring and links to overloads.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4387,
+      "completion_tokens": 129,
+      "total_tokens": 4740,
+      "prompt_tokens_details": {
+        "text_tokens": 4387,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 224,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 33768800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to list singledispatch overloads with the master docstring and optional links, without specifying autodoc RST shape, extra signatures, injected first-argument annotations, or omitting overload docs. The FAIL_TO_PASS tests lock in that exact multi-signature header format and docstring-only-master behavior, so many reasonable implementations of the request would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to list singledispatch overloads with the master docstring and optional links, without specifying autodoc RST shape, extra signatures, injected first-argument annotations, or omitting overload docs. The FAIL_TO_PASS tests lock in that exact multi-signature header format and docstring-only-master behavior, so many reasonable implementations of the request would fail.",
+  "prompt_tokens": 4387,
+  "completion_tokens": 353,
+  "total_tokens": 4740,
+  "cost_usd": 0.010891999999999999,
+  "cost_in_usd_ticks": 33768800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3243
+}

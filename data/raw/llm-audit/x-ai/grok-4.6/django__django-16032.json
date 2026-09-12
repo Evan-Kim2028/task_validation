@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16032",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1560
+  },
+  "response": {
+    "id": "gen-1789191708-aV9pbibNxKw7sOObUrxu",
+    "object": "chat.completion",
+    "created": 1789191708,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states the exact failure mode (__in subqueries keep extra selected columns after annotate then alias) and even supplies a reproducing queryset. The extra FAIL_TO_PASS case is the same bug on pk__in rather than a related lookup, so it still checks the described behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about `__in` not clearing selected fields on the RHS when QuerySet.alias() is used after annotate(). There's a test case provided.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about `__in` not clearing selected fields on the RHS when QuerySet.alias() is used after annotate(). There's a test case provided.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "yRSdYvyLz3+CXyvmMZ3Nwm/a4RszRbJxs686Ihd7jV09GNPuooa6HKkjTC055dINsK15dJsJ0VYV4x2vYp0hC8YTiuVG6eO3tvIiwzGq6JRl9GG773j+4d0e8bfENC/e055Z7BO1B8tskoH9CMcjZ6Y4BN7Lgwlcu79Hx2aLq9dW55SJhCaUM+O8dx5U2TUbeTTzn1/FeA5fKy1PXAlFhoBpANRg8diE8Yk/Y6j5FvXRNN095JDJsG0DDBWTZcrmv/u4qpX8Xo/Pn4ssA4FeOEBidNXNAsZZA3jF9PCT/rpj/dWCny0NUU4HmahXli+B3kAut3K7Crr/9hh0lvMdBcDwxzF5fhpntLXWettMYkwSCBqC/F9kAGQbx2BQgeVvE9alclrAf138S2nmr1FWm/tNcRvtQgdVkJPu5UeBMF517fYLGVd0SyWwamvRBnGGEkU28mNP9HvIk2ndlpGdYWwZONqSpkWjnUvvBBX/k7wm5pcl/aJRajOS3caNDmvizRqtYR9cNAQv4gIsJVCvBr3uU4/Y+fN/LBaMurk1i3RI6s7BUxJcSbYRoXBmTvBsg3A3+bac+wyVoL/ASwPpX0YRrJaVZPyebdMo8xy4yj24KtV6BvP6LuVpXPRpyj/pFsRFvhsXcO+BThb9d0Sxr1ERux5NPcMF1RpOUABRk+3Ziu2wRyiXIRvNNkruO3oPj83zxMozEVWpWSBqssLzmV7sD3ueJ4IcCm9pVFARjKbuZByxG7v0b6kx8ZLKyiWtiTsbqp5gjMl7ueRb7+QoZsNkGzxHFq1t/KfO3VqoObZYGoIpsU9iDG2SEfU+yW43rqlrrPnGLVPw70fuu2izxpm9EaOe40KNI88ZdHUGim7RBzIUx5eas9z+weR46aB4b9nIlIQW5L9L96n37gcSJt7PsvTN9BvFm629DbUNlnFs4a0QL43wmgYJzd68UbuC7uRZwCq+Yhtyx+fAilUBqdB0ylk0u8/8wDf0B4KA8GcSyl44/WBfo50I7dik8YWPL+NEbdTv8E8OJ/J4Ldrc5KJICGJoQoYQu58hantEvRJhZDMeAYVKqO2mtbogTXCTjup0L4LqxCxHCYnvkb2C65OKvrYa6ChOckGX7FA86jp/rmxhBuRaSPdZF8Jvig/jSD0RmMrN0g5KdTJYPUEhXcEjAzBBjPrIM8dIst7STFrNG4HdvB25V255QeEUFQQX/BPHXgDBa9F5uww0FA2KSuTmYzMhah9En8DQ3UGBguDm39D8qL96whVS/RJYcxgPsn1Kb4/mnSdtWRf/5cV0ILIvJcpYaDYXePGwUCe120LfoRvwlcHItttS4kxqCqDdFldwXWk1kZT8N29jfTSH+C2H15L1F0/LDN8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f8094b06-dbec-9b51-8056-8e8cb53cb2f7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1987,
+      "completion_tokens": 353,
+      "total_tokens": 2340,
+      "cost": 0.005708,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005708,
+        "upstream_inference_prompt_cost": 0.00359,
+        "upstream_inference_completions_cost": 0.002118
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states the exact failure mode (__in subqueries keep extra selected columns after annotate then alias) and even supplies a reproducing queryset. The extra FAIL_TO_PASS case is the same bug on pk__in rather than a related lookup, so it still checks the described behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states the exact failure mode (__in subqueries keep extra selected columns after annotate then alias) and even supplies a reproducing queryset. The extra FAIL_TO_PASS case is the same bug on pk__in rather than a related lookup, so it still checks the described behavior.",
+  "prompt_tokens": 1987,
+  "completion_tokens": 353,
+  "total_tokens": 2340,
+  "cost_usd": 0.006092,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

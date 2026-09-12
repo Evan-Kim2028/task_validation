@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-8952",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "6f60993e-a179-9851-a18e-42da9011e281",
+    "object": "chat.completion",
+    "created": 1789193866,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue explicitly doubts adding warnings= to assert_outcomes and instead sketches an isolated assert_warnings(count=...) API, so a reasonable implementation would not match the tests. FAIL_TO_PASS requires assert_outcomes(..., warnings=1) and related call-site updates that the issue does not specify.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2025,
+      "completion_tokens": 117,
+      "total_tokens": 2520,
+      "prompt_tokens_details": {
+        "text_tokens": 2025,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 378,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 21256800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue explicitly doubts adding warnings= to assert_outcomes and instead sketches an isolated assert_warnings(count=...) API, so a reasonable implementation would not match the tests. FAIL_TO_PASS requires assert_outcomes(..., warnings=1) and related call-site updates that the issue does not specify.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue explicitly doubts adding warnings= to assert_outcomes and instead sketches an isolated assert_warnings(count=...) API, so a reasonable implementation would not match the tests. FAIL_TO_PASS requires assert_outcomes(..., warnings=1) and related call-site updates that the issue does not specify.",
+  "prompt_tokens": 2025,
+  "completion_tokens": 495,
+  "total_tokens": 2520,
+  "cost_usd": 0.00702,
+  "cost_in_usd_ticks": 21256800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1255
+}

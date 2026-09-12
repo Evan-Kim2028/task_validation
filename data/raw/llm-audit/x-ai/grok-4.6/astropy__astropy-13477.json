@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13477",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2650
+  },
+  "response": {
+    "id": "gen-1789190663-i1ndNBKsPSrX3q0wt6DY",
+    "object": "chat.completion",
+    "created": 1789190663,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that Frame vs SkyCoord equality return True/False from the data instead of raising, without specifying inequivalent-frame handling, empty-frame comparisons, or exception types and messages. The FAIL_TO_PASS test therefore requires unstated cases and exact error strings that a reasonable implementation of the reported bug would not need to match.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about comparing Frame with data and SkyCoord with same data raising an exception. Expected: compare to true/false depending on data.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about comparing Frame with data and SkyCoord with same data raising an exception. Expected: compare to true/false depending on data.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "cdizS0dq4e0AjKb723iAGVoEh+ECXpGkDkVS8OJ8A48X7T6DE1CIjN1U8GBROOh728XfsBbnaRWgh5m9AcRG3vSAcN6IXOMLDUdONQNcCIRvdEYQM4Vo9+Cfvr+QFiuaFURXCV1nvvrnp7UGnQ1KSNRCStMe/qssrCZe6dS28qjAIN+ApW4e0fv68PansyLA9x4nDFcyjeCBSdKG8OU6IpK4XTwnzJdDTXl61CYykkntTJs1lLMc82vgDdlvivXLhhiGjPVVGjdeNcyaMv3hcTl+ISY2vmqFxCk0ggOcKxfI5UxITpMmVdA4v3MY8e2qALtANOm3x/DkTe1OhKS8tHj8JQVh/n09VJvv5flGfIX0FJ/vv0wBsnXap3cZwBsNkxpXC8kpd+xoO7KCFXaaqj8NhJeY0rAw9K+RvL7RFlfpYQyJ9tJCoom70QiEANaCQUnX2mi/8VpNBdM59aM/EJvT/KfXdmzljnTKZ2p4uyK3hkLN55ttabbz5Fk/z1lSBP/GRFEGdyTN3wLdUoaQtM5PuTBQYMJ+MBZT4R7QYpQ5vya3MpIf2PjT7PkVi+vMQL4wh4EZTN/7c0V/lsSBxj3dwDYZwh1PAlzmeDmCxxJ8KYxbRjN5h5Qcy8Tt/Dw7pD0hGHHZxNO7OZeiO/OsG0+LpPwOIshCt+rUyInlQw940aJRC6vsN/hpcArf3+87+mewJzet/r9RyTF+aPNKCgXyI+m7dh4yG9xycOYuj3KNIcqojAEJdjXVZAbFPVCJl4nIrgr7czg8gPHO9Yfx2Yn3qyVmQEr851zg0UaD5rW6KcRUg2rafAtlsVY2rHa2vXmpOpD2KaN3tJPNM4hvIzHrFn/X6g6IAXA9Nk5UWlkLw203T31QFigjtfZmTS9KBC4evYTT+gkyO83JCB+kmIEloFLG27u4A3oGpB8L+3bWaTt9RF+rweQA/+v5GlmGNfjbGRBtwble7tVRLlCxtB1ECv5pi5Th/SSZdIAVYY0bcUqzKELjAIdVr2mzL5mkQ1/HHh5vO4vkE4tX5MQqoLVhGAaeAOXsEkrftXo5F0KOAL4E332XkqwwYfaLs9jvLxmDBDiZ0OjLABvtO/CxgS+urZedns7U0Cn7xDbU2/enacp3gPT3SLzG8gNnD3OfI2oqIgiXy4tgNyRdfcqXIfBMWfyxvC6+IK18r9gCSv//wOqcigJtxgYJv4rhKdaQKBg2xfRtfbUWClSbiiOrR6ZxJz++he/mRbLGeZHLbGUmQjNSUKVE9evu/LpLY20l62mXuRaNhvGlL1MLIX/5ck41t1gXXlSnldbw/UKxCAsFL74THrofR1uERwUUMr3MH3N3LKTasJHxoiBPA4eC0QSb6KWD0TCKi0fIZOHk7hMBSPrg421EyWrYO4VfbH7ky3EtuUetJ/v3Az7GJFzWqULnUK6dW5NbWudvsyn8yzFOOeV22iY9Io+fbEkI1R8caPbk8yQbYI++nU1hnOm27eSiHufOwr8IBUxgTzHL5wyo3/OuP+eDdC334QZNWvz3wrDx+ZlhPE4weGxYyxsGsg20IuTN2l7oNE07VrId.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_51d3945d-da8f-92d3-a6e0-ee439224ba6c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2985,
+      "completion_tokens": 388,
+      "total_tokens": 3373,
+      "cost": 0.008106,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008106,
+        "upstream_inference_prompt_cost": 0.005778,
+        "upstream_inference_completions_cost": 0.002328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 263,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that Frame vs SkyCoord equality return True/False from the data instead of raising, without specifying inequivalent-frame handling, empty-frame comparisons, or exception types and messages. The FAIL_TO_PASS test therefore requires unstated cases and exact error strings that a reasonable implementation of the reported bug would not need to match.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that Frame vs SkyCoord equality return True/False from the data instead of raising, without specifying inequivalent-frame handling, empty-frame comparisons, or exception types and messages. The FAIL_TO_PASS test therefore requires unstated cases and exact error strings that a reasonable implementation of the reported bug would not need to match.",
+  "prompt_tokens": 2985,
+  "completion_tokens": 388,
+  "total_tokens": 3373,
+  "cost_usd": 0.008298,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

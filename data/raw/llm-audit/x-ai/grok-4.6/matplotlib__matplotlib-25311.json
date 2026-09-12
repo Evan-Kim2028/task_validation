@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25311",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1234
+  },
+  "response": {
+    "id": "gen-1789192035-6lpTHzHY0oWyKWR4z5cR",
+    "object": "chat.completion",
+    "created": 1789192035,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that figures with a draggable legend (and similarly annotations) pickle successfully, which a competent engineer can implement by not holding a canvas reference. The FAIL_TO_PASS test mainly checks that, but also requires the pickle stream contain no FigureCanvasAgg, which is slightly beyond the stated expected outcome.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about pickling a figure with a draggable legend failing because of FigureCanvasQTAgg.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pickling a figure with a draggable legend failing because of FigureCanvasQTAgg.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3de45b64-1d2a-9643-90ea-e9a0c5b590ea",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 508,
+      "total_tokens": 2139,
+      "cost": 0.005926,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005926,
+        "upstream_inference_prompt_cost": 0.002878,
+        "upstream_inference_completions_cost": 0.003048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 389,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that figures with a draggable legend (and similarly annotations) pickle successfully, which a competent engineer can implement by not holding a canvas reference. The FAIL_TO_PASS test mainly checks that, but also requires the pickle stream contain no FigureCanvasAgg, which is slightly beyond the stated expected outcome.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that figures with a draggable legend (and similarly annotations) pickle successfully, which a competent engineer can implement by not holding a canvas reference. The FAIL_TO_PASS test mainly checks that, but also requires the pickle stream contain no FigureCanvasAgg, which is slightly beyond the stated expected outcome.",
+  "prompt_tokens": 1631,
+  "completion_tokens": 508,
+  "total_tokens": 2139,
+  "cost_usd": 0.00631,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

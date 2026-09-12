@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-10137",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1079
+  },
+  "response": {
+    "id": "gen-1789192440-UjmdC3waRZz9iIKfGV7B",
+    "object": "chat.completion",
+    "created": 1789192440,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly wants to skip hardcoded-URL extlink suggestions for cases like GitHub Actions where the captured replacement contains extra path segments, and even proposes skipping when there is a slash. The FAIL_TO_PASS test only checks that an extra slashed URL does not increase the warning count while existing suggestions remain, which is slightly narrower than a full spec of the bailout but still aligned with the request.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing to bail out of extlink replacement suggestions when there's a '/' in the captured value, like GitHub features/actions vs user/octocat.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing to bail out of extlink replacement suggestions when there's a '/' in the captured value, like GitHub features/actions vs user/octocat.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3e9bc159-1cc5-90f6-8703-40d5741d6fc4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1432,
+      "completion_tokens": 661,
+      "total_tokens": 2093,
+      "cost": 0.006446,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006446,
+        "upstream_inference_prompt_cost": 0.00248,
+        "upstream_inference_completions_cost": 0.003966
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 524,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly wants to skip hardcoded-URL extlink suggestions for cases like GitHub Actions where the captured replacement contains extra path segments, and even proposes skipping when there is a slash. The FAIL_TO_PASS test only checks that an extra slashed URL does not increase the warning count while existing suggestions remain, which is slightly narrower than a full spec of the bailout but still aligned with the request.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly wants to skip hardcoded-URL extlink suggestions for cases like GitHub Actions where the captured replacement contains extra path segments, and even proposes skipping when there is a slash. The FAIL_TO_PASS test only checks that an extra slashed URL does not increase the warning count while existing suggestions remain, which is slightly narrower than a full spec of the bailout but still aligned with the request.",
+  "prompt_tokens": 1432,
+  "completion_tokens": 661,
+  "total_tokens": 2093,
+  "cost_usd": 0.006829999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

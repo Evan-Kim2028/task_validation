@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26160",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1742
+  },
+  "response": {
+    "id": "gen-1789192083-VWC2dr4l3tWBxtuVjrHm",
+    "object": "chat.completion",
+    "created": 1789192083,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks for public xy1/xy2/slope setters that lock the two-point vs point-and-slope representation, which a competent engineer could implement. The FAIL_TO_PASS test still requires unstated getter/setter APIs (two-float set_xy1/set_xy2) and exact ValueError message strings.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue asks for setters for xy1, xy2, slope on the axline artist, locking the representation (can't set xy2 if slope is set and vice versa). It also mentions making _AxLine public.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for setters for xy1, xy2, slope on the axline artist, locking the representation (can't set xy2 if slope is set and vice versa). It also mentions making _AxLine public.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "0QmcZTQ9Assu9Fl2GdFAU8tJC3nm3Mzjp696QndpnTzt0X8sB0CfKgbS/QkUNZlS3z5a778XHrJohZ/ii/QrSUQpRZ3EKWepntzTx/2/ItVTmH1JaP7K4T+gn6umwHElanmBi9GHe3pR1HgBw1xeNrhPVUxUKsqr7e8IxJeamNrg+mYRrH/L3lmcDNJd4WX4xPhBrUIX6zB0G/P+ehQMD7OcNGQGinLC0kliuPXBhxpuOVRYA0sJsfoM2ucdbTKLr96ef99nrj0VM/TAyxcFD3l/boZlJhgLEL/DY+z91biNRUXlbp0SkKb4lE1bNKaCVVWwokhnrikrm04a1C5f0sQH7WssPjcxym+IHIJQRw8jX6CzNxoqhYw2btMlGNR9l7/wLhwd5TTo2pZFRNSUTf+KqGet7a9VEQdXmJXRctxj+ox5XiB3f7WjvLOPmVSRsF3n9VOwj03sdrmhV7IqnUnV/HazDcNeFbmiAAJiq4ZnV9hK0ZChasKKq525SNBPXK7giiQKKt2lA2Z29gwt+KMj3MC84abHQNGiIeqD2Q/WJ9lSNjijeSvYdjG/zsw4j1VS3JqW3A6h/k81MuUs3USdK3DkzsbGjgTYPmQWX8RaiFebNBYIVx+bZOHNz2mgLag/caH+QC0TnGWXQYygFV6BIw+rOOoByz62X556TLpWF59IdFDb9L6JoAzJP4TFIjv11C6aFRE74FScv7J7TNv4pAbYQmniqb2rFttadR1oHnCz+SG6+c72WtIciaFBq8Q8JBIDybTCzsslitf+6HhRKbcwk83EdVWAGQY/T0cYN9Q7tq7ZEafV6bS1UCDS0IcZDpGo95XrWwauMev9tKU7Dxos61pa98DeiHB/npYEQ4qS3JuGzSeAu6hnTuqpjob22jcF1lZUhamx/Hc7lVZyLAJ5PwACO48DbfChRdCvIu6XWB2LdZONrGUm5Sj7IwTDMoL0O99PbU7/m6RXFQ0jpzpuaWQdCXm8wC4fqawI5nkAz2HXeZB7Dg9RMuJTAcxYdvB+JG0Y2kpKitICoW5B4n6RuzPKY/6/aKV5p3+dGlkhIfvXKx2WE2jyfrDtqeWPoqswuUASeZrysZ/8USe/5LPaYpbcS1HCY154EDHeYX90kCB0WYZ+RAVu3INTr+wV2sZkCIQD42f8DC/d3ifqeBZueX6IJbqwbOx8FWdNmsM0KfWUUUXOun3b8CD2Nx8szN9yDUCXo15HupRkNNNdfc9l9QjWaBUh55hKLEL+Epv3jFqON10ok7//gu6DAhyDA+O9K5/gBu5PXch+plqwdhY0bHIokxCRXCPdhO1s0NoKmU4Z++67KQo0PrAk9hf5BEfUIeE434nrr/j5UGJ5zRrBTdwHzdkJrP+NDxhJc1VjmoHcFuHKgStcGwoQ2Y1TDoNvSN6F1i931o8yfxV1TmEc/uRzmUPxLvblN1JkgXZtBvYKVgSJX43+USd9pDckVGBh1PhvS/qjThJZVw6wGI/F03iemT5kqLQoLq4wLV0fPzREh18wJICiS7m0q8FimX8J2gsxM88VLxtwZcA1FMZ0XZTiNdNlRQxEneAImlTJcWg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5138854b-ec7e-938e-8366-1a67287ceaaf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2284,
+      "completion_tokens": 437,
+      "total_tokens": 2721,
+      "cost": 0.006806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006806,
+        "upstream_inference_prompt_cost": 0.004184,
+        "upstream_inference_completions_cost": 0.002622
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 310,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks for public xy1/xy2/slope setters that lock the two-point vs point-and-slope representation, which a competent engineer could implement. The FAIL_TO_PASS test still requires unstated getter/setter APIs (two-float set_xy1/set_xy2) and exact ValueError message strings.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks for public xy1/xy2/slope setters that lock the two-point vs point-and-slope representation, which a competent engineer could implement. The FAIL_TO_PASS test still requires unstated getter/setter APIs (two-float set_xy1/set_xy2) and exact ValueError message strings.",
+  "prompt_tokens": 2284,
+  "completion_tokens": 437,
+  "total_tokens": 2721,
+  "cost_usd": 0.00719,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

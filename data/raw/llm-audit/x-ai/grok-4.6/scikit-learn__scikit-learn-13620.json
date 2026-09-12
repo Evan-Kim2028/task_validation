@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13620",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "5e615fba-ec91-9282-ac4e-2f0242f42f0c",
+    "object": "chat.completion",
+    "created": 1789194012,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue reports that ensemble feature importances stop summing to one once some trees become single-node with zero importance, but it does not define the required result when every tree is degenerate. The FAIL_TO_PASS test only checks that all-zero X and constant y yield an all-zero importances vector, which is unstated and would reject otherwise reasonable fixes such as NaN from 0/0 or uniform weights.\", \"p_invalid\": 0.78}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2641,
+      "completion_tokens": 141,
+      "total_tokens": 3272,
+      "prompt_tokens_details": {
+        "text_tokens": 2641,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 490,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 28220000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue reports that ensemble feature importances stop summing to one once some trees become single-node with zero importance, but it does not define the required result when every tree is degenerate. The FAIL_TO_PASS test only checks that all-zero X and constant y yield an all-zero importances vector, which is unstated and would reject otherwise reasonable fixes such as NaN from 0/0 or uniform weights.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue reports that ensemble feature importances stop summing to one once some trees become single-node with zero importance, but it does not define the required result when every tree is degenerate. The FAIL_TO_PASS test only checks that all-zero X and constant y yield an all-zero importances vector, which is unstated and would reject otherwise reasonable fixes such as NaN from 0/0 or uniform weights.",
+  "prompt_tokens": 2641,
+  "completion_tokens": 631,
+  "total_tokens": 3272,
+  "cost_usd": 0.009068,
+  "cost_in_usd_ticks": 28220000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1863
+}

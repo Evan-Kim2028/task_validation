@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13810",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1602
+  },
+  "response": {
+    "id": "gen-1789191330-NTWVd13OzZgoC7K8wgHb",
+    "object": "chat.completion",
+    "created": 1789191330,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes MiddlewareNotUsed still adapting/overwriting the handler and poisoning the ASGI middleware chain, which a competent engineer could fix. The FAIL_TO_PASS test also requires specific django.request log lines that unused middleware was adapted, which is unstated and would fail an equally valid fix that only adapts after successful construction.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue describes MiddlewareNotUsed leaving side effects when loading middleware in ASGI - specifically, handler gets overwritten with adapt_method_mode even when MiddlewareNotUsed is raised.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes MiddlewareNotUsed leaving side effects when loading middleware in ASGI - specifically, handler gets overwritten with adapt_method_mode even when MiddlewareNotUsed is raised.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9793b90f-c150-9112-8fcd-3d27e0b73f6c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1766,
+      "completion_tokens": 596,
+      "total_tokens": 2362,
+      "cost": 0.006916,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006916,
+        "upstream_inference_prompt_cost": 0.00334,
+        "upstream_inference_completions_cost": 0.003576
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 473,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes MiddlewareNotUsed still adapting/overwriting the handler and poisoning the ASGI middleware chain, which a competent engineer could fix. The FAIL_TO_PASS test also requires specific django.request log lines that unused middleware was adapted, which is unstated and would fail an equally valid fix that only adapts after successful construction.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes MiddlewareNotUsed still adapting/overwriting the handler and poisoning the ASGI middleware chain, which a competent engineer could fix. The FAIL_TO_PASS test also requires specific django.request log lines that unused middleware was adapted, which is unstated and would fail an equally valid fix that only adapts after successful construction.",
+  "prompt_tokens": 1766,
+  "completion_tokens": 596,
+  "total_tokens": 2362,
+  "cost_usd": 0.007108,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

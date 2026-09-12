@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12733",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 7202
+  },
+  "response": {
+    "id": "gen-1789191079-VOMBNEE2f8KSosqSHIcz",
+    "object": "chat.completion",
+    "created": 1789191079,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to use PostgreSQL TRUNCATE RESTART IDENTITY instead of extra sequence-reset queries, but the FAIL_TO_PASS tests require a cross-backend sql_flush signature change (drop sequences, add reset_sequences) and matching SQL on SQLite, MySQL, Oracle, and the base class. An engineer who implemented only the stated PostgreSQL optimization would fail those tests.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is specifically about using PostgreSQL TRUNCATE ... RESTART IDENTITY in sql_flush() to reset sequences in one query instead of extra queries.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is specifically about using PostgreSQL TRUNCATE ... RESTART IDENTITY in sql_flush() to reset sequences in one query instead of extra queries.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "PKFypdEnRJnE1xcPRuxMepXY7jVLCvWQjncMX9TOy1AV5FRRIrZgbsNIIjJ3hCWqRwRccXQtFQbBnqMueAlSHM0WJRZa9+x6ZqE9GQiAzwOFJsMSxCie0AgrgfhplZusOWoxDAne6i0Hw/qJOMv/WBrJlyt5/i/eCaBtSOrp4fqjh5OOXmZ3/eJRMAAoPNvfuZ6RwIgqUu62cLhX8EjSkodh7sDkS+BlwR9BppEDnNBQpJL0qwb1tIm51RdNJjwtk+BLLMso4sX4bsWrDpL6JH2E4M/NESH7ohcZCAIiOXtaCljcHC/KReoP7q5pyHeAjByw6j0REixH1xhWE5NqSVxsPci0f1g/TTsEXuJOK2j4szNZddwEKtmXpSBP9U692Quj1zmkm+CbYmV2mweHG/LaXBwipF0Vjf13FaV+VCHLH18HKGpgw/qR3ZD4nNaVQcpH78yuZYpM86K8rN7lNy0/yLBPB8iePwa6YsYvrXuW1/zOJsEvpqoknWL46vlfl4FEws+/MU6qyENO9p9YrlebwzPUeg4hS6LtNQdOaHeEIkXugkpAJiR5DkMuxOqSKp6HExw3GvGhmKBy+DVI2TFUUgorvsaY+PSp5BObMuz8r0RMZqQf7uZ4rNZEjx8Xb687CvymfTTMSlB71OgirHN0+YCyqRBc35WlP7AcGrWC2B9XBgLUnjKuExeNQoGIsUn96eCwLaAeS0sbOUC4OHgwPSaroU1uJVhnS7PuXCCoklCyPZDPu9ZHlFpc9eTh8DvPiZFuQ8vPMH2mI00OalST6Ajc96RpXUSAzX7FtDB7w4TWBrKOwYwcEjQvQJANnylOv6WssyuWG0QPcfH08uKTD2MPMD1qKfFy5R6RKqWt56dE/2WmvSgRngZQFwV/l2FArea8YuprR8tslr/wvx1pBc/fRPsfDisjXjQw9EpqB48yUdUYNe8oZnKOSjdfWQ/UUJ7FTs2o2DhJlAfG8lQNvANHptTodHJNOCrD7ruriz4Huxeae16yTNSVY37WaMbwPcPGDorK4e1n+a7hPeUkFA66ABIFy+J30ZMvoW33xcBDwj78Ggbi56KdUn/Gxt9C7bBgivtWzihj2F5kdsBmkC/5Rh348RfLUsjjYT/xJdHRZgh/jliQMhP3BVpJe9XwubaVAmIh0fbWUOkD35998zFmxtPMJ3VX4HyYR8ohe4xbO6KnrN/wp18nrAGh85eJsJQ+Q7iIUM25raRoL8mUofvQ3pO3CfisVLdiBUBJTEIKZLpMB2AZGgRAVeTFbxBLsYfI/zDsR8Am07OIgjlZBdQ6TksW03HLnMc2WqGAWTF0uNO7hWnATPXGEmqlxtLrDYSE1bT6dyv4AafzDJ5+7WAKhjDMXK9Z+5hc9TfUkiZrGzgzzM7Kbcamcuue5K5GQrm5nDvF+OYIJUJUuHFc1bKZdy1YqUDythiU7IUo+AG8whns1CCCND/C4yonH3XGNQ9N7QzuqkWWJuJL/IgFVrObMGDeBiGmCf/wnP9LUu5/Q5lZElBNKpn3m+2KUMDuAxP1N/VcBKkmFl12Ykg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7b6ba538-5f3b-985e-bfa2-4a5a13a19569",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7525,
+      "completion_tokens": 387,
+      "total_tokens": 7912,
+      "cost": 0.016988,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.016988,
+        "upstream_inference_prompt_cost": 0.014666,
+        "upstream_inference_completions_cost": 0.002322
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 251,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to use PostgreSQL TRUNCATE RESTART IDENTITY instead of extra sequence-reset queries, but the FAIL_TO_PASS tests require a cross-backend sql_flush signature change (drop sequences, add reset_sequences) and matching SQL on SQLite, MySQL, Oracle, and the base class. An engineer who implemented only the stated PostgreSQL optimization would fail those tests.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to use PostgreSQL TRUNCATE RESTART IDENTITY instead of extra sequence-reset queries, but the FAIL_TO_PASS tests require a cross-backend sql_flush signature change (drop sequences, add reset_sequences) and matching SQL on SQLite, MySQL, Oracle, and the base class. An engineer who implemented only the stated PostgreSQL optimization would fail those tests.",
+  "prompt_tokens": 7525,
+  "completion_tokens": 387,
+  "total_tokens": 7912,
+  "cost_usd": 0.017372,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

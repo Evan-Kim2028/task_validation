@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8638",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "cc10cdf6-e66e-904b-8424-f7b103b06d8a",
+    "object": "chat.completion",
+    "created": 1789194260,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that instance/class variable docs not autolink to unrelated same-named objects, without specifying that this is done by dropping obj roles on :var/:ivar/:cvar info fields. The FAIL_TO_PASS test only checks that exact info-field doctree shape and type xrefs, so a valid autodoc-only or resolver-only fix would fail.\", \"p_invalid\": 0.86}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test only verifies int type xref and attr literal_strong, not absence of attr xref\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2416,
+      "completion_tokens": 134,
+      "total_tokens": 3018,
+      "prompt_tokens_details": {
+        "text_tokens": 2416,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 468,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25445600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that instance/class variable docs not autolink to unrelated same-named objects, without specifying that this is done by dropping obj roles on :var/:ivar/:cvar info fields. The FAIL_TO_PASS test only checks that exact info-field doctree shape and type xrefs, so a valid autodoc-only or resolver-only fix would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that instance/class variable docs not autolink to unrelated same-named objects, without specifying that this is done by dropping obj roles on :var/:ivar/:cvar info fields. The FAIL_TO_PASS test only checks that exact info-field doctree shape and type xrefs, so a valid autodoc-only or resolver-only fix would fail.",
+  "prompt_tokens": 2416,
+  "completion_tokens": 602,
+  "total_tokens": 3018,
+  "cost_usd": 0.008444,
+  "cost_in_usd_ticks": 25445600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1644
+}

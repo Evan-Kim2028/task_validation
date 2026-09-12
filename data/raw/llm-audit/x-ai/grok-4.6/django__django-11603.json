@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11603",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 990
+  },
+  "response": {
+    "id": "gen-1789190898-7Y8vvkTMBlH1QQHf9j9V",
+    "object": "chat.completion",
+    "created": 1789190898,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to enable DISTINCT on Avg and Sum by allowing that parameter, which is exactly what a competent engineer would implement. The FAIL_TO_PASS coverage checks those aggregates (plus already-supported Count) against fixture-backed results and does not demand unstated APIs or messages.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_21fb476c-9a89-9351-9a9e-d906ea0d926a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1294,
+      "completion_tokens": 577,
+      "total_tokens": 1871,
+      "cost": 0.005858,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005858,
+        "upstream_inference_prompt_cost": 0.002396,
+        "upstream_inference_completions_cost": 0.003462
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 463,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to enable DISTINCT on Avg and Sum by allowing that parameter, which is exactly what a competent engineer would implement. The FAIL_TO_PASS coverage checks those aggregates (plus already-supported Count) against fixture-backed results and does not demand unstated APIs or messages.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to enable DISTINCT on Avg and Sum by allowing that parameter, which is exactly what a competent engineer would implement. The FAIL_TO_PASS coverage checks those aggregates (plus already-supported Count) against fixture-backed results and does not demand unstated APIs or messages.",
+  "prompt_tokens": 1294,
+  "completion_tokens": 577,
+  "total_tokens": 1871,
+  "cost_usd": 0.00605,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

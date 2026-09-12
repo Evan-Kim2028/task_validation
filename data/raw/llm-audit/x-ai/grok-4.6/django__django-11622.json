@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11622",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2354
+  },
+  "response": {
+    "id": "gen-1789190907-uXx2ZuQijCTXE1LKMuN2",
+    "object": "chat.completion",
+    "created": 1789190907,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for a more helpful error that includes the field name, not a particular exception type pairing or exact wording. The FAIL_TO_PASS tests lock in a specific message format and which TypeError versus ValueError cases must be wrapped, which a reasonable implementation of the issue could miss.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue asks for a helpful exception for invalid values on AutoField/FloatField/IntegerField, mentioning field name. Tests require a very specific message: \"Field 'value' expected a number but got %...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a helpful exception for invalid values on AutoField/FloatField/IntegerField, mentioning field name. Tests require a very specific message: \"Field 'value' expected a number but got %...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "vp8KFfCHAYIRxYeNj7GM8XXFQgPGnJXLw8VrWX6MDHQMEo+KSf2wVz06FHNAkQlbMcfwhP4rpmA8MxlJXlzeBcW+SGAiI7wt+tfFLllmHVuGHJ32EqHOiqSkUNcE6l9Ef/VbnnBzn8rhIsKpSrcxqTEUMh4xQlAXxPB0rRkD1xU6voYFju0kecoF2reovLxceRQLns6fRDhuwSU41FZ48toVqTcHT6+Rxi7SlqNejQyhgF1G1SxE6wV8zdURYdRpKSdAG25+BvmArGETzMRjnGYNfvJrEqa+wKsXFXt2b2szuSt0zrphosRap1CTjPlATtheKUFlPATU1aykeKno84qTTSEbNL5R0h5lXHJWJ7I+ddlYLUoevLbrRkjjfB6Gyizy76rNYbcK/xHVrrTlP7xrIajfjsNh6Fnh9na39/4TZv6L6PnEKbuUNDo5cl8G5WjAw5zwQSVJcHafFoJBuo2rKVScqQC3JCL3Y+pvROT0fOLpyfr5b06lKIagUQulGhPQp0bbxnwpiQ/vuoOV4qnAdLbJ7br5zpChDAqebc0Zhj2xRVSpckfNFR6Y6j/39rqcoop9bk5+InbgRBoRBu7IPXNVNc7mo+3PWlFP7amc0/xFyfxzAUhFMIkeJ+iXsmRfH8g6m6R7fSlyICoi6i2cWUd6c+AHmX73eATOKbkbzE2wNB1nSOGpvoox1gCNZuFdEZTahw+RvDIEiyCaTr4W+W0lPXq9iSt9E7D6lt3y+xynGTslRk6g3dwNrhOCZiPfU5LvcuYqz3gPEod739+AKFhrZCR9EZPKScd4eJrXrfXFSZeXxJoVP4Gqyje+lwC4AiS+XydHr1K8oSDdz8wos5wcInJgi1g1FHng0AYEVq/79by0dRY/P0VIuEsGJYi7zrLa4DdYyam8AsAIYunasA3ixwdQsxK8jA71vV85NLiHN1k90NdoI6LrZR8WutX+v1e3vYNF4UU8y0rLy4k4LBrXvdeJ4gASK0ONRGDdMRoP+grda7tTVnQ9Hou2f1LItYFKPMQ6ol2j/i9QFJdRy9oGjF3/mjiiTBW0DEgZn9m1A6v6YwxeU9KS4+ZFEhNMFpIRNsEzHcoINQv24/U44jMKuVsrZ//zqIJSHS2hMFBDOskRS5jI2WqvBAZWrDTiBn1WfjDxP3vhfODRSO89qiNTucyydkb/otUDqLSZfW4PTTuJeTuaqtCgSqxWEY94+JlahkRmeizzmz+cexHbyWUjyfUaFsohtKPC1kZMkA159As8/4GGc8HAgQxBmcjsxL0J4vA/XHlJlVMORoN1xanHwtFU543SBpTrxSR2uuNVMYhTR6r4o5oBksOHgJhxs2rhaVvPgUmaZWA0q3LkwJ46Bqfcb40VCqFDjd5t4Ahv5E4yGxAUWgIDt5K9WRxUWUx4cSxWfFMSYCUg9ZtOI0UdnRQM8LqJV/2+u+vp7FmUJV8IJHxRqOQCKLWJQIDccelKFPf4sJ+PcAq2FlQ5gmmEBuwhnSn7237tjiN/GSVYMCmOExKd4jNcNI7ygBZy+g8IxW55r2+fsnJSq4PXmPULQdjzBdia6E/TITtOY4vQSP61DDt29V3sn4c69ZOii1VyJDgGm9mz6V1UtiRZ8CKH7RUedfRUDTY1rEfsHp7GKXddR5G9sKdYaJ7fBEl9XOCXFAE6iUMu+J8ZYeVpwGdjN4RxY7LnXH3auS4wkAP2OQyJPeol4mI/d/pqNePA1XhiAW5XUSdAPrhOtDXkU6Azn+rWm4JplLYZxpIUE/liNUarW0qvi7CZtRI1rmsCAdDSf7+9ytCDl8hSEEPDkXOiZKys8Y4fq+WeBbaoNzZSR3UlXkGMrjqygRG+9v+BsJcCVY8Yt9ZXiaPWFLdPs6FqnIyX8w/Vp+04kWtFaMO/lQ50jBM4A/d9y7+O7l54r93tRE004BTR4ySR5CJRBJeVTaPvjNn8iqDeK3dmqBt7OMOBfosftXvShs443LxI8+MvX1zKFP10GUnggfINFRzrp8pJL2YvTsMYCp5IDs6gM31e158rMI5ikiC4v5V67BmIUmTZnEYAdjuRTqRrlDoA8hXlvLnyD1hb48RzPfxOHwzSxExXbUZn1TTackiDWvSOl4eU6EwCHpA/CayHsmQlNd6ckJoVZXUrTJ/ykiRURXTCHpLVMC4Zq44/B6wsm3cF479ZkAtO/CB6PcweyujAqhlqOSrG3/qnFitj1vlt33fVl1mBCrGHIdHtES3wJSE.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b79e1c97-df81-945b-adb2-fc00996793e1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2839,
+      "completion_tokens": 501,
+      "total_tokens": 3340,
+      "cost": 0.008492,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008492,
+        "upstream_inference_prompt_cost": 0.005486,
+        "upstream_inference_completions_cost": 0.003006
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 386,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for a more helpful error that includes the field name, not a particular exception type pairing or exact wording. The FAIL_TO_PASS tests lock in a specific message format and which TypeError versus ValueError cases must be wrapped, which a reasonable implementation of the issue could miss.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for a more helpful error that includes the field name, not a particular exception type pairing or exact wording. The FAIL_TO_PASS tests lock in a specific message format and which TypeError versus ValueError cases must be wrapped, which a reasonable implementation of the issue could miss.",
+  "prompt_tokens": 2839,
+  "completion_tokens": 501,
+  "total_tokens": 3340,
+  "cost_usd": 0.008684,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

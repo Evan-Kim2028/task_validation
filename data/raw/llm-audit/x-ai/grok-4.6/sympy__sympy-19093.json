@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-19093",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "5ebd9e07-cd7c-9051-828e-75222f25f03e",
+    "object": "chat.completion",
+    "created": 1789194726,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS covers OneMatrix assumptions, block inverse formulas, and exception types unrelated to the reported regression.\", \"confidence\": 0.92, \"rationale\": \"The issue only asks to restore adding BlockDiagMatrix objects built from mutable Matrix arguments without a TypeError. The listed tests require large unstated behavior (OneMatrix Q.* handlers, BlockDiag det/trace/nonsquare inverse, 2x2 block inverse identities, and ShapeError vs NonSquareMatrixError), so a correct issue-only fix would fail them.\", \"p_invalid\": 0.97}",
+          "reasoning_content": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge if the issue specifies what to implement and if the tests fairly check the issue.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11031,
+      "completion_tokens": 153,
+      "total_tokens": 11609,
+      "prompt_tokens_details": {
+        "text_tokens": 11031,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 425,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 83538000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS covers OneMatrix assumptions, block inverse formulas, and exception types unrelated to the reported regression.",
+    "confidence": 0.92,
+    "rationale": "The issue only asks to restore adding BlockDiagMatrix objects built from mutable Matrix arguments without a TypeError. The listed tests require large unstated behavior (OneMatrix Q.* handlers, BlockDiag det/trace/nonsquare inverse, 2x2 block inverse identities, and ShapeError vs NonSquareMatrixError), so a correct issue-only fix would fail them.",
+    "p_invalid": 0.97
+  },
+  "s": 3.25,
+  "p_invalid": 0.97,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS covers OneMatrix assumptions, block inverse formulas, and exception types unrelated to the reported regression.",
+  "confidence": 0.92,
+  "rationale": "The issue only asks to restore adding BlockDiagMatrix objects built from mutable Matrix arguments without a TypeError. The listed tests require large unstated behavior (OneMatrix Q.* handlers, BlockDiag det/trace/nonsquare inverse, 2x2 block inverse identities, and ShapeError vs NonSquareMatrixError), so a correct issue-only fix would fail them.",
+  "prompt_tokens": 11031,
+  "completion_tokens": 578,
+  "total_tokens": 11609,
+  "cost_usd": 0.025529999999999997,
+  "cost_in_usd_ticks": 83538000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 8558
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1339",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4003
+  },
+  "response": {
+    "id": "gen-1789192132-0FiVxMxMtiY2UmIjWSDW",
+    "object": "chat.completion",
+    "created": 1789192132,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only describes last-write-wins case-insensitive lookup and even proposes lowercasing stored keys, so a competent fix of __setitem__ would not know to preserve last-seen key case or add lower_items, equality, setdefault, and update semantics. Several FAIL_TO_PASS tests encode those extra contracts and would reject the issue’s own suggested solution.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about CaseInsensitiveDict __setitem__ being faulty for differing-case keys. The user wants last assignment to win and lookups to be case-insensitive.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CaseInsensitiveDict __setitem__ being faulty for differing-case keys. The user wants last assignment to win and lookups to be case-insensitive.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "E87uo3IVL52Xzt5KsNSpmRzWGpZV8QCVHgB7SAiuOfn5oEYKFcUlSLb+MqhFdwY5oYcYzR0NMtDiEO9lJp5hj2RvxlfddFQD4+CNrrtjd89Rw1X8NEHFx8YQpAB+xBVvq55uizo1q0fPvsERi0rEGkmqbm0hs66YhS6/WICWZrcmPu1OP4uW6gK6tt0XrWObVu68RLOoIKs+uqR4jnl93WjcWyWIw7V7TVPigKZwTDoDR69XXKgA8/lDnGsx42gE89VfhH80+5laNi+pIoZMK2ihVAJLlVd68gz1JKBVw/n9kajcpxjE8BmuPPDwm0+tw78k8zfXq3hjvHHKmxMr48bsNbcGf7vsfa55vSIr09oe0Hl+3QLejJbmWv6M6ay4zM98vMi9VGdRL6z3QCa/uH2tX0jeSojx8aGsj+lMgwqSk059cYivLkAUKTnrLE8sv/LALd17rmv80EXtkH2L73gIQd+nfcJH+C9mVTYvCXGZcjyoIQZqTdheN1acDYNLf1nnp9Mwkb/86S6FWYW0bpM02JRLby5f7yhfMAEUXHtpba5WNlkdAqMR6JiRzG54Od9/kDPyPmijFsozUeKUN5pmGO3cPz65Z2KCUxkVd/OMJJXhKFoUhqcdgVN4t93cYjYRSMOrOGAQru0xAxiJGAjkQc56EP9TespJKJZbuDEE/gHYY1nH1iEIcvcSZMKxuiamiwbSL0syB2lW72Jx5NkTZiQZfiP/BY9qSh6DB5WJBLR8HHNIvggWgbqmBxIp2Xi8FZN/B/NMiG1OGCLTsSAM4Z+IEAnlLbR7we4TdqZETVwgsTqxiJ6LYSa+84JsW5buZ0BkNAoI/lzHmygA4P12Ssekm+pBmdnQf4ssB93A5ollpeioY9urYlR3Ya2yvcUW1vzYTpEB/s3+bzIch/To1noJ4sY1sTkgKYZBG/IvDdrWsuvwlKVU57AD2PN+1Ysk+UfI9KicjIrMonpzojONfbtarUMbnfXUPGVhH2HmqQgO5PKLfhGL+/ZqYUHRBQ9uqmQYDEcUQMj06+Nhft3PjQG+7f50zWcIIvTMCIO54/tCSa6fAYevSJckFi26rrXsJqLKPSKrqRUSZXt2IAlJW7bMiLLJ9cEGQdzKSqnJaSApdLSewCCuzY+MLmnhA+Hs80nSu8ySu5kU7r0LPKbhs9XK3Unl5kc4KMv8Bp10mdgRMVyL1OCviZZ/ZixvYbgopB/UyylL601FR/ljkiB3UYvFdLlJ8ZLkx66r4ex17LfOYHqcyp5u1AqJe/q8WdE8esvbif25TEPnfGKmUKOWpfRcV2Lgr9/mCSk3rj8ybmdXJarb987gcd04grBg24Yib/q8HWH2TZtskXvMPETV1O3O2lxFEgQo48mcmNtA2cUcN1oOU0mlC2LuNmr7ay5AVVrYMyuvjxe54k9F9S6TeK93DJ68N1i1+R6ARUl4NlGoMy349/VnA574z2zNcvJWqr2V8IMpVEbnfTGqxLc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0ec271c0-d931-9fae-a6ae-193c5c49f552",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4893,
+      "completion_tokens": 396,
+      "total_tokens": 5289,
+      "cost": 0.011778,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011778,
+        "upstream_inference_prompt_cost": 0.009402,
+        "upstream_inference_completions_cost": 0.002376
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only describes last-write-wins case-insensitive lookup and even proposes lowercasing stored keys, so a competent fix of __setitem__ would not know to preserve last-seen key case or add lower_items, equality, setdefault, and update semantics. Several FAIL_TO_PASS tests encode those extra contracts and would reject the issue’s own suggested solution.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only describes last-write-wins case-insensitive lookup and even proposes lowercasing stored keys, so a competent fix of __setitem__ would not know to preserve last-seen key case or add lower_items, equality, setdefault, and update semantics. Several FAIL_TO_PASS tests encode those extra contracts and would reject the issue’s own suggested solution.",
+  "prompt_tokens": 4893,
+  "completion_tokens": 396,
+  "total_tokens": 5289,
+  "cost_usd": 0.012162,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

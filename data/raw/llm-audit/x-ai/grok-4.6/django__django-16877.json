@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16877",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1320
+  },
+  "response": {
+    "id": "gen-1789187597-znm8ZXpv40fjCF8mbIOM",
+    "object": "chat.completion",
+    "created": 1789187597,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue names the filter and the intended join-after-escape use case, and the safeseq/escape analogy is enough for a senior engineer to implement it. The tests additionally require mark_safe items to be left unescaped and join arguments not to be escaped, which is slightly narrower than the written issue but follows existing escape semantics.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue asks for a new template filter `escapeseq` analogous to `safeseq` but for escape. Usage: `{{ some_list|escapeseq|join:\",\" }}` when autoescape is off.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a new template filter `escapeseq` analogous to `safeseq` but for escape. Usage: `{{ some_list|escapeseq|join:\",\" }}` when autoescape is off.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+t/ZwS8KnuX2qGZhIM3mEvevarLzwFxpRnAb86LeR8BPXocgy95secbIb9r5/Z7kCej6JA4GIAvXVRbmF6Kp2y55mZO6sjsF/IPhUBgEHFHCXvub4UC/NKVBRTRC6VkIhDmMMG9vwwiAI6YxDFD4qlA9QK+4RAPF2GJyWPP/+zmX9dwUCnxWxS1qjVn5VE4ltdzPMHjmJ8cGny2OiQZteTkunc+YyDDf8McVF69FKQLx481+V93fWawtWLNzWMXPOf7qwy8icjL+6ZTI2VkqGsLOKsdszyWx9uUIXel0JdjFscAYmwKYy2vbRKRs2RtrS1hg0jt7rR7kyG3zd0WdK6BAB67OWySj4Xo2CwqeCmFa8OcHN6/sVME5W1xS7j8GOBjtuxcAoBoSZh43pLU1ZViw1+T5HrI2DCTqqyF9pL+OAWvcCEZcd2ZsR6mff+Lonlh1+CZ+oDM843lMXSTRrTMCiiXPV7KIo5muJxPwT8k8365GskXCthNxq3+5MGlprgD+1aNNQnodLtYEw1HbPkdMaF7lPEWcExCJ+Xo3M8IhO6yOzxUJ98kbAkUmrUZsPgNOftVJ8nEzYzR3qZuiFiQtDIOkoy2d5cA2HXoaYafeSMqx7Lun3xajFIlSGASOWPNWvOEel7Hwn1ZeURKOQPBD+hZLduBNNbkLXvFSVy7/tLU2Puk5OPd8mlyF4zHmP/sdnRjdh294dZP/6OO3lswY1NfrCeolbiqUWrPnc5ZzCGmY7uAjLzKPK4ggvM/zE+gAMc3CW/p8MyKaQGv2iWgegqtpvTrmCG0Uy4kaGfXISvRtXJZwpGzmhynEUx9VaGd6cL0kvjNsK9yTmz5jl1dvx+a84p5yBHMHhBQ30V5+PeCOFxIW1Q2XZqlI6Y73pC80UvelLny9wsGUOuV2MiD0Qs6NnjcjEDc3OejnRn31CA2fXqSFqcMle5HM3XsvF4UsFDBqnTo0yjsU+KvO0+tMXhNQCmqazX8cpEA9w4RvGn/FzMHBWLBWbWVKf5eZ5VsTLwcWHCzPi/9UpKGymuasjfP7CfiSgaOir6pTpNyTClM+HQc1It/PI76KdY4Otk8uZ9lqMI7i2E496RBsDOR03rtSEjQxnYegRh9dUs4Y1hrJOEFHuNnN6KOPYj+8IhgfbudwoB8TLKu5yIl/wciL1qIZN9LOozPaZIEbMX8RsvcxATgdGMAz1lHmDaQ72P+LINdqduOPoJhP2/NqV/i02cnaSKhLvGYbrSxJ7KRbIT5g6YM8eU7NV3IH+8/tz7dEUF7/A50CNjQSlq0m7QqK46TMJQbOcv51WH+PkTw0pCGT0jYReL8cnTAIkTM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_884a3898-c991-9f6c-8baa-8be5fb1b9717",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1820,
+      "completion_tokens": 378,
+      "total_tokens": 2198,
+      "cost": 0.005716,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005716,
+        "upstream_inference_prompt_cost": 0.003448,
+        "upstream_inference_completions_cost": 0.002268
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 254,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue names the filter and the intended join-after-escape use case, and the safeseq/escape analogy is enough for a senior engineer to implement it. The tests additionally require mark_safe items to be left unescaped and join arguments not to be escaped, which is slightly narrower than the written issue but follows existing escape semantics.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue names the filter and the intended join-after-escape use case, and the safeseq/escape analogy is enough for a senior engineer to implement it. The tests additionally require mark_safe items to be left unescaped and join arguments not to be escaped, which is slightly narrower than the written issue but follows existing escape semantics.",
+  "prompt_tokens": 1820,
+  "completion_tokens": 378,
+  "total_tokens": 2198,
+  "cost_usd": 0.005908,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

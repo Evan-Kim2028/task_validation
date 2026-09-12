@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11790",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1029
+  },
+  "response": {
+    "id": "gen-1789190932-Wey41l8X1jVrYl3T6hiZ",
+    "object": "chat.completion",
+    "created": 1789190932,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that AuthenticationForm username should render the HTML maxlength attribute again, matching the field max_length. The FAIL_TO_PASS tests only assert that widget.attrs maxlength equals the documented 254 default or the user model username max_length.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about AuthenticationForm's username field not setting the maxlength HTML attribute. Tests check that widget.attrs.get('maxlength') matches the max_length.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AuthenticationForm's username field not setting the maxlength HTML attribute. Tests check that widget.attrs.get('maxlength') matches the max_length.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "UWBaBoKa/O9zk3aeMKKjlEH3I0o5ZYxeabYcZ06yqu3ptjCjpk7o/dcCZLYNF2BkgzTnrUC1RbBcerL02KDTep2F/ClvRA7fOyhuDw+V8C+1F9PoSU3k1aeRM9BLnAuYhWqjeEZVFNEQDhXtPV5AhxUTmmhOZfLQy8I2VGpk6T7ZJ95qNpztzKQDBybk8YhIXLissTzECq84brZr+hd12Vv8KGi+mj2eZhqP2fC3njRJOdivy0grFruhP6TZSEGM/yYVOazDAQRrQu+UQGeYmMKKUlg746r9WqjrmqXN4SIm+Gy9zsTuplglScJ7Adu7P3AvRUzAkHJF+cyZovc3cia2n+iLQV+0nz2DzQwxoeRb4quIJM/8PhfW+9LiMpzs7SLt8O4jyJ7VTAkaiOuHiVWA0DinQQ62GFyITlRBdT0UElpg+k6oekeIi6CRVpgVgRN5MSfFbiflfk3DUudHNV5MenYGRPi3sqm4QZcGGLfX2LMt8gxFX9WM1MQBroWFenCzl+bFEBV2Gnw5FkeuWngD49I23WdjzEjje0EAxoqSYeiROLmB2wFm4GvRV398w1hSypJz4MemSaW/hQYwpadwFXeK3Fiq+uarzmGaIg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f6d64c2b-7634-9c2b-99f7-ddbab2544e9d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1365,
+      "completion_tokens": 217,
+      "total_tokens": 1582,
+      "cost": 0.003648,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003648,
+        "upstream_inference_prompt_cost": 0.002346,
+        "upstream_inference_completions_cost": 0.001302
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 110,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that AuthenticationForm username should render the HTML maxlength attribute again, matching the field max_length. The FAIL_TO_PASS tests only assert that widget.attrs maxlength equals the documented 254 default or the user model username max_length.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that AuthenticationForm username should render the HTML maxlength attribute again, matching the field max_length. The FAIL_TO_PASS tests only assert that widget.attrs maxlength equals the documented 254 default or the user model username max_length.",
+  "prompt_tokens": 1365,
+  "completion_tokens": 217,
+  "total_tokens": 1582,
+  "cost_usd": 0.004032,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

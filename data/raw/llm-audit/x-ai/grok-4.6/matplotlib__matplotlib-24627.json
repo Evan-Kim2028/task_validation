@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-24627",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 859
+  },
+  "response": {
+    "id": "gen-1789192012-UKCStBIQji5btRASCZ0P",
+    "object": "chat.completion",
+    "created": 1789192012,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue title and example make it clear that clearing should drop artist .axes (and .figure) the same way remove() does, so a competent engineer would implement that on Axes.clear/cla. The FAIL_TO_PASS test only covers ax.clear() on a couple of children and never clf(), so it is slightly narrower than the stated request but still aligned with the reported bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about cla() and clf() unsetting .axes and .figure of deparented artists. The example shows cla() not unsetting .axes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about cla() and clf() unsetting .axes and .figure of deparented artists. The example shows cla() not unsetting .axes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "tzJmUhBE65q17x3DrbYkWGDltr3kAPb2st/+580mJsaZeI2q/Ph4kwXnk2Z3Te7p+R26GtRKcwJpYF5BrSPqyKuk2LI6KbpX3B6cPqvBPlmyKJXuR8do79fS7nT8T4a7qhNVbaWm41Ix5Y36YdBk9b/xCRxhfcseGEK75NQMw1m+UL4lGkD1UqBEcS/JZMq1Yz/AHi8+d25nJ59Q5JAh06kwCs1sVLkVn4rdy0gZmD16+g6THLsg8GnOfuaOj+Jkzga6K+2ALpFF04XtogSCt2Y8jNuNdzVez/KcwkoqD4bFpV5kWcUfhZk5/XCZvvnr5F2H+aMZ1xRmQtUYKICVF+dbhU0JVGInyeFcO/a8QZLwsAn84JEE6HzK/xUzA6gUGNgdDzyhrCi/pT2Nisl++TgcGFABZnNJNlNashF5ptJc1dicB++N9vlGfDWB+woUvrJheRTmpyat67JGpRxt7eFmGTUTlHNpA+V/fNvwYRmIh+HSQJo/pfCTZgM/xIX0V4Bz2Fdekzbk74BP6T6waYkdUAJnPpZW+Z5QauNXHSMYcXsVrT8sa8Z+tr7uYOfAjaGWYaosOUARq0b+f7Zs8BCZv8kzSyCv1XmuWiiOpf+dID1y5YUUgLgckL0xigA8MZfXDO28f9npIVxc6cMXqX3HxF7fAvoqh9DJlc8MvboWWZL+xDDUxQju0Zzg/vE/l1sOUOYQsBKwnegs63Hk5KMnHwd/AS0+WzV802xkZ3kl9jSXXkqaptEXl4cRlgSJ92n5qjTuem4JWzMd98ZnW1T5p+yRQ/+HbYUu7t9pZEkv4fEjU4ffurtXPyPdqLkcaaKiRJGgWRlCS6yxiENLRKgi+Y2GRjNF9cFVSIeLQWfBE8bfHaH+WAe6LPZz8t8ItEu3rv0QocyGDFmh4EjJ8CRQj2j304d8uiAIPMbdDzos8Zy9WND72kPLIW8r5vK2hXVpzxtpvxobR9vN9JuAQiKwz0kC+JxTenQU2KeKfZq2dAXOqKMuSHDofartLdbxyhI+i8MaEbMP2z4/nv/HTW2mFBu17sMR0YpIUBL7lNcckN6JAjdx4yFw8Y4fp5eI14Z0rk/giF0ne3MeFLOA9fkuszwQ89+53KRbluhS48JyWE6zFO0628FXXQPf5OEtUYUSUXs0u2mywPtt1bGiz1OQu3692ftqQMS91MbmbBvFZ0F2Z/2FMrRSaaeicaXaRYID9fKnHyMumxW1OJhmXGlf6iZtDDBc9RY5vcSxiqEeU4Bguekd+t1JOIsrzcQ5QTcjSozMkO0i19ZSGMBjqHDxLt4Aj5McZUivSj2u94WxJkPnftSSE+tLyYDPDHRGbUYbl0tBE3hlDXc0Lq5AVk+r8Kvao0bIXP1wI6h2hxlBP4GmtcJf7KrUPM8B/tg6NMRfM0bIUnzEBn3XIMR3+kfpzKHDpuJvYHbTX5v8RnVne0T2AexNw1mdAn3HXPUdI6wTIZknuMKwdx+jfIbTWPR518vYTyNKqT5Y/m77Dk+EiGdFneZ2TUcf6VrWL4PKcKiWu950e3h11XhIto6yJmJJkqXtdcf2rJT46MtuoAS0MAHz08rMlw16BCexvS/owEJAB9NhXICp8ibvECrwfYNoC1LcZaAl+awLM2UFzOjlDccfHmmgomgh9FUyddqbtcU1gglN2TWyKd0vEe7e77h9ujTlV82vMGbU4+8ZVbyJBZuKPAHhVVFSVKtNhGLiuss9qkFp3o8W.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_034fd3d3-0baa-975c-9322-5b944a9d3bf5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1264,
+      "completion_tokens": 454,
+      "total_tokens": 1718,
+      "cost": 0.004868,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004868,
+        "upstream_inference_prompt_cost": 0.002144,
+        "upstream_inference_completions_cost": 0.002724
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 321,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue title and example make it clear that clearing should drop artist .axes (and .figure) the same way remove() does, so a competent engineer would implement that on Axes.clear/cla. The FAIL_TO_PASS test only covers ax.clear() on a couple of children and never clf(), so it is slightly narrower than the stated request but still aligned with the reported bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue title and example make it clear that clearing should drop artist .axes (and .figure) the same way remove() does, so a competent engineer would implement that on Axes.clear/cla. The FAIL_TO_PASS test only covers ax.clear() on a couple of children and never clf(), so it is slightly narrower than the stated request but still aligned with the reported bug.",
+  "prompt_tokens": 1264,
+  "completion_tokens": 454,
+  "total_tokens": 1718,
+  "cost_usd": 0.005252,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

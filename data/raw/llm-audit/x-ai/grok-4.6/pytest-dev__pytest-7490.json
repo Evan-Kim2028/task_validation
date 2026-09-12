@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7490",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6936
+  },
+  "response": {
+    "id": "gen-1789192888-mI7lzG7JSbBOb8uU3KGy",
+    "object": "chat.completion",
+    "created": 1789192888,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires that adding pytest.mark.xfail on the node during the test restores static xfail handling for a failing assertion. The extra strict-pass case is implied by full xfail semantics but is not stated, so a slightly different re-evaluation strategy could fail that test.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about dynamically adding xfail markers during a test no longer ignoring failures in pytest 6.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The strict=True case is extra but follows standard xfail semantics after dynamic marker addition\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about dynamically adding xfail markers during a test no longer ignoring failures in pytest 6.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The strict=True case is extra but follows standard xfail semantics after dynamic marker addition\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c5d5f077-acfb-9f74-a095-93d8fb409833",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5919,
+      "completion_tokens": 709,
+      "total_tokens": 6628,
+      "cost": 0.015708,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.015708,
+        "upstream_inference_prompt_cost": 0.011454,
+        "upstream_inference_completions_cost": 0.004254
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 595,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires that adding pytest.mark.xfail on the node during the test restores static xfail handling for a failing assertion. The extra strict-pass case is implied by full xfail semantics but is not stated, so a slightly different re-evaluation strategy could fail that test.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires that adding pytest.mark.xfail on the node during the test restores static xfail handling for a failing assertion. The extra strict-pass case is implied by full xfail semantics but is not stated, so a slightly different re-evaluation strategy could fail that test.",
+  "prompt_tokens": 5919,
+  "completion_tokens": 709,
+  "total_tokens": 6628,
+  "cost_usd": 0.016092,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

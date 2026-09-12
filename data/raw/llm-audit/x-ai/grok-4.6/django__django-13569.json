@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13569",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1307
+  },
+  "response": {
+    "id": "gen-1789191264-82i2Q7sQhpLGv4bmYRoZ",
+    "object": "chat.completion",
+    "created": 1789191264,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that order_by('?') must not add RANDOM() to GROUP BY or split aggregation results, which is enough for a correct compiler/Random fix. The FAIL_TO_PASS test checks exactly that aggregation counts stay intact under random ordering.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about order_by('?') breaking queryset aggregation by including RANDOM() in GROUP BY.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about order_by('?') breaking queryset aggregation by including RANDOM() in GROUP BY.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "VPN/l6f8Vhogm353XxTYwy4z8tBQsaLdhXIzrCHmANA41laVy2pXGwoHErY9gI9puoae5J4m4Ym1k7vgggZUaER8TK+ejug3W3Sh5NoCeCqv4BLI+ezEHgcFLO5AggLpAmLtMASp7dd16tCspGJ6UcjXGjdgvZimNzrkfUraLD38IoMAkMyCK/lkebs/9/Cp77AHc7nouOHm3ctj+zTwdg5e70psbKipxuolADD/N3/MMJVZxWZD/1UGiReDYJv7NamGgyScQAzgTM0kIRAUXPYM+0pjp8xXGEeQy3IcZAY43n0smEUkYKrd5XA/O2kHrJdkEupl3xeJkd78YumpTXBpbh8zZnG41XsYi9b4KuF+8DAuM2k5xH1Ajb2IRrQ5Rs4MNU/V4DLrw+siO7udG00D0IsHMDNfeTWXnD5f7iUlhdtfkL+6f4CXLNoa/g5qt5atHYB+HPtleUjDdmbx7msqNEvXecrC1YpX3srWV5bhJAsaO3FB8f7gKJmSTAZecsrWsvlosJRq7u5X4brhPKQk8k1q6oWWi+SybFgFOAKeuneFlJIfS5nTYbxJR9d9HjnrTa3G9l5zVJDdp65VXJul/SWcqy6sz4Ck7roB2rM5xXWSbfocQj9Ohm9rWI2b8ltV+BGS7Zgm+yAIjnReY3JvtzFFhhp+9jTnoiKfCEPXT4syPXQz6y3ystxw4AFdttZoq81I13YRq5XGp/eSTrOLy6tMk9uzSJCHqpj/SJzRWTldRwtK99YG5RNekbrvVlhT1SEBKMEspmo2KMTVFRE459MXsJeR.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9d18fb68-2b28-9adb-b55a-3c2f9705accd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1699,
+      "completion_tokens": 233,
+      "total_tokens": 1932,
+      "cost": 0.004604,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004604,
+        "upstream_inference_prompt_cost": 0.003206,
+        "upstream_inference_completions_cost": 0.001398
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 125,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that order_by('?') must not add RANDOM() to GROUP BY or split aggregation results, which is enough for a correct compiler/Random fix. The FAIL_TO_PASS test checks exactly that aggregation counts stay intact under random ordering.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that order_by('?') must not add RANDOM() to GROUP BY or split aggregation results, which is enough for a correct compiler/Random fix. The FAIL_TO_PASS test checks exactly that aggregation counts stay intact under random ordering.",
+  "prompt_tokens": 1699,
+  "completion_tokens": 233,
+  "total_tokens": 1932,
+  "cost_usd": 0.004796,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

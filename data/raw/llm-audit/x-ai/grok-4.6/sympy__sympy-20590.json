@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-20590",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "f2af300e-2ec7-952d-9b77-17f09edbd3a8",
+    "object": "chat.completion",
+    "created": 1789194756,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to restore slotted instances without __dict__, which a competent engineer can implement from the described regression. The FAIL_TO_PASS check uses a Basic fixture rather than Symbol and also forbids attribute assignment, which is a slightly narrower/adjacent assertion than the issue text alone.\", \"p_invalid\": 0.12}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1615,
+      "completion_tokens": 113,
+      "total_tokens": 2050,
+      "prompt_tokens_details": {
+        "text_tokens": 1615,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 322,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 17244800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to restore slotted instances without __dict__, which a competent engineer can implement from the described regression. The FAIL_TO_PASS check uses a Basic fixture rather than Symbol and also forbids attribute assignment, which is a slightly narrower/adjacent assertion than the issue text alone.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to restore slotted instances without __dict__, which a competent engineer can implement from the described regression. The FAIL_TO_PASS check uses a Basic fixture rather than Symbol and also forbids attribute assignment, which is a slightly narrower/adjacent assertion than the issue text alone.",
+  "prompt_tokens": 1615,
+  "completion_tokens": 435,
+  "total_tokens": 2050,
+  "cost_usd": 0.00584,
+  "cost_in_usd_ticks": 17244800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 867
+}

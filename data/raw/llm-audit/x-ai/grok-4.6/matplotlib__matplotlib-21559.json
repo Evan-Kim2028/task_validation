@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-21559",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2530
+  },
+  "response": {
+    "id": "gen-1789191936-rb6QNg0C3JSxS0JjWPpQ",
+    "object": "chat.completion",
+    "created": 1789191936,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly requires eventplot to accept a list of datetime series without TypeError and to draw one row per series. The FAIL_TO_PASS image test checks that nested datetime lists match plotting each series separately, which is a fair encoding of that expected behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about eventplot not handling multiple datetime-based series. The expected outcome is an eventplot with one time series per row.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about eventplot not handling multiple datetime-based series. The expected outcome is an eventplot with one time series per row.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "c7Okxy3ROte4bRs2pWEH9GDsnpHL6zsw1mM0A+6o//nUZRjTR8HH6hmbyc/k/HlF4sAa8Mi05GnnazvzDFV0PNIq5f11D2Lln8rSTVORqJDAD6tZVfa5hTEjLvfwdCKuTuaUoy0wWWuGwRsm+6Z1FxAt8HND+JqYn+RX4aOaoqZzpDOVdX2sdXTGjrN4XNDPaAGqYgLSvhc85HMppo5A2xysjvKH5pBk2En5ATrbAhO9Uh+qWBlnvzWwTCbE/UkdfQUt/b1PRZ/qElCDTgXlvzFK7t6EiCKijP8IbI44ho+KQx/SRS/wrb5eIYKRoYwuMEOptdztE0oYGsNQf+peMxI31SYIh12MA4wRe8vOQXjqhD0Mtuwjm34bF8ROy6tBCjYt7oZFDfcQ+0Aq+r9OuR1VL/mr0IUNrM39l21w8NOke07rRcydQc2rILZEHjK2exB4ng9G2+o2IBD7JPzjyWALijL2VSn9flVNcagpxI6OnADwOUgn3xqidkkepW8Pu8/0q9gA7G9RQEFflN0BaK/KBcrsRVTaz+jltefz+oWZTVcQouhsSBR+P9+6JyQOzOM+hcjsZTGV8/huMJVpj2D5wJhTcwOU05+o/ftQ+zBg63zAO1q5AUl9MtWCOacUTo7QNwCSQi7i1pLbqg0E+46YbQWuQvkjlkIeUEjGreHe3XzhcALbL+ywSr652/ySsrotXYm3yMk6P1oJj8dYlHkZwKkZdRjTr3eUrw8oR4BBW1MJswGFv3PToicz6r2kKYBUe/+GK5S8ZIBH4BJEgiMawsqhEAogiPCL5oDScfyyKo1Ty0XdD39jHs821LCuONJ9jxH1buMtN9rxL1cZ0vLwh6jwLpKPHI3rcltwiDl+WJLUu4PcqPfoxViw6jdUAGHwdFVz4ko6mcY7f4wwH8Q+tzXlQh5lMYu4YpA313dykq0TmlLTEjYMYPHIZTguWikE+RYbeLKF4Rs/TlrPxZ1F8DH4vRpy02btiPDd7smxB1zOlZbmFnRxNjw9sb0FoqWz6eXXjgl2ukKU0qEOX0PuN7Cp+8zisU7OpnOxxJ3Djw1SHkaIQSiZ32/gf/vcmAxTCNvhfoqNP2VaPILGOh6yLEAlxS98FBoVlymW/8fjFgrYtTnV6bD7f0IM5LJmLkAVN8sp.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9ad2f191-4bf2-9c74-bb6e-22a30a289400",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3517,
+      "completion_tokens": 297,
+      "total_tokens": 3814,
+      "cost": 0.008624,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008624,
+        "upstream_inference_prompt_cost": 0.006842,
+        "upstream_inference_completions_cost": 0.001782
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 189,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly requires eventplot to accept a list of datetime series without TypeError and to draw one row per series. The FAIL_TO_PASS image test checks that nested datetime lists match plotting each series separately, which is a fair encoding of that expected behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 0.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly requires eventplot to accept a list of datetime series without TypeError and to draw one row per series. The FAIL_TO_PASS image test checks that nested datetime lists match plotting each series separately, which is a fair encoding of that expected behavior.",
+  "prompt_tokens": 3517,
+  "completion_tokens": 297,
+  "total_tokens": 3814,
+  "cost_usd": 0.008816,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

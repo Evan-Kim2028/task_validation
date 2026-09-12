@@ -1,0 +1,57 @@
+2026-09-12 00:35:22,577 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:35:37,854 - INFO - Creating container for pytest-dev__pytest-5479...
+2026-09-12 00:35:38,172 - INFO - Container for pytest-dev__pytest-5479 created: b5cd7d62da43114be2e265ef200c25ea1834d5b37849209060463c7511c72f0d
+2026-09-12 00:35:38,449 - INFO - Container for pytest-dev__pytest-5479 started: b5cd7d62da43114be2e265ef200c25ea1834d5b37849209060463c7511c72f0d
+2026-09-12 00:35:38,449 - INFO - Intermediate patch for pytest-dev__pytest-5479 written to logs/run_evaluation/tv100-gold/tv-gold/pytest-dev__pytest-5479/patch.diff, now applying to container...
+2026-09-12 00:35:38,545 - INFO - >>>>> Applied Patch:
+Checking patch src/_pytest/_code/code.py...
+Applied patch src/_pytest/_code/code.py cleanly.
+
+2026-09-12 00:35:38,649 - INFO - Git diff before:
+diff --git a/src/_pytest/_code/code.py b/src/_pytest/_code/code.py
+index 8c73ccc6a..175d6fda0 100644
+--- a/src/_pytest/_code/code.py
++++ b/src/_pytest/_code/code.py
+@@ -572,8 +572,13 @@ class ExceptionInfo(object):
+         raised.
+         """
+         __tracebackhide__ = True
+-        if not re.search(regexp, str(self.value)):
+-            assert 0, "Pattern '{!s}' not found in '{!s}'".format(regexp, self.value)
++        value = (
++            text_type(self.value) if isinstance(regexp, text_type) else str(self.value)
++        )
++        if not re.search(regexp, value):
++            raise AssertionError(
++                u"Pattern {!r} not found in {!r}".format(regexp, value)
++            )
+         return True
+2026-09-12 00:35:38,650 - INFO - Eval script for pytest-dev__pytest-5479 written to logs/run_evaluation/tv100-gold/tv-gold/pytest-dev__pytest-5479/eval.sh; copying to container...
+2026-09-12 00:36:04,590 - INFO - Test runtime: 25.90 seconds
+2026-09-12 00:36:04,590 - INFO - Test output for pytest-dev__pytest-5479 written to logs/run_evaluation/tv100-gold/tv-gold/pytest-dev__pytest-5479/test_output.txt
+2026-09-12 00:36:04,651 - INFO - Git diff after:
+diff --git a/src/_pytest/_code/code.py b/src/_pytest/_code/code.py
+index 8c73ccc6a..175d6fda0 100644
+--- a/src/_pytest/_code/code.py
++++ b/src/_pytest/_code/code.py
+@@ -572,8 +572,13 @@ class ExceptionInfo(object):
+         raised.
+         """
+         __tracebackhide__ = True
+-        if not re.search(regexp, str(self.value)):
+-            assert 0, "Pattern '{!s}' not found in '{!s}'".format(regexp, self.value)
++        value = (
++            text_type(self.value) if isinstance(regexp, text_type) else str(self.value)
++        )
++        if not re.search(regexp, value):
++            raise AssertionError(
++                u"Pattern {!r} not found in {!r}".format(regexp, value)
++            )
+         return True
+2026-09-12 00:36:04,651 - INFO - Grading answer for pytest-dev__pytest-5479...
+2026-09-12 00:36:04,652 - INFO - report: {'pytest-dev__pytest-5479': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['testing/python/raises.py::TestRaises::test_raises_match'], 'failure': []}, 'PASS_TO_PASS': {'success': ['testing/python/raises.py::TestRaises::test_raises', 'testing/python/raises.py::TestRaises::test_raises_exec', 'testing/python/raises.py::TestRaises::test_raises_exec_correct_filename', 'testing/python/raises.py::TestRaises::test_raises_syntax_error', 'testing/python/raises.py::TestRaises::test_raises_function', 'testing/python/raises.py::TestRaises::test_raises_callable_no_exception', 'testing/python/raises.py::TestRaises::test_raises_falsey_type_error', 'testing/python/raises.py::TestRaises::test_raises_repr_inflight', 'testing/python/raises.py::TestRaises::test_noclass', 'testing/python/raises.py::TestRaises::test_invalid_arguments_to_raises', 'testing/python/raises.py::TestRaises::test_tuple', 'testing/python/raises.py::TestRaises::test_no_raise_message', 'testing/python/raises.py::TestRaises::test_custom_raise_message', 'testing/python/raises.py::TestRaises::test_raises_cyclic_reference[function]', 'testing/python/raises.py::TestRaises::test_raises_cyclic_reference[with]', 'testing/python/raises.py::TestRaises::test_raises_match_wrong_type', 'testing/python/raises.py::TestRaises::test_raises_exception_looks_iterable', 'testing/python/raises.py::TestRaises::test_raises_with_raising_dunder_class', 'testing/python/raises.py::TestUnicodeHandling::test_handling[\\u2603-\\u2603-expectation0]', 'testing/python/raises.py::TestUnicodeHandling::test_handling[\\u2603-\\u2603foo-expectation1]', 'testing/python/raises.py::TestRaises::test_raises_as_contextmanager', 'testing/python/raises.py::TestRaises::test_does_not_raise', 'testing/python/raises.py::TestRaises::test_does_not_raise_does_raise'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for pytest-dev__pytest-5479: resolved: True
+2026-09-12 00:36:04,652 - INFO - Attempting to stop container sweb.eval.pytest-dev__pytest-5479.tv100-gold...
+2026-09-12 00:36:19,919 - INFO - Container sweb.eval.pytest-dev__pytest-5479.tv100-gold stopped successfully.
+2026-09-12 00:36:19,919 - INFO - Attempting to remove container sweb.eval.pytest-dev__pytest-5479.tv100-gold...
+2026-09-12 00:36:19,966 - INFO - Container sweb.eval.pytest-dev__pytest-5479.tv100-gold removed successfully.

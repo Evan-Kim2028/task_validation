@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11477",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1657
+  },
+  "response": {
+    "id": "gen-1789190874-zZt6F70kvj8gaQFJvoIh",
+    "object": "chat.completion",
+    "created": 1789190874,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly identifies incorrect URL translation when optional named groups are absent, which a competent engineer would fix by omitting unmatched (None) kwargs from regex matches. The FAIL_TO_PASS suite also asserts resolve/reverse details and extra patterns not stated in the issue, so it is slightly narrower than a pure translate_url fix.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about translate_url() creating incorrect URLs when optional named groups are missing.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about translate_url() creating incorrect URLs when optional named groups are missing.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_25244319-f90c-9d1e-90b2-c2b1cae9d12f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2184,
+      "completion_tokens": 572,
+      "total_tokens": 2756,
+      "cost": 0.007608,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007608,
+        "upstream_inference_prompt_cost": 0.004176,
+        "upstream_inference_completions_cost": 0.003432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 451,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly identifies incorrect URL translation when optional named groups are absent, which a competent engineer would fix by omitting unmatched (None) kwargs from regex matches. The FAIL_TO_PASS suite also asserts resolve/reverse details and extra patterns not stated in the issue, so it is slightly narrower than a pure translate_url fix.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly identifies incorrect URL translation when optional named groups are absent, which a competent engineer would fix by omitting unmatched (None) kwargs from regex matches. The FAIL_TO_PASS suite also asserts resolve/reverse details and extra patterns not stated in the issue, so it is slightly narrower than a pure translate_url fix.",
+  "prompt_tokens": 2184,
+  "completion_tokens": 572,
+  "total_tokens": 2756,
+  "cost_usd": 0.0078,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

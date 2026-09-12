@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14030",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1799
+  },
+  "response": {
+    "id": "gen-1789187894-lXL0C9r4NOuVxmYEyNwz",
+    "object": "chat.completion",
+    "created": 1789187894,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests check cache decorator TypeErrors, not the admin method_decorator fix.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to wrap admin instance methods with method_decorator, but the tests require never_cache and cache_control to raise specific TypeError messages when misapplied. A correct admin-only fix would fail those tests, and the tests never exercise the reported admin views.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about admin never_cache needing method_decorator. The tests are about never_cache and cache_control raising TypeError with specific messages when decorating methods without method_decorat...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about admin never_cache needing method_decorator. The tests are about never_cache and cache_control raising TypeError with specific messages when decorating methods without method_decorat...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1ffddce3-b284-9aea-8032-e7e6d48ef2a2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2124,
+      "completion_tokens": 588,
+      "total_tokens": 2712,
+      "cost": 0.007392,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007392,
+        "upstream_inference_prompt_cost": 0.003864,
+        "upstream_inference_completions_cost": 0.003528
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 457,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests check cache decorator TypeErrors, not the admin method_decorator fix.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to wrap admin instance methods with method_decorator, but the tests require never_cache and cache_control to raise specific TypeError messages when misapplied. A correct admin-only fix would fail those tests, and the tests never exercise the reported admin views.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests check cache decorator TypeErrors, not the admin method_decorator fix.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to wrap admin instance methods with method_decorator, but the tests require never_cache and cache_control to raise specific TypeError messages when misapplied. A correct admin-only fix would fail those tests, and the tests never exercise the reported admin views.",
+  "prompt_tokens": 2124,
+  "completion_tokens": 588,
+  "total_tokens": 2712,
+  "cost_usd": 0.007776,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

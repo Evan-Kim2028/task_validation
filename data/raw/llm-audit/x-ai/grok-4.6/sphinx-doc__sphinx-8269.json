@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8269",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "851d4e77-2d19-9bb0-94e4-829df9af4e68",
+    "object": "chat.completion",
+    "created": 1789194226,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires reporting HTTP status errors instead of a missing-anchor message when the server fails, matching the existing non-anchor error text. The FAIL_TO_PASS check is slightly narrower by asserting one exact output.txt line for a 500 from requests, which a valid fix could still miss if wording or formatting differed slightly.\", \"p_invalid\": 0.22}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2360,
+      "completion_tokens": 122,
+      "total_tokens": 2919,
+      "prompt_tokens_details": {
+        "text_tokens": 2360,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 437,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 24187600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires reporting HTTP status errors instead of a missing-anchor message when the server fails, matching the existing non-anchor error text. The FAIL_TO_PASS check is slightly narrower by asserting one exact output.txt line for a 500 from requests, which a valid fix could still miss if wording or formatting differed slightly.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires reporting HTTP status errors instead of a missing-anchor message when the server fails, matching the existing non-anchor error text. The FAIL_TO_PASS check is slightly narrower by asserting one exact output.txt line for a 500 from requests, which a valid fix could still miss if wording or formatting differed slightly.",
+  "prompt_tokens": 2360,
+  "completion_tokens": 559,
+  "total_tokens": 2919,
+  "cost_usd": 0.008074,
+  "cost_in_usd_ticks": 24187600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1489
+}

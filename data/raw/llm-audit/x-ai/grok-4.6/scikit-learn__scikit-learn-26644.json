@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-26644",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1762
+  },
+  "response": {
+    "id": "gen-1789192420-ueWlirXVktd21fXOUDXC",
+    "object": "chat.completion",
+    "created": 1789192420,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue asks to add sample_weight to inspect.partial_dependence and use weighted averages for the aggregate PDP, but the only FAIL_TO_PASS test targets PartialDependenceDisplay.from_estimator and only checks that all-ones weights match the unweighted result. A correct implementation of the stated inspect API without that plot entry point, or a real weighted-mean implementation that is not exercised by constant weights, would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue asks for partial_dependence to respect sample weights by adding sample_weight argument and using weighted averages for the aggregate, not ICE.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for partial_dependence to respect sample weights by adding sample_weight argument and using weighted averages for the aggregate, not ICE.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b0f74e9f-c7d2-933b-87f9-3943d4f55c0c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1980,
+      "completion_tokens": 505,
+      "total_tokens": 2485,
+      "cost": 0.006606,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006606,
+        "upstream_inference_prompt_cost": 0.003576,
+        "upstream_inference_completions_cost": 0.00303
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 364,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue asks to add sample_weight to inspect.partial_dependence and use weighted averages for the aggregate PDP, but the only FAIL_TO_PASS test targets PartialDependenceDisplay.from_estimator and only checks that all-ones weights match the unweighted result. A correct implementation of the stated inspect API without that plot entry point, or a real weighted-mean implementation that is not exercised by constant weights, would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue asks to add sample_weight to inspect.partial_dependence and use weighted averages for the aggregate PDP, but the only FAIL_TO_PASS test targets PartialDependenceDisplay.from_estimator and only checks that all-ones weights match the unweighted result. A correct implementation of the stated inspect API without that plot entry point, or a real weighted-mean implementation that is not exercised by constant weights, would fail.",
+  "prompt_tokens": 1980,
+  "completion_tokens": 505,
+  "total_tokens": 2485,
+  "cost_usd": 0.00699,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11680",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1387
+  },
+  "response": {
+    "id": "gen-1789190913-gIjQyBcE4qzvcOkIyrFY",
+    "object": "chat.completion",
+    "created": 1789190913,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that saving a new instance whose primary key has a default should not issue a pointless UPDATE before INSERT, matching create() and force_insert. The FAIL_TO_PASS test only asserts a single query on that save path, which is a fair check of the described behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about removing an UPDATE query when saving a new model instance with a primary key that has a default. The test checks that saving PrimaryKeyWithDefault() only uses 1 query.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about removing an UPDATE query when saving a new model instance with a primary key that has a default. The test checks that saving PrimaryKeyWithDefault() only uses 1 query.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "jZT1FNF8H4G/TDfzAxLstVY59fTRZLFiBJJhQww0WXp+05ry91caz2GoVCt9ATl3JJ8zBMhv8pxCuBQD4BOblpvnf98W8ieCLCMSJGiUsnCxDnvlZzKgXhYf0eZQUG6I//jg6VAkkdXlHgx9tY6gpRwqR7HcTmSLqnuhSJ23XOR/kC7od03yFxODEfqmZ/+nDcXZibl8jvZhmIz+WovDE6IB0JGpIu6AmrJOki9FswUqwHimfPysalWrj3cBjupHipzR4npPI0U6kk1q38n2vWOz6I3PG4TPLzd8npsgcBXbBrUFlSIqb4XWqinTvaPOwjRinoAWiRJTAVAM5FJdxyEyqLiu61/52eI9ugrAWskBM+BV0QeY1cGgtY7/hyCk1mBYLwr9g2xqtlofM53eKUxnPABQfUv6hZQYeNQV3OlQZjbxhHqp+PhjL8YP5PXq08UW9Ou/23tjN0guvz8x9S5/jMorufNDZwvY7NgrOiotZO9pewJSXqYpsZJBBFHP3M4VXIlYOX4NxCAKpfUMEzmihSNUJ+XyPTcUpFpWwiFkeonZUcTn11gy5bAT3N9JMLQpqcfxx+OF2/6hn+yFhTi7o0zLtkIO9SaX59GDavIB6RElXm8nhYUiq1fJzwcAaV+NoaiixeRJcUwbahqk2xjZ+Tz4qO6K9pW27SZrLSqU5NI/Ptx2YIYjiCi1ULbz2fDLKF48uDIgck7vtRD82aXjPR+TqytBpwlYsEz7/OOu66e0nXujd1862shHBccD+wdpboEwG/c1sFUFrg2VOX48MW1ssS4O4ywVj6dcQ+2WGaaD43LpV2EjbCxZFXhdViGDiLcdNa6E2vkX+O28mywfvoftyuQVlitRuOjWz8106F2xrHeSUYZxxAWMErePF0i/cPGRKs/BL1sS3293D33ezeiZdqRpMwPfFdRE5RZeRNSnbqE5LAh0mdDMDcEhAH58ag2HNEbMqkqvp0p0FiEBBmsSDwlSeOw/4XeuOTHhTM+XigcEYq8FjMjgm2IMT6bY15i56jsTFdyCAAE0/vjUqnnJw7kZXOZ6vUTzDHNuB5AdwaIhHAUz0gZTftkoOoVjtOxnKkufT+pjTS7eS5zbJTOqRTRV6g/pYrpe/NnFWtkfmARazKnm8psqqMOIzPeiKKKgzFax+kt6eEjzlG0t9pkN00EfsWVWtFAslANKnPmK3kCi5iaHtkapibmo1qenI2cRkXvWp9kYkLQVHB/eQp7yjiBehfnD.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8e5c027b-f136-909d-bc0d-a3c5888acbe5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1846,
+      "completion_tokens": 317,
+      "total_tokens": 2163,
+      "cost": 0.00521,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00521,
+        "upstream_inference_prompt_cost": 0.003308,
+        "upstream_inference_completions_cost": 0.001902
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 203,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that saving a new instance whose primary key has a default should not issue a pointless UPDATE before INSERT, matching create() and force_insert. The FAIL_TO_PASS test only asserts a single query on that save path, which is a fair check of the described behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that saving a new instance whose primary key has a default should not issue a pointless UPDATE before INSERT, matching create() and force_insert. The FAIL_TO_PASS test only asserts a single query on that save path, which is a fair check of the described behavior.",
+  "prompt_tokens": 1846,
+  "completion_tokens": 317,
+  "total_tokens": 2163,
+  "cost_usd": 0.005594,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

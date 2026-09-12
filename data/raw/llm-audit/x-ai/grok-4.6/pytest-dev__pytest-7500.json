@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7500",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2730
+  },
+  "response": {
+    "id": "gen-1789192907-zJikWpz7IdpqvnaGxWFu",
+    "object": "chat.completion",
+    "created": 1789192907,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue describes a Windows PermissionError during temp-dir cleanup and even proposes swapping cleanup loops, while the tests require catching OSError on lock.is_file in ensure_deletable. A reasonable fix matching the write-up would not satisfy those unstated assertions.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about PermissionError when cleaning up temporary directories on Windows. The user suggests swapping the for statements in cleanup_numbered_dir.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about PermissionError when cleaning up temporary directories on Windows. The user suggests swapping the for statements in cleanup_numbered_dir.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "GJDGh9Tl7CTFJQbfAztT3HX045itVpml+6CI4Evtf/ljtbu2fN8mWwRFaKPf6w4c/liTI9LwCnWr0zXoNyzvx34Or6oeMjzV/zVqIfHflYvM8Ag1Gb85G1dMxjoYrd9bBgmCq3lh9c0pcy+mgiD0AFlZqQ99a/tj24nzPdXkkfNTw36U48XFhhFdqCRsTTG6kwysYNBkgR1TMYxC8bS6dLNeDNgHXnchBJhAQ648i9jBRloyGbzjNrmMFk7Zi94b7CuN00XYfx4cYLz8sZUY/oueFV1lwDCqef+lRinr2zSczrkQvT7IU5jXN90tHF43GVStMzyV/z44n/54TL8iI92mfdxmLKKL0qo03Vq1Tdk+SanwHOzAbmaGbTWcl45+wNX30pOp9MF9S2ImpEydwUTkSyadGkqamxanooXo5BIWZiRc3A4UixNBU0F4xQ9BH7d71KpObIKPLZNa5fr7HAjDGlal75ElXeZDX9gZX65t0Nsc6ldn3GV9E4tK5F4xTh9BSeWkEmJxkIBL9N5XBhW1xQXVlHlwP8uJ6H9d6s0S9OreKjwXr94n3/xmRWMHl43iUTAAoJQq6RTXcHP/PvryV4Fvv9zKafSxaYcQ6kY7+6UhiAOJtqosP9tjb2cz4eELvsPCgi2rn/bpCdfsGMVF81xL04aQ71MhiFGgWao8RYS8kl9BRSbIqqy0LUejZ7zcPsxzHusCwTp5f+SumIKHK6AXNSx9D36aGruUhBHiDQcirEZ7CaValELZQg5SZ5SeuiCdvMoYCrZYZ/sytbFzsclQXy34+hdQSE5oO809qRiQwqbU5uEXjEWj5AT2QxrhUL9JVpexRH52AMgAkyerw50f7os5IRETI6GD3tHEowy43RnJ9CJszEvB84gOAOtTDJsrPQt9XOEHSNE0KwwwepigILu5egEmcfT6fhyd9n49p0Et4ywY1fqhP/c683wPeCWNSTpsM+86rL1Z/6Xt84upolU2GTiZF99+ofSAlL50hYgqbfoUiJARD6wodrS5BuwqrlBncSqpBP08j85kPwxIjHjFsbnYMTI7VsOfZV2UlBSQe36caIvG6CcZpLNB2suLXgsMMiQsciEG3luZGBn06lEctmUMA1OW5L0EFSG/XuTuJg3F0FvQUyzd2JbdySZgLP3YToizGv7/ZJIy59JcY2jS30j4vwY8nmkHeOo4FElgY7+8reNXVOVBuNJ1rXa99g+7ApH/OWAPfSBr7jSsEZyaSQB8+XibiodpXM528CO5JP5DLKXpiGRrUcAZZizTnoscq6NdQ8SrZ9zcbq7BPymwZyFKGQHzYN8xLYzS9ebUJAR/xSYZEgyoRmUI+cIyZBOaV6WeRoAqXnydIzDFgrc0zK8tObC4b+U.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0ecfdb2d-3aee-9834-99b4-8480a885c60b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3286,
+      "completion_tokens": 328,
+      "total_tokens": 3614,
+      "cost": 0.008156,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008156,
+        "upstream_inference_prompt_cost": 0.006188,
+        "upstream_inference_completions_cost": 0.001968
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 219,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue describes a Windows PermissionError during temp-dir cleanup and even proposes swapping cleanup loops, while the tests require catching OSError on lock.is_file in ensure_deletable. A reasonable fix matching the write-up would not satisfy those unstated assertions.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue describes a Windows PermissionError during temp-dir cleanup and even proposes swapping cleanup loops, while the tests require catching OSError on lock.is_file in ensure_deletable. A reasonable fix matching the write-up would not satisfy those unstated assertions.",
+  "prompt_tokens": 3286,
+  "completion_tokens": 328,
+  "total_tokens": 3614,
+  "cost_usd": 0.008539999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

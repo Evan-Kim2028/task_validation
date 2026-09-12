@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-6059",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1083
+  },
+  "response": {
+    "id": "gen-1789192817-LcgkSUS0Cxne6XAgLt7h",
+    "object": "chat.completion",
+    "created": 1789192817,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks whether BaseChecker.__gt__ is needed and to either test it or delete it, without specifying equality, hashing, or comparison keys. The FAIL_TO_PASS test requires __eq__ and a particular name-plus-msgs ordering that a reasonable implementation of the issue would not have to provide.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about whether BaseChecker.__gt__ is required. It says if required, add a unit test, otherwise remove the method.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about whether BaseChecker.__gt__ is required. It says if required, add a unit test, otherwise remove the method.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "D9GSIrfzEw1ljL3KbxWr2muuDwnEefYVe62Pdz0+Yx6YHp12Ntc/dAQA44ocOM+xlNbaOKbNuNBOelN0TiRgqgGtn1ROf9k2a+o5EH/lv36ajKylT7bpfZoByC3amx7cAUfB0P8/m4B2/gew2CDN7/ndEpTJjo1pl35DSHPt/W1cDX6AO1SA7k5LG1RKKmxyVuerH4bcuh7CPNMEqM2U7Cs0YVSyHC9d6yPwhmznM6DMu94jBx/kYWFHwQBq4L6DG2lkwfT5B3kmjUugGWuwFB36QaqMcS2I93N0bHUq+wvNJEO0SsJTO/tkCujve9cKEc7kDmWv+LHe8v7O5OQyCV3co++oye5gw1gZfjjxAE/fSdQNJ69LmRRDieE9l6zguN/gPey9p8SRhpt6Vxtf7p2pTqti56TMnWa4q0qReYsI1wtnDjuEghUifgUIHUtU6/2HSiIlY4kp6jX0r3SA6MG8iWzRpGmXg42nAsx12GB76Ph0h/8wejPEVUmRwYbH5rFRGCaI1oEtevR6dvOAQdYiuMfXK4koy4poW17f+5YXc4h2HCaqR3Yaij+DZSMawoEbPIIUrra1R8NUPt2scHPgnzqQsKDq+6oV/e0MsMFkv3bf7+8gU0aqV6BmLX9Ji+bLtSTR79g3mIi3nN/JpyAK6YKC2LNdl3ucL+qXLh/KujmIDqGbVt/QoyACuLaB44Y+dGzO294YMYqZT6BLO672vO84GWZqVxSGLxcqmRMDpvYW21Yp7iwO4qKa8WJf2tnIBXsTWjEG83KFWRcSr2NA74p3me7pyIZXKQgqRJG/LdX1qliCczhkZ51J9zn4ap3j898I9bCfFXkQQWNXI9dPgftdaPjRPncgEoHYfVJcbu1hO4njfWwrNXsutXyF+p9gB8+uunfO/yxMlnwj0v3gCpJO0KZi1J08BinaXJ86Muzma8oQYX10nOcVjewFmMl5XANVpGTNslFaku59lHnVOV0Jen/XvRaGKoZOac3Dr0976x94ghmSArKGk1m5607htJfsyzNJ8V2zjM2FhfPp5wkuLh8vN4HFOyndw1shp1jR1l2bIx4Eo1/KGYRJMKvcow.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4d0320a3-2728-90de-bbcf-0a32b31e09dd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1497,
+      "completion_tokens": 313,
+      "total_tokens": 1810,
+      "cost": 0.004488,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004488,
+        "upstream_inference_prompt_cost": 0.00261,
+        "upstream_inference_completions_cost": 0.001878
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 194,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks whether BaseChecker.__gt__ is needed and to either test it or delete it, without specifying equality, hashing, or comparison keys. The FAIL_TO_PASS test requires __eq__ and a particular name-plus-msgs ordering that a reasonable implementation of the issue would not have to provide.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks whether BaseChecker.__gt__ is needed and to either test it or delete it, without specifying equality, hashing, or comparison keys. The FAIL_TO_PASS test requires __eq__ and a particular name-plus-msgs ordering that a reasonable implementation of the issue would not have to provide.",
+  "prompt_tokens": 1497,
+  "completion_tokens": 313,
+  "total_tokens": 1810,
+  "cost_usd": 0.004872,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

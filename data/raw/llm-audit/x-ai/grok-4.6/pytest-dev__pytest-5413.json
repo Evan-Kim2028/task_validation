@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5413",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "f2d6ac65-a901-9ede-b46f-427d9bae3b15",
+    "object": "chat.completion",
+    "created": 1789193785,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue asks to remove the str() gotcha versus a normal except clause, which could reasonably mean printing the full exception message rather than making str() identical to ExceptionInfo repr. The FAIL_TO_PASS test requires that exact unstated repr string, so a valid message-based str() would fail.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Gold patch changes str() to match repr(), but issue requests str() to match normal exception message behavior (str(e.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2546,
+      "completion_tokens": 117,
+      "total_tokens": 3068,
+      "prompt_tokens_details": {
+        "text_tokens": 2546,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 405,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25350400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue asks to remove the str() gotcha versus a normal except clause, which could reasonably mean printing the full exception message rather than making str() identical to ExceptionInfo repr. The FAIL_TO_PASS test requires that exact unstated repr string, so a valid message-based str() would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue asks to remove the str() gotcha versus a normal except clause, which could reasonably mean printing the full exception message rather than making str() identical to ExceptionInfo repr. The FAIL_TO_PASS test requires that exact unstated repr string, so a valid message-based str() would fail.",
+  "prompt_tokens": 2546,
+  "completion_tokens": 522,
+  "total_tokens": 3068,
+  "cost_usd": 0.008224,
+  "cost_in_usd_ticks": 25350400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1499
+}

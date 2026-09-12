@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-6400",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2227
+  },
+  "response": {
+    "id": "gen-1789192619-rKt0sgwMV24eXZTS1yhb",
+    "object": "chat.completion",
+    "created": 1789192619,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only reports slow HTML repr for large multi-indexes and does not mention a new display_values_threshold option or short_numpy_repr behavior. The FAIL_TO_PASS test exclusively checks that unstated option, so a valid performance-only fix would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about poor HTML repr performance on large multi-indexes. The FAIL_TO_PASS test is about `short_numpy_repr` and a new option `display_values_threshold`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about poor HTML repr performance on large multi-indexes. The FAIL_TO_PASS test is about `short_numpy_repr` and a new option `display_values_threshold`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+0Seor7sgvYUZh5w4KE4AFIWyonMlVk4ZiiSc0PJzcATLMeCe/ilG/M+XC437e0y9xXVWrcwjEC8MuvXouP3KDyL2O/hoGr1EeX5ailvoqZRTLbI93Ga5A4LUKp5OLlJEqtplsXGyoLT8uJlvVvdDA8/tWE5As32Tq1ZNONPyRi5FPlwtmZgcPHZs7uJPS6TLHWCGUQ/V8zfKOjyqATiyxNicNZaxQzO0cslRt/87buut+naBFDmIzSg/X/Qu2hRcO4oqy0k2oORYsYQN8Y6T9LHREeg15I8m4m7RVxd+bVe1v/Pq4fHI9b1lx+PhEjDIAP+hrS7KgGGuk9zJXshOoo1vTqsmiG/pj6beFs4vKVQ5dP1GWpUh0YZ49uF8UmvXKlTS6Z7AlDsSDBt1t83rR30LoiEWTK3UljdZ/AQffAVAoG6oFl8J0bK9zwkr6p4aZ88f6vO6/D+Ydy+1MQv0hAmsEFn6HeQcLgq27JOfYAZHAfx+RM196BhlaJ+J5ysE0oH4g8lD32We6GCp/NJl/B1VGFcqoHIjQ2dHowz5D2U9YXUffPaJROpa7HJ0IJDG7YkazVICNz46X6Mn2WsmYoD5k8oL8Cz21oyAn+Gxd5+eqSf14zFKJ0tY1ERoe8lawp8a7F6AvbRswMHH+JJpQlOiRImV4YfthGY8fMMORfs3p2eWR0iaDP4H8/Katwau6og3WJnqt6Y7qmF4/TyriLgP6zJEl2qkSBIc0SWBIXb0wNc3rFVE6z7d29P83BA+vIl6ZkK+jWwz2l0pJdNDCtyuilaGgb+iNMigoNXKMBKmQX8AakSF68nrcvHxHAsr8JfYqkT83S72meXgGfdsjBweYKk3TSU0bQZm11jt5zrOrJ30Y3Bsw1P+mNsiMB0y+lli//iSxa1MYbnN+lAN2PvaQMCGUQeDazJN+OJ/F1rUU0uc7JYUq+YU2KUrve1AyzvPSjqU2kvEWQTe4vrQQx3kNNykRPLL2QONMLSoEkcK954kqOfFd1SRbE0myq/yozr1MPvQUsEq8W00GzXY/SlM0OfQ3Wcx0zgB1Y2m7pjDAiSeJh2BKwIqn48B9yMGly/FkuQroqfPPw7sxRLKahHKoKuroJTCh+c0qsV/HOUwabcth/bzhzYk0s+OzNPWp4z27aRJ48X6GFiQrZxV86c9U1wDP6b2HBpx4UbVPm1ZSNi4K8L9QVMzx6nzNjkZXKIqwojEpxYheGL5VtOKB2m2xrG8rS3PMFiqiFZFseWeoJ37yojX4QEjS6JrlkG0K1YyuppJvMQdg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_df04e055-57d9-9745-a91c-f3fd22a001fe",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2890,
+      "completion_tokens": 330,
+      "total_tokens": 3220,
+      "cost": 0.007568,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007568,
+        "upstream_inference_prompt_cost": 0.005588,
+        "upstream_inference_completions_cost": 0.00198
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 219,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only reports slow HTML repr for large multi-indexes and does not mention a new display_values_threshold option or short_numpy_repr behavior. The FAIL_TO_PASS test exclusively checks that unstated option, so a valid performance-only fix would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only reports slow HTML repr for large multi-indexes and does not mention a new display_values_threshold option or short_numpy_repr behavior. The FAIL_TO_PASS test exclusively checks that unstated option, so a valid performance-only fix would fail.",
+  "prompt_tokens": 2890,
+  "completion_tokens": 330,
+  "total_tokens": 3220,
+  "cost_usd": 0.0077599999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

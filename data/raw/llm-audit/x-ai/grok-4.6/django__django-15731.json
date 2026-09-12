@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15731",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1144
+  },
+  "response": {
+    "id": "gen-1789191655-afMp9BgatyrjtJdsGf8V",
+    "object": "chat.completion",
+    "created": 1789191655,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks for manager queryset proxies to expose real inspect.signature metadata, and even names functools.wraps as the intended fix. The FAIL_TO_PASS check is the natural consequence of wrapping QuerySet.bulk_create, even though the ticket’s example signature is slightly stale versus this codebase.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The test expects the evolved signature with update_conflicts etc.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The test expects the evolved signature with update_conflicts etc.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_eac30ae7-ac91-9230-a8ef-2aba366206fb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1436,
+      "completion_tokens": 566,
+      "total_tokens": 2002,
+      "cost": 0.005884,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005884,
+        "upstream_inference_prompt_cost": 0.002488,
+        "upstream_inference_completions_cost": 0.003396
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 449,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks for manager queryset proxies to expose real inspect.signature metadata, and even names functools.wraps as the intended fix. The FAIL_TO_PASS check is the natural consequence of wrapping QuerySet.bulk_create, even though the ticket’s example signature is slightly stale versus this codebase.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks for manager queryset proxies to expose real inspect.signature metadata, and even names functools.wraps as the intended fix. The FAIL_TO_PASS check is the natural consequence of wrapping QuerySet.bulk_create, even though the ticket’s example signature is slightly stale versus this codebase.",
+  "prompt_tokens": 1436,
+  "completion_tokens": 566,
+  "total_tokens": 2002,
+  "cost_usd": 0.006268,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

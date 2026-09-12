@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-12989",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "e239eb5a-17cd-9c32-86a1-f5dac79f93bc",
+    "object": "chat.completion",
+    "created": 1789193965,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to align non_negative_factorization’s default init with NMF via a deprecation, which a competent engineer would implement as a FutureWarning. The FAIL_TO_PASS test still requires an exact warning string including version 0.23, which is not specified in the issue.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3319,
+      "completion_tokens": 117,
+      "total_tokens": 3820,
+      "prompt_tokens_details": {
+        "text_tokens": 3319,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 384,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 32789600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to align non_negative_factorization’s default init with NMF via a deprecation, which a competent engineer would implement as a FutureWarning. The FAIL_TO_PASS test still requires an exact warning string including version 0.23, which is not specified in the issue.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to align non_negative_factorization’s default init with NMF via a deprecation, which a competent engineer would implement as a FutureWarning. The FAIL_TO_PASS test still requires an exact warning string including version 0.23, which is not specified in the issue.",
+  "prompt_tokens": 3319,
+  "completion_tokens": 501,
+  "total_tokens": 3820,
+  "cost_usd": 0.009644,
+  "cost_in_usd_ticks": 32789600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2350
+}

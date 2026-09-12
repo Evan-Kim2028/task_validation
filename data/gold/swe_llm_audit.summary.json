@@ -1,0 +1,914 @@
+{
+  "schema": "swe_llm_audit.summary.v1",
+  "model": {
+    "id": "x-ai/grok-4.6",
+    "name": "SpaceXAI: Grok 4.6",
+    "context_length": 500000,
+    "prompt_price": 2e-06,
+    "completion_price": 6e-06,
+    "pricing": {
+      "prompt": "0.000002",
+      "completion": "0.000006",
+      "web_search": "0.005",
+      "input_cache_read": "0.0000005",
+      "overrides": [
+        {
+          "min_prompt_tokens": 200000,
+          "prompt": "0.000004",
+          "completion": "0.000012",
+          "input_cache_read": "0.000001"
+        }
+      ]
+    },
+    "reasoning": {
+      "mandatory": true,
+      "default_enabled": true,
+      "supported_efforts": [
+        "xhigh",
+        "high",
+        "medium",
+        "low"
+      ],
+      "default_effort": "high"
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "logprobs",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "sample": {
+    "design": "SRS without replacement",
+    "N": 1699,
+    "n": 200,
+    "n_requested": 200,
+    "seed": "swe-llm-audit-v0",
+    "seed_int": "64350367284143990970995942228763899600980427344850567431174945612301792636407",
+    "seed_note": "sha256(seed utf-8) interpreted as a big-endian int",
+    "reduced_to_150_for_cost_cap": false,
+    "ids": [
+      "astropy__astropy-11693",
+      "astropy__astropy-12825",
+      "astropy__astropy-13234",
+      "astropy__astropy-13404",
+      "astropy__astropy-13745",
+      "astropy__astropy-14590",
+      "astropy__astropy-14938",
+      "astropy__astropy-14995",
+      "astropy__astropy-7008",
+      "astropy__astropy-7737",
+      "astropy__astropy-8263",
+      "django__django-10213",
+      "django__django-10914",
+      "django__django-11087",
+      "django__django-11115",
+      "django__django-11177",
+      "django__django-11179",
+      "django__django-11206",
+      "django__django-11333",
+      "django__django-11514",
+      "django__django-11559",
+      "django__django-11584",
+      "django__django-11638",
+      "django__django-11734",
+      "django__django-11893",
+      "django__django-12050",
+      "django__django-12155",
+      "django__django-12161",
+      "django__django-12225",
+      "django__django-12231",
+      "django__django-12299",
+      "django__django-12477",
+      "django__django-12519",
+      "django__django-12708",
+      "django__django-12734",
+      "django__django-12915",
+      "django__django-12957",
+      "django__django-13162",
+      "django__django-13192",
+      "django__django-13251",
+      "django__django-13325",
+      "django__django-13369",
+      "django__django-13417",
+      "django__django-13606",
+      "django__django-13616",
+      "django__django-13822",
+      "django__django-13924",
+      "django__django-13964",
+      "django__django-14030",
+      "django__django-14043",
+      "django__django-14071",
+      "django__django-14077",
+      "django__django-14140",
+      "django__django-14155",
+      "django__django-14170",
+      "django__django-14271",
+      "django__django-14324",
+      "django__django-14500",
+      "django__django-14608",
+      "django__django-14787",
+      "django__django-14855",
+      "django__django-14894",
+      "django__django-14915",
+      "django__django-15038",
+      "django__django-15104",
+      "django__django-15139",
+      "django__django-15213",
+      "django__django-15292",
+      "django__django-15315",
+      "django__django-15433",
+      "django__django-15467",
+      "django__django-15474",
+      "django__django-15499",
+      "django__django-15526",
+      "django__django-15561",
+      "django__django-15682",
+      "django__django-15689",
+      "django__django-15799",
+      "django__django-15996",
+      "django__django-16053",
+      "django__django-16145",
+      "django__django-16255",
+      "django__django-16263",
+      "django__django-16379",
+      "django__django-16514",
+      "django__django-16599",
+      "django__django-16642",
+      "django__django-16661",
+      "django__django-16693",
+      "django__django-16816",
+      "django__django-16877",
+      "django__django-16899",
+      "django__django-9296",
+      "django__django-9703",
+      "matplotlib__matplotlib-23267",
+      "matplotlib__matplotlib-23314",
+      "matplotlib__matplotlib-24637",
+      "matplotlib__matplotlib-24870",
+      "matplotlib__matplotlib-24970",
+      "matplotlib__matplotlib-25281",
+      "matplotlib__matplotlib-25404",
+      "matplotlib__matplotlib-26113",
+      "psf__requests-2193",
+      "pydata__xarray-3302",
+      "pydata__xarray-4695",
+      "pydata__xarray-4940",
+      "pydata__xarray-5131",
+      "pydata__xarray-5731",
+      "pydata__xarray-6938",
+      "pydata__xarray-6971",
+      "pydata__xarray-6992",
+      "pydata__xarray-7203",
+      "pylint-dev__pylint-4330",
+      "pylint-dev__pylint-6526",
+      "pylint-dev__pylint-6556",
+      "pylint-dev__pylint-7080",
+      "pytest-dev__pytest-11041",
+      "pytest-dev__pytest-11047",
+      "pytest-dev__pytest-5559",
+      "pytest-dev__pytest-7314",
+      "pytest-dev__pytest-8365",
+      "scikit-learn__scikit-learn-10427",
+      "scikit-learn__scikit-learn-10558",
+      "scikit-learn__scikit-learn-10870",
+      "scikit-learn__scikit-learn-10881",
+      "scikit-learn__scikit-learn-10982",
+      "scikit-learn__scikit-learn-10986",
+      "scikit-learn__scikit-learn-11206",
+      "scikit-learn__scikit-learn-12462",
+      "scikit-learn__scikit-learn-12486",
+      "scikit-learn__scikit-learn-12961",
+      "scikit-learn__scikit-learn-13142",
+      "scikit-learn__scikit-learn-13283",
+      "scikit-learn__scikit-learn-13302",
+      "scikit-learn__scikit-learn-13436",
+      "scikit-learn__scikit-learn-13554",
+      "scikit-learn__scikit-learn-13584",
+      "scikit-learn__scikit-learn-14141",
+      "scikit-learn__scikit-learn-14710",
+      "scikit-learn__scikit-learn-14878",
+      "scikit-learn__scikit-learn-15512",
+      "scikit-learn__scikit-learn-15524",
+      "scikit-learn__scikit-learn-25570",
+      "scikit-learn__scikit-learn-26289",
+      "sphinx-doc__sphinx-10097",
+      "sphinx-doc__sphinx-10449",
+      "sphinx-doc__sphinx-10457",
+      "sphinx-doc__sphinx-11109",
+      "sphinx-doc__sphinx-7305",
+      "sphinx-doc__sphinx-7350",
+      "sphinx-doc__sphinx-7356",
+      "sphinx-doc__sphinx-7593",
+      "sphinx-doc__sphinx-7975",
+      "sphinx-doc__sphinx-8459",
+      "sphinx-doc__sphinx-8475",
+      "sphinx-doc__sphinx-8509",
+      "sphinx-doc__sphinx-8599",
+      "sphinx-doc__sphinx-8707",
+      "sphinx-doc__sphinx-9128",
+      "sphinx-doc__sphinx-9234",
+      "sphinx-doc__sphinx-9258",
+      "sphinx-doc__sphinx-9320",
+      "sphinx-doc__sphinx-9467",
+      "sphinx-doc__sphinx-9799",
+      "sphinx-doc__sphinx-9997",
+      "sympy__sympy-11384",
+      "sympy__sympy-12270",
+      "sympy__sympy-12419",
+      "sympy__sympy-13301",
+      "sympy__sympy-13471",
+      "sympy__sympy-13581",
+      "sympy__sympy-13806",
+      "sympy__sympy-14070",
+      "sympy__sympy-14333",
+      "sympy__sympy-15011",
+      "sympy__sympy-15017",
+      "sympy__sympy-15446",
+      "sympy__sympy-15635",
+      "sympy__sympy-16088",
+      "sympy__sympy-16221",
+      "sympy__sympy-16862",
+      "sympy__sympy-16886",
+      "sympy__sympy-16963",
+      "sympy__sympy-17139",
+      "sympy__sympy-17223",
+      "sympy__sympy-17288",
+      "sympy__sympy-17630",
+      "sympy__sympy-18062",
+      "sympy__sympy-18130",
+      "sympy__sympy-19487",
+      "sympy__sympy-20169",
+      "sympy__sympy-20428",
+      "sympy__sympy-21208",
+      "sympy__sympy-21313",
+      "sympy__sympy-21370",
+      "sympy__sympy-21930",
+      "sympy__sympy-23021",
+      "sympy__sympy-24353",
+      "sympy__sympy-24455",
+      "sympy__sympy-24661"
+    ],
+    "draw_order": [
+      "sphinx-doc__sphinx-10449",
+      "django__django-14170",
+      "django__django-9296",
+      "django__django-16899",
+      "sympy__sympy-14333",
+      "astropy__astropy-8263",
+      "sympy__sympy-15635",
+      "django__django-11559",
+      "sphinx-doc__sphinx-9234",
+      "sympy__sympy-13471",
+      "sphinx-doc__sphinx-9128",
+      "pylint-dev__pylint-4330",
+      "sympy__sympy-21208",
+      "django__django-13325",
+      "pydata__xarray-6992",
+      "sphinx-doc__sphinx-11109",
+      "django__django-11115",
+      "django__django-12231",
+      "sphinx-doc__sphinx-10457",
+      "sympy__sympy-20428",
+      "django__django-15315",
+      "scikit-learn__scikit-learn-13142",
+      "sphinx-doc__sphinx-10097",
+      "django__django-16255",
+      "django__django-15799",
+      "pytest-dev__pytest-5559",
+      "sphinx-doc__sphinx-8599",
+      "django__django-13251",
+      "sympy__sympy-18062",
+      "django__django-15561",
+      "sphinx-doc__sphinx-9467",
+      "sphinx-doc__sphinx-7356",
+      "django__django-11177",
+      "django__django-10914",
+      "sympy__sympy-17139",
+      "pytest-dev__pytest-11041",
+      "django__django-11893",
+      "scikit-learn__scikit-learn-12961",
+      "scikit-learn__scikit-learn-15524",
+      "django__django-13192",
+      "pylint-dev__pylint-6526",
+      "pytest-dev__pytest-11047",
+      "django__django-12915",
+      "psf__requests-2193",
+      "scikit-learn__scikit-learn-12462",
+      "django__django-15038",
+      "django__django-14500",
+      "django__django-12299",
+      "sphinx-doc__sphinx-8475",
+      "scikit-learn__scikit-learn-13584",
+      "django__django-12519",
+      "django__django-14071",
+      "sympy__sympy-21370",
+      "django__django-12050",
+      "scikit-learn__scikit-learn-14710",
+      "scikit-learn__scikit-learn-10986",
+      "django__django-12957",
+      "django__django-13417",
+      "sympy__sympy-16862",
+      "sympy__sympy-19487",
+      "astropy__astropy-14590",
+      "pydata__xarray-6938",
+      "django__django-12477",
+      "scikit-learn__scikit-learn-13436",
+      "django__django-16877",
+      "django__django-16379",
+      "scikit-learn__scikit-learn-10870",
+      "matplotlib__matplotlib-24870",
+      "django__django-15474",
+      "pydata__xarray-4695",
+      "django__django-13964",
+      "django__django-12708",
+      "scikit-learn__scikit-learn-15512",
+      "sympy__sympy-24661",
+      "sympy__sympy-13301",
+      "django__django-13162",
+      "django__django-13616",
+      "sympy__sympy-18130",
+      "scikit-learn__scikit-learn-10558",
+      "django__django-15499",
+      "sphinx-doc__sphinx-8459",
+      "django__django-15292",
+      "pydata__xarray-5731",
+      "django__django-15526",
+      "sympy__sympy-15011",
+      "django__django-16599",
+      "astropy__astropy-12825",
+      "sympy__sympy-21930",
+      "scikit-learn__scikit-learn-14878",
+      "astropy__astropy-14995",
+      "sympy__sympy-24455",
+      "scikit-learn__scikit-learn-25570",
+      "django__django-14043",
+      "matplotlib__matplotlib-23314",
+      "django__django-11179",
+      "scikit-learn__scikit-learn-11206",
+      "astropy__astropy-7737",
+      "astropy__astropy-13404",
+      "django__django-14077",
+      "django__django-16661",
+      "matplotlib__matplotlib-25404",
+      "scikit-learn__scikit-learn-14141",
+      "django__django-15689",
+      "django__django-12161",
+      "pydata__xarray-5131",
+      "django__django-14155",
+      "django__django-16816",
+      "sphinx-doc__sphinx-8509",
+      "matplotlib__matplotlib-24637",
+      "scikit-learn__scikit-learn-13302",
+      "django__django-11514",
+      "sympy__sympy-12270",
+      "django__django-13369",
+      "sphinx-doc__sphinx-7305",
+      "scikit-learn__scikit-learn-10982",
+      "sphinx-doc__sphinx-9258",
+      "sphinx-doc__sphinx-7975",
+      "matplotlib__matplotlib-23267",
+      "scikit-learn__scikit-learn-10427",
+      "sympy__sympy-15017",
+      "django__django-12225",
+      "django__django-16263",
+      "django__django-11333",
+      "django__django-12155",
+      "pytest-dev__pytest-7314",
+      "django__django-14140",
+      "django__django-15139",
+      "sympy__sympy-23021",
+      "matplotlib__matplotlib-24970",
+      "sphinx-doc__sphinx-9320",
+      "astropy__astropy-14938",
+      "django__django-14915",
+      "django__django-15682",
+      "django__django-13924",
+      "django__django-11584",
+      "pydata__xarray-7203",
+      "sympy__sympy-13581",
+      "django__django-14608",
+      "pydata__xarray-6971",
+      "sympy__sympy-16221",
+      "django__django-15996",
+      "django__django-15467",
+      "django__django-9703",
+      "sympy__sympy-16088",
+      "sympy__sympy-21313",
+      "sphinx-doc__sphinx-9799",
+      "django__django-16514",
+      "sympy__sympy-20169",
+      "django__django-16642",
+      "sphinx-doc__sphinx-8707",
+      "sympy__sympy-11384",
+      "sphinx-doc__sphinx-9997",
+      "django__django-11734",
+      "django__django-15213",
+      "django__django-15433",
+      "pylint-dev__pylint-7080",
+      "pydata__xarray-4940",
+      "sympy__sympy-14070",
+      "django__django-10213",
+      "astropy__astropy-11693",
+      "sympy__sympy-12419",
+      "django__django-12734",
+      "django__django-11206",
+      "matplotlib__matplotlib-26113",
+      "scikit-learn__scikit-learn-26289",
+      "django__django-16053",
+      "django__django-14855",
+      "django__django-14894",
+      "django__django-16693",
+      "pytest-dev__pytest-8365",
+      "django__django-15104",
+      "django__django-14324",
+      "sympy__sympy-16963",
+      "django__django-16145",
+      "django__django-13606",
+      "sympy__sympy-17223",
+      "django__django-14787",
+      "matplotlib__matplotlib-25281",
+      "astropy__astropy-7008",
+      "django__django-14271",
+      "sphinx-doc__sphinx-7593",
+      "pydata__xarray-3302",
+      "sympy__sympy-13806",
+      "sympy__sympy-17288",
+      "astropy__astropy-13234",
+      "sympy__sympy-17630",
+      "sympy__sympy-24353",
+      "sympy__sympy-15446",
+      "pylint-dev__pylint-6556",
+      "django__django-14030",
+      "django__django-11087",
+      "django__django-13822",
+      "django__django-11638",
+      "scikit-learn__scikit-learn-10881",
+      "astropy__astropy-13745",
+      "scikit-learn__scikit-learn-12486",
+      "sphinx-doc__sphinx-7350",
+      "scikit-learn__scikit-learn-13283",
+      "scikit-learn__scikit-learn-13554",
+      "sympy__sympy-16886"
+    ]
+  },
+  "prompt": {
+    "system": "You audit whether a SWE-bench coding task is specification-valid. You see a GitHub issue, the FAIL_TO_PASS tests (names and patch), and the gold patch. Judge only specification fairness: whether a competent engineer could know what to implement from the issue, and whether those tests fairly check the issue. Do not judge difficulty. Do not treat the gold patch as proof that the tests are fair; use it only to see what the tests require. Reply with one JSON object and no markdown.",
+    "token_budget": 24000,
+    "temperature": 0.0,
+    "labels_in_prompt": false,
+    "fields": [
+      "issue",
+      "test_patch",
+      "FAIL_TO_PASS names",
+      "gold patch",
+      "repo",
+      "base_commit"
+    ]
+  },
+  "combination_rule": "retain lowest z(s) + z(1-p_i): low auditor severity and high solve rate",
+  "frozen_predicate_text": {
+    "F1": "AUROC(s, conservative) >= 0.75 with 1,000-rep bootstrap CI lower bound > 0.70",
+    "F2": "Cohen's kappa of the model material bit vs majority_invalid >= 0.39 (human Fleiss kappa on the material bit)",
+    "F3": "retain-20% residual under z(s)+z(1-p_i) <= 0.20 on conservative Y (versus 0.43 for metadata / OOF logistic alone on the full 1,699)"
+  },
+  "projection": {
+    "n": 200,
+    "est_prompt_tokens": 440473,
+    "est_completion_tokens": 800000,
+    "est_usd": 5.680946,
+    "completion_tokens_assumed": 4000
+  },
+  "cost": {
+    "total_usd": 1.6493859999999996,
+    "usd_per_item": 0.008246929999999998,
+    "prompt_tokens": 558452,
+    "completion_tokens": 88747,
+    "n_cached": 199,
+    "n_fetched": 1,
+    "n_error": 0,
+    "wall_clock_s": 576.07,
+    "projected_usd": 5.680946,
+    "cap_usd": 10.0,
+    "concurrency": 4,
+    "wall_clock_s_last_process": 10.339909227004682,
+    "wall_clock_note": "span of cache write timestamps across the first pass (TimeoutError on 1/200) and the resume"
+  },
+  "n": 200,
+  "n_scored": 200,
+  "by_y": {
+    "conservative": {
+      "n": 200,
+      "n_invalid": 133,
+      "base_rate": 0.665,
+      "auroc_s": {
+        "value": 0.7763999551116597,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.707688818947366,
+          0.8402419719583898
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.8142744922006508,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7461454979937756,
+          0.8713384938831611
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 4,
+            "residual_invalid": 0.4
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 6,
+            "residual_invalid": 0.3
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 11,
+            "residual_invalid": 0.275
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 3,
+            "residual_invalid": 0.3
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 5,
+            "residual_invalid": 0.25
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 14,
+            "residual_invalid": 0.35
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 2,
+            "residual_invalid": 0.2
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 4,
+            "residual_invalid": 0.2
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 15,
+            "residual_invalid": 0.375
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 4,
+            "residual_invalid": 0.4
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 6,
+            "residual_invalid": 0.3
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 11,
+            "residual_invalid": 0.275
+          }
+        ]
+      }
+    },
+    "majority": {
+      "n": 200,
+      "n_invalid": 90,
+      "base_rate": 0.45,
+      "auroc_s": {
+        "value": 0.8006565656565656,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.7366838466040257,
+          0.8568829646915586
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.8385353535353536,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7794363671050648,
+          0.8887276274092594
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 1,
+            "residual_invalid": 0.1
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 2,
+            "residual_invalid": 0.1
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 4,
+            "residual_invalid": 0.1
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 1,
+            "residual_invalid": 0.1
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 3,
+            "residual_invalid": 0.15
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 4,
+            "residual_invalid": 0.1
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 1,
+            "residual_invalid": 0.05
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 6,
+            "residual_invalid": 0.15
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 2,
+            "residual_invalid": 0.2
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 2,
+            "residual_invalid": 0.1
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 3,
+            "residual_invalid": 0.075
+          }
+        ]
+      }
+    },
+    "unanimous": {
+      "n": 200,
+      "n_invalid": 49,
+      "base_rate": 0.245,
+      "auroc_s": {
+        "value": 0.7869306663062576,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.7243939974518236,
+          0.8422131661429606
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.7921340721719151,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7268358927949751,
+          0.8549921501196172
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 1,
+            "residual_invalid": 0.05
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 1,
+            "residual_invalid": 0.025
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 3,
+            "residual_invalid": 0.075
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 10,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 20,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 40,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "axes": {
+    "underspecified_ge2": {
+      "n": 72,
+      "base_rate": 0.36,
+      "auroc_model_underspecified": {
+        "value": 0.6487630208333334,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260914,
+        "ci95": [
+          0.5695619629141208,
+          0.7185721151416103
+        ]
+      }
+    },
+    "false_negative_ge2": {
+      "n": 119,
+      "base_rate": 0.595,
+      "auroc_model_false_negative": {
+        "value": 0.781305114638448,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260915,
+        "ci95": [
+          0.718759793052476,
+          0.8437414059278481
+        ]
+      }
+    }
+  },
+  "agreement": {
+    "model_vs_human_pairwise": {
+      "agreement": 0.7066666666666667,
+      "n_pairs": 600,
+      "per_rater_slot": [
+        0.735,
+        0.71,
+        0.675
+      ]
+    },
+    "model_vs_majority_agreement": 0.75,
+    "model_vs_majority_kappa": 0.4949494949494948,
+    "model_material_rate": 0.45,
+    "majority_rate": 0.45
+  },
+  "frozen_predicates": {
+    "F1": {
+      "text": "AUROC(s, conservative) >= 0.75 with 1,000-rep bootstrap CI lower bound > 0.70",
+      "pass": true,
+      "auroc": 0.7763999551116597,
+      "ci95_lo": 0.707688818947366,
+      "ci95_hi": 0.8402419719583898
+    },
+    "F2": {
+      "text": "Cohen's kappa of the model material bit vs majority_invalid >= 0.39 (human Fleiss kappa on the material bit)",
+      "pass": true,
+      "kappa": 0.4949494949494948,
+      "threshold": 0.39
+    },
+    "F3": {
+      "text": "retain-20% residual under z(s)+z(1-p_i) <= 0.20 on conservative Y (versus 0.43 for metadata / OOF logistic alone on the full 1,699)",
+      "pass": false,
+      "retain20_combo": 0.275,
+      "threshold": 0.2,
+      "metadata_alone_full1699": 0.43
+    },
+    "all_pass": false,
+    "combination_rule": "retain lowest z(s) + z(1-p_i): low auditor severity and high solve rate"
+  },
+  "artifacts": {
+    "sample": "/home/evan/Documents/task_validation/data/gold/swe_llm_audit_sample.json",
+    "jsonl": "/home/evan/Documents/task_validation/data/gold/swe_llm_audit.jsonl",
+    "summary": "/home/evan/Documents/task_validation/data/gold/swe_llm_audit.summary.json",
+    "cache_root": "/home/evan/Documents/task_validation/data/raw/llm-audit/x-ai/grok-4.6"
+  },
+  "constraints": {
+    "stdlib_runtime": true,
+    "labels_never_in_prompt": true,
+    "one_pass_no_retune": true,
+    "severity_not_used_as_features": true
+  }
+}

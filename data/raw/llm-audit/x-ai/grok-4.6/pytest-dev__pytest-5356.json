@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-5356",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1042
+  },
+  "response": {
+    "id": "gen-1789192313-iiaSJNBhADYLSQzX19G8",
+    "object": "chat.completion",
+    "created": 1789192313,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only reports unexplained skips in 4.6.0 and a Travis link, with no mention of parametrize, generators, or iterators, so a competent engineer could not know the intended fix from the text. The FAIL_TO_PASS test fairly checks generator parametrization once that is assumed, rather than imposing extra unstated API details.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about pytest 4.6.0 skipping tests without apparent reason. The gold patch is about parametrize with generators.\n{\n  \"underspecified\": 3,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue text does not mention parametrize or generators; the FAIL_TO_PASS test is narrower than the reported symptom.\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pytest 4.6.0 skipping tests without apparent reason. The gold patch is about parametrize with generators.\n{\n  \"underspecified\": 3,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue text does not mention parametrize or generators; the FAIL_TO_PASS test is narrower than the reported symptom.\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0c9310e9-f1a3-9734-8445-c688a14738e5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1397,
+      "completion_tokens": 526,
+      "total_tokens": 1923,
+      "cost": 0.005566,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005566,
+        "upstream_inference_prompt_cost": 0.00241,
+        "upstream_inference_completions_cost": 0.003156
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 401,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only reports unexplained skips in 4.6.0 and a Travis link, with no mention of parametrize, generators, or iterators, so a competent engineer could not know the intended fix from the text. The FAIL_TO_PASS test fairly checks generator parametrization once that is assumed, rather than imposing extra unstated API details.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only reports unexplained skips in 4.6.0 and a Travis link, with no mention of parametrize, generators, or iterators, so a competent engineer could not know the intended fix from the text. The FAIL_TO_PASS test fairly checks generator parametrization once that is assumed, rather than imposing extra unstated API details.",
+  "prompt_tokens": 1397,
+  "completion_tokens": 526,
+  "total_tokens": 1923,
+  "cost_usd": 0.00595,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

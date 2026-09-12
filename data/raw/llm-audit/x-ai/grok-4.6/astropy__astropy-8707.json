@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-8707",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2272
+  },
+  "response": {
+    "id": "gen-1789190735-Nr7wCnJjmjtJ85UyFdoU",
+    "object": "chat.completion",
+    "created": 1789190735,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly asks Header.fromstring and Card.fromstring to accept both str and bytes, which is what the tests exercise. Latin-1 decoding is a reasonable default for FITS ASCII bytes and is only a minor implementation detail.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about Header.fromstring not accepting Python 3 bytes, and Card.fromstring needing similar treatment.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Header.fromstring not accepting Python 3 bytes, and Card.fromstring needing similar treatment.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "wQFwIr0xGtDeuin4zJuDPbZUsE7IlPO1QkskLCF/pzhQ8NgdvHBOlulVjDtztGCnY2oNj+8Ih2owY+JUgjWGCdetgUh5I6mRifc+SXFIU8+dBuQV9HvaaY265EmFe4qg4nHwYBgkBQp7fQDy4TJ9njrHUv1y/r0XzGDpxfVO94tI/U0VHzN6awa7J6u0Cq2tpLkNGi8WNqrEHbAK9cunhe+WxXBhsGZJbhFvHrYWJzIlKNeclqdapQDsWHkTIGDqdfPTK/p0ptv3RfmZ8gRxcCQiceJSLXVLihSI9oOADAICC+wCBHdxAg7Q1c/34PlxN6JkmynUAsPG9wXXkXoFnkwF0lHma+6QXisYg+pqLO+zkk7dpjg3UQL+hQoXNPG8PHYMUZ+Sgcclij1pJSxlB820TGoR9Lbrr3GUxhx5ZVuqAHg/eUX+YT4pzLnu7m+oEg03vGr3XVECJEzDMl7ZtJj4TFyEsNZCDdwEJUCK7Gvtx+K2GGgVeWqBB+GU6MBAK6gAc6CsvM+Ve9FhHjss0DSt7M+df3wy/kfYO/w0yk3ZCPj5A737tGYv9DOiT0Sj3Jax1g7rELBVNeJG5vdFC9MqTIffuOWCLr3oQ7df9Aze9SCkFtIlClJfz3JgDlH7PrmD85ciHDGYKoLF3b++l6DT1RMfJN4JBoMp25mtO+eoRn0EidRnJD/xeum0clQLuZbDclvNfwxLBFJIR8y3chZqAa011XMiIapZOD1lUsuYUuugiBuIN5lMN9aLsod2lB2Vf8YGoQeHfyp+teFOKlF4A8J3HbeSRypKdT9tNVFvLfzoRML97Ef1YlrOBwMtGSz5BJoLwMUmSpi0kqyG6+qVKIIJDqS5DkSfbK+y6dNxXpaval9lwLu9P78IXNL+2ex6qDTrgiU/utyuxP5wqfIJ+69knmYBB7oTeRJvtZux/0rSYtg7QLrjcIhhd65hb6QQJsau47mxINuGYYvr6ssSkm3aBB1TZvU6OeiYaVciUPBwpogExLRvTwYNAYRYJ7BPzTiFVO8dv2pS46Ktj+1H/I/H4c91F6QjMgpc6JcO7PkKDnCWiVW8HabvSF6E0ThJrdEqKjNZ4LnqEVxul75QZ0rkoyK1j24eENyJcoTYT8/YugwdJFBRnOvNXTndIIxVF/RZPZwxXN8XMfCB+zFnMiL2S9EfVLi4oO+eoXt5bS2Eznh7J8Kl6TRoeuKMh5E+RqKtI5BabK2jJ/5HGTFWPjn9T1RLKrJIp7g4et+FmsWepUtuMV+JR4fo+u/6nX3rySKH4L0+8LPeORhBbPX82iSQvZ4N4wN0j9v8ElGuxm2L7g79h9dTEidlsVV0sVVo+xqcOVsDFDplnn10qlSHHyppWvvRfM95b4Irs6vcU0qEXzQzzFOiv9AAq2HL4AOC9IXZAab/DWBa6rJQMVWonVytrDE0MYyFb5cCizN5WVib/Djl4uWtmfIPTU7n0pVyyNZamNCwPNe4IwR9ZZwW+mobNg8t872vnmGz+cDTK3DFKLWYvigsk/ex673LAnrXlOM49vxBlzVGfThgI/kMePzRXbQEvVgCJ0EUo30Srz127P9LxFqGEYLQbNggN+rm21iyohLVWOWg2IWzjet1PVIugNiRbRjcY3FZe8gPzHswxP1KFCbrn4/K8GpryMlvRi4FxkE2tfTOADhes1lyEUDp8wvl9Sw8mELQYNowzyVeGq/FIezqoy8jXmV4nd3Zdbpk0mPXJhV6ykNKNATLar6Eb4XTgvVSse8FXTnrn05mPpcigrtD0o+TMm4GJmAhFNWN4r3e1xw5jx08aC0WNlTt4AnfRvNYDGuORdEPxSZJMHlqygZNVXkM2driMIxUx008HJH4A64G3FC4ZqvHT5jn46eahFWRqJgYBqvtRicX+Mykz5n+Z5eNtH1vibLrYvA+RYqsismw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ab23c060-ec30-9bbe-9c93-94343a27bf40",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2696,
+      "completion_tokens": 442,
+      "total_tokens": 3138,
+      "cost": 0.007852,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007852,
+        "upstream_inference_prompt_cost": 0.0052,
+        "upstream_inference_completions_cost": 0.002652
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 341,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly asks Header.fromstring and Card.fromstring to accept both str and bytes, which is what the tests exercise. Latin-1 decoding is a reasonable default for FITS ASCII bytes and is only a minor implementation detail.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly asks Header.fromstring and Card.fromstring to accept both str and bytes, which is what the tests exercise. Latin-1 decoding is a reasonable default for FITS ASCII bytes and is only a minor implementation detail.",
+  "prompt_tokens": 2696,
+  "completion_tokens": 442,
+  "total_tokens": 3138,
+  "cost_usd": 0.008044,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

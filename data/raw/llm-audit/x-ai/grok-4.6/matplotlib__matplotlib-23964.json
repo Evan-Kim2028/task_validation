@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23964",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1797
+  },
+  "response": {
+    "id": "gen-1789191975-3Up4AoASa9BJIVEr344S",
+    "object": "chat.completion",
+    "created": 1789191975,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that PostScript/EPS savefig must not crash on multiline text containing empty lines, which is enough for a competent engineer to implement a defensive fix. The FAIL_TO_PASS test is a matching smoke test of that exact behavior and does not require unstated APIs or outputs.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: empty lines in text cause TypeError in PostScript backend. Expected: save without error. The test is a smoke test that saves with empty lines in text for eps and ps.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: empty lines in text cause TypeError in PostScript backend. Expected: save without error. The test is a smoke test that saves with empty lines in text for eps and ps.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "jsIGmIbF1u9/aToPf7pLmqPst9g7q+svddQDi1aVZyIkJkvD8ezMJGBtev5DluyctaiJg9xnOjbmj5R0a2TLX8OrvSd4SghITwmWcyAHdsao+fcvHWpkRKvuX32daxoeTC5OpTeYepJ+QHvxt48WypjahUgcWmc2zS8wiUPZSKIvf4/ATuG61gldJyo7jOPnYZ0Q4YpDM3+pyVqfKzGreFAZLlm1wRVJcQk6HT96axwl1mdgiA7By3eHE5PamxJC9aXs4G07g9ac8qU3uHtoGtxca2cu50PYY5da6SJF7DiaIN5udXYlG+zv9ibij3tFxn1MEX47icex4euNW44CxZm1w607j6iazW1/Gq9HGP76rQA6N6b/Ijw21HI9wcRt7NNdkElVuPrtFTBRItNtjVWwSGw8gqLFX15r+SrX94ak29wJBJakyoIEAD9SLnetcr3JWfYCZ5iKORpFpy/QD5BFOb0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e14a366c-9247-96a0-9e9a-2d1335ffc2d7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2351,
+      "completion_tokens": 196,
+      "total_tokens": 2547,
+      "cost": 0.005494,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005494,
+        "upstream_inference_prompt_cost": 0.004318,
+        "upstream_inference_completions_cost": 0.001176
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 80,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that PostScript/EPS savefig must not crash on multiline text containing empty lines, which is enough for a competent engineer to implement a defensive fix. The FAIL_TO_PASS test is a matching smoke test of that exact behavior and does not require unstated APIs or outputs.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that PostScript/EPS savefig must not crash on multiline text containing empty lines, which is enough for a competent engineer to implement a defensive fix. The FAIL_TO_PASS test is a matching smoke test of that exact behavior and does not require unstated APIs or outputs.",
+  "prompt_tokens": 2351,
+  "completion_tokens": 196,
+  "total_tokens": 2547,
+  "cost_usd": 0.0058779999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

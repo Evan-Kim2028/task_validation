@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15930",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1037
+  },
+  "response": {
+    "id": "gen-1789191694-dG1A0k6ibxnv0woeLRkK",
+    "object": "chat.completion",
+    "created": 1789191694,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly describes invalid SQL from Case/When with ~Q(pk__in=[]) and the expected always-true annotation. The FAIL_TO_PASS test exercises that exact condition and the stated expected values without extra unstated requirements.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about Case() crashing with ~Q(pk__in=[]). The generated SQL has \"CASE WHEN THEN\" which is invalid. Expected: annotate all rows with True since they all match.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Case() crashing with ~Q(pk__in=[]). The generated SQL has \"CASE WHEN THEN\" which is invalid. Expected: annotate all rows with True since they all match.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nKofrgzExU69U3+4vY6HmKbshRVUt95q2b+FKV8XVX64RTvRUrVLjTNK81VVn2z5XURvP08hSBhxDvM9aBKS6EAuuxFFeiz0XuxQ5htsVKTJ/FlhawKZpaDEzihC8KpUuYmekgTASUpBIcZ6j1KwYBpOtxbHyQ9a9AwejUHzQcQ2zejwTN0PXWKdsRuaTLWN+BHIGHZ9WC/otAjI9GIofSEA6LdKxrjPr8pMq3C9K4FvkOjoD1stAlN6j3fNzvtk4LxJnwdb/abt1WdgFo3GxfToSjuLRTl2Njmy8aNQtyk6Do0ZBNIMPzqycc+khlR4TMWlZjMtjXvgPen0A/3YCHFjBwIQP7SeW65uqInugdCbUC+phKpqpVc5lfpf3jNxMu5NuDgA/4kWKJuGZpUQeWVi0jRaqDIZneo+2+SdEOH2MCoZE/O1SB/FZAlgIWtIjG8z1TXs9p7pULMVkN4gwWSrGdcc6E8I4aNQLQdL3OuQl5UohcBSpJysmSwUwJcTHbsfUK4DZ1rYA37lsCaFAEctM8miXEuRp7H5vKKjcyfkTiEl3BxxHuyjGiXzRlUYKRlxUtp+MuBCkqadD4D9dha/ujdxUeZJPJ58FVTmlmmvSZHm52J8K2Y7jerQRhxdfHT2tl9WP2JLF3aRnyZL/bRLnoV7rF9KIjhOcXJeoPbEeiVuDITYKH8QosHQP7qV9UfAgIsGXGenLdSpfcuNxydI6mjPxSclpxGamm3oHPrBUutV13VlsKa/8OuiGyYDcKYsmKciZMQ3nSElrAuhq/Wy7vnUwyJwSX6RlDy1rS9bQkhoBh0CMdbG.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_34100b14-b30e-9383-95b4-87ee04c94a14",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1332,
+      "completion_tokens": 257,
+      "total_tokens": 1589,
+      "cost": 0.004014,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004014,
+        "upstream_inference_prompt_cost": 0.002472,
+        "upstream_inference_completions_cost": 0.001542
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 153,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly describes invalid SQL from Case/When with ~Q(pk__in=[]) and the expected always-true annotation. The FAIL_TO_PASS test exercises that exact condition and the stated expected values without extra unstated requirements.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly describes invalid SQL from Case/When with ~Q(pk__in=[]) and the expected always-true annotation. The FAIL_TO_PASS test exercises that exact condition and the stated expected values without extra unstated requirements.",
+  "prompt_tokens": 1332,
+  "completion_tokens": 257,
+  "total_tokens": 1589,
+  "cost_usd": 0.004206,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

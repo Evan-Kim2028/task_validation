@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-15286",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "a5ac8570-da98-9030-817c-68585192c132",
+    "object": "chat.completion",
+    "created": 1789194509,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue text is elliptic-integral circumference; tests require undocumented Ellipse.equation(_slope=...).\", \"confidence\": 0.92, \"rationale\": \"A competent engineer reading the stated issue would implement faster circumference or integral recognition, not a rotated-ellipse equation API. The FAIL_TO_PASS checks assert exact strings of equation(_slope=...), which the issue never specifies.\", \"p_invalid\": 0.97}",
+          "reasoning_content": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to return JSON only.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3067,
+      "completion_tokens": 119,
+      "total_tokens": 3603,
+      "prompt_tokens_details": {
+        "text_tokens": 3067,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 417,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 28526000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue text is elliptic-integral circumference; tests require undocumented Ellipse.equation(_slope=...).",
+    "confidence": 0.92,
+    "rationale": "A competent engineer reading the stated issue would implement faster circumference or integral recognition, not a rotated-ellipse equation API. The FAIL_TO_PASS checks assert exact strings of equation(_slope=...), which the issue never specifies.",
+    "p_invalid": 0.97
+  },
+  "s": 3.25,
+  "p_invalid": 0.97,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue text is elliptic-integral circumference; tests require undocumented Ellipse.equation(_slope=...).",
+  "confidence": 0.92,
+  "rationale": "A competent engineer reading the stated issue would implement faster circumference or integral recognition, not a rotated-ellipse equation API. The FAIL_TO_PASS checks assert exact strings of equation(_slope=...), which the issue never specifies.",
+  "prompt_tokens": 3067,
+  "completion_tokens": 536,
+  "total_tokens": 3603,
+  "cost_usd": 0.00935,
+  "cost_in_usd_ticks": 28526000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1920
+}

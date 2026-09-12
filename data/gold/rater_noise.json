@@ -1,0 +1,86 @@
+{
+  "n_tasks": 1699,
+  "base_rates": {
+    "conservative_or": 0.6827545615067687,
+    "majority": 0.4496762801648028,
+    "unanimous": 0.22954679223072397
+  },
+  "single_rater_vs_majority": {
+    "mean_agree": 0.8489307435746518,
+    "mean_fpr": 0.1411764705882353,
+    "mean_fnr": 0.1631762652705061,
+    "per_rater": [
+      {
+        "n": 1699,
+        "tp": 636,
+        "fp": 150,
+        "tn": 785,
+        "fn": 128,
+        "fpr": 0.16042780748663102,
+        "fnr": 0.16753926701570682,
+        "agree": 0.8363743378457916
+      },
+      {
+        "n": 1699,
+        "tp": 642,
+        "fp": 137,
+        "tn": 798,
+        "fn": 122,
+        "fpr": 0.146524064171123,
+        "fnr": 0.15968586387434555,
+        "agree": 0.8475573866980577
+      },
+      {
+        "n": 1699,
+        "tp": 640,
+        "fp": 109,
+        "tn": 826,
+        "fn": 124,
+        "fpr": 0.11657754010695187,
+        "fnr": 0.16230366492146597,
+        "agree": 0.8628605061801059
+      }
+    ],
+    "note": "If one human is the audit, majority of 3 is the reference."
+  },
+  "single_rater_vs_conservative": {
+    "mean_agree": 0.7712379831273298,
+    "mean_fpr": 0.0,
+    "mean_fnr": 0.33505747126436786,
+    "per_rater": [
+      {
+        "n": 1699,
+        "tp": 786,
+        "fp": 0,
+        "tn": 539,
+        "fn": 374,
+        "fpr": 0.0,
+        "fnr": 0.32241379310344825,
+        "agree": 0.7798705120659212
+      },
+      {
+        "n": 1699,
+        "tp": 779,
+        "fp": 0,
+        "tn": 539,
+        "fn": 381,
+        "fpr": 0.0,
+        "fnr": 0.328448275862069,
+        "agree": 0.7757504414361389
+      },
+      {
+        "n": 1699,
+        "tp": 749,
+        "fp": 0,
+        "tn": 539,
+        "fn": 411,
+        "fpr": 0.0,
+        "fnr": 0.3543103448275862,
+        "agree": 0.7580929958799294
+      }
+    ],
+    "note": "Conservative is the union. A single rater systematically misses invalids the other two caught."
+  },
+  "pairwise_already": "see swe_rater_targets.summary.json",
+  "gate": "B1 / reviewer-noise floor for Gate 5 human minutes"
+}

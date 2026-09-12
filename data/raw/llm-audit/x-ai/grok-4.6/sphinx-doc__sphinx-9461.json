@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-9461",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3425
+  },
+  "response": {
+    "id": "gen-1789192470-3XfTdzG0u4fSkiJlKnXw",
+    "object": "chat.completion",
+    "created": 1789192470,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that combined @classmethod/@property members be documented like other properties, which a competent engineer can implement from existing autodoc/property patterns. The FAIL_TO_PASS tests additionally lock in an unstated :classmethod: option and the exact “class property” signature wording, which is slightly narrower than the bug report but still a natural reading of “appropriately.”\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about documenting methods decorated with both @classmethod and @property. The tests check:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about documenting methods decorated with both @classmethod and @property. The tests check:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5ec0e7ba-9436-94c6-bd41-57dae44b1ed1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4016,
+      "completion_tokens": 618,
+      "total_tokens": 4634,
+      "cost": 0.011356,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011356,
+        "upstream_inference_prompt_cost": 0.007648,
+        "upstream_inference_completions_cost": 0.003708
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 486,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that combined @classmethod/@property members be documented like other properties, which a competent engineer can implement from existing autodoc/property patterns. The FAIL_TO_PASS tests additionally lock in an unstated :classmethod: option and the exact “class property” signature wording, which is slightly narrower than the bug report but still a natural reading of “appropriately.”",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that combined @classmethod/@property members be documented like other properties, which a competent engineer can implement from existing autodoc/property patterns. The FAIL_TO_PASS tests additionally lock in an unstated :classmethod: option and the exact “class property” signature wording, which is slightly narrower than the bug report but still a natural reading of “appropriately.”",
+  "prompt_tokens": 4016,
+  "completion_tokens": 618,
+  "total_tokens": 4634,
+  "cost_usd": 0.011739999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

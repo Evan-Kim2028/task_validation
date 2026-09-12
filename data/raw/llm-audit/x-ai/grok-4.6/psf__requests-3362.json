@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-3362",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 987
+  },
+  "response": {
+    "id": "gen-1789192193-wKwLknNySMzO5Hdxbiof",
+    "object": "chat.completion",
+    "created": 1789192193,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that iter_content(decode_unicode=True) should yield unicode like Response.text when encoding is unset, which a competent engineer would implement by reusing the same fallback decoding path. The added test only checks that chunks are str when encoding is None, which matches that reported behavior without extra unstated constraints.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about iter_content with decode_unicode=True returning bytes when encoding is None, vs r.text returning unicode.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about iter_content with decode_unicode=True returning bytes when encoding is None, vs r.text returning unicode.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "mDK9FVuoPstMM4iyRHiO2RUsh7IxISdpglUTOPbJKeKbVlIl6re75hkDlZJ5VyZ6ffh90Tlw8fms2UbjY3eEKiBZdbYg6XiZPj0BOkpzCbC98p2WObTQynHd/MLrDUp02f7NcFK1n+Q6OUTZgScUVCXiwz+NP5kPsE2K8qxj2Tz1yrcpbGu5H+3bHVbbnHsd4xpORh8ryMKcDVNJlGeqvVa1otoByJMtAXScod0SJHnK9XXOi+apgeWHnApg3jYM9jzRD9GMIf2nS1y553HoEr7j44K+YVOW/FKSkbbpPGSfkSc30Exs8O3Vv5A4Qp5WpZjjKiH0w4Exf4mJwHNUfkR/ahhttu9UBQHC6NEpJY+KkMrT+2CyrmgJvMNV4QK7EtLw9ysR5ZvjyW0JlOglHfw5oKCNVxx/MwY1YXcUWp/M2sQIKgSWY9bfX63Vf7msku9vNJesgn9XNcjFBYDYvlG1A+0A40784CSkav3mYs83Bqauz9p+ovhJR97ZRu9SCj+5IKr3Lg9Cy/mM5Xmao3OyaCszIV4E3HW9gAqo3yyH4EHlyPnHNwVDguW90r93vdrbJ8umcJlH/fS/R/elgxE+UqOna4MuRwOyyLQcwx0ZNKQgp4XV7VsvqaNCb6BU1HqiPkNIcb87hl3t/NiyVvmEruaxfQ4o8RYZETORSENjgLc+QnaZs8dVvB91fDQ02qVi7gaLBpt+QLVJwEBp1fun042YU60z/LekN127mmQ1DDm1kic6jzQYiPcyAHw3ixPax1gNKS2pFkZFRQT5oTZ6XOzw3rd1Ghw6PaaiTiPT29WGDZSoEmjoJMr9NTW/cOkwS2sAMgmeQT3dE6FRRJSbeSNygYi/m/xHZU/A/GW0xIDKM6F8WK/4jqybX6fOFyB5u3UIN788IXknLHWzI+pSbL4EIg2MVqka4dE6d/WPkK3iQOR3Lhmbj6EuRUOK0UgOXrW0dUQFR3VXZ5f7cP1BOYGM4lJwnaxJraM2OWyCf8NZdCogVy6eY9vAPAu+IlwJ3ZskxQiueffwiIOBT752gobf8hHQP10EJXNkqsh133+X8CpJnQf53u/BAimCYKxVbJ7qjFNi3KnfzyIziD9x3fIsT4pIKi/sdjTByNXQ5hXOIJXrLQr8ieBV+407K17IqV2XhIYVfB96njOaSdjn5Y1tKgPif5kzOdWtMXd4RtvCtYgg9bTRdGbT7tZCsY9jTACGx4cAI+2QJPyL/XmuLwxUdfvFafS1+g/vMewBnYfb4/qw52MszWJb9QKNIElqnHh1R5PP2sXyjwCO2QN8vd9A0nwg2JVYvVtj86ggWZmrV93eH8PaSJ0DiRkNymESfVuGWMA8sA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f9525c5c-e4d7-96cb-b73a-6f9dbfb1c97f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1274,
+      "completion_tokens": 342,
+      "total_tokens": 1616,
+      "cost": 0.004408,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004408,
+        "upstream_inference_prompt_cost": 0.002356,
+        "upstream_inference_completions_cost": 0.002052
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 221,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that iter_content(decode_unicode=True) should yield unicode like Response.text when encoding is unset, which a competent engineer would implement by reusing the same fallback decoding path. The added test only checks that chunks are str when encoding is None, which matches that reported behavior without extra unstated constraints.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that iter_content(decode_unicode=True) should yield unicode like Response.text when encoding is unset, which a competent engineer would implement by reusing the same fallback decoding path. The added test only checks that chunks are str when encoding is None, which matches that reported behavior without extra unstated constraints.",
+  "prompt_tokens": 1274,
+  "completion_tokens": 342,
+  "total_tokens": 1616,
+  "cost_usd": 0.0046,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

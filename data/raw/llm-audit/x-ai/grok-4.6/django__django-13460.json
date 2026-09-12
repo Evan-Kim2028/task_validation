@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13460",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1231
+  },
+  "response": {
+    "id": "gen-1789191235-ThLMyLAANoIC8jCXU2hN",
+    "object": "chat.completion",
+    "created": 1789191235,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Issue is float gettext formatting; tests only require rejecting non-numeric count with a specific error.\", \"confidence\": 0.82, \"rationale\": \"The report describes TypeError from gettext when a float is used in blocktrans and suggests a friendlier type check or message, not a numeric-count validation API. The FAIL_TO_PASS test instead requires TemplateSyntaxError for a string counter and a precise message, which a fix aimed at the float formatting bug would not necessarily implement.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about string formatting error when passing floats in {% blocktrans %} tags. The FAIL_TO_PASS test is about count not being a number - passing a string '1' and expecting TemplateSyntaxErro...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about string formatting error when passing floats in {% blocktrans %} tags. The FAIL_TO_PASS test is about count not being a number - passing a string '1' and expecting TemplateSyntaxErro...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a59d0822-d8ec-9a2d-86b3-429063fa9fda",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1533,
+      "completion_tokens": 605,
+      "total_tokens": 2138,
+      "cost": 0.006312,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006312,
+        "upstream_inference_prompt_cost": 0.002682,
+        "upstream_inference_completions_cost": 0.00363
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 461,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Issue is float gettext formatting; tests only require rejecting non-numeric count with a specific error.",
+    "confidence": 0.82,
+    "rationale": "The report describes TypeError from gettext when a float is used in blocktrans and suggests a friendlier type check or message, not a numeric-count validation API. The FAIL_TO_PASS test instead requires TemplateSyntaxError for a string counter and a precise message, which a fix aimed at the float formatting bug would not necessarily implement.",
+    "p_invalid": 0.88
+  },
+  "s": 2.25,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Issue is float gettext formatting; tests only require rejecting non-numeric count with a specific error.",
+  "confidence": 0.82,
+  "rationale": "The report describes TypeError from gettext when a float is used in blocktrans and suggests a friendlier type check or message, not a numeric-count validation API. The FAIL_TO_PASS test instead requires TemplateSyntaxError for a string counter and a precise message, which a fix aimed at the float formatting bug would not necessarily implement.",
+  "prompt_tokens": 1533,
+  "completion_tokens": 605,
+  "total_tokens": 2138,
+  "cost_usd": 0.006696,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

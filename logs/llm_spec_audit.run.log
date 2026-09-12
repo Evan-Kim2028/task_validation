@@ -1,0 +1,33 @@
+model=x-ai/grok-4.6 prompt_price=2e-06 completion_price=6e-06 n=200 projected_usd=5.6809 reduced=False
+fetched 1/1 spent_usd=0.0065
+model: x-ai/grok-4.6
+prices per token: prompt=2e-06 completion=6e-06
+n=200 cached=199 fetched=1 spend_usd=1.6493859999999996
+wall_clock_s=10.339909227004682 cost_per_item=0.008246929999999998
+combination: retain lowest z(s) + z(1-p_i): low auditor severity and high solve rate
+
+AUROC (1,000-rep bootstrap 95% CI)
+Y              s                            p_invalid                   
+conservative   0.776 (0.708, 0.840)         0.814 (0.746, 0.871)        
+majority       0.801 (0.737, 0.857)         0.839 (0.779, 0.889)        
+unanimous      0.787 (0.724, 0.842)         0.792 (0.727, 0.855)        
+
+Per-axis AUROC
+underspecified vs human>=2: 0.649 (0.570, 0.719)
+false_negative vs human>=2: 0.781 (0.719, 0.844)
+
+model vs majority kappa=0.4949494949494948 agreement=0.75
+model vs human pairwise agreement=0.7066666666666667
+
+Retain-tail residual invalidity (conservative Y)
+rule                         5%      10%      20%
+s                         0.400    0.300    0.275
+1-p_i                     0.300    0.250    0.350
+p_logistic                0.200    0.200    0.375
+z(s)+z(1-p_i)             0.400    0.300    0.275
+
+Frozen predicates: FAIL
+  F1 PASS: AUROC(s, conservative) >= 0.75 with 1,000-rep bootstrap CI lower bound > 0.70
+  F2 PASS: Cohen's kappa of the model material bit vs majority_invalid >= 0.39 (human Fleiss kappa on the material bit)
+  F3 FAIL: retain-20% residual under z(s)+z(1-p_i) <= 0.20 on conservative Y (versus 0.43 for metadata / OOF logistic alone on the full 1,699)
+total spend usd: 1.6493859999999996

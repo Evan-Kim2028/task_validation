@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14053",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1577
+  },
+  "response": {
+    "id": "gen-1789192371-DxwF6ln8kNL39tDZWeC6",
+    "object": "chat.completion",
+    "created": 1789192371,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly reports an IndexError in export_text for a one-feature tree with feature_names, which is enough to locate and fix the TREE_UNDEFINED indexing. The added test only checks that this case exports without error in the already-established text format.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about IndexError in export_text when the tree only has one feature. The gold patch handles TREE_UNDEFINED in tree_.feature when mapping feature names.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about IndexError in export_text when the tree only has one feature. The gold patch handles TREE_UNDEFINED in tree_.feature when mapping feature names.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+jyz5H8111e0NMClzd7f6BGlW0430mfsyys7420OLEWll2++NAxpdUbcyVoZHBnqSIMX+srD1OnwZ2b3Ncw51U0fdRI5dZdW+SgnWIZVdBushCLvsQq+x9LcCz2M+//I703O73B48Hl0EYO4vi6YcaJ5f8P5/5gnObS3Z1C+I3d80MiW7/tRo1nKtovih/p3ipwaFL5lvIhi3IE6++hlDV9jXChzC/sy18PQZeEdbQcF2lVjsZhb59ZntQRxMU4NLatHaB3onoIk0OzrYM0CGdMIPy8DJ5CzrBXK0WQ63+vcSb7ehXYZlQWdeUcqNwkG5NSmlQCmO7mANNokTgFRkslCHbs8dGnQDcy16LAQep+KDKLV/Ef4zuneApb2fWJA5NuTDfCDFcHsuc322XZFdA0JnCQ/diA1hmCg+lQoWhX76uXL0cmVKHV8oHbJWIXZKf1iz/AX5kSrnLGYFVXq/uiwOOGqy3ABDc83gAAHY5cNyBge4/JgkuVV9098NLOMJKb3yUY17Z2H5oCCon2ne+qbMxBpIbBRtP5hjc5Qq5vfZUYm8j6y61F+NrOKJiKP84D+HmTLFAo8YtAF7AE6TZfZLlCfif6mv5qljWR1j4VhR9/M0wqU7dRKNPGuwm+4/l1PhradddJlL+L6TmPWEuFpDBvNH0op2YUrqDI4Vq2cyVuH6o8lyGYg6KTC7/okU1SaXuOQg5ExDu65CJeMDqzT5dp+Bsenhy/pJAoaQXjxUolglfZ9OOkfZJPJxKeyTLxSCWSSde+UBpbo3zMdbE2eUEr8NXJ7bVHz4wd1mIGKRiUg6QuPW455ZTbyRcuE5SjLqKq6m4BQIdMmTFlefCjea+YX/JtX6UiAxWNjmvSWZCvSX02qTO7Dn+Jxiu1Cnm98qJHsp7dcqoTZDJV/qtkU4s5QyAGfJCMU/9YIoBFR3W11+eRrkdnor+VhtF3bDc7PFqA4c1KemJSFBttk0UgxV8JC4kANzEgwV4zkWtzjEM5uhC7kk/iG7pagqR7NgPmpTRDTAxDKe4N+MkWNeG7YlY2F5xHYsjPuEfA2E4CZfGSOSadOG3yVbEHUZnq9/NwwASK3qd00NDdUTk7dc8XYkdzIaPvRXHMjSq/azMuXVhGF726hU7jcPIJZQ1iTDtIPrdIJi4tNjlexCWMDZcH29/TLehVUTUB6kdP5p2Y2Its+0PpwOV9PldyW9gi7Iad3nLsOS2InpZjDmOCkgiiqlL5BupRwzl3xMIkk0iBDxMuYFtMNSMixBNmln9ybMIpmv8ZxmlCx0TemnAlUvejVKE+um6x/KaSNe3jXgUqSsyiC5cUXOqF5VTyCDzrv6C13fHUp3tO4UvW9A/wsEajLkNNw8bJdp5i8Z4yPjhSMRLlq/PqXIiVRL5Vv9E5sy9HYVEz7Og5U2qAqAaAVgj/IZiznODBXred4yeVvRb40jtBKtY3qFmRz43g/fEzs2nUp3n173dTNYgSJJqrYDKeEsmTFG4hmPdbFRL6diBjaKqon4qo/NNp4QIdHRh4ZCOtinQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d6e9a7d4-6f15-9d72-b469-4cace5f1f259",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2050,
+      "completion_tokens": 361,
+      "total_tokens": 2411,
+      "cost": 0.005882,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005882,
+        "upstream_inference_prompt_cost": 0.003716,
+        "upstream_inference_completions_cost": 0.002166
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 252,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly reports an IndexError in export_text for a one-feature tree with feature_names, which is enough to locate and fix the TREE_UNDEFINED indexing. The added test only checks that this case exports without error in the already-established text format.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly reports an IndexError in export_text for a one-feature tree with feature_names, which is enough to locate and fix the TREE_UNDEFINED indexing. The added test only checks that this case exports without error in the already-established text format.",
+  "prompt_tokens": 2050,
+  "completion_tokens": 361,
+  "total_tokens": 2411,
+  "cost_usd": 0.006265999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-8055",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "ef1f55c1-516f-9045-b81f-3a751b334495",
+    "object": "chat.completion",
+    "created": 1789193853,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS also requires a threading.excepthook plugin and many unrelated acceptance tests not in the issue.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to set sys.unraisablehook so unraisable exceptions can be tied to tests, without specifying reporting as warnings, class names, message text, setup/teardown coverage, or thread exceptions. The new tests would fail most reasonable implementations that omit those unstated names, formats, and the extra thread-exception feature.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7965,
+      "completion_tokens": 150,
+      "total_tokens": 8641,
+      "prompt_tokens_details": {
+        "text_tokens": 7965,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 526,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 65341200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS also requires a threading.excepthook plugin and many unrelated acceptance tests not in the issue.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to set sys.unraisablehook so unraisable exceptions can be tied to tests, without specifying reporting as warnings, class names, message text, setup/teardown coverage, or thread exceptions. The new tests would fail most reasonable implementations that omit those unstated names, formats, and the extra thread-exception feature.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS also requires a threading.excepthook plugin and many unrelated acceptance tests not in the issue.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to set sys.unraisablehook so unraisable exceptions can be tied to tests, without specifying reporting as warnings, class names, message text, setup/teardown coverage, or thread exceptions. The new tests would fail most reasonable implementations that omit those unstated names, formats, and the extra thread-exception feature.",
+  "prompt_tokens": 7965,
+  "completion_tokens": 676,
+  "total_tokens": 8641,
+  "cost_usd": 0.019986,
+  "cost_in_usd_ticks": 65341200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 6422
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23563",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1878
+  },
+  "response": {
+    "id": "gen-1789191975-BEqsrAuFk4xjdqnhB8Bu",
+    "object": "chat.completion",
+    "created": 1789191975,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The report mixes kernel-state errors, string arrays, and a missing _verts3d attribute without stating that 3D plot must accept Nx1 column data or that zs must be raveled. The FAIL_TO_PASS smoke test only checks ax.plot of 2x1 lists, which is unstated behavior a valid _verts3d initialization fix could miss.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Line3D missing `_verts3d` after some error with numpy arrays of wrong dimensions.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Line3D missing `_verts3d` after some error with numpy arrays of wrong dimensions.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "/uLJZpZpcZ6hGe/s71ZawJ7cHCYVaVutHpZPhbBZPWqpY3GnhEA5H8NzMSf2ph5bmw+csAm8WgVfhbJiFSO1sOZq4AIjSF0JuHyt5TCpIR+kOXrJFzgqf5eVObdq4ssVHMvA10K7ligBCj3sAtNAHevXdLRbhEQPo1O1KWZ7QmKM9X6LfDlfz31R9HufTVIqoZY3XPLYoal1CDiMRX8kn9JZmpE2AkZYTChmmxKsGGlpvr3eilZXI2Nmcw0b6Asnro15Tpjn6zYniBvVWbfElGKqywGNwXoqKf6WCD6dt31xBKQnncWyw6PwjXLy5fUgdxHgJLzyIlomHrygOVSqLfYAw9sP6hdU7ox5pDAdmKO33xhZMG20D/wX0o1rBedMZlqiUO/ep2dVvVkQBuk0kw4oK+T8jF0m/ZjSM0M75ldN1ImLBYnlsDfeC7SoAQYCkiAy2i50DuJsGsq7Q+u4L7/Rs6BiO5nMkxhfVUY3FM5oVvh4YUUoSCW3SiXwpyU1Y0fmk6HFmaBBff/anlAjnM/3uY/z+Q9mTq/k8ufgtYZ+DaG10/Qi/KoJyAV6FXohq3qrHIzv0HdILYQaL7RNYklm02AADOJq160Q0K/AOHQ30NmstfKtCtzr89Wli02/UOUptRB6wqijyBNk1Z5nA8b7W2N2jgYxmpnH70YRZUzjfAvcDowD/J/MSos+jazDGvKxb8BuY1VuAvcyNSg8EafqoXvEXSzzeTvVY7fnW2x/GScUPCgh324HCqwh8fs0JOUZF17iTFI0nXmW6LiQJlad4vGygExWs1gfGm6Eij2EqiPXXgRenrEljb2X0KW0XwgSuIHmcR0NIqBO1yxSrkYAvrVIgPK4awMWJND1313pOAxmwlXsV6J7VwYay9Ize6JR9xeJSmqaprCgktHYQxFagvgXPXCeIZoBPMyYhY7UNm2aCmi4VXUm/kE5F5Qx6mz365etD1s2sLpdprBnKhtkoJ/12Q1voohZGf3Qydg7iqdce6tYm/ReoAMdVAuiLtDnmLP+gsMQW1sgRR5tbCrKEIb03QE06JGpk7Mzi9m/s6Q0bBcEY+c0aLBSl5Eq83pSVhM7IPVeaK7W6EEtu/Q/lKnIlisBG6M/p6rMOnlA0zf2DaFdP02SVxdxOyaLDnKbKpoPgcp85mvTPqAMVJ34vi3fhHcUoIQQVmiEIHAU/nqdhSNP8+pHDwIiYFtadz/g4JgwdzuRMEea+zf5Ke9fQJ+nqxoqNkuRI1tHYM8Dvt3EAkZvcChwwFqxf5DIdmbN648TA3tl9M3ZcYCCIIQHAh4752fMQbP388KNDaSdj53/05UcTO7NhAE1vHjb/sLXpEkUFOHMHsSs0WxhYc2HOyuS1500c15VaWHHauoVmUInCpFLgLwoGNR2lKcGdRgbAkTZIZyGlDlv/ODs+v7KHH0N6jsuftvY+7oH4D04LxzPLRvkQhHpLPpYhaZX9TStCUnrvsyKYtmQykJzzhwRENOR7tbKgCPKlObBWZx6AWNGeVaNYQievSMTE8JSbs0N51rJne0gDszPFDiFbNKIMPYsDhvGpU7+hrRvMbFwY6duHzd9umBLNLpoybtss68IaM3ofNWjaEYjsIE1RjD3O7hBbnO7fCX+ap6ZJdBYH3kp9iD4SjUiL4eO1NFiL78SuI2T7ZAOJotmhigh4sIKblQbrwvRBMnE42NIPJYdf/Uun2l0w+FzWTa1YhkGSQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5a0de94e-f386-9d5e-85df-94311ba5bb36",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2726,
+      "completion_tokens": 457,
+      "total_tokens": 3183,
+      "cost": 0.00781,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00781,
+        "upstream_inference_prompt_cost": 0.005068,
+        "upstream_inference_completions_cost": 0.002742
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 326,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The report mixes kernel-state errors, string arrays, and a missing _verts3d attribute without stating that 3D plot must accept Nx1 column data or that zs must be raveled. The FAIL_TO_PASS smoke test only checks ax.plot of 2x1 lists, which is unstated behavior a valid _verts3d initialization fix could miss.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The report mixes kernel-state errors, string arrays, and a missing _verts3d attribute without stating that 3D plot must accept Nx1 column data or that zs must be raveled. The FAIL_TO_PASS smoke test only checks ax.plot of 2x1 lists, which is unstated behavior a valid _verts3d initialization fix could miss.",
+  "prompt_tokens": 2726,
+  "completion_tokens": 457,
+  "total_tokens": 3183,
+  "cost_usd": 0.008194,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

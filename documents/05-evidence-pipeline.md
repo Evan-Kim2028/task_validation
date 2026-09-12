@@ -38,6 +38,10 @@ Harbor ingest records: instruction, task.toml, solution, tests, environment, can
 
 `task-validation run-harbor-evidence` runs oracle (optionally twice), nop, and file-revert / wrong-output mutants through Harbor+Docker. First measured task: hello-world, ~32s per trial, mutation kill rate 1.0. See [14-risk-coverage-and-labels.md](14-risk-coverage-and-labels.md).
 
+`task-validation interrogate-verifier` sends spec-labeled counterfactual implementations through the **official** verifier and keeps the five discrimination rates uncollapsed. `--tasks-root` batches complete Harbor packages. Treatments that cannot be labeled from the spec are stored as **unavailable**, not reverse-engineered from tests. See [19-evaluator-interrogation.md](19-evaluator-interrogation.md) and [20-harbor-pilot.md](20-harbor-pilot.md).
+
+`task-validation link-human-labels` writes SWE 2024 protocols as separate rows. It does not merge provenances and does not treat Verified membership as ground truth.
+
 ## What we will not do in Part 1
 
 We will not generate new synthetic tasks to feed this pipeline. Existing populations only.

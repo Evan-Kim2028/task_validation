@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13551",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1971
+  },
+  "response": {
+    "id": "gen-1789191254-9DIgW6OiSBdUTZImEi8f",
+    "object": "chat.completion",
+    "created": 1789191254,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue states the required behavior and the intended hash change, including that users may lack an email. The new tests fairly check invalidation on email change, including a custom EMAIL_FIELD and null email, which is only slightly more specific than the write-up.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about password reset tokens being invalidated when email changes. The fix is to add the user's email into PasswordResetTokenGenerator._make_hash_value().\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about password reset tokens being invalidated when email changes. The fix is to add the user's email into PasswordResetTokenGenerator._make_hash_value().\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_38c71ee9-bc54-9db3-b095-da08dbb33d6a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2392,
+      "completion_tokens": 484,
+      "total_tokens": 2876,
+      "cost": 0.007496,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007496,
+        "upstream_inference_prompt_cost": 0.004592,
+        "upstream_inference_completions_cost": 0.002904
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 376,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue states the required behavior and the intended hash change, including that users may lack an email. The new tests fairly check invalidation on email change, including a custom EMAIL_FIELD and null email, which is only slightly more specific than the write-up.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue states the required behavior and the intended hash change, including that users may lack an email. The new tests fairly check invalidation on email change, including a custom EMAIL_FIELD and null email, which is only slightly more specific than the write-up.",
+  "prompt_tokens": 2392,
+  "completion_tokens": 484,
+  "total_tokens": 2876,
+  "cost_usd": 0.007688,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

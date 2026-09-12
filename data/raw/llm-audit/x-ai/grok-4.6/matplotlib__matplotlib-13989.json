@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-13989",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1103
+  },
+  "response": {
+    "id": "gen-1789191887-l6yFSrBYwuRC4nsN5KRk",
+    "object": "chat.completion",
+    "created": 1789191887,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states that hist with an explicit range and density=True must keep the first and last bin edges at that range, matching the provided reproduction. The FAIL_TO_PASS test checks exactly those edges for the same call, so a competent engineer would know what to implement and the test fairly verifies it.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Z+HModSpE7ovCWIQL+uklN5aSSotcyuCGb5DgpAeGQ+PvD7chHV+9quz+jYU+FuZcte3h2i0XyS/8F4o/8jvqWLMihSaeW5G7Db+Wyx2kkfXr8d//ipRmG3D28kO4IrGRRV3cUKd3PBaVXQl9NMnE6RlWh8/qxOf1WOi8V794QwRPpocjgHOZ9vIQw98OtE2dGQBTqwoThiijTzK0GaWHJ1UUncP7vYoninNQwdAY6lJm8BxOvKdmmlTfhakxSD0pHE7Km9CIPGNbqIAFNoqO1jUU0FHQuasPpx3rOCl5J6zZrddKdCzq2DuQlJI4qxRCGeAYejwJy7/4ZTsIl3nPI/idUrSU0bbXRw/i8fJyYwVsFtE8TELsI7D26a7KApx5ubziP1BrGK9GZxnQXfCO21wKNcMTPveqMfGgvJjhAnbCt12wPVgHtiI4psQ2lIkY2YulMPkGpEZyI88RukPf8mg5aZ3wUF1.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_803d40f2-87ef-9cf7-ab32-74daa1f9ad82",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1442,
+      "completion_tokens": 200,
+      "total_tokens": 1642,
+      "cost": 0.0037,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0037,
+        "upstream_inference_prompt_cost": 0.0025,
+        "upstream_inference_completions_cost": 0.0012
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 83,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states that hist with an explicit range and density=True must keep the first and last bin edges at that range, matching the provided reproduction. The FAIL_TO_PASS test checks exactly those edges for the same call, so a competent engineer would know what to implement and the test fairly verifies it.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states that hist with an explicit range and density=True must keep the first and last bin edges at that range, matching the provided reproduction. The FAIL_TO_PASS test checks exactly those edges for the same call, so a competent engineer would know what to implement and the test fairly verifies it.",
+  "prompt_tokens": 1442,
+  "completion_tokens": 200,
+  "total_tokens": 1642,
+  "cost_usd": 0.004084,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

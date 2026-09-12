@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3631",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 14452
+  },
+  "response": {
+    "id": "gen-1789192225-a2VOjYMiHcw50cxYSEW4",
+    "object": "chat.completion",
+    "created": 1789192225,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to fix cftime/timedelta conversion so interp on long CFTime coordinates works, but it does not specify new public helpers, signatures, units, 1970-01-01 offsets, max_gap types, or error strings. FAIL_TO_PASS therefore requires those unstated APIs and extra interpolate_na/get_clean_interp_index behaviors, so many issue-faithful fixes would fail.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about interp with long cftime coordinates raising an error. The FAIL_TO_PASS tests include a huge list of duck_array_ops tests plus new tests.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"FAIL_TO_PASS includes entire duck_array_ops test suite due to import changes at top of file, not just new timedelta helpers\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about interp with long cftime coordinates raising an error. The FAIL_TO_PASS tests include a huge list of duck_array_ops tests plus new tests.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"FAIL_TO_PASS includes entire duck_array_ops test suite due to import changes at top of file, not just new timedelta helpers\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fd0b26af-113e-9703-bf01-831b596e6f7b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 19856,
+      "completion_tokens": 666,
+      "total_tokens": 20522,
+      "cost": 0.043324,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.043324,
+        "upstream_inference_prompt_cost": 0.039328,
+        "upstream_inference_completions_cost": 0.003996
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 523,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to fix cftime/timedelta conversion so interp on long CFTime coordinates works, but it does not specify new public helpers, signatures, units, 1970-01-01 offsets, max_gap types, or error strings. FAIL_TO_PASS therefore requires those unstated APIs and extra interpolate_na/get_clean_interp_index behaviors, so many issue-faithful fixes would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to fix cftime/timedelta conversion so interp on long CFTime coordinates works, but it does not specify new public helpers, signatures, units, 1970-01-01 offsets, max_gap types, or error strings. FAIL_TO_PASS therefore requires those unstated APIs and extra interpolate_na/get_clean_interp_index behaviors, so many issue-faithful fixes would fail.",
+  "prompt_tokens": 19856,
+  "completion_tokens": 666,
+  "total_tokens": 20522,
+  "cost_usd": 0.043708,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,97 @@
+2026-09-12 00:37:29,802 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:37:55,086 - INFO - Creating container for scikit-learn__scikit-learn-14890...
+2026-09-12 00:37:55,725 - INFO - Container for scikit-learn__scikit-learn-14890 created: 63238b93f3511dafe1132bffbb9a6d844a74b2b366b180fe8f59c2af62d1e622
+2026-09-12 00:37:56,138 - INFO - Container for scikit-learn__scikit-learn-14890 started: 63238b93f3511dafe1132bffbb9a6d844a74b2b366b180fe8f59c2af62d1e622
+2026-09-12 00:37:56,139 - INFO - Intermediate patch for scikit-learn__scikit-learn-14890 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-14890/patch.diff, now applying to container...
+2026-09-12 00:37:56,414 - INFO - >>>>> Applied Patch:
+Checking patch sklearn/compose/_target.py...
+Applied patch sklearn/compose/_target.py cleanly.
+
+2026-09-12 00:37:57,179 - INFO - Git diff before:
+diff --git a/sklearn/compose/_target.py b/sklearn/compose/_target.py
+index ce0c76d64..9b94e0275 100644
+--- a/sklearn/compose/_target.py
++++ b/sklearn/compose/_target.py
+@@ -148,7 +148,7 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+                               " you are sure you want to proceed regardless"
+                               ", set 'check_inverse=False'", UserWarning)
+ 
+-    def fit(self, X, y, sample_weight=None):
++    def fit(self, X, y, **fit_params):
+         """Fit the model according to the given training data.
+ 
+         Parameters
+@@ -160,9 +160,10 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+         y : array-like, shape (n_samples,)
+             Target values.
+ 
+-        sample_weight : array-like, shape (n_samples,) optional
+-            Array of weights that are assigned to individual samples.
+-            If not provided, then each sample is given unit weight.
++        **fit_params : dict of string -> object
++            Parameters passed to the ``fit`` method of the underlying
++            regressor.
++
+ 
+         Returns
+         -------
+@@ -197,10 +198,7 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+         else:
+             self.regressor_ = clone(self.regressor)
+ 
+-        if sample_weight is None:
+-            self.regressor_.fit(X, y_trans)
+-        else:
+-            self.regressor_.fit(X, y_trans, sample_weight=sample_weight)
++        self.regressor_.fit(X, y_trans, **fit_params)
+ 
+         return self
+2026-09-12 00:37:57,180 - INFO - Eval script for scikit-learn__scikit-learn-14890 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-14890/eval.sh; copying to container...
+2026-09-12 00:38:23,107 - INFO - Test runtime: 25.82 seconds
+2026-09-12 00:38:23,107 - INFO - Test output for scikit-learn__scikit-learn-14890 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-14890/test_output.txt
+2026-09-12 00:38:23,160 - INFO - Git diff after:
+diff --git a/sklearn/compose/_target.py b/sklearn/compose/_target.py
+index ce0c76d64..9b94e0275 100644
+--- a/sklearn/compose/_target.py
++++ b/sklearn/compose/_target.py
+@@ -148,7 +148,7 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+                               " you are sure you want to proceed regardless"
+                               ", set 'check_inverse=False'", UserWarning)
+ 
+-    def fit(self, X, y, sample_weight=None):
++    def fit(self, X, y, **fit_params):
+         """Fit the model according to the given training data.
+ 
+         Parameters
+@@ -160,9 +160,10 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+         y : array-like, shape (n_samples,)
+             Target values.
+ 
+-        sample_weight : array-like, shape (n_samples,) optional
+-            Array of weights that are assigned to individual samples.
+-            If not provided, then each sample is given unit weight.
++        **fit_params : dict of string -> object
++            Parameters passed to the ``fit`` method of the underlying
++            regressor.
++
+ 
+         Returns
+         -------
+@@ -197,10 +198,7 @@ class TransformedTargetRegressor(RegressorMixin, BaseEstimator):
+         else:
+             self.regressor_ = clone(self.regressor)
+ 
+-        if sample_weight is None:
+-            self.regressor_.fit(X, y_trans)
+-        else:
+-            self.regressor_.fit(X, y_trans, sample_weight=sample_weight)
++        self.regressor_.fit(X, y_trans, **fit_params)
+ 
+         return self
+2026-09-12 00:38:23,160 - INFO - Grading answer for scikit-learn__scikit-learn-14890...
+2026-09-12 00:38:23,161 - INFO - report: {'scikit-learn__scikit-learn-14890': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['sklearn/compose/tests/test_target.py::test_transform_target_regressor_pass_fit_parameters', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_route_pipeline'], 'failure': []}, 'PASS_TO_PASS': {'success': ['sklearn/compose/tests/test_target.py::test_transform_target_regressor_error', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_invertible', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_functions', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_functions_multioutput', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_1d_transformer[X0-y0]', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_1d_transformer[X1-y1]', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_2d_transformer[X0-y0]', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_2d_transformer[X1-y1]', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_2d_transformer_multioutput', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_multi_to_single', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_ensure_y_array', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_count_fit[False]', 'sklearn/compose/tests/test_target.py::test_transform_target_regressor_count_fit[True]'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for scikit-learn__scikit-learn-14890: resolved: True
+2026-09-12 00:38:23,161 - INFO - Attempting to stop container sweb.eval.scikit-learn__scikit-learn-14890.tv100-gold...
+2026-09-12 00:38:39,312 - INFO - Container sweb.eval.scikit-learn__scikit-learn-14890.tv100-gold stopped successfully.
+2026-09-12 00:38:39,312 - INFO - Attempting to remove container sweb.eval.scikit-learn__scikit-learn-14890.tv100-gold...
+2026-09-12 00:38:39,422 - INFO - Container sweb.eval.scikit-learn__scikit-learn-14890.tv100-gold removed successfully.

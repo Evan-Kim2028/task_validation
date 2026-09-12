@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14871",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1022
+  },
+  "response": {
+    "id": "gen-1789191503-kl6YUwGf6x16FUGPr9yV",
+    "object": "chat.completion",
+    "created": 1789191503,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS only asserts an unstated lang attr and never covers subtag i18n files\", \"confidence\": 0.78, \"rationale\": \"The issue asks to load Select2 i18n for codes like pt-BR, but the only FAIL_TO_PASS check is that build_attrs includes lang=en, which is not described. A fix that only maps subtags for the i18n JS path would still fail that test and would not be verified against the reported bug.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about Select2 not loading translations with subtags like \"pt-BR\". The problem is that some languages are converted to lowercase.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Select2 not loading translations with subtags like \"pt-BR\". The problem is that some languages are converted to lowercase.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_16ea64f4-640a-9e29-b565-baea2ecf0771",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1388,
+      "completion_tokens": 586,
+      "total_tokens": 1974,
+      "cost": 0.0061,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0061,
+        "upstream_inference_prompt_cost": 0.002584,
+        "upstream_inference_completions_cost": 0.003516
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 439,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS only asserts an unstated lang attr and never covers subtag i18n files",
+    "confidence": 0.78,
+    "rationale": "The issue asks to load Select2 i18n for codes like pt-BR, but the only FAIL_TO_PASS check is that build_attrs includes lang=en, which is not described. A fix that only maps subtags for the i18n JS path would still fail that test and would not be verified against the reported bug.",
+    "p_invalid": 0.88
+  },
+  "s": 2.25,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS only asserts an unstated lang attr and never covers subtag i18n files",
+  "confidence": 0.78,
+  "rationale": "The issue asks to load Select2 i18n for codes like pt-BR, but the only FAIL_TO_PASS check is that build_attrs includes lang=en, which is not described. A fix that only maps subtags for the i18n JS path would still fail that test and would not be verified against the reported bug.",
+  "prompt_tokens": 1388,
+  "completion_tokens": 586,
+  "total_tokens": 1974,
+  "cost_usd": 0.006292,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

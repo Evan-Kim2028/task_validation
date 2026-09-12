@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13667",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2101
+  },
+  "response": {
+    "id": "gen-1789191280-DApyz4amKs63UVt3CMQy",
+    "object": "chat.completion",
+    "created": 1789191280,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to push exists() optimizations into union combined queries (clear select, drop order, LIMIT 1) and even shows target SQL, so a competent engineer would know the intended change. The FAIL_TO_PASS check is slightly narrower by asserting exact LIMIT occurrence counts gated on an unstated combinator slicing feature and absence of the PK column rather than only exists() correctness.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about optimizing QuerySet.exists() for union queries. The FAIL_TO_PASS test is test_exists_union.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about optimizing QuerySet.exists() for union queries. The FAIL_TO_PASS test is test_exists_union.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_677452b4-2266-9537-b141-5d3b075cab65",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2531,
+      "completion_tokens": 533,
+      "total_tokens": 3064,
+      "cost": 0.007876,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007876,
+        "upstream_inference_prompt_cost": 0.004678,
+        "upstream_inference_completions_cost": 0.003198
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 400,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to push exists() optimizations into union combined queries (clear select, drop order, LIMIT 1) and even shows target SQL, so a competent engineer would know the intended change. The FAIL_TO_PASS check is slightly narrower by asserting exact LIMIT occurrence counts gated on an unstated combinator slicing feature and absence of the PK column rather than only exists() correctness.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to push exists() optimizations into union combined queries (clear select, drop order, LIMIT 1) and even shows target SQL, so a competent engineer would know the intended change. The FAIL_TO_PASS check is slightly narrower by asserting exact LIMIT occurrence counts gated on an unstated combinator slicing feature and absence of the PK column rather than only exists() correctness.",
+  "prompt_tokens": 2531,
+  "completion_tokens": 533,
+  "total_tokens": 3064,
+  "cost_usd": 0.00826,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

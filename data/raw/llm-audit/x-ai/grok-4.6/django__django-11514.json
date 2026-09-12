@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11514",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 837
+  },
+  "response": {
+    "id": "gen-1789187692-BFoyilHgOC7AhzmYV95A",
+    "object": "chat.completion",
+    "created": 1789187692,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue explicitly asks to add Cache-Control private to the never_cache decorator so CDNs do not cache. The FAIL_TO_PASS test only checks that private is included with the existing directives, which matches that request.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: add Cache-Control: private to never_cache decorator. The test checks that the Cache-Control header includes 'private' along with the existing directives.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: add Cache-Control: private to never_cache decorator. The test checks that the Cache-Control header includes 'private' along with the existing directives.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "TK5OOlJmddFmPp1N2ZSs6RuXiA8SefcB+pObivI7GufDxXsXHxeYBZCzsjUcTWCTcK6TH7R8GBmFJytb/h+AiWq5TNT2PoTXyYVxXd3WCKqWAj7OZIheGe6prH3aaJoQhGXQ6V3DSresVLtoNBpCk5wSaeA6UGq/c+Ma9DC6aR5zK/SX/AREtQXNg07Tdpmpk0u+UOGiKWHnkkKC88oXa/UTbSGH+LZfEfNHY6szrx6Zq/qS1NnxLWWqPoTitdt7l7RacCTdWAkDM+hmEkA9GvDzdGyR+9LoNiUoOf7mXN9sLEzC9UUKXsR49lN4XQLebGSzmpzB3bAG+db1fNjMfzNR2rff8++Cz69YnaVzUr8MTziYG9LMFATVtaoEpq8/xl+CzxXM84LmTBwlzwpRclc7XGA02u2zkM2VGY3dGNShHamjuaNzP5jaeikU4vUpOvqgS9hkopBtaOHIyHNad8OBLHTdjf6MAMQ0H9cxI86AtMv51OJJT5ZxBDEUk+h00xUzcYHkZMzL71O6yzlsNIhGrEUV670Tak6rRJjU/mJXvlXOAVgIGl+kZytX6Lja6g/dmSL38XIUQELjWxZRB7D8YxNDRhOwz+WJdSd3MLMN4oNGktMXXLe9tySPm55jVtzGEivp8um0NhwgGItV/JeeRGccYIBVzDJIq1dCRa1ZbGUmHdM34ubFDmbS7FWdYbnb/HLPEgwEWBPSZnEZd4MYTGCPmOlOIXljYr6mpcEBhyYPokgVMY4kJ0INAeLG046XatRax7jyfF5k/Mrqj8iu7Jw+noPg378ofjmElDQlDpsx00S4WFh20BWq6BtkKUSXQSJOI4yppUgNLbV82dNsfPd1UHUkLgGSz1M.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7a0da59d-bfc5-9946-b08f-91a41b551bbc",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1132,
+      "completion_tokens": 254,
+      "total_tokens": 1386,
+      "cost": 0.003596,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003596,
+        "upstream_inference_prompt_cost": 0.002072,
+        "upstream_inference_completions_cost": 0.001524
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 153,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue explicitly asks to add Cache-Control private to the never_cache decorator so CDNs do not cache. The FAIL_TO_PASS test only checks that private is included with the existing directives, which matches that request.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue explicitly asks to add Cache-Control private to the never_cache decorator so CDNs do not cache. The FAIL_TO_PASS test only checks that private is included with the existing directives, which matches that request.",
+  "prompt_tokens": 1132,
+  "completion_tokens": 254,
+  "total_tokens": 1386,
+  "cost_usd": 0.0037879999999999997,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

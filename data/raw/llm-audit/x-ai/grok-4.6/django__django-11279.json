@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11279",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6837
+  },
+  "response": {
+    "id": "gen-1789190841-qacirFNdSwS8vIkHoEvu",
+    "object": "chat.completion",
+    "created": 1789190841,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires interpolating %(app_label)s and %(class)s with lowercased app and model names on Index and constraint names, including abstract inheritance. Tests also lock in cloning shared objects and exact resulting names, which a competent engineer would likely match but is slightly more specific than the write-up.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing %(app_label)s and %(class)s in name arguments for indexes and constraints.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue clearly defines the interpolation behavior for %(app_label)s and %(class)s in names, and the gold patch correctly implements it in contribute_to_class. FAIL_TO_PASS tests are mostly unrelated and likely fail due to import changes or clone requirements, but the core feature matches exactly.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing %(app_label)s and %(class)s in name arguments for indexes and constraints.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue clearly defines the interpolation behavior for %(app_label)s and %(class)s in names, and the gold patch correctly implements it in contribute_to_class. FAIL_TO_PASS tests are mostly unrelated and likely fail due to import changes or clone requirements, but the core feature matches exactly.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d4c6eb01-c095-9c86-b064-7583f0c4e452",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7903,
+      "completion_tokens": 753,
+      "total_tokens": 8656,
+      "cost": 0.01994,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01994,
+        "upstream_inference_prompt_cost": 0.015422,
+        "upstream_inference_completions_cost": 0.004518
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 634,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires interpolating %(app_label)s and %(class)s with lowercased app and model names on Index and constraint names, including abstract inheritance. Tests also lock in cloning shared objects and exact resulting names, which a competent engineer would likely match but is slightly more specific than the write-up.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires interpolating %(app_label)s and %(class)s with lowercased app and model names on Index and constraint names, including abstract inheritance. Tests also lock in cloning shared objects and exact resulting names, which a competent engineer would likely match but is slightly more specific than the write-up.",
+  "prompt_tokens": 7903,
+  "completion_tokens": 753,
+  "total_tokens": 8656,
+  "cost_usd": 0.020324000000000002,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

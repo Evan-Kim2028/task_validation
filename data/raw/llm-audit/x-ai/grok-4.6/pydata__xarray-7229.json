@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-7229",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2406
+  },
+  "response": {
+    "id": "gen-1789192767-RNhr5UMYJuQlTgAgEg8N",
+    "object": "chat.completion",
+    "created": 1789192767,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that keep_attrs=True not overwrite coordinate attributes with variable attributes, as in the air_temperature MVCE. The FAIL_TO_PASS cases additionally lock in unstated policies for scalars, Dataset vs DataArray promotion, dataset-level attrs, and always copying attrs from x onto every result coordinate.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about `xr.where(..., keep_attrs=True)` overwriting coordinate attributes. The expected behavior is that coordinate attributes should be preserved.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about `xr.where(..., keep_attrs=True)` overwriting coordinate attributes. The expected behavior is that coordinate attributes should be preserved.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9055b439-fdb9-933b-ace6-db003d27e2a2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3350,
+      "completion_tokens": 555,
+      "total_tokens": 3905,
+      "cost": 0.009646,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009646,
+        "upstream_inference_prompt_cost": 0.006316,
+        "upstream_inference_completions_cost": 0.00333
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that keep_attrs=True not overwrite coordinate attributes with variable attributes, as in the air_temperature MVCE. The FAIL_TO_PASS cases additionally lock in unstated policies for scalars, Dataset vs DataArray promotion, dataset-level attrs, and always copying attrs from x onto every result coordinate.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that keep_attrs=True not overwrite coordinate attributes with variable attributes, as in the air_temperature MVCE. The FAIL_TO_PASS cases additionally lock in unstated policies for scalars, Dataset vs DataArray promotion, dataset-level attrs, and always copying attrs from x onto every result coordinate.",
+  "prompt_tokens": 3350,
+  "completion_tokens": 555,
+  "total_tokens": 3905,
+  "cost_usd": 0.010029999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

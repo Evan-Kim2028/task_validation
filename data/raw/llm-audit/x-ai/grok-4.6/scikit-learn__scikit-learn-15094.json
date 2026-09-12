@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-15094",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1722
+  },
+  "response": {
+    "id": "gen-1789192387-aNqqlEuQKZmpcUWeJLPS",
+    "object": "chat.completion",
+    "created": 1789192387,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that homogeneous float32 pandas input not be upcast to float64 (via MaxAbsScaler/check_array), but the FAIL_TO_PASS test encodes many unstated mixed-dtype and FLOAT_DTYPES casting rules. A reasonable fix of the reported float32 case could still fail those extra assertions.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about MaxAbsScaler upcasting pandas DataFrames to float64, even when input is float32. The user wants to preserve float32.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about MaxAbsScaler upcasting pandas DataFrames to float64, even when input is float32. The user wants to preserve float32.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "oOe9vkcWBEQdrkz9i4Q8GJO+PgYSNM+hpid6bRKfrYU8PADwz56pc5cp1cLCAyRK8SsKTKcvvnxXWdT+zceS1cjwloMa1JZyHXWPcWQCZHjEEfa+vFO28rhjXL9iIhUhLNs9idPrz9CqWzv4ul+5TjPrtmxj7wh7a6AXglRfsCFv+aNRrlN+SVn9XPuCFUvhz1J49VrePeGUQbUqUXthNmMhygzxXd804kNKbgeCgCIdKAdjnzfTuJ+qM9svHTvCJnOodg3ZT2slRMXo91O4aw5b/gI9Ccxx1EQy6xiElmpCK7m/PbQNvoLjg3eCGrzmC4LsmqySfx+u4lny9r89dxx39CartLpHrMeUGlXqv0Sy4uwSMWxiZ+oUgBcEqdhIC4b0rqXyg1glRIEzwzZad6gAB2vOJiWVzWHyTD5BD2ZBtGYnrYKqtIaBtmYvfw1gUMYweWN3NGh35rV+4BBShqDyzhyuhsO4RPtfGdI4gAlYhlb6eoayYeq7u59vqVYgj2W8BybZ8Jx2qA1vyhuHZ1wprmTU+w7F8HMsfcf0fa1lyHzB08ek9vzX63tryHv2aCbQD4Hfo78Wxtqwq+nUwvJujlvYsxXcLkie/3aQbmWIBhKe1ciPLAEOy2iHl6uit1d4hK9WSio9uoi4H5fHfv7hMVF6ElvYhRHS/e8Co1qguZc93qqvR0COt4V7Omv36LNMuTNFqGPHMRyaTLBAwprlZ5KYLCovBK2vTekHXFEUFcoiJd6FwYwBkTXpKNil2C/4f8GP1XcH/sooQomJ4gKfHCyz9cYY0mKH08dRONStxJXeHzw1VfbtvN8oEqt96YDzZh4UaztsSYcClsyfrmM6qQ3r6gtl6Q81Np6SXb+nAoOWJCqy7Skx1OfjDtSy+lPWCgiqbu6GWAXAFBNSiH5W49AXGBICXHE9rVjyjlonckT6u/M9qEfqjRVIU6P719PDvShxaA3cei28S8fp+TeeLKMMHI5i4yQ8kEDSDhHNKDdjB5J2VChyf3xVlnKGe6bwpI4Rn7+sG3d7zi9zrVKAmyJr5Tc9yHRuZkvftQDW2DCO2h11L59AsslLoHzHDzW2sMX4GkVIs/KmI1l02IW1+0saD8Gl7yPRXDbp1abAnp/IB3XGyf8699scrVz20VAMlvKMkB5NZCO3hMTLe8t4L+1sdNuTLmzvooLfOc2XVZOr4tAyl1uCskDCCvkZQHcSKdGEeleE+3aoED7p4bliVcBvGlm+u+oMyDTTA141wTKvqymT/H/Ihj84JyllsoH+yuSBDLH1sKSi+/KEnN8wEoHfZdezXSaopBDA3E+j+KrQf1WM0exTWMXK307urG+SpWIUrMFtJ6l97oCJ6osEkDs3q3M8gkf0LEt3YDzPyqIKVI6ZLMqPL4IyQh5h2nucOzZkOYY4IN+eZT6KH4Cp/q0c648XFoytinEg0zzHvvoU0Bpp6Zq/Muax3RH0ey+6KcTu5LYrHHs00HKl+WD30rYxpUTRlCDfuiOihB8P6fo2qA9nict3JC2h6eUvvc6QxH6i5tb0RMq8tIaU7vBly6Yl12fOwCybIL4tAcmHf1GFy6X8kD4Db2swWgKXJ+tWfK+Xdrm9aXxphr9Z/lGlwMfcsXeRA49WGgNMCFXtEAjTue/VO93wbPNWORveMtyrsstcvsH+AW0X/0WLwkdARuHXgd59BVtysCK4aepUUQ32VPQGPKtdCSA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_22b7ac54-6e8f-9102-bd13-51896c77faef",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2363,
+      "completion_tokens": 433,
+      "total_tokens": 2796,
+      "cost": 0.007132,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007132,
+        "upstream_inference_prompt_cost": 0.004534,
+        "upstream_inference_completions_cost": 0.002598
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that homogeneous float32 pandas input not be upcast to float64 (via MaxAbsScaler/check_array), but the FAIL_TO_PASS test encodes many unstated mixed-dtype and FLOAT_DTYPES casting rules. A reasonable fix of the reported float32 case could still fail those extra assertions.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that homogeneous float32 pandas input not be upcast to float64 (via MaxAbsScaler/check_array), but the FAIL_TO_PASS test encodes many unstated mixed-dtype and FLOAT_DTYPES casting rules. A reasonable fix of the reported float32 case could still fail those extra assertions.",
+  "prompt_tokens": 2363,
+  "completion_tokens": 433,
+  "total_tokens": 2796,
+  "cost_usd": 0.007324000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

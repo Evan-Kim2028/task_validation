@@ -1,0 +1,85 @@
+2026-09-11 23:29:50,321 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:30:01,118 - INFO - Creating container for django__django-12039...
+2026-09-11 23:30:01,932 - INFO - Container for django__django-12039 created: c2bff1277d95390f19b9c2b65b29da028d570e28c5fb26c47e738a70878228f3
+2026-09-11 23:30:02,225 - INFO - Container for django__django-12039 started: c2bff1277d95390f19b9c2b65b29da028d570e28c5fb26c47e738a70878228f3
+2026-09-11 23:30:02,226 - INFO - Intermediate patch for django__django-12039 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-12039/patch.diff, now applying to container...
+2026-09-11 23:30:02,363 - INFO - >>>>> Applied Patch:
+Checking patch django/db/backends/ddl_references.py...
+Applied patch django/db/backends/ddl_references.py cleanly.
+
+2026-09-11 23:30:03,443 - INFO - Git diff before:
+diff --git a/django/db/backends/ddl_references.py b/django/db/backends/ddl_references.py
+index 44e49806f8..ba55de1df8 100644
+--- a/django/db/backends/ddl_references.py
++++ b/django/db/backends/ddl_references.py
+@@ -83,10 +83,14 @@ class Columns(TableColumns):
+ 
+     def __str__(self):
+         def col_str(column, idx):
++            col = self.quote_name(column)
+             try:
+-                return self.quote_name(column) + self.col_suffixes[idx]
++                suffix = self.col_suffixes[idx]
++                if suffix:
++                    col = '{} {}'.format(col, suffix)
+             except IndexError:
+-                return self.quote_name(column)
++                pass
++            return col
+ 
+         return ', '.join(col_str(column, idx) for idx, column in enumerate(self.columns))
+ 
+@@ -114,7 +118,9 @@ class IndexColumns(Columns):
+             # length as self.columns.
+             col = '{} {}'.format(self.quote_name(column), self.opclasses[idx])
+             try:
+-                col = '{} {}'.format(col, self.col_suffixes[idx])
++                suffix = self.col_suffixes[idx]
++                if suffix:
++                    col = '{} {}'.format(col, suffix)
+             except IndexError:
+                 pass
+             return col
+2026-09-11 23:30:03,443 - INFO - Eval script for django__django-12039 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-12039/eval.sh; copying to container...
+2026-09-11 23:30:16,101 - INFO - Test runtime: 12.60 seconds
+2026-09-11 23:30:16,102 - INFO - Test output for django__django-12039 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-12039/test_output.txt
+2026-09-11 23:30:16,161 - INFO - Git diff after:
+diff --git a/django/db/backends/ddl_references.py b/django/db/backends/ddl_references.py
+index 44e49806f8..ba55de1df8 100644
+--- a/django/db/backends/ddl_references.py
++++ b/django/db/backends/ddl_references.py
+@@ -83,10 +83,14 @@ class Columns(TableColumns):
+ 
+     def __str__(self):
+         def col_str(column, idx):
++            col = self.quote_name(column)
+             try:
+-                return self.quote_name(column) + self.col_suffixes[idx]
++                suffix = self.col_suffixes[idx]
++                if suffix:
++                    col = '{} {}'.format(col, suffix)
+             except IndexError:
+-                return self.quote_name(column)
++                pass
++            return col
+ 
+         return ', '.join(col_str(column, idx) for idx, column in enumerate(self.columns))
+ 
+@@ -114,7 +118,9 @@ class IndexColumns(Columns):
+             # length as self.columns.
+             col = '{} {}'.format(self.quote_name(column), self.opclasses[idx])
+             try:
+-                col = '{} {}'.format(col, self.col_suffixes[idx])
++                suffix = self.col_suffixes[idx]
++                if suffix:
++                    col = '{} {}'.format(col, suffix)
+             except IndexError:
+                 pass
+             return col
+2026-09-11 23:30:16,162 - INFO - Grading answer for django__django-12039...
+2026-09-11 23:30:16,162 - INFO - report: {'django__django-12039': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_descending_columns_list_sql (indexes.tests.SchemaIndexesTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_columns_list_sql (indexes.tests.SchemaIndexesTests)', 'test_index_name (indexes.tests.SchemaIndexesTests)', 'test_index_name_hash (indexes.tests.SchemaIndexesTests)', 'test_index_together (indexes.tests.SchemaIndexesTests)', 'test_index_together_single_list (indexes.tests.SchemaIndexesTests)', 'test_create_index_ignores_opclasses (indexes.tests.SchemaIndexesNotPostgreSQLTests)', 'test_boolean_restriction_partial (indexes.tests.PartialIndexTests)', 'test_integer_restriction_partial (indexes.tests.PartialIndexTests)', 'test_is_null_condition (indexes.tests.PartialIndexTests)', 'test_multiple_conditions (indexes.tests.PartialIndexTests)', 'test_partial_index (indexes.tests.PartialIndexTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12039: resolved: True
+2026-09-11 23:30:16,163 - INFO - Attempting to stop container sweb.eval.django__django-12039.tv100-gold...
+2026-09-11 23:30:31,862 - INFO - Container sweb.eval.django__django-12039.tv100-gold stopped successfully.
+2026-09-11 23:30:31,862 - INFO - Attempting to remove container sweb.eval.django__django-12039.tv100-gold...
+2026-09-11 23:30:31,926 - INFO - Container sweb.eval.django__django-12039.tv100-gold removed successfully.

@@ -17,7 +17,7 @@ from task_validation.evidence.independence import CheckResult
 from task_validation.evidence.mutation import harbor_file_mutants
 
 
-def _run_harbor(task_dir: Path, agent: str, jobs_out: Path, name: str, timeout: int) -> dict:
+def run_harbor_trial(task_dir: Path, agent: str, jobs_out: Path, name: str, timeout: int) -> dict:
     jobs_out.mkdir(parents=True, exist_ok=True)
     t0 = time.monotonic()
     cmd = [
@@ -37,16 +37,26 @@ def _run_harbor(task_dir: Path, agent: str, jobs_out: Path, name: str, timeout: 
         "-o",
         str(jobs_out),
     ]
-    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+        rc = proc.returncode
+        err = (proc.stderr or "")[-800:]
+    except subprocess.TimeoutExpired:
+        rc = None
+        err = f"timeout after {timeout}s"
     elapsed = time.monotonic() - t0
     reward = _latest_reward(jobs_out, name)
     return {
         "cmd": cmd,
-        "returncode": proc.returncode,
+        "returncode": rc,
         "elapsed_sec": elapsed,
         "reward": reward,
-        "stderr_tail": (proc.stderr or "")[-800:],
+        "stderr_tail": err,
     }
+
+
+def _run_harbor(task_dir: Path, agent: str, jobs_out: Path, name: str, timeout: int) -> dict:
+    return run_harbor_trial(task_dir, agent, jobs_out, name, timeout)
 
 
 def _latest_reward(jobs_out: Path, job_name: str) -> float | None:

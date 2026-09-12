@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14702",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1081
+  },
+  "response": {
+    "id": "gen-1789190710-Qxi33F2NmTEqwWPbGbg4",
+    "object": "chat.completion",
+    "created": 1789190710,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly asks to distinguish votable Table repr from astropy.table.Table by using a VOTable prefix, with an explicit example. The FAIL_TO_PASS checks only that repr starts with <VOTable, which matches that request without extra unstated constraints.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about changing the representation of votable.tree.Table from looking like astropy.table.Table to something like `<VOTable length=4>`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about changing the representation of votable.tree.Table from looking like astropy.table.Table to something like `<VOTable length=4>`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "xqllY7TtL2g09kZNTdIxYi0lXNMNY1uhO2MKESxLWzhypyogjsgMvVKrHCWQtz0qKEyfZDtnZa0mujOnTChlnShTu8Y2BQOVfRq5uLWdfT/XyYmUjS8y2kpAagz+yRt26xh0NFGqcgTYOhn4wZQ71P1EbjPl4Nf4/Q0a2DB/cPeIR4R9RxlKqNPVA2O5Dhqm0xAUqLDiaOPbfCZCPFHiIfr45aW31lQprti8+Up4ouoc7KgxsNogf7K2vi3m2+he/uG9VLxqJjw1K60C3oweg20W1iE26YxV3ZSZOdiBrSy7UP8K0GuR7+OBMvZogaY1uE0RFXbI/+GW97gMJcOSGqiY3JSkR0gtAc5yZBWn7Y/KuwEJNZ/FY8WN/jCwjn8xu8IM6dqiU4EW3OxLUC/NFVmhFX2jnyQUlK4XJnqSg+0Qobo/8wK+1Gm7eLoRfZr6QYEd4d99//TO99WP2N79nd4KR6DBUXXibAiuZV5ygqVO1I3SpAEOqlivkaawcYa1pcKml2by2Ykaf7BLjO6nNFpQj/LZH72T4sQ1tmPCBUABFW/E/FESDmg/gnjnRIDBYgc/6GcP9rGTYMFzjBDNNmcu56/zBXstoJUlVyWTxxkV7xSyv1RIq9wY6g5jmr6OnGr5Y06bjkj+yGUrIEFLOcJuyhD3kNZ9ZaA3XrI/Ja54VydvDikmswKNtnjFYhwNgXS9JeEt5sApzEqtrTpkOATaAEfNvej5duAfh92nbuL1D8MMBUYuOQVqqTWKLjnBdaLJQrYEsmQCeAAP8rZh0KGIiofknfT01NmkNsP+OexnunAZ0tdUyfr3cXZtZZ6QVYhACk6C2LPUWQdA36eBw/NRp3uyAraS2wVd7f3ajIszAGfEGpzYJ33hFOzIAHkU3G9Fx/uEMahtnV/SpnmhaIK0l/baTv6p97uHM5YiJzvzFsF/FeDP6Pw++XO+3eBNKC6yZec32P0PvZ5CKCjm+eplPFoZfLqIyD5YQKiYVWmq5Ij1tFF/zD3Li+rCBHVZ3Ax2TAyDnCYm22jAigvboangPNGzYhf1xe0uWY5COMXZpYx7fap5kPM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3a46bbf1-bc5d-9b51-ab7e-3540de284bb5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1549,
+      "completion_tokens": 307,
+      "total_tokens": 1856,
+      "cost": 0.004748,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004748,
+        "upstream_inference_prompt_cost": 0.002906,
+        "upstream_inference_completions_cost": 0.001842
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 197,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly asks to distinguish votable Table repr from astropy.table.Table by using a VOTable prefix, with an explicit example. The FAIL_TO_PASS checks only that repr starts with <VOTable, which matches that request without extra unstated constraints.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly asks to distinguish votable Table repr from astropy.table.Table by using a VOTable prefix, with an explicit example. The FAIL_TO_PASS checks only that repr starts with <VOTable, which matches that request without extra unstated constraints.",
+  "prompt_tokens": 1549,
+  "completion_tokens": 307,
+  "total_tokens": 1856,
+  "cost_usd": 0.00494,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

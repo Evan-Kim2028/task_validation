@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25404",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1923
+  },
+  "response": {
+    "id": "gen-1789187668-0RLGRzsj2IN9hO8Z7PZ2",
+    "object": "chat.completion",
+    "created": 1789187668,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly reports that LassoSelector.set_props fails because _props is missing and even points at the offending update, so a competent engineer knows to make set_props work via the selection artist. The FAIL_TO_PASS test only checks that constructor props and set_props update LassoSelector line color and alpha, which is exactly the reported bug.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about LassoSelector missing `_props` when calling `set_props`. The proposed fix is commenting out `self._props.update(props)` in `set_props`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LassoSelector missing `_props` when calling `set_props`. The proposed fix is commenting out `self._props.update(props)` in `set_props`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "dSNYYWwC6ZQDHz9rndEA2Kx+YS0ya2kYmnhhALVRoQugFj/SxYtwjp+49UerXMgznTtAhTg8UAf0VBenuXyInVdI8ty5JkzaMkF5YejVFPcVN2iFp6q3X1vnKSy0Tla2y++9MnsP00uMau58NVefvqvYlOD3DaRLlF7XhhsEVmKJ0X5NPvxZh4KlhwbpH129VY2tuYz5AY8cNQRKbwe5+N0LYOxgMXsId/bkxQBPe3KA0yasTmlde44hgzKkMDnn9kmZ4CmhgQtKNXYhTnCNMWPmW+cIca0jjzErRdpL8mQBK5xN3gR8YdrFc7zxIIxNb3tl8iYTdDeeoOtlghCDLxfHW033TtQR8lY1b3zoMmIkfsfqiSux4p/kq+8RPh5goxb1eTKXBN4V0AXyz47BwG863ZtSU8UvJlf+vVSrd/Asc2AqRQigsTxvGqvJFIL6Ez/wuvRJdBn58ka797rqH1tMmoRPDf87bSCeiDpkAPPyq63FOFHbZnEqp6OV+bLTJfOVjGA/4l/9zusGbgK2XIIL78kSO2/gqUtMpuXFNdt7zdigFLtzz17OuBe6TJpAODbucPCrdf+Dn20Rmw65AUsh1l+xiHQ4jEOiFU7b9KEa14vj1lT8r42N0kw7xvJYs8/L8ZHQqh9zIZe0ntLgeMFeKAmGdHMsGafe7nVSv2JxLyJ6dYXweps5zmyYRImzSa1ZkjtiCx5v0b3S0EENNCQPiIAn/1cUeG20ufXK/F68sx7Op5exVR575YgsfTtHKmzxPRSZoap3cm5tLg4bhpfckH7LrP40FqS1hiTcdpsiNjYQK2GRgfU/jr9ZtPQ6L4E9+hrcz30R8OQ1chXwe1UFfXGX54JY5tbqVsdCClTGR7mEWlitZLd1zf5yvH5LG2PUUPzzCaIBnONIvnWF4ETj1EBw5qVDwEb+wvwgPEclpPlbK3Xp7IvFHYYMEjfePefYpabfA2PuRmcQk+btYVd3WVSb6lezF6tBaNswuP82dSvi3wVJNQFeg1eh+tVPWWGnTau53nqjMCHZ/cxyW1FX6lpalTkoaaF7CxLVKoAYFD4nbXQVU3fz4p/+vJmBPrDOfVSyGB4G0iTZPzQWB98sXpGYXInQilAtoEsKJbrCX8ZKCFVZq8CNGjcngkGwyoiDpCghDrjm2gujwjsV4AtKr/yM5c58JUp67TKLMpp0x2OtwHnZfDd0oUBrYUGnl/ZgdMrH5a1B9vzC7skwlhUfInbGpjA+pM7Ata5pnb9rQi8P2uIeXp2gc00vVtS/Kq42G2dseM4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a3c58afd-8bac-9341-820e-9de074876d8f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2385,
+      "completion_tokens": 363,
+      "total_tokens": 2748,
+      "cost": 0.006756,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006756,
+        "upstream_inference_prompt_cost": 0.004578,
+        "upstream_inference_completions_cost": 0.002178
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 235,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly reports that LassoSelector.set_props fails because _props is missing and even points at the offending update, so a competent engineer knows to make set_props work via the selection artist. The FAIL_TO_PASS test only checks that constructor props and set_props update LassoSelector line color and alpha, which is exactly the reported bug.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly reports that LassoSelector.set_props fails because _props is missing and even points at the offending update, so a competent engineer knows to make set_props work via the selection artist. The FAIL_TO_PASS test only checks that constructor props and set_props update LassoSelector line color and alpha, which is exactly the reported bug.",
+  "prompt_tokens": 2385,
+  "completion_tokens": 363,
+  "total_tokens": 2748,
+  "cost_usd": 0.006948,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

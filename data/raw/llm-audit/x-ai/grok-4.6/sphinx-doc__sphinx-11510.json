@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-11510",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "a5b2b9ad-d8c7-9d78-bc30-c4255fed5910",
+    "object": "chat.completion",
+    "created": 1789194148,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly requires source-read handlers to affect RST included via include so substitutions appear in the parsed document, which a competent engineer could implement. The FAIL_TO_PASS tests add extra, only lightly implied cases (start-line slicing, nested includes, and not emitting source-read for literal text includes) that slightly narrow the spec without fully mismatching it.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4354,
+      "completion_tokens": 129,
+      "total_tokens": 4865,
+      "prompt_tokens_details": {
+        "text_tokens": 4354,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 382,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 36767600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly requires source-read handlers to affect RST included via include so substitutions appear in the parsed document, which a competent engineer could implement. The FAIL_TO_PASS tests add extra, only lightly implied cases (start-line slicing, nested includes, and not emitting source-read for literal text includes) that slightly narrow the spec without fully mismatching it.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly requires source-read handlers to affect RST included via include so substitutions appear in the parsed document, which a competent engineer could implement. The FAIL_TO_PASS tests add extra, only lightly implied cases (start-line slicing, nested includes, and not emitting source-read for literal text includes) that slightly narrow the spec without fully mismatching it.",
+  "prompt_tokens": 4354,
+  "completion_tokens": 511,
+  "total_tokens": 4865,
+  "cost_usd": 0.011774,
+  "cost_in_usd_ticks": 36767600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3187
+}

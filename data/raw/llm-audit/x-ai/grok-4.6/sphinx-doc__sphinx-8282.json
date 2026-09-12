@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8282",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "8f033150-6098-903c-a8f7-1928b0459486",
+    "object": "chat.completion",
+    "created": 1789194232,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly requires autodoc_typehints='none' to drop types on overloaded callables, which a competent engineer can implement from the report. The FAIL_TO_PASS check only covers 'none' on a fixed fixture and expects a single implementation signature rather than stripped overload lines, which is slightly more specific than the text.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2356,
+      "completion_tokens": 122,
+      "total_tokens": 2962,
+      "prompt_tokens_details": {
+        "text_tokens": 2356,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 484,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25119200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly requires autodoc_typehints='none' to drop types on overloaded callables, which a competent engineer can implement from the report. The FAIL_TO_PASS check only covers 'none' on a fixed fixture and expects a single implementation signature rather than stripped overload lines, which is slightly more specific than the text.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly requires autodoc_typehints='none' to drop types on overloaded callables, which a competent engineer can implement from the report. The FAIL_TO_PASS check only covers 'none' on a fixed fixture and expects a single implementation signature rather than stripped overload lines, which is slightly more specific than the text.",
+  "prompt_tokens": 2356,
+  "completion_tokens": 606,
+  "total_tokens": 2962,
+  "cost_usd": 0.008348,
+  "cost_in_usd_ticks": 25119200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1476
+}

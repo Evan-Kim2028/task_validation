@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14199",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 783
+  },
+  "response": {
+    "id": "gen-1789191382-UUr8Z8eYpqggDpK2UKGS",
+    "object": "chat.completion",
+    "created": 1789191382,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly describes a crash when annotating with Value and DecimalField on SQLite and gives a concrete example. The FAIL_TO_PASS test reproduces that example and only checks that the annotation succeeds and returns 1.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is: Value() with DecimalField crashes on SQLite. Example: SomeModel.objects.all().annotate(shear_length=Value(1, output_field=DecimalField()))\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: Value() with DecimalField crashes on SQLite. Example: SomeModel.objects.all().annotate(shear_length=Value(1, output_field=DecimalField()))\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "D9KdQ7Hlpi0hbe+gcMJh5sIJEp0wBNUuHv+6GY2scEci0zdo1ifWtbJM4VIarcMH3y9ktPQfI3yAUe5F5/wk9jayssjFQHGfSUKGISuZeUJRWyqj7DY4u9mHG8mhetjdOvfvA9d7b9r9uhlmxMoQ4UI/v2yhReGf34+w4IBwfgqXndSKNHeUM927HS2pwxCuLMRQ430v1vLl06aks2DnpkFarib1I9jVzBJX063uye5rPLQpAbrIe7aR/ql7iStdfHuifT0MCFXhnZkSzqX6JgRkZ73KaCebYc7JSnPzcN2KXLJqCcYXCwgHKlc9QyTRkAg6SO0pm+MNiiM3rQ05wP5O381eU3u1rGS9PYUFq1lqQvRle3IC6bfuLi4XdkwaerBL6keqYNW1UNEGScOlp8kCBYysKx2eVMWTsAQSWROHEhXBllqMK4rRTUkrNO/BBb5GGkfL2lcGNM+Dh69BBXU7xYp40c16e0IaV/NR4SPSAeiEQgStOBfOo32L/R+DiAH3HRJ5/qVoxZwNj/SF4jhmtqctI6zC/qy2tQyNIFnCNi3xPCRsTrNIxL27ojdpaQqR6rZULdaeVhMNI32wNUHkeiZkX/n1NlWcwlJb5EjJkYUhQFyiFXwbtYUtlO7/OoL4wZ7+N/ynyYw5M0wYE/BeXnkcL2ZIawxRQcP3y9FV6eqYoJ1BQXS8hnuHlj9UEKU8mygIUFXJLiM/Jpo5tTVka1yWkkSagJOOMt15MyBZ4lKtsphy9vuthBLb3bt4X8W2H8scZSJrMQd1VeJZ7SpQYGkN85GRXmWW+b3LY+AdytrCB9fqRBeoV84KQC2V3zpbpIYWMbRHrWHi5/VvNMt00JJT3AP1oOnXp9xvHWd+zX+bM/gJxPMVXHqoyu1xO1A60bZpize5fqKKm0cJTTljJG5l.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_38674094-9533-9d16-9554-72d291a319d4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1067,
+      "completion_tokens": 272,
+      "total_tokens": 1339,
+      "cost": 0.003382,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003382,
+        "upstream_inference_prompt_cost": 0.00175,
+        "upstream_inference_completions_cost": 0.001632
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 172,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly describes a crash when annotating with Value and DecimalField on SQLite and gives a concrete example. The FAIL_TO_PASS test reproduces that example and only checks that the annotation succeeds and returns 1.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly describes a crash when annotating with Value and DecimalField on SQLite and gives a concrete example. The FAIL_TO_PASS test reproduces that example and only checks that the annotation succeeds and returns 1.",
+  "prompt_tokens": 1067,
+  "completion_tokens": 272,
+  "total_tokens": 1339,
+  "cost_usd": 0.0037660000000000003,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15828",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2619
+  },
+  "response": {
+    "id": "gen-1789191685-YwUmahMffmcpgEK5dwVw",
+    "object": "chat.completion",
+    "created": 1789191685,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue explicitly requires deconstruct and equality to consider violation_error_message, which is exactly what the FAIL_TO_PASS tests assert via clone, deconstruct kwargs, and Check/UniqueConstraint equality. Extra gold-patch details about default messages are not required by those tests.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is: BaseConstraint.deconstruct() and __eq__ operators don't take violation_error_message into account.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: BaseConstraint.deconstruct() and __eq__ operators don't take violation_error_message into account.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2fddd6e7-5c3c-97b2-ad22-fc12c28708bb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2883,
+      "completion_tokens": 439,
+      "total_tokens": 3322,
+      "cost": 0.008016,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008016,
+        "upstream_inference_prompt_cost": 0.005382,
+        "upstream_inference_completions_cost": 0.002634
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 327,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue explicitly requires deconstruct and equality to consider violation_error_message, which is exactly what the FAIL_TO_PASS tests assert via clone, deconstruct kwargs, and Check/UniqueConstraint equality. Extra gold-patch details about default messages are not required by those tests.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue explicitly requires deconstruct and equality to consider violation_error_message, which is exactly what the FAIL_TO_PASS tests assert via clone, deconstruct kwargs, and Check/UniqueConstraint equality. Extra gold-patch details about default messages are not required by those tests.",
+  "prompt_tokens": 2883,
+  "completion_tokens": 439,
+  "total_tokens": 3322,
+  "cost_usd": 0.0084,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

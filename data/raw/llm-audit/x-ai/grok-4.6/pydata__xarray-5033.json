@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-5033",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1496
+  },
+  "response": {
+    "id": "gen-1789192283-8VZEE1siWCO1hKbucMEn",
+    "object": "chat.completion",
+    "created": 1789192283,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks to pass a custom function as engine, but the FAIL_TO_PASS test only accepts a BackendEntrypoint subclass and would fail a function-based solution. That API is not specified in the issue, so a reasonable implementation matching the request would not pass.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue asks to allow passing a function as the engine parameter, like `engine=engine` from custom_backend. The tests require passing a class that subclasses BackendEntrypoint, not a function.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to allow passing a function as the engine parameter, like `engine=engine` from custom_backend. The tests require passing a class that subclasses BackendEntrypoint, not a function.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ZRAAYHiV4RObZCPwbSzbBxKcFulyBemNi8BYg9n/Ciu+lEf+n6X2cezFf2zvOphHeChbjkuoJ5FefxUTpk90Sm5NXLmUXCPUy7TAWgZg0T+mIGi5SCr54P48ueYY17o5YF6nArxDxmDoAnYRq8c5oeqsAK0MecphXJgYYb71aNl4AUkRxFPNsQLLSoUt0la4CFNIy8CGNc26jaRRK+aV2ezIUWpTx2lhomKEp1y5MN49wejiJQVErAthv5g7tTtEILv+6rhAkskp5TWJaFCNG4lgefjbVtP3bkOdNbIhAmIH6OwjtLV2+R7/OdjFf040NcVuYzoGBiDK0IkgQrmRsiKVpqZgkEOGPKBmd39eIiGc75/gxU+KT8sFl82v3ffRoRjMgy+HEI3unb3/tNhLKIWxdWfQtP9xVv8ABTp/Yz+ifX9W67ihDcN5z3MpYJNBcEAqSfnfrOGg6FU8o0pgyIM1m1zF5BkTMGc38pbDL002+zcue1unCI6zQNnu75csfklUdQZepfoKpn0G9xZoP4kGi/KTZ5js03R2oqmCkpWDPwRo1VW3nC24aGVMcuEFf+UFMjNy2fMjpT+SAcwg/ALOiCZAGqOmEwH6pT/7OiGRgfbSHoGkSLmRVD8Kvb8lQiATFv7o5wCbvPUaH9Z8PkXV5PahxcHdJNmqYkLbWzBa9eyPVjxCJ0OhP+xkxnYs/LKMaxkerN2Qztz24LAI9yqbyjnRtnmNfaDk6c+lP38U8AAK27yUbe3FJJJSVBW4HT5Wu2m+CZWV2BpE872AdYzIal1jOfqYqK/BT3RfJpwmc/N4yM4/CPRlN3ctGDJfnjYguq+iBX3fDLcg9brcuYQXYB5Lf5nqJrmj1Ur6oCUhWqwVfd8i9Vaf1Y+Dae0wY1DAibVOXOsozgUzTbm/KN521ZIHrFd/u5On3gIroHwH/IgZCY4BsUatjDUAbAxPHWjd3OKadVkGmBw5QQu92WP6b29FQbJaNCCS6+zGQeHnsMxiWNlG4z714+vuEN3wTsAQLeYgYGhqj/dd/tu0/vPeroh8uLXoKQ+aI/RNlD3Qcvig1Aqbf0A5Ox47Tt31rWlZ6hbzXjOzwxPrj4Q4j0cwXAIy4kFRKn5ohCb9j6otNzyefgLZdXqxEaMsW3zPEx0wwQGDSAev9BGW4ExL+P4rVL1TWyu8EEC4UIcjoGzJq+9bI0wCluGUYiysBDaGwg/jp6HD6bthXUJjb7+zX+bEtutO1gyUQHzGeLOIiRpnPGLI1oqdXqHLcJru5xwlzbvGo3EZmq6AJG4SzLVrlgmD+bG1ituz/6rdE5nb+3kPMfOw5JPkVGJC1Z/0Kq9uViASlUt2mJmhILjFPaI7b4jSBFXTOmOAJGayLY/xn9pI0zMBnNAFChMcg+AeT+ngtHnRzcqZHelnElf7h+NGe05yWAyDxEy7mG1vAvhFfS3msfdb1Ve7UQ1HROAtoPhDvWOGjWuvtJazK9mYw3JwbD4vdEqdScJaFc92rbX0KAKU0eteLI7JYserTcq1cHjlca3HulwAMWhYxfICq4Gr2gJKsNyh02G9iYCaqPumVE9+MyKNZjFpQo2Weg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_533ef54f-95ab-93ac-9dbc-43bace86f3e6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1854,
+      "completion_tokens": 389,
+      "total_tokens": 2243,
+      "cost": 0.005658,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005658,
+        "upstream_inference_prompt_cost": 0.003324,
+        "upstream_inference_completions_cost": 0.002334
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 278,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks to pass a custom function as engine, but the FAIL_TO_PASS test only accepts a BackendEntrypoint subclass and would fail a function-based solution. That API is not specified in the issue, so a reasonable implementation matching the request would not pass.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks to pass a custom function as engine, but the FAIL_TO_PASS test only accepts a BackendEntrypoint subclass and would fail a function-based solution. That API is not specified in the issue, so a reasonable implementation matching the request would not pass.",
+  "prompt_tokens": 1854,
+  "completion_tokens": 389,
+  "total_tokens": 2243,
+  "cost_usd": 0.0060420000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

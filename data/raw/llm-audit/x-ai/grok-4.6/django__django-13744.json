@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13744",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2368
+  },
+  "response": {
+    "id": "gen-1789191307-hpf4hXjo2skKQugTV9NS",
+    "object": "chat.completion",
+    "created": 1789191307,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to deprecate MemcachedCache for 3.2/4.1 but does not specify warning text, category, or that it must fire on construction. The FAIL_TO_PASS test requires an exact RemovedInDjango41Warning message, so many reasonable deprecations would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is to deprecate MemcachedCache in Django 3.2 and remove in 4.1. The test checks for a specific warning message: 'MemcachedCache is deprecated in favor of PyMemcacheCache and PyLibMCCache.' a...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is to deprecate MemcachedCache in Django 3.2 and remove in 4.1. The test checks for a specific warning message: 'MemcachedCache is deprecated in favor of PyMemcacheCache and PyLibMCCache.' a...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+y6bNc8K5sYGZEwA347GqlSKmeglft2xITPU7+ra9/uO5bXgcTpzo4IBNwu1oHiTKVhrWT/mN40i2YPTjBnvlfJlSJ6lLAJQM6Gx2G+XSBVjqEzxhf3zV5MDvztD4OWBnl3lOHVqpfaYgnmWsStmCBbTPqeA8NDTiRUQP2SSJiBA6t4sO+zHIcCVaodxNXH6AoGQ+Gd/KIg2nEfrXaxpshDiJcwZSRLhF3ik6/cZIydFsR/VzGKQ5BbcUXBBP16jrN+xsGIg7bEmwXGx/4cH3TfcPBjS4s7KQoe4/xdegOZOLJOc8cS8qVAOOLByKnRWQEhlexWyPIzDZnWbQ2G7nwOyU+Ja0GIRDO8ctYeEzQGgXEAeRVYTkFVBct6AcvJkRZ7uiwO8WOMBJh0dtYXU6+A7x2UsgWL+0a99E4GwmlbIsqWOQBDhhn3uUGsb6EJMEffMkHkucERXXGc2/g5fd6IgFI56/3bAHqq01pocdfSWsF5dGOvxNEmdgmh9w9xO2gX2oHqDnQLLWdKndG/2k3EHND2J/D2f8xSxtqrGMet/WQDjr3JCP7dDPl1vu1Bu2ZM8IvyhW4eU23L3SGXtgEU2LrwewriHctomPEdGnnFzaDeJ5O8+Z6zTMZ9GBQ3ZJG0rhvaenPTLWQjwIEJql7MnKmfx61/6/blkAbRrNG6T90v+lzN38I4w6IHhaJffOmr6uYuayMNGcV3/UxsRxijMn0xcZSF0KyyGY1b7s8II6JxXq5ldAJ9NJ0zQTvnj7UFsVmxkoSCCRxI5CiuCUHLw/5HTD4HGO7Bx6MlWOwhd2Fl2IcYg3mss+BAN2G3g0UMfl01rxFhkrhItLRUS5aRZ8eQHYHLFEF/uuCFDOVpdG2WfIX3FiBRVQhsAUuK+rr1nrv4bVl8mXn5GQFzMfdXWYqPInoTbPUyA+1sUVfwEl77fTLqHQ9Yl+IcGAV3BZW9jFtgwAskO+6xxIjCRYfn3XYh/1igMfjc+AiMoeOl8dfk0NMwymG+w3sBLH4avYqPxOfWf6d/YY8k8xibro39pRuGSXg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fe89dc77-8d70-9108-85b4-17f9b48f5f30",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 307,
+      "total_tokens": 3116,
+      "cost": 0.007076,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007076,
+        "upstream_inference_prompt_cost": 0.005234,
+        "upstream_inference_completions_cost": 0.001842
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 191,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to deprecate MemcachedCache for 3.2/4.1 but does not specify warning text, category, or that it must fire on construction. The FAIL_TO_PASS test requires an exact RemovedInDjango41Warning message, so many reasonable deprecations would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to deprecate MemcachedCache for 3.2/4.1 but does not specify warning text, category, or that it must fire on construction. The FAIL_TO_PASS test requires an exact RemovedInDjango41Warning message, so many reasonable deprecations would fail.",
+  "prompt_tokens": 2809,
+  "completion_tokens": 307,
+  "total_tokens": 3116,
+  "cost_usd": 0.00746,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

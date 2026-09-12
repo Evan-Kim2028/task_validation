@@ -1,0 +1,121 @@
+{
+  "n_tasks": 16,
+  "family_grade": {
+    "nop": {
+      "grade": "A",
+      "reason": "empty agent applies no solution",
+      "justified": true
+    },
+    "preserve": {
+      "grade": "A",
+      "reason": "comment-only change is a no-op relative to the reference script, not an independent correctness claim",
+      "justified": true
+    },
+    "reference": {
+      "grade": "B",
+      "reason": "author/oracle solution; not mechanically guaranteed",
+      "justified": true
+    },
+    "revert_gold": {
+      "grade": "B",
+      "reason": "environment file is the constructed pre-fix state when it differs from solution",
+      "justified": true
+    },
+    "preserve_equivalent": {
+      "grade": "B",
+      "reason": "equivalent rewrite grounded in the instruction (hello-world echo), not tests",
+      "justified": true
+    },
+    "alter_output": {
+      "grade": "B",
+      "reason": "instruction names the required output",
+      "justified": true
+    },
+    "break_boundary": {
+      "grade": "B",
+      "reason": "instruction names the required string; case is a pinned token",
+      "justified": true
+    },
+    "remove_required": {
+      "grade": "C",
+      "reason": "dropping the last apply line is a heuristic; remaining gold may still satisfy the verifier",
+      "justified": false
+    },
+    "observe": {
+      "grade": "D",
+      "reason": "spec-ambiguous; unlabeled on purpose",
+      "justified": false
+    }
+  },
+  "mean_rates_all_executed": {
+    "correct_accept": 0.875,
+    "variant_accept": 0.875,
+    "incorrect_reject": 0.9791666666666666,
+    "false_accept": 0.020833333333333332,
+    "false_reject": 0.125
+  },
+  "mean_rates_ab_only": {
+    "correct_accept": 0.875,
+    "variant_accept": 0.875,
+    "incorrect_reject": 1.0,
+    "false_accept": 0.0,
+    "false_reject": 0.125
+  },
+  "n_remove_required_false_accept": 1,
+  "information_vs_reference": {
+    "preserve": {
+      "n": 16,
+      "n_disagree_with_reference": 0,
+      "n_same": 16,
+      "disagree_frac": 0.0
+    },
+    "nop": {
+      "n": 16,
+      "n_disagree_with_reference": 14,
+      "n_same": 2,
+      "disagree_frac": 0.875
+    },
+    "remove_required": {
+      "n": 16,
+      "n_disagree_with_reference": 13,
+      "n_same": 3,
+      "disagree_frac": 0.8125
+    },
+    "revert_gold": {
+      "n": 12,
+      "n_disagree_with_reference": 10,
+      "n_same": 2,
+      "disagree_frac": 0.8333333333333334
+    },
+    "preserve_equivalent": {
+      "n": 1,
+      "n_disagree_with_reference": 0,
+      "n_same": 1,
+      "disagree_frac": 0.0
+    },
+    "alter_output": {
+      "n": 1,
+      "n_disagree_with_reference": 1,
+      "n_same": 0,
+      "disagree_frac": 1.0
+    },
+    "break_boundary": {
+      "n": 1,
+      "n_disagree_with_reference": 1,
+      "n_same": 0,
+      "disagree_frac": 1.0
+    },
+    "observe": {
+      "n": 1,
+      "n_disagree_with_reference": 0,
+      "n_same": 1,
+      "disagree_frac": 0.0
+    }
+  },
+  "minimum_battery": [
+    "reference",
+    "nop",
+    "revert_gold"
+  ],
+  "minimum_battery_note": "preserve_comments tracked reference on this pilot; remove_required is C"
+}

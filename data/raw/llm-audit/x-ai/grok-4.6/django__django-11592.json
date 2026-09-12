@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11592",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1012
+  },
+  "response": {
+    "id": "gen-1789190896-mewYtv1YDg6lRlMJJJCi",
+    "object": "chat.completion",
+    "created": 1789190896,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue explicitly asks to pass FileResponse.block_size as the second argument to wsgi.file_wrapper, which a competent engineer can implement without guesswork. The FAIL_TO_PASS test only checks that the wrapper receives FileResponse.block_size, matching the stated requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: pass FileResponse.block_size to wsgi.file_wrapper. The test checks that the FileWrapper receives FileResponse.block_size as the second argument.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: pass FileResponse.block_size to wsgi.file_wrapper. The test checks that the FileWrapper receives FileResponse.block_size as the second argument.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "VrhqEUAWLe8utvBxJ6W0yE3+O+qsQ1r0ONB1ZBQ0zmOk/j2akqgoczIDkqUV+f2RwlYFe0FWT0p3ftHEC6p5IFUR2PYaZgbKSeNZ4v8Ae9klGKKrnXiq2TSENqsdAsEe3HjWjdYNzm4QG+nfN46GcBdMuhJXPnPbPdakkS9vfWQXC9EM39ES5cYIILFF4uEYIkHEaxgqaqChV1j9bLErVo7MOR0TG2kTLSH3O/+tszmJE4QxJ4p7p9tjZ+xX5v787OVVYgF/o2V0Xa3UiuuiMRRi64NHKOa00YoCgIusmry4ofPMKdyaAKtT435XEEvpwwfrDSUhvJ/4A0KeWzgMlmvyS4Crk8/cUnR/pfBZlRZim45OKpYq8yliQZfJUkZKiAlOBb7r8jV7oUFXQOvbUzkAL+IVXbwqRrvBSYmB4AL3LBIB1UBT4rAb3NarlCIkqjpGQQUgzonlRSPCqjn81XLtdYULLBwNP0nsq1EUo3SdjBzoGT6YmeVOuiSUkLp6sL+Z/Y5GtTtKEeQnrBbMUkBMycRLuhpHHdK1PgV3dTtPbfPFk1JDh45wy0MDngkT/3HddwAuzqfuPTw21qdJ2ruCl0Eyv/xph7a/ZnN0P0Jr0/1WdlTbiltoO2ebqet62jGD12LRsldTXI0HLe23PYvioTITLYA/IQkrdF6CDZUWt/1g1cZ38mbl/rMlu6H9kSfryX7C0ddY3WUIpu1sZBTyq/PZOi2XoT43r128flaVYBHrhgsxTlKEpGWLh9GHdwj0K6BjFABkVbOAQRe8cCImP2xyGIaw7WoR9UyguvbKJCwfJUQzlQOMRiHs/Ptsp7nMKu3F90V8BaGqRfcir8jY5YQCbzDRUDuTYrFWk8FSuODg3riq6Kwsgfe45sjkTBY7O2mT.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_94838be1-b6a9-932c-b831-042cc116564f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1361,
+      "completion_tokens": 273,
+      "total_tokens": 1634,
+      "cost": 0.004168,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004168,
+        "upstream_inference_prompt_cost": 0.00253,
+        "upstream_inference_completions_cost": 0.001638
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 159,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue explicitly asks to pass FileResponse.block_size as the second argument to wsgi.file_wrapper, which a competent engineer can implement without guesswork. The FAIL_TO_PASS test only checks that the wrapper receives FileResponse.block_size, matching the stated requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue explicitly asks to pass FileResponse.block_size as the second argument to wsgi.file_wrapper, which a competent engineer can implement without guesswork. The FAIL_TO_PASS test only checks that the wrapper receives FileResponse.block_size, matching the stated requirement.",
+  "prompt_tokens": 1361,
+  "completion_tokens": 273,
+  "total_tokens": 1634,
+  "cost_usd": 0.00436,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

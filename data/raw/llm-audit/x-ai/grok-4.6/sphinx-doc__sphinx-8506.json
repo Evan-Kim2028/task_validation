@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8506",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "8b1c88e1-0314-9889-86e6-05180cd9daa1",
+    "object": "chat.completion",
+    "created": 1789194241,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that previously accepted option:: text such as [enable=]PATTERN not be rejected, and even suggests treating any string as valid, without defining how names versus arguments should be split or indexed. The FAIL_TO_PASS checks a particular desc_name/desc_addname split and object id that a reasonable fix (accept the whole signature as the option name) would not produce.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2052,
+      "completion_tokens": 136,
+      "total_tokens": 2516,
+      "prompt_tokens_details": {
+        "text_tokens": 2052,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 328,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 20808000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that previously accepted option:: text such as [enable=]PATTERN not be rejected, and even suggests treating any string as valid, without defining how names versus arguments should be split or indexed. The FAIL_TO_PASS checks a particular desc_name/desc_addname split and object id that a reasonable fix (accept the whole signature as the option name) would not produce.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that previously accepted option:: text such as [enable=]PATTERN not be rejected, and even suggests treating any string as valid, without defining how names versus arguments should be split or indexed. The FAIL_TO_PASS checks a particular desc_name/desc_addname split and object id that a reasonable fix (accept the whole signature as the option name) would not produce.",
+  "prompt_tokens": 2052,
+  "completion_tokens": 464,
+  "total_tokens": 2516,
+  "cost_usd": 0.006888,
+  "cost_in_usd_ticks": 20808000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1299
+}

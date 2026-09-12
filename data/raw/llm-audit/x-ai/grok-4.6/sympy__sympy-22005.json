@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-22005",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "ec43e9a1-44d7-930c-9f0f-725f9c207ef2",
+    "object": "chat.completion",
+    "created": 1789194813,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that non-zero-dimensional systems should raise NotImplementedError, including the y-only polynomial case that currently returns a finite tuple. The FAIL_TO_PASS checks only that both reported inputs raise that exception, which matches the requested behavior without extra unstated constraints.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1999,
+      "completion_tokens": 113,
+      "total_tokens": 2439,
+      "prompt_tokens_details": {
+        "text_tokens": 1999,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 327,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 19305200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that non-zero-dimensional systems should raise NotImplementedError, including the y-only polynomial case that currently returns a finite tuple. The FAIL_TO_PASS checks only that both reported inputs raise that exception, which matches the requested behavior without extra unstated constraints.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that non-zero-dimensional systems should raise NotImplementedError, including the y-only polynomial case that currently returns a finite tuple. The FAIL_TO_PASS checks only that both reported inputs raise that exception, which matches the requested behavior without extra unstated constraints.",
+  "prompt_tokens": 1999,
+  "completion_tokens": 440,
+  "total_tokens": 2439,
+  "cost_usd": 0.006638,
+  "cost_in_usd_ticks": 19305200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1082
+}

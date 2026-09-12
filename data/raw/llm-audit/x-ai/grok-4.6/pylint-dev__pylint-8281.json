@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-8281",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1917
+  },
+  "response": {
+    "id": "gen-1789192834-r1LWNTc4QGu5s1bCQrCZ",
+    "object": "chat.completion",
+    "created": 1789192834,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks for glob expansion of --source-roots (e.g. src/*) rather than listing each root, which a competent engineer would implement at option parsing. The FAIL_TO_PASS test fairly checks that a * pattern is expanded into concrete paths on config.source_roots, though it slightly assumes expansion is stored on the config rather than applied later.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue asks for globbing patterns for source-roots like `--source-roots src/*`. The test uses a glob and asserts that source_roots equals only the expanded path `join(..., \"project\")`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for globbing patterns for source-roots like `--source-roots src/*`. The test uses a glob and asserts that source_roots equals only the expanded path `join(..., \"project\")`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "HsmSnG8q0Nknq9saoBV53FjVY/idlRO4BQ6OK1I7bqySHpPK7lpxHYV2xYiLe57XWnd7MfsoZ1B+BUuHwQR/ENyonSS0ZZEfOhM21CqPabBeFsdFC035CvtRmHbsJoL0oxuzOF4C1Vv0xBc97tAqdKN9KyLbcNBeAfu8JuyEKSwLfVWm3WF+YRQsxwm7f99o8Tc2/WiC9rufnRnZnZYAHCUHaWrk3CbrPlK88Ou0aTGY14YK/0Slr8V9ntollwBVxmhzjkhv84MUr6ibhJto84ACeJ6c82yc5tnTq/IyxsiKKu7Zy916le81Z/EcYt7NMRvAGjnrFDBHlfG/yfejmwOKis8Pt2pCprpB8Xjc2IJlI+97MIW4//7/1tOwQcUl2Xw7a/SU72YKPlxfwR/kdYULg/mW6Po2Sa3WavaEWIqk9aV7gHD/bYlapHR9s+1WAAHXY3oRDPpCIW1Gvc+XhUvFHcetlcfCUMRZsybqB1gweefRKZz8NixHBOTsICuTG0npLA9PvW7W/2rtkTsd+4uLWT3b1WNZOj0pxzJXCe3nJg4jmN9pp2HwSU78Y1L5tkfmjSjkY6z4m5KSa77xylTPIhZf3O/aS7oHhEYX9ZWqRD44LQk2zF/MAtdfELN7g6vHftf6WJrJOM8gyPQK3YTE3NCa0iHGg+Lpv3UHN8eYwK6R053EbCXwHb2uZJVzwqYeVfDVc1Ok2vul9LvDkukCzf0UWMJWpp3L/LUMWHRYiIyqBA7KHmE9r+QI/aGD+jdS67wA5XrUM3ONUobka8IR7VzoGjOmbM1AuXfCmLJSnyht/3X1flwQYD27HcUloHFBV8uUpm1nrapHuciP3hssOOIBqD+XUKZS4WdMaI0pNOjkFnmlesx7vcGIqZHslcBS3JAP4LamMtdL6dm4zMW6MrPlrhwTzGGliKWRdCa/q/RKSgTTswWaHBdcKwqVSNthzpDn3SmgeHbkKROlx0n2+yFGRoQJYu2zpc/Wnt3FfK+gLTXLYGo37BNCWgKvBJG3+ZBAkQcWX6szBIwvTdY3YmnlE+GfpE8FVyNdIVeC1r+gObzMwvxR+ocgXE9z5pwXcoMYY+5fmrokYf2OP4vjfVK4UPYHypdJGiUYpP/0a2wyUdYkprfDflkLi3JXe8yEdt7wwxfx/iVdJ0dRSADgmkdiS+jaFnQLsfGCJ0iixbs2W0978fRePls4gSva5erold+jnqWlOkvCF5DnNiSUWZmgNlODGDP1WIOF953c0+vqZkujtBFxpLTYhoK6KQuMl75hA7cc8/LxeUlZMcApFLesPYmlLXDts879DbpMV63JkerGkvL3CNgg0NYVEjboIuAWEmE+DpnpujoC+188FXzcB/vFs/ncFtvp5uiRSq3wA25/gXGMogt67+skVlCP9Mo9mU00B+y0CmWJk6o0gkV/q7d0mMIBOhhPtcKCNzLNUIrQlqp4OPPZKpBvQNW6XvXRYvmB0FUe/6HMnMRysZ3xVZwbRx6ilD1WsfeUXm8rG8giIYZ/gHWSZtlCw7Bkm72CwEYA44NAY9rsarEt4o77T6YRZFNfhOKclc0kCsUH0lOVwKMjVw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9c3e0d1d-e4d2-9264-bcc2-c323b1095688",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2377,
+      "completion_tokens": 403,
+      "total_tokens": 2780,
+      "cost": 0.006788,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006788,
+        "upstream_inference_prompt_cost": 0.00437,
+        "upstream_inference_completions_cost": 0.002418
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 273,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks for glob expansion of --source-roots (e.g. src/*) rather than listing each root, which a competent engineer would implement at option parsing. The FAIL_TO_PASS test fairly checks that a * pattern is expanded into concrete paths on config.source_roots, though it slightly assumes expansion is stored on the config rather than applied later.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks for glob expansion of --source-roots (e.g. src/*) rather than listing each root, which a competent engineer would implement at option parsing. The FAIL_TO_PASS test fairly checks that a * pattern is expanded into concrete paths on config.source_roots, though it slightly assumes expansion is stored on the config rather than applied later.",
+  "prompt_tokens": 2377,
+  "completion_tokens": 403,
+  "total_tokens": 2780,
+  "cost_usd": 0.0071719999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

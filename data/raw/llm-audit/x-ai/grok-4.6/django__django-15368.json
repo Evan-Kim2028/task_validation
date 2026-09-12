@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15368",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1235
+  },
+  "response": {
+    "id": "gen-1789191586-JuEQT6TGxRQIipz4fIAm",
+    "object": "chat.completion",
+    "created": 1789191586,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that bulk_update should resolve plain F() assignments instead of stringifying them, including a repro and the intended type-check change. The FAIL_TO_PASS test only checks that assigning F('note') and bulk_updating copies the field value, which is exactly the reported behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: bulk_update doesn't work with plain F() expressions because of a type check that's too narrow (isinstance(attr, Expression) instead of checking for resolve_expression).\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: bulk_update doesn't work with plain F() expressions because of a type check that's too narrow (isinstance(attr, Expression) instead of checking for resolve_expression).\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "IvCCAD+WzsF88PZiqiMb7ZD/4LyF4s5/ufNyzlWa4ADvGYuPAR9DqAk4Hv61WPMMFmckGe77vMz2e32CvHeo9YyRMMEg0m0uKFDfxTThpUxBM9XxmqNPIFMAnPfgZ04MWJAl97z9CxMPwS+OGt1SlPW5g4BJLMoaGYd59nCuSwjlt4b6srXvyc7VaunEO1RQtBoGTf5HN7AVjMEJ7cXADgAbKcwaKGlnihwgxKdWU34F1Khf50WtD9+4F1GK3KqCGTeR/t/97HbEF++dIujbLRnQ7VfiNcDFe64jyHjZ6Vpk11CAcfGVLu9PdqpgU8PmabhplSeArHO5EgSku/NyJv5G6sO2WaB7wzzwPXBNIKAVQdnhOsVBZRSR6vxVyp55FLGTCKCR7fLVpgmV7M/dVE2LWWcRAj9MzQLGUUsHQo+CIj2JJh5nNMd01s4CIyT+YjeP8tr+QC/72PeotopasQ+5XEI1JiFGzv9TNJ0NGuZ0PALqldAs5nI5XwkZJJmS3AOKsVFYsrGKEhVdobWmsbFq3/HpAc4oSRoLUmxkNu19I93lGDt0t/1ZKQFv3xyGawfO1MKduAYj2sVNOw95fGzWft1Wt89ckCdb0yV8C1IEYBZ0GXw0sNSXrrimpEDhSfm49Z/xCRXHZTQZoBRyP3sFZqGCqr87JfWA8GOTf7zzrmjsBowunkEZXc5D2cpT+2YSc8TWQhIIVbDJBYd1rq5BAbrpsSNcYzFsNXacGZD5Yv8Uj/cFaVXbrRGb7aKlC8i75CULfMwnV80Tg10.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7a58a6bd-3fa5-9a87-8fe6-f24b1483e7ab",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1604,
+      "completion_tokens": 258,
+      "total_tokens": 1862,
+      "cost": 0.004372,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004372,
+        "upstream_inference_prompt_cost": 0.002824,
+        "upstream_inference_completions_cost": 0.001548
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 141,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that bulk_update should resolve plain F() assignments instead of stringifying them, including a repro and the intended type-check change. The FAIL_TO_PASS test only checks that assigning F('note') and bulk_updating copies the field value, which is exactly the reported behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that bulk_update should resolve plain F() assignments instead of stringifying them, including a repro and the intended type-check change. The FAIL_TO_PASS test only checks that assigning F('note') and bulk_updating copies the field value, which is exactly the reported behavior.",
+  "prompt_tokens": 1604,
+  "completion_tokens": 258,
+  "total_tokens": 1862,
+  "cost_usd": 0.004756,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

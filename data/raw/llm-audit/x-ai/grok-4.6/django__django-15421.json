@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15421",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 5316
+  },
+  "response": {
+    "id": "gen-1789191603-B0slspKtiWYM1iHg1wQF",
+    "object": "chat.completion",
+    "created": 1789191603,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue describes making the parallel runner work under multiprocessing spawn (django.setup and test DB prefixes), not SQLite clone-settings behavior for forkserver. The sole FAIL_TO_PASS asserts a specific NotSupportedError message for start method forkserver, which a valid spawn-focused fix need not implement.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing parallel test runner to work with Windows/macOS spawn process start method. The FAIL_TO_PASS test is specifically `test_get_test_db_clone_settings_not_supported` which test...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing parallel test runner to work with Windows/macOS spawn process start method. The FAIL_TO_PASS test is specifically `test_get_test_db_clone_settings_not_supported` which test...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "P0Ak9Nv3vYd8J4dcZ1pchpuHl9nx1uzGmXEqTrtOLrX9I6zElMpZMer4+5AmuPyYj6AX1AfAOumoUz6wTS8klH5Xng3UDg2hASfQF/ErmVlJyhRcX4EtrNOe5Q1j7FO3bfVOdo7a6cBpkq7KlLhlqzyMU1uFBUd5D+KuBchmQONFFb1vnPHabJySmZLxVZfQND3255bXUtlJRED2vb4466UI8Y+MHdyolHqaVsJ4mjoPOjihLlEE0bx+ugNqe6fxfumNvcbHR46TBvMLdwpOOYat0jxerMyYbe9YaFZ/qDk97N8MC1DySP7RBEMdKpwYjln32NVphZ0FGZPxELEccv/mDWG9oRIOIbDXUXV8+XPx4Lvemw0MXZiomS4r0WjbDA6P0i85AeZ5jX+3o4atW822HUE1G0jGTJlLb6medw39YyuNlOIqFLnA8z1aqpOgXehy3JIBWxiGpNajbCkc1WHoCqj5lVkXEjuEniI+q1drPnFUmZEbAuKm6JxdGsGILcLtmp3B+AwaB3H3EmCWdskxXUGt+7tIUo9vFRSchIJ3NlKC0ezKM0+59hHtKHH4lCA4iHOXu86+hxK3kKQHCuQD/9Zq+dfwak8UgCKtYsj9Rwc1ApT3gMLmw0I7Q61YEp/kyFCQSMfc8/jl0p70SfHr94Y9//Hhcbqyj3elxtbmp2WRQh6FUmsGFt/g4WR3WzBmKqSvY1oP2AewYKQuI/VLqoS7rM8zF1OqExyTF2Bx5r46TCNDR7ZVRsy2cfsBcWmzOgbWw8Gs/5QjSQk4yvy+RJKCtrSF1AfKc3FXTiOX7uCngo70B0A0GcamTNXVh1Hv3tBGGTLmlBUKu0ESD2wy6zqUabl1X6F+bVWfQzM2uft/mj58DGY7JgIPNsdyyPRFI33gsBJM3l3h7+qCsZAuLQOFCe8s9ygZhwJ/L8oXCXIpwvnCF85k8LtwYW1zvnTsxyZ1ImQNzQD0VaY5eG8tfezhpJe19Pk/u+t3ZMWmzYupw3zh/HXDxYw2XBJh2c8fANlpHHPKX/BNdHIErlT9hlVfetVmGpC0T9XpWTxyv1iGo1boBAywkJ90GiafnzT5KTyW0SX7nPC/dKmEvx04edSwcdf9PkP/N5w5W1918b8XgGeDGwoWu2fVaHgijAVNsdXiISVySRiN0QZq7qSqWdQGWpM/+ucf2qXjcU05QuXawijUHklkZvIPtKLQwFba16/ilst7dx4owHRUb/QvvStXAh55bE7wEp71Wt6I1+GrFKaZ8M2W9h5J2SMniHrzXsM6KC2zMutYaBSzu58rXTShhWJv9CIZhzDRF6FOB0eOjTRFBmg3bVOmhFFm/3wmURsXVNl/1FQn+fnzGiCyqvbdIH0pCMhb+awjhnYs47EM/diKXTbjob7um9TXpDf7VBTaJFdtTHJRQGqqhO3QFyDH7963v2LYGa7LtHe44gLz0ZKx4p0bJNj4vU9pRVvrkTPuImTslDZ7uf/TuB/ZXK5gR8KXtmrXPDwXlFBsTtHpWpNzqwoiR51Ifx8BfM0HrYzXBAo5CliWPPtMBgLK4imYJUXFnkG5ZcfhynuiDq6iU1va3/I/OvPCLaoHu97dd5Ah//uFA3PesHmHSwzdI5P65DsRxHm6GXx7tJo1K9hJmidCx+r5SY3EN2DyVlTQVkPB9PSXrzaxa8gKLnu2WAJ3J8XU9aA8KEKwfl9oLNIHVcPzjfU5VYfbj60+ppmQkH+m8c8HkfSWMWRsultKyJFDHLJb/h3OxOJeDL6X0zRUZQrnbXX/k4vt/7aY7QuAtx9OKr/eQ/kJN4tBU+F+uzjId7Q24W8256md97YbQyHfBm3VEUHGiMF7G08C1rmrS0EW8BC6shqTCLtIty3dsFAev6sDIeNLSvWajmmjrGlz7VikhpLpRj2tww.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a1a20721-51e9-9c94-892f-b4630a8b7cb9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5994,
+      "completion_tokens": 432,
+      "total_tokens": 6426,
+      "cost": 0.014388,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014388,
+        "upstream_inference_prompt_cost": 0.011796,
+        "upstream_inference_completions_cost": 0.002592
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 316,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue describes making the parallel runner work under multiprocessing spawn (django.setup and test DB prefixes), not SQLite clone-settings behavior for forkserver. The sole FAIL_TO_PASS asserts a specific NotSupportedError message for start method forkserver, which a valid spawn-focused fix need not implement.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue describes making the parallel runner work under multiprocessing spawn (django.setup and test DB prefixes), not SQLite clone-settings behavior for forkserver. The sole FAIL_TO_PASS asserts a specific NotSupportedError message for start method forkserver, which a valid spawn-focused fix need not implement.",
+  "prompt_tokens": 5994,
+  "completion_tokens": 432,
+  "total_tokens": 6426,
+  "cost_usd": 0.01458,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

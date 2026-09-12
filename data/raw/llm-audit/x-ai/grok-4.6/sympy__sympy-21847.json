@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-21847",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "d40bb2ff-f2c6-9f69-be6f-39983f4a540a",
+    "object": "chat.completion",
+    "created": 1789194804,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue and quoted docs clearly require filtering by total degree rather than max exponent, including mixed monomials of that total degree. The FAIL_TO_PASS assertions check exactly that semantics for commutative and noncommutative generators.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2476,
+      "completion_tokens": 98,
+      "total_tokens": 2964,
+      "prompt_tokens_details": {
+        "text_tokens": 2476,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 390,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 23528000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue and quoted docs clearly require filtering by total degree rather than max exponent, including mixed monomials of that total degree. The FAIL_TO_PASS assertions check exactly that semantics for commutative and noncommutative generators.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue and quoted docs clearly require filtering by total degree rather than max exponent, including mixed monomials of that total degree. The FAIL_TO_PASS assertions check exactly that semantics for commutative and noncommutative generators.",
+  "prompt_tokens": 2476,
+  "completion_tokens": 488,
+  "total_tokens": 2964,
+  "cost_usd": 0.00788,
+  "cost_in_usd_ticks": 23528000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1362
+}

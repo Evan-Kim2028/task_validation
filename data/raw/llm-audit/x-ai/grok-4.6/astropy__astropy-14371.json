@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14371",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1525
+  },
+  "response": {
+    "id": "gen-1789190686-KSLUWnNwxQ6dApYMCp52",
+    "object": "chat.completion",
+    "created": 1789190686,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to add atol to is_O3 or change the hardcoded 1e-15 default, without specifying API, default 5*eps, or is_rotation. The FAIL_TO_PASS tests require an atol keyword on both is_O3 and is_rotation, so a valid issue-only fix would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue asks to add `atol` argument to `is_O3`, or at least use max precision of matrix dtype instead of 1e-15.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add `atol` argument to `is_O3`, or at least use max precision of matrix dtype instead of 1e-15.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "N9DTfhukYzF0LrU8hiGlGN8uWYLxAGCtXguvo8cWaSMTtJk0oFKqZ0aC7+y+KkfOArO8yXxqeRTHP5lC54QEmKpsExo7juiF6BhxpJdQKM/Y+cGmar3BdCDP/xhJwsLaymFD5/57/14FZ052kWLfPU6HenMGXs05zPSo+qPIVTUuMaZ21fnOFjnuMNk0Mu5tyb+uGwXuyEZ0C22s6lXmIXOHXzQ+UW2CX/P3ytCRhScWqZ0nIZKcSiVGcWIW53vyIyechhO/bK1HUSfzVIVSX8mWgZuLC5jyUOz0jkonuRa0j1cpl6H6lxHz/31Uavru3fT0GcXgRlnHMw37pw+NMGcmllV8k8Ye3rjypDPfL5GqqQ0Q+7ziiq3FmbI7i3s8LLaH5fM3XHYJLkodddE+1/RQd4D2WQ5TxichnsUtvroh6NIxxu2moHh5VZZ3747EGEFPvxUUt2eeLCqM1OCTIiZXTjmPpSnT4sKYcb8TiBvcQ06JxsyzAyjes2tXxLP263XZZ60INK070a7vzNxdW46ehXFAVvPzMNStikfKlbYXpCTKdiKAxw5WPuGm9lK+sqOmbiR0G54LaAz/Qt68tGrSU+pOwBRQUH8D9JKUp+d8Og9PmU4ypPi81Sfx4WIbnwNj779LqPTwYccmhC2LUCbcADzJUixj42QKsABZ5nCkR3Z22k4m4I4cehP0zrXR+vPkSf/s394QImzFZOXlzKLGE9A+7N/O5u/whzddzuNGkZYvN7wGavnEj8PR+9AEzwkpkS1NJhMYDhHkP9v5EXFI0eL1+bKL5HLWWu+hqttmZ9D38LDRiFFAHF4XenzvP/vD0sxVEKApuIIPG3YbGrkN0k2kYxBLjQQbQ7v+7DPGZ0m4JKpAgDtAwAoWiWhPIV0/EwTog7pZ+Z+f5RktsdO6Zyu7xm/3Zm5i2lri1ep8aZwILc+RJyx7J/tQodhNyyF5TD1c9fOUys4IrwsA/P54QbT7JK45Sc/5CJYrtGd+OMMhs5SDG0G4E3Y8YxXezpLYX42TOnmvkYgrytGriET0KYgEYyogqtlpGF9pw1yaxYNVpj87lOVZlRbexVg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5a3934bb-696f-9b08-842c-45ca6f80a55f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2156,
+      "completion_tokens": 318,
+      "total_tokens": 2474,
+      "cost": 0.006028,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006028,
+        "upstream_inference_prompt_cost": 0.00412,
+        "upstream_inference_completions_cost": 0.001908
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 193,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to add atol to is_O3 or change the hardcoded 1e-15 default, without specifying API, default 5*eps, or is_rotation. The FAIL_TO_PASS tests require an atol keyword on both is_O3 and is_rotation, so a valid issue-only fix would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to add atol to is_O3 or change the hardcoded 1e-15 default, without specifying API, default 5*eps, or is_rotation. The FAIL_TO_PASS tests require an atol keyword on both is_O3 and is_rotation, so a valid issue-only fix would fail.",
+  "prompt_tokens": 2156,
+  "completion_tokens": 318,
+  "total_tokens": 2474,
+  "cost_usd": 0.00622,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

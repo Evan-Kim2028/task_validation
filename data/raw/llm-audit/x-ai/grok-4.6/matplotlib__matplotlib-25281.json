@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25281",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3447
+  },
+  "response": {
+    "id": "gen-1789187860-arKzz0lhyAaD6wGboLhp",
+    "object": "chat.completion",
+    "created": 1789187860,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that invalid non-string loc values fail at construction rather than at draw, without defining accepted types, integer range, list vs tuple, or error text. The FAIL_TO_PASS tests require a specific ValueError wording and those extra cases, so many reasonable validations would still fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about validating the `loc` argument to legend when it's not a string. Errors should be raised immediately for invalid inputs.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about validating the `loc` argument to legend when it's not a string. Errors should be raised immediately for invalid inputs.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Cac/dkqXsJW9+af4OIBhH4HTADCdzdjJMdeWGiivZeTbR7O0ISp2bVMZpiFyJTkCGsaraBnf33xOKckp7ruBSL5ObgK+ASaa6f/wjujoK1ZSicVE23csnwyWf0ybbepifubnaNVt6WlAxB85MHkoL3ZaxYCuTb8T8m+65CGNHkvwQB2Cl7C/GBx7XIcdLUEFMzphV5Kw38J4k3CXyEKfTOB7pn9ZkeYot1UOE3Pb9P9kd+Hy/LxJiUn06H6cqQg4BrzoZh53X0Me0BATpQurrmGfIBjFqPyEakqV1dlrD65bxCmiok5k4QZUhioNyEMjsYwgzH0/3ksGXmwKemoX6in7H2HmE374iifK5Zn7MbKV+zJH37E2CTtm6q0woA2eTfqKuH1ozlWkDm3D4WOoXmvtwqNjPwsDE9uabTd0m1P6zafwzC7dJ+LksMDo9vo0f4PtAX/0IckxXsAKFXsOtepN31AJpn9q1OWE4VpugqL1/RFqHq+/DyE81Gy7IRHogxKZHy08q/lg3SKu0Ep3nUlluPSS8o4rC6VVqRFGlUAZuZGiiP+Kunaeb7b+e57SDksM9yFP49DA4cEpTIY4OLskc1ZDSRiq5TKonygeSNXYrKRIKP07g548oD6EKnywzdD6pnFlqSDZfYXQ+TOC2q9vqQ9YeMtGRdV0MPvR8/ns6fpceQ4VFGyBJiKBzMI10t4G6W0qndjre2/rj8j0T88AlZD9GHRhVXK6SnDAo3eewVLeUj0FeXh06E+zKtcAjr68GORHXsv0P3yr95qK6X+8jRzFv4gm0jBYN0YS+0m1tVUqJh5/LcXhpbBTnMVuQyrRD8acgD24gW3MNUrEcMXxuMX1wXPiqBlN52HXQA/mSoE579N5EecZH3nzV8b+hf+UtJTYPPDxjBxzaPthq7NcNRKKKd6LXI72o8LhR8jlsJQuPnZ3SLdvtAdqbaEODaLKc52r1SMoZLnIjOQWTux+fgO8CjTaT93a/YEWWm+KyxQhwaAGdNDpKTaTF771E5WwJWVMVFMGZZneM5MOmDXPMkqF1yL72xnv6TdFdQEb4fta5AJzxWISUi6LVFmRx0U2JLxOuyyIIDGIbAeeUXVfrHrtOVkLZPXkkTyAq544XdgmvNeJTyM4vBdGk2xYnPG9QxwZCVUJnmJirizpIiE9L5VMi6NvbPY5v4CwKeO5zain0Ql7tM2iAadIZw63vafz8K7pkQXCXjiShIW/Eq3I/oDLxDE0OtnNxeCk6O/QvhlnxtxuNcZnBFvjdZ1TKspryJ4U30SXVPVbB3A0g02wXhoF8xoOuT8UZHCrsdkGdfR79eWpTbg18O3ryJE+4bpz7WXey3hTiulkHQ3sjy8JJ13ZN03jjTC1jbDKvBsg6vfyyiqwUwb2aPWkgOpo1avUDxddJFw4itnM3pb0KNQJHLmTgIMNh9z4T5on6/W4BEUIqkhlAK1RtX4PuccXn+qcOnX9b9iIpQ7OjzK87qaM/f0OOWpIcQu2QFRf7EfivPUoXyy3HUMtuTJovolNt5+0vl1FEY/BVnIufliS+vT41Txqwvx6EFromgo6XdgIhxqdDGQtUtqQh8uN1tBwlj30HA9OId+8OdWK6Wn8O4ZDkLJa1+hrriwj/xFGOYEmMgg17y0rII+1J1B+FZc/NK/8o81V0C4Zb2C3c+iMJMS2UjOv9wWUPTePFTi9EYSN2UzGh7NtxwdsGnSl74afTb3ilHGkYWdl6g773/KNEEjrRonL3HH06va8/HGmCNIXKRWno2p2gWZOV9IG/FbudjAV8tvEM9NWOYeBZRX8DEq9fnCskUiN1PDdg2qouM8bOsraTqVUH72XLo7FwOhOXJOqGCNfIU73621D.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dd9e6eca-0b5c-9048-8b47-3f623103b4ae",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4591,
+      "completion_tokens": 429,
+      "total_tokens": 5020,
+      "cost": 0.011564,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011564,
+        "upstream_inference_prompt_cost": 0.00899,
+        "upstream_inference_completions_cost": 0.002574
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 313,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that invalid non-string loc values fail at construction rather than at draw, without defining accepted types, integer range, list vs tuple, or error text. The FAIL_TO_PASS tests require a specific ValueError wording and those extra cases, so many reasonable validations would still fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that invalid non-string loc values fail at construction rather than at draw, without defining accepted types, integer range, list vs tuple, or error text. The FAIL_TO_PASS tests require a specific ValueError wording and those extra cases, so many reasonable validations would still fail.",
+  "prompt_tokens": 4591,
+  "completion_tokens": 429,
+  "total_tokens": 5020,
+  "cost_usd": 0.011755999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

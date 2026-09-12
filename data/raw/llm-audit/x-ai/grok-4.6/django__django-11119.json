@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11119",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 778
+  },
+  "response": {
+    "id": "gen-1789190801-v8Q0wIu2orvF1mJGJra9",
+    "object": "chat.completion",
+    "created": 1789190801,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue explicitly requires Engine.render_to_string to honor Engine.autoescape when building Context. The FAIL_TO_PASS test only asserts that autoescape=False leaves HTML unescaped, matching the reported bug.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: Engine.render_to_string() should honor the autoescape attribute. When creating an Engine with autoescape=False, render_to_string should not autoescape.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: Engine.render_to_string() should honor the autoescape attribute. When creating an Engine with autoescape=False, render_to_string should not autoescape.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "yp7FO2l1YiYc2wVW0RjJwQNUzcH4Zi543r/510vW46rYmcV1qUbAcDRj2oB98Yfd3dsKjGda/fYYmubaOIcYu8kwUffoE+KbE9sAW1Aw6c4Cqe9ECMvK2bgzy+XrWaf7dZnGI/G8AV1fK0oyUHGtzGn9/CrL6KEPR/tkxAB0YGeyfC3KkQnAr1++4Wehq4u1SJzBfOs2M6GkR8fkZJKG7GW57vwKMbxX9OjLCNrKyOmJOe0wQl2jquEtSWkT8ncl7E5kRhocwhx9gxP++no5Da0I/Ty70+lTx2aiPE/3tVNaKtlfDY3fkoBRbQfB7ZHHhnIvIVAPJt79QzmibrsF/zBTF9pQm1Q0myuuCe585qYcEnK4uQTqNTchCQwfNm1ekpSfIWs2ofBFwXtD2Jqf3h/xUuMia4AEK6Iy+ce5wbW0bfHtybqZUh1KvjVNaXlEr2TWxh02L3UJjUqyYOdH/p4BmWGMtPnjmxEx+tMZGMFDXZSjLV9cFNrgPBl8tvyxtKy/nb2iLSxZqB/t/dYdE/PI2IUvdzRef6GaQgtGqIRvpY0oa9b+rlHTWW5doP1i6DBqLPDGBCs10G2xVvka6FAjFyEe1kzT9vELt3/buiq3w5tFXfWC0n1HVdVNRe56iIwMtjInmebbImaZnp5NgZ0u09L+T5bA+4oyAhWhW+GKJyi84el3q6vvpU4utLIphFneKrNCoa8xVbfbuniVImfDihAseBIE9bWrhVqQ22lvWgUljIBA+ml4pF97l3sn/Ai5n4qdXjVDtnZYfVmyUeuxKndheAbq4McVDGWZ0OqnMkQfU1GZEfnS/VzxyvcWV02FIPPM1p4AsQ9d7JFb8pBthHRflxUHLwZRAbPvLkFGdyhCHHyAjlr5K9BiDbapSTDWg5PVzuFUeYfPTvLwSPLmmHw0rdj2K/PVlHRfkeXAuq9j9FF5BzyUHu6PPFGuURkYqWjGp/Zyp+lid1/rrhp8YU38UDcZtYxV7mantr87wWM4+uuGweGXhUiyDORVPyWEq/7/XfiAh3Kkjy4H5TyQFXMirlcsVovLgVMEYA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_aa450747-81e7-9c8c-b634-2827e3639d4d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1071,
+      "completion_tokens": 289,
+      "total_tokens": 1360,
+      "cost": 0.003684,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003684,
+        "upstream_inference_prompt_cost": 0.00195,
+        "upstream_inference_completions_cost": 0.001734
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 190,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue explicitly requires Engine.render_to_string to honor Engine.autoescape when building Context. The FAIL_TO_PASS test only asserts that autoescape=False leaves HTML unescaped, matching the reported bug.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue explicitly requires Engine.render_to_string to honor Engine.autoescape when building Context. The FAIL_TO_PASS test only asserts that autoescape=False leaves HTML unescaped, matching the reported bug.",
+  "prompt_tokens": 1071,
+  "completion_tokens": 289,
+  "total_tokens": 1360,
+  "cost_usd": 0.003876,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

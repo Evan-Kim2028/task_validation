@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11417",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1837
+  },
+  "response": {
+    "id": "gen-1789190863-woiC91JsQPCnbUs0RhfS",
+    "object": "chat.completion",
+    "created": 1789190863,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to switch sanitize_address to get_mailbox() as a less error-prone parser and does not define invalid-address handling or extra quoting cases. The FAIL_TO_PASS tests require ValueError on several unstated invalid strings and a specific encoded form for a two-@ tuple address, so many reasonable parser swaps would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about updating mail backend to use modern standard library parsing: email.headerregistry.parser.get_mailbox() instead of parseaddr.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about updating mail backend to use modern standard library parsing: email.headerregistry.parser.get_mailbox() instead of parseaddr.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "a9oZ4Goo0Dq7bIXfbeNwbUE6vb9w5eInIG16CKn6EUryeD6/lyF/1r7mxIi2QIsV2vw54owkLHTKqZo9E6mQBJncPExqFB5pp8wHVQ/T3gHu/tg8LqAYkia4D3dhYsI2aKIWQFathRVmxly3FWwjcaRJi6ITiZruGL/rkchpoGM2qniTgead6u4Rlwh6n5kera5fPwpSF1ZBDiQXVSn7n0RfNHvVsX4PYDs+cYoTRGmMzuxhUlKBZGEK2xsDipShCxIoWt5h4JPITJG96CjsiqKPOUTRdridmpMm21faPZye9tbpOphLmH0Z8P8HIhP5f0NN81ACna71kE6ptf+ljQ82ypzDfmTWrUfSELEiu1bqBLmca9Igbj6Md1TCg4W3PPBfRN7Rso44WFSpre0iXfbdKFxYOjvFyXhNxaJl9Zc/r6q18tO9hsHsYrFvGQ0wxp47xgosXHs4OKQm/cSTd739FhpfOsNK2+FUhb3oCcX6MzY5xpf6gTPC4iC3LZvQQrVNHitVFKWTmhioLdmZqBkbBdQPLcoG2MJlC2ZlgVagi20y4YKeVHq0nFfrlIhVotcNYLBNGJg//g5hueXQee+zaPMFez8Nu7ZTYww8AoeY3vI1Ym+dsdYO0nfJgPJRYeUfeirWnO0wngd3ikVAuXefoNp5x6GWSbp1iYuDFsx3kV2KI5nVmEsyUBvg5+1Fhj9iezGsNvEwh/fXy9Z8GQZ6C16rRYzwasVqtJh0AHxhrRtsHzIA41oneJUA68jLTyV9estERvDsZsMxNBC4Nrr1TeLot3QMMZUteKzvXxuv5pAaheAM5CKKRsRL/FaN2pgEgrLRwN9777OZQktstrJchVHI+1Z3eVjVk2onvex6YGRLtWvo9gXjuUla6ksL5XN99NE1K9KN9oSu+oY/8kYNf0HqiBzMGwMUv7q6plu2w5KPYrpnyb3FfTg+Nm12OXq5qkZ/FR95gNeaYqnsyzPcx/BavZUcEQXV0Feaweot5af1D76rovYohvtk4t2TJwD6DupSmGDOU9TLSpYcnlBF/j0grXGaONh7z/yL6ttDr7bbIxfdz/dPbO69sf9T7BJeuyxLS/0XZt5z4JrhH1bOqzKAEypjFbmE4r8Qnco0wUEN4RzSHWbPKzbnacEvvd65m8xObLDgemvtQbCY6ygWgFfS/Nw0qY3piWl1GTbF7WkGIU0YQ0iY/UV/rwXb7uDSmP6e9Wi6pBw2bqbWT59V69JnkusND4PdsYtEybbuMhkvGoE4y6s7Dooq/78AqjcbE9A3DBIB7aIMy3aw/HaTaL8UdIxAygcAyPvAWAAsBLh03Uz1VgHHcMYiRaeYtikqoNMc99nIpOIwe1jPeWQsAwP1+qlJ1XgJl1HiRKSlDQySPDOh0C6n0tQkMGDIReUg+pCwdqhTVsMIEVqjRnsKrQMNdOXbsnDSi2IWkeH2Jn1FEFoPMYf2YEOaK5iRn0v00+3QIJ+czZs+sqYEVJ3ishMMPgJaEYZpJzJHDFdJiihKXwwmAYt661rUO3jJo9u0OYUioNVijzaSbbm0zfzmhAwchlZQn6xtGap4vPpbde3PJaV2jJZEl4FaQGqt1aIHRdd6dUfHtBo8KnzopM4f6WO056BhnrgUDUSp1JTUDmYmU5vOxETKitc1b7lJzP6KeRXrl4iDHzj7A0/g5Q+zhQtoVSdpR/xd9vbcryougln/7sNlCZNRZs/gYnGLHPh7cvUN9jvkv99Fs/OoxqhkhOc8jlJ1EDlizuai2DVjYjB7TSsg1/vvaJw9MBORnzX1RN8ZL+b0KJZA5A.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b7ad759d-3dcd-96e8-8c91-d01594a9e116",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2170,
+      "completion_tokens": 422,
+      "total_tokens": 2592,
+      "cost": 0.006872,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006872,
+        "upstream_inference_prompt_cost": 0.00434,
+        "upstream_inference_completions_cost": 0.002532
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 296,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to switch sanitize_address to get_mailbox() as a less error-prone parser and does not define invalid-address handling or extra quoting cases. The FAIL_TO_PASS tests require ValueError on several unstated invalid strings and a specific encoded form for a two-@ tuple address, so many reasonable parser swaps would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to switch sanitize_address to get_mailbox() as a less error-prone parser and does not define invalid-address handling or extra quoting cases. The FAIL_TO_PASS tests require ValueError on several unstated invalid strings and a specific encoded form for a two-@ tuple address, so many reasonable parser swaps would fail.",
+  "prompt_tokens": 2170,
+  "completion_tokens": 422,
+  "total_tokens": 2592,
+  "cost_usd": 0.006872,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

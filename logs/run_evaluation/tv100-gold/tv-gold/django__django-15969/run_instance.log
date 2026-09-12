@@ -1,0 +1,277 @@
+2026-09-11 23:58:55,755 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:59:42,993 - INFO - Creating container for django__django-15969...
+2026-09-11 23:59:43,480 - INFO - Container for django__django-15969 created: f3bf7dc9103dfe367f61e8e1ddfadfbb6c3db13990f4fb11d83012e81fc8bb5e
+2026-09-11 23:59:43,851 - INFO - Container for django__django-15969 started: f3bf7dc9103dfe367f61e8e1ddfadfbb6c3db13990f4fb11d83012e81fc8bb5e
+2026-09-11 23:59:43,857 - INFO - Intermediate patch for django__django-15969 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15969/patch.diff, now applying to container...
+2026-09-11 23:59:44,110 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/deletion.py...
+Applied patch django/db/models/deletion.py cleanly.
+
+2026-09-11 23:59:45,150 - INFO - Git diff before:
+diff --git a/django/db/models/deletion.py b/django/db/models/deletion.py
+index 2cb3c88444..bc26d82e93 100644
+--- a/django/db/models/deletion.py
++++ b/django/db/models/deletion.py
+@@ -1,9 +1,9 @@
+ from collections import Counter, defaultdict
+-from functools import partial
++from functools import partial, reduce
+ from itertools import chain
+-from operator import attrgetter
++from operator import attrgetter, or_
+ 
+-from django.db import IntegrityError, connections, transaction
++from django.db import IntegrityError, connections, models, transaction
+ from django.db.models import query_utils, signals, sql
+ 
+ 
+@@ -61,6 +61,7 @@ def SET(value):
+             collector.add_field_update(field, value, sub_objs)
+ 
+     set_on_delete.deconstruct = lambda: ("django.db.models.SET", (value,), {})
++    set_on_delete.lazy_sub_objs = True
+     return set_on_delete
+ 
+ 
+@@ -68,10 +69,16 @@ def SET_NULL(collector, field, sub_objs, using):
+     collector.add_field_update(field, None, sub_objs)
+ 
+ 
++SET_NULL.lazy_sub_objs = True
++
++
+ def SET_DEFAULT(collector, field, sub_objs, using):
+     collector.add_field_update(field, field.get_default(), sub_objs)
+ 
+ 
++SET_DEFAULT.lazy_sub_objs = True
++
++
+ def DO_NOTHING(collector, field, sub_objs, using):
+     pass
+ 
+@@ -93,8 +100,8 @@ class Collector:
+         self.origin = origin
+         # Initially, {model: {instances}}, later values become lists.
+         self.data = defaultdict(set)
+-        # {model: {(field, value): {instances}}}
+-        self.field_updates = defaultdict(partial(defaultdict, set))
++        # {(field, value): [instances, …]}
++        self.field_updates = defaultdict(list)
+         # {model: {field: {instances}}}
+         self.restricted_objects = defaultdict(partial(defaultdict, set))
+         # fast_deletes is a list of queryset-likes that can be deleted without
+@@ -145,10 +152,7 @@ class Collector:
+         Schedule a field update. 'objs' must be a homogeneous iterable
+         collection of model instances (e.g. a QuerySet).
+         """
+-        if not objs:
+-            return
+-        model = objs[0].__class__
+-        self.field_updates[model][field, value].update(objs)
++        self.field_updates[field, value].append(objs)
+ 
+     def add_restricted_objects(self, field, objs):
+         if objs:
+@@ -312,7 +316,8 @@ class Collector:
+             if keep_parents and related.model in parents:
+                 continue
+             field = related.field
+-            if field.remote_field.on_delete == DO_NOTHING:
++            on_delete = field.remote_field.on_delete
++            if on_delete == DO_NOTHING:
+                 continue
+             related_model = related.related_model
+             if self.can_fast_delete(related_model, from_field=field):
+@@ -340,9 +345,9 @@ class Collector:
+                         )
+                     )
+                     sub_objs = sub_objs.only(*tuple(referenced_fields))
+-                if sub_objs:
++                if getattr(on_delete, "lazy_sub_objs", False) or sub_objs:
+                     try:
+-                        field.remote_field.on_delete(self, field, sub_objs, self.using)
++                        on_delete(self, field, sub_objs, self.using)
+                     except ProtectedError as error:
+                         key = "'%s.%s'" % (field.model.__name__, field.name)
+                         protected_objects[key] += error.protected_objects
+@@ -469,11 +474,25 @@ class Collector:
+                     deleted_counter[qs.model._meta.label] += count
+ 
+             # update fields
+-            for model, instances_for_fieldvalues in self.field_updates.items():
+-                for (field, value), instances in instances_for_fieldvalues.items():
++            for (field, value), instances_list in self.field_updates.items():
++                updates = []
++                objs = []
++                for instances in instances_list:
++                    if (
++                        isinstance(instances, models.QuerySet)
++                        and instances._result_cache is None
++                    ):
++                        updates.append(instances)
++                    else:
++                        objs.extend(instances)
++                if updates:
++                    combined_updates = reduce(or_, updates)
++                    combined_updates.update(**{field.name: value})
++                if objs:
++                    model = objs[0].__class__
+                     query = sql.UpdateQuery(model)
+                     query.update_batch(
+-                        [obj.pk for obj in instances], {field.name: value}, self.using
++                        list({obj.pk for obj in objs}), {field.name: value}, self.using
+                     )
+ 
+             # reverse instance collections
+@@ -497,11 +516,6 @@ class Collector:
+                             origin=self.origin,
+                         )
+ 
+-        # update collected instances
+-        for instances_for_fieldvalues in self.field_updates.values():
+-            for (field, value), instances in instances_for_fieldvalues.items():
+-                for obj in instances:
+-                    setattr(obj, field.attname, value)
+         for model, instances in self.data.items():
+             for instance in instances:
+                 setattr(instance, model._meta.pk.attname, None)
+2026-09-11 23:59:45,151 - INFO - Eval script for django__django-15969 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15969/eval.sh; copying to container...
+2026-09-12 00:00:15,988 - INFO - Test runtime: 30.79 seconds
+2026-09-12 00:00:15,989 - INFO - Test output for django__django-15969 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15969/test_output.txt
+2026-09-12 00:00:16,099 - INFO - Git diff after:
+diff --git a/django/db/models/deletion.py b/django/db/models/deletion.py
+index 2cb3c88444..bc26d82e93 100644
+--- a/django/db/models/deletion.py
++++ b/django/db/models/deletion.py
+@@ -1,9 +1,9 @@
+ from collections import Counter, defaultdict
+-from functools import partial
++from functools import partial, reduce
+ from itertools import chain
+-from operator import attrgetter
++from operator import attrgetter, or_
+ 
+-from django.db import IntegrityError, connections, transaction
++from django.db import IntegrityError, connections, models, transaction
+ from django.db.models import query_utils, signals, sql
+ 
+ 
+@@ -61,6 +61,7 @@ def SET(value):
+             collector.add_field_update(field, value, sub_objs)
+ 
+     set_on_delete.deconstruct = lambda: ("django.db.models.SET", (value,), {})
++    set_on_delete.lazy_sub_objs = True
+     return set_on_delete
+ 
+ 
+@@ -68,10 +69,16 @@ def SET_NULL(collector, field, sub_objs, using):
+     collector.add_field_update(field, None, sub_objs)
+ 
+ 
++SET_NULL.lazy_sub_objs = True
++
++
+ def SET_DEFAULT(collector, field, sub_objs, using):
+     collector.add_field_update(field, field.get_default(), sub_objs)
+ 
+ 
++SET_DEFAULT.lazy_sub_objs = True
++
++
+ def DO_NOTHING(collector, field, sub_objs, using):
+     pass
+ 
+@@ -93,8 +100,8 @@ class Collector:
+         self.origin = origin
+         # Initially, {model: {instances}}, later values become lists.
+         self.data = defaultdict(set)
+-        # {model: {(field, value): {instances}}}
+-        self.field_updates = defaultdict(partial(defaultdict, set))
++        # {(field, value): [instances, …]}
++        self.field_updates = defaultdict(list)
+         # {model: {field: {instances}}}
+         self.restricted_objects = defaultdict(partial(defaultdict, set))
+         # fast_deletes is a list of queryset-likes that can be deleted without
+@@ -145,10 +152,7 @@ class Collector:
+         Schedule a field update. 'objs' must be a homogeneous iterable
+         collection of model instances (e.g. a QuerySet).
+         """
+-        if not objs:
+-            return
+-        model = objs[0].__class__
+-        self.field_updates[model][field, value].update(objs)
++        self.field_updates[field, value].append(objs)
+ 
+     def add_restricted_objects(self, field, objs):
+         if objs:
+@@ -312,7 +316,8 @@ class Collector:
+             if keep_parents and related.model in parents:
+                 continue
+             field = related.field
+-            if field.remote_field.on_delete == DO_NOTHING:
++            on_delete = field.remote_field.on_delete
++            if on_delete == DO_NOTHING:
+                 continue
+             related_model = related.related_model
+             if self.can_fast_delete(related_model, from_field=field):
+@@ -340,9 +345,9 @@ class Collector:
+                         )
+                     )
+                     sub_objs = sub_objs.only(*tuple(referenced_fields))
+-                if sub_objs:
++                if getattr(on_delete, "lazy_sub_objs", False) or sub_objs:
+                     try:
+-                        field.remote_field.on_delete(self, field, sub_objs, self.using)
++                        on_delete(self, field, sub_objs, self.using)
+                     except ProtectedError as error:
+                         key = "'%s.%s'" % (field.model.__name__, field.name)
+                         protected_objects[key] += error.protected_objects
+@@ -469,11 +474,25 @@ class Collector:
+                     deleted_counter[qs.model._meta.label] += count
+ 
+             # update fields
+-            for model, instances_for_fieldvalues in self.field_updates.items():
+-                for (field, value), instances in instances_for_fieldvalues.items():
++            for (field, value), instances_list in self.field_updates.items():
++                updates = []
++                objs = []
++                for instances in instances_list:
++                    if (
++                        isinstance(instances, models.QuerySet)
++                        and instances._result_cache is None
++                    ):
++                        updates.append(instances)
++                    else:
++                        objs.extend(instances)
++                if updates:
++                    combined_updates = reduce(or_, updates)
++                    combined_updates.update(**{field.name: value})
++                if objs:
++                    model = objs[0].__class__
+                     query = sql.UpdateQuery(model)
+                     query.update_batch(
+-                        [obj.pk for obj in instances], {field.name: value}, self.using
++                        list({obj.pk for obj in objs}), {field.name: value}, self.using
+                     )
+ 
+             # reverse instance collections
+@@ -497,11 +516,6 @@ class Collector:
+                             origin=self.origin,
+                         )
+ 
+-        # update collected instances
+-        for instances_for_fieldvalues in self.field_updates.values():
+-            for (field, value), instances in instances_for_fieldvalues.items():
+-                for obj in instances:
+-                    setattr(obj, field.attname, value)
+         for model, instances in self.data.items():
+             for instance in instances:
+                 setattr(instance, model._meta.pk.attname, None)
+2026-09-12 00:00:16,100 - INFO - Grading answer for django__django-15969...
+2026-09-12 00:00:16,106 - INFO - report: {'django__django-15969': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_set_querycount (delete_regress.tests.SetQueryCountTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_disallowed_delete_distinct (delete_regress.tests.DeleteDistinct)', 'test_15776 (delete_regress.tests.DeleteCascadeTests)', 'If an M2M relationship has an explicitly-specified through model, and', 'Django cascades deletes through generic-related objects to their', 'With a model (Researcher) that has two foreign keys pointing to the', 'test_meta_ordered_delete (delete_regress.tests.DeleteTests)', 'test_self_reference_with_through_m2m_at_second_level (delete_regress.tests.DeleteTests)', 'test_19187_values (delete_regress.tests.ProxyDeleteTest)', 'Deleting an instance of a concrete model should also delete objects', 'Deleting the *proxy* instance bubbles through to its non-proxy and', 'Deleting a proxy-of-proxy instance should bubble through to its proxy', 'If a pair of proxy models are linked by an FK from one concrete parent', 'test_ticket_19102_annotate (delete_regress.tests.Ticket19102Tests)', 'test_ticket_19102_defer (delete_regress.tests.Ticket19102Tests)', 'test_ticket_19102_extra (delete_regress.tests.Ticket19102Tests)', 'test_ticket_19102_select_related (delete_regress.tests.Ticket19102Tests)', 'If the number of objects > chunk size, deletion still occurs.', 'Auto-created many-to-many through tables referencing a parent model are', 'Cascade deletion works with ForeignKey.to_field set to non-PK.'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-15969: resolved: True
+2026-09-12 00:00:16,106 - INFO - Attempting to stop container sweb.eval.django__django-15969.tv100-gold...
+2026-09-12 00:00:31,600 - INFO - Container sweb.eval.django__django-15969.tv100-gold stopped successfully.
+2026-09-12 00:00:31,600 - INFO - Attempting to remove container sweb.eval.django__django-15969.tv100-gold...
+2026-09-12 00:00:31,678 - INFO - Container sweb.eval.django__django-15969.tv100-gold removed successfully.

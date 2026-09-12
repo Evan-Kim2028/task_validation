@@ -1,0 +1,81 @@
+2026-09-12 00:40:47,198 - INFO - Creating container for pylint-dev__pylint-6556...
+2026-09-12 00:40:47,353 - INFO - Container for pylint-dev__pylint-6556 created: 687148e59230325d489223e4f858a68abdcfc68cfb43b76adf2b50ff8c778873
+2026-09-12 00:40:47,574 - INFO - Container for pylint-dev__pylint-6556 started: 687148e59230325d489223e4f858a68abdcfc68cfb43b76adf2b50ff8c778873
+2026-09-12 00:40:47,574 - INFO - Skipping model patch for pylint-dev__pylint-6556 (--no-patch mode)
+2026-09-12 00:40:48,033 - INFO - Git diff before:
+
+2026-09-12 00:40:48,033 - INFO - Eval script for pylint-dev__pylint-6556 written to logs/run_evaluation/tv100-empty/tv-empty/pylint-dev__pylint-6556/eval.sh; copying to container...
+2026-09-12 00:40:59,232 - INFO - Test runtime: 11.16 seconds
+2026-09-12 00:40:59,232 - INFO - Test output for pylint-dev__pylint-6556 written to logs/run_evaluation/tv100-empty/tv-empty/pylint-dev__pylint-6556/test_output.txt
+2026-09-12 00:40:59,284 - INFO - Git diff after:
+diff --git a/tests/lint/unittest_lint.py b/tests/lint/unittest_lint.py
+index 19f3f8b2d..1fa6640d4 100644
+--- a/tests/lint/unittest_lint.py
++++ b/tests/lint/unittest_lint.py
+@@ -190,8 +190,14 @@ def reporter():
+ @pytest.fixture
+ def initialized_linter(linter: PyLinter) -> PyLinter:
+     linter.open()
+-    linter.set_current_module("toto", "mydir/toto")
+-    linter.file_state = FileState("toto", linter.msgs_store)
++    linter.set_current_module("long_test_file", "long_test_file")
++    linter.file_state = FileState(
++        "long_test_file",
++        linter.msgs_store,
++        linter.get_ast(
++            str(join(REGRTEST_DATA_DIR, "long_test_file.py")), "long_test_file"
++        ),
++    )
+     return linter
+ 
+ 
+@@ -271,9 +277,9 @@ def test_enable_message_block(initialized_linter: PyLinter) -> None:
+     filepath = join(REGRTEST_DATA_DIR, "func_block_disable_msg.py")
+     linter.set_current_module("func_block_disable_msg")
+     astroid = linter.get_ast(filepath, "func_block_disable_msg")
++    linter.file_state = FileState("func_block_disable_msg", linter.msgs_store, astroid)
+     linter.process_tokens(tokenize_module(astroid))
+     fs = linter.file_state
+-    fs.collect_block_lines(linter.msgs_store, astroid)
+     # global (module level)
+     assert linter.is_message_enabled("W0613")
+     assert linter.is_message_enabled("E1101")
+@@ -310,7 +316,6 @@ def test_enable_message_block(initialized_linter: PyLinter) -> None:
+     assert linter.is_message_enabled("E1101", 75)
+     assert linter.is_message_enabled("E1101", 77)
+ 
+-    fs = linter.file_state
+     assert fs._suppression_mapping["W0613", 18] == 17
+     assert fs._suppression_mapping["E1101", 33] == 30
+     assert ("E1101", 46) not in fs._suppression_mapping
+diff --git a/tests/test_deprecation.py b/tests/test_deprecation.py
+index 33e5a9c2f..d04925eee 100644
+--- a/tests/test_deprecation.py
++++ b/tests/test_deprecation.py
+@@ -9,6 +9,7 @@ from __future__ import annotations
+ from typing import Any
+ 
+ import pytest
++from astroid import nodes
+ 
+ from pylint.checkers import BaseChecker
+ from pylint.checkers.mapreduce_checker import MapReduceMixin
+@@ -100,3 +101,10 @@ def test_filestate() -> None:
+     with pytest.warns(DeprecationWarning):
+         FileState(msg_store=MessageDefinitionStore())
+     FileState("foo", MessageDefinitionStore())
++
++
++def test_collectblocklines() -> None:
++    """Test FileState.collect_block_lines."""
++    state = FileState("foo", MessageDefinitionStore())
++    with pytest.warns(DeprecationWarning):
++        state.collect_block_lines(MessageDefinitionStore(), nodes.Module("foo"))
+2026-09-12 00:40:59,284 - INFO - Git diff changed after running eval script
+2026-09-12 00:40:59,284 - INFO - Grading answer for pylint-dev__pylint-6556...
+2026-09-12 00:40:59,285 - INFO - report: {'pylint-dev__pylint-6556': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['tests/lint/unittest_lint.py::test_enable_message_block', 'tests/test_deprecation.py::test_collectblocklines']}, 'PASS_TO_PASS': {'success': ['tests/lint/unittest_lint.py::test_no_args', 'tests/lint/unittest_lint.py::test_one_arg[case0]', 'tests/lint/unittest_lint.py::test_one_arg[case1]', 'tests/lint/unittest_lint.py::test_one_arg[case2]', 'tests/lint/unittest_lint.py::test_one_arg[case3]', 'tests/lint/unittest_lint.py::test_one_arg[case4]', 'tests/lint/unittest_lint.py::test_two_similar_args[case0]', 'tests/lint/unittest_lint.py::test_two_similar_args[case1]', 'tests/lint/unittest_lint.py::test_two_similar_args[case2]', 'tests/lint/unittest_lint.py::test_two_similar_args[case3]', 'tests/lint/unittest_lint.py::test_more_args[case0]', 'tests/lint/unittest_lint.py::test_more_args[case1]', 'tests/lint/unittest_lint.py::test_more_args[case2]', 'tests/lint/unittest_lint.py::test_pylint_visit_method_taken_in_account', 'tests/lint/unittest_lint.py::test_enable_message', 'tests/lint/unittest_lint.py::test_enable_message_category', 'tests/lint/unittest_lint.py::test_message_state_scope', 'tests/lint/unittest_lint.py::test_enable_by_symbol', 'tests/lint/unittest_lint.py::test_enable_report', 'tests/lint/unittest_lint.py::test_report_output_format_aliased', 'tests/lint/unittest_lint.py::test_set_unsupported_reporter', 'tests/lint/unittest_lint.py::test_set_option_1', 'tests/lint/unittest_lint.py::test_set_option_2', 'tests/lint/unittest_lint.py::test_enable_checkers', 'tests/lint/unittest_lint.py::test_errors_only', 'tests/lint/unittest_lint.py::test_disable_similar', 'tests/lint/unittest_lint.py::test_disable_alot', 'tests/lint/unittest_lint.py::test_addmessage', 'tests/lint/unittest_lint.py::test_addmessage_invalid', 'tests/lint/unittest_lint.py::test_load_plugin_command_line', 'tests/lint/unittest_lint.py::test_load_plugin_config_file', 'tests/lint/unittest_lint.py::test_load_plugin_configuration', 'tests/lint/unittest_lint.py::test_init_hooks_called_before_load_plugins', 'tests/lint/unittest_lint.py::test_analyze_explicit_script', 'tests/lint/unittest_lint.py::test_full_documentation', 'tests/lint/unittest_lint.py::test_list_msgs_enabled', 'tests/lint/unittest_lint.py::test_pylint_home', 'tests/lint/unittest_lint.py::test_pylint_home_from_environ', 'tests/lint/unittest_lint.py::test_warn_about_old_home', 'tests/lint/unittest_lint.py::test_pylintrc', 'tests/lint/unittest_lint.py::test_pylintrc_parentdir', 'tests/lint/unittest_lint.py::test_pylintrc_parentdir_no_package', 'tests/lint/unittest_lint.py::test_custom_should_analyze_file', 'tests/lint/unittest_lint.py::test_multiprocessing[1]', 'tests/lint/unittest_lint.py::test_multiprocessing[2]', 'tests/lint/unittest_lint.py::test_filename_with__init__', 'tests/lint/unittest_lint.py::test_by_module_statement_value', 'tests/test_deprecation.py::test_mapreducemixin', 'tests/test_deprecation.py::test_reporter_implements', 'tests/test_deprecation.py::test_checker_implements', 'tests/test_deprecation.py::test_interfaces', 'tests/test_deprecation.py::test_load_and_save_results', 'tests/test_deprecation.py::test_filestate'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for pylint-dev__pylint-6556: resolved: False
+2026-09-12 00:40:59,285 - INFO - Attempting to stop container sweb.eval.pylint-dev__pylint-6556.tv100-empty...
+2026-09-12 00:41:14,577 - INFO - Container sweb.eval.pylint-dev__pylint-6556.tv100-empty stopped successfully.
+2026-09-12 00:41:14,577 - INFO - Attempting to remove container sweb.eval.pylint-dev__pylint-6556.tv100-empty...
+2026-09-12 00:41:14,627 - INFO - Container sweb.eval.pylint-dev__pylint-6556.tv100-empty removed successfully.

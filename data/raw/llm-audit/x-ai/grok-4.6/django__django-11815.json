@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11815",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2162
+  },
+  "response": {
+    "id": "gen-1789190939-sfbw0rYJK3Ewq3SdQ9qj",
+    "object": "chat.completion",
+    "created": 1789190939,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that migration serialization of Enum members use the member name rather than the (possibly translated) value, including the Status['GOOD'] form. The FAIL_TO_PASS tests fairly check that serialization, with only a modest extra surface (other enum types and RegexFlag) that follows from the same serializer change.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about serializing Enum objects in Django migrations using the name instead of the value, specifically for translated values.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about serializing Enum objects in Django migrations using the name instead of the value, specifically for translated values.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Q7jxQ+9pwkFAHzGU1uDlV1BMMeU+MsBd152fb++LDd/qAChTiqqo0j+scc4vmX+Dd2jrljY84HU9b84dG0Xpu3PsrToFaoHV3SxVpf1TRETKoDBsGE3y16fq9Gw6SOUQ5uYBV3yA7emsZIbXhDT2x+dkw9E3XswkQZXIHNRxwwjok95lqOK5Ravr3Jai8tmDPGIZHfmWnxGNfCFCskcCtI50zFmGhg/sQ2rQU198JBTu2nIdphM9y2fIQvtnURbdGKxxmfUQNX3qR9SUYsb1UgssFdWGUmaBQoRZIzuAJmQZhZvfG1vVjxHGd6sPvKy7C7oWtgFxNkEmS6f7pc3nbtrwmJl0MmHWUx5SKK4S7wo2entPiIgC/B7ujk4r2+iWjLAio7vhd6is4b5F5dNF8xu21qlJChOJEWpGI0w2DXoYr6iXw1tb7Dvf2tbNn7UmEes2txB0Tt8ixJTGv9CgmGfoZmXRf6wA2NIHt2dJLg/LHizobKcbB1SmTovx9ZOgVSpBHQRIUkRFDej/706N95QkgNzSpV3yJo+WOrsDTuxVlflJhkZKgBknnxj474UyWXstXnCWA2E3beWyp7gWEbAOIsV6OCfE17W+9mhMAsIEkmPxWG2DCwT/k8qLlPEIMGKflxqGQ0k+iI4XSgsv8CAvzyFZTqWglwkjgL024sk6HYPUd1O1+X2oacRCNlb+27rgKo+M80VNJFUw6pyO29JIdQpj4bwZUudS2lGC63hxLBoppZ6MxCBrt6M9TcH6c+785njznAUhX85ZXGSMDIiU7BRp4dDIYRt7xyFAYpV5mHPUJqj0DAEchK2hhtmZaDJrtDFUryD9BC724tef591UXkx2mAqzCOzNTHCWhg7f0erI2vcuaJRYejs0xoq5gNQ9C6kljWBF3XUDcAPSo9i2dLWTC5cJhhkh809iZ5+jVLL3NQNo92kN5WNamI/nvUhRqHGGAyVTR6q28btzIU88aPr/rMpLx/Op0k1L+VKnoDNsch+MzkkWMkU/Crv3Of+5KBwFXzOwkansIbYh4BBNUX4UarxNMP0QwH2nad0ZiHVi96BN4ZTBrn9hMkSvEHOvKarJRLLDE4ph7LYpprayX/C1eEJc2tXZpejHkq6SwcJNAmgilkN8Yz8oB/Jz3Xwb2FWhz1r9sv2/evxvD2E4ErbcPwmM8J1Q87MhGNSgq0u2ySXZFBpLXOx793Wfiz9CLlJBXEoCfmacB9G8ylEM7zAhrXT/zAyYSQzfSyeqD8+v6jhx/6VCtKoGeKqkZ2QRbeGp7kQOjuC9B+tkwT3YgTHwvXTpekySsiVNL5IxJnYcSXA3bD129sKBbA1a3yBiYYBK2OdAkGDR9TYzupNSVh7k9MHHQkb/408S4DzeD7iNB5ICA98/eCIpcVrRLvIiEXcqvvsXNyGAlDpBBj0S8JbtqwYa9RPFsWCuGTKYi03cw1nZpVntjmMCOAp9TbuLcIKpK6hSJWeX/ZKa059g+q0zlgFQg/1gJgQInkyrbuCRpkSuFoZUwDoEQiRomBPdKvda+97b4QNQLgFKgyZ4GQJx8vstQ3Tu3nkVYX8aZX5GzGLuIh6BfP5BZTAiO2xuDz1wit0gfjke4ycpwNehQsfeWwd7+3nuX6ZZ+GV1gJnwBZyLQwWFuayBZKJKokbKvFxrAGQAlGDIYaeI/ELddSHV8Nkhj2LEhajEtCGI9uVC2OxF5rvAvc8rNktB4Z7do0DYf1ilcTAlZiNbukbZJ28BgWnAy0qsdC9VwQSAdMWj8+n3Xfh4I/qlZBvKWw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4c1681cf-2e5c-9a15-84cc-16801cc675ca",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2510,
+      "completion_tokens": 409,
+      "total_tokens": 2919,
+      "cost": 0.00709,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00709,
+        "upstream_inference_prompt_cost": 0.004636,
+        "upstream_inference_completions_cost": 0.002454
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 289,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that migration serialization of Enum members use the member name rather than the (possibly translated) value, including the Status['GOOD'] form. The FAIL_TO_PASS tests fairly check that serialization, with only a modest extra surface (other enum types and RegexFlag) that follows from the same serializer change.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that migration serialization of Enum members use the member name rather than the (possibly translated) value, including the Status['GOOD'] form. The FAIL_TO_PASS tests fairly check that serialization, with only a modest extra surface (other enum types and RegexFlag) that follows from the same serializer change.",
+  "prompt_tokens": 2510,
+  "completion_tokens": 409,
+  "total_tokens": 2919,
+  "cost_usd": 0.007474,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13933",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1136
+  },
+  "response": {
+    "id": "gen-1789191349-vlI3dzYzrvm1ydgzq1Dx",
+    "object": "chat.completion",
+    "created": 1789191349,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks ModelChoiceField to pass the invalid value into ValidationError params, matching ModelMultipleChoiceField's %(value)s pattern. The FAIL_TO_PASS test only checks a custom invalid_choice message with that placeholder and does not require the suggested default-message change, so it is slightly narrower than the write-up but still aligned.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about ModelChoiceField not providing the value of invalid choice when raising ValidationError. It should pass parameters with the invalid value like ModelMultipleChoiceField.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ModelChoiceField not providing the value of invalid choice when raising ValidationError. It should pass parameters with the invalid value like ModelMultipleChoiceField.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a2a831e7-577e-99ed-bc64-c3f47968ef00",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1405,
+      "completion_tokens": 497,
+      "total_tokens": 1902,
+      "cost": 0.0056,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0056,
+        "upstream_inference_prompt_cost": 0.002618,
+        "upstream_inference_completions_cost": 0.002982
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 370,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks ModelChoiceField to pass the invalid value into ValidationError params, matching ModelMultipleChoiceField's %(value)s pattern. The FAIL_TO_PASS test only checks a custom invalid_choice message with that placeholder and does not require the suggested default-message change, so it is slightly narrower than the write-up but still aligned.",
+    "p_invalid": 0.08
+  },
+  "s": 1.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks ModelChoiceField to pass the invalid value into ValidationError params, matching ModelMultipleChoiceField's %(value)s pattern. The FAIL_TO_PASS test only checks a custom invalid_choice message with that placeholder and does not require the suggested default-message change, so it is slightly narrower than the write-up but still aligned.",
+  "prompt_tokens": 1405,
+  "completion_tokens": 497,
+  "total_tokens": 1902,
+  "cost_usd": 0.005792,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

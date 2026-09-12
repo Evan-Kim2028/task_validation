@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-20916",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "bdaffcdb-c47d-9f34-9bdc-257debc9bd11",
+    "object": "chat.completion",
+    "created": 1789194764,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only shows pretty-print of Greek names with trailing digits, so a valid fix could live in the pretty printer rather than split_super_sub, and it does not specify unicode digits or mixed super/sub parsing. FAIL_TO_PASS only asserts those unstated split_super_sub cases, so many issue-faithful solutions would still fail.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The issue is about pprint unicode not formatting subscripts on Greek letters. The good example has t₀ and w₀, bad has ω0 without subscript.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2061,
+      "completion_tokens": 129,
+      "total_tokens": 2549,
+      "prompt_tokens_details": {
+        "text_tokens": 2061,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 359,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 21358800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only shows pretty-print of Greek names with trailing digits, so a valid fix could live in the pretty printer rather than split_super_sub, and it does not specify unicode digits or mixed super/sub parsing. FAIL_TO_PASS only asserts those unstated split_super_sub cases, so many issue-faithful solutions would still fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only shows pretty-print of Greek names with trailing digits, so a valid fix could live in the pretty printer rather than split_super_sub, and it does not specify unicode digits or mixed super/sub parsing. FAIL_TO_PASS only asserts those unstated split_super_sub cases, so many issue-faithful solutions would still fail.",
+  "prompt_tokens": 2061,
+  "completion_tokens": 488,
+  "total_tokens": 2549,
+  "cost_usd": 0.00705,
+  "cost_in_usd_ticks": 21358800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1096
+}

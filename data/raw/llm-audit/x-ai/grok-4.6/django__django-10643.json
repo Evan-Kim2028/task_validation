@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10643",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2452
+  },
+  "response": {
+    "id": "gen-1789190759-9kInvqSNxRTxy5qdKKSg",
+    "object": "chat.completion",
+    "created": 1789190759,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks that icontains (admin search) accept UUIDs with or without dashes on backends that store UUID as text. The FAIL_TO_PASS tests also require hyphen-stripping for contains, startswith, endswith, iexact and expression RHS, which is not stated in the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is specifically about icontains lookup accepting UUIDs with or without dashes, for admin search. The tests cover many more lookups: contains, endswith, startswith, iexact, etc., and also fil...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is specifically about icontains lookup accepting UUIDs with or without dashes, for admin search. The tests cover many more lookups: contains, endswith, startswith, iexact, etc., and also fil...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qlBvRlFE4kXgDliZGPy98IiWf9/pEq+jQ/KvUeg+CzQMzsW5PlgCJr4EF6TXRhiuFFc0smmk3ahI5ajAtqb5oR3OBAgCCWhFIB/O203+BGxTDJWS5pQqmO7qPsDVwOCtSc5xV59P+ZPjq7RFRsQgDN2QlHWFeguVlfC1n6ztAh52sRiVbahgjWrS1iyudfxs2VbcHAEPqNNqJa4DLdmycyQ3IgMieUpXTzjs+O8EeWeJ8l0QA5moKOxdgjvH7n07JhHTK7ZQ3ykAYzYzwh00TgXSq7Z8AZqgL4WZBKkLKxKmrKyFcR3oyHcfHIfp1G5vvx1EHfe9jD+KpaJy6HzpA66jrWb6NfT0eR8szV7g9DETp53CkHDdOLuG9oq9xEe+UCbDBVvN3CgqYB4YiZRnGlBJ/nP3e600pG/L/h3EpdShQE3qym/a56BDww7kWAiEirQ/Vyh5QgkzaHVlE2CkxD2Vqk0VsnNnJHCOIDP+vN3VNJhEY+0A2c+zaV/fonOANolEmX+3qhHtuDLIcrUPAWMjYILUGKWRQ5Z1cWk+EveKalh4h4q7X/6an68zuFkK2sQcqq0ZfZ8pPbY+DCXg2wxeJWKysoDVLN96Tkn7EMlUCX2sGEJmcrzWtQV5r+f/0tj2cmhein4yEzdh90la2+xvB130y+QwmIYbF6e50af/PYIjhqWzrMwsfQ8wztJjB+ExA1Mcbr+wJkEG5uGI6Rb3ezAMc1A+spZHWP/UYGNZFYQHJZvQnkcAD944vCf92U7hiYMfwmvG4W/aikzx76nb4Nw/Je15IrCakk6BnB0zau97FBLU79VFO2eckpuJqiK+Rw+/3mFJMQd3hL6huXr1qIM09em3vPXSn916NqxWDss9mcrhvL5WaIAD9Xa2gxEfxEfkRO7Aain7NdbaZXCer9SO31hwNQwtuAZArioI1mCVrwfnxJkGMXMZA5CFKrj3OVCybMrUOH1aYSraPcxyom9/NwI09/H6CbJ+pyW5L6RYmpdDe6wXdK4gLoxfnT7KBstLIRuExl/Bw5srNl2eYeAHHTGiGDlIjthIxLt/np1gIdBq4V3N/RvR3z1Npve7R2EYh+zwwCrNP6I6war5fHUnFkNp8tMT.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_48bc6760-b59e-9d7d-bfc0-6d5b336e5ef4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2976,
+      "completion_tokens": 303,
+      "total_tokens": 3279,
+      "cost": 0.007578,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007578,
+        "upstream_inference_prompt_cost": 0.00576,
+        "upstream_inference_completions_cost": 0.001818
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks that icontains (admin search) accept UUIDs with or without dashes on backends that store UUID as text. The FAIL_TO_PASS tests also require hyphen-stripping for contains, startswith, endswith, iexact and expression RHS, which is not stated in the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks that icontains (admin search) accept UUIDs with or without dashes on backends that store UUID as text. The FAIL_TO_PASS tests also require hyphen-stripping for contains, startswith, endswith, iexact and expression RHS, which is not stated in the issue.",
+  "prompt_tokens": 2976,
+  "completion_tokens": 303,
+  "total_tokens": 3279,
+  "cost_usd": 0.00777,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

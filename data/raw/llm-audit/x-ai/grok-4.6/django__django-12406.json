@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12406",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2063
+  },
+  "response": {
+    "id": "gen-1789191029-87ZvHqMKee7PRE6SLEXP",
+    "object": "chat.completion",
+    "created": 1789191029,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.7, \"rationale\": \"The issue clearly asks that RadioSelect on a ModelForm FK omit the empty choice when the model field has blank=False, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a new ModelChoiceField blank argument and RadioSelect-specific empty_label behavior that the issue never states.\", \"p_invalid\": 0.75}",
+          "refusal": null,
+          "reasoning": "The issue is about ModelForm RadioSelect for foreign keys not presenting a blank option if blank=False.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The gold patch correctly implements the requested behavior by passing blank to ModelChoiceField and conditioning empty_label on RadioSelect + not blank. The FAIL_TO_PASS tests match the issue exactly except test_clean_model_instance which is likely unrelated or already fixed. The new blank parameter is a reasonable extension to support the widget-specific logic.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ModelForm RadioSelect for foreign keys not presenting a blank option if blank=False.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The gold patch correctly implements the requested behavior by passing blank to ModelChoiceField and conditioning empty_label on RadioSelect + not blank. The FAIL_TO_PASS tests match the issue exactly except test_clean_model_instance which is likely unrelated or already fixed. The new blank parameter is a reasonable extension to support the widget-specific logic.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ac232ef9-1eeb-9899-af1a-5922e6f444a0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2477,
+      "completion_tokens": 914,
+      "total_tokens": 3391,
+      "cost": 0.010246,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010246,
+        "upstream_inference_prompt_cost": 0.004762,
+        "upstream_inference_completions_cost": 0.005484
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 796,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.7,
+    "rationale": "The issue clearly asks that RadioSelect on a ModelForm FK omit the empty choice when the model field has blank=False, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a new ModelChoiceField blank argument and RadioSelect-specific empty_label behavior that the issue never states.",
+    "p_invalid": 0.75
+  },
+  "s": 2.0,
+  "p_invalid": 0.75,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.7,
+  "rationale": "The issue clearly asks that RadioSelect on a ModelForm FK omit the empty choice when the model field has blank=False, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a new ModelChoiceField blank argument and RadioSelect-specific empty_label behavior that the issue never states.",
+  "prompt_tokens": 2477,
+  "completion_tokens": 914,
+  "total_tokens": 3391,
+  "cost_usd": 0.010438,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

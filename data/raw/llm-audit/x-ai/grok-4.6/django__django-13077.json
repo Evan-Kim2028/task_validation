@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13077",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1886
+  },
+  "response": {
+    "id": "gen-1789191137-B79SaBvJJkiaFyjSrfWy",
+    "object": "chat.completion",
+    "created": 1789191137,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue describes Windows argv[0] losing a .exe suffix and hints at setuptools console-script wrappers, but does not specify both fallbacks, the exact child argv shapes, or a RuntimeError. The FAIL_TO_PASS tests require those unstated behaviors including the precise error message.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about django-admin runserver not working on Windows due to console scripts stripping .exe from sys.argv[0]. The user mentions that adding the extension again in utils/autoreload.py works....",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about django-admin runserver not working on Windows due to console scripts stripping .exe from sys.argv[0]. The user mentions that adding the extension again in utils/autoreload.py works....",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1ad04876-0782-9095-961e-9a2a44c09108",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2263,
+      "completion_tokens": 480,
+      "total_tokens": 2743,
+      "cost": 0.007214,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007214,
+        "upstream_inference_prompt_cost": 0.004334,
+        "upstream_inference_completions_cost": 0.00288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 365,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue describes Windows argv[0] losing a .exe suffix and hints at setuptools console-script wrappers, but does not specify both fallbacks, the exact child argv shapes, or a RuntimeError. The FAIL_TO_PASS tests require those unstated behaviors including the precise error message.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue describes Windows argv[0] losing a .exe suffix and hints at setuptools console-script wrappers, but does not specify both fallbacks, the exact child argv shapes, or a RuntimeError. The FAIL_TO_PASS tests require those unstated behaviors including the precise error message.",
+  "prompt_tokens": 2263,
+  "completion_tokens": 480,
+  "total_tokens": 2743,
+  "cost_usd": 0.007405999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15280",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1662
+  },
+  "response": {
+    "id": "gen-1789191570-SUoJqJ8RrWJmUKPeW2Rp",
+    "object": "chat.completion",
+    "created": 1789191570,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly describes nested prefetch back to a parent with only()/deferred fields and that accessing the inner parent's field must not hit the database. The FAIL_TO_PASS test encodes that scenario with equivalent models and one extra cache assertion that is a natural consequence of the described bug rather than an unrelated requirement.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about deferred fields being incorrect when following prefetches back to the parent object. The test uses House/Room models instead of User/Profile, but that's the same pattern.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about deferred fields being incorrect when following prefetches back to the parent object. The test uses House/Room models instead of User/Profile, but that's the same pattern.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LiTWKnTRXTtkaR7lPkrRRYe+i+bqlwYW12UA3CsnpBWfcrNXaP+DAadk93cUbsqi47ekLoQqyqfUSO3XQ8S1KI7dYoO2S1a5Rzga27t2bDUPWiIxk6XSPCSsCbP+KZxEY0RmiENa3uWTH+/cLEoZkRQoB7ycuF9FTvCVq9qHZ1KKhp/2vcPW0RWBO2bhoT6+DD2bT5KDTFx4jfJaglrTRACb8MgGhlj5GCfgnTmj54cQ3LmBjQHfKNF+CzRPU3ocSqCsLg5t8OLigJk+H2ELV82umqYHEhmmSGW9Z3nssPAbSTVml9yRCi+WOhkqYenhEzIozEgoAjhMzTAqj0PLr6tEw+ulwn6ggREf4ncKqh9rOm4A8mDHZACz8fY7YDVqt0f14xUSPbnA/FKMtmprjnRB92d/CMnsjEMFa16V6yTfzs41OFwOGHwdFQfrZy1oXM9KmWLVS6P9zR1nYZ08DTayJSFmW2MyEDVL/Xp41TJtZrbp7zBUApjy5domlsq8MGvKs8L3CCl7wi2fDZK+5GQhJC8nMljj+yfGVHYMn6dnlaWfXdlhXUV58Dc/1xGFuC/iBq1NWZBFzSgTPAglB5phjpbkS+QuRp4X9zwimT4wY+T+jIJXoDTmTkc+90Vb07VattAERwqSnBkQ1Cs6IwT9Sn0SXo4AxPUJKEXo0+/VKfzn/9d90yAPDMRxYqEHXXj+TOBhGqciSTeMnfa+kAhwo3agTcQ985/K7ukgzCJSwFBs3MkgDn9e9/wnqob4E250OFRSTMCzH3FsLEwSe5mkvKoQRhlc3KQaBV7gYS2n7bNPHnUjqdFMuqGqs30cAwAOu/5bbhzKMGL3GxCfWVtloCye37XjsRxBAvIOwViAEGwShH7kgGbR5CD6tQGEPov4xm2TRNdiw9VYS9duexcMdD/zt2MTSl+qudZabMByur4KUvUvRe7HOcp9Hws+4LSAdDbs3W1RpghlLM8P70EYE+5WqcExGcOtqrowUpJLwvJH4w2Huc8Vrya5jmeuaL98o9vdlcaoZ4o65p4AWzZy7C8rPwKi1vNlQxDAgE8lGDhPK4udw0b+ksZf1LPPVYQTs1EPyR9pOw5gEFKfbHjgM9K+5LjzSJkOGVYA9J8TF/4GVPtbEBaiiNv/QC64Ic5YcNmsHbmwvaV7R3EOZcPP9JYSFH06p5/wjrSKVmwFmeQn14BPpoMXyq0SL3jlKsWYqG73wwhQlOFHegwN7Pyu/KwhWD2Vm0WY9wkiIKTNckQqrqWsLyMztH88/yPCepkTcWhmNMQk9zfQFoy4XgNXh2TPFPyxGbP5pgpBfxbolCzIqqmuH4AutyHsC6P0rocnnpaxjCQXC5hrLyH0arHDPZELTswr/NdaLdzHK6cK6Erx8HLd96SYKplcuonsOKN+DnoDehlPrvO7ZJjcWOREkEVcNIJFE+K1zhTN997tR5aeokVzwFAdPAP3l+qPc+h+leW1tVa+RiWXi8wNVYijjb0+PzWLnz0gKwhQCIbEBzLhRCS/9FSoTaHrsTkHudJDxBen156RpDANgetAGH8R9WLDslnw2+Q6Y32C+xEpzjQWjcOMy6QZkCgNpoZnyZ7S+4JlahwPmuj0Tye4vuItbpZcD3N8iWjYSpVdIEfaplCRVgtaiAweXwxlgoy5hHPHpfl/.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_536b3e3b-43a5-98e1-a672-0ac02a2bc9e2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1993,
+      "completion_tokens": 377,
+      "total_tokens": 2370,
+      "cost": 0.006248,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006248,
+        "upstream_inference_prompt_cost": 0.003986,
+        "upstream_inference_completions_cost": 0.002262
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly describes nested prefetch back to a parent with only()/deferred fields and that accessing the inner parent's field must not hit the database. The FAIL_TO_PASS test encodes that scenario with equivalent models and one extra cache assertion that is a natural consequence of the described bug rather than an unrelated requirement.",
+    "p_invalid": 0.08
+  },
+  "s": 1.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly describes nested prefetch back to a parent with only()/deferred fields and that accessing the inner parent's field must not hit the database. The FAIL_TO_PASS test encodes that scenario with equivalent models and one extra cache assertion that is a natural consequence of the described bug rather than an unrelated requirement.",
+  "prompt_tokens": 1993,
+  "completion_tokens": 377,
+  "total_tokens": 2370,
+  "cost_usd": 0.006248,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

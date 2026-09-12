@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7939",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2409
+  },
+  "response": {
+    "id": "gen-1789192939-WRUizoLXQSIAvuUjuLHv",
+    "object": "chat.completion",
+    "created": 1789192939,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue explicitly asks for a --sw-skip CLI alias matching --stepwise-skip, which a competent engineer can implement from the given addoption snippet. The FAIL_TO_PASS case only parametrizes the existing skip-option run with --sw-skip, so it fairly checks that requested alias.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: add `--sw-skip` as a shorthand for `--stepwise-skip`. The FAIL_TO_PASS test is `testing/test_stepwise.py::test_run_with_skip_option[--sw-skip]` which parametrizes the skip option w...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: add `--sw-skip` as a shorthand for `--stepwise-skip`. The FAIL_TO_PASS test is `testing/test_stepwise.py::test_run_with_skip_option[--sw-skip]` which parametrizes the skip option w...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "T/DsJduKvqDIqo5PQHne3OssHFzIvSlPmvjivcODe6SWd8NJTTab/HHqmgSGUZRCnQxNYNGuEFOHfshmckrFZOlgwvh0XV60C9HuxBH9Z33NMfsH6ifVKi54PfKIW77NXxc01SvshfKexPHPkI8Y2brGhirroWYRDoC/0AeXw1GkeRSccEnVchlV6cu1eAMrBjbuo4+oCVa4aJ75Zw4K4Fsud73eENn0oWrCvhFTm21nmb0OnBKt+6YJh9STi43Q0kL2MtFhMe0BwEhCubrmUlbBUtAV9Lt6Ji02A7UJEGVTiYzN3kq19dm7Q/jqCHSS64bRlnMIJLkcZJHYjaEJWZqCzg3l8WkcYL4djIGAXG67sR9mSNOXsS3wMP1hluQpdH41aeV0wtO2VvzqxnKiLaEtow4a0ciFL8KHeniJJdif91W3NISmznBWEGgDLh7Ts0i3UNTTQxJN+gJhJJSMPX9IcN8hln9W9U6h+lQ8uWidTHgO3sa4UqdTcY2ebPecNFWRkCZApwiIjnv4rzXcDtdECwbMxVNOuaa34SO87tH3eNFwkFLNVqJWBuJzBdtOOhbwoZAdCv55xjV7A+htcnZQAwLJvawjHEGtcUSQeyMmIUk60lIjOJvb8fmFoznk9uz/h3hOIh/XJOYTIHN79VNfRtsOFjfgpmejtsNVCHc6sd0Fw6bddBZHXYwUhbuHkK8pHD9o3pRCbRiN9N3cIcdQtB+rfhOTQJegkzKQDrpE+ZjOM8I0py2mRd4ugEQD7PUyXpjG05aP6TvQFTqoD9cWQCC43mOyBsfsIBEtUZezm+m/9y/xsjk0AaO2Zpys2eKged+ZIa7opNI0VmQZOIj1M2p+VRLfELZRp1w62jkFDQvFatRQN3qTrtWMgPd163KDkixgNKjbtbZASudohxeOMe2jvyD4KrsMEWgs0djjjT4l4fuTLpr5EtlVcQI/4DaZKdLu7cx83DEWZimjmKoDfjfPeGq75QcRcPSiUy6d017hicX5cPtwTElUdm2GQRIBUBuRfzQEtZyOW64.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2de4c903-fe26-90db-a10f-ddb47e82e889",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2799,
+      "completion_tokens": 325,
+      "total_tokens": 3124,
+      "cost": 0.007164,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007164,
+        "upstream_inference_prompt_cost": 0.005214,
+        "upstream_inference_completions_cost": 0.00195
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 208,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue explicitly asks for a --sw-skip CLI alias matching --stepwise-skip, which a competent engineer can implement from the given addoption snippet. The FAIL_TO_PASS case only parametrizes the existing skip-option run with --sw-skip, so it fairly checks that requested alias.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue explicitly asks for a --sw-skip CLI alias matching --stepwise-skip, which a competent engineer can implement from the given addoption snippet. The FAIL_TO_PASS case only parametrizes the existing skip-option run with --sw-skip, so it fairly checks that requested alias.",
+  "prompt_tokens": 2799,
+  "completion_tokens": 325,
+  "total_tokens": 3124,
+  "cost_usd": 0.007548,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

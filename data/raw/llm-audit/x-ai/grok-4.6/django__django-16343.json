@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16343",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3516
+  },
+  "response": {
+    "id": "gen-1789191768-Dspy4Bm65wV6yRcowvQW",
+    "object": "chat.completion",
+    "created": 1789191768,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue body asks to make Signer arguments keyword-only immediately, while the title and FAIL_TO_PASS tests require a deprecation warning instead, so a faithful implementation of the proposed signature would fail. The tests also pin an exact warning class and message and cover TimestampSigner, which the issue never specifies.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue asks to force keyword-only arguments for Signer.__init__ by adding * after self. The tests instead check for a deprecation warning with a specific message, and also test positional arguments...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to force keyword-only arguments for Signer.__init__ by adding * after self. The tests instead check for a deprecation warning with a specific message, and also test positional arguments...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a16a851e-d0dd-9ded-bc89-ee398cd5180b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4113,
+      "completion_tokens": 520,
+      "total_tokens": 4633,
+      "cost": 0.010962,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010962,
+        "upstream_inference_prompt_cost": 0.007842,
+        "upstream_inference_completions_cost": 0.00312
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 403,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue body asks to make Signer arguments keyword-only immediately, while the title and FAIL_TO_PASS tests require a deprecation warning instead, so a faithful implementation of the proposed signature would fail. The tests also pin an exact warning class and message and cover TimestampSigner, which the issue never specifies.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue body asks to make Signer arguments keyword-only immediately, while the title and FAIL_TO_PASS tests require a deprecation warning instead, so a faithful implementation of the proposed signature would fail. The tests also pin an exact warning class and message and cover TimestampSigner, which the issue never specifies.",
+  "prompt_tokens": 4113,
+  "completion_tokens": 520,
+  "total_tokens": 4633,
+  "cost_usd": 0.011345999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-7748",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2434
+  },
+  "response": {
+    "id": "gen-1789193081-2GyTNjzSQth0mtwLYvyy",
+    "object": "chat.completion",
+    "created": 1789193081,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to pick up multiple overloaded signatures from the start of a docstring and does not specify SWIG line-continuation with backslashes or the exact multi-line py:class signature rendering. The FAIL_TO_PASS tests require that unstated continuation syntax and output shape, so a reasonable implementation of consecutive signatures could still fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about autodoc_docstring_signature with overloaded methods. Currently it only picks up the first signature, and they want all of them.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about autodoc_docstring_signature with overloaded methods. Currently it only picks up the first signature, and they want all of them.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "H8TuCtfPk8jYBRMH2+Bx7RgPwF7qvP30uft0GIMCCb/XvaIVYvkHlSPaWs/ctiIhNQeHnNTESrAdJyapUVVj0HilpTw37rwbfJJ+5PlxkaLj0By1YCLye1o22lPHbC2If21vBeX1ZIkC7YzYcavTdSIqalGWkU5QBZ++2b7FkwQODi19SajhpgfRLp9zplHZrn8CTEYsdWOBxBvOhJsVnnsGoa6A/8Q/1HtEUYja9kQuhc0uXBw7YYAlgbs6aJE2VOrvZ2mXL6mCnupVYLTMrcpVwpRjs3upQWk3O/4g2Cn22Npw6ajhVM3+QK9+sTcCJaYiypJh6R3OWezcKIV2uLKrSSWvjInsJe/uCdFYkJ49TiOMzwsAf0G+RoJ+j3cOxlRUkyunjJU5sSmy2FUyyImlI0y3L5cey/dZhmwUdK6Si0KrKkYpKHafy096o5rTrUDv+C2yixFzfLLD+AtJ+febtOr4dyjy0Cp10hiqQx8KQtNVu2xxXZQSIzWABqytJS/0gCkS3TbmZfVsklk4Tn62GiB8QNwzF+HcSMIwaX7I0LCReoNHpuHz19g5SpYnL9w9C/I/RXyfUn+47qk2zA2aNkcRjqmYP+ISKVfNeVzp3nyo8ayIzmSTVDudU92mtN/E9OsGb+zgn6Z7VRUNTuX98eL01HV9MUsoW1FcdUkQI9KG3gmgi2Kqbsq85K3u629oPQcWi5EEMIsOygwmJCkuhVn/G8ZYuM6NqTZaMvcQJUlKRy96Q+DfvoS5B7kDMHyn9RsQ6PNceiXnuhLRvjDChj3Y6B0LsW4dK3Cz7Zyla2KnWBylwcWJhrEkBCbF48FYi/IMuXdvB0d6itmn54oNvuXTFos6IEOIAYrRlTic4t4V1lgNF1dHvFFBavO7TWcAX3EuY0Odoq1aAJQvZs1/KBZ01GUz7vGfP0/VwSW9kzx6gNzCwLqNq/ly1W/G2z/MVOh/IvWIhkqEGcpToq9gauEBeSQZYltHguRNcB8yt5HhTzL+DqhyU5VzeTmoDOvsqP+Zubl5qYwh8unjb3S7OeQO3ePtBuJ54ruZ6YHYY25CdX3Qt1b+fRNGJsPvCar43MCNmHnpDdknr0UrU3iIbwkiawaFVfmbqVrRdetwauFrZxie2ZPDKBIpoUzEe9kbgZZ6p17N02i96qhwDHa1LJX/3zXqmtx1hTOfT2JLc7T+pZ1CxY9dP026L2vVjiePcALXOO7u4emhTyvGmKL7qy1gokBzW/9wCUJ0VNw/SOtZDm6kqXgIxxoOfwvARnYQES2AzaM21ozP0udhwfowBfZrA+MlFGmu5QXYVngIWm1Hz7durAQLZfFRALvpfiZh6olzCZjReOhjdvBvvzVP62nYuMSRxPEsiaO215HHgHFDq95t0QH+Tx231PAwFSN8ljMPD2VteI98Kr5qaTQCq2pyy97vk5gskefobN4P0jYbimrfdcTOvG8UYT8flmD31E3Gs3ukxJxHlB+hveQ3fWQKzVhiNgNFwFyVlq0uFw3XhMFuG80SVbLOCdpsE95LbP330RJUnSsBcCwLzwNaa+Pckru3Q2iTAbslJw9LDbLfytbXS8UP/4/pOXzMTxoYvnSpBzfMNUwzLWnV1s8eAH2QeImS2peocR/+HLIfbRLF6N62UdQll+AjKeHyuUvI2Q0KWPikOrYx40vBwE3gxnHuF5gHjtxc9PBT+oDr3WbRPgMTdJz4Pbk6sxXSt2zJgVVUM0hhx7Bg/sWV2DK/iiXa6WeOLurcuOcaxhaWxbXLe7mfwR4aq62BPZFDm9JpfRzPbhg77f2X8jcGouyGfm+fNifV/kHE.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_520e90a0-d8ae-92bd-8e84-215f3213961a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2834,
+      "completion_tokens": 418,
+      "total_tokens": 3252,
+      "cost": 0.007984,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007984,
+        "upstream_inference_prompt_cost": 0.005476,
+        "upstream_inference_completions_cost": 0.002508
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 294,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to pick up multiple overloaded signatures from the start of a docstring and does not specify SWIG line-continuation with backslashes or the exact multi-line py:class signature rendering. The FAIL_TO_PASS tests require that unstated continuation syntax and output shape, so a reasonable implementation of consecutive signatures could still fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to pick up multiple overloaded signatures from the start of a docstring and does not specify SWIG line-continuation with backslashes or the exact multi-line py:class signature rendering. The FAIL_TO_PASS tests require that unstated continuation syntax and output shape, so a reasonable implementation of consecutive signatures could still fail.",
+  "prompt_tokens": 2834,
+  "completion_tokens": 418,
+  "total_tokens": 3252,
+  "cost_usd": 0.008176,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

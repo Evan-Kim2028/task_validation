@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15022",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1923
+  },
+  "response": {
+    "id": "gen-1789191519-3ZxnnQsDBNcEYPnTEZ1Q",
+    "object": "chat.completion",
+    "created": 1789191519,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly identifies extra JOINs from per-term queryset.filter() on related search fields and implies combining those lookups, which a senior engineer would implement. The extra related-row AND semantics and exact single-JOIN assertion are slightly beyond the written report but follow directly from that approach.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about unnecessary joins in admin changelist query when searching with multiple words, each causing additional JOINs due to qs.filter() pattern.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"The issue clearly identifies the root cause as extra JOINs from repeated qs.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about unnecessary joins in admin changelist query when searching with multiple words, each causing additional JOINs due to qs.filter() pattern.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"The issue clearly identifies the root cause as extra JOINs from repeated qs.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_05817b15-91e1-9a1c-b40b-cc89a1df67a4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2356,
+      "completion_tokens": 593,
+      "total_tokens": 2949,
+      "cost": 0.00827,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00827,
+        "upstream_inference_prompt_cost": 0.004712,
+        "upstream_inference_completions_cost": 0.003558
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 480,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly identifies extra JOINs from per-term queryset.filter() on related search fields and implies combining those lookups, which a senior engineer would implement. The extra related-row AND semantics and exact single-JOIN assertion are slightly beyond the written report but follow directly from that approach.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly identifies extra JOINs from per-term queryset.filter() on related search fields and implies combining those lookups, which a senior engineer would implement. The extra related-row AND semantics and exact single-JOIN assertion are slightly beyond the written report but follow directly from that approach.",
+  "prompt_tokens": 2356,
+  "completion_tokens": 593,
+  "total_tokens": 2949,
+  "cost_usd": 0.00827,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

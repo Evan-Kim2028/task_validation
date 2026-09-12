@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14802",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4871
+  },
+  "response": {
+    "id": "gen-1789191495-A8fjPPZATJjZ9cR7Dy1k",
+    "object": "chat.completion",
+    "created": 1789191495,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks for a make_and_validate_key helper used after make_key so validation sees the transformed key, which a competent engineer would implement. The FAIL_TO_PASS tests only exercise DB-cache key-length warnings after versioning rather than the helper API itself, so they are slightly narrower than the written request but still aligned with the stated consistency goal.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about adding a helper function `make_and_validate_key` to avoid repeating make_key + validate_key, and to ensure validate is called after make_key.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding a helper function `make_and_validate_key` to avoid repeating make_key + validate_key, and to ensure validate is called after make_key.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "0ncUkc/17MeVQPmVgI63s24a2go6F9yj5HI8VSS34vpwahA7QdTFdnMGqIr8LfCLABMuweQS5ma25irYquJflUuS2xPGoEi5awpfU6TStBs5779g9iAH2FAE+TLKtfAm9Kl+SMuLweqOAEcwEsvjCcCUUWFjFlHLNm/XAcpu1e6IKC4ugH2f59F3liLivZ3aEwsDlx3IF/C3kaHtXHCHYnhylAk5h9yWjK9z+Mz8DIyFx5XmxZ+2AANIiEmA0Hzrf3u8onN+tKHDKGB0UC1Jf0yG3E07hgbJSjgGPuZXSZBEFMPWNuzKbT7HEYDMNpMMGeratoQC/e9rqn0uXdfnJvlvwtLIs6M71Nma4xq/XkgZvfUSfmAgPGSHm10uUOBLLgNa454j/VyJcY8nx79pRxbaOo75X8OWOsHSbRHMQDnJgex7HGK8SMp0IFFXFDgntG0LC7fbrcejiJaxPv4Wn7rjlh4V95usD/AKOA69lil+n66/Ri2IThPgIzOOas9RcP9epmhYeHZJtNIWKhtpJc0gquXBB0nehsvpCtUHF1Pk4BqC7aCFO1GFcPCdH+6bue1TgctnYjLx1R+HFgTGf7F9awYlxOcAtLGgXbLDJfpqDR5U66DClj57mMcWiP0Dq8OgI3VFbh1V4PxGQws6wOccbJtApIGRcW02KkcHJoZh8EZPXI9VVFjp1faTQ0g2JL2qCJCNAqcBi/UiwJJasZi+kg7BQZlZBCDHklAd7Dgdmk5eQ9yM9/mbYh91LxtQC4MQI7G3KjnS6OU8SEXq2dNV/lcxmQTHlc8tLWXGWyV/KroNUfP0pVbzV/cNYtzMQkJd62Vmg+mvTLJ0T2Wx5pwbtVVG4wHYDGnGCe0DzQkwMxCbwZgvHNUMxGLKCkztEvNGcTUBViKA8hA9iMCQS8YLSUHNp8lUBtVLgC/+1wYEKN/lY/Nm8UPjXrt6M/O0XCyL0F7xfL/fWDS3xCSmC//Qku2xACfkCuO1x86tvbm972l7qVCmxLs/bAZP8fCwOd4T7MBZj8WK7liUKajxJYvIKG4joqzS3ogBeHv6onTMF1OniMb2bVgdgrG8rxi5NSukItBS7cxQGGYtXIJbMTnQwL8hn4jg3mY71s2r/fcK9iEsBKE5WDsTuowvPushwNB9KXBt+HkgkSyCDjQQRaCcyDaFvHR+a5//7I7niuWbvNVgFhOY1HpVDFK6s2VY0HgCxeYtkssL/5zh8q8bvgw7m60o0IhVZXrYAQAjTtV7hOND4s2iRcF724eROQjik27X4WwUaWLYuSKQfF1QlK6BIOlKrs0Z3e0HyI4uXjcg3ig72sQHY0JAi+tEnIfnYkN0N+D9+MOWGoLf6RigoS/7FACfH1aaJc1GbVPE+4ew7Ci2Ff4ZH8JXJh4O91fUgzbZrBzWUGCCIimJ9KWE8Iv5spgwPA22ZoB3K2HENkjlAqUNW8jw+taXWAaIJhKMKthJCCFQzDGfxF9fXnNoIPWTCVwQOwelTe9cBnRgOCc6pzUbouN16d5xvrOLejoZQEj4XdhS4fLpVerMiZWOgRrtj/Ey/FOKN0ms1ol4TLwLl5wDbLu9rSL30/UFfDCOo9A8Lmlq5HDObEQxhFzPx2jZSb2doupAcoRt3JGCZa2JIJMD+isTJS2VrZNYhJyxnXYggxNHWJWJl5N3Pkyvi423OJ+7C5yonXs074mKTUauIsyeSK86o0TxFnMOHBrd4uMI55DfW4tHfiw/m1zOibFxetWgPfFY1wBLnYTODDI1wsAU2POVFnEJg4XKuCWyvmG8E0QGGIva0ap7/yEVMWqSPtwaiT5t9VhscpBG4FlKLBrFaLH90RWIMgfj8tvn1F+R/oOADlTOQSyA1Mmrnqz4uedNyZ4LZySEzSh7J/RpQD3GSe/k5T9Rd+N+PLlF7DWYSxauaioewyoshV/RCflkKqLwcHbNlQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3f14c035-2776-928e-9b8a-44f170d815ed",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5901,
+      "completion_tokens": 458,
+      "total_tokens": 6359,
+      "cost": 0.014166,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014166,
+        "upstream_inference_prompt_cost": 0.011418,
+        "upstream_inference_completions_cost": 0.002748
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 326,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks for a make_and_validate_key helper used after make_key so validation sees the transformed key, which a competent engineer would implement. The FAIL_TO_PASS tests only exercise DB-cache key-length warnings after versioning rather than the helper API itself, so they are slightly narrower than the written request but still aligned with the stated consistency goal.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks for a make_and_validate_key helper used after make_key so validation sees the transformed key, which a competent engineer would implement. The FAIL_TO_PASS tests only exercise DB-cache key-length warnings after versioning rather than the helper API itself, so they are slightly narrower than the written request but still aligned with the stated consistency goal.",
+  "prompt_tokens": 5901,
+  "completion_tokens": 458,
+  "total_tokens": 6359,
+  "cost_usd": 0.01455,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

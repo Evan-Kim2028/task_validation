@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11260",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1267
+  },
+  "response": {
+    "id": "gen-1789190833-AhHNrRsfLf1JGuvakyXE",
+    "object": "chat.completion",
+    "created": 1789190833,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks inspectdb to emit OneToOneField for unique/PK relations instead of unique ForeignKey, which matches Django’s W342 convention. The FAIL_TO_PASS assertions only check that mapping and omitting redundant unique=True, which a competent engineer would infer.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is: inspectdb generates unique ForeignKey instead of OneToOneField, causing fields.W342 warnings.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: inspectdb generates unique ForeignKey instead of OneToOneField, causing fields.W342 warnings.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rcpB/tnGEysOC08DglN8KvvQIykqOxXVDqAJud1ETMJGVmxv+cNihSFMvd5T07HKD0m7YdVAq9YcX/qIApQHPrOvk3yJl7SAhok20w84HVCovD4b9twWPA8DzK/t6XNj5reUbsUi/BwHRVXmUjC6uu6kXKviBzSd6BgTDEoyhDnFXHkSFj6gwhDg75Uoda/CcDkCXCEHScYQZgXp1URYNzfiFuPL/iQJ5mjt21J906mkcO16v5/aleI/tdPx0lsMircBy9snUzHCNS2zXBKNeltDFn1skCU9YrG9lEn1HupVPfPqaAqYwlIxASz/4rHF3j0EiAhWKBTyq8cWOmgjJNLsAuZxvGAR3BVJCVJKmJ98ENb38eioBETcWEjQQnWmI3wzsjlEtnD7kiaDzTk08yzsQQmcJKq1FJXEMfCTUYfF9qfCqvOzdK1+BGhRWtIwZHO9sexIx6epUL8OKZj04caDOOo76jUykd+Uw3HOrHzmgnf+pytS8qNguWGDoLB8TStkkumxvM5EMnc9DFar4TEYvWn5xvwFrKu4OJVwpUxoMI5MciMZNleCluSG8Pqvp8rbY9zcLUaNq5qhr1phJm7IHW6BBtlkPcnL7aiKS3+SMh/jrCvN/oAiH5QMULmFuBh4UnbdavMUk+mdilsIWdVTy8Joa8UTyE6NSAJbIlDrcpBOCoWJEyM/Os5EEtwUejB0P0faxtzrgIdQ+e8sIZyqm9VquTSr6tafeiw5SLCHf9nhJc5OmK9k/POVwA5DQr8jeOFoqpf/CnedP9Rl+pgWKqjVzoZHDA1upreWn55pt4Y/3uEYDM7GVsDBTskkETrG3sh3JbQcRlNjx9lVyitS3o+81zObAB2t25Ita/U8b96lxOQ8AGuxNM8qGADByNgUdBRUHRXC3YZHACIyR5XLftC/zkwiKXGicOr5G/lwBYraM/XBEZmhNpdRzxF1K3mcdju6La6A19MqvUEOQkZ+aj+hUtq1UtmkFxSk7JrOFhoJAxcSlQk8EWjWe8RaK3FfDCEbAovajM+tm4N2cdlyCC11gUSFIw/UauPkeE/L8HJAcIDhMr3qTuzY0bD4AUKW3GzMraF6eAP6YlVXvh+w8fr3hsNKSW17ZvIO5u5oGiRiYaxXXl2O20z8rKRaRNQSd2E0nRHP1JG6kqfF6xr86TuiR89lpoe3H9obZ/TE7X4frMXZzv3GtC0gPrpbWW9hG1PC5TGoTqDMxVqvXmOmMWYNN9IELJ9xs24rHD36XtU6HMj03OK0MqSGWB4jQGiOtRlINP1wRmEN84FjV79jVKkw8xjfHdbt1ITikKHhWVF7GL302McOBRgnHLKldpf7NK2x+gKDVbyTD/cHm2C8X1iTJ035fFDiSeAGc3yy3ssL1kpy1DUgQHj8+hI1C3b5UnYb5yjhskpWDWoAMFBSWuX5vc5hRH4ZN7THuX30Zml4ueKNUTI+MJFnD7ekZ4hKaqE/t10pvbWoR4bjooL5/ttgzeIWwKoY+KUXFqNA7ODKBJfHrzlRYVFTwkqS+G5F5hFsazFV0USFy+kN8uuhbbTKuA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_eb9edd95-2b1e-94a7-8ae2-a3a516a30b7d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1486,
+      "completion_tokens": 390,
+      "total_tokens": 1876,
+      "cost": 0.004928,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004928,
+        "upstream_inference_prompt_cost": 0.002588,
+        "upstream_inference_completions_cost": 0.00234
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 279,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks inspectdb to emit OneToOneField for unique/PK relations instead of unique ForeignKey, which matches Django’s W342 convention. The FAIL_TO_PASS assertions only check that mapping and omitting redundant unique=True, which a competent engineer would infer.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks inspectdb to emit OneToOneField for unique/PK relations instead of unique ForeignKey, which matches Django’s W342 convention. The FAIL_TO_PASS assertions only check that mapping and omitting redundant unique=True, which a competent engineer would infer.",
+  "prompt_tokens": 1486,
+  "completion_tokens": 390,
+  "total_tokens": 1876,
+  "cost_usd": 0.005312,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

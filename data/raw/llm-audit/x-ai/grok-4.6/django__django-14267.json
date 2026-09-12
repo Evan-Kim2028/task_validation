@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14267",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1618
+  },
+  "response": {
+    "id": "gen-1789191387-dLKFnRNzZA50SwqC3Lyi",
+    "object": "chat.completion",
+    "created": 1789191387,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue describes a crash and explicitly offers two fixes: drop the single-child kwargs special case, or keep it with a length-2 tuple check. FAIL_TO_PASS tests require the first approach by asserting single lookup children deconstruct as args, so a valid tuple-check solution would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about Q() objects with boolean expressions crashing during deconstruct. The special case for single-child Q objects treating them as kwargs causes TypeError when the child isn't a length-...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Q() objects with boolean expressions crashing during deconstruct. The special case for single-child Q objects treating them as kwargs causes TypeError when the child isn't a length-...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "hsDXQpko3nzUsKYQr4qAcxgkmZrCZwyBZzi8+f9gjg+hxnM+CVV/AVNWVrrD/PwDHd86c2HKONeZ8DpxmVII9cTTY7yTisNlZ9bWMHxzETtYsuplCq1Lg9wcIjDD7su2IA9Qh1jCyQGTqLf7l6DKyxve4Lc77CQtnvwfEdEJLSQeTZnHiq06gma5hObtg3zeYYf9OcbGU6LbLVfdVL65GuXbUq0HUlST5zHy/AeBXKN2bZmuJgKMKVQTwYJjuyGcwQm1FzMVbwrStLr+cLYuChH1pcm+901Xfd8PiunBdGIZ09a9lkK72OSFarjVIw04+l+oRX/zGfv7h5GBePg858xaJRUN437H7Emp7u8X9VkJjpGX7hnhntMGOdHwPRchjZfOIEWCN4XE9PLnWQvs3ing4y7Hc2qG3flFA9dFttBDzAbjkJG+QMGrxKtLQM2LMlhXXFEUdu7QJ9F7533kloJsQbMBNEKsm+VjxdZmI4OzlV94irusE+VRIltPYYspqi6dMaFYwyWU8CwK14LtYAhyH320Mcf91SZ8KPegTbcnZHTt2K4I6AuG/eRiIZh51Ge9hachYGXuleJ7xVHufQZ0UK/mDpEcH5ziOu3AzcyxWV65OVB6Ofun92CTEPlqbz2MSGgmWOCNSIkZ++EEzkitUuLKOt+KpXckWMfGazczXRK2lUqQomE4rcVVO3aO9RYVuw1EDvho4cd/dGFalIldD45VuGp9KThEw7uaWp0OSZ7yfrWnUsgQTBeMtdr6TzioGJivpgI6PQaasGcB17bVuEMc0MSoHuRVTJjX4X10OR4KGXbMlKml2amhiBtCpiQfjGz6sqhJgZBs8M4qLulzBa64KSNELCM/tBXwfkRFu7S2cQ3KjyBbPM1k34XqZLUQOYtaF5dJCqF5ciJieISVnTpbLpxmW1P1cPutAVTZww4W87Hhz856Ath5TNGKGZN9/28qC24D/opBxGEIqtRhIImb6fbQD0gxn9KyTRTEmbnHULPZncxS+mO1tr8ZV0fCmDNFapyE5EsqHozjiKRXnec296QnwMRiQ7ffeacPx0//P2JK51XlU+eslnOsNxWrfyI+YiVQuhFEc7UexzF6WpCspohEWtzYAkz29rMPCjqtzXdSW6GDJu5kKCylqr9I4wgKhWtwxGWsjwUQTKLyQPq9j9ukkqtY+oDVKeQPbOuEGMp4f28OsFeMz5M/c2S9m2NTieeVaiqi9agbmdr6leTIpEKORqyZxymT9YfB5O75IR8xUsUOf5c67bhUNJS91RF4Q3P4filL7c/LQ6rdwTHIEJMih3Qjh0Rm5UdwDTvLC/pRasahnmcM7op/IEspEK4uLBxTc7qtdXfYmc7H/BLbTrIkJFzx0kQYevRGUw7+h9ua15yfEtaw2t6zOjPBY0NWHYIJboRCU9OsshlCyt+ny57Gudykq4CoIreNY42o8KLdrDhK502n47jzXjD0IRfOZnNlHZ4yqbvkWb3Rywrd0tfQt3mB5YJk/KOLRv9eaM3aICS+jpVTE/vzTDi+7lCE2/jo3D1A6QCtVkmxyy+50Hnb+c2/k3M6DqL2s9aaA8EzrumGa+oRPQOJYf6+aoUhmRcALgGPP4iBjoWmdZYcT29bKBa9VTssiuXI9hQggkfcxV2wFfViNiIt7EdrFe5GJettgCAARTYWNehbu450/tuTuVbHk/+FGswZ+FuMPTk9VdmWR5NOcI2AVjD4O5eDAboZ0hNXB6JaSa4S/VxXZ4GatoGHBTKOuKCRHetyttJhjfouUbUxkXsuWoACXLvdrMQCZInY5dgCONpzbsvk5G+oYBCjBxFvYI10N+hsGOV6XUcTctistVwen8V9lIsl+A.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9f6cda84-5be6-9976-8f9d-8154587fc0dd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2083,
+      "completion_tokens": 417,
+      "total_tokens": 2500,
+      "cost": 0.006284,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006284,
+        "upstream_inference_prompt_cost": 0.003782,
+        "upstream_inference_completions_cost": 0.002502
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 301,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue describes a crash and explicitly offers two fixes: drop the single-child kwargs special case, or keep it with a length-2 tuple check. FAIL_TO_PASS tests require the first approach by asserting single lookup children deconstruct as args, so a valid tuple-check solution would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue describes a crash and explicitly offers two fixes: drop the single-child kwargs special case, or keep it with a length-2 tuple check. FAIL_TO_PASS tests require the first approach by asserting single lookup children deconstruct as args, so a valid tuple-check solution would fail.",
+  "prompt_tokens": 2083,
+  "completion_tokens": 417,
+  "total_tokens": 2500,
+  "cost_usd": 0.0066679999999999994,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

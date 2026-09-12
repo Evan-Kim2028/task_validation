@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2873",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1238
+  },
+  "response": {
+    "id": "gen-1789192185-gi3FaCm0XhlyF0RiRUaO",
+    "object": "chat.completion",
+    "created": 1789192185,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes hanging POSTs when a StringIO is at EOF and that remaining unread bytes should be used, which a competent engineer would implement as remaining length after tell(). The FAIL_TO_PASS test only checks super_len on a written-but-unseeked StringIO, which is slightly narrower and more internal than the reported hang but still matches the intended remaining-length behavior.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about POST hanging when body is a StringIO that's seeked to the end. The test checks that super_len of a partially written StringIO is 0.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about POST hanging when body is a StringIO that's seeked to the end. The test checks that super_len of a partially written StringIO is 0.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "sJbDaTozXryMepSu5PdLZUzHpG7qMB0DBnsf3Gx/6jDHv730qkg4CtfMmeXMVo0mvDCsnnCCTO4dL99fFvbSiAsVAVkHi5jZ0OwErG+rf9MXuTFSw9+J9cLohP8mR9hZxA7cmM95+kaIMRK6Fw4rXU5joJtxOY5MRX/1T3CGhU3ls65BNGYAL7T9gjMuo42UkZ/77nAUnGEqq5s1C1KBox9n1bVOWd5bsPDL/WW0rK2zt4yJEijkUtVBrwT38jLeM64IYpGaA71NKbOKgbiBjLdEwoe6tmIcOIV4DuPV+qdWcd64qi+8ildYtw4b352rBpFr5PTaDvfCiS+ezjun45b5Zt+SUwYJszuVcc5K4UOSTyI6CBwBn/IY42OgG7zRRNtmjTzMzUdQAAXl5cIHip26Eeew2Mx382/pWPwVYZ0nuQfkIa5xtW27eMfTzftnMvkt4HwUlHCrjy0hMm15CmS6P/EbBKJxp7GEyozK6x31N4YRoSZY7dz8YUme5UHmF9d3Fs6Qi118INeFPm7ADQrQRqAWuVNHrfRp55H4ajo4eSLJH7Qih53ng/+HZcLW6/0BRQXuM6ZRIGFs8S+jYm/Wia/n8tN5IO9uoQpAZLTB3zC0qbIBjQtQbYReWhgMk4aKkgxpVILs9B1u3TqRfuyyuydx+mQjG2YB5AuPd2ZIAl1kVUfuYUMqZ34bnCu9WQHFqfPqEcIuRWQlpmJBQAU5F1hKHib+FTp+EoOzDnJF40Q+3e4y9KWDTzZWtmolqlIHrWT4FZXGpSi2f7dJgta1278B8X1TNb/fiH4U/Zf3ScZ1obgH97LIuO8823vTvIVvryBMxUHXWQ+0zwk5MazTqD5ftwMKWkjuH4ITXixEHIUpLbQHbBO37tNesxiZFyUeemshl3imY/nuoqPZP214eIefHiMvI42p8g0Z9r3S78hdDlneNC0BnrkWavQP6wQ1bBfOgBq6jHTYMu6uZc28Hgxq8yANSmNYDop27pt0YzJHZxV964z8OPxP9PVNMjgyC6rgT2w3X7HFsxSbOFE6eksGpx21Z5qUNbHdhvtmnvg+9DLci97E5XHJOxziNozZVHLP4eMTOksws9G3vTY9Bv6ZYLEOdB0VTrELzBSBjJquyglO1Bu5H7mY89VOu2pstP8piX13+Xgf8CO2OaaoJsy+dijpXvRwfCwYUrtEkR/XaFYF9P7M8uMu6fEH6Xn7TXNnPBWPQmbOE29Kp5czq2oVqVdoc+nCuZBLDXy499nEx4/+26fu2OCaNT63o/LRAGZLO5VGJFEugSdWy7UAJJvUZEw2/OIM/XS89ZjXSu85dlX254VXOvec66upIei5f3eIvjEr91GOUllzRxyPQR+O51aNQFS9ID4XwsUwb3kLYZNUuJeoO2HENS/QPiiezh9GSmwd31oKGFPRJ30s4csRFATgIGm+fPdO7Zv2Mr5yEril9XyQjEdt9K0YIXh4uIzDG3LYu1WNIcXHWESlPmMU4BG9vhmRESXFtS41Z+0uBE3MlE2j9VI7nURzjors+s5FEDIY556dntQv8NVcHlUrXuzbsiIvOGxdUhWgJu6fPZREUgNpIknvtMLF53Y6LZ63g3r/YdKA+Ox5mqkavDI33HJb5Vmx9wc/Kb1/97QY88tMU8eaLDZSUyHApgpL+kvpque67FApnTWq+Lt7hfTVkUJoYYJh0+m5ZwSBnbx3QG/R5Vgyjxg5sqhdNKqDSQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ceda0eef-63b7-9971-b2f0-f48a3e9af949",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1656,
+      "completion_tokens": 425,
+      "total_tokens": 2081,
+      "cost": 0.00567,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00567,
+        "upstream_inference_prompt_cost": 0.00312,
+        "upstream_inference_completions_cost": 0.00255
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 290,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes hanging POSTs when a StringIO is at EOF and that remaining unread bytes should be used, which a competent engineer would implement as remaining length after tell(). The FAIL_TO_PASS test only checks super_len on a written-but-unseeked StringIO, which is slightly narrower and more internal than the reported hang but still matches the intended remaining-length behavior.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes hanging POSTs when a StringIO is at EOF and that remaining unread bytes should be used, which a competent engineer would implement as remaining length after tell(). The FAIL_TO_PASS test only checks super_len on a written-but-unseeked StringIO, which is slightly narrower and more internal than the reported hang but still matches the intended remaining-length behavior.",
+  "prompt_tokens": 1656,
+  "completion_tokens": 425,
+  "total_tokens": 2081,
+  "cost_usd": 0.005862,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10452",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1674
+  },
+  "response": {
+    "id": "gen-1789192963-oCHjQH5s8trRHotMoUYQ",
+    "object": "chat.completion",
+    "created": 1789192963,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue only asks that PolynomialFeatures accept sparse input, which a competent engineer would implement by matching dense polynomial values, but it does not specify output matrix type. The FAIL_TO_PASS tests require a CSC matrix specifically, so otherwise valid CSR or other sparse outputs would fail.\", \"p_invalid\": 0.8}",
+          "refusal": null,
+          "reasoning": "The issue is just \"Polynomial Features for sparse data\" - PolynomialFeatures doesn't support sparse data. Tests require:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is just \"Polynomial Features for sparse data\" - PolynomialFeatures doesn't support sparse data. Tests require:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "QF7J8Zr5gq+3eVZDpkdZAKmXvFji+OY3g8cYy2dF7nZldtG3U31FqsJ9W6u764/qrHfPFCPOQksI71aXPT3mcSVBpgEmIk8J3z/UarrW0bAf3EdeLpTrj3HEo4xS9fId67dmmGd5DH1yRORh2coMcZsrPg2tNYbz9eQpKWOROU3oolhU1T2HYmyoJT2uD6lpteZSyqyw1WT/mAiCfiQSJ82796xe5G7Wwb08RJlAU+iyh94IZcuF2LyOgq0XFXfFv8EG09cExgKUqgRvyaTzphiZpX9hPJc42tof0sf574jl38M6ZkVZhfxFUKkb1h/UC3Q5Q6x++2KXxhZWgeZpbXSPrOqKf3H0/7qHRU6tPqQICPm3yQYt98j6nOBU6EP7IdpCtSHrEn2Yj1BwNLHC8EizbfC2iC9SHjHM0pye7/xyKi+ZV0o1JYB25zApgp/YunLTSg1j0Cmg9LT1mk1AwE7jeLgykEG17s6708uoVZ8Yq00O+NL7toTX4XAu8CUiB5CJda1c9IYioXyqio0KF3iLfSGwjYgttIvLww0XnfWKtXAQTvMQd3xWdHIzi/NDUS4WkUw8I0Pt8wgZxVfSqfM0MubtrWuZKHbj/2R8QdAhq4o9dAg0LKiK0TETlEL6OYznjJufWSULjQn8PoBmfWvMowtQ3Zd7ol74IR6dAZXJ+JJz+0OjYrQdmaSX0KtnYM+Y/yGRIhdpYZ/blHqaezVQQL1EuZu0CO9ZDVmbpderDXrWr97mjdsaCLGFfFtH1iABgg3HWnjFZfUpdC63iTwSrtxEhv48vhY5GKmiGj9yrZNCMzzHzDnWFfRVCMFjtByP0bbNnhYNX3RXgEnHjbxvswn0OiQvAl4hUJ6Re+ArWDluN5yQI5Xg/0EiyfObiEnnLysN8WyiXnyCHnNq+8FEu+v5yEbODmVS9n9/jOahB6osk+0pOQ/jSlfGIB/JV006xL955Co90kExS8wID21tA2SUIlEc7xWTDNkb/a19/8TtcY9s/IWbthp2r0R1Bc2BJHi86ue9PicmNZDkYbUi3PbmVt8L3jk/WbFa5QFJOcPOPIIBwAMcVAiZFbYy3ufUHuQwQVcqAZkTPIuBduMVIXoDrDLUwons2W/s0d5a5EG/GSdJrgqVRCZB5Ib9p5Hnuy7uUF+FQ2oHQIYgyjtgdKIQ9jDgaaThwB5npTqAjf+/ill1PruTGSfWlp0DLI96dqyLrfh1PnEfKSp045+91p14gTy5YcXSCl5MR2x2kb45gwpvOWeEHt75vtY6w9kCQK7cpjb3QxV1rgIB8+obBv3AX8NtUDSzUD47YMwtla1Hjt2O5L70mTzgG/G9S/Qt6uC0fjIOVDBmQI8tBxqlBS0jTOlVryeMB45kjplHtFxFx5VLe83Uk43cn3a3UyGHy1sdz5klCDLLtqRL9lhXPwVzPW1QNxJTIwMP5hURIGj75764aDHSNaweB8SN0qMM3lI6l33V7nxA0vM4W0QTifmkoB3gXUCqLBA9wyGP/OdUCEQO0Cz1frBdU4DqZ9bhf3FGwnjUzBZnrso6tgdKk6v76Yy78Jz8HN29CmNjJVk6qSqAAswZrpjlHnZaOoJFYdeCv7WdJnBeswWHBPhMI6ESz5XJS6XskNybS+4/UiOQNeRS25CnrGEsFincOkLievCTwlQ6UQ0ogBtTiGlqzSwjwAwthSZJb3qTLRjyyrGkfquElSwaVVwQPiSNP3fbxgrtJOrWxNjHSEw2Yt3d1YrAI4NAhbvBuZmyKZqq.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_66b2fe8a-e667-9bae-b92c-5f772053eff2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2039,
+      "completion_tokens": 413,
+      "total_tokens": 2452,
+      "cost": 0.006364,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006364,
+        "upstream_inference_prompt_cost": 0.003886,
+        "upstream_inference_completions_cost": 0.002478
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 302,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue only asks that PolynomialFeatures accept sparse input, which a competent engineer would implement by matching dense polynomial values, but it does not specify output matrix type. The FAIL_TO_PASS tests require a CSC matrix specifically, so otherwise valid CSR or other sparse outputs would fail.",
+    "p_invalid": 0.8
+  },
+  "s": 2.0,
+  "p_invalid": 0.8,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue only asks that PolynomialFeatures accept sparse input, which a competent engineer would implement by matching dense polynomial values, but it does not specify output matrix type. The FAIL_TO_PASS tests require a CSC matrix specifically, so otherwise valid CSR or other sparse outputs would fail.",
+  "prompt_tokens": 2039,
+  "completion_tokens": 413,
+  "total_tokens": 2452,
+  "cost_usd": 0.006556,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

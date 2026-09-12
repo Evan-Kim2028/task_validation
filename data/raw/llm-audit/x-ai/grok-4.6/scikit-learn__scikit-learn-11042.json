@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11042",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2840
+  },
+  "response": {
+    "id": "gen-1789192342-JSoe8zvHLx5rddid5RXJ",
+    "object": "chat.completion",
+    "created": 1789192342,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that OneHotEncoder honor dtype on mixed categorical/numeric input, including sparse output. FAIL_TO_PASS also requires a new dtype argument and casting behavior on the private _transform_selected helper, which is not specified in the issue and would fail otherwise-valid encoder-only fixes.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about OneHotEncoder not outputting scipy sparse matrix of given dtype when mixed input data are passed.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about OneHotEncoder not outputting scipy sparse matrix of given dtype when mixed input data are passed.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "HinGL0vSL0Eqeom5ywHxbTI2xllcrYborsDgJz+Ezrsq1Oe05XqBTmJcdk1Re0Uj60O/+o1kruMm0jhUEt5lyh2H8b48C/rsONs56JAfL6kvHW3MRc0j3MYbMDnbikZ+qfBtZTVAHakEUBjmbeljRrBr5w2//6YQt86taZG8hOr9sceg6nVmWd6YTqbU3e55UpJBz5DY0owOGPUtmo2DKTUoARR9v0GPb9ghLo2lHOvXPCng9WPlNDKaodI3hIyYU3PATv1W7H9us4uZGXCpLXxKwuyRtJ9IIdulVFrVKIgIbaKuslypsiPbR6+eUgQ5N1acZbgd2IDvF89DO38PnFYq4Hk8hkrZJdh247gFAXXClIZz/PGbGvgqQoHpwt8vbYiq5wzBS7pPObzkJVIQlH1BZ4HBgSj6QjKlJjqtxrxpH1H8lbizR8/JQLNk1MNMxIk8eTezot05BKXwCYPiqYrKRZAdowxkNZb/EpjIcMA/j695vwy55nXzF4Bfk8Pg8KScvJMjMFbH6ZF7+XvDnBYz686ESsIArdwabt5JvsGPI18HzcnW7O6faA0MXRZGvjz8rKqhnFg12IwTJahY+EakWOMg5BNGmHeoOetEinS3drtg24AKCyU/QN1DhXxhli68YM0uZM5BtXy45+Kcu5MGyrUYCjvalt7BeaEVweGvnyM/h2NHijzTo3SUnAOSYtDZT0CcAN4cddY04P14py7bU/JAoWgP4FI0MEEcWwEnwPN8ob8xlMv8IwiieQySfmvJD79Qdn+gvEGY8KoqXecDr//wisPk20NgGLnwtDvtNqOQEvwR4Ya68mS1RKLOtLMpfLMIJfRQkk0nd/4MNXHDDojT7j7/q2v78BdqGONgQfwB9zT6Zdo4cAsOD8oTui66TqLkZsFVUqpDvIaqfzd9/CHppQ/lqnMFTQqe4cQndFBGdkUeqpfSo0xx1hC7QzxAHJwoaA/l4SQlgrgKhMoyo/HGTB9tPzfECjaSbScuuU1lUmApGwDNH/7hrY4YMXpRPBv9+x1bnD9j9tl5kTsAu/FjMJ3jMYxpbuq2lAK1OHyLvj2OI96AthidMnxzzIzHB1f6COvooW61e9CzHVzz/wYQEnEtIhxSOQJHuSAsDbWHIidOhWEnO1E8GACgvE7guxG97r4XPhmpYZnqLH71txJSwIbbEMwxhkQKNgIvfHp3oEDFEm74ASlHbY/A6q4ZAfyP7Hu4KeBt62qMUdtzb2JMRf0ft3XhFnJURnMoClZQ69Df7cpAv4+GPsjInTcelpfz2X91/CSq6Y/reOwCyCJEnRkwffYzYT0/TcQFUQuCTA6g9NWoyTJcwji9hauc42ZxUDO/EVR1KJcCcQfRSfBh5P/Mi0ssU1TjPbNghZI7ofc+k8Vklie0uyG+TWltXMliX5HriQivGE0LXHZ/gCMvVtLtLNiMOxoC9+NcqOI09T4dhepv9ESgFmKC8jHMM7SDQpGwDMhM8aobolGjbcj05t1H0MFDL/HCkDqEieuo/czmUy2Vu9Iwfp1H3IgI/0a9hNfL620J4bYLGoY4qrvykhJ/A9H6XNECAa+xn6mpZQJA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_96f341b9-64ed-9634-8a90-5edc7e545b01",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3799,
+      "completion_tokens": 372,
+      "total_tokens": 4171,
+      "cost": 0.009446,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009446,
+        "upstream_inference_prompt_cost": 0.007214,
+        "upstream_inference_completions_cost": 0.002232
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 255,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that OneHotEncoder honor dtype on mixed categorical/numeric input, including sparse output. FAIL_TO_PASS also requires a new dtype argument and casting behavior on the private _transform_selected helper, which is not specified in the issue and would fail otherwise-valid encoder-only fixes.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that OneHotEncoder honor dtype on mixed categorical/numeric input, including sparse output. FAIL_TO_PASS also requires a new dtype argument and casting behavior on the private _transform_selected helper, which is not specified in the issue and would fail otherwise-valid encoder-only fixes.",
+  "prompt_tokens": 3799,
+  "completion_tokens": 372,
+  "total_tokens": 4171,
+  "cost_usd": 0.00983,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

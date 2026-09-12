@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12419",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 832
+  },
+  "response": {
+    "id": "gen-1789191034-PLfBmkni1d2WWLNlyPq9",
+    "object": "chat.completion",
+    "created": 1789191034,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue explicitly asks to change the SECURE_REFERRER_POLICY default to same-origin so the Referrer-Policy header is sent. The FAIL_TO_PASS test only asserts that header appears with that value under startproject settings, which follows directly from the requested default.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about changing the default SECURE_REFERRER_POLICY to \"same-origin\". The gold patch does exactly that in global_settings.py.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about changing the default SECURE_REFERRER_POLICY to \"same-origin\". The gold patch does exactly that in global_settings.py.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "SFue33X86elKspVYfU/ZP0dCfYADXdwRyRUeDSfwf0SuF3kdp0ENunfO22bWiB1qRQSBKwabmsBwFJVBdSNgWB5t6gVM96MUV4xMEv8MDl/YWHa+oIv/T+xp6imnAGwQc3L0+dZcURDSKBjnvtyfoFh/wvh5CrN5P+zrwPpr5frOfl3gE1JwYuZNTth4xhaiEzyNH9tGaKg1qzrBHyfESYSIUAJVLi2ZcciPzSEtoLjWwISVpdF/yMBNdxGSIgHvFsM9psEbQ7kLxoTqPpluTCmJ0vpY+z9PukXkPaI5sZhs1T3r5XEKmnfHqjMjgh7vDjDpZvM7TdRwmg02Jj4fRfGFnlPS0dw1ZwmnpvdOZ0fu7hssZgw56CpiahiFb978Gu8wLupsie2FL1Fl9DvjhpdAJfD54WPmvrZ2iU8EHNI0mTmvAdTfVMlrnXGL3HTR5QdL7BSTKARbL1RFUbrmlHmQWMVrOrpL9qXiZfLzA3kcfdPOptD41FJjwTk+doF+cwF6k30DhKNARi/5MkwxE9ssh7dG4T5VPOqxWvJac5o2MWLh8OPTzS8ddmgb7aq1syzeYUkFkOUrNFyzaqFC5I7US9ZqM5v0X+2V5L2B6/oBqxw/Bqj6/Ze3whJR1S4PHXkCWym16tp/Y7qi/NIf3KSgrOdf3N7VqGVfq7/t+E6qSVU7XL35r+FFd685PrD18kQst7wQEr+6drIzziijqhxBbR6DfUNlIJTOKD/GKiM1XOI1jQvUMyXjrLc5CsXWDEdpFKhreO5wAqZvJGBksJAAe32Cd0Nv/aaVxQfHUbWHVE9wYUKYXQOiJTguonbiYVb/Q735zDXmQVZ3m+dCBMGtrSoSF1h5177MEPV9eu4/N7ieiWKFtP28f2IArMgY4Lg2shOA71plXW3V6jVWJMJC6SJwrPhn5nEk0jCWP1FURX52yxMmP3k/y5pczttCPlF6abO16iNjeyKWY4gzxz5W13bk6vzxVXNipoX5jB0v5vbKJs1zF2PPgWSUxKRMsSauMA1Ah1JAhOplp9u4jdQioJH700yqmXw7QXvIWhCfTnFBZnwBepqpUyS3MEv93W9qGCFqQHj2tnnBBbd/8hUsebvRATIqEV7kf0VgsmihziGC0DgPFc2LoemWM34K0Hp9FueMhpDy9ixnp23Bw7KXya92AeTcDHvGEV+0EdyHsDNh5nB6VKQE2u6VlQNR69I+vBDf30SpiQuSn2hjYG/0wippZ8EtqPCIqUvMZVogZLeQ2KrRSw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fc2177ae-a7b3-931f-9e89-cfad8cea224c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1146,
+      "completion_tokens": 325,
+      "total_tokens": 1471,
+      "cost": 0.003858,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003858,
+        "upstream_inference_prompt_cost": 0.001908,
+        "upstream_inference_completions_cost": 0.00195
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 212,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue explicitly asks to change the SECURE_REFERRER_POLICY default to same-origin so the Referrer-Policy header is sent. The FAIL_TO_PASS test only asserts that header appears with that value under startproject settings, which follows directly from the requested default.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue explicitly asks to change the SECURE_REFERRER_POLICY default to same-origin so the Referrer-Policy header is sent. The FAIL_TO_PASS test only asserts that header appears with that value under startproject settings, which follows directly from the requested default.",
+  "prompt_tokens": 1146,
+  "completion_tokens": 325,
+  "total_tokens": 1471,
+  "cost_usd": 0.004242,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

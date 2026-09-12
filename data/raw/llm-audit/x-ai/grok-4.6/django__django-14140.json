@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14140",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1970
+  },
+  "response": {
+    "id": "gen-1789187725-xGqTAc5mZzo3XmF71XwG",
+    "object": "chat.completion",
+    "created": 1789187725,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue describes a crash and explicitly allows either dropping the single-child kwargs special case or keeping it with a length-2 tuple check. The FAIL_TO_PASS deconstruct tests lock in the first approach and would fail a valid tuple-check fix that still matches the reported bug.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about Q() objects with boolean expressions crashing during deconstruct. The special case for single-child Q objects treating them as kwargs causes TypeError when the child isn't a length-...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests enforce non-backward-compatible change to always use args for children, but issue presents both options with preference for removal\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Q() objects with boolean expressions crashing during deconstruct. The special case for single-child Q objects treating them as kwargs causes TypeError when the child isn't a length-...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests enforce non-backward-compatible change to always use args for children, but issue presents both options with preference for removal\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_228dd142-254d-9a1b-9eb5-83e442e641df",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2493,
+      "completion_tokens": 554,
+      "total_tokens": 3047,
+      "cost": 0.007926,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007926,
+        "upstream_inference_prompt_cost": 0.004602,
+        "upstream_inference_completions_cost": 0.003324
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 441,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue describes a crash and explicitly allows either dropping the single-child kwargs special case or keeping it with a length-2 tuple check. The FAIL_TO_PASS deconstruct tests lock in the first approach and would fail a valid tuple-check fix that still matches the reported bug.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue describes a crash and explicitly allows either dropping the single-child kwargs special case or keeping it with a length-2 tuple check. The FAIL_TO_PASS deconstruct tests lock in the first approach and would fail a valid tuple-check fix that still matches the reported bug.",
+  "prompt_tokens": 2493,
+  "completion_tokens": 554,
+  "total_tokens": 3047,
+  "cost_usd": 0.00831,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

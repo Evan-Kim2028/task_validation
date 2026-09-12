@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13401",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1661
+  },
+  "response": {
+    "id": "gen-1789191216-jWc91YAxAziTONTlTEZP",
+    "object": "chat.completion",
+    "created": 1789191216,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that fields with different models be unequal and that hash and ordering stay consistent, with creation_counter first. The FAIL_TO_PASS checks also pin a specific total order among abstract and two concrete models that is only implied, not fully specified.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is about abstract model fields comparing equal across models. They want __eq__, __hash__, and __lt__ adjusted so fields with different models are unequal.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about abstract model fields comparing equal across models. They want __eq__, __hash__, and __lt__ adjusted so fields with different models are unequal.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "E4rTO+swysiRd4GXvKRyqxzmHodnREE7aX0BjKTHh8XB9zOO0cTT1ZjApypCXvALT4g4tvNfqo+pZbscbgiGjDPxtf/crud8BL2n3hAj//murpah0AmmJ1JEBV/tytAh2YxwDXuuozF/gDVnUmBmklimpfhSaLVwqTEpwSyT+Ka01BBtABjrEeUg9tpkbq5lwHWob3B9c9FidVDZOyoF4scGU3gXrPRXGkuceOVcVVylvg21B4iI+zxI4rXJefBGaNf1ImdUSZT0gRRihfEsIAt7Bmt31yO96IuFYlGrXB0R4Q9XAE0951nlyRrEFGelQ/T74/9+LvgNiVG2Ru38Mu6YucQ4t/gZ59Ao+LOLjQ8UnnrXTGVJy/3wKdSEsmYeWZY7o5AEUd4WGsWNTC2+6TvK3ja6zm1F8IvOULW7ufBEQiupL1LVgRvjHS5YeS5EvDwJ1zBBSRYbIcPpf6DmV/bf2Kf8zxp/yhljN4mbu5bEv4/bn45Qu9xgWtHNA/YX8wz32z0Ac8AuCyxf7iVAYqegGoXv3MJKBm61yD3YoR6cY1B/K/g24Appj5s1tE72uFCng3yNx+DX986u2rG4Ra6qH1BrJ1Q6JGHSD2spIyZXFXN40Fxdw/Da02d2hg/4vhJjMDn2yeAn+I+7KUl9L7Wjyo/78l26ycq/LBbQPx3A+63no+JT27C+hxNmxMl4h+yeSEJHtnYFh6s/fNxA3y2x1OZzRBvTzRNBk+vrbDCJx67zDEWNa7DQvutkfrp6OSgvQayGDsFhYH5aIFvL98PS0DR+nYokFyv2PVTPxmy2i1l48+V47ZHyr0y7DlsYq7rA96S+gF89yW8H4RKSMH1EGD7lcnlprsOQPQjxGluc1f1Rz42VnWdhLre9SobjLDFSh1CwmorT3CwHCPQWoueSBqpm5JFEnej5ESoboLj6nRxpJS9XL29tPTkFLCTnut45+NdF0PIdRYzPwFliwLIlrG1ZEdwVglkVOglfeZUue+89HNZx/VCpzC/wALIMmOIVXtg3KugH5mwh4uTtYlQ0MYlDHL3BaHhR/FNhD0ju0t0ZjWb11cuPAsRwDGeXZm1D0c2NYysPcMtAjt6gd0i6Ood0+1LS5o+J5PegjHOnvfvwEOkzuEafUkNaBWfdMH5DsVkeudn8p7La5zbPDgfzeyKa5CUo1NcHgPgskj9idhYs9YaZyW0Y2dELobUHHjt2HxOqGnuQdrtqejCD15i0mYyH2zupyym0P8TEnaHy/hxqIrx5i+ILEv25mKF5LAZJ14iaJO8F52Sg9a8ChXQuWUxofH+Fx9qHvEN17r2FfQaY7WVKuloJaruqiHXiLqsCKeCG0cTHzObC6UMS+/rCydIZn2p8UOku6+v1HyJexiBwmsaoXbJsNtrxxuSywsz8z+yxgDlJ39TrD1xRTP8/t2LUKvz9oPt9A6B5+Czk4rSEgvxl6Mi6tf5RMiyApe62VUEf+73jwrEvcnxVwAnIFXCofBU6V7yjhhu3Mn6PiSytn3pG2XDG0Ug5zpFOhx4U9wsRgote0UfBAogxG+QSwt++BESTVtG4ZQa6EVT2Aa+fBP45CRItclwtnKjfNLcuJiafquQoRiJPrmDBxcLmKcgse/1tbBg0hYTpVtgu+c1AMQbM+/61aOTpn07TLDf9wI/b/PQeVp6OJzzSKBwl6bWRarBLVwWoOSOM0N+krPFIa1hSIEp0Yb7rkOWwM2hcm8oZ5HovIvxWhOUsFmNc2/Q/5NsZzor8fRp9BTqv9vOI/0Erp9GCR63lazIdfrMKniY/CvUzhmT+Q0L6yMqdawejc06izKUenxcT08h0rNk4omTGpfvNi1P3G34THWsYy1M+kvYb6YAyz5fk04BlJMy+FJhmIF7O1T7pHq04CIRVxiBu7TUEoPBLQqG3M9vMsiK1hV+i4ea4K0f0roYD4eMdshB9xvtW7ynK+73mXjNnFOyqSO7iJKihInwxI/17u+MziZcOQSCbyVkdmP7gnCop3wi67J5oWHeqlai4rwZtoMl0FgNj5QYVG9Kyge0cddVelAjjSzGj3/5QM/IOs94x1/yZtb6jDhNvsBfxm4fNgdn/EqjTcYYjW0aFHhfIUI2BoogSmK+B/O1sIk9ciE+X9wpaPHdbd86SRXUor+dcA6/NXHaO3SI8rcd2ydR/UwYpBAsMI/2MzZJGYW7tXdVFmH4K2/YePq2VvDrmBtJCgsqG3F72XA7rDmITjuEOcGkj0mArrQUsTo6xkRxIfhwp6TwmxtdscwtDy2WRkhOKBB2qn5E/TFzVPWH4JFnSbc8Noq/+Cx1lVm1svf8bcePxgXIvH/emhQCwoQqVw+Yiync05hg8TfBMCyGbhQ3nCuvRjJUvlBSvzG29YuPYaPoRCLINyaoGl2SBq0sDCyWxN6uEo7/lzILwQX4PXoegQViPXBJYmU5gzs26MsiEqG958kS8GB63JwS+CziDDPAEZkuiMSaXG8EJCiTdk805XYjkkcxOLS3/ox6sR4P0yRt+9kwHQ+Jlo+wb0+E/KdiO+YvcyqxFlcavUhV9WfjrylAmvOMyJLEB7H2pC5LCCr+4bkUr+XevManNsYjt+b9oSYgD2IVeNPNnc3M/YsK08dQ4K3MdVtfhS0JMGSgwuNny+NWBYKdOBKQCu+0G9KUFr4t3XZZ9RiLF0Kw3t6E5s32NP+QoWJcppGdbb7b25R0su59jzeFQxsol9CzBtLNpAtOA/Bf98+pJ2KabK5O2sRCK9mdIP53WtQ5jLfpVAJXI/rmFXlOC2kHlPxsshKL+SBmHuqOyDJ6SRW38/p9g0IQN4+nzLEE1ILUjIX31vuQO+ec+vl9ac/G0FdqRhL+KMo6yqAvguOGZE3ZRtXgZIbW/Lv080kSbQ/jXEUm8R6Vv12rfvWU9FRjkLNx9cmYEeABZy6oPRuqrPC1zrJhxdpWfmtTUg2PnUaPyKz2l51Zv3cMICSdDUY1OqtzsiBqcS0oObWrvy31UJXwy/YZncu04v1+nGNdYDey/Ikm1U0qwytnWlz4q1dLYSK7HEHwR/R/JlTlmOFieNz45hNQ7cLo1zDIFtLuGUfDEtP3CAMpKIpgxAombN0vQySOOYIxVeUuqCqubWZNzrewQRzZx945Ppp93ZhvNxg4RM8j5pbN012NI652MF1MnURWnuYAN4OwTgjbk+iBjnCkkLaeO7e5cJkBCoW8ALWE0nDrp0kGt7e1yZcXSdVXGglq6wNTBEo9F4yYvdbvwJW+XNeIr7OIW7jmlD1AAlMTPlHFmQ7/UcMMkTOWRGfc94tF2q8tDOUDI6fTcv1xQ8VHiB5dWqCNuXM693fjwN4mdBqL1SUUggKqOghcu09+Tgw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_91d1e3f9-d433-9ba1-9ab6-1d07569223f6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1965,
+      "completion_tokens": 647,
+      "total_tokens": 2612,
+      "cost": 0.007428,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007428,
+        "upstream_inference_prompt_cost": 0.003546,
+        "upstream_inference_completions_cost": 0.003882
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 539,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that fields with different models be unequal and that hash and ordering stay consistent, with creation_counter first. The FAIL_TO_PASS checks also pin a specific total order among abstract and two concrete models that is only implied, not fully specified.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that fields with different models be unequal and that hash and ordering stay consistent, with creation_counter first. The FAIL_TO_PASS checks also pin a specific total order among abstract and two concrete models that is only implied, not fully specified.",
+  "prompt_tokens": 1965,
+  "completion_tokens": 647,
+  "total_tokens": 2612,
+  "cost_usd": 0.0078119999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

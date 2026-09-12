@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-4094",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1154
+  },
+  "response": {
+    "id": "gen-1789192247-u0ZzlTcrkPV5tWHYjbrX",
+    "object": "chat.completion",
+    "created": 1789192247,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue gives a complete MCVE and asks for a working stack/unstack roundtrip for single-dimension variables, which is enough to implement the fix. The FAIL_TO_PASS test is that same example plus identity with the original dataset, so it fairly checks the reported bug.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about to_unstacked_dataset being broken for single-dim variables. There's a clear MCVE and expected output: a working roundtrip.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about to_unstacked_dataset being broken for single-dim variables. There's a clear MCVE and expected output: a working roundtrip.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LYBTCSxaPO7kAAgtEZhXl4Nw4o1Yl5YNlvb+bdm3XVqqNcVa/aSQV0dAuCez0/PPWoCC91Nm0qGCz4wF4agX2dxh7IJqP4fl5tJQjH34JVesudOtUjhT4IxJ2chxqxcVznpH2hgihxjl6jKH3ReOZ1XvLj+wkyF7dAkbvhyjoI6CKfMo6xod2tdyNGSJZFhtfEyA/LRvx1fd8q9Df/3bQlfnFhJVJOTHhJIqzs2GQKqlr+GsBSqd11IH01kUAymbaJITh4CnVwJwJfqKx1oEgsJ7iqaxlD2gXRuQnVDGncp3OmPyTRpRhWb3ll8dRyjfkgnI4HPKz+0yz9j3FXatU7PDsd35ozQr40G9ix7AwS70tBsR5KF8tcVpXBomwFEgWKR7tUdlaN3VeodHq6f35m3blPlFzbm/gEuN6chhTGBXYYIClkYKMmVxiAS233T9wCU8dqGP+FFn3OUIskHApDT/thxZ6a7ZFfXPxC2tYDJwcsTZrNPKo32nUgCXoBJ4WA/1+NmDh/KSXIB26l3hmAfWGWzgki/FWVawWSwiy4poiVCu7PsdnQ+80BfM4AhZSG/9Xk/ZumBYG/3Q2watNzcQ26A5cxhUz4Hilh/sscyYOvs1oGppExHjJ8I.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_279eb169-f049-9504-97fa-e4b9ac699b4a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1700,
+      "completion_tokens": 232,
+      "total_tokens": 1932,
+      "cost": 0.004408,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004408,
+        "upstream_inference_prompt_cost": 0.003016,
+        "upstream_inference_completions_cost": 0.001392
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 119,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue gives a complete MCVE and asks for a working stack/unstack roundtrip for single-dimension variables, which is enough to implement the fix. The FAIL_TO_PASS test is that same example plus identity with the original dataset, so it fairly checks the reported bug.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue gives a complete MCVE and asks for a working stack/unstack roundtrip for single-dimension variables, which is enough to implement the fix. The FAIL_TO_PASS test is that same example plus identity with the original dataset, so it fairly checks the reported bug.",
+  "prompt_tokens": 1700,
+  "completion_tokens": 232,
+  "total_tokens": 1932,
+  "cost_usd": 0.004791999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

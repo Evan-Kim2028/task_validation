@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11490",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 882
+  },
+  "response": {
+    "id": "gen-1789190874-x2U8Mb2Go13cO32LwKAk",
+    "object": "chat.completion",
+    "created": 1789190874,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states the bug with a concrete union plus values_list example and expected vs actual column lists. The FAIL_TO_PASS assertion is that same example, so a competent engineer can implement the intended behavior without extra unstated requirements.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about composed queries not being able to change the list of columns with values()/values_list() when evaluated multiple times.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about composed queries not being able to change the list of columns with values()/values_list() when evaluated multiple times.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "OKnhex7/JvN2oYZWHV+n3r7qfAKlm7gYBQMK58oW+pg7tUiUh7uW2Uo6WZsK7vFd0dkmqDs+18q8drKxS6S6GPULXS+JGCcT1BHEm7DBxl0yXHOscxv34vofo9PIpXl7SegQ6LVvgPmMJgjQqGjixxAPyIjVI/ifVaApRwKqDWBf1BDb+ST30ctxWyN7lSpDF5vGRyGqB/2/h8R8XjAnUBEGLXgxT24qNiG4aIhYyeOV/nQdj78asDR+Pjjl2ekPz1RK1DSa/u2mBWke3MmYnM2Za+4bSruhmKGA+dd9/XN1ixDEwOftM/1brxjnDHQeJLTRevJYhfGsdLfUPE2UlQToeXk8GfCdICVk81cUjbccnhBrqmCd/gsAI9v92bF8gRB+ovqSh9FqyaZ3v77WkXgeHcMyBMIaGrTySZ+LzBgPqV995tLHPpxuIfKv89ZpkUOV45fzJmwuZN2TjpXHKuB2VANnykegOkzOo3iaqeKdaAgAi045vWPYe2PkBXt/Q7K1GTHwlIBQO5aOEI8QMCwfOsFB+AXxiyGBPAhNhRF7E3EHkmIGQBqBJQ/+baeq06ddU2EX53DyOkN+VPb3IddE3sYzMkJT/H8GHmBtv1+lycR33THeoNI8JE7ReKxz8dNrtzX2WCKRENxj5XVgPBt42nW0E8bLC7s0Z/jhir4suBkryLWxFQFZGnGlN+lGi7XdTJBfZjHabcxjZ4JrxW8IZhrS2cqrpUwGIonOa36ipKWFUROazCilWYxDc7NfmnJYmE6Eum1Vgj/qA/74uc4FgouC/DZDjY5Fmwem8wI++kr6YBOmtwj7gVngZIenzmVcITlnz1w.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d7dd8af3-36ed-977b-b7d5-097c751cfbff",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1197,
+      "completion_tokens": 266,
+      "total_tokens": 1463,
+      "cost": 0.003798,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003798,
+        "upstream_inference_prompt_cost": 0.002202,
+        "upstream_inference_completions_cost": 0.001596
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 163,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states the bug with a concrete union plus values_list example and expected vs actual column lists. The FAIL_TO_PASS assertion is that same example, so a competent engineer can implement the intended behavior without extra unstated requirements.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states the bug with a concrete union plus values_list example and expected vs actual column lists. The FAIL_TO_PASS assertion is that same example, so a competent engineer can implement the intended behavior without extra unstated requirements.",
+  "prompt_tokens": 1197,
+  "completion_tokens": 266,
+  "total_tokens": 1463,
+  "cost_usd": 0.00399,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

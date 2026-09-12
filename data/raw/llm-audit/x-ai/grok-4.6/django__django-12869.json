@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12869",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1533
+  },
+  "response": {
+    "id": "gen-1789191102-oaNTe9ROyQ14KVNAM8iu",
+    "object": "chat.completion",
+    "created": 1789191102,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that collectstatic run staticfiles finder checks so a bad STATICFILES_DIRS value is reported, which a competent engineer can implement. The FAIL_TO_PASS test is only slightly narrower by requiring SystemCheckError with the existing message and an explicit skip_checks=False call.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about collectstatic not running staticfiles checks. The user wants collectstatic to run the finder checks.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about collectstatic not running staticfiles checks. The user wants collectstatic to run the finder checks.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1fafe196-5492-9e92-973d-87512688d747",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1813,
+      "completion_tokens": 758,
+      "total_tokens": 2571,
+      "cost": 0.00779,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00779,
+        "upstream_inference_prompt_cost": 0.003242,
+        "upstream_inference_completions_cost": 0.004548
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 643,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that collectstatic run staticfiles finder checks so a bad STATICFILES_DIRS value is reported, which a competent engineer can implement. The FAIL_TO_PASS test is only slightly narrower by requiring SystemCheckError with the existing message and an explicit skip_checks=False call.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that collectstatic run staticfiles finder checks so a bad STATICFILES_DIRS value is reported, which a competent engineer can implement. The FAIL_TO_PASS test is only slightly narrower by requiring SystemCheckError with the existing message and an explicit skip_checks=False call.",
+  "prompt_tokens": 1813,
+  "completion_tokens": 758,
+  "total_tokens": 2571,
+  "cost_usd": 0.008174,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

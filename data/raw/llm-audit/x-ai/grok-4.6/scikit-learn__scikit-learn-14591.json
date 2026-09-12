@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14591",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1184
+  },
+  "response": {
+    "id": "gen-1789192378-HkkliGkZRd4pVP5YDHyV",
+    "object": "chat.completion",
+    "created": 1789192378,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.76, \"rationale\": \"The issue clearly asks that a user-specified precompute=True not be forced to False on the final Lasso fit, but it does not define how precompute='auto' should be handled there. The FAIL_TO_PASS test requires the unstated mapping auto->False on the inner estimator, so a natural fix that simply preserves self.precompute would fail.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue is about LassoCV always setting precompute to False before the final fit. The user wants it to respect the precompute parameter.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LassoCV always setting precompute to False before the final fit. The user wants it to respect the precompute parameter.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ffdffd4d-54ca-9d7b-813e-e58238440719",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1529,
+      "completion_tokens": 555,
+      "total_tokens": 2084,
+      "cost": 0.006004,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006004,
+        "upstream_inference_prompt_cost": 0.002674,
+        "upstream_inference_completions_cost": 0.00333
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 425,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.76,
+    "rationale": "The issue clearly asks that a user-specified precompute=True not be forced to False on the final Lasso fit, but it does not define how precompute='auto' should be handled there. The FAIL_TO_PASS test requires the unstated mapping auto->False on the inner estimator, so a natural fix that simply preserves self.precompute would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.76,
+  "rationale": "The issue clearly asks that a user-specified precompute=True not be forced to False on the final Lasso fit, but it does not define how precompute='auto' should be handled there. The FAIL_TO_PASS test requires the unstated mapping auto->False on the inner estimator, so a natural fix that simply preserves self.precompute would fail.",
+  "prompt_tokens": 1529,
+  "completion_tokens": 555,
+  "total_tokens": 2084,
+  "cost_usd": 0.006388,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15166",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1804
+  },
+  "response": {
+    "id": "gen-1789191550-l9pIkUaXw3h8sjYoVdYp",
+    "object": "chat.completion",
+    "created": 1789191550,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to quote DatabaseCache SQL field names so backends like Snowflake do not fold them, which a competent engineer can implement. The FAIL_TO_PASS tests only inspect has_key and cull SQL for expires and cache_key quoting, which is slightly narrower than quoting every field in every cache query but still matches the reported bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about DatabaseCache backend not quoting all fields in queries, specifically for Snowflake which requires quoted fields.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about DatabaseCache backend not quoting all fields in queries, specifically for Snowflake which requires quoted fields.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "D0LepbBHy0Gli4EcB6OMc445zymjf9GavJu/rAUCo7nuMA0XZ3mgxuCJMYpprPKUc8Mou6PoDUsRjxin4cVH0IkhYbySpQhVcMiPMCs9NYIpiPkX69CH8xArEm0v6btZYX7wOcLzHaBoazEMm9hnhg4E3pn9FQvWUl+d4QsU6zdh+AU1Njph30NWB6cy8TE24GLP1bJagR27xfo6PLcWluSS8KjgiASqMt3jbBL8Pllfzo9nbf41qhpWrM740S09UOOjZgXFy0d9QK41/fZlK4Wr0f29p2vHOrZJo6MgQdwuoQoryAKkrp9cPRtfjx7PDAkrQIyKivfhnRsyZg+IaEuGhAVnnQmdhMxjeJWyN4RjdqJkqk1KlQL8P1GA4IQnxiMQq+vIGFMHFQgHGodHmwRM1NZ8B7WIdBiNcbW2nMfWv9fWH0MFCSAcGcS9+tjBh3EHjOCziSAUey3OwNTcBFEk0UvhalPt6jUSw50HuM78h1PU/Hp/vlhfVoYtO6i9iUSiKH7ulFe4OPbpU9hAMcxwasEFqir2HVGzAE/BPxOS//30ml5eaP8XRzo5vPbu+1BxoOPFyZvMvvvk9eJcQuilQ18G9NF1qdER9TJNS8i7ryYXvrlEdCH5ZucbLH6cSksZ5q1uqu8OZjLkluP/AZfe4db4bslqYVvWiGS1JPFgbpytGf2A8anQrKj0PApU9N+rLW+wbhQEND1DEAd4mpRLjwACA0vkiGC+MBn4JkZ7/OZsCTrmNFmtMfS+YPYVWlKfQ6A1IzSFCKLFFY9XKQoFqj5oDBDOA9pv/sqChD9IPPU/3XgMmSWyBrEnjI/2Vso88eWbVl5q+EJ9JeMZzYnr9aFWCzJagoO842W0soHoYpMP3qtNDG6qTmxKiEf4jf5te9H6ckvEFiofjV99S30+Q24jKYtE38oy7I9tJCE8HUw5tSfZzQS3ITvcbpicTF1J791l/J9mvKbOH1uxYSz+uMQ5RlMX9vzhX6xjbNNkRHZOaWGgtrTZc08BvS4Vgz0t/kD0LC0MAyWZdjBAOfSQLM3lNLGIT9sO5L22gE+xeZ5GeTnJtc7jdERnhUv4gu5YKGt6dBINfoTGTwC+WvUvbt9b/yp3hCKh7xa9AotZFVBNoMxEET3TyuCIbImDB03FqcgL/GnPwXBvZQck6twvQYCKFpz+0A3iHjdxuav7qEQ45FXOlreZ7Wjf5OPG6ZcClDVoSLA0CeaszItJrpDmIEWVYk93kZ4O4+kYYs31eR/qEyXS6TtJmzqdVpGggmLC0Ysv3+F/X2yZgjvAKJpV5KfzyP8j3BSQyfs3sYkygKR0EA0LsUXs9gfgeaVl6qIoM4n4+oQVXZ3g9IfV3EEoRD3CQFQkjdPbHbhs/Bkv8R99pBtS9tYFQY5jZyxmikx5t2Ik+vixcfrBXQNVuYn43zMLaYeYqBs96sdGZAF1aV0xkIvsU32A0bTGwnoYyJhibj1qj62hy1xBW5MBlI40NuPpbAWJJOXd4RFZ9xnOwtT2TxPNM/IvMiBCKHV+cCoZcaEOqSk5rvXU3lGA9ZLh84LCrlihDWn3FoFvTGhEGPNMtkFl+d8UHgIbU0mR2K5Mg/vQ6UGUQBFg5pJ1gr82A6SqfuSbrP1a6ro7wwdLbd0XserQZxFiZmyuQnAn0F4HJcEAQI7vzHIbYlBO58WZnEpm05895+jn687h3oURFdaTPk9cAN9FV0wLxQ00paJYOUj0nlsbSI0vuUfu/UNloHv+hQKW4C4jqyuPX3fVf+FIBQzUzDI5kUrQXvVym17hI4Oo5gZqF3vWvUEc9el/IM879vtjZZVq3L8OPlJcqcFUHNU2ZoGoUAy+tpM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_193278f5-bc3f-978a-a578-220387fdf837",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2227,
+      "completion_tokens": 434,
+      "total_tokens": 2661,
+      "cost": 0.006674,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006674,
+        "upstream_inference_prompt_cost": 0.00407,
+        "upstream_inference_completions_cost": 0.002604
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 310,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to quote DatabaseCache SQL field names so backends like Snowflake do not fold them, which a competent engineer can implement. The FAIL_TO_PASS tests only inspect has_key and cull SQL for expires and cache_key quoting, which is slightly narrower than quoting every field in every cache query but still matches the reported bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to quote DatabaseCache SQL field names so backends like Snowflake do not fold them, which a competent engineer can implement. The FAIL_TO_PASS tests only inspect has_key and cull SQL for expires and cache_key quoting, which is slightly narrower than quoting every field in every cache query but still matches the reported bug.",
+  "prompt_tokens": 2227,
+  "completion_tokens": 434,
+  "total_tokens": 2661,
+  "cost_usd": 0.007058,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

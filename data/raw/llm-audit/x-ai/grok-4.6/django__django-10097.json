@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10097",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 9346
+  },
+  "response": {
+    "id": "gen-1789190743-lrpbk9T3nYfQ7Vy8ZaBs",
+    "object": "chat.completion",
+    "created": 1789190743,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS names are unrelated auth/cache/forms tests, not the URLValidator cases in the patch.\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires rejecting unencoded :, @, and / in URL userinfo, with a concrete invalid example. The listed FAIL_TO_PASS tests do not check that behavior and would not fairly evaluate a correct URLValidator fix.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about making URLValidator reject invalid characters in username and password. RFC 1738 says \":\", \"@\", or \"/\" must be encoded in user and password fields.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests are unrelated auth/cache tests, not validators\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making URLValidator reject invalid characters in username and password. RFC 1738 says \":\", \"@\", or \"/\" must be encoded in user and password fields.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests are unrelated auth/cache tests, not validators\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7a94b461-145a-93aa-841d-cc5d5bec47b9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 10663,
+      "completion_tokens": 777,
+      "total_tokens": 11440,
+      "cost": 0.025796,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.025796,
+        "upstream_inference_prompt_cost": 0.021134,
+        "upstream_inference_completions_cost": 0.004662
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 651,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS names are unrelated auth/cache/forms tests, not the URLValidator cases in the patch.",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires rejecting unencoded :, @, and / in URL userinfo, with a concrete invalid example. The listed FAIL_TO_PASS tests do not check that behavior and would not fairly evaluate a correct URLValidator fix.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS names are unrelated auth/cache/forms tests, not the URLValidator cases in the patch.",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires rejecting unencoded :, @, and / in URL userinfo, with a concrete invalid example. The listed FAIL_TO_PASS tests do not check that behavior and would not fairly evaluate a correct URLValidator fix.",
+  "prompt_tokens": 10663,
+  "completion_tokens": 777,
+  "total_tokens": 11440,
+  "cost_usd": 0.025987999999999997,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

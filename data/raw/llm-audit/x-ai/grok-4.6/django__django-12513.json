@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12513",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2383
+  },
+  "response": {
+    "id": "gen-1789191055-TsmJGV0d3Unhhq0qLkDm",
+    "object": "chat.completion",
+    "created": 1789191055,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to deprecate unused providing_args, which a Django engineer would implement as a deprecation warning when the argument is passed. The FAIL_TO_PASS test still requires an unstated exact warning class and full message text, so many valid deprecations would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about deprecating the providing_args argument from Signal. The tests check for a specific warning message and RemovedInDjango40Warning.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about deprecating the providing_args argument from Signal. The tests check for a specific warning message and RemovedInDjango40Warning.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ARTcw+vrLSL7fCckQlTLFoTPjWCbRQmuokuDGMMrDdkJvMeT2TmuAcIbnCK0thc276Ndvwpj7uEnkWilXEl9gwO0wR5WPd8x/7a9DZlD9lYvalB4leIyzS5kUmSTqnc1LYyeWNzFMgg8BfpFF2zxglcps1851IChXdNd5AyfsnXHs+GDD5Tp8sx8UJQpIV/hXgFneHLWOptaOfuBdciEtp5je8Z4yWu/8IPGIbsBC2DmAHqwpbSc21e1VuUGYh+CSDI4reEXTKuNS4Y8uxX1dmTppQMdSfalj5zw+811blIixCBGXe84ZsbSr2W13Mh6GOMR8XccGy1JRX1ItbKTO058Pq8Pa4Br/cq2s7OfF0LtPsrYsVfGhC3h/Ivz4pCkhnLLNOHF/OkYBF1N6naPAoI9TbWWue1vDr5027UNqTdE0elvh5+pNRLGMIf/lszAdN5jkUiPrT/zLSgnf0DAL9JfV7YedAvh6cQzix9PjCUVEckvtyq3E/UJdwYDh9GaGK9mdbmUZU1WV6lCA+47XG5T2oWAVeqZgJNUbtgTQiRMHCC8p1qv1A7sJPVuYlJhReCufB81jFya+lBT37t8QhOXxbrB3opjfMekNZSnHsx9dS+y6tdfnPkZ23FXZ0rARZT+DtuXIBKmHsP9GUPhyPp3DA3Tm3y+jyw1HJi0JrZCh6w50rNw7fti/eDrdBFoNPcn44hOHCfsu8ZFGLrytd6aMTUdqcBelve/UNI6L/bj8OdFEz71GeXPW+R+wAaEJnMLYgdai5p1/h/U1YhsQOYQS/CZCTnBYKLmKQgPaJhuAPjexCqMrIEg44qDokkahXzL96UOuZ7MEQ+dRdLk4tPCl0EQoOYLYafbu1Z35TZ5fQ9dHn8Wpd7K/ccZjjMqVVemCroH5OqTPgjqhnjXM67LDIEJ9kPeItwBt/XH6Ttc0qkHnYPifqt79vCoAUIr2eEViV18QZTNg4X8Vr5PyIflIiaopE+730sYKKLdMdNLKAwAPizJ77QKsTlrV3hRmrhKznIA+PEwBGd7WvQUAHHCI2nUGWzAgwSPP46wJcrjBxww126/nYc/aREblijB8SH02IuPOREoQKABzvMQkz/us1BOp28qivlHKpSNEwBxCbszY1NuqNt84U1ZaNaP+0dmZYUN/ZZSRYqlib/xwNRWsC54LVQ1sWOcW5ucPQHRKgaAnSyZifOq0iIc/w+omDBpKqJsOMF18tYdhGCxXVhvoID2HUEe.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2288e444-ec9a-9a14-8a6a-3c004cb39b66",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2840,
+      "completion_tokens": 307,
+      "total_tokens": 3147,
+      "cost": 0.00733,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00733,
+        "upstream_inference_prompt_cost": 0.005488,
+        "upstream_inference_completions_cost": 0.001842
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 195,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to deprecate unused providing_args, which a Django engineer would implement as a deprecation warning when the argument is passed. The FAIL_TO_PASS test still requires an unstated exact warning class and full message text, so many valid deprecations would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to deprecate unused providing_args, which a Django engineer would implement as a deprecation warning when the argument is passed. The FAIL_TO_PASS test still requires an unstated exact warning class and full message text, so many valid deprecations would fail.",
+  "prompt_tokens": 2840,
+  "completion_tokens": 307,
+  "total_tokens": 3147,
+  "cost_usd": 0.007522,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

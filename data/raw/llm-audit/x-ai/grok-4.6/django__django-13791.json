@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13791",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1259
+  },
+  "response": {
+    "id": "gen-1789191317-PJqGntD0VJFUSZbkFqFq",
+    "object": "chat.completion",
+    "created": 1789191317,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that ISO-8601 duration strings with a leading minus and only a days component must parse to a negative timedelta, matching duration_iso_string round-trip. The FAIL_TO_PASS cases include that scenario plus other signed ISO (and one PostgreSQL) examples that already follow the same sign rule, so they do not demand unstated behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3af2c9a3-0f99-953c-9c02-2673080382d5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1704,
+      "completion_tokens": 664,
+      "total_tokens": 2368,
+      "cost": 0.007008,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007008,
+        "upstream_inference_prompt_cost": 0.003024,
+        "upstream_inference_completions_cost": 0.003984
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 534,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that ISO-8601 duration strings with a leading minus and only a days component must parse to a negative timedelta, matching duration_iso_string round-trip. The FAIL_TO_PASS cases include that scenario plus other signed ISO (and one PostgreSQL) examples that already follow the same sign rule, so they do not demand unstated behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that ISO-8601 duration strings with a leading minus and only a days component must parse to a negative timedelta, matching duration_iso_string round-trip. The FAIL_TO_PASS cases include that scenario plus other signed ISO (and one PostgreSQL) examples that already follow the same sign rule, so they do not demand unstated behavior.",
+  "prompt_tokens": 1704,
+  "completion_tokens": 664,
+  "total_tokens": 2368,
+  "cost_usd": 0.007391999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

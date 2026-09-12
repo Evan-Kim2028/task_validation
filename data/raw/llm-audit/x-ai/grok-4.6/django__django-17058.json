@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-17058",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 15768
+  },
+  "response": {
+    "id": "gen-1789191853-dXDBlcsQQYEVu9ytzwKR",
+    "object": "chat.completion",
+    "created": 1789191853,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks for UniqueConstraint.nulls_distinct with Optional[bool]=None and backend-aware SQL, which a Django engineer could implement via existing constraint patterns. The FAIL_TO_PASS suite also requires unstated details such as TypeError (including changing unrelated UniqueConstraint argument errors from ValueError), check warning models.W047, and specific validate()/schema skip behavior.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test patch changes ValueError to TypeError for deferrable/include/opclasses and adds W047 warning; issue statement only specifies nulls_distinct option\",\n  \" confidence\": 0.75,\n  \"rationale\": \"Issue clearly specifies adding nulls_distinct: Optional[bool]=None to UniqueConstraint and Postgres 15 support. FAIL_TO_PASS tests include unrelated changes like TypeError for other params and W047 which are not in issue description.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test patch changes ValueError to TypeError for deferrable/include/opclasses and adds W047 warning; issue statement only specifies nulls_distinct option\",\n  \" confidence\": 0.75,\n  \"rationale\": \"Issue clearly specifies adding nulls_distinct: Optional[bool]=None to UniqueConstraint and Postgres 15 support. FAIL_TO_PASS tests include unrelated changes like TypeError for other params and W047 which are not in issue description.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c9afebbe-200a-91f8-8d1b-154903d6db24",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 17184,
+      "completion_tokens": 773,
+      "total_tokens": 17957,
+      "cost": 0.038622,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.038622,
+        "upstream_inference_prompt_cost": 0.033984,
+        "upstream_inference_completions_cost": 0.004638
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 640,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks for UniqueConstraint.nulls_distinct with Optional[bool]=None and backend-aware SQL, which a Django engineer could implement via existing constraint patterns. The FAIL_TO_PASS suite also requires unstated details such as TypeError (including changing unrelated UniqueConstraint argument errors from ValueError), check warning models.W047, and specific validate()/schema skip behavior.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks for UniqueConstraint.nulls_distinct with Optional[bool]=None and backend-aware SQL, which a Django engineer could implement via existing constraint patterns. The FAIL_TO_PASS suite also requires unstated details such as TypeError (including changing unrelated UniqueConstraint argument errors from ValueError), check warning models.W047, and specific validate()/schema skip behavior.",
+  "prompt_tokens": 17184,
+  "completion_tokens": 773,
+  "total_tokens": 17957,
+  "cost_usd": 0.039006,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

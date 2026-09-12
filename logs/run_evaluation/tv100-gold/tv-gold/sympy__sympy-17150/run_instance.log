@@ -1,0 +1,87 @@
+2026-09-12 00:46:39,712 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:46:56,053 - INFO - Creating container for sympy__sympy-17150...
+2026-09-12 00:46:56,346 - INFO - Container for sympy__sympy-17150 created: b9e600b1addb12a184f27f0aa01635b0243aa2dbd8a97b8f953aae08f9a0043f
+2026-09-12 00:46:56,571 - INFO - Container for sympy__sympy-17150 started: b9e600b1addb12a184f27f0aa01635b0243aa2dbd8a97b8f953aae08f9a0043f
+2026-09-12 00:46:56,571 - INFO - Intermediate patch for sympy__sympy-17150 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-17150/patch.diff, now applying to container...
+2026-09-12 00:46:56,668 - INFO - >>>>> Applied Patch:
+Checking patch sympy/functions/elementary/exponential.py...
+Applied patch sympy/functions/elementary/exponential.py cleanly.
+
+2026-09-12 00:46:57,038 - INFO - Git diff before:
+diff --git a/sympy/functions/elementary/exponential.py b/sympy/functions/elementary/exponential.py
+index 7adba5680b..e7222d3638 100644
+--- a/sympy/functions/elementary/exponential.py
++++ b/sympy/functions/elementary/exponential.py
+@@ -481,6 +481,15 @@ class log(Function):
+     a logarithm of a different base ``b``, use ``log(x, b)``,
+     which is essentially short-hand for ``log(x)/log(b)``.
+ 
++    Examples
++    ========
++
++    >>> from sympy import log, S
++    >>> log(8, 2)
++    3
++    >>> log(S(8)/3, 2)
++    -log(3)/log(2) + 3
++
+     See Also
+     ========
+ 
+@@ -522,11 +531,7 @@ def eval(cls, arg, base=None):
+                 # or else expand_log in Mul would have to handle this
+                 n = multiplicity(base, arg)
+                 if n:
+-                    den = base**n
+-                    if den.is_Integer:
+-                        return n + log(arg // den) / log(base)
+-                    else:
+-                        return n + log(arg / den) / log(base)
++                    return n + log(arg / base**n) / log(base)
+                 else:
+                     return log(arg)/log(base)
+             except ValueError:
+2026-09-12 00:46:57,038 - INFO - Eval script for sympy__sympy-17150 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-17150/eval.sh; copying to container...
+2026-09-12 00:47:43,007 - INFO - Test runtime: 45.92 seconds
+2026-09-12 00:47:43,007 - INFO - Test output for sympy__sympy-17150 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-17150/test_output.txt
+2026-09-12 00:47:43,072 - INFO - Git diff after:
+diff --git a/sympy/functions/elementary/exponential.py b/sympy/functions/elementary/exponential.py
+index 7adba5680b..e7222d3638 100644
+--- a/sympy/functions/elementary/exponential.py
++++ b/sympy/functions/elementary/exponential.py
+@@ -481,6 +481,15 @@ class log(Function):
+     a logarithm of a different base ``b``, use ``log(x, b)``,
+     which is essentially short-hand for ``log(x)/log(b)``.
+ 
++    Examples
++    ========
++
++    >>> from sympy import log, S
++    >>> log(8, 2)
++    3
++    >>> log(S(8)/3, 2)
++    -log(3)/log(2) + 3
++
+     See Also
+     ========
+ 
+@@ -522,11 +531,7 @@ def eval(cls, arg, base=None):
+                 # or else expand_log in Mul would have to handle this
+                 n = multiplicity(base, arg)
+                 if n:
+-                    den = base**n
+-                    if den.is_Integer:
+-                        return n + log(arg // den) / log(base)
+-                    else:
+-                        return n + log(arg / den) / log(base)
++                    return n + log(arg / base**n) / log(base)
+                 else:
+                     return log(arg)/log(base)
+             except ValueError:
+2026-09-12 00:47:43,072 - INFO - Grading answer for sympy__sympy-17150...
+2026-09-12 00:47:43,072 - INFO - report: {'sympy__sympy-17150': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_log_base'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_exp_values', 'test_exp_log', 'test_exp_expand', 'test_exp__as_base_exp', 'test_exp_infinity', 'test_exp_subs', 'test_exp_conjugate', 'test_exp_rewrite', 'test_exp_leading_term', 'test_exp_taylor_term', 'test_exp_MatrixSymbol', 'test_exp_fdiff', 'test_log_values', 'test_log_symbolic', 'test_exp_assumptions', 'test_exp_AccumBounds', 'test_log_assumptions', 'test_log_hashing', 'test_log_sign', 'test_log_expand_complex', 'test_log_apply_evalf', 'test_log_expand', 'test_log_simplify', 'test_log_AccumBounds', 'test_lambertw', 'test_issue_5673', 'test_log_fdiff', 'test_log_taylor_term', 'test_exp_expand_NC', 'test_as_numer_denom', 'test_polar', 'test_log_product', 'test_issue_8866'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-17150: resolved: True
+2026-09-12 00:47:43,073 - INFO - Attempting to stop container sweb.eval.sympy__sympy-17150.tv100-gold...
+2026-09-12 00:47:58,338 - INFO - Container sweb.eval.sympy__sympy-17150.tv100-gold stopped successfully.
+2026-09-12 00:47:58,338 - INFO - Attempting to remove container sweb.eval.sympy__sympy-17150.tv100-gold...
+2026-09-12 00:47:58,392 - INFO - Container sweb.eval.sympy__sympy-17150.tv100-gold removed successfully.

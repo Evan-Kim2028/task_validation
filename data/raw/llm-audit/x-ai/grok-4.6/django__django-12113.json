@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12113",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1954
+  },
+  "response": {
+    "id": "gen-1789190977-bd8EmGsJ9VXVo9VMOIpU",
+    "object": "chat.completion",
+    "created": 1789190977,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue reports a SQLite keepdb lock with named test databases but never mentions test_db_signature or the required tuple shape. The FAIL_TO_PASS test only asserts that exact signature, so a valid lock fix that did not change signatures that way would fail.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about admin_views.test_multidb failing with persistent test SQLite databases due to \"database is locked\". The gold patch changes test_db_signature for SQLite to include the test_database_...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about admin_views.test_multidb failing with persistent test SQLite databases due to \"database is locked\". The gold patch changes test_db_signature for SQLite to include the test_database_...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5d410e15-a1a2-9163-9460-9127f91b1c10",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2447,
+      "completion_tokens": 499,
+      "total_tokens": 2946,
+      "cost": 0.007888,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007888,
+        "upstream_inference_prompt_cost": 0.004894,
+        "upstream_inference_completions_cost": 0.002994
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 389,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue reports a SQLite keepdb lock with named test databases but never mentions test_db_signature or the required tuple shape. The FAIL_TO_PASS test only asserts that exact signature, so a valid lock fix that did not change signatures that way would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue reports a SQLite keepdb lock with named test databases but never mentions test_db_signature or the required tuple shape. The FAIL_TO_PASS test only asserts that exact signature, so a valid lock fix that did not change signatures that way would fail.",
+  "prompt_tokens": 2447,
+  "completion_tokens": 499,
+  "total_tokens": 2946,
+  "cost_usd": 0.007888,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

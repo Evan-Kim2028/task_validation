@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2678",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 11561
+  },
+  "response": {
+    "id": "gen-1789192183-3VqusfJ1NdiUznECTVYD",
+    "object": "chat.completion",
+    "created": 1789192183,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS mixes ClosedPool wrapping and unrelated tests not described in the issue.\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to wrap urllib3 DecodeError and TimeoutError, while the tests require wrapping ClosedPoolError with a specific ConnectionError message and also exercise unrelated redirect/auth/encoding behavior. A solution that matches the issue text would still fail those tests.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about urllib3 exceptions passing through the requests API - specifically DecodeError and TimeoutError. The FAIL_TO_PASS tests include many unrelated tests plus test_urllib3_pool_connectio...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch includes unrelated changes like threading digest auth and urllib3 vendor updates that aren't part of the reported issue\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about urllib3 exceptions passing through the requests API - specifically DecodeError and TimeoutError. The FAIL_TO_PASS tests include many unrelated tests plus test_urllib3_pool_connectio...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch includes unrelated changes like threading digest auth and urllib3 vendor updates that aren't part of the reported issue\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_31029790-20d8-9172-82c4-efe89dc9aa47",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 12580,
+      "completion_tokens": 603,
+      "total_tokens": 13183,
+      "cost": 0.028394,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.028394,
+        "upstream_inference_prompt_cost": 0.024776,
+        "upstream_inference_completions_cost": 0.003618
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 478,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS mixes ClosedPool wrapping and unrelated tests not described in the issue.",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to wrap urllib3 DecodeError and TimeoutError, while the tests require wrapping ClosedPoolError with a specific ConnectionError message and also exercise unrelated redirect/auth/encoding behavior. A solution that matches the issue text would still fail those tests.",
+    "p_invalid": 0.9
+  },
+  "s": 2.25,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS mixes ClosedPool wrapping and unrelated tests not described in the issue.",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to wrap urllib3 DecodeError and TimeoutError, while the tests require wrapping ClosedPoolError with a specific ConnectionError message and also exercise unrelated redirect/auth/encoding behavior. A solution that matches the issue text would still fail those tests.",
+  "prompt_tokens": 12580,
+  "completion_tokens": 603,
+  "total_tokens": 13183,
+  "cost_usd": 0.028777999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

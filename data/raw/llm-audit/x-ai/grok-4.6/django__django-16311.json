@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16311",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2048
+  },
+  "response": {
+    "id": "gen-1789191758-6tvyLPxUs46DdxlULSki",
+    "object": "chat.completion",
+    "created": 1789191758,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to add gzip filename randomness as a BREACH mitigation with a sensible default, without specifying length, character content, secrets.randbelow, or max_random_bytes. The FAIL_TO_PASS tests pin those unstated details (mocked randbelow returning 3 and a literal aaa filename), so many valid mitigations would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about implementing \"Heal The Breach\" by injecting random bytes in the gzip filename field. The tests specifically check:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about implementing \"Heal The Breach\" by injecting random bytes in the gzip filename field. The tests specifically check:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "zmRG/ySxr8bQKwpuzRcFkwtOww/I0s7Ngmy0b7Td22K0qxvl2KhyO50VVens0hHUYYmorgr6QV6xguBWxMR3j/o5+zHB1kyhe9v+GIawngl9UjiWvC51h0zp3uSXKTxtxcwga2C47m8QLoRoljGABeuBR6H+6FEp6bmocfteQHmVwdghiv5GZACe3uVsInq0VfWveDMVEcycqhLazPz+XD17sMFSu5ddxB2XuOm89ZgH7GlXDuSHMWc5hVtB1b3zn4z1g5v4dHDEr3LmKzhjQFQc72uKCeOTH9eWXPDP1AHr6vK0spFJl12xPLwN8vqwT3KFm4QBNgKgVB7vEae2YKqkHJuzTUKDsooCfdTVAUimv4k8b+m5rmIM1ztv472ZHvqSv44K5p5b5OCQeGyImm4DGzRLvDJjepXoRaegmLf9X2DFdAh4mua3nYGIBK7qrXKoqhStDmc3pc/BY8YqWciL8n9WwSgOAU6sGkw2dIClXMP/vJeRQV+dl7QBgexH+fmG6ISPgFdTTNWKfuXxK8Tfjwi6Oc/j4ZJrk9d+z7m1ph5SxIgzF0OY1x6WlvjKuNXfXvSXd4h8dOW7R8ozjIZ2nVe7Encj6BsKuqa1MVTlHihCpAzSEwzt1C8BvZGe5/4QWav9NZDD6XnkQRWXyXIS2GBfcus7yGNzAbxcdWXsFJIwIbczMFuwLQif0D7zCqW/ZqRdQB49Do1M0Hl48Ic3xd/Uw8x/PhsVfJ0UgyJ0hQZoGqMiD/YBqHz0HMXBWc8RgEzt6y53af0zNNQ0/gZBoBLJbTjhYgynF9rJEyR2P64UmfHelfAyb73DQmk7umfSR7i0Ay4nOwmGHkv0ZTvCgFwwS66k6u13dBWiH5OZpPfMILOshB9otq+YjynD0RImve0eOVqgEi6KhVKpJol5iPa1I7jCvt4WxjZVyAqWC1jSoBwhAvs4Fjct2owLXYsExzlSZxFrDmkftnxi1xpLSiTHaevtGaSECmmNQf3TeBf+vOH1TPPXWnURPl7zfgbba4Jp/qx/9vH0Ba0uNK51hC4xm4AsZadVOcK31+cZgYVh8D7iiBfc8RqfJCit5pYM+BmquwkwZTpwHPekw9r9wVuUUzYvyOs/54vDqBwOY3YidbCEbSVX32nkkDUB/L6hL59Fhv/Fo/FVF8tVk31NEh5iHXgSijL+HNNLvWp61SLV0i9/CqAtXhPwO3J470mQ753XUE6Agu17sGoTqnq5aaM+XGRo3ZMWlprRKqKhwLgNGFou/NoPbGfSmKssDj/rxM+u03uwr9/xcCTtfoxTto0/u9boIha82OX5jcKvMaapv6stIRCnqp1ve5G8ezYXm3pSmrb/n5JkCQG75fAzLGdvDBpfeR+/2RQk5SaJfVaKCB7U2axMyU9Go57CKhPlcgT95dSye0DY3cXw4zi5Tkp/gxsb3+q+eVPViQUPkeDhcEDd8jtTdg9lwg4hgcUaOQuqixo6lMbT4slB9KVKl7vXvlD2yBEFPH9WZnKVZGDGjAGdk3njFNMp/Ilh4ljhgsrNLFFn5syHFv18n1Hqh8lk/aPsx/3acG7kBDcaB0a9Slwdfl680/OUQg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7359e8fb-f75a-91e6-9bc8-5935786caed2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2428,
+      "completion_tokens": 416,
+      "total_tokens": 2844,
+      "cost": 0.007352,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007352,
+        "upstream_inference_prompt_cost": 0.004856,
+        "upstream_inference_completions_cost": 0.002496
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 290,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to add gzip filename randomness as a BREACH mitigation with a sensible default, without specifying length, character content, secrets.randbelow, or max_random_bytes. The FAIL_TO_PASS tests pin those unstated details (mocked randbelow returning 3 and a literal aaa filename), so many valid mitigations would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to add gzip filename randomness as a BREACH mitigation with a sensible default, without specifying length, character content, secrets.randbelow, or max_random_bytes. The FAIL_TO_PASS tests pin those unstated details (mocked randbelow returning 3 and a literal aaa filename), so many valid mitigations would fail.",
+  "prompt_tokens": 2428,
+  "completion_tokens": 416,
+  "total_tokens": 2844,
+  "cost_usd": 0.007352,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

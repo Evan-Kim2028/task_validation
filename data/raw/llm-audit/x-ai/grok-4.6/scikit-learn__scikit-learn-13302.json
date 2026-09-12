@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13302",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3760
+  },
+  "response": {
+    "id": "gen-1789187689-6e7huPPv0EhtbbdBDhmb",
+    "object": "chat.completion",
+    "created": 1789187689,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The PR title states that Ridge SAG/SAGA should not force float64, which is enough for a senior engineer to preserve input float32/float64 like other solvers. The FAIL_TO_PASS tests mainly check that dtype and approximate coefficients, with only slightly extra numerical/tolerance details.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is a WIP PR about Ridge with solver SAG/SAGA not casting to float64, closing #11642. The actual GitHub issue content isn't fully there - it's a PR description.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Test uses undefined rng variable instead of random_state\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is a WIP PR about Ridge with solver SAG/SAGA not casting to float64, closing #11642. The actual GitHub issue content isn't fully there - it's a PR description.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Test uses undefined rng variable instead of random_state\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6a122ca2-9c99-9f69-b013-3bdad977e7ff",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4659,
+      "completion_tokens": 676,
+      "total_tokens": 5335,
+      "cost": 0.013182,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.013182,
+        "upstream_inference_prompt_cost": 0.009126,
+        "upstream_inference_completions_cost": 0.004056
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 561,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The PR title states that Ridge SAG/SAGA should not force float64, which is enough for a senior engineer to preserve input float32/float64 like other solvers. The FAIL_TO_PASS tests mainly check that dtype and approximate coefficients, with only slightly extra numerical/tolerance details.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The PR title states that Ridge SAG/SAGA should not force float64, which is enough for a senior engineer to preserve input float32/float64 like other solvers. The FAIL_TO_PASS tests mainly check that dtype and approximate coefficients, with only slightly extra numerical/tolerance details.",
+  "prompt_tokens": 4659,
+  "completion_tokens": 676,
+  "total_tokens": 5335,
+  "cost_usd": 0.013374,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

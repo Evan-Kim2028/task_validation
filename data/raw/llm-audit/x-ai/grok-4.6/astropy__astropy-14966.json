@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14966",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2856
+  },
+  "response": {
+    "id": "gen-1789190711-vHQ4fd52X1kbpPPdbajs",
+    "object": "chat.completion",
+    "created": 1789190711,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that QTable group keys preserve Quantity units, which a competent engineer could implement from the report. The FAIL_TO_PASS tests also require Time mixin keys, Column.group_by unit preservation, and a specific TypeError message for keys without argsort, none of which the issue states.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about QTable group keys not having units for quantity columns. Expected: keys should be complete quantities with units.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QTable group keys not having units for quantity columns. Expected: keys should be complete quantities with units.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "biBv3Q4nZjm039cZVDCxLX1Q3PhX9vBeUwB/EgDRy0v0BdO+AnW7OoLPRYMVjKlL3q0fhCmrYj/foLZWV6uSNbDcA9ybeGUA8jl4+CHZvE+Rb5rNKolj9IDCgEnnwMvEBOCVJugQ1RpsJjAiS4dEn6zI1k5JXf0aFCqSH84HYrDQnw/XrJWNV9pGXaL3WjHSpPrnyET1K97ciVdXnshdUxIIHGmLwvClyiY6Av/69H55+k/EMtd3Ek042lNPx16TaR+WyNdMwDEiiXIxlXzSsTfu+j+9V7Y5ALCcd8ANIzvwWqguvuUVqg9z7g3glNxY8KZatTyEj/1uSN8F9BgYmxMraoXswE16S9pgqt3jps/x9qBgVNjepizI42WRg5M7M2WTKRh+1L+cEy/Cu+IG5bFxRwGL8x6tpJh+SlhtgUoYCJEsOspZ8BP8JPg+xnmZ3Dmh5kbPreVLU9duz+MId5uV2pAFppKL1jBJfKSTz4/GaTpsQ5kyxX0OxzmjF3055ebV4Dc9ceyW79k+G39FUnvHXBdP3Si4CmqWUEXN7eYN+B3zJdaSarLr9Uij7kFGJI/2VWcTg3dgJoKXTm+LAvngsWa7B4SvHQBjN2J1+7Drre0vtSSdihNEYXQGFZbnculHIJiKFUglicQHLmhW4i45tP+3aajBst0w/vL7vRYORTgqtPKPDnKBpRGD40AeJ7mIt4eIWJR6gKL4HB8TiLGYe9v5Eg1K1p5hnFr/vU5B37WX/PSg7ZJvKLy2qB4QEmwRficYNgbj7th+hggZSWCTAdepuu94nXw1ABba2bN1JiASr9y2R7lFY2+Eu/ZkGxEotUmJPnBxE+L7t4C615ZWgoto4FK4ZwbeWzSz3e8ICmULoPzX8F1rn9wh4O292UfoCYk/nTgLDhafmq8HwOwXdvgfohklPIN0qV2L/WeQ6+fngYmgk/lNx/IFI2WuxW4bODcfizwSY1Bqa5G/DcJeZmducr0y+pkPKr2Qj4cAMOxKhfpY2EZ+U7EP/tgBHysr2+JoqcyXugdHSrfQ587MFRsEOktKwFND/qLOISsRnoocFpohddzMuFkKqX0huhr70oWM2SIlZwK+ygd6ArjB1FkFIUxUBU9bYJR07f43KIF4gNMG37KhrBzoM9AiRuZbsstf7JdEr+/5jZn0YXfEzdxjwtefco/11YBOy37nJCafVWyY8wjl2jeQzzuUf1xGJe9w90JvDbbcihPMIi0sfV2jKPTJQqVkmyx8CIexETtnHK/BxGKeL2JZHPLzmxD89pW1DZJ7XnSPetB00jBFD+LHjJw4xrqF/AVWEN29UK8romtBIu1VhNPR7Kemw5ioZfU4XPKJGAd88I2IBLiOkOyS/f3YtMifrI7uLfFrlGKcED8wF3jaiDuv8pdXvH/TnRJoAar+K4h7OHSMXB7HP+5YI9zh7+yfzABEKlf80VOGYuMerSVZp4iyfuE01/bXbGc2gFNk6u0++C1xHh3ELvkVcIgkJ0PgdR/oBO9ksNBuRT5gYlmIheVSzC4lFqKjWXav4NIwPCn1vhC7NYMO77PJ0rYXKdtzoFQo3vJ/lv27Ye7mGLNBODg6foaZWQpRPTYNtEqA9F9MGchxgoTiblFHvf5zaI61MK2pL2o1+I4Ct49Ugbqj1XJvvbmWnsAws5oTpH0f+ZQdMH8ObF0AFK1PQvrLjmhZc6rkzxb/adU+5gdh.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0790bd27-1c26-9def-a0ad-dc652bbd405b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4123,
+      "completion_tokens": 420,
+      "total_tokens": 4543,
+      "cost": 0.010574,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010574,
+        "upstream_inference_prompt_cost": 0.008054,
+        "upstream_inference_completions_cost": 0.00252
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 302,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that QTable group keys preserve Quantity units, which a competent engineer could implement from the report. The FAIL_TO_PASS tests also require Time mixin keys, Column.group_by unit preservation, and a specific TypeError message for keys without argsort, none of which the issue states.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that QTable group keys preserve Quantity units, which a competent engineer could implement from the report. The FAIL_TO_PASS tests also require Time mixin keys, Column.group_by unit preservation, and a specific TypeError message for keys without argsort, none of which the issue states.",
+  "prompt_tokens": 4123,
+  "completion_tokens": 420,
+  "total_tokens": 4543,
+  "cost_usd": 0.010766,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

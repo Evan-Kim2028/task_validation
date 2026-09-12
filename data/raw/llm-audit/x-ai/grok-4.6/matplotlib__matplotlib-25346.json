@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25346",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1042
+  },
+  "response": {
+    "id": "gen-1789192036-ne1duMLnj6cefpvXgif6",
+    "object": "chat.completion",
+    "created": 1789192036,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue describes missing space for wrap=True titles versus explicit newlines, so matching vertical window extents is a reasonable inferred root-cause check, but it does not spell out that API. The FAIL_TO_PASS test never exercises constrained layout and only asserts exact y0/y1 equality of get_window_extent, which is slightly narrower than the reported bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about constrained layout not leaving enough room for wrapped titles. The test is about get_window_extent of wrapped vs explicit newline titles matching vertically.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about constrained layout not leaving enough room for wrapped titles. The test is about get_window_extent of wrapped vs explicit newline titles matching vertically.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "pQQ1v+CudHSmuPksiw+xVBJhiesQnmRwweftWpYVAB9XVUGOT2MjItqx3QftedczBafZEV3axmutqGUvM/ff4QjvbKxQzUbsmhRXnfIsqfsFfEfLC9tGQTJp8u+CEZRdbZKtypa4E/o7VkmjvAae7RQbFlQ2j3i4xZ60wUacdob96pfIqb0cLHK6HSuB15moUnncUTwJzmh4UoMo5wNBf5HTBM4yGyv0yU6+vQoFhtXJkaQ+IH/1g0lqJfRhV1dsKeVf6hlVlZOPP/y1Wr8QJ6eKt7yVYHyaOTvv2AD5wQdrOvjNN9VYEeoZ7KhvQGp0B4tYNynPCGQ7KH89gnf/dn4y0kupVLkfLn4/LZgrK+z4sh6X0KWX081QzUYJKi+tgNisl2/DPjx2U6avrXbcagv/h+ErQ0b2OWVk6kFlWARvDZljcvUz3dd41YxH4o7WAaqY1azkNqkhFSjD3uoZ/GNIz0JLwFODQJ+lanZsxuuSM0pbAvdPZ6YLFkNhi4SaIy+drABSTLQNZTvN/yBdl5sHIv5bELEt4+nx8Mn9spi8Pi1j/+40pWoI2TAetoV/oNtQZbyOTfLGju3rl76Jb6bdK5rmhwLcE7N+c3yRPbYK8CCEGudiv84KDilHi3fjt4OTrMqBj8DRBb2k22s5Sh4dCWPOHEl4JARMSvDHf+lbsphPT2siZHQH2KHOwAhc3SAJ5Av4+EBGSaim57OYkxSkMccijG9TyG3qwSd/etqR7jw2qOrYQIxwPXjDSDZJHypy5cjtzmASLOTN/xN3Itd2jSEHE9IXyRyRPG0sQ+tZdU4MiOGse2Oa4JpMIlR9q3IB62FZ0uLFGqjyD19SurCIy13Lmuk1Vc/Coo3px7rYkt5oTWRG865nC2vrlpuTLhjMNQlSi3O1vCtt3Qxs9DG7Zar8Wiy4007ahUKoGRlEGAHNewmyQJIF6418kLhoydbiQGy5j5/k3HJzJLdz/ArnrlSVMemWon/TLULwll+OeUHfU27LWc4dwp9maKw7ELU5Cptq1JXClFYrhUFjt2BpTdbtvrKM3H9VbiQImTqFIt2VAGPClqgjzly9B2OOcQXYkaFVXk2QCVqxPtIRP7+TUwptkYWiUJAOCKY96LmOjqBf00pK2gv8xou+IzMnpNoaXBBpqy3YEBrs9NP6oUBx2zLe4f3RrytJ8JNefzXQlbQ5c74mNt8Pa1mmr2P/JWdQ7PLNxHiNwYrwRnWzxrJLlA0Ea+d+CnK2aQP28gQuGpA1Pg8eBvOYTCzdSsEKvlM1rjJnLPKsI6Wqh6nEl2jBrxliCgTTL7OSeJai/dUMqJcUDPe1XBCTDVuAJyMgq26qxtfrUWPVPQl+6R8oeH4FjrGGSqZISuTgb5gO+OPkXOmEAAdiqycvQcCHSg8/LmttXaXOkEfXAa8ZE1EKASshtGgFzuOZ4eYhtKnpZ8Tk2FQKj5QqkY3i9tzgnkCRnbKWKdg5BuiCPTKKccsAJLiTcQLAM7KE4sZWjM1d4I+9yFo4bVE6cfPDJ9FEcp9lt/xehSxo0rYjffSawcFnfZTC0NeIbYBRBG2/mtwFvduWASSELX7B25NAxrS1mt5Vbtnp0JaCf1bVw50EdIjZmI3VpDSzoU56tI3U+amNk/7fy96Lzv8JKvHw11h/x7RYUmK9c7W1C777+lFZ4mVnV5jLYvLb/8DrB95wdzh6ip1FF730dhIHepJbnPmiNDlkaos8O5LGik/axa6sipZ7Y/UqILjpjDlZFFtz3r4FxA21biXnmZoMMm5+Aq/md6wnqBQ/CmPbGEyI3y6Upaa1ItZkx4WKcO6JiXNoJH6iMjEJz0FKG6lOhyOP.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f34d632a-3063-9f5b-8219-3fc264a32995",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1438,
+      "completion_tokens": 420,
+      "total_tokens": 1858,
+      "cost": 0.005012,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005012,
+        "upstream_inference_prompt_cost": 0.002492,
+        "upstream_inference_completions_cost": 0.00252
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 291,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue describes missing space for wrap=True titles versus explicit newlines, so matching vertical window extents is a reasonable inferred root-cause check, but it does not spell out that API. The FAIL_TO_PASS test never exercises constrained layout and only asserts exact y0/y1 equality of get_window_extent, which is slightly narrower than the reported bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue describes missing space for wrap=True titles versus explicit newlines, so matching vertical window extents is a reasonable inferred root-cause check, but it does not spell out that API. The FAIL_TO_PASS test never exercises constrained layout and only asserts exact y0/y1 equality of get_window_extent, which is slightly narrower than the reported bug.",
+  "prompt_tokens": 1438,
+  "completion_tokens": 420,
+  "total_tokens": 1858,
+  "cost_usd": 0.005396,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

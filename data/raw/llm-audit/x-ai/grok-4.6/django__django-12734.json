@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12734",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2492
+  },
+  "response": {
+    "id": "gen-1789187820-gHENbpfHYPF9zSpPn4pL",
+    "object": "chat.completion",
+    "created": 1789187821,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that altering a PK (or similar) also updates ManyToMany through-table columns that point at it, which a competent engineer could implement. The FAIL_TO_PASS suite mainly checks that, but also tightens an unrelated to_field FK type-reload case not described in the issue.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f979972a-25b4-9132-a9f0-64304c1bd5ef",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2933,
+      "completion_tokens": 665,
+      "total_tokens": 3598,
+      "cost": 0.009664,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009664,
+        "upstream_inference_prompt_cost": 0.005674,
+        "upstream_inference_completions_cost": 0.00399
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 546,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that altering a PK (or similar) also updates ManyToMany through-table columns that point at it, which a competent engineer could implement. The FAIL_TO_PASS suite mainly checks that, but also tightens an unrelated to_field FK type-reload case not described in the issue.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that altering a PK (or similar) also updates ManyToMany through-table columns that point at it, which a competent engineer could implement. The FAIL_TO_PASS suite mainly checks that, but also tightens an unrelated to_field FK type-reload case not described in the issue.",
+  "prompt_tokens": 2933,
+  "completion_tokens": 665,
+  "total_tokens": 3598,
+  "cost_usd": 0.009856,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

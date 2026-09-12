@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8278",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "e92c37b6-88a2-9058-bbe0-a9a31656883c",
+    "object": "chat.completion",
+    "created": 1789194232,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to keep typed numeric radix (e.g. hex) in function defaults, not underscore literals or a new unparse(source) API. FAIL_TO_PASS still requires preserving 1_6_0/1_000_000 and that every unparse call take the original source string, so many valid radix-only fixes would fail.\", \"p_invalid\": 0.72}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3958,
+      "completion_tokens": 130,
+      "total_tokens": 4533,
+      "prompt_tokens_details": {
+        "text_tokens": 3958,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 445,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 35380400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to keep typed numeric radix (e.g. hex) in function defaults, not underscore literals or a new unparse(source) API. FAIL_TO_PASS still requires preserving 1_6_0/1_000_000 and that every unparse call take the original source string, so many valid radix-only fixes would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to keep typed numeric radix (e.g. hex) in function defaults, not underscore literals or a new unparse(source) API. FAIL_TO_PASS still requires preserving 1_6_0/1_000_000 and that every unparse call take the original source string, so many valid radix-only fixes would fail.",
+  "prompt_tokens": 3958,
+  "completion_tokens": 575,
+  "total_tokens": 4533,
+  "cost_usd": 0.011366,
+  "cost_in_usd_ticks": 35380400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2871
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-7671",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1278
+  },
+  "response": {
+    "id": "gen-1789190726-yeoKM79xFNKY0HSx9k6d",
+    "object": "chat.completion",
+    "created": 1789190726,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly requires minversion not to raise TypeError on strings like 1.14dev and to treat them like pkg_resources.parse_version (so 0.12.2 meets 0.12dev). The FAIL_TO_PASS change only adds that exact comparison, which matches the reported behavior rather than unstated APIs.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about minversion failing with LooseVersion when versions have things like '1.14dev' compared to '1.14.3'.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about minversion failing with LooseVersion when versions have things like '1.14dev' compared to '1.14.3'.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "vTTaQAtJeEnmTKb5scCM2MD+yZAe0MhKAkTzNA59Whfc/h5HECbsetVYRv/sep0eSCnA7gqeqUhj5b+ozy4brQqaaOx+T7AnzypMZZxULKyyi66p/vC/b59TAKcYPPRTkK6jCwBirBmQ941MuqLgFYhFB/YBSlejPmzLsXSbRZTPNKSgL4N1O7pVHB7nHX5Oh6sPgffgwduyXgHAJs7DU/Lf5skNTEsPw3DhYYCGgw1We+ua8ajo4HyXjvEst1DWZDRneryCZNzUVfxL3qvDfDT3+XKf8Y0CLkNB0zsiQHUTPXCQ4Zv+Yvi8KKkXwGPb6RPRRNh7KQyR462BRcpKhBRF8tPTbU+I3038wpdX2QXGahxDrlwnJNhaS/7Kse+zsrB4NddHH/IQfcBm+VJVuTIo+bM8VbgpUeKr/Xs44A9jStABbg7BvcbiieIykDXymmP+K4y7rPRiA6EhgBjbh7PjSV96NarF5BYmGwkv1WP69nJfo15/W9jJtIWuS8WjWUwfWRlsem3O8DFwPr5eqyxBZ8erstMioxjqu/2vOzIrknpK9Oe0nZEwq2ZUhP++Q52yHrhHMPzr/MoJUhhTP84a65DA7zwdYirb2oT4HWUEFX82vYsuE/47UfNYK60CRnOZ5BALM8KcPNAutFlqMR8d16H5kbc9jcnLsoX0eksPV457+tQ2pPmVNmT/F9SuR+MtALOf3aOBQF3iHzb6UMIKjb2VPWLpeVkWNbE5Jsk2VBFzt3IRb/8i1gyDvRS1W6561wNFO0ufp608d5pBP+4kcvBssxayrcTVcTSvE5N0FSJnkK98LtMAULXfTl9c+62ot4yRrY48uVfeoX0RYzh88z5r83RndmE3quvelDh3fsmus2cvJmQ492hBuedJAfAH1C7IlYyTF44IsZZSiBAbmWqZHSSXYAn5H7nYO+6TKcH927o9g76gE4E2VkOIiblSaQIKNkUF4x740GuDwfDDLV7cCltMkqFTJYM+ujx3P/CjdRiEofTFOZqNDXYL3uaQwNwM6ZsWmd9IHxBOqgzJpuOXx54pG30YtMP1dBM3EzQ7vUq/5lnHMqrgoCc7j4QWqjLNrmDvY9zTDNN41d0ZU1Pp2h6vetz6F6JvUnj0WouCwpN8syOOYrYcAxFuY2XWDW2C/T+HuZuSky+VD/zXz8zngg286etHniQzaeZ7UaTnpU0n1o0IAutPKYhlYDnI62YMe5bEy6kWpdrytxH7s/UJtsqsze6RadjM0yncOHmMjMsbojnAurchTYG9/eDwM75XZUHFhAO8X+BJ3/xbWG0IXvPcu9d3nqczNsoff7NbtVlvgeA5XF2y9a9VIYPNTjoRa/qrQdMEWkn3TXir8d5+9Oj0iQlguKi+SpbMjuUphmjblJWGWTGYjr/5OQFx1zJjUlZv7BipH9yF3S6iopgMFFOeequEV9p5Ul8jTE1X9uR5no9I8fyOFQP2zU86T1nSYCf4OLM71FTqPXS+Uwox8PwFJPmNjjNx+8isgNp2YEu+redK1WXIhobi54ChDjImi5XPsa+yzImAq5/EkEfhHnHe5Zk++HD7UfV/SbXbmLahRFapQMjdWfbaaql1dv/Ns5cTapzY2DNB7N7J.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5d2c87bb-ea45-9635-9295-ca04e374f718",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1703,
+      "completion_tokens": 448,
+      "total_tokens": 2151,
+      "cost": 0.00571,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00571,
+        "upstream_inference_prompt_cost": 0.003022,
+        "upstream_inference_completions_cost": 0.002688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 323,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly requires minversion not to raise TypeError on strings like 1.14dev and to treat them like pkg_resources.parse_version (so 0.12.2 meets 0.12dev). The FAIL_TO_PASS change only adds that exact comparison, which matches the reported behavior rather than unstated APIs.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly requires minversion not to raise TypeError on strings like 1.14dev and to treat them like pkg_resources.parse_version (so 0.12.2 meets 0.12dev). The FAIL_TO_PASS change only adds that exact comparison, which matches the reported behavior rather than unstated APIs.",
+  "prompt_tokens": 1703,
+  "completion_tokens": 448,
+  "total_tokens": 2151,
+  "cost_usd": 0.0060940000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

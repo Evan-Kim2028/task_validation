@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10910",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2521
+  },
+  "response": {
+    "id": "gen-1789190768-O0Xb75xvE7yFdLMDeUk4",
+    "object": "chat.completion",
+    "created": 1789190768,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes wrong SQL timezone names for datetime.timezone(timedelta) offsets on PostgreSQL and the intended extract results. The FAIL_TO_PASS checks also cover negative offsets with minutes and all backends, which a reader could implement slightly differently while still matching the reported bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about Django ORM creating incorrect queries when using timezone with timedelta like timezone(timedelta(hours=5)), which becomes \"UTC+05:00\" and PostgreSQL interprets it as POSIX style inc...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django ORM creating incorrect queries when using timezone with timedelta like timezone(timedelta(hours=5)), which becomes \"UTC+05:00\" and PostgreSQL interprets it as POSIX style inc...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "kgGEiCbUFuLQafjPjE915R9aEsDzSvuSu4pdrKnl2ektnnKMQKWZQDqMRxYSVEyvb0iY2nTBcOQ/M2Nn17RqVbqEMhFdSIP601eG504Ny3TnypS45AhZL3hUI7v1vydyA+KW+IvYu3Vmmf3l65m5SiiPUZKpcgnRnRMx9TLPZ84c9jWF61fyvsf3+6LCIsgq2lpzA+Qrq7CDIyuiYVFKFhN4UF8ekPeXxXsF55D63PzX8DqsSHBOw6MlmoSpGSb3Sbi+LH4wTZLwSL6Dn4DG8gtwosNAXO6ZNBLYi1iqhZrBixRNif6h3bNbBQSJ2u5+Ip6MdPmamxr0UojJVmteTbdCzKEoPPWH8fCtPND5l2rbpGPUxl1WCCL02iuRwjlsrAKGh/uxhCNc08x4TSxK5uiN/ssaSGUwqLWC0igpDkWZc7TPquojDaVC07H5M3jUWDvprqZKwbKkbdNeHPJMIvLtbQjMQrfh6VUhyEPDjrzKUOCzFLc4AcKl49lkUhgJ1Vg17neznalncP6ruuLApBPk1Fzm5PDsg6v8K1x8jGPieYBlzrK6VP3RZ36GmS0SMkNqEDyV4N2u553ZdK9WIOilB8JJkRLoRlWVDiUnQZcx3TJXFKCQ3oPWe/oiUs9qbqXatQmIzfBogrkKU6stf4Ur8G+LdWC2Zy1zzAWKE4ZVMaj4ctYNdMUek8BcNEDLIeEPPSPsX2SvEdUKTzrfvJRB2xxUH7bKYh/HyDuAnAdv1lGA3YE83bBEhMqLbyrZUzJw6fnr+7P1/L73ssg2ZNjNWuzKoP/SRY5cQT+SMilV4tLAqcuBCqN/HkX/Qx/ujCUyHHvZxOKVqQ8UD+ZXIQd7nz97MqEIMdb+txTlhIAawdFJUaTVhAQrBWOiPWCF98xFkDt+/dlxYlGIs4UVg3DPe4LAHn9qdIEdX0tIsCqK7/J2u+cV8ARibZao1JDQCkny0ZLLtQkNMZccoTWcjc8Fg5c37js4AvINNUGcteMD8/CzbOHrTH/hF1TPNX2gVwAqudloVYsVqDXuECodFPnvR1EHyyQgdYpg/ViGt2yhWgs8Fehf2RBeEg1pg6uQd4FAOzXkEkmzRMG+SL1GN9X5iBB9SiLiEl0zgu6h8NyZ6d1JH7v6+QQ+1MOkBapgnse4ZLDUDJXmBdsCFnp3z34j9D0PFlvuXaFf6Dm37tuRHmYw6/H+LKlQbPEyZ+8jUfFIkyZ0NscG249LmU14wv3Hdzo/b9+XQZ48DIkYO4gWlSEwSWxUIDE/SvmPmRT2ts1O3MMun8OCfc5TRchYRAK3bJ7MnfabQeqbzpXqLgQE8TfaAFeE7GWgFgxp8MmI/45AsVksFgEQ7/le/BZR2Eh5rYb9XlJswwmQnlCfd+2dcbmR5apGgEO7ixZiVL1mDkMI+yUxyyw92GKA+TCaYb4ik6zTKUO6GV/pv+WCW1V8JP2p0aM74Gkhs7FmmVUymTZ4cc6nhV9boTtPSupyV7B/xyQGm4qQlqIkeY+4dPDKsZ47lvQiAD14StZPK61Fn7UmBD7OPOBFzV7YIhLqN6KKg5vqKApSI4dAD00ZaFb7BS+Ml1qFgMvMFIhCIbYp7iU7UImGlzAdcUoPWmswCX3H1YbRgh5uiv0ZMQDLl8bfKybu1ppfRX12cw+PtTkJlY7t5z677tn3vLvZukqtFGkcRrxYbYl30c/cEOCC4jpM5sh1O7pS9cRLsZCxKQknh9qq5MY59NVBHh00tINW3/uLJbyXuMI7EQUYhiQnUXcNQ+6Sy3qyzeVNQIAVGlcXDVeE0PyqjJiR2Zf8LC7QZlIBBKxRGIlv6kWRSjP1EaM9+0Sb/NenzUP+Iut8RnEkRlU+E0EGWsUvBNinGXMNqWKrQEKdQ3H4p7CBGoEZBUv3Y9+55whgbnNDtP0QnPEOqxJYSIPF7l9FZCfBpUrAFJ4e5VX+a7vvGomipHG3Hut5LoiG/Tw0jtUsOzwdBqSQl8YTgL5LOmJ4qxnDvbNYIzQGYi2PlFwnliqfpZH/mraLh3i7oKDO84VHQUmKW8+gny16oSXuDCZqAYjz9dULmPJMQURwZgzkIgXJLXfedyKUTSH5VcgkzxyXBITc1Zkeaypt7A79SXdVlYeA6JxB0MVJzPgYuUbnImRJBKb5xGSovnx7q4FNvQDxYvHOJ2pjNM3y/PX3UF02w/fQ6mPeXxLYd5v/nDbKTDDGDfR53d6uhiLv/AzYF8mxBiVpoipZuxD/n5EvMin2HyviM+I6uTO8OyDPGU3H3rsm3EiX5s2hIi1jH5GUmm7jcTxuEuFwGHtZPkU+Z0Q17+IvNLfVzbbyB+GztJzrXA1+2CzzXLS7yBLDLlG1SMD7YXjAAQLkGZgryGBot6TZswEt/Vob5zdD/jddvyJihD8LbjA+KP0u19qA9TMo6BIxdbmj06f1D8yK83j1ENDG4a0n+w6F76C+a3Ww8cYCmXL3Rg+yfzEtbEjtbOUUs3IfZaJQ6lvVlllAfQVsERsNVsYElrBPYM2lEnWNTRRYKtiOvEO1Sk1YdjFHtCQQMB+fAbiRTUxAWm6bZBYCg2OQgtnj7LGPYzJiuv0giEHlXqfXHR1L/5c7DxwKc4NQMp8VWrrfhe8v5gAZPkn465pOB3z/EDSwXov/pztadbbhD+C1nIgl+5Mr7OSFqZswbskySuenA/YIYF3/c2BnqIGeajLPKozuCKCjWhyCvN5ewI3i++Ow7nTqoQID3fXkWW1CuTLiluJtCiyV+wyfB+808ioqRPJqd3UWbSnLQ6HZZrmTBCkEtzqJ/C1BdwnuurGIMaeDbeoPOqUhkmdyvyNOJnx6tjh5uhW7ZxcQGDwoeXidyEC+dnGB8v7fCIocEH2dQrBh5C8ijQjDQqdg/iAUrhHqXBvH9HBwFxGquiRGAb4IdfUtmxdh+RtTuA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_668cd345-c734-9dcb-a675-baf3580f206f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3152,
+      "completion_tokens": 677,
+      "total_tokens": 3829,
+      "cost": 0.009982,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009982,
+        "upstream_inference_prompt_cost": 0.00592,
+        "upstream_inference_completions_cost": 0.004062
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 566,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes wrong SQL timezone names for datetime.timezone(timedelta) offsets on PostgreSQL and the intended extract results. The FAIL_TO_PASS checks also cover negative offsets with minutes and all backends, which a reader could implement slightly differently while still matching the reported bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes wrong SQL timezone names for datetime.timezone(timedelta) offsets on PostgreSQL and the intended extract results. The FAIL_TO_PASS checks also cover negative offsets with minutes and all backends, which a reader could implement slightly differently while still matching the reported bug.",
+  "prompt_tokens": 3152,
+  "completion_tokens": 677,
+  "total_tokens": 3829,
+  "cost_usd": 0.010366,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

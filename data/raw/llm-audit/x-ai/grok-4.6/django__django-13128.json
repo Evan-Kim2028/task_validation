@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13128",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2879
+  },
+  "response": {
+    "id": "gen-1789191154-789RbIEsc8Qepk9GN7OR",
+    "object": "chat.completion",
+    "created": 1789191154,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that temporal subtraction infer a duration result so ExpressionWrapper is unnecessary, which a competent engineer would implement as auto-resolving same-type date/time/datetime subtraction. The FAIL_TO_PASS tests check exactly that behavior across date, time, datetime, subquery, and Case cases, without extra unstated APIs.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about making temporal subtraction work without ExpressionWrapper. The example shows subtracting two DateTimeFields and adding a timedelta Value, which currently requires output_field.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making temporal subtraction work without ExpressionWrapper. The example shows subtracting two DateTimeFields and adding a timedelta Value, which currently requires output_field.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_50735f64-3093-9775-995b-62f2ed4f8588",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3257,
+      "completion_tokens": 459,
+      "total_tokens": 3716,
+      "cost": 0.008884,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008884,
+        "upstream_inference_prompt_cost": 0.00613,
+        "upstream_inference_completions_cost": 0.002754
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 335,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that temporal subtraction infer a duration result so ExpressionWrapper is unnecessary, which a competent engineer would implement as auto-resolving same-type date/time/datetime subtraction. The FAIL_TO_PASS tests check exactly that behavior across date, time, datetime, subquery, and Case cases, without extra unstated APIs.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that temporal subtraction infer a duration result so ExpressionWrapper is unnecessary, which a competent engineer would implement as auto-resolving same-type date/time/datetime subtraction. The FAIL_TO_PASS tests check exactly that behavior across date, time, datetime, subquery, and Case cases, without extra unstated APIs.",
+  "prompt_tokens": 3257,
+  "completion_tokens": 459,
+  "total_tokens": 3716,
+  "cost_usd": 0.009268,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

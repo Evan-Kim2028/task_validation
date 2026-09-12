@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8801",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "4578c31c-6328-9460-81a7-aad43f476d5a",
+    "object": "chat.completion",
+    "created": 1789194273,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that annotation-only superclass members with #: docstrings should appear under :members: and :inherited-members: without :undoc-members:. The FAIL_TO_PASS test checks exactly that documented inherited and local annotation attributes are emitted and does not impose unstated API or wording.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The issue is about autodoc treating annotation-only members in a superclass as undocumented. Expected: they should be shown when they have docstrings (the #: docstring comments).\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2778,
+      "completion_tokens": 116,
+      "total_tokens": 3181,
+      "prompt_tokens_details": {
+        "text_tokens": 2778,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 287,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 24500400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that annotation-only superclass members with #: docstrings should appear under :members: and :inherited-members: without :undoc-members:. The FAIL_TO_PASS test checks exactly that documented inherited and local annotation attributes are emitted and does not impose unstated API or wording.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that annotation-only superclass members with #: docstrings should appear under :members: and :inherited-members: without :undoc-members:. The FAIL_TO_PASS test checks exactly that documented inherited and local annotation attributes are emitted and does not impose unstated API or wording.",
+  "prompt_tokens": 2778,
+  "completion_tokens": 403,
+  "total_tokens": 3181,
+  "cost_usd": 0.007974,
+  "cost_in_usd_ticks": 24500400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1926
+}

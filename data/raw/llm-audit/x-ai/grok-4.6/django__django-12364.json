@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12364",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3198
+  },
+  "response": {
+    "id": "gen-1789191024-wPWqYekAYqjb0gsfr2uN",
+    "object": "chat.completion",
+    "created": 1789191024,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to treat unconditional UniqueConstraints like unique_together in admin deterministic ordering, which a competent engineer would implement. The new tests mostly match that, but they also pin extra cases such as UniqueConstraint with an empty Q() condition and related-name vs attname behavior that the issue does not spell out.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about detecting existing total ordering in admin changelist considering UniqueConstraints without conditions.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about detecting existing total ordering in admin changelist considering UniqueConstraints without conditions.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d5c2d584-9ed9-9a62-be52-5552364dfdc2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3430,
+      "completion_tokens": 524,
+      "total_tokens": 3954,
+      "cost": 0.009812,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009812,
+        "upstream_inference_prompt_cost": 0.006668,
+        "upstream_inference_completions_cost": 0.003144
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 405,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to treat unconditional UniqueConstraints like unique_together in admin deterministic ordering, which a competent engineer would implement. The new tests mostly match that, but they also pin extra cases such as UniqueConstraint with an empty Q() condition and related-name vs attname behavior that the issue does not spell out.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to treat unconditional UniqueConstraints like unique_together in admin deterministic ordering, which a competent engineer would implement. The new tests mostly match that, but they also pin extra cases such as UniqueConstraint with an empty Q() condition and related-name vs attname behavior that the issue does not spell out.",
+  "prompt_tokens": 3430,
+  "completion_tokens": 524,
+  "total_tokens": 3954,
+  "cost_usd": 0.010003999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

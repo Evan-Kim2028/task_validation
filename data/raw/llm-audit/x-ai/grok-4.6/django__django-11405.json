@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11405",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1129
+  },
+  "response": {
+    "id": "gen-1789190858-GTXXEcLpFWxgd4hVvw4Z",
+    "object": "chat.completion",
+    "created": 1789190858,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that reverse() mutates queryset and Meta.ordering for expression-based orderings, including the compiler location of the mutation. The FAIL_TO_PASS tests only check that reverse() does not change the original queryset results, which is exactly the reported purity bug.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about Queryset ordering and Meta.ordering being mutable on expressions with reverse(). The tests check that reverse() doesn't mutate the original queryset's ordering.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Queryset ordering and Meta.ordering being mutable on expressions with reverse(). The tests check that reverse() doesn't mutate the original queryset's ordering.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LwVte3eCYhro7TQR0r4UNo6u226XmFWrpyVqsKkQnQL7TLrNDKw8yTwttgJizfUua84+xsja7LVuo/P3MB23wYeZx4VcmFGVRdYyqzo0ToDwH1A3lZh2A6lv1Kzzlj6fMdZ/pr/+PlnhGFBISJrxvwmHq/Lnd8UcHeGhEXIwO6jH51yRpXsukX6hd3jbnEV0LVu5gWhRMou+I8TLsGQQrB1rDrpXLPj+YyDzpob964Cvx1VeV1YttRmYqINBrmx/DbHIKfpU9rXRR19ZOfxLpqO/Z/cKiF2A1Hw3II7oSxK8LkvZrb1nbAnn8dI/dMXBw41VXlPGQqiDUGXtwHKThV9dgXqoUHOYJfeOb6R7XJxYuempR1Q5W/HRl8P2RmS8dvQFNUc3TYN8BwySujZCq9GmMfmJBAQqcgWmusjytnUj3oZs1/JBhWUrzlkbVPhYJ1meEiKfLkjjg58f+FYVvfp1xDs5eFCAhfvy2xDjTF66xnS9gvMfU4rVBDX6WyYIMhRohaB2eGgCTsr/a1M1pxcXNE/vR4ChZdQq5eBayV+Nj+tn6HqXoyv/p4F+qDy3KrGuuOG9B7R+zHfUIjxCL3KJc04QDBBo0XwbrBdDbx24hrfEcqZxIbGL7TiG3iM4NK+Jx5bqQZZTL4pyGXb5H9d3ck1J6c8CRzX+M9zkJ6RI+nNAuuHFitS41LMqp4i/+7raQhlQAMp2wH2pB01ou36aiDjuOAMWqxihS4uWiMPZJpxkcXJM22hBSL9/MoXTPm+k4WXBQF8b3PAA6H+CiBez7Jpt/8O3Hr4s/vzt4b4VTrEkO5zOsy2jZhCXD9ieXCQ9HA5zR5TZsgvgEgEFbOQYAOapRj7jtwD3+wxZyLq+/u1N2+605llNxEiFMxNsGWMy/Ecme6o.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1b50346b-1811-9d6c-aab4-b1c3a45ed7f8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1461,
+      "completion_tokens": 250,
+      "total_tokens": 1711,
+      "cost": 0.00423,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00423,
+        "upstream_inference_prompt_cost": 0.00273,
+        "upstream_inference_completions_cost": 0.0015
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 138,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that reverse() mutates queryset and Meta.ordering for expression-based orderings, including the compiler location of the mutation. The FAIL_TO_PASS tests only check that reverse() does not change the original queryset results, which is exactly the reported purity bug.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that reverse() mutates queryset and Meta.ordering for expression-based orderings, including the compiler location of the mutation. The FAIL_TO_PASS tests only check that reverse() does not change the original queryset results, which is exactly the reported purity bug.",
+  "prompt_tokens": 1461,
+  "completion_tokens": 250,
+  "total_tokens": 1711,
+  "cost_usd": 0.004422,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

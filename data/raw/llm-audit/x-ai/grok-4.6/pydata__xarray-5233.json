@@ -1,0 +1,83 @@
+{
+  "task_id": "pydata__xarray-5233",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "c36208df-8e0b-9bb3-afb5-1e71eae45a78",
+    "object": "chat.completion",
+    "created": 1789193696,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Issue is an open-ended feature request; tests lock xclim-like APIs, numpy calendar name, and error strings that contradict or go beyond the issue.\", \"confidence\": 0.78, \"rationale\": \"The GitHub issue only sketches three calendar utilities and even suggests calling numpy times \\\"default\\\", while the tests require proleptic_gregorian, convert/interp/date_range_like behavior, 360-day align_on, missing fills, dask laziness, and specific ValueError text. A competent engineer following the issue alone could implement a valid design that still fails those checks.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Issue mentions 'default' calendar for numpy but tests use 'proleptic_gregorian'; interp_calendar and date_range_like not explicitly requested but tested; missing 360_day align_on/year/date and exact error messages.\",\n  \"confidence\": 0.75,\n  \"rationale\": \"Issue is high-level request without precise API details or calendar naming convention; tests add unrequested features like interp_calendar and date_range_like plus specific behaviors like align_on options and error strings.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 25448,
+      "completion_tokens": 168,
+      "total_tokens": 26358,
+      "prompt_tokens_details": {
+        "text_tokens": 25448,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 742,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 191610400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Issue is an open-ended feature request; tests lock xclim-like APIs, numpy calendar name, and error strings that contradict or go beyond the issue.",
+    "confidence": 0.78,
+    "rationale": "The GitHub issue only sketches three calendar utilities and even suggests calling numpy times \"default\", while the tests require proleptic_gregorian, convert/interp/date_range_like behavior, 360-day align_on, missing fills, dask laziness, and specific ValueError text. A competent engineer following the issue alone could implement a valid design that still fails those checks.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Issue is an open-ended feature request; tests lock xclim-like APIs, numpy calendar name, and error strings that contradict or go beyond the issue.",
+  "confidence": 0.78,
+  "rationale": "The GitHub issue only sketches three calendar utilities and even suggests calling numpy times \"default\", while the tests require proleptic_gregorian, convert/interp/date_range_like behavior, 360-day align_on, missing fills, dask laziness, and specific ValueError text. A competent engineer following the issue alone could implement a valid design that still fails those checks.",
+  "prompt_tokens": 25448,
+  "completion_tokens": 910,
+  "total_tokens": 26358,
+  "cost_usd": 0.056355999999999996,
+  "cost_in_usd_ticks": 191610400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 20701
+}

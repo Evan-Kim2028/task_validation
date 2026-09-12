@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16263",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3617
+  },
+  "response": {
+    "id": "gen-1789187717-NW92t2CgqnbzATVm4wvq",
+    "object": "chat.completion",
+    "created": 1789187717,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to drop unused annotations from count() SQL and does not mention alias() versus annotate(), nor that unused aggregate annotations must still force a subquery wrapper. The FAIL_TO_PASS tests assert exact SELECT counts and identifier absence, so a valid simpler COUNT(*) without wrapping would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about stripping unused annotations from count queries. The tests check specific SQL behavior: pruning unused aliases, non-aggregate annotations, unreferenced aggregates (with subquery wra...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about stripping unused annotations from count queries. The tests check specific SQL behavior: pruning unused aliases, non-aggregate annotations, unreferenced aggregates (with subquery wra...{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_319adc31-0574-9395-b871-4f81b9ae48d5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3852,
+      "completion_tokens": 475,
+      "total_tokens": 4327,
+      "cost": 0.010554,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010554,
+        "upstream_inference_prompt_cost": 0.007704,
+        "upstream_inference_completions_cost": 0.00285
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 361,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to drop unused annotations from count() SQL and does not mention alias() versus annotate(), nor that unused aggregate annotations must still force a subquery wrapper. The FAIL_TO_PASS tests assert exact SELECT counts and identifier absence, so a valid simpler COUNT(*) without wrapping would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to drop unused annotations from count() SQL and does not mention alias() versus annotate(), nor that unused aggregate annotations must still force a subquery wrapper. The FAIL_TO_PASS tests assert exact SELECT counts and identifier absence, so a valid simpler COUNT(*) without wrapping would fail.",
+  "prompt_tokens": 3852,
+  "completion_tokens": 475,
+  "total_tokens": 4327,
+  "cost_usd": 0.010554000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

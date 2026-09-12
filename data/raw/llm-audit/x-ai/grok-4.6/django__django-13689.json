@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13689",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1099
+  },
+  "response": {
+    "id": "gen-1789191290-YcpKscI2VjvsmfehHwyY",
+    "object": "chat.completion",
+    "created": 1789191290,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that grouping on an ExpressionWrapper of a Q/boolean expression drops that expression from GROUP BY, which is exactly the behavior the FAIL_TO_PASS test exercises. A competent engineer could implement the GROUP BY fix from the report without needing unstated APIs or result shapes beyond standard annotation fixtures.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about aggregating when grouping on an ExpressionWrapper omitting the expression from the group by. The SQL shows GROUP BY on the field instead of the IS NULL expression.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about aggregating when grouping on an ExpressionWrapper omitting the expression from the group by. The SQL shows GROUP BY on the field instead of the IS NULL expression.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RE+zAw7QOFdfjq59hvA93nXkwV3CRPoYKn/JQE9pgLWzPlbtGUupAWaCWAYiwS7/cPDKtdXOmyt/rIZWioyedMfPyd/xyc5VNCJElezC+qUmXOSIejnu7rOsKt5lI8PMcQJX8HPJIE8d98HrETeV2w3RmSmhDtE733hKkw8NJik2qaHEsdOO/kiXgTDXAYEqqsRPQZjzITIFkhj0mPKzIKH49Un1RiZztf3ZEUwC3fLw3rMyPM5r+erj2knn3SA3E7lJIWhErqUeChhAdLm9TS/FlXv+54NlunAziiTXz4ytQuUij3x50XSk42E1OqgQmsEkaOKiK9Rvb4Udyioi6/VUfmgQWOb0h/EW79NpkpKRF3uqnuNr0GahpF6m5Qja0gRcB4MRCbQEmq7jsWVXf3e+TmxPYQADhnaXPBgO7BXydnsn8QrA19wwfAxeoTRsO+MsKxMZs/yr0JT30zDwtgabwMMKJfpncjaQyLYOOH1MHkcZ8c3PpE/yqqDGKAdDU4KzrnVcn5lfe03uNIusMmorSQjJoYI3E136G/aqovEmdc+08a9RlmfCnmD/CLYxFm4R4QbmP31OAGdmVig8dOY1wiRu3cqmS6q/ICxnRbvsi5w1W6ScUQcbBubUo0T/X+lq6h2DsewsNLWmz8KbNDlPkYxM03pNZXu7zvG7n06yUs61k1imQ0VPBKzYwTOpD/mlCfTy9UFNJ53+TgqJRJJvJzhDsUMrhm+j6N4Cefgd14BPgAMmYXbFI5HXt4K5CFK528P34Vuwpy8xNw3RtH/jyykQXKarC4F4lt96aUoh4SxqwQQScjoU8fbiaAKJsgksKljD9ylBcg6cWfEHfV/fKEYpKmtmB+WEd7xZWN7rXSQy3D9RCR6whGUGpkTHNL4g+sRDW2+1EmL+KvV3TVxs86pI1jqKIdOreJYsOBj/ofK1IwS3knOZZVfqhBNDtvbIamHGeLF0qtfrfMWCTGDXDf8Hhi9Qyz4O+WEsExJG/DFMNSyD8Ds5+RdQ1kH0KoSoYBWmDc2TxbKEhEJzi31zZk+KuswkdpSDFQTBts1pP9t1hKZz6Lypgdb7Lo/5vNoxmC+MVNCY3l4QkJRogAx8aJfCmVDpCgXq9OIT3O/pWORDQMPx29PZrYS71cPdkGzJr6hkc1X5uttlecs7LuXWhviQVkIZ9DV3olZBrvseIp5WD2+kT8XRoqjTvcJE/ddxC1VVpfoy8iQZFhKjlHZSGJ2G6XdZF/PhtinYFdgSBDg7kMYOQlO5kvyYA24QNwaR6EIK+BhUQpz7oxHjAV2Mx2dMbKZdoJOUK4pHNA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_10c13038-65c0-90e9-b666-fcdd338faa69",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1471,
+      "completion_tokens": 330,
+      "total_tokens": 1801,
+      "cost": 0.004922,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004922,
+        "upstream_inference_prompt_cost": 0.002942,
+        "upstream_inference_completions_cost": 0.00198
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 212,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that grouping on an ExpressionWrapper of a Q/boolean expression drops that expression from GROUP BY, which is exactly the behavior the FAIL_TO_PASS test exercises. A competent engineer could implement the GROUP BY fix from the report without needing unstated APIs or result shapes beyond standard annotation fixtures.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that grouping on an ExpressionWrapper of a Q/boolean expression drops that expression from GROUP BY, which is exactly the behavior the FAIL_TO_PASS test exercises. A competent engineer could implement the GROUP BY fix from the report without needing unstated APIs or result shapes beyond standard annotation fixtures.",
+  "prompt_tokens": 1471,
+  "completion_tokens": 330,
+  "total_tokens": 1801,
+  "cost_usd": 0.004921999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-20826",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1441
+  },
+  "response": {
+    "id": "gen-1789191920-FFBSqLvGsuqp572ygfVf",
+    "object": "chat.completion",
+    "created": 1789191920,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that ax.clear() on shared axes must not re-show hidden tick labels or extra top/right ticks, matching the 3.4.1 appearance. The FAIL_TO_PASS image comparison encodes that expected plot, though it only covers the shared-subplot case and not the single-axes extra-ticks symptom.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "dLwB//rluEFJktOEsnEjpjQpKhTZzpkfrVDD4j/nE1FSPKJP9StROF93iatrs6gRD3XZeLc8vtXG3sOmHPrWXQFjo3tu2DOIj1ELS77QOtldun/ZNyqqDqAmjBrzxnAQnbaWF7CHNq42YElkTP00s9PT8/4f/u1ARwOOFOz17jprQ8i6XWABzu392lQgH1vqAl8I+g5MZFcJ2FzlFW54eBPgzextk+Bwk3cvFc2GVxED5u2j5SsjDB3HqlNf/IOEXSiJ8bh97wVsPL53/UUgi64sRiYqaEvMSSvFSniI5RpzEfo5nlQCCsOuUNUWDu7T5UA3UwSX9M6LHBcmEgzP/jKGe4pYXzF1NVkQaFWitiL3I31/CSvehNckm3uRijyHJ3WTXLWEM7mp0d2CSiwFuk3uWB/5Ps9f8D8s2NlFYjiuy7veaeCSGV53HzNWg817d/kmIe0+daOto1nnfKYAw7sLoS4O8Z2Z4v2QZ7QGcZXWhIw7hX63izc0lm0pYZmuJP12U5lUB39MTE0CJequ06qz+3GgYanSHKoo6vMrutScXoW/ROrPBD97UUPa5RHPyZy2feSM53pqno7uccswRr7LZngnX/jwBdNuBNtKsg2alOrfk0WttG3OSMOwu7mv59Mp6R5qxI1lil79roJFzVOxoB8j+hGV8Xk589ITVK67/lFhBspZTtTKpFOj1D2ZyeSt9hSXIK0UppxJ8SZ/dJvq8yDfwV9p8TnlSqZP5DEff7QzWums2DWZuUlWN5nSxRQQR3ETVMT/ZOx+uEc4pSQoQZp902/R+vhRW8bim7wwL+Tsef97KEcF1Vp+Tpuia0PYv4gcMY4S71sdWQN4jgmmTajSd1LTvq2+I7weMWNoskKxbKXKloYM1+cblG9Ju2HGF9zhXX5EmGGU6COQpEdm0EjqwQwEInOwZJbNmBe2h5xkCIIrUzs8xDr2tzup//2OlEHowBwWPwto1vzpQNneSa6aRmrl15Y143tX8k4eSma6Oe+o190JVgn8+crxwE2wPud3TtvSQETtn423fOaKFTw/CD/Skwb78qIFBOdByQZVq2JMMs44X7tScgfoZ9gNb4BD1jY6lMlB+8NMAXV5ZFesEgJclmAwQKTTmuVaMqqPb/MNIig/xLrk7jP76+hleXLICYzqZrqpWR2Bgqgbz78tGCGaNCIa8qPiFKmHjj+WJbXOQMCcsUhdHFsQIX7s2AoqpfV2hKtd2tI3g9xp+eNEXXoHm2ZXQxOIwFSLiFylKpVPam31HrTZUYgNTX6FDHCwI9td21WKBElr/OQLKqv8d2iFO5GpGBkvruYhh4V1vVisQ0jG8LC1zQUxHnuafgl3zAzr/J4oJJq07nr3EygiYW1z7REDNhQfxuUIrLQWbSAWNPMaifZyOKi4vHW86k015GrMJ5omIXKDoYVO/pVhBfQyggupPtfbRKQVtkkzFxdtkHrfRcWRpxYTYb9aQDEhPnaaOq065ussw7a8wAqAuT7+a2NGpqpCez2uPyAylB1WfxPFwjDMAw/dazTTglNanUWlbzXFC6lNGi/SWL5RzdaDRdE/zmLHQxsXpw8Q583kQgruN2MLGlk5EStO+LofRcJVbVBk77MPOa/rzb25zV6IhUrWCjrR4SSvTbpw6xDpRz+fLEzjDf8xwV1S1bPKZDXzCYc2ae5WW5mG00ULLSkhJg1Hf3WEYIIvVxvZ0/B+balJvZ8g911ORGcJ1k+Hwjv0RamIjjzZPA5/UIeudpx+djYxCpK691OnyE4l0pp9iTefoCV6LexvYbN6yh3PWgyBzD3S/cEvZw8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cc39e45c-81d2-9d14-8588-db1c796a84df",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1933,
+      "completion_tokens": 426,
+      "total_tokens": 2359,
+      "cost": 0.006038,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006038,
+        "upstream_inference_prompt_cost": 0.003482,
+        "upstream_inference_completions_cost": 0.002556
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 302,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that ax.clear() on shared axes must not re-show hidden tick labels or extra top/right ticks, matching the 3.4.1 appearance. The FAIL_TO_PASS image comparison encodes that expected plot, though it only covers the shared-subplot case and not the single-axes extra-ticks symptom.",
+    "p_invalid": 0.08
+  },
+  "s": 1.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that ax.clear() on shared axes must not re-show hidden tick labels or extra top/right ticks, matching the 3.4.1 appearance. The FAIL_TO_PASS image comparison encodes that expected plot, though it only covers the shared-subplot case and not the single-axes extra-ticks symptom.",
+  "prompt_tokens": 1933,
+  "completion_tokens": 426,
+  "total_tokens": 2359,
+  "cost_usd": 0.006422,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

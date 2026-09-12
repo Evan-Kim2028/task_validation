@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-12827",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "c61718c0-e8cc-9776-9935-f2498bcec95d",
+    "object": "chat.completion",
+    "created": 1789193957,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue asks only for documentation; tests require a code change to inverse/bounds handling.\", \"confidence\": 0.9, \"rationale\": \"The GitHub issue requests documentation of QuantileTransformer’s implementation, not a behavioral fix. The FAIL_TO_PASS test tightens inverse-transform equality on extra data and would fail a docs-only solution that matches the stated request.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The issue is about documenting QuantileTransformer, but the gold patch and tests are about code changes for inverse transform consistency, especially with uniform distribution and bounds.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3204,
+      "completion_tokens": 120,
+      "total_tokens": 3572,
+      "prompt_tokens_details": {
+        "text_tokens": 3204,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 248,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 26683200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue asks only for documentation; tests require a code change to inverse/bounds handling.",
+    "confidence": 0.9,
+    "rationale": "The GitHub issue requests documentation of QuantileTransformer’s implementation, not a behavioral fix. The FAIL_TO_PASS test tightens inverse-transform equality on extra data and would fail a docs-only solution that matches the stated request.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue asks only for documentation; tests require a code change to inverse/bounds handling.",
+  "confidence": 0.9,
+  "rationale": "The GitHub issue requests documentation of QuantileTransformer’s implementation, not a behavioral fix. The FAIL_TO_PASS test tightens inverse-transform equality on extra data and would fail a docs-only solution that matches the stated request.",
+  "prompt_tokens": 3204,
+  "completion_tokens": 368,
+  "total_tokens": 3572,
+  "cost_usd": 0.008615999999999999,
+  "cost_in_usd_ticks": 26683200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2602
+}

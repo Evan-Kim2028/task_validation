@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-6601",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1085
+  },
+  "response": {
+    "id": "gen-1789192657-6mrbNeidG4UR4Gx1U7an",
+    "object": "chat.completion",
+    "created": 1789192657,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly reports a regression in polyval output dimension order versus xarray<=2022.3.0 and gives a concrete example of the old vs new order, so restoring the prior broadcast order is the intended fix. The FAIL_TO_PASS case only checks that restored order (coord dim before other dims) and does not demand unstated APIs or messages.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about polyval returning objects with different dimension order compared to older xarray. The user asks if this is expected and if it should be mentioned in breaking changes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about polyval returning objects with different dimension order compared to older xarray. The user asks if this is expected and if it should be mentioned in breaking changes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "akeNibQcj/8a29ySMM/ZxL4+7eoNDenVUgIS4WzBnU95RsA1jnMl77PKTg/AMqB3zd9lQKV7lzJhLfVsYZoYrWVQkW5OXq6ActfU1xD8K+lEhVI2zLdGwLIqsp3hB8Jssw2sqsUbE0rJjARdmzm3+wY8UuJ7fqZ/CJ9k0G34U3Ltop6mCS5IWThAF0kNMAkkmX6azLQKNbhVSHExsmQWQsK8es+AhJGR4zrxxw28+Y9Wb7Bv0v5910vzVsCEGAWvXlnhY7LDicHWyOXx7yhgF3N7Fo884tX6ACf76TEtHruCaz94zUqW5YDsR6d+NJfwqAP/M65Ux0pY3eQNv9A6n3t1PVrKE/C4a9P6WD7XiZprcu2pGepT34ZkoSF0VCgb2DfXu0PW/sFZx2/EOBQ5uh7xOMANaffSXqaRg5hWTs4KlgWcWGAc1eHUM2lJIiVr2HAkMKbitQQFvuIqr9qytphlwHvDMP2z6/yIbq2qx60R/tpWADVa0j4SnaFhZGwNkL2o/RHlvih3BdCDkLBd4YqJbHRedVgUwuOx5jCRRkIMXg2ak80IaEXdTkjkZQ8ZJUAqYWrFv9OLWNUZRBJdvjgxfy8dYcC/q+bBjjcp3kldP++bjFLXDcWRHPo/6wMZf45cYA91US+gyHFd6L4TqV6AzEtwKePIzYG7T1CJQIDkbLspAKIN7xivCUzctWVOSdVDaf1tzqNm+SUEkOiwv+doILZ3jgLYiwh8a3UFHWvZQjy9sTxHz94Bnu9pBcBrz1xu9Ge6BL/F4gI1v/jVhIr4C/j9zHJ13CMshYi6gAHWHDyT3dETdR0Y0AQoHbwKE8m0tmlB1JefaqaZDzjCyNzLB7rzRK8gU9ZWaDaVyZRF8YbKgmLpMjXK25+Hm519QsUhvy8HzK0YwUTe+f+f0hzRI9I0AwyHfirv1Hts3bmLTbb4Xy7sPaC9YDG+aI9wxon08QIl9567CB85TU3mdqh4qd7LbTJFpBw92JA1PaSbLBiRj6nSQsPWhOPF9+4ULg0o0c2ufbpaI4sHEJLrPRaAhoS8DwHaoiGAMnjZwSkuSZidp3ePwlHWMrPGnSnya/lXRGRIL3WWaCnofTlOWu1Bh24FoYgZmezTrqBh4vTYl4EYh0V15Lf8wlmCqyTpg7IHPZJVuDN1+qgivwvlOa4TE8p7Fs7P1uT74Z6qrnt/Ydm/WfdK7s5p7WNSK+Txb42JyT9AFV9ixqOQ4auTI4RPzdda5vQ6Xu5AA+NO2Jbu0DtQmDMC1HCM+lAN3nNUgWM4mHmV4+wiD2IWnuPnRFNhjptL1Fin8Q/5nVrZ2d3y51Dzj+JfSCFqQ7ZD0uYtFthn9f27ssUAq1AjqUjc+tthC8HcXAWaypPmoIm1K6oFwTao4z669Nm3xXy5h9qcfO7eCdaD2xd3D8vTtHVaJ8J3RyJBQaiziyFDpRBixkh5jn1j1vb+/fZRy33vo0sCBfD+0nCoTk3Fv6k9f7CQh99O7tlkvl3EMnZtRh/nLVOv7tHwTmgsrwF1m6k1IGu7lZiPmtHaz9eMELIbgsuLEI3AEyVce/5FqD82Gbp9PWq5zrrT64TjORis+Yn9QptQx6wbeaUfMvBu1WiHkeglfPMUU9jWORJaZdFztrrl8y5Zf6ImWTJq0+wRZlkPbAasH6GdUKbM0+wn8v1DRBH9cKssq8qz56618OR7j4/k4tvluuv3ZhJyCvTihZaSXo3sb9HAx1snRPxtZp+/PZpcwQ10LOTLxkxBKwNYhXTvP7gqunmyiQD9ewciepkW++QBISCSuVCDEYTjoSw8vRLiEPIFDcZIVG4psJmo/6zsaUm0WXorPiMlWAffbTfrJSpLH8aPi2y1TkLAWq5F9IhvBxXju/Q0K3tn7VDmITfoAEUwJ4Pgnga7BVVRi6S0gdb6BGxhETPR/5mrgjXENeu5gZy91/DBJA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1fcd162f-1e7f-94b4-b158-64b9ef85aa8e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1634,
+      "completion_tokens": 448,
+      "total_tokens": 2082,
+      "cost": 0.005764,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005764,
+        "upstream_inference_prompt_cost": 0.003076,
+        "upstream_inference_completions_cost": 0.002688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 318,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly reports a regression in polyval output dimension order versus xarray<=2022.3.0 and gives a concrete example of the old vs new order, so restoring the prior broadcast order is the intended fix. The FAIL_TO_PASS case only checks that restored order (coord dim before other dims) and does not demand unstated APIs or messages.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly reports a regression in polyval output dimension order versus xarray<=2022.3.0 and gives a concrete example of the old vs new order, so restoring the prior broadcast order is the intended fix. The FAIL_TO_PASS case only checks that restored order (coord dim before other dims) and does not demand unstated APIs or messages.",
+  "prompt_tokens": 1634,
+  "completion_tokens": 448,
+  "total_tokens": 2082,
+  "cost_usd": 0.0059559999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

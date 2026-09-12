@@ -1,0 +1,57 @@
+2026-09-12 00:01:53,137 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:03:43,296 - INFO - Creating container for matplotlib__matplotlib-20676...
+2026-09-12 00:03:43,887 - INFO - Container for matplotlib__matplotlib-20676 created: ec33f8b84b6099633012530186167cb2d09e332207a01818f71efbf0d1f183ac
+2026-09-12 00:03:44,097 - INFO - Container for matplotlib__matplotlib-20676 started: ec33f8b84b6099633012530186167cb2d09e332207a01818f71efbf0d1f183ac
+2026-09-12 00:03:44,097 - INFO - Intermediate patch for matplotlib__matplotlib-20676 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-20676/patch.diff, now applying to container...
+2026-09-12 00:03:44,212 - INFO - >>>>> Applied Patch:
+Checking patch lib/matplotlib/widgets.py...
+Applied patch lib/matplotlib/widgets.py cleanly.
+
+2026-09-12 00:03:45,965 - INFO - Git diff before:
+diff --git a/lib/matplotlib/widgets.py b/lib/matplotlib/widgets.py
+index a199e45d4..00759db0b 100644
+--- a/lib/matplotlib/widgets.py
++++ b/lib/matplotlib/widgets.py
+@@ -2156,7 +2156,12 @@ class SpanSelector(_SelectorWidget):
+             self.artists.append(self._rect)
+ 
+     def _setup_edge_handle(self, props):
+-        self._edge_handles = ToolLineHandles(self.ax, self.extents,
++        # Define initial position using the axis bounds to keep the same bounds
++        if self.direction == 'horizontal':
++            positions = self.ax.get_xbound()
++        else:
++            positions = self.ax.get_ybound()
++        self._edge_handles = ToolLineHandles(self.ax, positions,
+                                              direction=self.direction,
+                                              line_props=props,
+                                              useblit=self.useblit)
+2026-09-12 00:03:45,965 - INFO - Eval script for matplotlib__matplotlib-20676 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-20676/eval.sh; copying to container...
+2026-09-12 00:04:07,414 - INFO - Test runtime: 21.40 seconds
+2026-09-12 00:04:07,415 - INFO - Test output for matplotlib__matplotlib-20676 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-20676/test_output.txt
+2026-09-12 00:04:07,478 - INFO - Git diff after:
+diff --git a/lib/matplotlib/widgets.py b/lib/matplotlib/widgets.py
+index a199e45d4..00759db0b 100644
+--- a/lib/matplotlib/widgets.py
++++ b/lib/matplotlib/widgets.py
+@@ -2156,7 +2156,12 @@ class SpanSelector(_SelectorWidget):
+             self.artists.append(self._rect)
+ 
+     def _setup_edge_handle(self, props):
+-        self._edge_handles = ToolLineHandles(self.ax, self.extents,
++        # Define initial position using the axis bounds to keep the same bounds
++        if self.direction == 'horizontal':
++            positions = self.ax.get_xbound()
++        else:
++            positions = self.ax.get_ybound()
++        self._edge_handles = ToolLineHandles(self.ax, positions,
+                                              direction=self.direction,
+                                              line_props=props,
+                                              useblit=self.useblit)
+2026-09-12 00:04:07,478 - INFO - Grading answer for matplotlib__matplotlib-20676...
+2026-09-12 00:04:07,479 - INFO - report: {'matplotlib__matplotlib-20676': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['lib/matplotlib/tests/test_widgets.py::test_span_selector_bound[horizontal]', 'lib/matplotlib/tests/test_widgets.py::test_span_selector_bound[vertical]'], 'failure': []}, 'PASS_TO_PASS': {'success': ['lib/matplotlib/tests/test_widgets.py::test_rectangle_drag[True-new_center0]', 'lib/matplotlib/tests/test_widgets.py::test_rectangle_drag[False-new_center1]', 'lib/matplotlib/tests/test_widgets.py::test_ellipse', 'lib/matplotlib/tests/test_widgets.py::test_rectangle_handles', 'lib/matplotlib/tests/test_widgets.py::test_span_selector', 'lib/matplotlib/tests/test_widgets.py::test_span_selector_drag[True]', 'lib/matplotlib/tests/test_widgets.py::test_span_selector_drag[False]', 'lib/matplotlib/tests/test_widgets.py::test_span_selector_direction', 'lib/matplotlib/tests/test_widgets.py::test_tool_line_handle', 'lib/matplotlib/tests/test_widgets.py::test_lasso_selector', 'lib/matplotlib/tests/test_widgets.py::test_CheckButtons', 'lib/matplotlib/tests/test_widgets.py::test_TextBox', 'lib/matplotlib/tests/test_widgets.py::test_check_radio_buttons_image[png]', 'lib/matplotlib/tests/test_widgets.py::test_check_bunch_of_radio_buttons[png]', 'lib/matplotlib/tests/test_widgets.py::test_slider_slidermin_slidermax_invalid', 'lib/matplotlib/tests/test_widgets.py::test_slider_slidermin_slidermax', 'lib/matplotlib/tests/test_widgets.py::test_slider_valmin_valmax', 'lib/matplotlib/tests/test_widgets.py::test_slider_valstep_snapping', 'lib/matplotlib/tests/test_widgets.py::test_slider_horizontal_vertical', 'lib/matplotlib/tests/test_widgets.py::test_range_slider[horizontal]', 'lib/matplotlib/tests/test_widgets.py::test_range_slider[vertical]', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector', 'lib/matplotlib/tests/test_widgets.py::test_MultiCursor[True-True]', 'lib/matplotlib/tests/test_widgets.py::test_MultiCursor[True-False]', 'lib/matplotlib/tests/test_widgets.py::test_MultiCursor[False-True]', 'lib/matplotlib/tests/test_widgets.py::test_rect_visibility[png]', 'lib/matplotlib/tests/test_widgets.py::test_rect_visibility[pdf]', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector_remove[1]', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector_remove[2]', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector_remove[3]', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector_remove_first_point', 'lib/matplotlib/tests/test_widgets.py::test_polygon_selector_redraw'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for matplotlib__matplotlib-20676: resolved: True
+2026-09-12 00:04:07,479 - INFO - Attempting to stop container sweb.eval.matplotlib__matplotlib-20676.tv100-gold...
+2026-09-12 00:04:22,928 - INFO - Container sweb.eval.matplotlib__matplotlib-20676.tv100-gold stopped successfully.
+2026-09-12 00:04:22,928 - INFO - Attempting to remove container sweb.eval.matplotlib__matplotlib-20676.tv100-gold...
+2026-09-12 00:04:23,010 - INFO - Container sweb.eval.matplotlib__matplotlib-20676.tv100-gold removed successfully.

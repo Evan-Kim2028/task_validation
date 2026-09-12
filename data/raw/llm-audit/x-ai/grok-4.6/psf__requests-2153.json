@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2153",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2070
+  },
+  "response": {
+    "id": "gen-1789192170-9iSQWrGhSoP3ZduZ7LnO",
+    "object": "chat.completion",
+    "created": 1789192170,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests are unrelated existing cases; gold wraps ReadTimeoutError as ConnectionError, not Timeout as the issue asks.\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to catch socket.timeout and raise requests.exceptions.Timeout, leaving exception mapping and other urllib3 errors unspecified. The listed FAIL_TO_PASS tests do not exercise timeouts at all, so they would not accept a faithful issue-only fix and would reject most valid solutions.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about uncaught socket.timeout during post, wanting it to be wrapped as requests.exceptions.Timeout.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue clearly states the goal of catching socket.timeout and raising requests.exceptions.Timeout, but 1 point off because the gold patch uses ReadTimeoutError and ConnectionError instead of Timeout. FAIL_TO_PASS tests are unrelated and don't verify timeout wrapping, so they don't require unstated behavior.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about uncaught socket.timeout during post, wanting it to be wrapped as requests.exceptions.Timeout.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue clearly states the goal of catching socket.timeout and raising requests.exceptions.Timeout, but 1 point off because the gold patch uses ReadTimeoutError and ConnectionError instead of Timeout. FAIL_TO_PASS tests are unrelated and don't verify timeout wrapping, so they don't require unstated behavior.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bd6c2715-836f-939f-b7d8-bde021f2b1ed",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2549,
+      "completion_tokens": 788,
+      "total_tokens": 3337,
+      "cost": 0.009634,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009634,
+        "upstream_inference_prompt_cost": 0.004906,
+        "upstream_inference_completions_cost": 0.004728
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 646,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests are unrelated existing cases; gold wraps ReadTimeoutError as ConnectionError, not Timeout as the issue asks.",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to catch socket.timeout and raise requests.exceptions.Timeout, leaving exception mapping and other urllib3 errors unspecified. The listed FAIL_TO_PASS tests do not exercise timeouts at all, so they would not accept a faithful issue-only fix and would reject most valid solutions.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests are unrelated existing cases; gold wraps ReadTimeoutError as ConnectionError, not Timeout as the issue asks.",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to catch socket.timeout and raise requests.exceptions.Timeout, leaving exception mapping and other urllib3 errors unspecified. The listed FAIL_TO_PASS tests do not exercise timeouts at all, so they would not accept a faithful issue-only fix and would reject most valid solutions.",
+  "prompt_tokens": 2549,
+  "completion_tokens": 788,
+  "total_tokens": 3337,
+  "cost_usd": 0.009826000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

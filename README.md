@@ -58,7 +58,9 @@ Download the parquet first from Hugging Face `princeton-nlp/SWE-bench` `data/tes
 
 Human review of the 16 packets stays deferred until packets carry this evidence vector.
 
-**Causal consistency:** nine-invariant expansion paused. Static change-causality and provenance **fail** as rankers of 2024 labels (AUROC 0.41 / 0.42 on n=150). Drop those constructions. Executable fail-before/pass-after not run. [`documents/18-causal-consistency.md`](documents/18-causal-consistency.md).
+**Causal consistency:** nine-invariant expansion paused. Static change-causality and provenance **fail** as rankers of 2024 labels (AUROC 0.41 / 0.42 on n=150). Drop those constructions. [`documents/18-causal-consistency.md`](documents/18-causal-consistency.md).
+
+**Decision tree:** gates 1–5. 20-task SWE IDs frozen, Docker not scaled. B1: one rater vs majority agree 0.85, FNR 0.16. Coverage lab: stratified-normal is not the release rule. [`documents/22-decision-tree.md`](documents/22-decision-tree.md).
 
 Grouped 5-fold OOF (honest number) is **AUROC 0.70** (0.67–0.73) on the 2024 conservative label. The accepted tail is the product metric, and it is not yet clean:
 
@@ -99,7 +101,7 @@ Going from 1,000 to 100,000 tasks does not multiply this n. New strata and distr
 
 ## Documents
 
-Start at [`documents/README.md`](documents/README.md).
+Start at [`documents/23-handoff.md`](documents/23-handoff.md) (operating story) and [`documents/42-progress-v0.1.md`](documents/42-progress-v0.1.md) (release record). Index: [`documents/README.md`](documents/README.md).
 
 ## Layout
 

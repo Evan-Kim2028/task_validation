@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-774",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1270
+  },
+  "response": {
+    "id": "gen-1789192207-8CLnGbfA3YGV9QeNYzFJ",
+    "object": "chat.completion",
+    "created": 1789192207,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS tests are unrelated to the IDNA UnicodeError; the added test requires InvalidURL unstated in the issue.\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to try/except UnicodeError around IDNA encoding and does not specify raising requests.exceptions.InvalidURL or any particular URL. The named FAIL_TO_PASS cases do not check that behavior, while the patch’s new test would fail a reasonable catch-and-wrap that used a different exception.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about catching UnicodeError from IDNA encoding and wrapping it. The gold patch raises InvalidURL with a specific message.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests are unrelated and don't cover the new InvalidURL test\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about catching UnicodeError from IDNA encoding and wrapping it. The gold patch raises InvalidURL with a specific message.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests are unrelated and don't cover the new InvalidURL test\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4fdc2fd6-60ab-9b48-8bff-bcd404346411",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1715,
+      "completion_tokens": 702,
+      "total_tokens": 2417,
+      "cost": 0.007258,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007258,
+        "upstream_inference_prompt_cost": 0.003046,
+        "upstream_inference_completions_cost": 0.004212
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 554,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS tests are unrelated to the IDNA UnicodeError; the added test requires InvalidURL unstated in the issue.",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to try/except UnicodeError around IDNA encoding and does not specify raising requests.exceptions.InvalidURL or any particular URL. The named FAIL_TO_PASS cases do not check that behavior, while the patch’s new test would fail a reasonable catch-and-wrap that used a different exception.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS tests are unrelated to the IDNA UnicodeError; the added test requires InvalidURL unstated in the issue.",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to try/except UnicodeError around IDNA encoding and does not specify raising requests.exceptions.InvalidURL or any particular URL. The named FAIL_TO_PASS cases do not check that behavior, while the patch’s new test would fail a reasonable catch-and-wrap that used a different exception.",
+  "prompt_tokens": 1715,
+  "completion_tokens": 702,
+  "total_tokens": 2417,
+  "cost_usd": 0.007642,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

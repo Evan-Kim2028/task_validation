@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-8399",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1895
+  },
+  "response": {
+    "id": "gen-1789192327-MDKqMCJ5srAdNmjNBc1Y",
+    "object": "chat.completion",
+    "created": 1789192327,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks that generated unittest setUpClass fixtures be named with a leading underscore so they are hidden from pytest --fixtures unless -v is used. The FAIL_TO_PASS test only checks that --fixtures omits the undocumented generated fixture without -v and shows it with -v, which matches that request.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about unittest setUpClass fixtures no longer being \"private\" - they should start with underscore so they only show with -v in --fixtures.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about unittest setUpClass fixtures no longer being \"private\" - they should start with underscore so they only show with -v in --fixtures.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "g3F7pv5k7333J47/lJWbl78FAQinRvMd7wxJQSMif8ZLedY5CKNik9xnik4IFBIvCuziTwKT39npzfmn/qFb0l7uCpbcPkTCucNDvCFIomqCWOR3fQyfwKSPmd3g44cMXHCB73PBTkBbfixNYLyMyk1GoEzvckBLYgsbJTWVcOngDOSPjXVwWQB0v0RlJIWcC1eTT9ym+03XEh7RT+/Ub/4eQC9GpHinYCjVTv6aXMZ+FpDi+VOv4sofESYKTwooabrhMlLxvfsJ0m8AJhxie9h251Ydr+mQlll2FZGux612FfkfSQpQXcxJb8yxng9s8HbRi5erd2wy1t7cswhq8D3nC54aIBPnmIuvp6ZXGfw65QS1FRogmQ1rOkR/aqWrq/pYZoZ+hd6Nn9C45DZv53tDIvR8B32yPIclNxXyKiKSpCS+oklPoALzQayp2++yzPxw/Yc+H5ZkTgN4q+whF01VOnrBQGBLdcIniwoDvy+mV4+l7tOI65N+v0fmNVdTYX9lg0J4rfjqsQQzDYg1oT7PGe6tdMtY3pmORVYaUOwEUTt5OmIG15hQJHJxdtPn4axwIm7oYLZzcK6Dc7Hy/FHtDxvIji3POlcVvzJbKlzD8p84N6s3YE+Zd0ioIbrINHPUHWdMqWp4cEzWlp7g8VwGyEj+YUFpXELQt7d/1TN5xtYrpOL3MoPZFIq4d+cREXckvlEQeeNUOPtduE17Sz0Ug7lmRqIbAKfHD4xFi7rqVYRjfOaO9e6/2nehs+p/Bxg7UE1/4W3EDhCsGJS7VKTP/DR8+mFIAuKZYd97jdCc/gZUyrKD2vKJik+6nyyRz8ez5DabJYHHRK4z9v3CZwZCQg3uQFKk0XXO2rGSwPe1LkdhDPOr11yu0Mn2QYtpK0RKnPASqsGpnPYlPEK4WtmmhBSNONUn2x5XwLwYtoefGAOJ+hUOFbd5g3xb8DCLimaEt7M8vEJmkR9ekqXR560cCIm/PzZxvD3U+2SNzW62ii29ilAIsQPqDnOOxkSePMaqLBDqecRSFBdBONtaAwe6HdnUTRDVeyxCdesTT8tfc2AKHOhLb9r2qIOCVrZ8LSvKH4plZk8YgWXgeUkQC4+LbT6FQgOa4XDndPhU9LH2n4DW2gugrUbOrXzEAyqw9n0CNcEKrT7e8rUdXfxgQDpd2wmpIUm4EfJjc51e7koK2rMSn3nXPkXEW5Xhxe0rpYLBpTK2VEUpyenP24wknTkaqnJL29QEbxkkS0krpR2+cAyy5Uw/oJaPXZajYHz7iIQbERMh4kHB4NwDqsYRkE20QLkjLqQwMTiUi1sP3fZcNPmrt3UPuUCxyRKYgBpAEUat44ZtfOKNbqg51QghGuTl/vf3OIeX74JW27KuSYLftAcZZznk/b1NAx3T00jNnLk+GocQueRG8BQiKqgtz5gop82yKdfN07A7hr4E/8ZbnvE2i0rDdbM07kTpU3uwNrYEgSk4so0WVQWjmhXxSdvuCL/ul36iaw3300e4GPOeFsIspXAA1u5I6T0x7rlt8fISzcl4xKhE0NMQCjcBlP96x7Y/CrooX55cV6Odc7wYX4Q20VO8DG3W8xepMpeRaGTEFj/eFKpDo4zZ7BdA0+7Unb55My7zi8jYVyzELJEXZqtnYGE.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5c57a7f3-2ae6-9771-bfc8-d49005bd808d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2364,
+      "completion_tokens": 395,
+      "total_tokens": 2759,
+      "cost": 0.006714,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006714,
+        "upstream_inference_prompt_cost": 0.004344,
+        "upstream_inference_completions_cost": 0.00237
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 276,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks that generated unittest setUpClass fixtures be named with a leading underscore so they are hidden from pytest --fixtures unless -v is used. The FAIL_TO_PASS test only checks that --fixtures omits the undocumented generated fixture without -v and shows it with -v, which matches that request.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks that generated unittest setUpClass fixtures be named with a leading underscore so they are hidden from pytest --fixtures unless -v is used. The FAIL_TO_PASS test only checks that --fixtures omits the undocumented generated fixture without -v and shows it with -v, which matches that request.",
+  "prompt_tokens": 2364,
+  "completion_tokens": 395,
+  "total_tokens": 2759,
+  "cost_usd": 0.007098,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

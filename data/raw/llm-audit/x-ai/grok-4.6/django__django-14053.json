@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14053",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1906
+  },
+  "response": {
+    "id": "gen-1789191371-d0ZjcaNWanALiCq7ItOQ",
+    "object": "chat.completion",
+    "created": 1789191371,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly requires post_process to yield each original path only once (with the final hashed name), which a competent engineer can implement from the description. The FAIL_TO_PASS assertion only checks that post_processed names are unique, which fairly matches that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about HashedFilesMixin's post_process() yielding multiple times for the same file. The expected behavior is to yield each original filename only once, with the final hashed name.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about HashedFilesMixin's post_process() yielding multiple times for the same file. The expected behavior is to yield each original filename only once, with the final hashed name.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "94wOl2sc7PYDxatP7D/8Zl/jqFey/KR47XZkd334GThBtHdU3Ejn/z+OHw7ocaEDnwnkNHC0xBj/QwvoTUlZzPSLBSlc12qxvQWF/kAvmQWL+sP32lTeodFa9IiDuVV+vrjZiR35mIWBYXUZggX/Cb7E065gCSfj5OsGhXRW6T2vL5tth3jVfHqNi61uE/HrIF2VmrYh5SzH2fShU2c7pk51HbK7uRzzS1zBTHMhud9hltWZzZlIz8dy5CFB3BB3oL5Jlxkcxeqmm+2rEv9C4Tr6nwg1PKmrBfrdKcAU4Vyf2yaHHCpee7bHBjHA4aNt8mlXTtAC201t+zaUkCral9kFT9BaRMSl4mhrfn0CAPnHAI86O63/pBr4HyiPz7o5O1kFeAPOY+KJFvaza1tG4pMlGEbVoo1j0vJ6CNQ7Cy0fm2LuSXv8v6plE/Mh7KoFocRdf/OBA2wtP8pirYToSJwjbq2Xa3fg8aHszsJJponhBDYMBWhx01ub4D8oJBw4b3/GMPqsAuR4Bq2XmaBvGveNV87DYroZj2NVLnvRCPlg24mG2uWudIC+0dIXFsqPCaLN6UUv6M8LczdZGXFCNDw16ZsudndGOEffR/+IckhbBIfd0BCXaMgy6B6kdZEEqh5SeUBMuzftZsE/NVvWXC035I9nqXvYKUnHDOSOqPw2J/yTX8buCRXrTss/5tnXbokml7gCPrxr4cVUjl0co1RAjXBN7BYIAxdiwUiiXQpkVcu+lwTa90YNqGbW2Rmmmu5pNiPS++t35s11eqhztwWYRgXNm/LXJvjer0vTAHyjEkDU/xWV3dSSZ4iAgaj5vlOgH3OMj5/vpTzP8iZqH6lrfpLrcS5HgjQFmlR589HzY7epL7ylnXGJ0uUpPTyN7yrXEZ0JnNtbSiTUTXsaiw/5QlTZL7858voZ54QCMo2WULI3lGSvxFoCh7hzMYSlwyxD4hgbWYr7C6GzeEoxU76IrP+mLBGPIngOWJ8Ss3KkRIecpQNEmkmbTGlkJP0MpBl3ox+qZWs8xOizde/GL2Lx/pnCrd1mglWXjtBsAU4QYVkzuYmo6yAYnn/vzm6wquM46wDH+vnACA3jao/q6TrthcuqA8DpwjmpAfVhgP/TH1D7ZTwfxN6REPrq6rXdm6u0+mKHtR9/YyeCPZQLP7CvqcSYHTrbIbeRBF+8H+H42fKC6hO8JmoGWBsVOGJktePKxDgG7naLpmDppT2DEu5cNezBgXbY2ypmwl/IrT+zxZOP89+HY5UTKuEVaMyYBszwDYLOqPvHzDiTecQ4VN9u+hpB3xpyXutyIOJc14JzNWxCo/KUwNg0JTZVwXw3K/NVWHeWTKMMlluXbrz+COofliorHdDHSxe1/Osny+O2QbqZJ2/FeOFdq57O/bs6U01CV8QZr5edGSANicsj+/sqtcmduP1sJGEHVOQvrPCzaRucPSEbaYHqn83HSS2Qn1tl6RqVgJMiIhz/LRS/CBODeIpJJyEr3vpnUQU.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_98574400-b51d-9120-845b-ca6958a8fffd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2166,
+      "completion_tokens": 355,
+      "total_tokens": 2521,
+      "cost": 0.006462,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006462,
+        "upstream_inference_prompt_cost": 0.004332,
+        "upstream_inference_completions_cost": 0.00213
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 246,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly requires post_process to yield each original path only once (with the final hashed name), which a competent engineer can implement from the description. The FAIL_TO_PASS assertion only checks that post_processed names are unique, which fairly matches that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly requires post_process to yield each original path only once (with the final hashed name), which a competent engineer can implement from the description. The FAIL_TO_PASS assertion only checks that post_processed names are unique, which fairly matches that requirement.",
+  "prompt_tokens": 2166,
+  "completion_tokens": 355,
+  "total_tokens": 2521,
+  "cost_usd": 0.006462,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

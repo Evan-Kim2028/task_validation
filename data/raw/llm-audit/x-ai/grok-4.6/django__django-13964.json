@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13964",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1646
+  },
+  "response": {
+    "id": "gen-1789187608-ulGcmoSnm0ahZbL6UjAz",
+    "object": "chat.completion",
+    "created": 1789187608,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly describes the empty-string PK assignment bug for non-numeric primary keys and the expected persistence of the related key after save. The FAIL_TO_PASS test exercises that exact sequence and assertions without extra unstated requirements.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue describes a bug where saving a parent after setting FK on child with non-numeric PK leads to data loss. The test matches the issue closely.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes a bug where saving a parent after setting FK on child with non-numeric PK leads to data loss. The test matches the issue closely.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "suI5+9jFifHFBOSABzrHyeRylgwizEQ3qsBK3wGmJ/+hKVnR/kNSjUYZQ3ru9V2d8mfA0J9ow2klQw/bbfFpvxvmEHVOCbmFrhrywUuakgXjDihK6kfRqEd9rt+PUfKST/IS7kTUOS8qDDkfH8BIHdx5/HepyuviJd3snlKi9QrWy1Tbvg8a0lMF1Xi4jziEhVBP8SAoUAXOI04aiKUzqGEKrJXf+YGuAx24oXcjm0dYoic5MVzyta/IwofIDUblbr8TmNToohPmT0XnbEGJzvYMhktcBYAFbO339xOgg/Qn9boA1kMSvRcLFGf7gNDKJzOgyKrX3XW6/btEX7/EWG7g5R2/yJwCIN35br6UVzfQ9ZWEknmMCd7Yz7eVkEAw7dNWI4ZPHx6DVdoeIjZomFoVFHOy+0GQxqml6SfWoeK5rXHvDZfm2uOFJvV82EhXRoK9hE6PioHsYcNla08xPYrVZQfyTXswjsE667BrtCzD1O5OK4UL18q2OpGq/+W4Uaw6Y5IrYftQTVh3FcTEB+fHrMUfS7XZ4z1r9CC9cYh32/P5lTRl5NURdPc/Y+ZlBPp1WzohvWaYTqDi.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ef5fd4d3-c091-936b-beb0-c8bebf42f58a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1988,
+      "completion_tokens": 204,
+      "total_tokens": 2192,
+      "cost": 0.005008,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005008,
+        "upstream_inference_prompt_cost": 0.003784,
+        "upstream_inference_completions_cost": 0.001224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 102,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly describes the empty-string PK assignment bug for non-numeric primary keys and the expected persistence of the related key after save. The FAIL_TO_PASS test exercises that exact sequence and assertions without extra unstated requirements.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly describes the empty-string PK assignment bug for non-numeric primary keys and the expected persistence of the related key after save. The FAIL_TO_PASS test exercises that exact sequence and assertions without extra unstated requirements.",
+  "prompt_tokens": 1988,
+  "completion_tokens": 204,
+  "total_tokens": 2192,
+  "cost_usd": 0.0052,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

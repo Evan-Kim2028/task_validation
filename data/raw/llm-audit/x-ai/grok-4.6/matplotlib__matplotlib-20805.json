@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-20805",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1510
+  },
+  "response": {
+    "id": "gen-1789191917-N95uRBsBJZ4vtU9Icflv",
+    "object": "chat.completion",
+    "created": 1789191917,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly states that x-axis labelrotation from tick_params is lost when spines are repositioned (which recreates ticks), while other tick_params still apply, so a fix that preserves rotation on tick recreation is the intended behavior. The FAIL_TO_PASS image test uses reset_ticks rather than spines and also asserts many already-working tick_params, which is a slightly narrower/different check but still targets the same root cause.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c922de46-d6dc-9234-bf48-8505a1309a2b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2060,
+      "completion_tokens": 534,
+      "total_tokens": 2594,
+      "cost": 0.00694,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00694,
+        "upstream_inference_prompt_cost": 0.003736,
+        "upstream_inference_completions_cost": 0.003204
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly states that x-axis labelrotation from tick_params is lost when spines are repositioned (which recreates ticks), while other tick_params still apply, so a fix that preserves rotation on tick recreation is the intended behavior. The FAIL_TO_PASS image test uses reset_ticks rather than spines and also asserts many already-working tick_params, which is a slightly narrower/different check but still targets the same root cause.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly states that x-axis labelrotation from tick_params is lost when spines are repositioned (which recreates ticks), while other tick_params still apply, so a fix that preserves rotation on tick recreation is the intended behavior. The FAIL_TO_PASS image test uses reset_ticks rather than spines and also asserts many already-working tick_params, which is a slightly narrower/different check but still targets the same root cause.",
+  "prompt_tokens": 2060,
+  "completion_tokens": 534,
+  "total_tokens": 2594,
+  "cost_usd": 0.007324,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

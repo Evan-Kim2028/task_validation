@@ -49,6 +49,7 @@ Same for provenance: “payload string in the prompt” is still lookup, not tra
 - Pause nine-invariant expansion. VEV schema can stay as a folder; it is not the research front.
 - Do not train a production model on B/C/D/E.
 - Do not generate tasks.
-- Next only if we run **executable** change-causality (fail-before / pass-after) on a **small** labeled slice (~20), once. If that still does not move the retain-tail, drop assay 1.
+- Executable **evaluator interrogation** (assay 3, Harbor official verifier) ran on hello-world and week-hours. See [19-evaluator-interrogation.md](19-evaluator-interrogation.md). That is not a 2024 retain-tail result.
+- SWE-bench fail-before/pass-after on a labeled slice is still behind ADR-0010. If that trial does not move the retain-tail, drop assay 1. Do not retune static B/C.
 
 Artifacts: `data/gold/causal_ablation.summary.json` (profiles in `causal_ablation.json`).

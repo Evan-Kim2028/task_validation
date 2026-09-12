@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14182",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1765
+  },
+  "response": {
+    "id": "gen-1789190678-uCkyYyK3GF4oUh6r2JjA",
+    "object": "chat.completion",
+    "created": 1789190678,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for write-time header_rows support on ascii.rst, but the test also requires reading name/unit/dtype header rows and an exact round-trip layout. That read path and the precise RST header/separator placement are not specified in the issue, so a valid write-only fix would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks to support header_rows in RST output, similar to fixed_width. The traceback is about unexpected keyword argument header_rows on write.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to support header_rows in RST output, similar to fixed_width. The traceback is about unexpected keyword argument header_rows on write.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_64465ab2-b6af-9cd6-ac54-b7d04549eb31",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2399,
+      "completion_tokens": 457,
+      "total_tokens": 2856,
+      "cost": 0.007348,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007348,
+        "upstream_inference_prompt_cost": 0.004606,
+        "upstream_inference_completions_cost": 0.002742
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 336,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for write-time header_rows support on ascii.rst, but the test also requires reading name/unit/dtype header rows and an exact round-trip layout. That read path and the precise RST header/separator placement are not specified in the issue, so a valid write-only fix would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for write-time header_rows support on ascii.rst, but the test also requires reading name/unit/dtype header rows and an exact round-trip layout. That read path and the precise RST header/separator placement are not specified in the issue, so a valid write-only fix would fail.",
+  "prompt_tokens": 2399,
+  "completion_tokens": 457,
+  "total_tokens": 2856,
+  "cost_usd": 0.00754,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13513",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2055
+  },
+  "response": {
+    "id": "gen-1789191246-e07ZZPjwwJZzygYfbz90",
+    "object": "chat.completion",
+    "created": 1789191246,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests an unrelated no-traceback context chain, not PEP 415 suppress_context.\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks only to honor __suppress_context__ when walking exception causes. The single FAIL_TO_PASS test instead requires handling a synthetic innermost exception without a traceback and specific HTML, so a correct issue-only fix would fail.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about debug error view not respecting `exc.__suppress_context__` (PEP 415). The suggested fix is for `explicit_or_implicit_cause`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about debug error view not respecting `exc.__suppress_context__` (PEP 415). The suggested fix is for `explicit_or_implicit_cause`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "sbgRQswuhycESxnNIUejm1XBR00G52nZYzejYDnKzCxVTkFXcjaChMd01KKq1jCi5brE/aEqvim91zdzTBwqtygh8ItRfULeDpkMrb96B0TErbyEufz29luEXsMDCpt9pRmhOS1FItgUcdSS1UPkORwNN7L9rjjhv9yUHyCJfjo/we3P2Az6xUzg2w3mqPK4FICrsjtN4PRYb2C2xVk74vmdZCbSSJx8MwdC8QCDCq/SSJ/8RhIm+NRiC6Qbx2rRpUNMjfAMUfdxbtay0fkYH/wC4VIdIoEnWfEpNU6UhvQpdb8Bm+PWc2GVEw23hukMo+I6mMntK1ZcAJDo7MB5XdDTGtbcZPJFhUuqtWX14LNXgj4iiKIcsI9MilNQ3pqFoyt0xIrs3BB+CpmIDg5A+1dh6pIzsFf+HbcFhHRQJ7nUo/lFkr6g08rNoydU9+AsM7hp42FiiiSQIQsEylxiLL1qtiYf0zOJ9ZyDrNoDNI7u8099YKQXphzIJFDiF6BRNmpDrYqIRmBi+UvPAKT3TJw0OWQyIQfWoGVN0gD+cyn5USRzs8VooSE+f/C1VhuYfNEGRYH3Ln57llaLGQrz+zC/cSHVEpQ/CJZkZbEUeei1kDrkkRiAMLfpQZtjEMw7WgOUhquUAgalOoiKzCvZAXHNxE61oHWtT4EGsjQn/XZZapAko7Trg3RqRvftyWCWbACZpVOwrKfofo/ADW+h80dfidBkXs6IwORikOFj+KbEnMB5T8WMr1drFCPxaK3pISQhWGwQD60SISFwUv/HuzE/454+/iV3Ae9POXMyHd/bMOiaiNM6jrY3pYC/aA/e8OKNzfcT7VWvXi8srtmlZ+7p5U+oMfagg27PsXTUU+mIlrwwEzB3R25WTTEE2GDhb57C7igsSpKr65B+2cW7J7TYL9Ax09jdGENVKEQ7XA5ZZgEJ4F7l9UHmAl1RFOh1VxgRr1Pn7h6NDIjwZxuqcm/rx+prQPyTQ8ZKkYSzgYamyIxrcfkEqw96LQLFIgf6zUHaaTFiTF4zQrPgTyJcgcfPqVXF25CpslIRqq/Vt9uPIc6W+G4AOG+iMpXouh7v/dkp0jtM16wUZJauVYnNHtylR6WqgqrYs+4jfBv+As3ZfX3CV3hGxTownrbTtR3wHL6RZs1ieH01+gbUcrydoOj37i/xK5WxfMDy/0ZcONGFax2AyrxdUUAK/M4OM6Rgw3YC2/NAxZsbBu5nM/yAO8FkzKMPltidfJtVJB9wU9YODjO0suCtVtNfp+QfNUH3UKBJ+Ehp2nzrhHTZji5Huq1R78IRPnzW3o32obqJS0rfYmpQfp5N5b1F0yE+J9lQh4gcEvW5BR+r4UAZIA+29ArnY02LKmQOx1bs9bECwvMmNhBclCiB6J4OoTkDpXw4ooavVRB6rIQCxsQdC0L8xI2dg0Y9pW/10nkIjZ34CgLYJGLZt3LfIlIwAv5Q06ewkNTIvOCkq4thn+ja1BjM2n+lUploySzSEDF0CAO3kFR4t32AUaPfI3oL1QGTvPebWl3UnGFKPIFtkk5XYxZwAo/ikCsayzxmNPdVcc6aU9qmF0gga2w3upLJtss3kbzmt8DTxRB3v1IZYlrKNP0sXYEW8Mptf72+E94heaDTYfnGEJJKefiAVuOJ5RnTaRtZuMvpY10cDs7XKm7D5f7sy2fQdXLMJTxwts7jBIO0lCbwim2mmxB8P3+B7II7vwACw9H887IxW1qGJcJGcaXRsDwAdvNYxb1KiQXKNyZXBPrN3lLeDmmkpdtSJNREubGXzQEOL/qtvsAG2YfLg67fGgugB/Sw3fQDuA7Y/SXwM+/4j0lcjNAbJNxo/7u3cX7fA8JDDynRZ0JQDDpi04H09GG0unYzgNKEOWQBv/P6ORhUK/N0UvG7ROruRrqGzJT2RUCfgzt+B2VFTwirlL09lnMowc1ZQ8sKCzhsK0TgkIXlmo4Zew/Cs/F2esrf19OdUkWQBbyD/zttPJI+8mg7h37XDdk2InpcU3DNy1DCJ6GIMXjPim9W6f7QKCL2I5YDr1xibuEE1arG93LiFZNakkzkQfyemCupc6/J6Zka8AXc6y4jxjVbPjVwqfeVMKEFrwK+0wvc0WI+m//LnkRjvkwVozIINLDa5rjoz2FAsk+BM6mkciZE/6my8GgMPFmBkt/5qzWLCT2/XgI8HYOcKlwjYcgC1lSFSpxgfCWi6pnZywaja94W8zM481TRI8wGXmNJUBg84mu3fxnJeJqzRk18pwbXnt42FsSNbWwf7I0jpKbNt/FrK5y7c/Rs3IwqloLTof9WBVR4Dy8rh9bzovhQ5RWgHBJrpiPpHbe1VAUJToBhzJEYnqtomZUfuRWu9IM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4979d22f-8782-99ff-89fc-15bcd9f05863",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2404,
+      "completion_tokens": 528,
+      "total_tokens": 2932,
+      "cost": 0.007784,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007784,
+        "upstream_inference_prompt_cost": 0.004616,
+        "upstream_inference_completions_cost": 0.003168
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 402,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests an unrelated no-traceback context chain, not PEP 415 suppress_context.",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks only to honor __suppress_context__ when walking exception causes. The single FAIL_TO_PASS test instead requires handling a synthetic innermost exception without a traceback and specific HTML, so a correct issue-only fix would fail.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests an unrelated no-traceback context chain, not PEP 415 suppress_context.",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks only to honor __suppress_context__ when walking exception causes. The single FAIL_TO_PASS test instead requires handling a synthetic innermost exception without a traceback and specific HTML, so a correct issue-only fix would fail.",
+  "prompt_tokens": 2404,
+  "completion_tokens": 528,
+  "total_tokens": 2932,
+  "cost_usd": 0.007976,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

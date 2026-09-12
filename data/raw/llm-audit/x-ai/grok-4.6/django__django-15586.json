@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15586",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1179
+  },
+  "response": {
+    "id": "gen-1789191631-g01OxcJ22rNuGcYp4Xcc",
+    "object": "chat.completion",
+    "created": 1789191631,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly asks to enable the cached template loader by default in development as well as production. The FAIL_TO_PASS tests directly verify that default loaders wrap with cached.Loader for both DEBUG True and False.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about enabling the cached template loader in development by default, following previous changes for auto-reloading.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about enabling the cached template loader in development by default, following previous changes for auto-reloading.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "BaA0Yu4phe937fZOeIhZ4FRa/5nreVLGgXl1aDDusnzuudSZpgFuEiK0njAybZJVej40iNNjnWsbBgU6DFgX6AbBUUln8iZBlKP33277cRmIoLYFLcosDocynNHCFzq0r9q+GTvw/hfiEmr7185ui2mse7PJP9S3T/LW1vvTubZ2WENm//Ozta1snF2TGTB0joH4Qw4hzI+TcLDd6++43w7WC389/XJkCj8p2npCSM3zEfnlnzMP8iv/Ms2nXVEflzxGiwN+4QEHHs5RMDUeuuN/QAIwgv8UGotwQAMQlrfSM/Q8/mwnNmolh6sJx3QeldJbMWWuCA2NKYK8W0qu6efiNL50V48JCYth7DSSUF3CNNq+YHA6wdocjPv+FoUc5fk6prkRo3nE8VFFuShv2jKHiNzw50KjzSaYNbdm1Xx7WQo3EnVhw/Oz7g5VGbp+MLWVX5Ia9qCZMOK04lxLC/EZPWdUISmv4cXCvwDc16xrARCEPpsK2R1cwVeeDcBL+MEv1RM8kXv9tc6gJIwy2iWzTpLPF7i7vaZxJh254uryLLe6tZcQmQ06It2RVLH1Hj2evXzI/L4ZvQP532Uj/c11jKVqtQPHPBX/AQwQrclUml252apq3x0mNpWCInka8yLzAyGcJ/TYpdYfl5ngR4fED+UkFy0lPxWC4ylUIkAO5bHbHCdp105k1E3Gz05d8D4MMEdHS2JCZKdM0dMIqJVrwC15/fbnJsuSUm/a7tWHr2X5t9VhSsfCJHWfrTc6/XsFxuGJ+nKzjuE5TeY3bEFKheef+yDFTC+lLiJ6LquB/iiZ5VwMukIUgs5jM1H8MoZjykByWZwuaeMEMl6wZX2oNJooz+YjQUjazdg97vpitV2PqlWFbZ8bTtcxd61M6MLFjzBDFBZToeuF71piUTzI5ah5v4h8hQFTS4DfXZPZenGbVKPoTerLw7oBWy4+eTzJevyTKulpRlvbbUxmMCZNnEi5rJ+9iMyMDCARlpRBtIagY4ajCRwWDERKBmFLi0iDfMFEF1FsFo2jqv+Xjp4+djvb3rewLHcU3Lur1IPs9pk37SBB3ZfLww6q9U+pVHZ7KrisYdieXIcslLhWxp/nY6KQmShJfvt1qnk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b87e7cef-31c4-9a58-9814-f30864b57650",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1412,
+      "completion_tokens": 279,
+      "total_tokens": 1691,
+      "cost": 0.004114,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004114,
+        "upstream_inference_prompt_cost": 0.00244,
+        "upstream_inference_completions_cost": 0.001674
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 180,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly asks to enable the cached template loader by default in development as well as production. The FAIL_TO_PASS tests directly verify that default loaders wrap with cached.Loader for both DEBUG True and False.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly asks to enable the cached template loader by default in development as well as production. The FAIL_TO_PASS tests directly verify that default loaders wrap with cached.Loader for both DEBUG True and False.",
+  "prompt_tokens": 1412,
+  "completion_tokens": 279,
+  "total_tokens": 1691,
+  "cost_usd": 0.004498,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

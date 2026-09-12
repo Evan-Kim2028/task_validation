@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15268",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1939
+  },
+  "response": {
+    "id": "gen-1789191563-88ZkKTsOjquHXFJoJyMW",
+    "object": "chat.completion",
+    "created": 1789191563,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly describes collapsing paired AlterUniqueTogether/AlterIndexTogether remove-then-add operations into a single pair and gives a concrete operations list. The FAIL_TO_PASS updates only assert that autodetection emits those reduced operations in the cited scenarios, which matches the stated requirement.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about optimizing multiple AlterFooTogether operations into one. The example is clear: consecutive AlterUniqueTogether/AlterIndexTogether that first clear then set should be reduced.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about optimizing multiple AlterFooTogether operations into one. The example is clear: consecutive AlterUniqueTogether/AlterIndexTogether that first clear then set should be reduced.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "9JgTKpOV7YfXVfSaenyc338u3K4Eoy4oyDu3IN88GKHkz8rOhfygkCRp/13HWfnaYGgM7qOqniPe1R7GFLbUgQ+fRAjaSlmPf/30sSQb0z1dKrNi1Tfy/OSsqdSr65OgcPkmf6ZAE/Mv0ikPYjkNMDwFD0AZXF61x9UvBT1WesFh5VceAT4FD7CQvY5m/++HxbC1THZ0XANxrF1tOd56CmMh85aijoZrsd+PBeSp2wrDlLsCAkeDkDIoSXyAmbioETpYeDa0SpVtHga2tBKkQNulaQXU+LYN0X/tziqCu//mRiPdOGxOtaHTOah0bxBw4Ptdlovo93H8UuvYXvIIN9GYqvpQ9vqnP5de0mqjV3mzhQ7GfUY/WhbKdxx6MrFSF3JFTzluQbJt4lETwPC0eaCP5aGiz5I7vz6NFFdt8zO+jfRJLnvZazbcKksB3V0aNkFb4KjayjgYOU3ImflxVikhjg4cATFR2vXP6XzKJgopQdrc/LAeZbEKe77mltFzqo43rNMWY8/FLuaDU8VmdnRan102DTd7fVN5EdEFLaINC6n11+I9XP1FK/CG7ffm6zD/n+IhCA+ibf0L6Yraj8cbEPEQdkyJsrmWR29LHjLA+UweQQzV7yguY76g3utGsi8Q72tx+yLXvlSxKLcfo+k94VOHGtgycOiSkBNne6tNvXv+3jXZK4K6jm8WKlO68nokS4Vr0f+CJNZfH5Uou2fuLH0Mg3WS1+IQ69stsw8zFeQYehHsAqX/p6Lvk2aaTDbnuwmm91Op3Uuj/1ZoT5z8CDeAle8BC8zOHXYL/UyhHti2NlydunY/TbJVhZzYRe1s3wG94zinT0KtcKtOMZug+Jw9xrUK+x+e+X7381coKPA24kZ59RpVjVTFH58t9Vf6FL4OvjJxbjIkgjRghQ1x3utIoutQEQPAgs0IFLRnA4udTJ7qotSQpwtYHaS9c4jTJOUE67pkvPy2j4Mp4WpeG0MO2WBnqAR/9psr72GhrJQpWJgYeCRHhJQoxmS3ERb/syxgwmHBXxhg349+AZNgTM3ZTC8D2Z39dL6aKr/fZ3BJ3IxBEeAjwvfpHPgaiYCudbKYoJAT7VOG/uzOmJysSv553/R2iXc6zy1jVpQla2/Zem806WnNWSKMTRVxNtWc3D1I+fhHDUgoVueu2NtV10eH8oF8d3XCI+YxF1Sa2HXAPD6pN7RrFVxkWJBTvcY71oHLEm+END+kAmNUccyr9ouay8IFSoXMCRUledIFUqUjdDLJrN+6jcg9eG8KgK/iuABkNGIuHNlL4qyPiPtwoOOGcRtEB/ddCAvkg2YDuw9cwprUP4DE2pFmOKOqlR/IzTeOTzBdnIblQ8lBF5R/LQCQ36MljSQrNtfcXldWfEqFH/WK/PMvSzyukbPPOJRxLNSXxCq2sSIu5S99TkDueKQaHrXjVv81CcBVqhpZPlmRY4wEXjKhEowU4taefUxIrgvt2w7lYtv2Mwt3HaCjluXk98fzAnFUNwUA9DnrFeEagNDhKHwK4rkyE9yLj5xLw+nW3w2PMggHxO3GiomKebBWLE8sMO5NOQy1xotjjdgJ8qtFsoudL+RkW5WicfJtfHtbHIajmj1b2Psnm7yQjAtmPANRY/UcXffKuR4DjejJ42dMtRCvO5dD0pz1MaZlfhyGAIX8/FXeIuzj07s3COky9wnNPGh80AED0my2yOvhaUkWaFWSsU8QIEmf0727V5OYnaMuZ/tN.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_18b113a7-4e09-9166-a315-967ca9ed85c3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2326,
+      "completion_tokens": 384,
+      "total_tokens": 2710,
+      "cost": 0.006572,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006572,
+        "upstream_inference_prompt_cost": 0.004268,
+        "upstream_inference_completions_cost": 0.002304
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 272,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly describes collapsing paired AlterUniqueTogether/AlterIndexTogether remove-then-add operations into a single pair and gives a concrete operations list. The FAIL_TO_PASS updates only assert that autodetection emits those reduced operations in the cited scenarios, which matches the stated requirement.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly describes collapsing paired AlterUniqueTogether/AlterIndexTogether remove-then-add operations into a single pair and gives a concrete operations list. The FAIL_TO_PASS updates only assert that autodetection emits those reduced operations in the cited scenarios, which matches the stated requirement.",
+  "prompt_tokens": 2326,
+  "completion_tokens": 384,
+  "total_tokens": 2710,
+  "cost_usd": 0.006956,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

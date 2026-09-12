@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16745",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3804
+  },
+  "response": {
+    "id": "gen-1789191812-qpJfdVvbFdq0nF2ZYeHz",
+    "object": "chat.completion",
+    "created": 1789191812,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that step validation use min_value as the HTML-like origin rather than 0, which a competent engineer could implement. The FAIL_TO_PASS suite still demands an unstated offset API and a very specific example-filled error message, so many reasonable fixes would fail.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue is about StepValueValidator not taking min_value into account, conflicting with HTML number input min/step behavior.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about StepValueValidator not taking min_value into account, conflicting with HTML number input min/step behavior.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_83f30847-ab2a-9b65-8f86-7d6f17ae8420",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4630,
+      "completion_tokens": 524,
+      "total_tokens": 5154,
+      "cost": 0.01202,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01202,
+        "upstream_inference_prompt_cost": 0.008876,
+        "upstream_inference_completions_cost": 0.003144
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 409,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that step validation use min_value as the HTML-like origin rather than 0, which a competent engineer could implement. The FAIL_TO_PASS suite still demands an unstated offset API and a very specific example-filled error message, so many reasonable fixes would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that step validation use min_value as the HTML-like origin rather than 0, which a competent engineer could implement. The FAIL_TO_PASS suite still demands an unstated offset API and a very specific example-filled error message, so many reasonable fixes would fail.",
+  "prompt_tokens": 4630,
+  "completion_tokens": 524,
+  "total_tokens": 5154,
+  "cost_usd": 0.012403999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

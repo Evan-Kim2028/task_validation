@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10301",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 8771
+  },
+  "response": {
+    "id": "gen-1789190743-UsHpTjzwqgdLMT4evIwu",
+    "object": "chat.completion",
+    "created": 1789190743,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS is an existing Exp decimal test, not the NULL crash behavior.\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that SQLite user-defined functions not crash on NULL and instead behave like SQL NULL, which a competent engineer could implement. The named FAIL_TO_PASS test does not check that behavior and the broader test patch also covers many extra functions and backends not stated in the issue.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about SQLite functions crashing on NULL values, with an example of Power on NULL.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SQLite functions crashing on NULL values, with an example of Power on NULL.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_35fcffc7-3db6-9820-ae4e-7336781cc13b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11076,
+      "completion_tokens": 719,
+      "total_tokens": 11795,
+      "cost": 0.026274,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.026274,
+        "upstream_inference_prompt_cost": 0.02196,
+        "upstream_inference_completions_cost": 0.004314
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 585,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS is an existing Exp decimal test, not the NULL crash behavior.",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that SQLite user-defined functions not crash on NULL and instead behave like SQL NULL, which a competent engineer could implement. The named FAIL_TO_PASS test does not check that behavior and the broader test patch also covers many extra functions and backends not stated in the issue.",
+    "p_invalid": 0.86
+  },
+  "s": 2.25,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS is an existing Exp decimal test, not the NULL crash behavior.",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that SQLite user-defined functions not crash on NULL and instead behave like SQL NULL, which a competent engineer could implement. The named FAIL_TO_PASS test does not check that behavior and the broader test patch also covers many extra functions and backends not stated in the issue.",
+  "prompt_tokens": 11076,
+  "completion_tokens": 719,
+  "total_tokens": 11795,
+  "cost_usd": 0.026465999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

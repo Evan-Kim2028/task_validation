@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10853",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2006
+  },
+  "response": {
+    "id": "gen-1789190765-HHpWWlZ5y0fx63Joyhzv",
+    "object": "chat.completion",
+    "created": 1789190765,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks for an explicit Django error when window expressions are used on backends that lack them, which a senior engineer would implement via the existing supports_over_clause flag and NotSupportedError. The FAIL_TO_PASS test still requires a specific exception message that the issue never states, so many otherwise valid fixes would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses mock to disable feature flag; issue doesn't specify exact error message or test style\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses mock to disable feature flag; issue doesn't specify exact error message or test style\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d67ac66f-36b5-992c-9c56-8e334dcaebef",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2438,
+      "completion_tokens": 657,
+      "total_tokens": 3095,
+      "cost": 0.008818,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008818,
+        "upstream_inference_prompt_cost": 0.004876,
+        "upstream_inference_completions_cost": 0.003942
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 535,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks for an explicit Django error when window expressions are used on backends that lack them, which a senior engineer would implement via the existing supports_over_clause flag and NotSupportedError. The FAIL_TO_PASS test still requires a specific exception message that the issue never states, so many otherwise valid fixes would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks for an explicit Django error when window expressions are used on backends that lack them, which a senior engineer would implement via the existing supports_over_clause flag and NotSupportedError. The FAIL_TO_PASS test still requires a specific exception message that the issue never states, so many otherwise valid fixes would fail.",
+  "prompt_tokens": 2438,
+  "completion_tokens": 657,
+  "total_tokens": 3095,
+  "cost_usd": 0.008818,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

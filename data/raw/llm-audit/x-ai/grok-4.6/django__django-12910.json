@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12910",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6145
+  },
+  "response": {
+    "id": "gen-1789191106-JLFeifkP9j0BWoc9kstK",
+    "object": "chat.completion",
+    "created": 1789191106,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue only sketches replacing a boolean with '__all__'/empty list/tag lists and does not specify keeping the old attribute name, deprecating booleans, or exact exception types and messages. The FAIL_TO_PASS tests require RemovedInDjango41Warning text, TypeError wording, and that booleans are deprecated rather than rejected, which a valid reading of the issue would not have to match.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about replacing Command.requires_system_checks = True with something like Command.required_system_checks = '__all__'. Note the issue says \"required_system_checks\" but they kept \"requires_...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about replacing Command.requires_system_checks = True with something like Command.required_system_checks = '__all__'. Note the issue says \"required_system_checks\" but they kept \"requires_...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6793eab4-ca22-9093-9f73-25a5abdcbc62",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6964,
+      "completion_tokens": 516,
+      "total_tokens": 7480,
+      "cost": 0.016832,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.016832,
+        "upstream_inference_prompt_cost": 0.013736,
+        "upstream_inference_completions_cost": 0.003096
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 379,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue only sketches replacing a boolean with '__all__'/empty list/tag lists and does not specify keeping the old attribute name, deprecating booleans, or exact exception types and messages. The FAIL_TO_PASS tests require RemovedInDjango41Warning text, TypeError wording, and that booleans are deprecated rather than rejected, which a valid reading of the issue would not have to match.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue only sketches replacing a boolean with '__all__'/empty list/tag lists and does not specify keeping the old attribute name, deprecating booleans, or exact exception types and messages. The FAIL_TO_PASS tests require RemovedInDjango41Warning text, TypeError wording, and that booleans are deprecated rather than rejected, which a valid reading of the issue would not have to match.",
+  "prompt_tokens": 6964,
+  "completion_tokens": 516,
+  "total_tokens": 7480,
+  "cost_usd": 0.017024,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

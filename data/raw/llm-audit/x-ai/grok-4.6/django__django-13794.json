@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13794",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1116
+  },
+  "response": {
+    "id": "gen-1789191317-oZASLSlLaXJ5cHBWW7DX",
+    "object": "chat.completion",
+    "created": 1789191317,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only describes add-filter string concatenation with lazy strings, so a filter-only force-str fix would be a reasonable reading. FAIL_TO_PASS also requires Promise __add__/__radd__ for lazy integers, which is unstated.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about the add filter not concatenating strings with lazy strings. Tests include template tests for string + lazy and lazy + lazy, plus a functional test for lazy int addition.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about the add filter not concatenating strings with lazy strings. Tests include template tests for string + lazy and lazy + lazy, plus a functional test for lazy int addition.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "oKnvm695YA2wYlrpqP+gxjjulPvJJCCXJgUjxVt1ZAr5RDcXZve+Jkg/zYhaGPA7z1r7WhECIua6jZQ8pcgNNkhzpwjb3XAhr4nbFZ6lGoestf4AzZ6S+BmQTY57W83ea1vPOEHmOMBgGVDgejxvTqoYISvKlagDkl/Pk0zelMk3md1gABw4VM/uRwDg7Z3jXRBeJoJ/+sPFFlJHLApwKUvgQJ8CRUaVQnHNEmb0enjzF34TfibcWb4FDvObHUoZYRT3eudTao6CM7SQSg/8B1m5SnVIlbAXypQspbuC+NH0NtsJkKNBfcrGGeG9XhXNZOXpBHsvRL89KoA+PYK8hQny+kNa66xcnM949hqVVdRzFphw+TBByeIpR+EkT82omGOk3pwgiCd8zpEGaqp7cXMWOXQCMNaK03A3rboqd0wpMMZe3xKJOsroVmaa2izVptBl2O4WJjpURJXa/C33NA72VBxevwVNRSpy+SkZWFhRPjpi1pdcGg5Ab1RZxHwBX1qnRffM5XdcQRPcnj8BPBpn6MWsgjClw6iisO9mKeaiY+qCNGte64NfQHVbbccrMJd3LS23kv5F+/TuAc5zqYea2QE1hOTbOChXnEcH8CwTinSH9FZn3MdeHPRXRl5QchOHVK3o+Dp0tB40De53JxAvhI6nrBoG28Cr/5U/5RuuGvsoBAJLKVrRHaWufLrWgVx+VYg5zHL1zCscYXnDfITcbd4hkOKKTm/nBsHo3Mpy/vKHZQnjoQTns+x/+1CQWT4PRTRMVPIh4il0MQCMql8PswWgPI5drpLdhzu73qZpkEh8WJSdyYfSVk8W+B6GdVvCnkBmbDeY0zQQnKOZ9u9MG8AGnuP3winNEAbpRZH8xExm3hSRxKYSHk8fv7IFmWr1aLCBi1RQS8an92l9mcuJ0dwDQkmQAwePAMsdLU7UEiiFF8PhGi3kP1M869+uaqWdMFGKB8hJoOecu0owTaGrtficXw8mg1lGZiAS0iao4iGgtkBCSHO4wS4D8Txo3ymWsucXED0L9iVHeKf6KUJ3vPuOP2h/91rY4wUWS2A8LJdmxZpCSODFaeFCCgR0UVs51LM/FURw9O2r/OgvQjlxdYn+gbszI5V6/DZKQy4B3jlhbKlNZFCQsc5j8IRJ/iVzJoAK0fIXw3QTsGaU+IXzGKuXFIybwPCFmzIzSkIiE26eXh13lC5LGSRUCxipj7Sdb1n+4/zmGu/syGE/9qDnVXP9q/oNBh5raTWqQdJg7A81/bkRjkJizUr1WfQQ7UCh0VieAHBF/elCH6Q1dRKx/lyv2qzaQNJmF7evgPeLNA86q2Yp5Jc92QHaiyYKSlS7vD7Ic2l0p2y6uz7RPKrtu7ARCAMI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2fe1fa7d-1fc8-9d48-886b-5dff8fbab75b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1504,
+      "completion_tokens": 331,
+      "total_tokens": 1835,
+      "cost": 0.004802,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004802,
+        "upstream_inference_prompt_cost": 0.002816,
+        "upstream_inference_completions_cost": 0.001986
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 224,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only describes add-filter string concatenation with lazy strings, so a filter-only force-str fix would be a reasonable reading. FAIL_TO_PASS also requires Promise __add__/__radd__ for lazy integers, which is unstated.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only describes add-filter string concatenation with lazy strings, so a filter-only force-str fix would be a reasonable reading. FAIL_TO_PASS also requires Promise __add__/__radd__ for lazy integers, which is unstated.",
+  "prompt_tokens": 1504,
+  "completion_tokens": 331,
+  "total_tokens": 1835,
+  "cost_usd": 0.004994,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

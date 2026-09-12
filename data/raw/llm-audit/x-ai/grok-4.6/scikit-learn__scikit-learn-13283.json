@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13283",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2667
+  },
+  "response": {
+    "id": "gen-1789187921-iJbFyXQ6C2jpNjj2lAGC",
+    "object": "chat.completion",
+    "created": 1789187921,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to reduce memory from allocating per-tree depth matrices and suggests averaging per estimator, not sample-wise chunking via get_chunk_n_rows. The FAIL_TO_PASS tests mock that helper and assert exact call counts, so a valid memory fix that does not use this unstated API would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about Isolation Forest being memory inefficient in decision_function and average_path_length. The expected solution is to average scores per estimator instead of allocating large arrays, ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Isolation Forest being memory inefficient in decision_function and average_path_length. The expected solution is to average scores per estimator instead of allocating large arrays, ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "zlvL0dFJsEupHvpOxfYKLUpPoauOGndgYtnGJAgZcUzB07rCoklK5NDoRNr2WuRWvK2cvsdOi1e2eYJvegGQfa9rswIkl0xhl7YyNVcPkTh+WcnFy75m7riUJ6Yi3M6DcPbZH7rqNrKWxByr/ZEyvdu1GGPPpjWB+nV1yfeG7WN5JmBrLK/QZgnk9Vo6CTUqAn55YZ9JsGBA01Zcld1gMgkDXgs42gsqY5THKYmjl56+GbKWPaR+GhL5e4wTYcJuEi78g4JGqvXuKpGdhpqYRv57BEzSXURT4D+CBfjlEYIVjQqDU+6Rb+sElPwAWQsphN1QlORiBQwZqGyCpYbn+qtWxy5bYZ41gjjE6hAlAt2MgbaPgMYdAZaHNFgaVYWjCvdRMxDuCgms/zTBpUn4FnxJ6i3uWs1q7BX2XZe3uT+TT4aQsuQ8JJnTNzjY4qc6kN4aW4ieXcVWHX+rFcehl3HpVaOJohD3o5vYAKnCyli0hE4kmYkM8bXDgALfQJLkzhMBKFjDRof+6WfS+iAvx/S5Y91tTs7EHlbjpNwtKB8aTkYfMoBk5XZhU6deAvfK5Yc9tJ5SSHadt5q/+MM02MFIuF8zomy+De+UjgzOD/n8dNp6eu67Nz2wE8sSSN92a+25PJzXzRMaaaRn0sAaUmPo6K3r6b3AbS8zo4Wz97inWU3B2IWQcvlJQc49Hg65famE3oNWZK+etsx+MBsQo5WsmpFnYz6b9R6wqvJ/XIkIMsT7gfv3vqv/2ld4qSbKoxoJ3YLX7MqPWwLF81IZ6JjyY++KEW5idvrrc3pVlG7vERtwOwLKldvP8/zbpj/oNtQIiEwjyq3Gt5INFzOtke0vRZ4/YXFhnJ0TZcO6GEpNuDkwnsPtLriD+FRWxWnJ/A731nVsByxV/C1pXxWhPSvJaW9roQb1ZqMGO+2MQiaRigC3WCygovLn73gxH4/g6rKvlLK+T6il4OV1v/VN3m90t7vGMEvFdcKvRhxXE67RLIYT2hhU7/SpMRW7AeJjV65RmgvyQvTJoJXFcwmXKFp73eehAFlOeodSiMqi4/s2bnZM4uardDUrWdQM1i8gGIsWpPwZL5S2zX1Rc2GDP+ihUSu8/ix09cW1hUbzhAImjSv9IfBPdyjTf1jJQitz3dquONptTGEjMl8Y+Vo500HeuoXsFPtDsLHCUDa8p5J3iVA/OsyazrTsaozdwNRIocDdntM9WN0eI+pqcRfFzyAZvbkGJk43sfYW4JSiPO2vxIheAA+XmjKwhwiBtYdil1LzCt60oRd6/DuKgOTCwe/OQIFDrxIrXDmRS7GKOxJEPSTz07L3.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7aa614b1-1ebf-9d65-b1c5-da664cfc5fa1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3107,
+      "completion_tokens": 333,
+      "total_tokens": 3440,
+      "cost": 0.00802,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00802,
+        "upstream_inference_prompt_cost": 0.006022,
+        "upstream_inference_completions_cost": 0.001998
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 211,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to reduce memory from allocating per-tree depth matrices and suggests averaging per estimator, not sample-wise chunking via get_chunk_n_rows. The FAIL_TO_PASS tests mock that helper and assert exact call counts, so a valid memory fix that does not use this unstated API would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 3.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to reduce memory from allocating per-tree depth matrices and suggests averaging per estimator, not sample-wise chunking via get_chunk_n_rows. The FAIL_TO_PASS tests mock that helper and assert exact call counts, so a valid memory fix that does not use this unstated API would fail.",
+  "prompt_tokens": 3107,
+  "completion_tokens": 333,
+  "total_tokens": 3440,
+  "cost_usd": 0.008212,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

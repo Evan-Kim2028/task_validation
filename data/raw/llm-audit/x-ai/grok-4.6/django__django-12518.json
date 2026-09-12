@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12518",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3461
+  },
+  "response": {
+    "id": "gen-1789191060-oeZI7TSd5tdTL6qkwUIi",
+    "object": "chat.completion",
+    "created": 1789191060,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to inspect individual migrations that were replaced by a squash, which is exactly what the FAIL_TO_PASS test exercises. A nicer error for the KeyError is mentioned as well, but a competent engineer would still know to keep replaced nodes loadable rather than only wrapping the exception.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about sqlmigrate not allowing inspection of squashed migrations. The user wants:",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about sqlmigrate not allowing inspection of squashed migrations. The user wants:",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "WHITMdCjEo0AQYDZdu84TSHOCpWf9wmVgSwpsEv8Rxnmo2xfJPzkVjn4aUgp6aC0a8SEdDUxGO4sZIzxDxOQ4i6nXniCxSFBpxZ801dv8dnZ4Qfk5nW41mqcZUF5OvzJY2YKij322ivX2q/JI4IOcS7cTDqqI/i1NUVocq0GB/OhHwAA/w4hYCe2NExY1AMqlsPbQYZGoSUH7yhiVJVQpgsWMO3tqyBQQW/efpfjjo2m9LCq7trwWdTv29us1xwLh/OxitVboC5/E5EAjZy1GMVvtavDt7102QjtbeIuocbpGakoReByf94W3ngbw/R+lhA5S2Aw4WZ/ClbUlk4nXaVQRoTw0tKsBFUKN2iyysGS3r5NKd/rY9u5QvHHD2LKncICi7W5/hwIYSUpuzblx/iBYLucuj/IiJHqqF6EcxIgvmguSHYGpkl8akO6WBkRIJeIuy1pKS+CS63k7a6Hs7U5fOOwjb+qgo3bMNLw7HvD1kB+lgWbdXd63RzIuwTDDs9jyaa9TdKNbPnmOlEQ0qJU2XIulSqVRSJwQRZMD6TukG5FqZpPN6tudAA8I/ecoULQP6SSPavpiDW6JAWtwf+LdIFbrhR7rIv4lIJ8HU4075+woy+dKz7kydjUhvot6fGjeoVW/xyKBQSBiiswrNmm8ETpvoVDDHlbtfsumcdyKHvEyeD1NRnY+12Gb3zxpK/2gAojvMj2fvefOB+I9pT0JHLBSmoB0E4kGdK9/CM5Nm1qOJbSMG3qGgOj4AsLY17Y6u23V26p+XRbAZOggyoSb3phDchnENeURTVD2gpo3LihwDh59uWdMopzQY/4tGyd980dMvJkyUXyTo8uauGHAkl2VNUhhRDW9LC61wKkikG+IOHj84H5KKOocvzP7nQW3KZVrDpQJuOBm0QrVcovE0q+3aRHVI2yAOBGbM5THC8X+jnbCRdWfHoy+GEih7DKQC8l7x9p59QFvjCYX4psF4VbCa4dLdHxmpsGWs9vK/iSJfhqlXxKmmdUmJ0Z+7ItYRGUiQQdnF62BIHExrBiXY82p3Xiql+hIHTAfVErzFoRL3BfRPjc9MMQemSFKnbyK75dUCzXtG0y5wH8S3YbWPMaItgnxa8u4ngPnB9Yt/X1Sewv0O4zB8hdi86DbBfpZP6JLHWvLi0H+WULDy+9ZdWYUZ3cYpHWD4fGmv5/+XHlig/dW/RbFyYchxxixIW+w23EFqW0dzNYa9HsaFnFfjQ+GpryEQwEcpQ76GsKhadKxYV4OCmGZkTgIN9tjvtdDHZiUA3f3/voFca+7XnJFYQ8UMHWcd7IR5OirvCAEiQz1Tqd+uqkKgoId+KlT6abbkoaHnMRzyw2iS8e/ByQa6uFVUoO3HlxreovFz7DJ15Y6nV7OD0qnxsDiEP8zQ7wEOV4WkKJnb8kEWp6sNJxVVFX/GNSILkwgJTe8z6BmogCyT5obLJGJ9SouUJ6TIN5Hhsh0B/vukGkqkCvcAF3vlx0aD0EMckNiHGhU7MVjezWPrytJuv1f1ZQIO6FqZXaiH7mQnHww5Ugi3+/QG+8mxlaLrGH9Kz0nOGl5cg8vc/QNYq/ZVxfbSLx/mlJ9H8Z7LUBKaw+Kf4VUegp/JH/Q33Ok1+kGTKc7t9iub+vbOn3StujL4dcHDA5ti4N4a90h6FkeSpFRRhPNekK2sjzOwhm1pC4RsCWTaIoElwhu/YaUH6HMDSHDBOmzi8aS/hOvvlirKl9vz2hFJOauCNIZy1B1Fk+4yaA7u94D4CjErumoTld7eusnK2Ok/XGZlmFbBFIC3f/E82Vc8gEvI6hNpIJLcuPCmEQaGA/rYLjxoYaZR/eGWvZMcbZPBFtXK7Pj33IYclIx3tjTJdL2y/Z+o9wKu4Ix4VQW1OXJEpKQyL0pIkhSjnrVqS2DJooDq43l9zmc+UEcrumSk4auuO5TnQDV3seSgOEmD1MANtsaKmOX/hGfPfvDAcYi+5mmoxA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_44269c80-2a79-9632-9255-2328f3db5b15",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3691,
+      "completion_tokens": 453,
+      "total_tokens": 4144,
+      "cost": 0.009716,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009716,
+        "upstream_inference_prompt_cost": 0.006998,
+        "upstream_inference_completions_cost": 0.002718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 338,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to inspect individual migrations that were replaced by a squash, which is exactly what the FAIL_TO_PASS test exercises. A nicer error for the KeyError is mentioned as well, but a competent engineer would still know to keep replaced nodes loadable rather than only wrapping the exception.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to inspect individual migrations that were replaced by a squash, which is exactly what the FAIL_TO_PASS test exercises. A nicer error for the KeyError is mentioned as well, but a competent engineer would still know to keep replaced nodes loadable rather than only wrapping the exception.",
+  "prompt_tokens": 3691,
+  "completion_tokens": 453,
+  "total_tokens": 4144,
+  "cost_usd": 0.0101,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

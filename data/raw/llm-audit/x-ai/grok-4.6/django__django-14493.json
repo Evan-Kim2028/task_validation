@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14493",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1281
+  },
+  "response": {
+    "id": "gen-1789191438-1tGH68mMiYkiUpKDZ6kx",
+    "object": "chat.completion",
+    "created": 1789191438,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly identifies an UnboundLocalError when max_post_process_passes is 0 because substitutions is only assigned inside the loop, so initializing it before the loop is the obvious fix. The FAIL_TO_PASS test fairly exercises that setting via collectstatic but only asserts a generic stdout substring rather than the crash itself.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about ManifestStaticFilesStorage crashing when max_post_process_passes = 0 due to UnboundLocalError for 'substitutions'.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ManifestStaticFilesStorage crashing when max_post_process_passes = 0 due to UnboundLocalError for 'substitutions'.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "mxYZQC955jVmmu2jqVnyGhdw03RAXjRhKfi0Ehi68NRiRo9ietB0Viut7lBFNR42yqsaxb0xGRCap/7x1PjHpIApr4Itoulf8PXjktx77nsr0z1yb1HELwOXfZhJo1mFWEwvcDBMzbZNkEi/5puQDpXVTBCADbDNbrj3pIojtVGrMMASHCHnMCQ7Ky023Sm1GFq5vn58e8hQVqPYsEaOHo9eMAMDkS3L6IMQmO1bJRCdPOT0NmoaJ3OZ9WXk2he02iGr2o4qvm28sQe7sugIMVFyfp5vTvKByJwCCFt0YxepG7fHBx6GoiiXvI8oTHF6xvgO+BV+PrthZ5TP7aTFMvhEdHBNV2WhGk/ZKutMFNwRn+i4RjMF8nBP2kawA0z8zCPc2id3FFNamgfuyzoxDZ+09Ut5xdEhl6JBxfT9QnN2adh8Dp7069/RrcyzErWgz3YTqz/XnNOPMsQa0GrgommnRzxEA0Mt8QFC5uBajDGEgj2F9LoMw9u71CAdYnTXECWQR1Vwdea4qy21aOpnISo6rjPKpbQ03wKDOTrLXQ0fEw5FqLH5wzxlNBKM3O4q/fk7WJWGU5e3Hx80BbRcqiBiM1V7pGB8BuSm3l+bRp4d0+nej3G7DTnonkr+ZnQ0dO/APr+i/Wdke2lhIoRLSH6+JKa5agbs1H6+WvsObXewZEWpVHk7fAQ776KJqV/8WLWTFLOLDF+XSsG4HR8p/EIlFtuufvjT8R2cYAmjLcVAilTtUZA8ZqOi4RTFAXJqeArFeDbNLC43qwqhpa7PCwDwCZ2WGRIqDKtkTG/Pcl8Pvxflz/C9xqK8gXA50h06m4c7xtV5HnyTNcjtK/J17WDLpbWfmCDbdqhmvqDZgrSpr3NZC9hTHUV5Kn8T2S/Hen9JPotV+0eGWkO8924QY33hawjRlyBOYrnVNBIJPtjmasomrJWxOZQuzkhRc7pTYiLchb/7XcdbPipogVzIl6iUt0scwfjC76njm3kEgiC5jYtOf+na1RfLsxY9mWS8RKQAczsLnCEXXgnPgcIW04fUHZiHr9yD/y0uv4q4mPJji/JYtXT5atZ98keLmKLk7GpNRyD/HR35QCJkcTC6V/wYgzCYRGDVkUg4LwQH3SaDAuM4db4ly97Sdc5sVMi0Dsgc7XOe4q2Sp+LifwIDdKncRRA5kXKSLV+xZXjRePnt151JpqHXF3ZxxXwrPMWTEPB9s8nUkCejfTaMP3rNZal8odDKu2dJVoEpncjm2lIektniiUlrI4F1J6gp+sPFb4HfY/6e6EMfqVu/mWQj8jt6nzCyNmW85cFppgyCAtRxTUyCFaI/RiubLNG2ZpTzDRXm91E6ZwfRtzu2WIXY0Rt8pwTdV3ZP35hxoH7/fYnUSwqJKYDQb+vX4IV5xgqb9E7pnjJrJxiK093KAdlM8wfLZKE7lp1pXIbXhPOgp4X0lgb15pasOFPLVSb1RCwdFoKG8q2u2FZPqInpHS/DX2GIXyGZMQMW1xPeqjWqBF7N6jv+3s7l4GjBUigyjEE7mEp7NXb2M/hMU59VWMQNMoe2HQTYSON1j+kriYNBMToUmcYCQyNglsehJWbWa7UZCfSsVoObgUNSlmQvczMZ0mKlPT93UmQlfFOg6qqU093/BJBi3Y4+2gUs2sxt28HbRy0IQS2xvSeF7y47KG7mKRwZjQQTj6FmfX2u1A/qX6VDXLgSuPJ3ZmMesSb4BBG+Gkftz0JxuIzKKb0qMIY22V5czSPjALEf+FTb0mS4ozAjTS4wTj5RIXrY+CG1DJ7HcLcKdeN+dvk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6fab4173-72ac-9333-93dc-9f930f21eaa6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1638,
+      "completion_tokens": 407,
+      "total_tokens": 2045,
+      "cost": 0.005526,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005526,
+        "upstream_inference_prompt_cost": 0.003084,
+        "upstream_inference_completions_cost": 0.002442
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 285,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly identifies an UnboundLocalError when max_post_process_passes is 0 because substitutions is only assigned inside the loop, so initializing it before the loop is the obvious fix. The FAIL_TO_PASS test fairly exercises that setting via collectstatic but only asserts a generic stdout substring rather than the crash itself.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly identifies an UnboundLocalError when max_post_process_passes is 0 because substitutions is only assigned inside the loop, so initializing it before the loop is the obvious fix. The FAIL_TO_PASS test fairly exercises that setting via collectstatic but only asserts a generic stdout substring rather than the crash itself.",
+  "prompt_tokens": 1638,
+  "completion_tokens": 407,
+  "total_tokens": 2045,
+  "cost_usd": 0.005718,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

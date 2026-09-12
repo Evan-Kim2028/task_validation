@@ -1,0 +1,93 @@
+2026-09-11 22:17:03,437 - INFO - Image not found locally, attempting to pull...
+2026-09-11 22:17:45,666 - INFO - Creating container for django__django-11194...
+2026-09-11 22:17:46,303 - INFO - Container for django__django-11194 created: 3031192ec56700c3aecf9920e5ada84706a794fcd0f599fc4929194aa7c5465a
+2026-09-11 22:17:46,604 - INFO - Container for django__django-11194 started: 3031192ec56700c3aecf9920e5ada84706a794fcd0f599fc4929194aa7c5465a
+2026-09-11 22:17:46,604 - INFO - Intermediate patch for django__django-11194 written to logs/run_evaluation/tv-gold/tv-gold/django__django-11194/patch.diff, now applying to container...
+2026-09-11 22:17:46,698 - INFO - >>>>> Applied Patch:
+Checking patch django/contrib/syndication/views.py...
+Applied patch django/contrib/syndication/views.py cleanly.
+
+2026-09-11 22:17:47,396 - INFO - Git diff before:
+diff --git a/django/contrib/syndication/views.py b/django/contrib/syndication/views.py
+index a8b98c84ae..68ffb0bfe0 100644
+--- a/django/contrib/syndication/views.py
++++ b/django/contrib/syndication/views.py
+@@ -1,6 +1,5 @@
+ from calendar import timegm
+ 
+-from django.conf import settings
+ from django.contrib.sites.shortcuts import get_current_site
+ from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
+ from django.http import Http404, HttpResponse
+@@ -10,6 +9,7 @@ from django.utils.encoding import iri_to_uri
+ from django.utils.html import escape
+ from django.utils.http import http_date
+ from django.utils.timezone import get_default_timezone, is_naive, make_aware
++from django.utils.translation import get_language
+ 
+ 
+ def add_domain(domain, url, secure=False):
+@@ -30,6 +30,7 @@ class Feed:
+     feed_type = feedgenerator.DefaultFeed
+     title_template = None
+     description_template = None
++    language = None
+ 
+     def __call__(self, request, *args, **kwargs):
+         try:
+@@ -134,7 +135,7 @@ class Feed:
+             subtitle=self._get_dynamic_attr('subtitle', obj),
+             link=link,
+             description=self._get_dynamic_attr('description', obj),
+-            language=settings.LANGUAGE_CODE,
++            language=self.language or get_language(),
+             feed_url=add_domain(
+                 current_site.domain,
+                 self._get_dynamic_attr('feed_url', obj) or request.path,
+2026-09-11 22:17:47,396 - INFO - Eval script for django__django-11194 written to logs/run_evaluation/tv-gold/tv-gold/django__django-11194/eval.sh; copying to container...
+2026-09-11 22:18:01,240 - INFO - Test runtime: 13.79 seconds
+2026-09-11 22:18:01,241 - INFO - Test output for django__django-11194 written to logs/run_evaluation/tv-gold/tv-gold/django__django-11194/test_output.txt
+2026-09-11 22:18:01,295 - INFO - Git diff after:
+diff --git a/django/contrib/syndication/views.py b/django/contrib/syndication/views.py
+index a8b98c84ae..68ffb0bfe0 100644
+--- a/django/contrib/syndication/views.py
++++ b/django/contrib/syndication/views.py
+@@ -1,6 +1,5 @@
+ from calendar import timegm
+ 
+-from django.conf import settings
+ from django.contrib.sites.shortcuts import get_current_site
+ from django.core.exceptions import ImproperlyConfigured, ObjectDoesNotExist
+ from django.http import Http404, HttpResponse
+@@ -10,6 +9,7 @@ from django.utils.encoding import iri_to_uri
+ from django.utils.html import escape
+ from django.utils.http import http_date
+ from django.utils.timezone import get_default_timezone, is_naive, make_aware
++from django.utils.translation import get_language
+ 
+ 
+ def add_domain(domain, url, secure=False):
+@@ -30,6 +30,7 @@ class Feed:
+     feed_type = feedgenerator.DefaultFeed
+     title_template = None
+     description_template = None
++    language = None
+ 
+     def __call__(self, request, *args, **kwargs):
+         try:
+@@ -134,7 +135,7 @@ class Feed:
+             subtitle=self._get_dynamic_attr('subtitle', obj),
+             link=link,
+             description=self._get_dynamic_attr('description', obj),
+-            language=settings.LANGUAGE_CODE,
++            language=self.language or get_language(),
+             feed_url=add_domain(
+                 current_site.domain,
+                 self._get_dynamic_attr('feed_url', obj) or request.path,
+2026-09-11 22:18:01,295 - INFO - Grading answer for django__django-11194...
+2026-09-11 22:18:01,296 - INFO - report: {'django__django-11194': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_feed_generator_language_attribute (syndication_tests.tests.SyndicationFeedTest)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_add_domain (syndication_tests.tests.SyndicationFeedTest)', 'test_atom_feed (syndication_tests.tests.SyndicationFeedTest)', 'test_atom_feed_published_and_updated_elements (syndication_tests.tests.SyndicationFeedTest)', 'test_atom_multiple_enclosures (syndication_tests.tests.SyndicationFeedTest)', 'test_atom_single_enclosure (syndication_tests.tests.SyndicationFeedTest)', 'test_aware_datetime_conversion (syndication_tests.tests.SyndicationFeedTest)', 'test_custom_feed_generator (syndication_tests.tests.SyndicationFeedTest)', 'test_feed_last_modified_time (syndication_tests.tests.SyndicationFeedTest)', 'test_feed_last_modified_time_naive_date (syndication_tests.tests.SyndicationFeedTest)', 'test_feed_url (syndication_tests.tests.SyndicationFeedTest)', 'test_item_link_error (syndication_tests.tests.SyndicationFeedTest)', 'test_latest_post_date (syndication_tests.tests.SyndicationFeedTest)', 'test_naive_datetime_conversion (syndication_tests.tests.SyndicationFeedTest)', 'test_rss091_feed (syndication_tests.tests.SyndicationFeedTest)', 'test_rss2_feed (syndication_tests.tests.SyndicationFeedTest)', 'test_rss2_feed_guid_permalink_false (syndication_tests.tests.SyndicationFeedTest)', 'test_rss2_feed_guid_permalink_true (syndication_tests.tests.SyndicationFeedTest)', 'test_rss2_multiple_enclosures (syndication_tests.tests.SyndicationFeedTest)', 'test_rss2_single_enclosure (syndication_tests.tests.SyndicationFeedTest)', 'test_secure_urls (syndication_tests.tests.SyndicationFeedTest)', 'test_template_context_feed (syndication_tests.tests.SyndicationFeedTest)', 'test_template_feed (syndication_tests.tests.SyndicationFeedTest)', 'test_title_escaping (syndication_tests.tests.SyndicationFeedTest)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11194: resolved: True
+2026-09-11 22:18:01,296 - INFO - Attempting to stop container sweb.eval.django__django-11194.tv-gold...
+2026-09-11 22:18:16,597 - INFO - Container sweb.eval.django__django-11194.tv-gold stopped successfully.
+2026-09-11 22:18:16,597 - INFO - Attempting to remove container sweb.eval.django__django-11194.tv-gold...
+2026-09-11 22:18:16,656 - INFO - Container sweb.eval.django__django-11194.tv-gold removed successfully.

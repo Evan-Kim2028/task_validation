@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11433",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1172
+  },
+  "response": {
+    "id": "gen-1789190868-Rj6ZWdFhP7wQrN80rQSQ",
+    "object": "chat.completion",
+    "created": 1789190868,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that values set in cleaned_data overwrite model defaults when a field is omitted from POST, without stating that empty cleaned_data values must still leave the default. The FAIL_TO_PASS test requires that extra empty-vs-nonempty distinction, so a natural always-overwrite implementation would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing cleaned_data to overwrite fields' default values when a field isn't in the data payload.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing cleaned_data to overwrite fields' default values when a field isn't in the data payload.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Ue8QOHsySACOwFpKYEfCiaQ2Xj7vaO0h+WniddntBAMvx9le2LNscKytkwGpdDSlK7pHF5dL57dZ8IHOxMw4WEOTVp108DAWwUmFwKHc4wL2BzPGGRBBEjAJfIX2Q6N9qsQBL+E7k8wIl2w8p0Ro4xL+e6CUneIHfML9A5fAmBXE7bBy6dTMSayRF6rkkd/N7mZPCOla2JGot58C0rvlPMVcEuDllFLq/AxDnF+cMXR72/1e6ij6T9Fc0R+3BgQSNDBYwI94M9Q2nErCmqnwSCqrHjfoueLa93YiG1GljXI0DM5YMWaz7NA2O0CCamFVm0Up7kEbY0ZQyATqNSio3Yw+b5zmv6pZms5m7o31uFrxkRCKt1dxrfSUlK+JRBEyq5LamzgnpVLKLEjRBGlIUIjjnUvCzrtPgaVZTR7FfZiIO1hECmFX/seRYeKzGSkfRPoNhmyYoqyfOPTFW4PfsUYFSoe9R19JuMLxUR6xNyVgTr6KUmeuMgoq6j3g8aNVx24MiF9v3iAbrg8iZ+MnL4EOVHeObDxXfvuro4N0KZGgPpHCKZ9pYVzu73XMpcftbFt8SwyqqVJMDGigXCMcfBStIjoKfDfgZPvnw5M4vu0nHK0mMJM03g1QnfgWL6mVJQGm//DBDxGcsgRGlP6Etd+Ka/KcJ4D6B1BhuE9biVrChY8F/xZIlBD0FhQfqhemcKnvPBOrbjbQ8KvYD2bsMPMDXT5v++FgyXtOzE28QYiC08/4FafPj8MKT/TrSjS5QFzNOYzm9tHr/gMextX/pfECi3504SWm2Wfbgr+fKhTmEC8AMwgRyNAOGw11nWyVIk95bluNGF6cq8Ipsm6NFIV+/UQHeD2L7SA5+TKnP6X09JAZvNLm0KjYjHa7e31Eshyi3//PNbsEXoJ1MW3TLrpv+kBEhrQMClCkNGSSF88rdJsAJ8racXLo8aqQb2l0KR63Hfe83doHekcROfz7r+M916uaSwEMEndmys9+OMSXZMP5HB0SonHYbhIIhIoyJNo3OsUBKvXkhVIaXC/d2w1Zy0aj0nuAfkHmaxYnNiDjWmNqYlj9s6dGJ9fVoQRBe19qMUQzjX68jEgd1szFoUur1nad+S7ga0RnHSm2h2Zg872P33rD4nxejCzG0thY0/rvVI3oFcY7cmYluZV40uKSGBGm9pL5caiYjKn26WwmBfPJ9IzyIvCjL1XV57OMXg2xeEu25mC0z1Db4xk5C7XFSPaTmUxMmaLlfsx2zgKX78R7GKrn88qS7i7sGA5GIAgZXf8AHDUp3TaQkTvk8G1PDs/CDLoizLLB0gnddIp9ZwAUzjEktBCTsLLsxLJ77Jp5A+eMHdOUZeHU+ETvAFJMYorSNaF+kLAToiZFibHHsmIHjPHlleTSgxMJTwmsrzeswiMHjuBzI/LwKbnvySHxd0lHxUN3qhl1fmwrotSJMHdDsOFKUdsVJlMnjWbd85RTfQBp0XR6TrpayG7EkEp/vtUBESw2u4obmcb5dpfES6SNK5/ambUTiVwU53DHrFPlyQtGXh+PLz1Uz4hk+bNoqm2FtY8nyoBbQPDFLaerUEG+7RZR1B4ViKLp4aMmLMuCacNqbAYAA1gwP15DI4ozDUN3C3KPuvpP+fdzaIz77YpdnqVAzrhlyCSyVTiCFNJ6M/sDTh4O+Wst+PCg/kZ1KcOT0u+qate6PvA2XMokjXnCADspWK4J6pUxuKhn3BVBNvJ6I7TPI+HATL9cfRCYdnQtb5O+Fe4CriMSWEHJhFZMbowBTbuEtTdYHoZ9NOGJs49lbUk081FCAouxAnmWe9rkmqEoa950QHkKo3PJ2ChJcw5emmlnDjKXFQv3lp3gJ1otAU4C2mCe9NC5wrvNHE5ZmJoSqLUmtyXjMs91KYhrwwxrUG/Fdget2xBmidPkk4/3ogYxkyTok63zMCV6pSQKSklj/CtqWTn2bnqP6lTSr82cK40+Fak4BRTfQN6LqNmt.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_02044aec-a21c-971a-9479-9001d6bd7e3f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1501,
+      "completion_tokens": 455,
+      "total_tokens": 1956,
+      "cost": 0.005732,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005732,
+        "upstream_inference_prompt_cost": 0.003002,
+        "upstream_inference_completions_cost": 0.00273
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 336,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that values set in cleaned_data overwrite model defaults when a field is omitted from POST, without stating that empty cleaned_data values must still leave the default. The FAIL_TO_PASS test requires that extra empty-vs-nonempty distinction, so a natural always-overwrite implementation would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that values set in cleaned_data overwrite model defaults when a field is omitted from POST, without stating that empty cleaned_data values must still leave the default. The FAIL_TO_PASS test requires that extra empty-vs-nonempty distinction, so a natural always-overwrite implementation would fail.",
+  "prompt_tokens": 1501,
+  "completion_tokens": 455,
+  "total_tokens": 1956,
+  "cost_usd": 0.005732,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

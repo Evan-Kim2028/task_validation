@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-7003",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1524
+  },
+  "response": {
+    "id": "gen-1789192714-StoZZc7vZiNEOpL3U7lH",
+    "object": "chat.completion",
+    "created": 1789192714,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only reports get_unique failing on unhashable pandas MultiIndex, which a competent engineer could fix by uniqueness via identity. The FAIL_TO_PASS set also parametrizes group_by_index and copy_indexes over raw pandas indexes, so a get_unique-only fix would fail tests that demand unstated copy wrapping/unwrapping behavior.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Indexes.get_unique() TypeError with pandas indexes because MultiIndex is unhashable.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Indexes.get_unique() TypeError with pandas indexes because MultiIndex is unhashable.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_705908e7-9d0c-9ed6-977e-7f5d74d1b0d1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1995,
+      "completion_tokens": 685,
+      "total_tokens": 2680,
+      "cost": 0.007716,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007716,
+        "upstream_inference_prompt_cost": 0.003606,
+        "upstream_inference_completions_cost": 0.00411
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 557,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only reports get_unique failing on unhashable pandas MultiIndex, which a competent engineer could fix by uniqueness via identity. The FAIL_TO_PASS set also parametrizes group_by_index and copy_indexes over raw pandas indexes, so a get_unique-only fix would fail tests that demand unstated copy wrapping/unwrapping behavior.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only reports get_unique failing on unhashable pandas MultiIndex, which a competent engineer could fix by uniqueness via identity. The FAIL_TO_PASS set also parametrizes group_by_index and copy_indexes over raw pandas indexes, so a get_unique-only fix would fail tests that demand unstated copy wrapping/unwrapping behavior.",
+  "prompt_tokens": 1995,
+  "completion_tokens": 685,
+  "total_tokens": 2680,
+  "cost_usd": 0.0081,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

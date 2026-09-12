@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15102",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1654
+  },
+  "response": {
+    "id": "gen-1789191537-2ETHzsEOQ4SLssy7djLL",
+    "object": "chat.completion",
+    "created": 1789191537,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks startproject to apply the process umask instead of copying template permission bits wholesale, which a competent engineer can implement. The FAIL_TO_PASS checks the natural 077 result on typical template modes for manage.py, the project dir, and settings.py, which fairly matches that request.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is that startproject should honor umask. Currently it copies all permission bits from templates, ignoring umask.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that startproject should honor umask. Currently it copies all permission bits from templates, ignoring umask.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "UMB8XC9gp+3GX+004foQAjdLaQaI8TuojxZaTvv3/MTZ5fFVH5wXaIuTxJQwFwj49wRzr1gXGf49Uaz2+R6l+hraWljS+Tx1JOB4W+iIFDyEobzwlxe/aAcrDhoMkF5yV0wmrU/noTCyXJFZLsts7RoxO5Oyb/YyriygGhUT9v6ec0x+KTqgfuQKvfEoApz0r1eEMlHIOtqMVOr/dXNMpSIGjlTOqJEx6FVXEeuR6Z4phL4FaU1fhrNL6qeLAXKjsO+tahu8oivfBwroha+ESovitF9gmVn1wS2Pc596EtssuL4sk7N05uJbHrpmCzDGxV9YoKus4N8JzFsoWYt0S7L13TEXiA0mPmGy0pjjBFXKM+XcIuKXYGmbx8G8qh/FriUzJvSnCEb2ojN9NibSXaXAXCIWJ6eeVViz3f+NurFxfwMnLQ4TF8oAFduy1ar943wAr2InHit2SedlNXpjhXnGRQjtbgtcYzBA7whR/AvTae47mClYmCm5WaOueSqP/RELfFznOzUgAN9hhy1NMPG5yWWwnTjSFZGyrlV2j5TBB8KU4IgKev8mLKQ2IL+7TqQifsNWwOS15HmLLhXW6oq0LthydmX2u7i4DAkzEyGz/2B7oFZdWsLB/oIijHDHLMHCYiR+ljqscgkV+N57y7Bt/zzYuU0koQExm62dNmWfPSTXaugP1zYzHO0deB2D/AB9OHecr00sd5SsnBgaSnHTBpdnXbEkWuI4Tk/uvYM4LJIOywCjE6QYXnySinZiV1Yti4hstgGErzWzzOOfsLkTr2cVYY8Byv4oPInzhOpdNHwyTOFMswT2UcMFcNc9CpSTtgdOmJfSXU2G7YQYNzeGkMgYaXJ5ysY7Csj59+o56dkRNkYSYZdS7IuNLFjD7/nREzzpETX0nB1HgJ+Nxu08cRrqwu9CF//avbrz6PLXgQuyL+X+2b0XQmQwmyKH170pOIrpWAdddR1JCDRtARVt6OQeMK5nv2LAA40Y0uiRL/9flzprguzbKqdMjasFgUsvrzK6nYpAJNxsYUCVi63VV6PHDhoAG5jANg18jmoXX5rRAwQy6fWAgHN2IsiiQeVxN14+udikMxBJwD0fqP142Rlvt0NR2d1LgeFmeM7sMu8IcPXiOblAzKcXgrGOPNd6QTwtQ04sMulPESnQ5KqFX5T/6cx7OYqV1RWnZVIBfhwJE81GFvJWPz0cv+S3kMn3H89yHYfZ95+ivObcfD+rzCMcWXhYgw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bdc43ad6-3a0f-9568-8d19-abaf948bebf4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2146,
+      "completion_tokens": 326,
+      "total_tokens": 2472,
+      "cost": 0.005864,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005864,
+        "upstream_inference_prompt_cost": 0.003908,
+        "upstream_inference_completions_cost": 0.001956
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 210,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks startproject to apply the process umask instead of copying template permission bits wholesale, which a competent engineer can implement. The FAIL_TO_PASS checks the natural 077 result on typical template modes for manage.py, the project dir, and settings.py, which fairly matches that request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks startproject to apply the process umask instead of copying template permission bits wholesale, which a competent engineer can implement. The FAIL_TO_PASS checks the natural 077 result on typical template modes for manage.py, the project dir, and settings.py, which fairly matches that request.",
+  "prompt_tokens": 2146,
+  "completion_tokens": 326,
+  "total_tokens": 2472,
+  "cost_usd": 0.006248,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

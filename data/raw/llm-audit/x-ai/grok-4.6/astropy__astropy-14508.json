@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14508",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1779
+  },
+  "response": {
+    "id": "gen-1789190694-qnJ5h03alClvo2LBkIOT",
+    "object": "chat.completion",
+    "created": 1789190694,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue describes the overly long float formatting, the truncated comments, and explicitly proposes preferring Python str(value) when it fits in 20 characters. The FAIL_TO_PASS cases check that compact representations like 0.009125 and 8.95 are used so comments are not truncated, which matches that request.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Card using overly long float representations. The expected behavior is being able to create any valid FITS Card. The reproduction shows 0.009125 becoming 0.009124999999999999.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Card using overly long float representations. The expected behavior is being able to create any valid FITS Card. The reproduction shows 0.009125 becoming 0.009124999999999999.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "SpxRAlEYZWkhU8HfStpBkjnnk1nTeDgOcsQ43W5nQTCR4wmv03YOM74Gf5gxiyZvXEHVP5qR1na0Vy1Yh9X1WQIGeWCaIt+tZhNpidrvuzni2CWiPdpTS6M75/OolCXysPz2M1ECf9i31soiBtLwDkVTuy8CFoifukruY60QHuFFtgwZhl1A9PiFZL/iLhA3BUhXDEoH6942n0KuPoQS8KHAOEffxKtLwRWo+8ImrPrCYKIRCY0s18VM5gTwyXID3R20MR6eRzwNAIPQr/Bn40Mb02tIkNbnEgut2xamEpDa0mLA3IloOXhTdIsvClkxOjv+oMrjtDVUcLYpvvnTVyCG9ETAb5uhrSg7wRv6cD/dHjGE94TH+STSXyQozvKIgBcjC1JQGxKYgA0xYrdGDMTvPY8xmOI4US0k1X3H9D/lH5BD3NpkhcY1ao/4EBg9f4hWPvZAgQRkoDuLj9Pslwo0eqRNgoc4tamPcT/fpkG0iB+Q0FD7sn8aElen3CU1va8doowS31lrTiDRSov6Ns8qU6ewiuX/xmNo6/LVwSniE6kPgw4UrtQdkDlidBmqT8vwGotXJTOX37R2LMdC91bJUn4j0FFw1b2+VdS00NOt+WhV1OEiYGvHyhzkaDOk4m6EVK65BogteGmSBmfFG9pIVLde/tfdPCGk4hOQu0wjxoktFXLHCThZz+bGdwLrQbwaLgAwrMZ2TNPHh8rJ4Gs1l1MAAVHsmnHeneR1jqvouf+NicRGFkhP8rmrCAcFYThmT9dE74Nl7+dJUdr4/gst6DNvQcAIhtJd40pGZa0murSyE87I8XFoZ/cdWXyioUN7tgzd4gdnUSwHE4/E/QNWPXUg4rlZ2hgCGmGUgxenQ9kkkziEksbZv7D7Cb5mpbdvwFVq+EsQfk/KX6bOTJeQgcCjkz7Wf0vfVLFuPdS9bhB1I/NxVqotBP2KxPhb4I57LPTAyGpiBhLzI1+RUdMsWEzTaRfBEPEFOzfB4F1mFY7929asgCS3kLUUVS8GUwAMaX2QQa/ZNIOkwAh1djDI1RiXZEKzJ3LmCVUVIO44Jg3mMw+/pYwJFtzfghBdfOQsa5IW15+55KRN5U+MjoZxRX4jmf95HP20pK7jnq1tS9+gxiPb81C4AIncRNgCcFH6R3wCuZGwS4orkJ2KHcL1oALf1RDZqX8ajZE523WEHANPjXmDvUkXCLVjZg/d8FT3lFfTWGa5sKqf1W1aWlbLcZ8ABVRQyi6UlyM/lf0iAFbesMgrdh28cKMDWW7jLvauWXVMYv0zG4KjRFtHGTYoYoyLgdNiDHd/h08poPoEm7vPUucy3V7zwsQDfSgqhCPovQbCS7uLIl2ENTC5u5TlUDJBW4TmoY1f2JM4hcTB11hpqtIpr9WwUx2LbpjoEeGKT63poVWuYBI1r+I2I8++eaZYU/H87xMS+6nJahRFbKW/EANWToeyNX1XVnQjo4B00nt0U3snIxBSaqPGjHufuw0boSAkZ3ZrEhaiEuodmnSdFEn5qFvlgx4+dcDQgogEQJURffkPNqlrqBtREt9xHfeYBc9gV7+TLCZxV4hfAaj6jvIAmxKgo5EWrat3eqYDtqaEtUMGXR13/zOMu/rGvw4JpdkxSh5UZ7VIWK3IpL/Re4yQNOvNMOkpSw5ijPZ/Z4wkNF5rARvj+mB6ycnGvy6I/tflLCdEEmqmaCIY1plHYO5ySDTS9dCUstTRE+K9anatVsSFRdlEXUG36n28G3utXT/SZpX/UyrhlbJ9TXZczBj5YysVox4GYH6rZnTat9V+wsY2JZ6ScVaqZGtPSQRYkV1uQzCBSVWhVs9PRkcy64+XSFLEc3YqZYzL1vQZrPicm27M.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6ba872a6-7b6c-9b69-b897-f4f088066df3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2368,
+      "completion_tokens": 454,
+      "total_tokens": 2822,
+      "cost": 0.007268,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007268,
+        "upstream_inference_prompt_cost": 0.004544,
+        "upstream_inference_completions_cost": 0.002724
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 334,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue describes the overly long float formatting, the truncated comments, and explicitly proposes preferring Python str(value) when it fits in 20 characters. The FAIL_TO_PASS cases check that compact representations like 0.009125 and 8.95 are used so comments are not truncated, which matches that request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue describes the overly long float formatting, the truncated comments, and explicitly proposes preferring Python str(value) when it fits in 20 characters. The FAIL_TO_PASS cases check that compact representations like 0.009125 and 8.95 are used so comments are not truncated, which matches that request.",
+  "prompt_tokens": 2368,
+  "completion_tokens": 454,
+  "total_tokens": 2822,
+  "cost_usd": 0.00746,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

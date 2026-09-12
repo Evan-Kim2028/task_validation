@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11880",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1029
+  },
+  "response": {
+    "id": "gen-1789190949-Pnad7TTDTI1PW22tDS7k",
+    "object": "chat.completion",
+    "created": 1789190949,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly states that Field.__deepcopy__ must not share the error_messages dict across copies, which is exactly what a competent engineer would implement. The FAIL_TO_PASS test only asserts a distinct error_messages mapping after deepcopy, matching that requirement without extra unstated behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about Form Field's __deepcopy__ not deep copying error messages. The test checks that after deepcopy, error_messages is a different object.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Form Field's __deepcopy__ not deep copying error messages. The test checks that after deepcopy, error_messages is a different object.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Ez7J2AXQzekWNDEh/DYpWzAHqnHAKleVurwx3aWaM1R6Kje2bUDHxudFakblmnJtxgso2VLNd7oV4M6/huJf2DE4EJvDwFc4ozJu4Zxi6mSJg1GKptY9PNWyf0INpH5fJF1VZO1WIyIIoYVPLm9L786Fq/XumUM8YiK/UUmawVqSDxuebZcXxrZTXwkqpGiM5fNPQ1aK8og/domc+OyqC9bJwWxsxRqteAIMZYzPdf/tDx5d8d4dMZ/KE9aa4xTlgTy6fQRvY4i3kO0zROVzF0Y88gPDdCoGzcpxuoAT7ImnMGwOA0kxdV8zq6vkSc5snQxyzpOmNRoKb/1gtftqS1eoiBTt68y7U/EZIQxsCZQ2oxg415CzyY/MRbQZVR5z7GXwiGZgdmNAKWslwmkRpv2cxiUCkSGrM46L3AFRmELw25uNSUrQZbNWsPkiZN9FWc1TAy07mRXTY5mIfIDd/+HBE36oYrjPL8BMbU7mJLjLmBj/i+w/zkGByriA5ZXSvj09PARjjzXyPjizeL0FBZN0cGmcJOB6pkq55WcDS0xVAm4ZAG2YAQY+502Y8rWFg6WLRFzD49WFwmkS3ltgsD9Wea+XbqBaxgNEysWYPtUM0O5gBBlwA2G6QINattWrYjijPU2V5uMs44qiQn38SxuGyxBF6Vfq2YLNRCS5gMGbLYjX3j5I3dajHyfhBTtsUsKGESSp/Ss2frmxPXIqiPuKNJGaDtEOeqP5A4bQA4Q34zAZ1QSPFsOYVn0kD3C7DayAk/0EvmQVCZuZvODdL9crG0ZwdJIJxuAYgKg/36s/36u+281TpaIIy+QU08PAcWDaOIUp7+VyJJII2V2fhBCfNxjep6KKIPcgHc8MCjrYXARxpj2c3FGUoADoWm/+L7jMIkmysYf8PEgwVsaB9eGguN8pJq5UC6yc2LYBLM4ZRfU+pIe8ZfL4XIcnLXgsDfSggUtGqF7Rvh+DfLARLOi2oC6+d35CJvtEwOfzUhFWT3lRf9Y0jbbdGdPdzaHxMvjYTmd2AbG8Jt43hKgqBjpp1Jt5lQ+pbA436kNLWsGy/TFjeK2Q6os9.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_77536369-6909-9a00-9d91-c298dfd72108",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1329,
+      "completion_tokens": 296,
+      "total_tokens": 1625,
+      "cost": 0.004242,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004242,
+        "upstream_inference_prompt_cost": 0.002466,
+        "upstream_inference_completions_cost": 0.001776
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 184,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly states that Field.__deepcopy__ must not share the error_messages dict across copies, which is exactly what a competent engineer would implement. The FAIL_TO_PASS test only asserts a distinct error_messages mapping after deepcopy, matching that requirement without extra unstated behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly states that Field.__deepcopy__ must not share the error_messages dict across copies, which is exactly what a competent engineer would implement. The FAIL_TO_PASS test only asserts a distinct error_messages mapping after deepcopy, matching that requirement without extra unstated behavior.",
+  "prompt_tokens": 1329,
+  "completion_tokens": 296,
+  "total_tokens": 1625,
+  "cost_usd": 0.004434,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

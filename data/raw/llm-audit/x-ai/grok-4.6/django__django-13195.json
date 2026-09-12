@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13195",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2586
+  },
+  "response": {
+    "id": "gen-1789191161-Rm0Nv1A95OQyx693LbqT",
+    "object": "chat.completion",
+    "created": 1789191161,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that delete_cookie emit SameSite (and not drop Secure for SameSite=None), which a competent engineer would implement via a samesite argument passed through to set_cookie. The FAIL_TO_PASS suite also requires callers (sessions/messages) to pass SESSION_COOKIE_SAMESITE and that samesite='none' forces Secure, which is implied but not fully spelled out as an API contract.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about HttpResponse.delete_cookie() preserving samesite. The tests also require:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about HttpResponse.delete_cookie() preserving samesite. The tests also require:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c6c50d11-af46-9117-9870-7d11f5b2824b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3026,
+      "completion_tokens": 507,
+      "total_tokens": 3533,
+      "cost": 0.008902,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008902,
+        "upstream_inference_prompt_cost": 0.00586,
+        "upstream_inference_completions_cost": 0.003042
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 363,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that delete_cookie emit SameSite (and not drop Secure for SameSite=None), which a competent engineer would implement via a samesite argument passed through to set_cookie. The FAIL_TO_PASS suite also requires callers (sessions/messages) to pass SESSION_COOKIE_SAMESITE and that samesite='none' forces Secure, which is implied but not fully spelled out as an API contract.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that delete_cookie emit SameSite (and not drop Secure for SameSite=None), which a competent engineer would implement via a samesite argument passed through to set_cookie. The FAIL_TO_PASS suite also requires callers (sessions/messages) to pass SESSION_COOKIE_SAMESITE and that samesite='none' forces Secure, which is implied but not fully spelled out as an API contract.",
+  "prompt_tokens": 3026,
+  "completion_tokens": 507,
+  "total_tokens": 3533,
+  "cost_usd": 0.009094,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

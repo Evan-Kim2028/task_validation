@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-8119",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3155
+  },
+  "response": {
+    "id": "gen-1789191868-vlEXxZ5D6ONmbhJ4ZxbZ",
+    "object": "chat.completion",
+    "created": 1789191868,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only sketches allowing expressions in filter() (with an F-expression comparison example) and does not define positional boolean expressions, Case/Exists/Subquery behavior, combining operators, or When() API/error text. FAIL_TO_PASS tests require those unstated behaviors, including a specific TypeError message.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing expressions in .filter() calls. The tests cover various cases like Exists, Subquery, Case with boolean output, combining boolean expressions, Q wrapped in ExpressionWrapper...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing expressions in .filter() calls. The tests cover various cases like Exists, Subquery, Case with boolean output, combining boolean expressions, Q wrapped in ExpressionWrapper...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "KxCKm0fZGJCV16kQJyN/Xo6mgQVrmh7P+EXVLVjK8Pt2iwPzN6WUU1sfb1UQ13lWd/wdwBm7LVdjdGdZOUMtCSYNHWxWLYQJsCygtdErtVqlaWv1rpSdqFOST2bAPymgdrQxgkExQYbmZHGox1eKs7SIecGSnjGIIHCkiAecz/cOymRKSTgGZU3KrxvtvPM9/59YUcv8zjqY18j6JCwFsA+EB/nMpgUmfE6pK0yRq2BfPV8p0Avl+ZXXx8x8MXCbsrcODZ24AsRGvgJCE8N937NflYkktS3GOLvVmM7gstvhvS9RtCsukBJIf2SvUjYwuRx4kUacEyP9Gi6LGy358qQekYEbb87he+TYdIypQsxqU0dwJLtXlhbmQC5DNML1q9hriZ0dlFyxdAZTX+9b3of4T850rsbCMtR8UA1wO8H/zgu9544yJ2hHAI7JpzcQJnemYiipgixiknFAn6UBGLKBxubuRa0gpLKc9dUIDSGkEqdIyxUUu/FIFBedKS30GMXiV6KWja+Pj1Y57jNDSCSQv2i6lbIdzUlGNUKW6ci0Ulq4i1eYWlgyrh/Hj/qSvYHbP3reQH0U2aatF5N5W9buplM156ToTC73xVvdBgcLvA9Zni79XghcO/+c/DgHc6FDe1J3W83ghCQjdS66mimvJrzk7Sjnsw5ixTNcbVJJPQFyBPNQ8D2JE++H6UH+7IC+E0hbDx0RqX+lc3VLO9LI5nAgrYI1kx+/ZiTacesO/HRRKMueidsmQp4ggyScZkRn79iOukRwWDB9UPSzfaBmgTf34cZLdC6f+uqVK2BksFLRuAB0N+BpMCA6nKD0B/DDDCh82pSSbViyGg6Htao3k+z0zXhJg/BQL2njNuPqhED9nEc+HRM7RHJQdLDBFN3nCuvCPo5c4xg5qA4wMgCiG4Wuj7anzzpSt6o0wzL5evoVWXezR5l4fNoa1JAjgCypmpuNl5vVyrIfR/NAUmSOqu9QC+L27gminkQEoDu3JPjSJDp5fe3JVpqW2VjLDOVtqgKYdCiZbt/lLVskjpv2ifLRakIh26YOuP5lKbIXJSBB/INuHL0waExbq7XyUbFMR65KIeMOWwUVRSlvgDt8L40u5GPERSTN+KiJ5w1ZAjAHM+PFSg3biHIhgRSpiFQbG0/0eSeOa6VNSA9r4OcOgacfvzxUqMfm5e5MBIT/38xvseAq3OJguCORz3Yui3sHvftg5KtdS2znzwNNmrRBfuhkSjNax+DhUzB+fX76aSks0JHmk5jxqDqrZDmfsYapMgpHvVxyI6FGcbm3BvhG67xwKqIt3x2JXpASJ6XMtVeKq/B5wD4AXo8NhC8ITzhWCwFTjWPZCPkdfAnpGjB7xekIyoa8+JCMSBeQ1vQtVU+qOO34rHpSjeQYlp9RE9KclTTZCQRxnJSzVkGJU21opSru8tne1jrDUvcxCB6AfxsneNsRuTUAEsZ+E7Z+W/qfgyxEbzQWcA2i583MHRktkRSWioXpZquXK2gy8ggiGAWS/QzoPBgcY9rg46eWIENrH7zXr3q2v9qaeUZ7zDg1JWBB04gBTzR4in5dQIl6jGM5lE0uEYg3v+GyXMwuVie4tgwkea6N3dE8uanaYUxGmDv+nOClt8aH2mBKWSdW/2/NgZrms0UmvyP9QOS8DUQv/OT/h1QHNXwtS+XwDZIruAjevi6vmjMShYEoaldADn6UUe+8KC6bF7vewsyBrpQFd6q0g4PFmD3aM9JeYi86J97TtrPjHSKU3EwJ8EJDgLGfJCgEwwRxUyMolkkzXaOcCnU2B7s/2C0jhHodTQw+HFi01Md12kvWNQIv3D8J33G0KwjkYT6X4fy1AjY1UVbD7llEqzxkOEunvJHiRj4wMfunLGIX2HNSCieQQbK3sJC+lqWy5HnEhIDpmmLogfAw6Er9IL0XAq0mBTkaBw9s3fGIKkoqpucdyJV0fyXJy2qGaTW0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9489360c-c706-9976-bb1f-a8542565b73a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3636,
+      "completion_tokens": 425,
+      "total_tokens": 4061,
+      "cost": 0.00963,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00963,
+        "upstream_inference_prompt_cost": 0.00708,
+        "upstream_inference_completions_cost": 0.00255
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 306,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only sketches allowing expressions in filter() (with an F-expression comparison example) and does not define positional boolean expressions, Case/Exists/Subquery behavior, combining operators, or When() API/error text. FAIL_TO_PASS tests require those unstated behaviors, including a specific TypeError message.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only sketches allowing expressions in filter() (with an F-expression comparison example) and does not define positional boolean expressions, Case/Exists/Subquery behavior, combining operators, or When() API/error text. FAIL_TO_PASS tests require those unstated behaviors, including a specific TypeError message.",
+  "prompt_tokens": 3636,
+  "completion_tokens": 425,
+  "total_tokens": 4061,
+  "cost_usd": 0.009822000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

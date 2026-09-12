@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16631",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1723
+  },
+  "response": {
+    "id": "gen-1789191802-3nFKBZR95YDG4N0Oxbq8",
+    "object": "chat.completion",
+    "created": 1789191802,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that session auth hashes honor SECRET_KEY_FALLBACKS so rotated keys do not log users out, which a competent engineer could implement. The FAIL_TO_PASS test also requires cycling the session key and rewriting HASH_SESSION_KEY to the current secret so later fallback removal still succeeds, which is not stated in the issue.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about SECRET_KEY_FALLBACKS not being used for sessions. The docs say rotating secret keys should keep sessions valid via fallbacks, but get_session_auth_hash doesn't use fallbacks.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SECRET_KEY_FALLBACKS not being used for sessions. The docs say rotating secret keys should keep sessions valid via fallbacks, but get_session_auth_hash doesn't use fallbacks.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f6db18e9-f4f5-93be-b331-cef8ab02b230",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2004,
+      "completion_tokens": 606,
+      "total_tokens": 2610,
+      "cost": 0.007452,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007452,
+        "upstream_inference_prompt_cost": 0.003816,
+        "upstream_inference_completions_cost": 0.003636
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 480,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that session auth hashes honor SECRET_KEY_FALLBACKS so rotated keys do not log users out, which a competent engineer could implement. The FAIL_TO_PASS test also requires cycling the session key and rewriting HASH_SESSION_KEY to the current secret so later fallback removal still succeeds, which is not stated in the issue.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that session auth hashes honor SECRET_KEY_FALLBACKS so rotated keys do not log users out, which a competent engineer could implement. The FAIL_TO_PASS test also requires cycling the session key and rewriting HASH_SESSION_KEY to the current secret so later fallback removal still succeeds, which is not stated in the issue.",
+  "prompt_tokens": 2004,
+  "completion_tokens": 606,
+  "total_tokens": 2610,
+  "cost_usd": 0.007644,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

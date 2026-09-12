@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-7283",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "821c8f30-64aa-9026-8b90-d0ff46dbea06",
+    "object": "chat.completion",
+    "created": 1789193844,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that unittest skipped tests not run tearDown under --pdb, which a competent engineer can implement. The FAIL_TO_PASS case also parametrizes pytest.mark.skip and asserts setUp is unused, which is slightly beyond the written report but still aligned with the same skip/--pdb path.\", \"p_invalid\": 0.2}",
+          "reasoning_content": "The issue is about unittest.TestCase.tearDown being executed on skipped tests when running --pdb. The user expects skipped tests not to run teardown even with --pdb.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The test parametrizes both unittest.skip and pytest.mark.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2656,
+      "completion_tokens": 118,
+      "total_tokens": 3357,
+      "prompt_tokens_details": {
+        "text_tokens": 2656,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 583,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 29750000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that unittest skipped tests not run tearDown under --pdb, which a competent engineer can implement. The FAIL_TO_PASS case also parametrizes pytest.mark.skip and asserts setUp is unused, which is slightly beyond the written report but still aligned with the same skip/--pdb path.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that unittest skipped tests not run tearDown under --pdb, which a competent engineer can implement. The FAIL_TO_PASS case also parametrizes pytest.mark.skip and asserts setUp is unused, which is slightly beyond the written report but still aligned with the same skip/--pdb path.",
+  "prompt_tokens": 2656,
+  "completion_tokens": 701,
+  "total_tokens": 3357,
+  "cost_usd": 0.009518,
+  "cost_in_usd_ticks": 29750000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1832
+}

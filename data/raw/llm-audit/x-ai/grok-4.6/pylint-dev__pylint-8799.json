@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-8799",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1110
+  },
+  "response": {
+    "id": "gen-1789192307-nq1mwOM16a2bdpUPvJDA",
+    "object": "chat.completion",
+    "created": 1789192307,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to short-circuit when all checks are disabled for speed, without specifying CLI output, exit code, or treating that case like missing files. The FAIL_TO_PASS test requires the unstated message and exit 32, so many valid performance-only fixes would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about pylint being slow when all checks are disabled. The expected behavior is that it shouldn't take 3 seconds on an empty file with --disable=all.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pylint being slow when all checks are disabled. The expected behavior is that it shouldn't take 3 seconds on an empty file with --disable=all.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nVsq/uCnazqqLzFkqXzOySQk270GB5LKyxYN4N/RXJxB2d6bRjdlDnZT0CesTxaT3ptmFLZ3j3ZO9o6FnPmy5epowuXv26NkfLrsKkv5o3hDXPF42xQWXxo9Nxyu7kzyFJ0oP4dKc/zE36Tc3x+rj5Bg0AWR3HeDWuaExQ1P0u9vaWlQRLH0PKtXiDZOp6mpeNfPh0pKVvuF1sFeAdG5bfrAOzZV8m76z1L68CUSpKl2wDpGQU/6BpTcfCiGnuOYP6xEU3Sox27ZGFgTrxsnKhCwI7YlpbFHWPIVNKOC9UHWfBLiRd7Ezv3Il6Dya89sTM220zMn2Hq2vM7JD8TQJlAuWXnbBbMj6e7Ra/cg2tZbCJU5OnPZCY5dqqSuobPqEgY1tZbrLbepLdwuE7xtc8OA0b0Sws/Anav59KFQ1x1d4keL1HWNEelaPcZZE1aoBai5JnHDXSvSbIFtwGFoCBh/Jl4I5XWTQckTeYheGuv0LnO3lReFIn7ONUukIU8cIWce/3G1SFWN/QGnQ+7RHLa6yb4IzdugfpWozjUflOXIPRcTD7bIj73SjizCzIhAHLTOiHyBtNXktba+6FMhVIKFaYBpxHhPcAmjyypthWDAQnZFZPvbJVbhw/HpZNUy6T6I1tg5ExWVakoNKCL0GwNwYFwaPSRjIuG5lovioHN9Fqyhnn1OPnJnyqTHqJiEhZqQzgomvlKn8BLspewPRnyBnipmAEcKYn0/yYnlFpLjeJ3nrGiteypi0F6qgoazzR/9E7VifFi6KUNcRXSQkf6ER71M1Ndv+WmrWhEdDiIq74+vRto//3/wBX3gfuRtgHlviFJUSITdBA9zfKxVihISghZm2nQI4tAtVGUdE0bf1hjxqNtWJtCbvS3ahyPqJBxfysuJxYp1UmgMJloN7no7/F3ULYw15lq4VoArInT0LCWCDWOHaWYnsnl7wh+/86whkwoqoE+EVx7DM2rYoARfbGb5QnT2oOTm+tN0FmtzhSWFNboLy/r2gXwA20TlNku5NaIWTm2WZRx54AMQurqiG6UqUGzIwzd3cI/y+9JrWNmyFujPGidrwBF9uHDtWL0fUGQ9rQAJWOn44q3xlQD0hyQtGbIk5gEJxevhL4vR52PJRZMDJnnVUHBT+f/sjNw8+AOhfFscFi8jw/GxsUTO/ZwWhpLPbU8SxCxvGH+/03zAa5BRUGVS/GI2tApe//5walRARCN8YU0+hhPnmlDOlBuBsgnteREIwbUQ+r7T4a/hkfRrQfEZDC6zmqe8h8r8wZ6NnT89jbvywnOJLk0DsKF/6huujcArny7xP5v8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ca86924a-f65e-9995-9310-b0c0caa0911f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1506,
+      "completion_tokens": 319,
+      "total_tokens": 1825,
+      "cost": 0.004542,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004542,
+        "upstream_inference_prompt_cost": 0.002628,
+        "upstream_inference_completions_cost": 0.001914
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 205,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to short-circuit when all checks are disabled for speed, without specifying CLI output, exit code, or treating that case like missing files. The FAIL_TO_PASS test requires the unstated message and exit 32, so many valid performance-only fixes would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to short-circuit when all checks are disabled for speed, without specifying CLI output, exit code, or treating that case like missing files. The FAIL_TO_PASS test requires the unstated message and exit 32, so many valid performance-only fixes would fail.",
+  "prompt_tokens": 1506,
+  "completion_tokens": 319,
+  "total_tokens": 1825,
+  "cost_usd": 0.004926,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,59 @@
+2026-09-12 00:36:46,415 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:37:30,523 - INFO - Creating container for scikit-learn__scikit-learn-10844...
+2026-09-12 00:37:30,912 - INFO - Container for scikit-learn__scikit-learn-10844 created: 1b9cac06dfece0d285eb48148747b6bea39680ffb52aa2987a52a30aaed66fbe
+2026-09-12 00:37:31,215 - INFO - Container for scikit-learn__scikit-learn-10844 started: 1b9cac06dfece0d285eb48148747b6bea39680ffb52aa2987a52a30aaed66fbe
+2026-09-12 00:37:31,215 - INFO - Intermediate patch for scikit-learn__scikit-learn-10844 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-10844/patch.diff, now applying to container...
+2026-09-12 00:37:31,321 - INFO - >>>>> Applied Patch:
+Checking patch sklearn/metrics/cluster/supervised.py...
+Applied patch sklearn/metrics/cluster/supervised.py cleanly.
+
+2026-09-12 00:37:31,551 - INFO - Git diff before:
+diff --git a/sklearn/metrics/cluster/supervised.py b/sklearn/metrics/cluster/supervised.py
+index a987778ae..a33d0cb25 100644
+--- a/sklearn/metrics/cluster/supervised.py
++++ b/sklearn/metrics/cluster/supervised.py
+@@ -852,11 +852,12 @@ def fowlkes_mallows_score(labels_true, labels_pred, sparse=False):
+     labels_true, labels_pred = check_clusterings(labels_true, labels_pred)
+     n_samples, = labels_true.shape
+ 
+-    c = contingency_matrix(labels_true, labels_pred, sparse=True)
++    c = contingency_matrix(labels_true, labels_pred,
++                           sparse=True).astype(np.int64)
+     tk = np.dot(c.data, c.data) - n_samples
+     pk = np.sum(np.asarray(c.sum(axis=0)).ravel() ** 2) - n_samples
+     qk = np.sum(np.asarray(c.sum(axis=1)).ravel() ** 2) - n_samples
+-    return tk / np.sqrt(pk * qk) if tk != 0. else 0.
++    return np.sqrt(tk / pk) * np.sqrt(tk / qk) if tk != 0. else 0.
+ 
+ 
+ def entropy(labels):
+2026-09-12 00:37:31,552 - INFO - Eval script for scikit-learn__scikit-learn-10844 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-10844/eval.sh; copying to container...
+2026-09-12 00:37:42,132 - INFO - Test runtime: 10.53 seconds
+2026-09-12 00:37:42,132 - INFO - Test output for scikit-learn__scikit-learn-10844 written to logs/run_evaluation/tv100-gold/tv-gold/scikit-learn__scikit-learn-10844/test_output.txt
+2026-09-12 00:37:42,292 - INFO - Git diff after:
+diff --git a/sklearn/metrics/cluster/supervised.py b/sklearn/metrics/cluster/supervised.py
+index a987778ae..a33d0cb25 100644
+--- a/sklearn/metrics/cluster/supervised.py
++++ b/sklearn/metrics/cluster/supervised.py
+@@ -852,11 +852,12 @@ def fowlkes_mallows_score(labels_true, labels_pred, sparse=False):
+     labels_true, labels_pred = check_clusterings(labels_true, labels_pred)
+     n_samples, = labels_true.shape
+ 
+-    c = contingency_matrix(labels_true, labels_pred, sparse=True)
++    c = contingency_matrix(labels_true, labels_pred,
++                           sparse=True).astype(np.int64)
+     tk = np.dot(c.data, c.data) - n_samples
+     pk = np.sum(np.asarray(c.sum(axis=0)).ravel() ** 2) - n_samples
+     qk = np.sum(np.asarray(c.sum(axis=1)).ravel() ** 2) - n_samples
+-    return tk / np.sqrt(pk * qk) if tk != 0. else 0.
++    return np.sqrt(tk / pk) * np.sqrt(tk / qk) if tk != 0. else 0.
+ 
+ 
+ def entropy(labels):
+2026-09-12 00:37:42,292 - INFO - Grading answer for scikit-learn__scikit-learn-10844...
+2026-09-12 00:37:42,292 - INFO - report: {'scikit-learn__scikit-learn-10844': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score'], 'failure': []}, 'PASS_TO_PASS': {'success': ['sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input', 'sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches', 'sklearn/metrics/cluster/tests/test_supervised.py::test_homogeneous_but_not_complete_labeling', 'sklearn/metrics/cluster/tests/test_supervised.py::test_complete_but_not_homogeneous_labeling', 'sklearn/metrics/cluster/tests/test_supervised.py::test_not_complete_and_not_homogeneous_labeling', 'sklearn/metrics/cluster/tests/test_supervised.py::test_non_consicutive_labels', 'sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance', 'sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_mutual_info_score', 'sklearn/metrics/cluster/tests/test_supervised.py::test_expected_mutual_info_overflow', 'sklearn/metrics/cluster/tests/test_supervised.py::test_entropy', 'sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix', 'sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse', 'sklearn/metrics/cluster/tests/test_supervised.py::test_exactly_zero_info_score', 'sklearn/metrics/cluster/tests/test_supervised.py::test_v_measure_and_mutual_information', 'sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score', 'sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for scikit-learn__scikit-learn-10844: resolved: True
+2026-09-12 00:37:42,292 - INFO - Attempting to stop container sweb.eval.scikit-learn__scikit-learn-10844.tv100-gold...
+2026-09-12 00:37:58,626 - INFO - Container sweb.eval.scikit-learn__scikit-learn-10844.tv100-gold stopped successfully.
+2026-09-12 00:37:58,626 - INFO - Attempting to remove container sweb.eval.scikit-learn__scikit-learn-10844.tv100-gold...
+2026-09-12 00:37:58,693 - INFO - Container sweb.eval.scikit-learn__scikit-learn-10844.tv100-gold removed successfully.

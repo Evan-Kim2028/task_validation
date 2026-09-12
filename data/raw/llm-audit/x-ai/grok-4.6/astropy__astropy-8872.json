@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-8872",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1308
+  },
+  "response": {
+    "id": "gen-1789190742-guycUBuRTKaeJDDhdlIa",
+    "object": "chat.completion",
+    "created": 1789190742,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly states that float16 values should keep dtype float16 when becoming Quantity, matching other float types. The FAIL_TO_PASS test checks exactly that preservation for float16 (and existing float32) construction.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about float16 quantities being upgraded to float64 automatically, while other float types preserve their dtype.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about float16 quantities being upgraded to float64 automatically, while other float types preserve their dtype.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "h/CbCsxS94EVvtA3QEbAsX9oGJzwlCjotMhBO3z0pjtURuzgJLvgUWZ1T8kZTOCos46jBfq0WzDUz61KyXIgTDM8znVywPerp7REFMBL/grzS2n97PUCoi2IJdwz6Q+3ZLwS7ore/BI9+Fs/xEYbed4T8C5iDMc/jX/Zhyg7hdnNCi1V540rksdQ9EBsED5G5gWpPqovZ6EjBmXlyEOrb0cUFODKbl6gQOTvyToe7MDUqQQjSOBmV5na4awMLWcl+Fimu/AzKstLdd3s9fYoeET2Fo3T/dbjRNGolq+G/Sh2XbomjeNB52im4pb5mHZgg7qjJbSMOzCdUM5n9UUzyY1bOsrq300nMMr6AmRspCYl/B2VAtLXcatlMyGTRyCiW0pYvqSoad+tCxrNOZcaDNORYksG8Sk0Y5cpINuLNTDMe4DFSiiP7+BybVMXIm4DVm8DeW6QQQPxEJIQJTqJClf6KrPYR0er1GjZ/W1oCCN0QPGdTPdmF3i1wd47Rl3QYyY0xCY5sUWpNIx/XsYn4DqJLVhCGbOSaivHXnAEBwjsKGopAxV6IukDdqBuhXb2GTIFZrPmDzufRtIENYeLZYtHg8okhUwYIXVKhGwbJf0Yh0UmZ6jZm1g9xY4vLe4Sevg2sh5qJxTszDYsBdh7/+qGlSgv+VYpNo563Jw+Ilf+3krm32cM0bQ+QT41kr41zH/C9/2ZAexvVi9+eI3Mn+F6h2e7aDERxJumz2W6FTfnY43PINNQAIXDAwSUQJ18Cjw2oE4Vx5yZnxRVAfHAd6mf1kjuHdFs0/qsTfbpkn9cNlY5HAqwYjmnu76+GU7MDhbUWLH3AP2T19CZtfHo8srQ1Za2yX0br9Hl+Ve9sCabQOK/g9Wsswv4Vbw+dWmbImoVz8gNfMVl6RWk6BE6n55Yb2H/j7OCa25Wf9AejlqyBGdyuj84OXFAHEsbh2R5qhqz7Z+1Ws658RJKaVVrKSVLiXrC0EB3rzpMyuRKataDsFgIHVMHJbDShIDnPTZr/IkGw4oGvrlUD36hCjcb7yi2z+5fOnGbxuL5v4WGhZe8g7NwksXt+pvUiM7P9dYdjHtnHCETSN/Nq/EgxluMcFkLgjdDhMyujvL1YhyVd1se9b19z7BNbQJ3a4IAqlGlXuycQMijRoGIg40zwaxF/dgGaKo2Tym2PWw5qKiM0l5VKJbWd76SkKEgdrgUBMqKrQvb++nbU0J2kDQfzWfRHm72LAo32SIgcPwnHGr/XZTCCEivx5zageg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_eec9c9eb-11d4-9f7f-971c-4c751c6af2f3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1744,
+      "completion_tokens": 302,
+      "total_tokens": 2046,
+      "cost": 0.005108,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005108,
+        "upstream_inference_prompt_cost": 0.003296,
+        "upstream_inference_completions_cost": 0.001812
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 203,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly states that float16 values should keep dtype float16 when becoming Quantity, matching other float types. The FAIL_TO_PASS test checks exactly that preservation for float16 (and existing float32) construction.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly states that float16 values should keep dtype float16 when becoming Quantity, matching other float types. The FAIL_TO_PASS test checks exactly that preservation for float16 (and existing float32) construction.",
+  "prompt_tokens": 1744,
+  "completion_tokens": 302,
+  "total_tokens": 2046,
+  "cost_usd": 0.0053,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

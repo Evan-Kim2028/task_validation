@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-7080",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 7039
+  },
+  "response": {
+    "id": "gen-1789187804-nVzAIVc0jLV2jpvAkFBh",
+    "object": "chat.completion",
+    "created": 1789187804,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly requires ignore-paths to apply under --recursive, and the Windows output versus a slash-based regex reasonably points at path-shape mismatches. The FAIL_TO_PASS case is a bit narrower (cwd '.', a specific ^ignored_subdirectory/ regex, exit 0) but still checks that recursive discovery honors ignore-paths.\", \"p_invalid\": 0.35}",
+          "refusal": null,
+          "reasoning": "The issue is that `--recursive=y` ignores `ignore-paths`. Expected: src\\gen\\* should not be checked.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test requires specific regex and current-dir normalization; issue doesn't mention Windows paths or backslashes explicitly\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that `--recursive=y` ignores `ignore-paths`. Expected: src\\gen\\* should not be checked.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test requires specific regex and current-dir normalization; issue doesn't mention Windows paths or backslashes explicitly\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "XF8DDCL0cIHjhAhobdghqMcyxRX7xt5g7OVuCdOFl8RRakGnh97jnePls83gqUHznuuL0Go1/7V4cjQ9CEKumRv405++bHRAO9pw3JEHEyS8GyvZoqm4Ej/l+auRRxniGqSEKbIdzw6rI1Misc2GwEFjmErF73tmuruz1Ryfslxpmr5GCWNbmD1N4TusV69yVKxhshloNXs4hz9o0sJb6v0dSDQIItP32nO5PKtmQGh0qid77mGvuS8OW/UfQ7GtsVuoaKvmMssdm1j79gKPqIbb/Sfd1gRo25wYQA+afNMWc6zll/b5+On3jPDUFp98RoBbTlnYJ90GZJgRKBgerHw10RvAXlHHdvdVEK4a4qOsXw9rbRzgswfPqz4EA7fS5R6aUY3mL3AiKETCfyS4ViZYM8JNcOCwlQ4+IqS1Ma2Aox4vHERDp4oW0UufJc5yDeaOYDc9omSRoMebg2f3EvksIqIE7LpO15sz317fcgtxO7marObqoNjfCYOFNg8FXMseWmN4mUgXMGOuk6N9GEpJF965MxqwMgMkHfGLLhIeaHSgsDGvyvCqLByau1MbveTGdAeozImqk7WrwTDDq03f62uB+Cx73u5HR2wKCpg4VsLPjDBmpTCctCeGLED1OtwIXc+HUgzIalsKsuLaN5Q5PGcQ+j/U3M5gruyka8Yldu2ItZ2PuM2GHgWE4eQuHXUtW6JD0zbil9hIQYw9iSqL9V2vDYkKWqfq5Eej/14oLtC6OIFWuJ2iakcARJxPE5Y9n7GUgk2bTvxxpuX/kpKT0pjjQj++FiR4YH0mls03c8GIBIgGpcZG0/JSRB/WZTBNpZqc09+oIv84rWTujwjTomSY1RhWj8JhSE2YhhQ+kZ8jGOXy/gTDSkEtpJAb0aqEI5vAEOqSTIRY/eu4A6Q48P3wgHQvo5Fphca+19iFpFEhkcEOfYAJGojaZgkp1qBRSHUO6xHnxHGe1zyPrUMn5vVJ1WzmSI7zRKXseLCcIkhx1auWt/EOU/TarOpS/ceb4eDmuG3phD/hkIjT+CS3DaTwCz5uPr1R6vqpxmk0t4zuKZFN2fRHXMMid+gLfuGztRaqnQLIRaXtl++MHxQyaksD6ARdwR7CsZ7zswbzugOWVXjmg5slNNMtltgo/p+h5UlNyhGbL3ystM1/IvYfMU3WjKQp0d6YIfcgDsVsW0yQDExeXDqh7LRrSD88epG6RocKx7C6ENDjaBeo6HZ1ByBi8vPZSv8WeDDdvWzfs8jP4HhTkvybSpmW6rift/UnMNGgEi6NPKdvGPV2MEWIMUE/3DM7rUsORfTdpEk8fokquhBpCFSj/I+pt3vWmAJfN1tYIPhgFDMYMKsYjNCT99zOQL1Gk1VWyeihUN89ExmocyzXsLrf/C86tyw5ImQKDG+2NZTEGZIM9izm0RCcleYjKy/dIQRpt8Vrwvqks0z3N8q+6PUgTYrwNQPUSWXtPDNM9/DfaGsdsZMGTjWpORgqv1+xV32rp9SHv/eQI/jlB5wrGNUik1Y8Hk5gPFo338c7gUWyMUo4f4Mmi68IQ5d1COsN2t/NJWWkF6X5mp9gV6PXc953XM8KotTpw7mKZQH2o3bDy7zHC44UpJd31tOVnjDn/F2MGbLfdf0TFHbaOJw1l/pkRFwVhv4Ybp6aEPm/e6KGB96y53D85rnl+GaZz2vKHpQ+TOhYe4/LzWPCv/PI+9vMmX4G8etO8+CmLisYaS6s0x8xW2+Skc3YYC+A1aiXBgILPp9dG1ggqt0bstGWamfeeCBklwXV+bUphL2pBls6sjt23aXfy/grAZgJLlk/9meFW/1OXTUJnCLut2OZTn9V6Cjet5fztJqPJJ0kedpC4AprTUqQcvrt0Ini4Ep8R2qbG0yqZ8GjfVaRxtIMVa+vPkDH/XXCeAy59r1aV/24qDIDt8mBP3dr2n2P+Y0pBkWZWxAJlxarfRKn1F5f8/lr5cbPeVsdOvJFxZr2MjzNdqJ8O8KkV4WhVuaLkrTlr5rE5gm8W+otwuDBw4QnHtPbxtqfsVfLKWsYoTEkC12iIIOhWjJURbK9GRjcin0INXFsOqB/TemukmBe4/FUip69LVAQwT2uqIKV0vHkBzXP1GmOmJpFlOW3UexKozJ0rPJP9vmUBnTC5SpNhyGJdwLQll35BNKJzHADxb9dk/6CMrhPV5iFb4GW1oLB+aynOkyXcbkVgFFDOn3cjDz7f9UasmXGu+v/IJotSVZOjCPSKXvKAP4SW13xb+QvpXq68lGg2fMBEENXfOgPDnTQyRBeU7I1QpU4Sj+X2nNvcN5VIvlA9MCOmT9AJByeRzE/VWIH7pZwAPys+2OnPGANuE8FcmdSIGWLBMC7tZST2+3IMIxhLH0cBzLslmRcfDuCXCSCeZPG2fegToSajnRxnmEh8vy7tQvbb16GmZzu5vN/Mok897iVkPv0iWImthrUZ2ECjwp4mTEJhQIqwRkhE+d/nJOvtIYyJWYuSAYWLVbzP+yj9D6kV34NS7NqhIrvWV1zeYPlE4+/SOxynOVU12RCsLCoymeV8cO7SQqzyO2jox5D3ItAmf2AsFkQL+wWhf/dOyuCXMfUw09U9e6xBnfG8sC6+oP9hOdSOfBJrB9zjDrFNyA8aZJiSn0ZXNaZqXw9nkrlQgcYHVdpFZJCDA2e9+qtsbRMGAFjdK4ms9xmKUzL/UbzMUD5qwMN03joV2qf3rQPF08HNBxTdtlrvGfa9zPCCuJIXxRlwYbN+g5/ieX+iXy3qsw7VbqIxO3M.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cebc75a0-05eb-96c7-b87f-c9b6cb2a9c7a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 8751,
+      "completion_tokens": 592,
+      "total_tokens": 9343,
+      "cost": 0.020862,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.020862,
+        "upstream_inference_prompt_cost": 0.01731,
+        "upstream_inference_completions_cost": 0.003552
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 468,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly requires ignore-paths to apply under --recursive, and the Windows output versus a slash-based regex reasonably points at path-shape mismatches. The FAIL_TO_PASS case is a bit narrower (cwd '.', a specific ^ignored_subdirectory/ regex, exit 0) but still checks that recursive discovery honors ignore-paths.",
+    "p_invalid": 0.35
+  },
+  "s": 1.0,
+  "p_invalid": 0.35,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly requires ignore-paths to apply under --recursive, and the Windows output versus a slash-based regex reasonably points at path-shape mismatches. The FAIL_TO_PASS case is a bit narrower (cwd '.', a specific ^ignored_subdirectory/ regex, exit 0) but still checks that recursive discovery honors ignore-paths.",
+  "prompt_tokens": 8751,
+  "completion_tokens": 592,
+  "total_tokens": 9343,
+  "cost_usd": 0.021054,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

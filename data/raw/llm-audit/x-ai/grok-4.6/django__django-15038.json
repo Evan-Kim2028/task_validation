@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15038",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1129
+  },
+  "response": {
+    "id": "gen-1789187558-riWD6UPGCLWYYmSNkWLO",
+    "object": "chat.completion",
+    "created": 1789187558,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires failing instead of overwriting an existing squashed migration file, which a competent engineer would implement as a CommandError. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specifies, so many valid error messages would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about squashmigrations --squashed-name overwriting existing migration files. It should exit with an error instead.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about squashmigrations --squashed-name overwriting existing migration files. It should exit with an error instead.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "H9kwEFIDJWXTTxP+h7ZSNxOZ+WHP0KLw5MCU7jASiOzMSRFcFnvVxXDGr/WEOKkjk67a4gEwmWpyZULpAIgFjY15ujlVXPWPBTIBruOC2RKtXCtWrI8tkyzUxrGuv/QY6cKnAlqvX6+gNtYzBCgjjCBTkJyYlG54FM5e4hppaThi9EP5MLiKu6VRiZqntFvqyQv05x+XtOZ6WDPwsDpow+gO7h2CZGlzFPRH7zTScBFGn0gXqE+03vA24oMyIZpRBt9GnCZMnVXcxXRfUVHpWYqu7MpUgX3lAIW2Zn2sXA206Jmuh5TrX260HFy6x9phgtCsgm41IznV2CnL9WqbsKMFzRAI6Rgc+OT7mz8sh9SlNMaivggPv/+2zDoLi22ujc47/En6Gt++YFA1L9JhIWxVDvUf+Ni9JnCJCG1zMobsY70rFB7Mgjk8UFwBS2WqytF86EVvZ3Qq5BCQKwcSU+ua+kcqlLt5q01cpiXvho6YPbbbaASHAU2uLruodc8mHMBPZO1+3zwbV++OseI9Iz0/sMImbtN3qIyIXfy+xZMFLjJP+pyp63H2pAvbyK1Q1Qtj+8AHxGXfDDEpgWnOwlYu4Sy4R34V4gNVfSdUxwubfb0esE4rVXTCBcT5cyA8+j4jFgukdbqoc8xohAX1e+QyzMFKIC00dqNqAR7JaKdtcSxdPKCFBPZ8BTSNpK1R7tbXbJK83A+euezSn/7SJF2kSwA9is0/sF+tpFWUM0qfjjzOHgZjSxdq6L0xG7cmmbKT0Wk+1w++XtLbSomeZpNdTqml8jLVt7WlgI1QhN9b9T0oBIox3Ln30GrjB00mPHb2MeV6JCToDxhsPNUu5UmZFWvp+S5lcTRKSO5IiJVeV8t03eViH/eTNFUI1kgHcw0988DfMgTyaR1KJ5GtgmIepKlgmIyKr62LyWPC49oIUvgKq+YnmZPjgI+auRpsfdVsYEBMXQDqI9ogk5BlUF6y8Ic62GeLwkbG8Y07f5f2PWmCAn1pUwV9iCIOqrvawQmdBVh3RQaXmukVawnZAC/LCJvBRKPHNXnySU/hGJCBSEiVxZaj76vXYfRS/McX+YDPcr9iqJkeklBkArpIXzYDZ23x9ACixyVjq/3LFqTFCknG78fxfIcB9pQ57YZhpcTJrCF0Z1ZGQ/e9D7S4iY3ykV0I1Ieb1lI2UswJJKlS+srSxhSob1Fc3duL0svyxDD0x4RMIn8UgwQ0llfM2jdu9Wa9UbEfvNzTU7rUDMOIulJMo54y/G9RIUgF8Jz4GArccd07HPJ05XbIaJWHVoDkXNOkT/7pxJ7zLG7EtK5xKrPNmrALdf/24ZswAcx+w0gswG+69i60im5km8xPvJD4mVHPQQowSevVLwv2EQFMsBpVYoH0Y7RP2cXyrZWqbXgdqzGlUNPzUIDoDl+E62wZ6UpdKLJUAmJIBnVJZLNUftbYKDnfCmgrF9fYXdobm6I6bNDyyL8MbUUwfhBpa/Gaz6ZZBm54qOpRxg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f2cdb602-269c-9ffb-aee7-955cdaa52335",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1370,
+      "completion_tokens": 379,
+      "total_tokens": 1749,
+      "cost": 0.004822,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004822,
+        "upstream_inference_prompt_cost": 0.002548,
+        "upstream_inference_completions_cost": 0.002274
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 269,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires failing instead of overwriting an existing squashed migration file, which a competent engineer would implement as a CommandError. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specifies, so many valid error messages would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires failing instead of overwriting an existing squashed migration file, which a competent engineer would implement as a CommandError. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specifies, so many valid error messages would fail.",
+  "prompt_tokens": 1370,
+  "completion_tokens": 379,
+  "total_tokens": 1749,
+  "cost_usd": 0.005013999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

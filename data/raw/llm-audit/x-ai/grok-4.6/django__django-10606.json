@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10606",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1865
+  },
+  "response": {
+    "id": "gen-1789190758-q7abxjCfKj4L0tlzGwk0",
+    "object": "chat.completion",
+    "created": 1789190758,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly identifies the crash as ForeignObjectRel.get_choices lacking the limit_choices_to argument that Field.get_choices accepts, so aligning the signature and applying that filter is the intended fix. The FAIL_TO_PASS tests check that crash path on reverse relations and that limit_choices_to is actually honored, which matches the stated analog to Field.get_choices rather than unstated extras.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about RelatedOnlyFieldListFilter with reverse ManyToMany crashing because get_choices() got an unexpected keyword argument 'limit_choices_to'. ForeignObjectRel.get_choices is missing the ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about RelatedOnlyFieldListFilter with reverse ManyToMany crashing because get_choices() got an unexpected keyword argument 'limit_choices_to'. ForeignObjectRel.get_choices is missing the ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2621270f-0287-9914-bfc2-62112f570a80",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2330,
+      "completion_tokens": 594,
+      "total_tokens": 2924,
+      "cost": 0.008032,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008032,
+        "upstream_inference_prompt_cost": 0.004468,
+        "upstream_inference_completions_cost": 0.003564
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 457,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly identifies the crash as ForeignObjectRel.get_choices lacking the limit_choices_to argument that Field.get_choices accepts, so aligning the signature and applying that filter is the intended fix. The FAIL_TO_PASS tests check that crash path on reverse relations and that limit_choices_to is actually honored, which matches the stated analog to Field.get_choices rather than unstated extras.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly identifies the crash as ForeignObjectRel.get_choices lacking the limit_choices_to argument that Field.get_choices accepts, so aligning the signature and applying that filter is the intended fix. The FAIL_TO_PASS tests check that crash path on reverse relations and that limit_choices_to is actually honored, which matches the stated analog to Field.get_choices rather than unstated extras.",
+  "prompt_tokens": 2330,
+  "completion_tokens": 594,
+  "total_tokens": 2924,
+  "cost_usd": 0.008224,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

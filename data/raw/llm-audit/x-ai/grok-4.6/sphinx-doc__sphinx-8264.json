@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8264",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "60ed9c03-aaf8-972c-b03b-c68dcf4909e2",
+    "object": "chat.completion",
+    "created": 1789194224,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly shows stringify crashing when annotation.__args__ is a non-iterable type, so a competent engineer would skip broken __args__ and fall back to normal class stringification. The FAIL_TO_PASS check is a bit narrower than the report because it pins an exact qualified-name string that the issue never states.\", \"p_invalid\": 0.22}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4190,
+      "completion_tokens": 121,
+      "total_tokens": 4646,
+      "prompt_tokens_details": {
+        "text_tokens": 4190,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 335,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 34530400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly shows stringify crashing when annotation.__args__ is a non-iterable type, so a competent engineer would skip broken __args__ and fall back to normal class stringification. The FAIL_TO_PASS check is a bit narrower than the report because it pins an exact qualified-name string that the issue never states.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly shows stringify crashing when annotation.__args__ is a non-iterable type, so a competent engineer would skip broken __args__ and fall back to normal class stringification. The FAIL_TO_PASS check is a bit narrower than the report because it pins an exact qualified-name string that the issue never states.",
+  "prompt_tokens": 4190,
+  "completion_tokens": 456,
+  "total_tokens": 4646,
+  "cost_usd": 0.011116000000000001,
+  "cost_in_usd_ticks": 34530400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2845
+}

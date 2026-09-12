@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-9703",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1059
+  },
+  "response": {
+    "id": "gen-1789187762-FZH68cGLkaGZvWIXAYqb",
+    "object": "chat.completion",
+    "created": 1789187762,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks for close-match suggestions on unknown management commands but does not specify wording, that only the first match is shown, or the exact error format. FAIL_TO_PASS asserts a precise stderr string, so many reasonable suggestion implementations would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about suggesting commands for mistyped management commands. The tests check for a specific message: \"Unknown command: 'rnserver'. Did you mean runserver?\" and that no suggestion for 'abcd...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about suggesting commands for mistyped management commands. The tests check for a specific message: \"Unknown command: 'rnserver'. Did you mean runserver?\" and that no suggestion for 'abcd...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "PBwvnC+Aq/Y2xcM0n7Fzx0VGB/Hydp5jRLcL9cJ/7pZYAhtffkmTogP2FGrWJ1Ro5mIOf55VaUodsh/3fsj+Ds5mwriG5c/Ow9vdr390vvKvNcq//jf+CkcNhHcXAseHGW7ISrakmLfaIaaPTQuWEl6gGsE719Gfzk/f0VHdsyE6FWoXcC6dPyqzq1C3Hfd6SQr61FFQiqZGSz3DufF3fbKlxZcZzHfzr/JWTMG7Tf/nHqpj4T/oBUQivnBlaFfNRyLKX9Q2CrY/Um2PgKSrhqRDPDhfL5bvkSlPLO/Fzug1+kyUTG6kcwoK6c1vUMP0Knz8J3Y+JZH/lqHZNTkS7fkKua9m/s/GDUAGUNNVQZgsu1H32bBlDpZs43/0HNGeyWFJf4dGKJsH/7kH085mFqF/gPBt8i5iRdul1zjlZOu6dhRx6rpJ+OwxQv3FMuG1cPRAa5DrvsAJbWCLD3vz8dMeQlUDwe++/e8/O+Y7nfZjBxSGDHD+HARcFXgtM3HaACsL3ipOirhVIuMPwOxmEhjy2YDwK3yFHM5D9mpOOLKtWAmzJDQxca4KOq7DoaHZ3EH//Rkd5UuWH4NyknSkK8eAITv8kjxcQ/J5xm3mWEw/jkk+juMJ+ozY4VVwMwsgPrtXoOInJUgHNdOQyfmF6GK7hwX6A2mqsnC9BritkbGfLD8KgfHK/qrhfLhZ75Zi6BdPzJqXs/ADwDIf1zduIHdppTzcUC0y+qbK6l11ig7+1sF7bvCgdk6bea2XxFantjQgDopbHrA+iLqP56mTL0tDbZds8MzI4RUSo2C76iJu+DGu/dljqMS5LrXgx7AHlcjTvxGGcmuguwOYFuCJeQCLrm6i9DT2lnlG66PlIobgmDuSYQImOvlRQxVCaL2+HK8aPaf/dfUZHzXiYDBnv/xb5f1buY2A/sUwMJ2biSgjmHXa2XBbiugwsbYcTwjBiBVIh12khZTtnqM0dfoMZx8iss+Cwao4DKa7jNsDDP3JSDh1GfM5nc+qrpZH1/L3e8Cst2OAAHPOav9NUaPUkl15EAe4oyQex1Gdm91XDSTgjyTpZ5CkGcilwGdarvsBTvUih9QUj9/X/D2FiF6sKppAei5aD6/XMMrFfBtndBiNy73SJCUaz+L9fXCigC1I14+I6L6JPasBOBfIWbslC6LuiiqawiWKOxw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1de702ff-f7a8-9ab1-8016-7c4a565a4878",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1374,
+      "completion_tokens": 306,
+      "total_tokens": 1680,
+      "cost": 0.004392,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004392,
+        "upstream_inference_prompt_cost": 0.002556,
+        "upstream_inference_completions_cost": 0.001836
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 200,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks for close-match suggestions on unknown management commands but does not specify wording, that only the first match is shown, or the exact error format. FAIL_TO_PASS asserts a precise stderr string, so many reasonable suggestion implementations would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks for close-match suggestions on unknown management commands but does not specify wording, that only the first match is shown, or the exact error format. FAIL_TO_PASS asserts a precise stderr string, so many reasonable suggestion implementations would fail.",
+  "prompt_tokens": 1374,
+  "completion_tokens": 306,
+  "total_tokens": 1680,
+  "cost_usd": 0.0045839999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

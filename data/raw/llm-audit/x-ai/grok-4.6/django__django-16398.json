@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16398",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1304
+  },
+  "response": {
+    "id": "gen-1789191769-MK5fvVCwmiLmWod2oJIc",
+    "object": "chat.completion",
+    "created": 1789191769,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue names the select_related plus multiple filtered OneToOne relations bug and even points at using partial like remote_setter, so a Django-familiar engineer can implement the intended fix. The FAIL_TO_PASS test exercises that scenario with FilteredRelation and identity assertions, matching the described behavior without extra unstated requirements.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.select_related() with multiple filtered relations to the OneToOneField setting the last one. It points to compiler.py and says it should use partial, just like the remote_s...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.select_related() with multiple filtered relations to the OneToOneField setting the last one. It points to compiler.py and says it should use partial, just like the remote_s...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "HzoB9XKCDLszs1R6tGLoat+S2/W1qRbYk5nqLJZ+dS3Yhtl7EFTACT3baahuosUymCLu3qYu8uz69RoPoPMUQ/fLCCNPpIZ8nou8DikdaKEtjKUzrOwgzKcP8UZVoEsV2B9nB9aegYbXSok9aX2PLsoZs7Ed+7juKgWXsyrLZH+GgnCG+mWLuMxh1t2HpwDgg1SZ3sxDfgXqG2sgiM32llwl275wzZI41K/N+uz88av4A3y4MPIb0dhBwjf7rzEfvYAf8T5r2Y4NMwlilsDifwBY/jqs36ioSfYpkDsqZ+JURqNHp73SHhLKux5LHC5oVlrV2/HlVuItiY9S2gT318Sum8ZPLIZzP6D/O9KZTmu5+H2Dy/uNgJ7oFA0iueX82it1FA4em30dJhZTP2oOSBwP4nXCXlGO0XEwVvB8LFB6khn+WsOdvHdVpVSmWCkFLJ76ecYcrMNe2mJFYylwt1CSE0J3Y+fqR1XEu9RMNpR0khUVTR3W6BiQrnrODgt1ys77KsfKHRue49NGmPIbNxjR5jh9hZLf7MsT9Zx+Vpa+yqPts/sXzOofiMvzkUMmfXtAsp3dEf/UhSZyiO0groHD5xMgKH0BvesE17p7jRSq6oQL64HVkNxqxP8eSciIWXQ9v+pB9mcGNfs9sitQW5VLw8chPX3YekrXAHdRB7aALTV7SMaI2GONEOWLSRQZTEn54zRfJE9iWjjkLVnvcYAkG/ZQ/dDoC30KlqUVeHb4xHF6kZEVhkEHyTbWFh6g/JJY6nnOoM8uAYpZWOhcEivoprFyUaki1nOpxr1CiMk1ITaVyS1Tg6bQL7m6wuuTpkwICj/mn1HczTGCGJkzNlN5a0HeLHoeJRLZ6S+X/I4WtxHnogk1nfjAvLpyFY1r/gbJvx1QakOY07F9goXJT8h/VKCeKZD1Ud+iuhhovPTiag0XBoj63e64IRVCgzpqagjtxVZWExMxqap+XQHpuQIEbhVL26GrFoYqbYlZRxcuaety6ZTpzgt4UdFPjZi9+bHL21OLFhngt0xDFYcAqMH46I9WKjidhR3XXxe7olO9HNw16rWDbJ7YikHRNW1XXiQJzCXlYAnF7xlnXdaxhhiOtH3EofbStbH/QmE9MSbmUqTKfVCBAJp9iPJxaUnkxWZwBiFu57PpMtOsqGWY7jaqZp+3oWhtfVkdCMcWlQwZaN/ZCWClBowYV8wLCK3zfOWTPD5m7PknKXsv9u739u66dqaDbdRMA10PtxwhdYtTR9TYcCBNuy1ScJp8cmApV6JqwM/5nx7XRETuDibmxfRIDY7JY2yiRYYfMt9zoIuOxkO8kZR5OaPa6ZV3lVgAKS4vIAr5h7qMRODCLfI4OhETREKGi1xFW5pd9B3p23u85QtysqmwI6YKxeRrr/BYaNHS2etlKj23aJCOV3P4aOsxmMOAHoynJvX/M9lCEWsoMm0mOw5YX4aTUCQa/IVfKHPCG29idx6iOr1fX8PMx/7gTtl02d3ZKG9XgyuoHzd0lbCqnDHZ6kaDLA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_acd31935-d2f2-955b-9f0b-1991f4edd418",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1714,
+      "completion_tokens": 363,
+      "total_tokens": 2077,
+      "cost": 0.005222,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005222,
+        "upstream_inference_prompt_cost": 0.003044,
+        "upstream_inference_completions_cost": 0.002178
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 243,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue names the select_related plus multiple filtered OneToOne relations bug and even points at using partial like remote_setter, so a Django-familiar engineer can implement the intended fix. The FAIL_TO_PASS test exercises that scenario with FilteredRelation and identity assertions, matching the described behavior without extra unstated requirements.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue names the select_related plus multiple filtered OneToOne relations bug and even points at using partial like remote_setter, so a Django-familiar engineer can implement the intended fix. The FAIL_TO_PASS test exercises that scenario with FilteredRelation and identity assertions, matching the described behavior without extra unstated requirements.",
+  "prompt_tokens": 1714,
+  "completion_tokens": 363,
+  "total_tokens": 2077,
+  "cost_usd": 0.005606,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15252",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2193
+  },
+  "response": {
+    "id": "gen-1789191558-TKvKimeK980dXR0U7gzN",
+    "object": "chat.completion",
+    "created": 1789191558,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS and gold patch skip schema for empty plans, not router allow_migrate.\", \"confidence\": 0.86, \"rationale\": \"The issue asks MigrationRecorder to respect database routers so django_migrations is not created on disallowed connections. The tests instead require skipping ensure_schema when the migrate plan is empty or TEST MIGRATE is False, which a router-based fix would not satisfy.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests target TEST['MIGRATE'] and empty plans, not db_router allow_migrate; gold patch ignores routers entirely\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests target TEST['MIGRATE'] and empty plans, not db_router allow_migrate; gold patch ignores routers entirely\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_955894b3-1d3f-9222-95bd-827ba5169a9d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2537,
+      "completion_tokens": 674,
+      "total_tokens": 3211,
+      "cost": 0.008734,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008734,
+        "upstream_inference_prompt_cost": 0.00469,
+        "upstream_inference_completions_cost": 0.004044
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 547,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS and gold patch skip schema for empty plans, not router allow_migrate.",
+    "confidence": 0.86,
+    "rationale": "The issue asks MigrationRecorder to respect database routers so django_migrations is not created on disallowed connections. The tests instead require skipping ensure_schema when the migrate plan is empty or TEST MIGRATE is False, which a router-based fix would not satisfy.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS and gold patch skip schema for empty plans, not router allow_migrate.",
+  "confidence": 0.86,
+  "rationale": "The issue asks MigrationRecorder to respect database routers so django_migrations is not created on disallowed connections. The tests instead require skipping ensure_schema when the migrate plan is empty or TEST MIGRATE is False, which a router-based fix would not satisfy.",
+  "prompt_tokens": 2537,
+  "completion_tokens": 674,
+  "total_tokens": 3211,
+  "cost_usd": 0.009118,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

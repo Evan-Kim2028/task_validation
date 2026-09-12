@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11019",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 5972
+  },
+  "response": {
+    "id": "gen-1789190785-P52puMKxC9gHiUm5tVKE",
+    "object": "chat.completion",
+    "created": 1789190785,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes a false MediaOrderConflictWarning when combining three widgets and the desired JS order, but it does not specify an n-way merge API, topological ordering, warning text, construction-time dedup, or wholesale reordering of unrelated media. FAIL_TO_PASS tests lock in those unstated details (Media.merge(*lists), new pairwise orders, repr/list types, admin asset order, warning format), so many reasonable issue-only fixes would fail.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about merging 3 or more media objects throwing unnecessary MediaOrderConflictWarnings. The tests change a lot of expected orders and Media.merge API from 2 lists to *lists.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about merging 3 or more media objects throwing unnecessary MediaOrderConflictWarnings. The tests change a lot of expected orders and Media.merge API from 2 lists to *lists.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "B1kSBLgwKcSLwP4UhHsvLnK46bV3uHyqgioP/48I+eG16+EIQcpgwpct09Mn7/CEYGWtYoE92eo1ii09X20kiSFQ3ePoixeEHq+gbSw8zUg0WZkRAenMDyQWJUTuHUFHVMxTdjDeLmKBo9EdwMKoaT+JGY/4Pq4aTRtgfeMD14Gr49BRH7pMOD2Ww89iD02awfcNcKjFUW77rlrJiFjWS+OsyPne9lgMIy1L4Fih+zlv84DtuEFzJ2RBXt7Rm7agxFnd1SGfo0yQvAqMzNwkOLYWAqVp2or1dJvqnc7wDlT8f6/KmVXYzY0ThfHtXM89712T3zIZ4TFIYiqPBm3S7XHTabWDIwJG6Cyw50B++Ie7FCm1dcUjeKjk+l6npAK6KloeTgxIyBgjPh36QAuF+ZT5k3IDDFd7FKkkLEXwKPhA9cRSKiXwvJVGwQCeeJ/UGWCIQKsJY/19tPGJFxKjNwQLDaFbUwYR8C/G/JED8LPnUfrO2G56WJtN5ulCksryzy22tQVDpg9q+BWSSP2GD8pM6Puv5xvVZIhObmdtcL0Wg1E5vEVDJlg/z0FWi4MGW053F36TWmJkThl2fOm5Tzte8Ji3t5xB+JfkN040KlsGBD+qogw2eFAf5ITG6OXiIf1pqal2bUCy/ZXqSGKtjfhp8TGjZNxHDK7efVGz2Y6t/iu/eCeu1UGeQ5w2j9Wmh9/j7K8u/xefRaIVuzl1yagZkyGQsBM8kOtVqoUh01P9onldh8Dw9R8w7425DkQNbWzVpoRAZd8jhrKj95T2gYabPQHU/VycWA0IDccLfp3rBgV3oWt9mW+n5J30QDp3NUoGsn0X/NitMEIO95vToDDLb4sfWa6MVIeL2ps+Gsefa2nCBiFWcXOkIX6vVZoxzSWNMOW+rJ+2Smf8pTh+65a7dr6H8nKcnX13wBsXugPiI6ediB1hEDMX4Ao6qCDtAt4J/1Lnq2ZIgCKpg8ofOXcil0lat/SiMg7tfkAMlhoLNeoabaM1toFni83xg9Qe2+aDpEVbp7Umd2YYo3vkzheA2SbcY6MJn1vnSeiJRqIBe4J6NVQLvg8z6w1FLg5r/l0i7iLffiD6i6rdRYnvZMeAMfEHDj2xm0ZSa5n3ABiDvsoOHGN0CbcfFH5DAGhMsGGdsIh/kSfUV5/3oANj0RG0Z46TpKYpncsWqr/8tloCKk0UAOWAZD8CWAInu+8GrPWTzYf6jVnlJMO9jikfcZIiLY9gzlyqFycWsojYMCp4aowzAvCvU/+ZT/juUa8A2A05YQMiyOtGvGIaLSCI7rGyH4dQ0l0J5Xj04NNKtvWBLmwQtf3Cks2+AMMB03ktjBdPHxVUWcZ1ijLG3sGbej0j/eatF31kyti6Oh0K6tNKr9dtMwNTE2S7WoVE1ApJ5xg4pY+OmiTgBn2znJRy++K9gGRPZG+2WomrYKfPYDdOiL2jEZm4NmxKR4y9oTEns8xy9plsRjMgptgxDnavjPpngUSnKn1Uw6Z57VFH4YcS6KiaLwAGhewphCSwFnq9CC45KOgl34I8dhkDcoDeKr/igKCO6S1Dp3Z4u38Rly2uuhruq2WdDo/06Z3ccTlVLkiS8T6xq+h4+Hi1KdaIsaFG3mOeCXN7EIzWvUhLrhSis/l9DRd1cHoLAR+FXt2c9BFJlEgZ0xp576XcZuSgfwPD5qqqD7trkp2hywU29BY3Nw940xICkiq2o4vmPbVlSxAvE3HGB900VITg4NiuH0Y8hrfQE/PJgXFaiHo/3qXG6uyI3Jy8+AShQ+j0UDjjUenskrasccZNuU2nmcmm4z4FAT6WktVOCdL0gQfiOpWYhGvqoXJZVR9ZkXFpdRMwS3AcaEZF0lEZUVWXudU8+eJqtl7NLjSWgp8b5UKCV+fujwlaGIt9PWflXKcBvN6rRcFDxTTJqinoKCn1tyOHx5U.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d1ed6f0e-504c-9c47-b67e-17ef36e61a27",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7292,
+      "completion_tokens": 463,
+      "total_tokens": 7755,
+      "cost": 0.01717,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01717,
+        "upstream_inference_prompt_cost": 0.014392,
+        "upstream_inference_completions_cost": 0.002778
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes a false MediaOrderConflictWarning when combining three widgets and the desired JS order, but it does not specify an n-way merge API, topological ordering, warning text, construction-time dedup, or wholesale reordering of unrelated media. FAIL_TO_PASS tests lock in those unstated details (Media.merge(*lists), new pairwise orders, repr/list types, admin asset order, warning format), so many reasonable issue-only fixes would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes a false MediaOrderConflictWarning when combining three widgets and the desired JS order, but it does not specify an n-way merge API, topological ordering, warning text, construction-time dedup, or wholesale reordering of unrelated media. FAIL_TO_PASS tests lock in those unstated details (Media.merge(*lists), new pairwise orders, repr/list types, admin asset order, warning format), so many reasonable issue-only fixes would fail.",
+  "prompt_tokens": 7292,
+  "completion_tokens": 463,
+  "total_tokens": 7755,
+  "cost_usd": 0.017362,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

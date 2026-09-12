@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14271",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3238
+  },
+  "response": {
+    "id": "gen-1789187865-pNS5CuJtzC3VBJ1XTjn9",
+    "object": "chat.completion",
+    "created": 1789187865,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly reports a regression where combined querysets used as subqueries produce invalid SQL aliases, so a competent engineer would know to fix alias handling on queryset combination. The FAIL_TO_PASS tests exercise that same class of combined-queryset-in-subquery behavior rather than unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about combining two querysets in a subquery causing \"no such column: V0.user_id\" due to alias problems.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about combining two querysets in a subquery causing \"no such column: V0.user_id\" due to alias problems.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fN12tE/woiHzKZ4XdZVq3LL1gDb6TowrOzRe3MRL9gMYdHzeFcjkSGNoTts6mzkSqrgcF8SY6zVWucmlAC+hqeKHJWZWgecSqm9Bggz9K43WcFZ2xHOo5P2YQ18Rvm2JEx16Vrz6qnwi620vmDZ2V2ai38YW5ZL5ZipArlKZpqnRMQm3bb4C6HMXdlUK8pO/fzkFXlYFq4V1/GBqLywAlKzUsLxKJf2IQ2qepAlzwpZNWDLJlgU6PBxP+PJ5tDlzyZGgDsDls3yqZJkYpYKyHpeIZG3UR/pARw+rqK2RIJHN2c+MqAvpdGw7eqcBboY8TggtJgneRRzKPhgj8o2iUK9PkhjdIQFLTHxVuNIs/Kr8ECxyLE3AJ1WLTUQWJjbdq/xjWh8cHtXxGvv4TybFg2OXG45OFX3Zp6/x+pzVOvl3m3IIHMPbolmcc0YAfmi3sN/gO5M5+3AKLJmX7592UfmvQIkOeehLFlM3WlRkM0wflwdRXgXdEcZBqBcv10RiItjJZgbdKSBvJ64XFrrimqkHi0tDxrGOTSF27j6+DcyRwjY7g2e0cmC0cPf2Pto32NAa8dMeqT5WyklOAUbBNBzzbbP19hfSlJP8C7FU22/tQyXUyN0i5uNTmsfk9g4jSC7nDBODErWh5M2d2AhXebmtM9N2Izqvv/26caLOg1OCPBCpVJHHx0O5iVAMkUe8KNXjHjGQScPGL+J+lu4A8sLhE5E9EHlbVPaWcFeykNbapHptYBHOyio5KqzZDtAP3zmFoN3gxLm2QHB4y0CS9+LXBJ2pNPh7PzLhmi2SjSiU4jvga6iI9FEObSW098duFtZcj7/hAra3NyctYqf9kUWarmBL5lK+Fv2gRKMMLEyM/cGwD+H5T/HOyHOdP5Wob1y1gAmLXeRf97YJLtetgE8sLRQy+rmUnqm27L6of5AEMENn06/tCOLcuHX+M6P9hMm6M+UpwjgQOi1DuJSO9Co7qF0EUJQemTru6aKFekZqTOYb6DcOdskEsS6NBunZbsQv2iTVKPLk3u66QXJS4wKzRLwe1Vzxvc5F9LYNkRN+87uVdsuC14JGfiQzY0F+lbztMvhnNzxPj6TWK931CSytrVwNZ8PowRsn1srVMLcc8OcLSJiRGB4ognkNTUh2BnURVFYVHJjMmgD6HhhNoA+0fZkJNvDV6jmy4tOWUC0nEg5RlQPJPLOqJlgqrujQNy++KvElJXDoFwcvmfQhxBPuJ16dNW0CcmA323cpOrVHZ21YZjQ9NdE1wq4TYVhrWJD1uAbPfi2YTWb2Vk3OLKhiqRdmS9USMsrWHelyE3D/xbWQ51/H73F8xLCDodvQzBiF1e9QnL7WOp6Fkgs92p6I/fmGC51vqPuG9Ear5+JTsBWQC+RUEJXtNBti9pgi1fM4yR5PFTvz3q9DTSr/Lp+AnBDLA9kAVHmzKQjRdMsixvIdp3GTyVS5p2dbCFnvQYLUYKk+F3CklxlKICE0sh39i0Nlg2ZMr8u0hYAPKQE9srsb.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c3d81399-5a4b-9d1e-9fce-e7927adb65c9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4265,
+      "completion_tokens": 366,
+      "total_tokens": 4631,
+      "cost": 0.010342,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010342,
+        "upstream_inference_prompt_cost": 0.008146,
+        "upstream_inference_completions_cost": 0.002196
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 248,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly reports a regression where combined querysets used as subqueries produce invalid SQL aliases, so a competent engineer would know to fix alias handling on queryset combination. The FAIL_TO_PASS tests exercise that same class of combined-queryset-in-subquery behavior rather than unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly reports a regression where combined querysets used as subqueries produce invalid SQL aliases, so a competent engineer would know to fix alias handling on queryset combination. The FAIL_TO_PASS tests exercise that same class of combined-queryset-in-subquery behavior rather than unstated APIs or messages.",
+  "prompt_tokens": 4265,
+  "completion_tokens": 366,
+  "total_tokens": 4631,
+  "cost_usd": 0.010726,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

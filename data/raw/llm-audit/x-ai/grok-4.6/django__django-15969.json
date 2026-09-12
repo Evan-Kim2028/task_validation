@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15969",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2481
+  },
+  "response": {
+    "id": "gen-1789191698-71cmJ7MKwUTVLppTvxk5",
+    "object": "chat.completion",
+    "created": 1789191698,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to stop collecting every related PK and instead update children with a parent-key predicate for SET_NULL, which a senior engineer can implement in the deletion collector. The FAIL_TO_PASS test only asserts a query count and also covers SET/SET_DEFAULT, which is a slightly narrower proxy than the described SQL shape.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about performance with SET_NULL on large tables - the UPDATE uses WHERE id IN (all children) instead of WHERE parent_id = parent.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about performance with SET_NULL on large tables - the UPDATE uses WHERE id IN (all children) instead of WHERE parent_id = parent.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b7c5c631-fa85-943b-a64b-90f4460c3f7d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2761,
+      "completion_tokens": 513,
+      "total_tokens": 3274,
+      "cost": 0.008216,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008216,
+        "upstream_inference_prompt_cost": 0.005138,
+        "upstream_inference_completions_cost": 0.003078
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 389,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to stop collecting every related PK and instead update children with a parent-key predicate for SET_NULL, which a senior engineer can implement in the deletion collector. The FAIL_TO_PASS test only asserts a query count and also covers SET/SET_DEFAULT, which is a slightly narrower proxy than the described SQL shape.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to stop collecting every related PK and instead update children with a parent-key predicate for SET_NULL, which a senior engineer can implement in the deletion collector. The FAIL_TO_PASS test only asserts a query count and also covers SET/SET_DEFAULT, which is a slightly narrower proxy than the described SQL shape.",
+  "prompt_tokens": 2761,
+  "completion_tokens": 513,
+  "total_tokens": 3274,
+  "cost_usd": 0.0086,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

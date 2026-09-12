@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13821",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 913
+  },
+  "response": {
+    "id": "gen-1789191335-mV7RjUcm91Mm534EBqDO",
+    "object": "chat.completion",
+    "created": 1789191335,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to raise the minimum SQLite version to 3.9.0, which maps to updating the existing version gate. The FAIL_TO_PASS test only checks that gate with a specific ImproperlyConfigured message and mock version, which is a slightly narrower but still reasonable check of the stated change.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about dropping support for SQLite < 3.9.0. The gold patch updates the version check from 3.8.3 to 3.9.0 and the error message.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about dropping support for SQLite < 3.9.0. The gold patch updates the version check from 3.8.3 to 3.9.0 and the error message.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "O6axWZdNC2jKWiGW6YsSOCe8XE19Gm2dOyeJwJtp4DLEunnytbn2KSbvIKSr0DY6/YNnMwdLqEbToKIAD2zc+rEqMpxd25G4OVsCu/AJEFWQKVV43ApJxO//1qbBrlY14TZloJpHYbl+FQxiR6xPKRPFD2TNRVx6dbT371pdouvmcyxX0wzSO2coAenDWuGiZMZxzoHVPxXw6l3VwMLG6IbJMlCIUvZgCsgxmFtB3gCrXNU1yKRpPBLylrjMdTnCfqvvMFPMy5V7qSk9DDBh1DHi9zJlXtA1NAHfflCjC17AXt5SliNs2XuEhgzRIo5XLBsM5K8027HckZAP8rEK8kAr+5vinNy10RgJ3ao/bJLWxS21SxX3wk40XHWxg9exdaZOusYUt2YcwBeiP+fH2A+kT8PHsi1aiGajOHsuuRrjVb/k0D5qwUWGCLo9sZYvtxkcqKoPEWbF4jJn8hgKV1+UxgIecWGfE18KPrXygZ7rvtWyCsw/wXewxEEHNBN4A2hpKgv4cod/DFlwmvLvzpq90L+M2N339RNC83ZYef2ar8YqRTR8u1BQML80fWzXA4vNjUZ8820B5uwulPs7jl6iHdgjdJ3YzzCdE3I6pYPnfXijUxGaIbiny++lOj3r1Jlljv2nO/w902XCp8NvxDsSRHzb3/UmsRuOoOy9nfQWH4WrAw272N/ahXGyXFZjgd+iuRGMmK8xSn92oEeq8GLIYeJFtFpYZKl8BetYGK6juoQ8vWy4hMWPIwXvXf6oxQc7x0WiiBESxvEEya97sTJFSuLe56cyrWAMdexH4TsOt/IbYOscVAH9oKgjhen4mzz3kZaqAYc6sDPxYJgMbLTtfXWejhm6E80rvbvai/9Pbuy9JaBGd4psh//+cGtwDkEBH51j1YBZYJcKr1WHeQEhlFxaledCHooPxtXMan911cgMn60zSMOoVHcsYK5R/IHJSSHZi6pJGYRzGYJo+AJIe1dsBcVfa7oWEjKpdprASOPPqgNH8wBuM3ryeQ9Y9qdKkTXWi4rsDlElyb5lS/lgUPHALtXGovJgLclkFcetN7wrbW72cQmWN9z36fDbhG70ulnXTXMEAJ4liXMQat+kFQ+ubBFXambbVu/2sP0a7SMcKSMt2317o1GHSTw9++Dd2cs3ajZJlbaDynQZTlAt9f3FbdAav7UACfARBGc4NoNoTPQE+OgYAwwo9r3q3r6PVlecKM7iMKT3XRaDAiTBEbvBjOIEWW/JG8gHrmI1w5I4NGi9nQIPxsqApbszWW2whbsIXug4XX4fuZWphZgiYM4gZeLX7IJv2wRdjTMheOdN3lRIotbN4QiXpd3t9f3utr7xLEiUJtWn4vqJIDFRDxUEQzTAmps.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dfcd66b0-ca2d-9362-8818-f9eaedbc1ffb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1309,
+      "completion_tokens": 376,
+      "total_tokens": 1685,
+      "cost": 0.00449,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00449,
+        "upstream_inference_prompt_cost": 0.002234,
+        "upstream_inference_completions_cost": 0.002256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 256,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to raise the minimum SQLite version to 3.9.0, which maps to updating the existing version gate. The FAIL_TO_PASS test only checks that gate with a specific ImproperlyConfigured message and mock version, which is a slightly narrower but still reasonable check of the stated change.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to raise the minimum SQLite version to 3.9.0, which maps to updating the existing version gate. The FAIL_TO_PASS test only checks that gate with a specific ImproperlyConfigured message and mock version, which is a slightly narrower but still reasonable check of the stated change.",
+  "prompt_tokens": 1309,
+  "completion_tokens": 376,
+  "total_tokens": 1685,
+  "cost_usd": 0.004874,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

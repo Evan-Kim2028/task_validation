@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8611",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "7c210f9a-32eb-9452-a470-7664017f87f5",
+    "object": "chat.completion",
+    "created": 1789194255,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS checks autodoc-process-docstring not firing for a non-data descriptor, not the inherited undocumented-attribute warning.\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that inherited attributes not be treated as undocumented, which does not specify skipping docstring events or NonDataDescriptorMixin behavior. The test would fail many reasonable fixes of the warning and does not exercise the reported inheritance case.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6375,
+      "completion_tokens": 131,
+      "total_tokens": 6960,
+      "prompt_tokens_details": {
+        "text_tokens": 6375,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 454,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 52672800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS checks autodoc-process-docstring not firing for a non-data descriptor, not the inherited undocumented-attribute warning.",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that inherited attributes not be treated as undocumented, which does not specify skipping docstring events or NonDataDescriptorMixin behavior. The test would fail many reasonable fixes of the warning and does not exercise the reported inheritance case.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS checks autodoc-process-docstring not firing for a non-data descriptor, not the inherited undocumented-attribute warning.",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that inherited attributes not be treated as undocumented, which does not specify skipping docstring events or NonDataDescriptorMixin behavior. The test would fail many reasonable fixes of the warning and does not exercise the reported inheritance case.",
+  "prompt_tokens": 6375,
+  "completion_tokens": 585,
+  "total_tokens": 6960,
+  "cost_usd": 0.01626,
+  "cost_in_usd_ticks": 52672800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 4206
+}

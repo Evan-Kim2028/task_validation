@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16599",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2586
+  },
+  "response": {
+    "id": "gen-1789187633-mtrayNHjkg1dgm9CcmpC",
+    "object": "chat.completion",
+    "created": 1789187633,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only reports an SQLite OverflowError on oversized integer PKs and does not define lookup semantics, query short-circuiting, or behavior for all integer field types and backends. The FAIL_TO_PASS tests require specific EmptyResultSet/FullResultSet handling, zero-query paths, and gt/gte/lt/lte outcomes that a reasonable crash-avoidance fix would not necessarily implement.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about OverflowError when querying with an integer larger than SQLite supports. The tests check lookups with values outside backend integer ranges for various integer fields, expecting no ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about OverflowError when querying with an integer larger than SQLite supports. The tests check lookups with values outside backend integer ranges for various integer fields, expecting no ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "8Nw1g2UsvFXLcUkK8dX38G8CLSCZivIlgMrPv/5zDXPvfEA/iDeXkYhoaXPE2GQ8t8LfeR+1TcSJ1f9p0Egcttcffp1J9lfcnATK5uFjYKsM50GOEPVbixo5bQnIC2JUMtnJwqX8eWlik6o+WLQTI5emxm7caO+sB7PxFWXgSBoscQEfDirBiqIjUkaCZ32VaOB3O5CcLoV2Yic5bRU74QBWsvrJ8GuZG7f33bzVJ/gUgCOqhr2I0BybAhOwQNTSD4TdxqoSEpCCUdNBcoKHVac+bawoZN2pTCTERaS4tdrU8LgVFN77th7vThIzawFyY6wyZLSqXimmOMBa/77hwF3Y2zsH+jPSX5+rbtC30os9y47AdrPKqnwVJalK080+gMHnviWOdhLGAnmOMx5CVzFnbG/0432YqE0XabV2OzyH5pRBWqow+DezxiqBfhhceaEOBRYvrn8e2Dfi7o/ibqk1kfNdTOFswKgI0uFfEqP6KmrFZDIcq2ZO1rCXCO20zFfBrGc0HoIMGHQ/XQ3Nv6TyxZAmTdAYsOs+oEAP3I92JeBBrQRxQ+/CbKqfo+LoJPRMP1igpBfzP/Fnct0xbplIs1KXtGOzUoYst11JsuRpzWqgoM6FEImwkY5W1d1oSLCIf5MgY1nrKMSZoPqnNFBQKJ6qtb5crgK0F30cPEGT/JZmbb4A5vbCoXXFzDZYBTRvim37zzokt5LUAV9YGb/hUoRw3a/omNkl6fghZ4mmH3DGoWVEjZbcVeIuGTBY9TttEiiyuJyG+eOTFn6hGQNOrA+y1xE5Vn7/AYcmO+SdNbJdYRVCNKQx3B5nIFSHp7obiZ3wGBB033Yc2wsn2WziTlwNnrAepTdH5RvdodArf7BAYZ5DghUvmspYPSJa7yfiTZ9Mhazb4sOIGds+9EhlVUC79q/HV3MFlc/+9xDrK8U48Ub3v73LoiAOffA3dav6KSljC8wO3Xnvw/Ub8nUHeubbyh9dNwXNLrIaduxdnpStrbuIdfCVhMh9fO8NjSGLr3dBnJ4CRAEXAxgcR3yCQe8NJjuStucfGspEJerTxYDXYjaKphqDgvbjIqBQgsWGiTnkjLjffoXOEMeawfniDZ93uBXfyotqV9CXAQyttBgKs3C5pj2oaJ2FhlutFGIWHof2NNZ0WYhj/Jkg0NWMxpjHMO/YhLk0nSmDAGp1StisK5zdx1OHUEogSMYmZAG3fbNVX6KMYQl9FZj3LcA8Dj0OlRpNLuW2UL/VRyyZY2SMyoMwxkGbzo4VI4BYZDSegrdyXzL6T0arqLcop1vclNUd21MlhzgBS+iX8uiLD9Lh0vr3GkJJsR9pTJTbDiZXO4uboTa0hMJ5M1ItlMqRptHnI5Nb9NNLwqkuXiC+s9HauX+/eUlAeTScGmIjF4gpZfR56pYtZWpMQ6Xp3n2luC8DaZ94wAICkdhH62QovBBjeBNuR77lhK3/UI/4BXAgBvwaMoPYoMuB5vcPSm7Wma3CihcpoJIgBJQyiuA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_97fea1d5-b98f-9467-9e01-caaeb777f294",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 378,
+      "total_tokens": 3640,
+      "cost": 0.0086,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0086,
+        "upstream_inference_prompt_cost": 0.006332,
+        "upstream_inference_completions_cost": 0.002268
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 240,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only reports an SQLite OverflowError on oversized integer PKs and does not define lookup semantics, query short-circuiting, or behavior for all integer field types and backends. The FAIL_TO_PASS tests require specific EmptyResultSet/FullResultSet handling, zero-query paths, and gt/gte/lt/lte outcomes that a reasonable crash-avoidance fix would not necessarily implement.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only reports an SQLite OverflowError on oversized integer PKs and does not define lookup semantics, query short-circuiting, or behavior for all integer field types and backends. The FAIL_TO_PASS tests require specific EmptyResultSet/FullResultSet handling, zero-query paths, and gt/gte/lt/lte outcomes that a reasonable crash-avoidance fix would not necessarily implement.",
+  "prompt_tokens": 3262,
+  "completion_tokens": 378,
+  "total_tokens": 3640,
+  "cost_usd": 0.008792,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

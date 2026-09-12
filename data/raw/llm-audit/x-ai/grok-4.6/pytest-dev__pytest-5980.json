@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5980",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "bae8dc67-d13b-9a89-80a1-b556310ff8f8",
+    "object": "chat.completion",
+    "created": 1789193802,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The GitHub issue is an open design discussion without a concrete CLI name, JSON schema, session events, or serialization key, so a competent engineer could implement a valid line-based log that still fails. FAIL_TO_PASS asserts --report-log, $report_type, SessionStart/SessionFinish payloads, a specific terminal message, and a line count that the issue never states.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The issue is about providing an alternative to --result-log. It's a discussion issue, not a clear spec. The tests require:\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3919,
+      "completion_tokens": 134,
+      "total_tokens": 4276,
+      "prompt_tokens_details": {
+        "text_tokens": 3919,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 223,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 31320800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The GitHub issue is an open design discussion without a concrete CLI name, JSON schema, session events, or serialization key, so a competent engineer could implement a valid line-based log that still fails. FAIL_TO_PASS asserts --report-log, $report_type, SessionStart/SessionFinish payloads, a specific terminal message, and a line count that the issue never states.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The GitHub issue is an open design discussion without a concrete CLI name, JSON schema, session events, or serialization key, so a competent engineer could implement a valid line-based log that still fails. FAIL_TO_PASS asserts --report-log, $report_type, SessionStart/SessionFinish payloads, a specific terminal message, and a line count that the issue never states.",
+  "prompt_tokens": 3919,
+  "completion_tokens": 357,
+  "total_tokens": 4276,
+  "cost_usd": 0.00998,
+  "cost_in_usd_ticks": 31320800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2909
+}

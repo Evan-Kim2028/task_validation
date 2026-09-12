@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14471",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2629
+  },
+  "response": {
+    "id": "gen-1789191435-ov8P8bgmA5npmlIYMhex",
+    "object": "chat.completion",
+    "created": 1789191435,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to let InvalidTokenFormat bubble from _get_token, mint a new token in process_request, and reject in process_view using that exception’s reason, so a competent engineer would implement the intended control flow. The FAIL_TO_PASS tests still pin exact warning strings such as “CSRF cookie has invalid characters.”, which are only implied by similarity to #32795 rather than stated verbatim.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue describes rejecting CSRF requests earlier if the cookie token has the wrong format. It specifies handling InvalidTokenFormat differently in process_request vs process_view, and using Invalid...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes rejecting CSRF requests earlier if the cookie token has the wrong format. It specifies handling InvalidTokenFormat differently in process_request vs process_view, and using Invalid...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "YHxQ7F8s9LFH4yQjAKKcbM3vRFQZYtXQCdafcMovrMD5yZDMBHrpA96zeXuShTpqrflSEqt4765MYjEhBRvxrJjdMMUh/Q/cEzvsDmvTfupOfheu67Xo2RFSKr72dY4ENdoZGTAkkg3yirleMSDty+XUdweVYdajyWuWjZsyWNICl1p1uAepasacXvrEa4MA5UHBG6gpqXywOBqAgxOsXgUljlXOO4uQXDzuawClwtaLqP9hjMNtktJRa26hnyyhCDXBK+3Pz5xQZ4Ti42BWX7HnG9TTd/xU/rpvsPuhAFskrCQEp1nNrOJxJx3yAWdysN9bKh98wDCQN/XVnBJstFI1VTI6erOzq0aI2fwf1CjaOfWl3KmvX4Nx8NSEgiwXrvYHnKujujcQgVdgmbs0VoUQ1bLsGWyAQ+Apc855LCgQNaoDIKdXtctLVa2CTvfb0Wmcb5KnB4yF1GxcLZd35kxzoQiGid4GqjMbTbZ/tXS1a97qhj/F57rGNJiUO+nFckmx6y26WjxSGH5YzdWjI9KhCEZGY4pAF39ZQUajgUByGQpygwcOtETXlJZ7DQM+4L7gF1VeIS8kZZK7XXeCxyF/BEsOUdYgFmD8lgj/Sv/1uaz7YDsa5ixZ3gUzfMebfkVFw4YM+8qKfU+kQUfkRGNaRRfmsKV0WVbrfWyAIoqX2qRLacQDQt4oVlAA3hLe3jTPCHFeBEF0+fb1XoeFKtlFBHl0M5NudJnq6prveqkzU7MNH4aYgBQhrPOWqlIwzTW2a4s4onJP5kV71M7dMdBtGdj5V+fZ1V6jbP0+K1RDPqCRauD9Y8WspMu0gJGKx+AyA2ulElFMeaI9yeamGFfmW2J5noVzaP6HkX/CHm25hFIppsL3oe1enhiXNYSo86X6bPDsTcpfn/Z33YG9Q8MkZug2I4B2T4EUmoiyN5fN743c1Ay5yctHkEJzOpXuZXBIZpGq5lAWeN9VVKXip/kA4hA0N3m5yAy4c0jj+ZfnMx4ycDOxUixmMc+k5Vy9X3lL0IfTZ+qjpw4i1DXl4HzyRvYgxzQQ+V9m1H9FLIb/YeO7xI19v5jd3diT++QD8wkP2zyZPOEuzbZPlLJWs8p+zwiSz5eKt4rRePNiQ2ZgHpbptNQSnYtel+PXahQqPBwyEqkERRzT00prC+nCpZGAZpGte/Sgs70Cc9meK0RVXaBLxkkDdSOSdKpYpbEsgbh32k1QGwKHU77hovWoMIMhtTmxRNwdmVagEfACuOH2scjDr8KV4dtkgpasua39jdKVh7UCCIpGxh303PjbCgLAi+m2aIk4SAKep2wSOumy6HbW4Jd9DWgz2S+xISU2QhEUW7K7X41nAPHk8v/B95x4TOXhwb3IWgmnspI48VOeNBKTRdWzkjmu3+joO2WXB75/epTn4ZC3XNkmEdgCNG6kpDm+Gd6YXxlVqR3NPaLdnB8av5ZLzIVZozv84BYEMtP09MiF9sQTmkDZzzJZw3lWLDL9LScWFmr4hnFC/97iI298TFdryuM34NChvpkawyz4TJ5BzYYr9BXT25p5E0weqr/8GqsM+9QT2RtLaO1Ix2SS8YE1r9qpUekw+j8Pk0+ZqdHFA82kTHtcWqLiFkwUhVcUH7izWdFDuebiFKrgi7HaDaGkzJu+t5su7OdaGakZYhqWTwFpvzbmRSppz6P2RGyH20w0/2sVVIScyTPMyVvTlXz8fnJXdXfiR3o6sn1Tbk5ZtuNkXr38WPe04AKFkFgkw3fKA+RMoBjtZX9lbb3MFIB+rPUw1HOfgVhXeBbbWus7jVk8Uw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e6ab48c8-246d-96d4-9270-114168440b9c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3033,
+      "completion_tokens": 448,
+      "total_tokens": 3481,
+      "cost": 0.00837,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00837,
+        "upstream_inference_prompt_cost": 0.005682,
+        "upstream_inference_completions_cost": 0.002688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 307,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to let InvalidTokenFormat bubble from _get_token, mint a new token in process_request, and reject in process_view using that exception’s reason, so a competent engineer would implement the intended control flow. The FAIL_TO_PASS tests still pin exact warning strings such as “CSRF cookie has invalid characters.”, which are only implied by similarity to #32795 rather than stated verbatim.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to let InvalidTokenFormat bubble from _get_token, mint a new token in process_request, and reject in process_view using that exception’s reason, so a competent engineer would implement the intended control flow. The FAIL_TO_PASS tests still pin exact warning strings such as “CSRF cookie has invalid characters.”, which are only implied by similarity to #32795 rather than stated verbatim.",
+  "prompt_tokens": 3033,
+  "completion_tokens": 448,
+  "total_tokens": 3481,
+  "cost_usd": 0.008754,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

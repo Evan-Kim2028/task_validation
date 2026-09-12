@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13822",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2396
+  },
+  "response": {
+    "id": "gen-1789187903-dY40sNWQzHiIXMcDisKW",
+    "object": "chat.completion",
+    "created": 1789187903,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that hidden M2M reverse names with related_name='+' must not clash for same-named models in different apps, which a senior engineer could implement by uniquifying those names. Several FAIL_TO_PASS tests also assert a specific generated related_query_name format including app_label, which is not stated in the issue and would reject other valid uniquifying schemes.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about fields.E305 being raised on ManyToManyFields with related_name='+' when models have the same name in different apps.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about fields.E305 being raised on ManyToManyFields with related_name='+' when models have the same name in different apps.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7c0955ab-f81c-9bf2-af51-4f7549ec2d97",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2846,
+      "completion_tokens": 569,
+      "total_tokens": 3415,
+      "cost": 0.008914,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008914,
+        "upstream_inference_prompt_cost": 0.0055,
+        "upstream_inference_completions_cost": 0.003414
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 434,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that hidden M2M reverse names with related_name='+' must not clash for same-named models in different apps, which a senior engineer could implement by uniquifying those names. Several FAIL_TO_PASS tests also assert a specific generated related_query_name format including app_label, which is not stated in the issue and would reject other valid uniquifying schemes.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that hidden M2M reverse names with related_name='+' must not clash for same-named models in different apps, which a senior engineer could implement by uniquifying those names. Several FAIL_TO_PASS tests also assert a specific generated related_query_name format including app_label, which is not stated in the issue and would reject other valid uniquifying schemes.",
+  "prompt_tokens": 2846,
+  "completion_tokens": 569,
+  "total_tokens": 3415,
+  "cost_usd": 0.009106,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13447",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 899
+  },
+  "response": {
+    "id": "gen-1789191227-4gldndBKHbyFAcluCYYD",
+    "object": "chat.completion",
+    "created": 1789191227,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to expose the model class on app_list entries, which a competent engineer would implement by adding it to the per-model dict, though the exact key name is not stated. The FAIL_TO_PASS checks only that addition (under model) and ignore the extra request to make _build_app_dict public, so they are slightly narrower rather than contradictory.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue asks to add the model class to the app_list context, and also make _build_app_dict public.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add the model class to the app_list context, and also make _build_app_dict public.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "bk9GRfC9LvrltlLJe+h2/kx61Z/EgmQHmk5jOgqf3PnzohPymbZjk4q0m70fszAa3u8kNoXiOs6TqE5I3DXL5UBnuqX1CMFq8WSisykbBYY8XP+cuxTkG1rDBp73sRjwrrZ1PRiWwGVDzlSgWp4fB7un0knLulylftJPAJ5gX/bRqLmklAursV17rc9X/J6zq/VcW7ouVP/dNhbR20rEcbqAEZ0/pQeB3gayHytfGQqT44rFXi0AHvbJsWCITnoiEj9djvG9uooQCTzRlo+B3JSmGIH4qeTzqK3Fv9ooDFZpjPBU5j+cWfrfzKOKYuFlR7i4goDm8XWsCWq7LdmNYUh0kvWZXx4LAbbQTeBGhvhlLH8brEzcevvaeKnWPrXqD9aBtGDMnrpSXPW7k93KrM0pWrVapyINZiI4QydavtMzgkEUOMgUhRCFj9fdPpAQ2nSi/+YBATxFYdlCiKhThv1GJhPzbc+AlTKrgURcGSGuWkQyaV2+FdsPS519vtyqfg4ErcDkoXoGgHTNACkrYTM6hlWmLUBYG72AJEmT1vePO88iC1rwv6MNSly6U6c3eqnVqi6brscAvdhur595VHb0QPcHUQ8IuYddCcaEEFl8+LrHg6H05iB730tXH5kI1Lq22GTkRgv8Hfgr3Rber0WA3D67X5cJb90A3J/YStnWhuJQKpue4t/YOt/kuDdHvJHViwWRy9MPnk505B1SnfTY3/gHSqv7k6BjbZDChmfseM0+TCluAnZ27mufNuyriM1Hi/EZYEbVuuogC2sB2tChMVuNRbKIsc8VPtJkZXAkzzX3FZavJUtpAnVrKpn+ap+v6kvCh2yft8TleZV8D8uahkSgvAnq01SNa266caTRUAwdJ4EECqcBJE1GDzDFI2zx0vS5WWd8SqSRxAr4RRbL9ooF4Iu5bmZfcWPSC+lssbipGZP7AfEylpFfc7Qy8lfYRlFRQlTfLXqKplVdVFUWMTrwsnnHCsu0EQmrSsUnwY5EQ0zoNn/XgmqXZa+gfgvC5LMTd7/WtBPBmDijyAuY66hfIz7+gxdlkLRFz1zPAWt58LLK3vw1j7kAnDogCiPWfHNMMagseetSi+Dhsj9I8OMyug5c5XlUC/2Pn0y4vUeXi0M7CKknjRlYCdoA7vyv+md0p288P+x04gUdq6SmoKK1P1zAptSk84osZa8rDe91CnuuxEfxCtTt2El7BX2aR3b1fws1Z9kLHnksdtFAnU74EWjA/BR8/bsxS8FDTVkhEwfIbzKNh5+XaHSUC/zHgNsN+We+RjhwIb5swz60OGyCaNX0cC2MwljacoAiym/t804/oDotuEjGUUjnCEjWsRWqBknAc7Xp/Q25PvuCEf7NNsz5cBYdfounE0V+3/S5eD59ght01u66Yk80/TILa+WqM+3sI65BkUl+bRHBf4Tni/x/kRgXUkCrrAiVChyWC2quvulAvcAurnYXoQEZBVKXttVLdJyL05uW93TSLb5eXh8AGNcErqbuw2VL+JAeJyJVTXSjNM+8mhnSWsi2ocfzHW6AVSVBnl9y7mFPg0aoeVcOxoIqFR0BOjm93OFfEP717oy406fnD8wO6IoW7yXxM4qkKmqER2vlbYDbFdjGDQ77tiweoLfVByck1aZsVHcIIr0pH9+R67KRqOPDlIHK5KRJMARD8xqhxvbBk60PEwYpCFqJjmCza+h7b6zsnk5EB1VaFNWcLJ1AVVnHV3qZqdyzRQGN7g6Q3pUqzKSUPS9ILBiCx35n5AgimXIIgerqm8GmNNtZfqaMqH2bAeVhHy9gu6EMWaedb0QiaRrC4JFCuoEfDLD0h5cLvaLEZF0EkEhscqGKhtqhkzOocuAvGcb1n77JQBRK0sUt4ososeyM+ZmRm9Fh9YQtv3/jP2gjYxmimj54xk3ktNoi56oWgShMgAOxm/DFCDS74jiZHuq+DnPTsCXyUt/p0LwSBmhw5tO53Ixg5Lsw2dryfCiYznOX/JZlnyJ4kJDUnacKiJaT0nYncjUR4izw8gPmzKlcWVHNaS6v9lt/mgECGVC3F+mQeLJDPiRY1IcM/2aRLl/TjJozN+cX6UMwvYuNvC3CZdCAavcs8mJDAeIHSTxfRk/Cll4mkoan9dKuDHiFGUb8OIZzkm+DZZ04AxL2ZnJ2CpQeBt0fdJr8RK0sALE1Zu+4QOWxCATT/BrymPhVFzSVg2a/SOvZL1frm50TQHPAk5ZiXtHXKrJKc9w7H3yRKKT3OqXA71d2FSq9NH13HJTIKP+hb/Zg6jKg6bgBBc0ofTe4IvjPKQZIPND7Jl+jzdNlYagY7G5gcr14PdzB2/SIrXDSrOX7f9Ad7KfZP9nXhGzFou9z1gxMmpnus665P2Dsbp01PS38tj4Q9ENEnhSv14WJXmBdNofJWK0rcUCRuo9FraMTDrX5WRRVHhFpuz9JvJhDhjYLH8SyNTLfwZH8kTLtufKFd78K7kw02R0nofLUS19toblKJrmCHZ+zniaT4/2hoZJkxfscAOk+H+yHEhJo8Sbe2R7jwwNEkKdIk28WB9/PXe9p5gZaV0qpdPFRxmrZdgp08ZMwSt9MNoo6BIx2caO0tZmWwzCvphRHtTMXfeDtpxEyCtOwpaCgM5Q9phdkOrF4tzcHYDY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1ef53b44-8d83-905a-ae36-bb4fb60656f0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1219,
+      "completion_tokens": 599,
+      "total_tokens": 1818,
+      "cost": 0.006032,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006032,
+        "upstream_inference_prompt_cost": 0.002438,
+        "upstream_inference_completions_cost": 0.003594
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 466,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to expose the model class on app_list entries, which a competent engineer would implement by adding it to the per-model dict, though the exact key name is not stated. The FAIL_TO_PASS checks only that addition (under model) and ignore the extra request to make _build_app_dict public, so they are slightly narrower rather than contradictory.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to expose the model class on app_list entries, which a competent engineer would implement by adding it to the per-model dict, though the exact key name is not stated. The FAIL_TO_PASS checks only that addition (under model) and ignore the extra request to make _build_app_dict public, so they are slightly narrower rather than contradictory.",
+  "prompt_tokens": 1219,
+  "completion_tokens": 599,
+  "total_tokens": 1818,
+  "cost_usd": 0.006032,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

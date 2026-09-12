@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13109",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2089
+  },
+  "response": {
+    "id": "gen-1789191145-WlH0EUkMtGZp1Q8jW2ot",
+    "object": "chat.completion",
+    "created": 1789191145,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue explicitly requires ForeignKey.validate() to use _base_manager rather than _default_manager so archived related objects can pass model and form validation when the form queryset is overridden. The FAIL_TO_PASS tests check exactly that behavior on full_clean and on a ModelForm that sets queryset to _base_manager.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: ForeignKey.validate() should use _base_manager instead of _default_manager. The tests check exactly that.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: ForeignKey.validate() should use _base_manager instead of _default_manager. The tests check exactly that.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "mQop+/mkj0Jm5JNWKawLfknJT/OEC4zdW7ruoXsItbAaYFBsmgdLAKOEzRYQd2V39ejiG+odnDCYd601imp93sjq7f1X7GpDhqkPH3cEEwHkPu2gTsbeDSWfSpbA4MxBwhRwtSiXswLXgptOYXDGEzZb5CdM34Ki8AJ8wG9kAngaQ60O1Q3XzHHaLdmO8L4d0cijlQRyw9RGWMCWHRDI/EjmRnYrOAa2AfSLwVuOK7IScDbgOi+W+Q7JJvYJbKbkcnTNHnOG+sLse6aGJ7HspsAcD30gsRyRhGu6lYjUs2CA7xl8iPAGtxvh1d5RjhT7Rz0QyPV5rr7tU+OqAC1CmMKDII1iQoZNO91/Yql85LBaluGFRgLdZEiW1yZPm2xI6jBrGLMgHNM0exxnNEDVmvaz0TfALFn3fgi2dX8OQY9ubwC61U/aO7GN581GxBZ1vl8tdw8aG1G3VkahY3ReAZd+Vz69GcN8OEy3hXUWR2SEBEUDUMcHEGjEL6LiZ00d/adBT8mHwcbT3oEwyeuY17KNBy4YJ4DLZlEiGh5tdUZ3+Wl8TIfC3d+A2zNz2QEZ0HRGy56ZwI3sk6fy2+E3OhhgODCpFBwkXt+rQudTv9R9/kNmMMMcnZM9bFInc/HnyNNoMl9mLtnmGP6dV99XcwMOAHn7KkrlRJ5WanU7Fp1ljN6cgaFT4kmHQUGawrYzybJIcySdozDz32J1P+0AVq+3b2XuOGqLCt//SxnxcrTiSw0ttJTvggFV2X8ubC68Uh3wtkAHcfg1E1ETABcrGxRrsojRznPeJxPo20N0oiRKy5W2EDWtKkgTe6pN8tnzOeT3rYuhF6XpKK/9B1difms26Ig5+ritl6m7S0jPv8MVXS/VYsXaGexzIrrNXcfa2h63kXb1iZqxs+DV76+SR8UcQWcN3uGSx1nhz5zvg/1JmXRfpXsMm97ivvVmXa0W+FvVHkg+LalbXpggRZ15RubRSXA3JQx2CxEH9sc9cxQfK2RJkek.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6f548fea-ee38-9c88-bea4-01860625ea8b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2487,
+      "completion_tokens": 304,
+      "total_tokens": 2791,
+      "cost": 0.006606,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006606,
+        "upstream_inference_prompt_cost": 0.004782,
+        "upstream_inference_completions_cost": 0.001824
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue explicitly requires ForeignKey.validate() to use _base_manager rather than _default_manager so archived related objects can pass model and form validation when the form queryset is overridden. The FAIL_TO_PASS tests check exactly that behavior on full_clean and on a ModelForm that sets queryset to _base_manager.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue explicitly requires ForeignKey.validate() to use _base_manager rather than _default_manager so archived related objects can pass model and form validation when the form queryset is overridden. The FAIL_TO_PASS tests check exactly that behavior on full_clean and on a ModelForm that sets queryset to _base_manager.",
+  "prompt_tokens": 2487,
+  "completion_tokens": 304,
+  "total_tokens": 2791,
+  "cost_usd": 0.006798,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

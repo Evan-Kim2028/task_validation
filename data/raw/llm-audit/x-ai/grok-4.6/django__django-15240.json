@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15240",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3207
+  },
+  "response": {
+    "id": "gen-1789191557-CBUiFZvAwGLdVGwuhJ0H",
+    "object": "chat.completion",
+    "created": 1789191557,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue leaves open automatic cleanup versus a dedicated or migrate-based command and does not specify CLI flags, required app labels, or exact user-facing messages. The FAIL_TO_PASS tests lock in --prune on migrate, a CommandError string, and several precise stdout texts that a valid implementation of the described cleanup would not need to match.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue proposes truncating django_migrations for nonexistent migrations, either automatically or via a command. Tests require a specific `--prune` flag on migrate, exact CLI messages, requiring app...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue proposes truncating django_migrations for nonexistent migrations, either automatically or via a command. Tests require a specific `--prune` flag on migrate, exact CLI messages, requiring app...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ZCcwtUxHfLPVKATG3e+Y0FL+/qiERjGDwelTXdsEiXQ/EQgh3dflTGfv6mO/kAE8tbsY4dMKVpAktdGQsouewEySDRtNOsCFphJl5xe2/fVxsedyO2n7fVOQrtUZ6tlmacPrz7DZGSb2NMu2npKUgTDRWnTJrqm8UWZfjvYB8z/jP73nhqcp64h8QibWM/hjoZQhCYwYuU70bLYb9sV39z1PXsX92xRQaml+LZoLaWw2dJg84kRlj9wCfr9ZHyrErXtIA/1Qd/Ml4UbAr329ucywzykRu7ylqYFL0grFbXt8kVMFHu+x4VRYBJRfwrvOJRl2KSadCsADm7g/bj1y6cQY/bBkE/SQYQSP79AzcXZslBAD6XVRhim+MDkXT6b8DTPEx8n4lF3kgUlkJzqA2tS3fzJ1Mwan+iqA+dPusE+J2KmZW9x47TLgy99VEeT5jt0xpzePsljYZWCOaP3PVLVbsE4bFyGpzbeJ03S5OpLnhJq9I2Nrh7mbqReAoESgHVEWTr7Ovf8XiscBuw+3lbZlGMyE1pRtHEoJKyVUP7SamjzGNVYoBJBt4wHH0PS7g2Jdl87bINu/x/KPqMmPFC7PFeSzOCvBw9R1iQJS3+wJxu3VAvLc3HWrr85uKGrdbxBsip+l+FL22PxUcYodqecAFEnYfl4QBj2LAjJbcaG0oFMk0CqoDT86Mh2ITRu3pENJ16z3XVstsZFIpzEZie78/PlnJUKiXHef34ircWN0GUGpHoCfuZaO1WruunBb0kQS/OAbR+Qisw+r8nbj0LvTjPFtwPURiloBL86ISAO7zQZBmHxQ70n5d8SU8BIdDWs1ZvF/P2zkTtP51ZWzqzVMKwZWoe4B0KFcCYzt+0BzT+/VjJA0B//RT4DTl0Avt6c89+j6xMI4sv8sfK6VyYBT8gZQmYRqAZyNovAh+EiaEmE3xJ14e9W9efWb/CROPyZ/SRCPP6HBSe/MgrviOnVvueZzF+S/JytgTKpN6y2Fk8O9lvYM9rNvKnWch/QxiC+63Hot5Ig0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d53398fd-7888-9e6c-a179-3035b21cbf1e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3393,
+      "completion_tokens": 296,
+      "total_tokens": 3689,
+      "cost": 0.00837,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00837,
+        "upstream_inference_prompt_cost": 0.006594,
+        "upstream_inference_completions_cost": 0.001776
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 171,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue leaves open automatic cleanup versus a dedicated or migrate-based command and does not specify CLI flags, required app labels, or exact user-facing messages. The FAIL_TO_PASS tests lock in --prune on migrate, a CommandError string, and several precise stdout texts that a valid implementation of the described cleanup would not need to match.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue leaves open automatic cleanup versus a dedicated or migrate-based command and does not specify CLI flags, required app labels, or exact user-facing messages. The FAIL_TO_PASS tests lock in --prune on migrate, a CommandError string, and several precise stdout texts that a valid implementation of the described cleanup would not need to match.",
+  "prompt_tokens": 3393,
+  "completion_tokens": 296,
+  "total_tokens": 3689,
+  "cost_usd": 0.008562,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

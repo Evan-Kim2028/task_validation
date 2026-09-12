@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3993",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1927
+  },
+  "response": {
+    "id": "gen-1789192238-wyG0rNCqsS7ufpewxsvy",
+    "object": "chat.completion",
+    "created": 1789192238,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks to align DataArray.integrate on coord versus dim but leaves deprecation as an open question, so a rename-only fix is a reasonable reading. The FAIL_TO_PASS tests require a FutureWarning specifically for the dim keyword, which is not stated as required behavior.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about making DataArray.integrate use 'coord' instead of 'dim' for consistency.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making DataArray.integrate use 'coord' instead of 'dim' for consistency.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "cyhKBn+ivzX1W6iXIAMkPMPqTgfK/j6qvnTbV00kRS9zNJwz7P3OSlfRBf2wLHOPw7AH7uLlgfSPYv6qD1Ohx2sQd6q2qN/GyV38xeoW9DKRWun2/9BkDiMcSdbuKB7zNm4d1nJsDoC/Ng1wBCGNsIic+lwGAFpduzGRCqXfRRzz9irCaI9sUdzP0vd4JWeI6436QMnPfwcy5DtKKrsI4jW/SGiqtlpY4ESoH9CIWohlY4LOHXJ9ZgO63oyv9uDnGq1CPRl/YWqwcPV0sHOrJ9Aw5G4zLehof3ibE5Y4IjFo470qJvKchdqgtL2UDH6Eid1znSGkjanm+JFZovdfFxebXdAxLeYWNtB8bxUVXlX3ja9FK7XzbnJVrnq6JKYEa3GBcZCcNfSodxS9yHYyd4GjUTIl8Fq4dNmHUtzXVWxVeR45Vq/1yMp+md9VVm8d4zkXrSHRzrgCug9F37rvqvVMQA8SG3sUx3jqQ6pU5tZFQwb+ZSPYVBJDdHVUwm7kMav+v46JZpIN2aiLR1/85MU/LkyrtxUSch8eJqruvsx4Ls+UK3v3rkWpVbh1yOCdnM7Mba0GU8BG+F9OQU6cvmqHqjHikuLFaT1eRTz7k9/7+MqlGBbacYQM8Fc4V7elYIpJGlXW+9Qx/8K9PjrOLRx68fAk2vZtg1+ZgUIGw7fD7DMrgZBrULtdT2qvSpFdalK87aDBEshO3btGT/dE4ANB5v/Tc2rLzVZJgdVsK6MFVX1+JGmygcDfrULdtIoMJ6k+XNKH21VYYND/HI5huTj4UGeI3zWQDR8mLRDSmsF/Q0cPzYYeGs7vLBVIK+OontRh2LNXOm0pIi3H0RhQeaqQJk6A/68FtOpEVqKRHM0JAm52OSdGbppkQqtPfuwLFEv/56NaoPV99QzNF1uT4iJ6FYLzkjmVoqrqPINSdkcr6oWbMV+eDxQ7CF3JmAFY5O16SAWzOg+/d9TYLO/t/6eRGsvgvm/4aa5Ek4GP6vNjQBzALj9CCauO45PMxWXJ6aVoI3YUUZMmw6MgqH2366LplG7d5hPwqy6viJ6VcSGugnhWrBXZPg90WVBjHG5Si/mUCp1+wcXBmUnVuyWECz8sYVeEeJI+poK4Hnyh248uZX4POJTeLm+OrgDbWnkcQjftXCRCuuVvBrO0GMcyFytXw+SwDCRtDA5W/iaCZeFt3oiLCgsaT4SLfz9YaLU2aJa0jeYmSiqbqmYukhCMgDLRRTX/qVxNGdkJBVVx3nmwzOBwmiAsMCsnMdyuf/RjC3CyKmUKpPYUi4/5OYH8MM4u8iiAJdZpGZUw7cskvUvElh8XnzyodCMkhREEzUMm4girsZEmCogV8On4gsZjg3dm444DxQcQmgDN7rnC+3HerINpcK5o0FUmVYKUPFDh0ZHXWsEQplQFbffceCUt3um9YSJ8z0PrfTDGv7b5NGQGEw6cVRpjDNRPPCwHbh9LEG9S25AyBMZ2dCuXBtpaeYIbMRxUQJwzqzauxZx5sicQG+IprxfrSZ6mgd7uEuUzW94RVPzI/Dd36PECjI3SlfkiBi2MNWXsZF4/NrN4iJZI1vESez0wxBs50NirMSwaXc59lkaUVyEfzIsddXBw/Qwpg/V2pA09PToWf7u5cEnVfkdgZ3NMhUKdcrrwNcTZKPMCzKLuzgjFdj82c3s3eSbR10vRy0VMKshSKzagkncqun2IbHG96ym3EB5xBFcxnkQ0dmzbAHrTVlh3WNkQShWJRWXKDugShV19Zpea/5RG6ZY4kKx2lfalNVilWPu5l+H3nY84L1n1/DkkFm0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b24f5366-f6f3-9f7a-84d2-5e2f96589464",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2342,
+      "completion_tokens": 430,
+      "total_tokens": 2772,
+      "cost": 0.007072,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007072,
+        "upstream_inference_prompt_cost": 0.004492,
+        "upstream_inference_completions_cost": 0.00258
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 317,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks to align DataArray.integrate on coord versus dim but leaves deprecation as an open question, so a rename-only fix is a reasonable reading. The FAIL_TO_PASS tests require a FutureWarning specifically for the dim keyword, which is not stated as required behavior.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks to align DataArray.integrate on coord versus dim but leaves deprecation as an open question, so a rename-only fix is a reasonable reading. The FAIL_TO_PASS tests require a FutureWarning specifically for the dim keyword, which is not stated as required behavior.",
+  "prompt_tokens": 2342,
+  "completion_tokens": 430,
+  "total_tokens": 2772,
+  "cost_usd": 0.007264,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13808",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2175
+  },
+  "response": {
+    "id": "gen-1789191326-SljrROb3GVp9fcqwzEKW",
+    "object": "chat.completion",
+    "created": 1789191326,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to allow OPTIONS['service'] without repeating NAME, but does not specify dbshell, PGSERVICE, or NAME=None vs empty-string handling. The listed FAIL_TO_PASS only checks dbshell command/env mapping that is not described in the issue, so a valid connection-only fix would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing PostgreSQL connections via services without repeating the database name. The FAIL_TO_PASS listed is only `test_service` in dbshell, but the test patch has more tests.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing PostgreSQL connections via services without repeating the database name. The FAIL_TO_PASS listed is only `test_service` in dbshell, but the test patch has more tests.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "uFMa9fIIKpJIAQ9c5Vq4S74HVPe+kK3XB1Hkxe/LtSLcdyqPRhl3jTUbCXu0kQgEe1vVD7EkiaJny9adKIoWaLwAV+HWlM3zEZIhNOoE/ZWx32QLtrVniL6ltDhDgNjlKfthUMHv1ctqhX3kGnftgXUOb66L7VFjQMwA/MQW3W1R6t26nRMe/Q+DB6UaKtswc/ErrRLjbV5Jv+HBtdHcMm3za+ViCkBTidSGy3TuAg53Gf2gtoJIC+TS3NjmwCSmC4G1SwZKBukAbSQKXGxIT0ig546TAJTySggH9sq5nupAybvwKI+QUnjF4lwt30apM2/WrvcY0ZymE9JLsX/mm7ysp/Ju4WevfN3TVTdhAN/WtyvlR1nyJ37SIwPNCv5Ah8FNOFK/RuI3+1/w06FPzEdTU2k0m3CnJUsQcoQXmDpRfMzuKqTNm8Evrruq2O2qsiXvGPbCuo8aTAwVdb8OkNCUAxTh9Tdr2ajOqpfza/MLYhMJtztlIV+BzawBBpf2wEEsns8iJnX/N3eJhaNjBsB8Nm0Cw4nf/va/4QbYNREogo043VPhOih7FZRfsYAWkVeRmfdOpBcAMBr8kX/DnNr9tQM7q6lmSIVqR4qUohcIkkR5IGNSLpLrlRb7BM2emGr9L4iLMEaUv5+osN0y8BT34e5Rqvo4/PiefCgtd2N5HqIXfTq/K0hy/1aJxiZI8Ky5DZ3zxGKPYGmgY0+yj/lzWmnuiRRZgF6EEQzopnZ23NSG6JCYgor0itVAbQmI3MlE7Rfb+0vyumoSSsLZ47XSR1BUMfns2nD5IrFrjp9JjCMe7Wx3y6r4XLXh/mYkTFI0n2z8/Efjge+DXXDp/oHWjzNPOMw5YCn7VZFh3VZJ2xBJjWSPP8/Ov9evW+AVx0t78O2izIZxWBDVgtn+mGEWevQX9VYm9GUHZXYd8KqOoY82BGgnh0j21XB5e0QHblFdXf6S5mJDf/kMIgmoxXU0UUuHT7H7UubGkv7owUMipBlGyi6d5C0tyiUrbmRtPGvQ5mbqwXFEjefEO7fmsIMcLw5AWOw5eQnHMgO9nAxCaafjeKiFykEY0n7N51B/yXG3J6fZdJ7g3mNVQZqF9Ksx2vgpckoY4veHSunrJ+7TwkSpWC0co4XY3pZhcq4qCL1YIDwJfEr0KYMVRXjlsVU78E36v1rRkh6ujv3KFIpYPA++n3EefGLnipvL6ov9kcqpaLN3mKqCAoQzfunb+Mav9Em8BqjQQz66V1CxaECwtPPTtSoHjD7NDs6SyX7oPuCt0vFjhmNmHSk75OO+E/tcCIAWfkQQoUB7g1rWWW9F9jmiskmmpr4HW49xeZKf/JGTlLVHUpRs3xgglO1T51K2AJuoQ1H1ljHJ0JJXSuzSkztqd6bxoAH324BoZiLKBFP/JnNgN5WTZW4TanOge1ZiKEZp44TrELmqFY03uaFFKHQqT5XJLgjdffUV8P/qKIIXhGFdMo/QhI3wO7aitKk00P5Ith6FQBNAgeWDYYLXYc6lhCOM46TjiyDFC2RwogZ6/MKqgn7BuGMGi7TbsjK+z4jWHPaw4/TTVaVOBsHPg3NYlTxexxsb4tUYrMV1VV0R7YM1/T5fviHvEhCAn7bZMbDZ1Y73QsnbmWK2rBrBqqaVVtR7XbjjJyAR57m57gLKSs2SfPA61eCtTALzfugO/6YwFt5zhknlryBVi8L3gSdUMZIdQ9jEYY3c9ds6sFFvVyXMiA5R1KfpkyVcN8i5TnrIfnQfEppRm8gd++TN5AkFinFqQswFuiTD7+bVbFZrrBrNQPE3wFCHGLe1OGnMtiPA2SJ9wiIBM9tDnCztFAS2ne/uH9LcjqKb/kg7Aw5Omlq74SKdtGrksqavBiNG0dKLFFXNCeeueA9w/SZiNjFHFkfEqLKX22dEMe8q82dOrQMri7YEHku5Enpt+qaNE21+5AmRIs7TMivaHT0zfNoxNmHs6UZCBGSaVKOlK4cFQFzwtRAQifJ6euGtX7jobPLTy98yp2IlhSvewQ84oK8QvEL3KwShDQ+EYBShgf2lWjtp2o/7eF0UXCTgbK30NzTKoqfVFSlOVHj97tSQq2jQ5+t2IQ0dKp4eU137XqbdOzep3i4UmTzmlKrhJZrKujz1LDq58JPV2V56RZfV8QjOy0N3/ySkCGKoDEpwL56H8GzZboonB9hkPA9amMIJ1rV32SLAOSQi6/DPP97nzosLDH5JPAcUDxOypmUVlY2olBzxn4nekdp62LZGXdTXRFiu3R0ot27YigQAUexPBI8FHrc9s8bS4hn+z7U/LvyZWMh0KACshR4vPtHoh2R/1oHScqmdP+NyDgua12Avvbt06WuWhAoayxaS+8Shew6Ts14iq3MABDkGyf2hZNp71PbLxX70bClGoEO238j477HZ+g1uahOleQG4dLbi+GV+jSfTUZiQqfCGTNP2d48psn53CQ8OfgovAReQQ6aqGC9QuuhC9Jv2+rQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_775666b9-4c9f-946e-bbf0-b7862935c628",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2500,
+      "completion_tokens": 565,
+      "total_tokens": 3065,
+      "cost": 0.008198,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008198,
+        "upstream_inference_prompt_cost": 0.004808,
+        "upstream_inference_completions_cost": 0.00339
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 441,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to allow OPTIONS['service'] without repeating NAME, but does not specify dbshell, PGSERVICE, or NAME=None vs empty-string handling. The listed FAIL_TO_PASS only checks dbshell command/env mapping that is not described in the issue, so a valid connection-only fix would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to allow OPTIONS['service'] without repeating NAME, but does not specify dbshell, PGSERVICE, or NAME=None vs empty-string handling. The listed FAIL_TO_PASS only checks dbshell command/env mapping that is not described in the issue, so a valid connection-only fix would fail.",
+  "prompt_tokens": 2500,
+  "completion_tokens": 565,
+  "total_tokens": 3065,
+  "cost_usd": 0.00839,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

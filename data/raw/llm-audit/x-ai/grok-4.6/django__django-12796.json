@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12796",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1505
+  },
+  "response": {
+    "id": "gen-1789191090-QseTckhl0IQADrJO4vQU",
+    "object": "chat.completion",
+    "created": 1789191090,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue allows either a skip flag or some graceful failure on missing DB, but the test requires catching OperationalError and emitting a specific RuntimeWarning message with no flag. A valid flag-based or differently worded solution would fail that test.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks for either a flag to skip consistency checks or fail gracefully if DB connection isn't available.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for either a flag to skip consistency checks or fail gracefully if DB connection isn't available.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "hEZEqwPnvOMybds+POsuzan10exFNCpG+iE3tOXMVbYm0b9GVoumUBeqIRyEYhqGKcoXViRoHftR51Q8lPQxVAc7182fzT8uaYaKSuxqnGKu43nlxnDQomf9c3+oGUtlBx+CT+cySW2Ser8K8wRRtvi6VgwcpOfpu/xvsnaNqa8GE5SmL8spY2UZx90Tj18qHT43WsoX/kwvF+k8Wafbz0wUDWPxwmISZ501wG5jAQsXTM3n72r29et0NaRTRgR3yU7WUa0RdXYMt+c6UPeshOr0GaiERT1gxSqF7/2/UWY1VcEhL2rwYd0Osiou6Qy0ZgiwG3/6EoSpmF4clvnYRf2QhEPRQksyKokSmtFGvV65RhjAZqu1hfhchYM/Lfduc5Gt9TRM+faX7yxFeJ0g0Wen2JGpAGndSuPvOZRofFdhiuDfg6boTOqY7u/nDd6E0mYk5sWUw4M3vkp5i+bee1SVbMm2P8/Ib/vcmTBgXVzVooEwn2iLITdGH2AeDe0CahO1D53P+UMPPAzh6kZ1kXNaJrw5vpWwSRwObqgrxUo1/a10MzdWGtnKqTftIkH4kd4CJLOgiC2uCdlKVKBamMxdSGBEoA+hG2xX2778qYZT0cE8iuTGZBDhRT7mQJs40U5cFBvDga0ZbNI8KHvbTPfOmGPoS8DVPb0RgbiB8Mfg/sZQQk/upo135p0JKYYurbEn5TF2ttQXoWRu0vrJqtZuR3cFit9wv6fHqzivogVTnHHn3q+HwhJiiYwcA/jqNPoWPWpL8ZubJtNqqfOO1g5ct4oDawzznC+MdZG626B1s5t00U6P2eZPf7JOzhePq3Y0FK5AxNtzJd/fNqvOMg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_655a3107-38db-9eb1-b1d6-2f4a0f0aae5b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1708,
+      "completion_tokens": 235,
+      "total_tokens": 1943,
+      "cost": 0.004634,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004634,
+        "upstream_inference_prompt_cost": 0.003224,
+        "upstream_inference_completions_cost": 0.00141
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 132,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue allows either a skip flag or some graceful failure on missing DB, but the test requires catching OperationalError and emitting a specific RuntimeWarning message with no flag. A valid flag-based or differently worded solution would fail that test.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue allows either a skip flag or some graceful failure on missing DB, but the test requires catching OperationalError and emitting a specific RuntimeWarning message with no flag. A valid flag-based or differently worded solution would fail that test.",
+  "prompt_tokens": 1708,
+  "completion_tokens": 235,
+  "total_tokens": 1943,
+  "cost_usd": 0.0048259999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

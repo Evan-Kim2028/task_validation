@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8125",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "3289f875-d6b6-9570-9769-0fc4a317f3bd",
+    "object": "chat.completion",
+    "created": 1789194219,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that every module member be offered to autodoc-skip-member, including names omitted from __all__, and hints that default exclusion should remain overridable. The FAIL_TO_PASS check is a bit narrow because it pins an exact autodoc listing for the testroot target module, so a valid implementation that still fires the event but does not keep non-__all__ members skipped by default would fail.\", \"p_invalid\": 0.2}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue clearly states that autodoc-skip-member should receive all identifiers regardless of __ all__, and the gold patch's ObjectMember.skipped flag with keep=False before the event call is a reasonable default.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3360,
+      "completion_tokens": 141,
+      "total_tokens": 4100,
+      "prompt_tokens_details": {
+        "text_tokens": 3360,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 599,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 35332800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that every module member be offered to autodoc-skip-member, including names omitted from __all__, and hints that default exclusion should remain overridable. The FAIL_TO_PASS check is a bit narrow because it pins an exact autodoc listing for the testroot target module, so a valid implementation that still fires the event but does not keep non-__all__ members skipped by default would fail.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that every module member be offered to autodoc-skip-member, including names omitted from __all__, and hints that default exclusion should remain overridable. The FAIL_TO_PASS check is a bit narrow because it pins an exact autodoc listing for the testroot target module, so a valid implementation that still fires the event but does not keep non-__all__ members skipped by default would fail.",
+  "prompt_tokens": 3360,
+  "completion_tokens": 740,
+  "total_tokens": 4100,
+  "cost_usd": 0.01116,
+  "cost_in_usd_ticks": 35332800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2581
+}

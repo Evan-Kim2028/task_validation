@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7432",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1022
+  },
+  "response": {
+    "id": "gen-1789192869-Wii1FihDuWD4Any4rpq4",
+    "object": "chat.completion",
+    "created": 1789192869,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue states the skip location must remain the test item under --runxfail and shows the expected report line. The FAIL_TO_PASS cases encode that same example and output, so they fairly check the stated bug.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is clear: --runxfail shouldn't change skip location reporting for pytest.mark.skip. The expected output is shown.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: --runxfail shouldn't change skip location reporting for pytest.mark.skip. The expected output is shown.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "JTMDoX86w9mpVR8jXt00IZMk8vPhDG+2AaSqMfrSH4EYtV1s5uAxzQuOdBJ1vSx+oMZ11hiRQNkF5DVHunyeZoF6vjydkYiXa9FTk4lm9WWIOtvEYnRspwjcAHFnFBYQ5d3mqFtzBDyC+GVcVIBephef04XxrkQeggjY8VNsRyNiOraTbVq/BI6n3ZwC+GfzAGBmUL68x0SwFXyqy0p0o2TUn4ZBYUxjusYN36Qeyi0clR/cby6ilupsWUx/dlA8V58kXWomcmluakjbRqPODc4dLyEQGb2k3UFUpukC1uyPIZAfgtz2OjJXc052LdN8IIdF8KumYzq1GTo6AczW178UD73p6RNakQr/Qgw+lS2dplFtehvKsl0XXtP6jsbPm+dJv+nmTfU7Ugi1A8lsgz6gpL/uf68Yd9pSaf8KAcQJMkWAXyRG7PT4aCSw2OTfVwYsfpAVuulHxkf43Y+Ukj7VK5j10VOiiShBPqm2HDyIZAgd8Uc8+nIXK+BUi52U4Cklwv+3VMmHCnuBGUvWyfiSP89doVdigBwmEzwD05GPy/TIggN1LFT2oQ7Bj40848JKZb7wu3dzg2eZ6fcuaJy+0lTV2eJG6/eqeV4I/e2Md6xPEcfWfvkS16Lib7JbNEEAqLui9nd6nZLUrNFBIik4eYbsw1x48XnroYdT+UbxeonddWWx+5dllmUbEiGsTRA94FCmXiq3AbYMDtszsol1GfrFSB/aEZOgDKIf6R2m5S1LF6caTpaaT911Ixf/3UETFprU7mNT7SsKZf5QmEM9IYPvhYOOsiz+hD2P+51wdZIcWtvkbqWQbk0cLzUkwKTV/vojxGXZxYwJig86QLI5IxcR9k/Pa8c.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_198000eb-7933-9ee4-ba11-05b8cd2ebaf8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1388,
+      "completion_tokens": 243,
+      "total_tokens": 1631,
+      "cost": 0.00385,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00385,
+        "upstream_inference_prompt_cost": 0.002392,
+        "upstream_inference_completions_cost": 0.001458
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 143,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue states the skip location must remain the test item under --runxfail and shows the expected report line. The FAIL_TO_PASS cases encode that same example and output, so they fairly check the stated bug.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue states the skip location must remain the test item under --runxfail and shows the expected report line. The FAIL_TO_PASS cases encode that same example and output, so they fairly check the stated bug.",
+  "prompt_tokens": 1388,
+  "completion_tokens": 243,
+  "total_tokens": 1631,
+  "cost_usd": 0.004234,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

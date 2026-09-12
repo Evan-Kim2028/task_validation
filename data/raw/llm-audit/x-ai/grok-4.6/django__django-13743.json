@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13743",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1147
+  },
+  "response": {
+    "id": "gen-1789191306-LMnv5wiDJ78eI14VZChZ",
+    "object": "chat.completion",
+    "created": 1789191306,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to treat ConnectionAbortedError as a broken-pipe error via is_broken_pipe_error, which a competent engineer could implement. FAIL_TO_PASS also requires ConnectionResetError and a specific log/stderr handling path that the issue never states.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about treating ConnectionAbortedError as a broken pipe error in the development server. The gold patch also includes ConnectionResetError.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about treating ConnectionAbortedError as a broken pipe error in the development server. The gold patch also includes ConnectionResetError.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "toyy6AyeOdRDg6kWvmXbf03M26c66rbs9A/UwukJIMzTO6VMFgc9YoG9rTFEi/lmkKqoRe4RjO9ZpKyyv6/ZJXVX+Edb2Ri4uUVmkrRu9F1eVUmSG9SGXgZ+6s35BSdS5x0i2u5w8ATzI3GkoBrHs3WqyT1si03vRpbAm1tT7g3ux6/KF1McobEt4jGH6jIPnO6fgrxG8yPqWJNxq26lmFeCrpWwOIIDhcIOkla+l/ELCtWvqjBz9HeSmfblzA+CoC0cjiXE/VTkj4dsihY83sfH8QAwsddRbaCM7Wi9nNnK7P0LVRxst0C50bsNjexQCJZ0ovNMQ379Sr6DBc57HQorpJ07zJ6oL3bUanhvkrjH3T7QkZwZTow9+QP60ZbkbmO3ulpFs7hTP3jCo+PVhZ3FBpwAio3DSCEMkFrxIeTcnm6+g1sN7uCt+/tSXDkXtqHjsoRNN6bUspwjrOm4QgLMNJPr4gvggxqm0zFlfWRUxGjm6c835l0+Y1VlLHaaP3LqwjIzXzHFyIjqPPjhIroBbDN+Y/ziQu+VG41KKWyGybGZCXW/HKBCpwcVaHcnb8QB9AOJjs1K52AHn5kbBBylcZLrid4k0pERZqzJGRBoB2lnUBIkSarK8V0p8njoxzOuzXNh+ljW9KjEhHpBqa9k9D+nZbP2077DHm3FAmQheh3P2ask3KZYT6UEVWqtY0CtILOgdNHHlDtwTD9acAUlekpOIQf+lxeI4Oix1xXDBIKSmrP3Eq7SAGIzaAuLlQON9nkGFbFIRn8AHmz9pM5WIVmO2E5iGAOj9g5/uUUL1rVyt6PNrgsmXWA43HWTIaN3uHIfpOsk6/fC7WwBkn5WmsNl9nJZnntD9Ppl8htTpXSYw6FuEay2bx9llz3Drc9VLSYI9PypCDSR6Vhb9os2FhZHypfgK+nu/o/plhgN2xBXJoZp6wXf+8GW7d7n11NFKytovhYbmXioIdMROxP+Ms6LGQse5ObbdHADkIDPrjyHuGZ6J/VadOY7RGRLpDDUkXq1l9BinlEhpBIoc+HF9LBrhJX7MfAvB+yR6yyv4BVebsptm1P6vBgI4HRno4smaLTWLwMoU4ROfPEo+rqBaMipRPIbT1bJoj1Hmb4stpJzxvy21ht8ZRFlgzmFEeNbk9W81K/Ov4gX6R/oP+OdX6sWEI5e2nDd6wNZfexIk1z6IXqjhc7beXn5zqA78Zq4TXErZvtSl2RiosP+92qcRBIDvqXmz8NimYy6RAzOz2VKNYfdKT8dMzsEUwqV7HM8/df6pEWdmchWWVKNkErG1Gbd10o0FXJtoSC5OLVZddU7338VAqKJ1ktfm7qCX1IyvTEkulHV3gJVmiOLRWGL3gsiQJ9gvuRda4N2hSHDjXgJNjX9HrSnvX3alElR9eC1XYgmrXsYUI+nwUxC2yg44uEbwyciRpluaObYajdV4OjzhryJCn7hxjTAUqUy08yJU2tuUt/huxDMgFBVrrDncvIXJj3brNSZ9twTP8noqw4cd9fpHUtoWFmV2zHSlsh0zkPWpQKXOKF13sRwjEDZADwmFT2Yr7HXQyoGhO+efKMsCavgCOgAMSNAoQRlFKlC8Q.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_64a6c9a6-5e3f-9340-9a2e-0407ca519eb9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1416,
+      "completion_tokens": 370,
+      "total_tokens": 1786,
+      "cost": 0.00486,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00486,
+        "upstream_inference_prompt_cost": 0.00264,
+        "upstream_inference_completions_cost": 0.00222
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 260,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to treat ConnectionAbortedError as a broken-pipe error via is_broken_pipe_error, which a competent engineer could implement. FAIL_TO_PASS also requires ConnectionResetError and a specific log/stderr handling path that the issue never states.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to treat ConnectionAbortedError as a broken-pipe error via is_broken_pipe_error, which a competent engineer could implement. FAIL_TO_PASS also requires ConnectionResetError and a specific log/stderr handling path that the issue never states.",
+  "prompt_tokens": 1416,
+  "completion_tokens": 370,
+  "total_tokens": 1786,
+  "cost_usd": 0.005052,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

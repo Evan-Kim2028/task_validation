@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13157",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "bcf60176-c824-9505-a2bb-33189474fa18",
+    "object": "chat.completion",
+    "created": 1789193983,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only reports a default mismatch between r2_score and RegressorMixin and does not specify a deprecation warning, version, or wording. The FAIL_TO_PASS test requires a FutureWarning with a long exact message and no warning on single-output, which a valid fix that simply aligned the default would fail.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3901,
+      "completion_tokens": 121,
+      "total_tokens": 4246,
+      "prompt_tokens_details": {
+        "text_tokens": 3901,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 224,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 30953600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only reports a default mismatch between r2_score and RegressorMixin and does not specify a deprecation warning, version, or wording. The FAIL_TO_PASS test requires a FutureWarning with a long exact message and no warning on single-output, which a valid fix that simply aligned the default would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only reports a default mismatch between r2_score and RegressorMixin and does not specify a deprecation warning, version, or wording. The FAIL_TO_PASS test requires a FutureWarning with a long exact message and no warning on single-output, which a valid fix that simply aligned the default would fail.",
+  "prompt_tokens": 3901,
+  "completion_tokens": 345,
+  "total_tokens": 4246,
+  "cost_usd": 0.009872,
+  "cost_in_usd_ticks": 30953600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2671
+}

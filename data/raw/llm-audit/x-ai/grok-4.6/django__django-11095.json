@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11095",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1163
+  },
+  "response": {
+    "id": "gen-1789190798-S7Aqfv4UaOLem6Rn7KMz",
+    "object": "chat.completion",
+    "created": 1789190798,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly requests a ModelAdmin.get_inlines(request, obj=None) hook used instead of iterating self.inlines so inlines can depend on request or instance. The FAIL_TO_PASS test only checks that overriding that hook changes get_inline_instances, which matches the stated requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue asks to add ModelAdmin.get_inlines() hook to set inlines based on request or model instance. Currently people override get_inline_instances and copy a for loop.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add ModelAdmin.get_inlines() hook to set inlines based on request or model instance. Currently people override get_inline_instances and copy a for loop.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "A5fLnYlpxbLkXZSYqeXO3XH9asdOt9GobcDtQpAiG+0u6fEi/IxfGBNdoORJYC9a0cK2OOxzk8gpZGdaTFz3X2hxHrpqcYrZZJ3aUMAwfiJpbVmyERjgoCQxuwdLI0SFD6LFrlEJMhfgtn25H5MlJjHr6Kmb4p+F4FTF5RniNqT4UWbMOms7qULAzaKyLqmYkWWTbxmTVP6YPaq9RFXiyW1MJMSGLI0TM16e9MqEIjI1qkKF4lVlyoDvJoPREoVkuoamOPQotoLU4k+fHKJ/pBrQPIEbNeMzti8pp5yMcU6ybAog9tJc0NENjn4Yhz0aIA7axy+OH07uUAKedtbZ51vbH7D1adgl71KL/cy1sYSF6XcXp0pG+XbA1gTuMgaeRblYE81VIH9ST0hfGhqgWf4kMdJpY4eBC43ajZpkSvtZFZqZL15d2Csvdw7AtsmwdAc8daTfHa31t+57vw4Jz0Gne++IDF+U0GNrfGpVFhq2sxzv+sx4kTUojPeVwZj+zR2GXE9mzpxMwTfHfwZ1W0TkQB1fgmlbNNor8iqpqB11u/RRwRuFVzm5/Z2+b4a7tYBWCse5a8Ka3OYqZ61COSK9FhZFU6pFeepBx3ojduzHsy24wbzfXFcWiDIpZXcO47CwL5oMmaZabb27mlKGijxHxTAygLE7QUL0otGIwQrSEyn1nbqWpWLFCefCjL1QzaJV1EcA8df6hW2xEB8zBs/o+6mcuPNX8jhw2/qXq0Xlt+o5/qM3DeKm3Utyq3YFgqdb+J758WXIDdCVjRTG0ORiul8xpPBKKxVdbwvcnvxubimWJVoUmBCHVO/dV1ErSoXVVgkAWxAeta/VxAf5njxHdb57HNXUKtLHDYFJZqcqSruKjVGSMvLrreYSrA5ixaCkz9lM8Mugwdbq0C683iXHlztQ1J5rnP96KeYaHKk8E3fWa6uTlwAK9Z0Yodnp/Qr+GNj3i/FugIdNIt4wNmSLJmmSWO5Z5C0k2gItrHvXaRTRTrE56AgRI13wsB8o6PteiDtPRfBfp2dLp/fbumkB8ArerbyBer+aS5fY/j7s1k35auFpi0ThIyhG1VNhkIc6e7Ka/5OB2zA3Bx4u+m1M/OgdQJijcUnwYGqOK7dNEoFIN6YKbhupeO6hLq21A5FbLlveBZ4+Xfgb44GH0/w2d7zls+XzKpK/4YsTBkjQUjtfAPhdYDA3Pyc4qWwnl//QHk3223riS6jR/L+mFzcZZkzcnHzz+tQZyxncoo6U+K4Ggd6srTv6Wn4+8FKfBkhC8JlKctt5PPfVamUniD1Hluqi0Ld6exIVK9j4SzaE3LZApek8SzrmrfVjS3hGw1IHeqL+cY5ZkcWeB0X/iPt2IVkDn8G5CIiu5BWQLBNJGhLKK6Mgn9ImOn0eaMwvod9bPiEnqTyHRrGVlOGgZyQHnRGxy10EQlowvkcpICxTs35smW2tl0+jNLBUBMagv/qt7I1Rhfi/Y+/UbhJOUkrtMws84gUya3LgYw8V5PxtYctnsJqJkkd6vePwqWO2tZ2bWmoyL1PN8YziBJmlLYG1I/o8iJnd80j198nmloITT4QWs5gotlyMFe/aOA0YCQnDwcynTRRD4TLc9/RycEiAH7TFxhoANvhYI4QAsJrWN4xeKl12IGqcgX7H0r//HfHtGAPPN6RwULjmwsqL10t+YCzrACFH2Vv/VUjP1Nt275N0CWkWBg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_526b00f6-4140-90d9-a7ab-e6fdb78db780",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1471,
+      "completion_tokens": 434,
+      "total_tokens": 1905,
+      "cost": 0.005162,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005162,
+        "upstream_inference_prompt_cost": 0.002558,
+        "upstream_inference_completions_cost": 0.002604
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 317,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly requests a ModelAdmin.get_inlines(request, obj=None) hook used instead of iterating self.inlines so inlines can depend on request or instance. The FAIL_TO_PASS test only checks that overriding that hook changes get_inline_instances, which matches the stated requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly requests a ModelAdmin.get_inlines(request, obj=None) hook used instead of iterating self.inlines so inlines can depend on request or instance. The FAIL_TO_PASS test only checks that overriding that hook changes get_inline_instances, which matches the stated requirement.",
+  "prompt_tokens": 1471,
+  "completion_tokens": 434,
+  "total_tokens": 1905,
+  "cost_usd": 0.005546,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

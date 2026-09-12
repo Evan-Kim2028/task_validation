@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-16056",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "f2c37c57-3009-93fa-95b2-fde5e698644f",
+    "object": "chat.completion",
+    "created": 1789194555,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to standardize and optionally configure \\\\mathrm versus \\\\text for textual LaTeX, not a default of \\\\text plus unrelated printer changes. FAIL_TO_PASS asserts extra unstated output such as gothic_re_im, \\\\operatorname{re/im/tr/d}, and wrapping Domain strings in \\\\text.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The issue is about making LaTeX printing use either \\mathrm or \\text consistently, and making it configurable. The tests require much more: switching to \\text by default, changing re/im to \\operatorna...",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 10710,
+      "completion_tokens": 123,
+      "total_tokens": 11059,
+      "prompt_tokens_details": {
+        "text_tokens": 10710,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 226,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 77336400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to standardize and optionally configure \\mathrm versus \\text for textual LaTeX, not a default of \\text plus unrelated printer changes. FAIL_TO_PASS asserts extra unstated output such as gothic_re_im, \\operatorname{re/im/tr/d}, and wrapping Domain strings in \\text.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to standardize and optionally configure \\mathrm versus \\text for textual LaTeX, not a default of \\text plus unrelated printer changes. FAIL_TO_PASS asserts extra unstated output such as gothic_re_im, \\operatorname{re/im/tr/d}, and wrapping Domain strings in \\text.",
+  "prompt_tokens": 10710,
+  "completion_tokens": 349,
+  "total_tokens": 11059,
+  "cost_usd": 0.023513999999999997,
+  "cost_in_usd_ticks": 77336400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 7491
+}

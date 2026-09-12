@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16686",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1204
+  },
+  "response": {
+    "id": "gen-1789191811-fADUqB9df82iW7mkEGL6",
+    "object": "chat.completion",
+    "created": 1789191811,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that unresolved values()/values_list() keywords include annotations among FieldError choices, which a competent engineer can implement from existing filter error handling. The FAIL_TO_PASS test is slightly narrower by pinning values_list, exact wording, and annotation-first choice order that the issue never states.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is that when you use values() with a wrong annotation name, the FieldError doesn't mention annotations as valid choices.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that when you use values() with a wrong annotation name, the FieldError doesn't mention annotations as valid choices.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_54f4b343-18bb-9164-b496-48d8d53113c2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1420,
+      "completion_tokens": 546,
+      "total_tokens": 1966,
+      "cost": 0.005732,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005732,
+        "upstream_inference_prompt_cost": 0.002456,
+        "upstream_inference_completions_cost": 0.003276
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 428,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that unresolved values()/values_list() keywords include annotations among FieldError choices, which a competent engineer can implement from existing filter error handling. The FAIL_TO_PASS test is slightly narrower by pinning values_list, exact wording, and annotation-first choice order that the issue never states.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that unresolved values()/values_list() keywords include annotations among FieldError choices, which a competent engineer can implement from existing filter error handling. The FAIL_TO_PASS test is slightly narrower by pinning values_list, exact wording, and annotation-first choice order that the issue never states.",
+  "prompt_tokens": 1420,
+  "completion_tokens": 546,
+  "total_tokens": 1966,
+  "cost_usd": 0.006116,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

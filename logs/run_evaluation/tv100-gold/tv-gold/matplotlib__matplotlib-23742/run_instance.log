@@ -1,0 +1,79 @@
+2026-09-12 00:03:34,926 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:07:12,327 - INFO - Creating container for matplotlib__matplotlib-23742...
+2026-09-12 00:07:12,975 - INFO - Container for matplotlib__matplotlib-23742 created: 2a0c3acfa2aceb5238c1a2ffb02db37ff5b0958e4d924ea706a4e24a7943e90f
+2026-09-12 00:07:13,381 - INFO - Container for matplotlib__matplotlib-23742 started: 2a0c3acfa2aceb5238c1a2ffb02db37ff5b0958e4d924ea706a4e24a7943e90f
+2026-09-12 00:07:13,381 - INFO - Intermediate patch for matplotlib__matplotlib-23742 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-23742/patch.diff, now applying to container...
+2026-09-12 00:07:13,543 - INFO - >>>>> Applied Patch:
+Checking patch examples/user_interfaces/embedding_webagg_sgskip.py...
+Checking patch lib/matplotlib/backends/backend_webagg_core.py...
+Applied patch examples/user_interfaces/embedding_webagg_sgskip.py cleanly.
+Applied patch lib/matplotlib/backends/backend_webagg_core.py cleanly.
+
+2026-09-12 00:07:16,345 - INFO - Git diff before:
+diff --git a/examples/user_interfaces/embedding_webagg_sgskip.py b/examples/user_interfaces/embedding_webagg_sgskip.py
+index 338303f230..dbd6bfb2bc 100644
+--- a/examples/user_interfaces/embedding_webagg_sgskip.py
++++ b/examples/user_interfaces/embedding_webagg_sgskip.py
+@@ -30,7 +30,7 @@ import tornado.websocket
+ 
+ 
+ import matplotlib as mpl
+-from matplotlib.backends.backend_webagg_core import (
++from matplotlib.backends.backend_webagg import (
+     FigureManagerWebAgg, new_figure_manager_given_figure)
+ from matplotlib.figure import Figure
+ 
+diff --git a/lib/matplotlib/backends/backend_webagg_core.py b/lib/matplotlib/backends/backend_webagg_core.py
+index 141dbdcc2e..ee2d73d0cf 100644
+--- a/lib/matplotlib/backends/backend_webagg_core.py
++++ b/lib/matplotlib/backends/backend_webagg_core.py
+@@ -427,7 +427,9 @@ class NavigationToolbar2WebAgg(backend_bases.NavigationToolbar2):
+ 
+ 
+ class FigureManagerWebAgg(backend_bases.FigureManagerBase):
+-    _toolbar2_class = ToolbarCls = NavigationToolbar2WebAgg
++    # This must be None to not break ipympl
++    _toolbar2_class = None
++    ToolbarCls = NavigationToolbar2WebAgg
+ 
+     def __init__(self, canvas, num):
+         self.web_sockets = set()
+2026-09-12 00:07:16,345 - INFO - Eval script for matplotlib__matplotlib-23742 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-23742/eval.sh; copying to container...
+2026-09-12 00:07:37,143 - INFO - Test runtime: 20.73 seconds
+2026-09-12 00:07:37,143 - INFO - Test output for matplotlib__matplotlib-23742 written to logs/run_evaluation/tv100-gold/tv-gold/matplotlib__matplotlib-23742/test_output.txt
+2026-09-12 00:07:37,202 - INFO - Git diff after:
+diff --git a/examples/user_interfaces/embedding_webagg_sgskip.py b/examples/user_interfaces/embedding_webagg_sgskip.py
+index 338303f230..dbd6bfb2bc 100644
+--- a/examples/user_interfaces/embedding_webagg_sgskip.py
++++ b/examples/user_interfaces/embedding_webagg_sgskip.py
+@@ -30,7 +30,7 @@ import tornado.websocket
+ 
+ 
+ import matplotlib as mpl
+-from matplotlib.backends.backend_webagg_core import (
++from matplotlib.backends.backend_webagg import (
+     FigureManagerWebAgg, new_figure_manager_given_figure)
+ from matplotlib.figure import Figure
+ 
+diff --git a/lib/matplotlib/backends/backend_webagg_core.py b/lib/matplotlib/backends/backend_webagg_core.py
+index 141dbdcc2e..ee2d73d0cf 100644
+--- a/lib/matplotlib/backends/backend_webagg_core.py
++++ b/lib/matplotlib/backends/backend_webagg_core.py
+@@ -427,7 +427,9 @@ class NavigationToolbar2WebAgg(backend_bases.NavigationToolbar2):
+ 
+ 
+ class FigureManagerWebAgg(backend_bases.FigureManagerBase):
+-    _toolbar2_class = ToolbarCls = NavigationToolbar2WebAgg
++    # This must be None to not break ipympl
++    _toolbar2_class = None
++    ToolbarCls = NavigationToolbar2WebAgg
+ 
+     def __init__(self, canvas, num):
+         self.web_sockets = set()
+2026-09-12 00:07:37,202 - INFO - Grading answer for matplotlib__matplotlib-23742...
+2026-09-12 00:07:37,203 - INFO - report: {'matplotlib__matplotlib-23742': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['lib/matplotlib/tests/test_backend_webagg.py::test_webagg_core_no_toolbar'], 'failure': []}, 'PASS_TO_PASS': {'success': ['lib/matplotlib/tests/test_backend_webagg.py::test_webagg_fallback[webagg]', 'lib/matplotlib/tests/test_backend_webagg.py::test_webagg_fallback[nbagg]'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for matplotlib__matplotlib-23742: resolved: True
+2026-09-12 00:07:37,203 - INFO - Attempting to stop container sweb.eval.matplotlib__matplotlib-23742.tv100-gold...
+2026-09-12 00:07:52,981 - INFO - Container sweb.eval.matplotlib__matplotlib-23742.tv100-gold stopped successfully.
+2026-09-12 00:07:52,982 - INFO - Attempting to remove container sweb.eval.matplotlib__matplotlib-23742.tv100-gold...
+2026-09-12 00:07:53,042 - INFO - Container sweb.eval.matplotlib__matplotlib-23742.tv100-gold removed successfully.

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11099",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1105
+  },
+  "response": {
+    "id": "gen-1789190799-ECaqv9EzPMpgaVsGfUiE",
+    "object": "chat.completion",
+    "created": 1789190799,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly states that username validators must reject a trailing newline and even suggests the regex change, so a competent engineer would know what to implement. The added invalid-username cases fairly check that behavior, though listing an unrelated help-text test as FAIL_TO_PASS is slightly mismatched with the issue and the shown test patch.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about UsernameValidator allowing trailing newlines due to $ matching newline. The suggested fix is using \\A and \\Z.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about UsernameValidator allowing trailing newlines due to $ matching newline. The suggested fix is using \\A and \\Z.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_35582a84-1baf-94f1-ab67-5a56465a928b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1423,
+      "completion_tokens": 621,
+      "total_tokens": 2044,
+      "cost": 0.006188,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006188,
+        "upstream_inference_prompt_cost": 0.002462,
+        "upstream_inference_completions_cost": 0.003726
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 500,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly states that username validators must reject a trailing newline and even suggests the regex change, so a competent engineer would know what to implement. The added invalid-username cases fairly check that behavior, though listing an unrelated help-text test as FAIL_TO_PASS is slightly mismatched with the issue and the shown test patch.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly states that username validators must reject a trailing newline and even suggests the regex change, so a competent engineer would know what to implement. The added invalid-username cases fairly check that behavior, though listing an unrelated help-text test as FAIL_TO_PASS is slightly mismatched with the issue and the shown test patch.",
+  "prompt_tokens": 1423,
+  "completion_tokens": 621,
+  "total_tokens": 2044,
+  "cost_usd": 0.006572,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

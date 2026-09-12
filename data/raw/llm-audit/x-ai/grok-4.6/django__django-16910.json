@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16910",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1804
+  },
+  "response": {
+    "id": "gen-1789191838-BxbJzc6oy3VEu9XcMSWP",
+    "object": "chat.completion",
+    "created": 1789191838,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that only() plus select_related() on a reverse OneToOne must not load extra related columns, which a competent engineer can implement from the sample models and SQL. The listed FAIL_TO_PASS cases cover that behavior plus a slightly extra inheritance-deferred assertion that still follows from the same mask bug rather than unrelated unstated API.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.only() not working with select_related() on a reverse OneToOneField relation. Extra fields from the related model are included.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.only() not working with select_related() on a reverse OneToOneField relation. Extra fields from the related model are included.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_27f5e655-2ec9-9b1a-930d-9f92857dc4c8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2294,
+      "completion_tokens": 523,
+      "total_tokens": 2817,
+      "cost": 0.007534,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007534,
+        "upstream_inference_prompt_cost": 0.004396,
+        "upstream_inference_completions_cost": 0.003138
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 396,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that only() plus select_related() on a reverse OneToOne must not load extra related columns, which a competent engineer can implement from the sample models and SQL. The listed FAIL_TO_PASS cases cover that behavior plus a slightly extra inheritance-deferred assertion that still follows from the same mask bug rather than unrelated unstated API.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that only() plus select_related() on a reverse OneToOne must not load extra related columns, which a competent engineer can implement from the sample models and SQL. The listed FAIL_TO_PASS cases cover that behavior plus a slightly extra inheritance-deferred assertion that still follows from the same mask bug rather than unrelated unstated API.",
+  "prompt_tokens": 2294,
+  "completion_tokens": 523,
+  "total_tokens": 2817,
+  "cost_usd": 0.007726,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

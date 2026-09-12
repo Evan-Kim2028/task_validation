@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15741",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 950
+  },
+  "response": {
+    "id": "gen-1789191665-wg8MasKiPrKK8ATRS6SM",
+    "object": "chat.completion",
+    "created": 1789191665,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that get_format must accept lazy format strings so filters like date work with _('...'). The FAIL_TO_PASS tests check exactly that path and a corresponding template usage.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: get_format should allow lazy parameters because of a regression with date template filter receiving lazy strings.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: get_format should allow lazy parameters because of a regression with date template filter receiving lazy strings.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "4mQx1oL3AhRftqqxwMyJIzB8jm/+Lcne1IMPpXsx+rdxrwXzXqU1T8+ZHqtFRuoTXHoHYYi7dixInJoW3+Qdenl1XSbmR+jYNsE6uwi5zWzyt7EpuPShFkgGY0hBx8ze1xIt0LG+52UeqrrA9ePwwkZC2SuT10RYJKWEc9rf9Bzasohrl2NpCp2spAGUFt1ZdWb4Z1Sx7a5rWGwaKcSCOzZZkXF5SPikBAo6WmTQn+Ru4mlgKd0bLNRnOZJl3cB2pAeGhJkemSQx8jZgBw70e00AU5SVlC5vU/UqP5g+a8A5zObJflOvKgq8KBwk5yKpbv76MvoE6BqAh6A1J/bwecBIfgh3fqW8kUrSOKqIC/dlvjMAKM5WHCqNWHlnRRs4xYmDAjlGlJWj/cllrY/PER8ivVM+sMqEBlnP+BByzdLJm6nRw9Hgf9ENEu/7v0ubyApEJZI19xDDwmIcRi0bgQwFiIIZWXIDwa01/B64wWa+lN90N/VVNpliYot/ybtRV7FHTyNgG/gi+2ckzEZLkUf9F6odU/18Ucjl7qFBJkYOXgr4dIu7V3Zf8SqfXFJzOOgJRU9cBv4FYSStztQRoTl2ofRZOBpQ0dGo2cNTFvnnApeWfD26nmiv7FWiG0T7hvddwPL/Ne1zb9+occPc3krOud+wrbEMbNx0ge90jV+7ZNPhhaQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_404f0d60-6ce8-912f-b9fe-c38a8d70882e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1352,
+      "completion_tokens": 229,
+      "total_tokens": 1581,
+      "cost": 0.003886,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003886,
+        "upstream_inference_prompt_cost": 0.002512,
+        "upstream_inference_completions_cost": 0.001374
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 135,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that get_format must accept lazy format strings so filters like date work with _('...'). The FAIL_TO_PASS tests check exactly that path and a corresponding template usage.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that get_format must accept lazy format strings so filters like date work with _('...'). The FAIL_TO_PASS tests check exactly that path and a corresponding template usage.",
+  "prompt_tokens": 1352,
+  "completion_tokens": 229,
+  "total_tokens": 1581,
+  "cost_usd": 0.004078,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7648",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2976
+  },
+  "response": {
+    "id": "gen-1789192932-Y05qLte0CIBX9B2bS7OI",
+    "object": "chat.completion",
+    "created": 1789192932,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only reports pylint abstract-method warnings on custom File collectors and asks whether those methods must be implemented; it never asks for deprecation of gethookproxy/isinitpath or Session delegation. The FAIL_TO_PASS test requires PytestDeprecationWarning on Package methods and no warning on Session, which a reasonable fix of the abstract-method problem would not include.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about pylint complaining about unimplemented abstract methods in custom collectors: get_closest_marker, gethookproxy, isinitpath.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pylint complaining about unimplemented abstract methods in custom collectors: get_closest_marker, gethookproxy, isinitpath.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ll8MJdNx1Meg5U692XoSiFQ2q0yJV8hrDsd1rH88S24wPolrq97dV6pUaehzh2eXk427FRNZRld6NjJhvmo/C5mPoExhU62rwg+Kx6sFSLWyPTEqpZJkglvnsoVbQYQQtBYQCxwu20sHDuc3uSS4IT+hmiR0QnSmOfH4CE9f4O/LJpBVCHmN04WS+GoVlyLfq48R5bgEBM14Zzjz9VIPox/MAarVV/ZT0AsYcnGnvN+12xvCjHOQMyk/75wJFuh23KCx61rDenSXgIBZfnKo9OOj3zsXQr+8nB0xKS7pWGDzDL0Sbi18RFa8CpmjmstdEdItu4lw60T0Lws2j34tEStWqzQztZ7F6SfEVeNtWxFD2+xWDpnTOAMj4qmMQiD0MiC+L4/I2W9VEJSqBx2XKcZK/4T1KwYJYc6S1TudFP9wp0wOVTEfT6s5bkmXFtoSQKAxWpBP0SVLVrEWa7iutJ4g7Higm2686oZjA+kJa4Ywyd0NMSN8Hn0veoIanOW2qNi7t2m3MlgHQ7ddVIEa4yMn4W5idsbL8fuANfnDTnUY++IfF27Q/bueixs+/pxZyNHDUPeLGXla3kn9TwpktbEBkR4UUKsSqDdFZsRuA9WgTkUvII44VV7YKr7lZtK9dVFWKZh7qS+dZYEWdDA75E/eq5UE1O7qaGuW66avpmmCVZ2RcHZq4Q1dqhlOwNrV2O5vXpt5sIRMtFwQ/UEo2lD2OImusrLIHVIk6EQVwZeRwc52hrITnsEax5pgEK7Mt8fGOGFIA/a04ryCV1a/PUMLhEx53lMTpAVOjh7lQYpwk5J9/x6lHEfAIiA7Aux7CjopoD6/MacopIG0dRNrAEgqD8ON6eWNRRxI8RJJRiVIhCEYzZld7nrJ7MyboGiPWGs12McTm6yR8ggu/8gBatXARHBzRBNnAvobDW+yKNHaU/aOP3VRfrDV5bvnJiTfbJGc5AMWSum4vTJ43UcNvxufSuj01JziFh3reOuE+F9vbSLlcSZP79taC0E6cHG0KesId7X8VE2zzTOyxmDV2Fq7aruoaYbQlYX3fBjZ1zRRdXeRIBTjkB6z7IuE1maLQX6sgkqoT8iNZB/WbEAuyKVly8wFEVAZkeJrFsYmQMet2JZaoqqxlMEOSHxoIpU8AZy2er2ZXnwxeaPTLkJ1MKEnNamprHqT/dYI+kAQQg4stcdD7+DJ5QLvIQsh7xuJdV9C4p4KCMLIXuRV1JRR7aFJl/rzINnvCkxNdwvRFDXduFRCZtP4JryN07wZ31vPYtI5n1Cdj8PevWJANGWpOoU870jx0XwB0xOyse5L00OEl2KSXK3tonJD3g2BeKea7BfeDLuMoGRIwReajDXQW76KRgVEY5GoqW0e72rPsVp+twXCf9TjgT6pMbnX2Ix7H7DRQUSxvmf4Nbu5kiRh8J7NDkEGbBaMZ2NujWd2wRiRRwWgoUX1Q/gOcd5TK/pkPaf+8e5jeR7GheFisFansdA4epT02H0xFHTrmRKCTZPtc61hf0jIatgKuwWSOEGGpMKuSmkm/dFY8Ojilh5EIhpDcmYdNXyWyLns5EenO9Q4dhZvrqQxXs7HnonWIYWswf+EgpecB5+7d74GKyCZX1jqB/i7DJ9xr18U6p+zbj6HdhUCxmMkUWgUhcWKxYADCmZSz+NonlVHMdaT9rftjaUKs5U6iFRkogR3CUYC3/KEr9PacxPZ5JYDvHu33C7Kw6b8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a9985cda-1610-91d8-b63c-ebc994af1ec3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3609,
+      "completion_tokens": 395,
+      "total_tokens": 4004,
+      "cost": 0.009396,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009396,
+        "upstream_inference_prompt_cost": 0.007026,
+        "upstream_inference_completions_cost": 0.00237
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 264,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only reports pylint abstract-method warnings on custom File collectors and asks whether those methods must be implemented; it never asks for deprecation of gethookproxy/isinitpath or Session delegation. The FAIL_TO_PASS test requires PytestDeprecationWarning on Package methods and no warning on Session, which a reasonable fix of the abstract-method problem would not include.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only reports pylint abstract-method warnings on custom File collectors and asks whether those methods must be implemented; it never asks for deprecation of gethookproxy/isinitpath or Session delegation. The FAIL_TO_PASS test requires PytestDeprecationWarning on Package methods and no warning on Session, which a reasonable fix of the abstract-method problem would not include.",
+  "prompt_tokens": 3609,
+  "completion_tokens": 395,
+  "total_tokens": 4004,
+  "cost_usd": 0.009588,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

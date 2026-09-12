@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-5126",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3654
+  },
+  "response": {
+    "id": "gen-1789192284-Te2soxYFbHA2E1zdD5CN",
+    "object": "chat.completion",
+    "created": 1789192284,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for a set_options-style control of HTML collapse for the data section and leaves other sections and the text repr as open questions, so a competent engineer could reasonably implement only HTML data collapsing. The FAIL_TO_PASS tests require specific option names and collapsed text and HTML for coords, data_vars, attrs, and data, which is unstated in the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue asks for an option to collapse HTML display in notebooks, similar to set_options. It mentions data part and maybe other parts. Tests require specific option names: display_expand_data, displ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for an option to collapse HTML display in notebooks, similar to set_options. It mentions data part and maybe other parts. Tests require specific option names: display_expand_data, displ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "3+Nt/YIyJYW4vdX1uC2WVoivsUAi/dhsswq8wBulVzPGvzPadJwLfZfYBBMBjL1YAxRSN9garzeMvHHRX4Zj8AC4TRzXxT+kKhaR2PoLKZokvVPQEcKN0jgrPuZZICXxAj0LnuS0grl55q6XrqA/IOekT8+ubSvS3sblXnMjNGimGJmD9HaNCgqcYoRBVn9ET+OUBUR3lxUkP17rj0CJyttq0F1X3wqOC9odfuL6oG+VqhEwkMNBsaL1Gav3x5Hsxl1ioFLUOHjB6x4Xplvkydbuq3/gg25BwhDJlD0JNHwevl6Oh5s5/YcjmT2T+FRZ5IQavIRkVMN85qlgKU4rI7rUmOI1ijHE5vMuiCzUorn80uPDqBtiT1ajs8TojjSmMi0UnUfHUjiEQ28YbIQL7Hykuj05R0uj4SkTPOZf04pVP8vLMlSrKO0AmwgzNoux+g829yDnyVn/V3MBvj7BpwkR4zIX4PlSJuruFREOI+M0rnugrqCfC7Swu8PoA81Wvo4mQ9Yfiobai1pJO7vRegc3qnzIe3cl+nF2ZSlv4+eu1pu1w0eIC2MH4zv11PNtcjNqR4bSrQOLB39VvzVhv5jWGK+vIYDQvkUKWAlx4hH1NDJKNSs3kz0pVi/EZQRVczPiXDMimPOBc8K8BfsZ1XJZU8jhdpF2fsSo+w8GyV/FXl9ugJvzhagbKqYmkngoySAHXpJ80JI24Rv1N0cAAcrFOmZj9dDCXY8p3xdNGjJbqn3M2CdGjpfoLoh8spuAyyBqnRBFQ7/Jcd2x5gBg9yTgcsnm5T2HGTamHCCjflG46iGRLaDYbks5hXKGlAUjnfPL1Bpxh+IJeHZp6W2oyRWQBS+PXbGUT3AXe7paBP1cxjOxrVWSWJ+ifjN/MYZKr9KiGlYeasGN/G6VnutshjO74IJGBicdnEtiZ88ZXAZrmw4iQBYAE1ndu44lq+K3zgh1DSY9Nwhz9XruY6G6/7Y8qCrLzUCOy/tJfO5o3MQnSbc5A4eJKZuLtmHDvbq+7S2LWZH9uCDRw/QglipAnOh444DOo4kjjW6MANe6so31sFNROSyoBGEyNt9GQMOwXBrQTzZ7yLvxRE9jPaqOmtLWjYZpgBi9N07HhM2RUhFXuHX2XEfIdPecbeI2Zeq0bhAZ2R8LQyvvXKaUf1+YFRKvH8y3p+uACF13f3ac83orS/qMfuyCww6Fe5AnMAWJCzB3V1eSycNBa0qEt1nHonIO.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2e68e7a5-366f-93d4-95dd-0d8bbe4d9ace",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4515,
+      "completion_tokens": 345,
+      "total_tokens": 4860,
+      "cost": 0.010908,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010908,
+        "upstream_inference_prompt_cost": 0.008838,
+        "upstream_inference_completions_cost": 0.00207
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 211,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for a set_options-style control of HTML collapse for the data section and leaves other sections and the text repr as open questions, so a competent engineer could reasonably implement only HTML data collapsing. The FAIL_TO_PASS tests require specific option names and collapsed text and HTML for coords, data_vars, attrs, and data, which is unstated in the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for a set_options-style control of HTML collapse for the data section and leaves other sections and the text repr as open questions, so a competent engineer could reasonably implement only HTML data collapsing. The FAIL_TO_PASS tests require specific option names and collapsed text and HTML for coords, data_vars, attrs, and data, which is unstated in the issue.",
+  "prompt_tokens": 4515,
+  "completion_tokens": 345,
+  "total_tokens": 4860,
+  "cost_usd": 0.0111,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

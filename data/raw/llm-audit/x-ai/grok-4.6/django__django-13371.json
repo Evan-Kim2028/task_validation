@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13371",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1388
+  },
+  "response": {
+    "id": "gen-1789191213-fb64xPWC0n83xm8z3wi7",
+    "object": "chat.completion",
+    "created": 1789191213,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly requires named values_list rows to be pickleable, which a competent engineer can implement without extra product decisions. The FAIL_TO_PASS test only round-trips pickle on such a row and checks equality, matching the reported failure.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is that django.db.models.query.Row from values_list(named=True) is not pickleable. The test checks that pickling and unpickling a named values_list result works and equals the original.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that django.db.models.query.Row from values_list(named=True) is not pickleable. The test checks that pickling and unpickling a named values_list result works and equals the original.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "G5AXLSTgfs2I6YZ35c07wnCgxZPIdXTVAAKSpH3G3GEPd59esvVdvTT2FdWWA9KRVOjNAMDVAgdD4QwMgz0PrMMpZ/FyeO+FmpwpjCKvJ43qW4jlWWeMEduvFu161XzkAeiTLw4UPjXCCqZt6FWkvLkHlZeuebcuED63FcLQcL3wGjRaMeAPWE5duGwtaBYWZ2crmcm53RMu7gHjwv4ZhaM0zMCA1jk9WeV6nr+3rCK1vDIeoTh6SpN2ujV5fzmptGtYUNkI0jgU8uF14a1GC6KCautySdNGj54EMHPnpuXvgxbrTOO73r6FmUU4ya2Z6Smo03316bbXu/WPKuZUV+HihKcvPOvznpqdkO8nJH61dAQyjBFX6iQjz32cyME3GfAFE4Ykzlncs6aYRyuwUN2jjYjzcKzVvU04RO6CPYBl6wpeCrOq9jBwiifnfe5IdbYt5OQlVIDcSxytQ+upHhorx22C2/LYRe3Hl/k0U34aMXpozwwiIvyAE8x4BQSOUyJPOZMTaZNHAGzvi6Yhj8lrIVwniFTV94H6O9Q8d7pbXR0K2d8yvPCH/q6VD3pirR2gTAkhDTEiZzkW1d3EvTjf1A2dMjvZ4jC30HjLD2ZhbQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9dfe5b2a-6cfd-94a9-9d3c-4acc151711a3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1791,
+      "completion_tokens": 225,
+      "total_tokens": 2016,
+      "cost": 0.004548,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004548,
+        "upstream_inference_prompt_cost": 0.003198,
+        "upstream_inference_completions_cost": 0.00135
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly requires named values_list rows to be pickleable, which a competent engineer can implement without extra product decisions. The FAIL_TO_PASS test only round-trips pickle on such a row and checks equality, matching the reported failure.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly requires named values_list rows to be pickleable, which a competent engineer can implement without extra product decisions. The FAIL_TO_PASS test only round-trips pickle on such a row and checks equality, matching the reported failure.",
+  "prompt_tokens": 1791,
+  "completion_tokens": 225,
+  "total_tokens": 2016,
+  "cost_usd": 0.004932,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

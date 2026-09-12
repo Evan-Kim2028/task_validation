@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2821",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1630
+  },
+  "response": {
+    "id": "gen-1789192185-NkuF1Al9ayoIxIWjBHxF",
+    "object": "chat.completion",
+    "created": 1789192185,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only reports a pyOpenSSL memoryview TypeError after upgrade, with no root cause, repro, or requirement that HTTP methods be native strings after prepare. The added test (and related method-encoding checks) demand that specific unstated contract, so a reasonable TypeError fix could still fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue description doesn't explicitly mention unicode methods or the memoryview error source, but the gold patch targets method normalization; tests include unicode method cases but the FAIL_TO PASS list mixes unrelated failing tests.\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue is underspecified as it doesn't state the unicode method fix directly, and false_negative is high because the added test requires specific unicode handling not implied by the traceback. Other issues are minor.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue description doesn't explicitly mention unicode methods or the memoryview error source, but the gold patch targets method normalization; tests include unicode method cases but the FAIL_TO PASS list mixes unrelated failing tests.\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue is underspecified as it doesn't state the unicode method fix directly, and false_negative is high because the added test requires specific unicode handling not implied by the traceback. Other issues are minor.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_775b8261-1d49-9335-8275-54bf18dbbd66",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2338,
+      "completion_tokens": 788,
+      "total_tokens": 3126,
+      "cost": 0.00902,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00902,
+        "upstream_inference_prompt_cost": 0.004292,
+        "upstream_inference_completions_cost": 0.004728
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 672,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only reports a pyOpenSSL memoryview TypeError after upgrade, with no root cause, repro, or requirement that HTTP methods be native strings after prepare. The added test (and related method-encoding checks) demand that specific unstated contract, so a reasonable TypeError fix could still fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only reports a pyOpenSSL memoryview TypeError after upgrade, with no root cause, repro, or requirement that HTTP methods be native strings after prepare. The added test (and related method-encoding checks) demand that specific unstated contract, so a reasonable TypeError fix could still fail.",
+  "prompt_tokens": 2338,
+  "completion_tokens": 788,
+  "total_tokens": 3126,
+  "cost_usd": 0.009404,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

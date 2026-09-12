@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14495",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2509
+  },
+  "response": {
+    "id": "gen-1789191443-KUaaNQmx8pSq1EIZtSlE",
+    "object": "chat.completion",
+    "created": 1789191443,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly prefers allowing migrate to a replaced migration that still exists on disk, which is exactly what the FAIL_TO_PASS tests exercise. Alternative error-handling is mentioned only if that is impractical, so a competent engineer can implement the stated behavior without guessing unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about KeyError when migrating backward to a replaced migration. The user wants Django to allow migrating to a replaced migration if it still exists on disk.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about KeyError when migrating backward to a replaced migration. The user wants Django to allow migrating to a replaced migration if it still exists on disk.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "U38h8WilhJv3+kjYJR2P8eTf+gaexpN0+4D2JMdLKs7eFtCIHW26CijxESd3UcRrOOiwPKQpNoz8fWXVIla2REBpRQYgeGiYRyx3UeiHyo5IEK+CvMJPfnb27RUqaV/WC3wuKPC1OTtNbGRwghRryecUB7fHND3QGda5NfLr21ZZjerC+CbMoulzH+NtMhaoQ6CTLx0DEiAAh77+d16otsG8yikr1Lj2ns7KYeUiTozZz5hvSzKh8F1W6AkwNSt6AhLi8G6SuLiX2WGWGjycX60VBJJ/wKxWrRlbCQjyc8z0naqTqtWsTQJ7Y1YgLoR7QfbpPQSI3sAQeBfhFBqG/3kp8tIbr7AOGE5aDtxaWiEVkqmBO/CbRti36sacSfHTpXG6e4LrlavTCGsB8lYUfHh88BvlHV1ejC2farWCIs8Ua73bBDJzDIeoWeyzv/TrbzG1lXEjDBijHgw/xcPCx+GkBm2XSO56TCbdaA9XIEMHq7tmPv4j2pgsQ9bRQQnthVrAAnydy3OSMQKmng3Hj4QjlLOi6p1dDCNp1SFYlFQoNFc7gGlx1J4qofZbb6U4I+o6aVGuePCD44jubaybD+j7XUa22j/GIkQhfdXDdKvpp1edjIHdCTp/NwN4FVNsriCO0JWYCn06KU1xKROKvQZ/tjpS3WZtNem2jeh/umTk9hUkDYU5RU1cWHm7R7vL8HxfUU//HpQDmUYePmqBOW5yC3bULfRuZH0A7AdfZu2t5pn7y7nwPsM0tKBvzuMKDLjTGO2fUXRyyVwzbAvU6hUwtrdpGWqlorZ1m7speXtBZCcxnhzzF7QneS6PTK3lxQFKjqbcSssUV+x/CfXg2jZm9IZ4rNo7pHzOHVzt3sdlOivs4wJ1Y5VdgnGufkD2tqagUnwavZVwpluQP2nxT9t2OrUCP3UogwVOLMMJbM80l7F11VCXaNGR3GmP91kPftiNQ7m6ZrAKRkcQowyQatLvDdhCYVWftY6IThOUREEdjv7sb71CshQ5eoW/D2uiEZ2I+HhIZvCdy/XHCnedXIM/iAALPSSzfovf+upJsOqNbJCCPYz6EiGse+Q9StX6hiIYdnRikuzfdY2uBXQeA8yjXEzkuW6rC0uQahMgAN+A01wf30vAGpe848X5d5roLve7ozq7u7OohX5PEkhAui0ZpfgAeHifzi8KGycaK1hamixZ//1fLM5Ch/jmfNH8Cq7k0XbEuuXFeWhAnw50dAeUHDb5bT6uXRupy/xW/S4e1N9M4emyWrWIL0+iHo5RJGTL9tFmcp6XapkVFzfVkVdsS+ryN0/EG7nhG/AH+Kxg8XyS6J/BVLweoFURd8NwPMQYbGC0AgK53YrMdB9H11HS5PGdIOQ3zsXKqNQOzCAOLIh7TQitVEkZtVTTt2kK9xrb/LNPAnYyopgiIrUaDog1Vc1NcUlT2b+xZ568kpldA3ZqmQXUY08YOr57/5Pev4WRSdJ9xoOqTrsb4VZjlvwH28TpqAsocNPyCTAU2mvniei5yAABLRE8xU+sCL7ZJthm3wOOoQQl5G6ugUGDLrWX+V/lxuhRkr1ZptTdiMdkEBjarMt4Bhz2BkBUo4PXPvX2UYWh05QxULSd604FPgUSR8ZRbFJmhygfMIhu4+ybrXjPamdoQPDJ33BIkqCVrh7pHUVFS7a7jMT/7pwLXIePWhK7ZSV2kOYIsfqC1yTZcpA2bNQvSevpDq9PWMC7ySiQNae3vJ33zmdA1/mSZWDIwAMMkTyDudbSCCc+k3205WndUWHE6qQWrO+uTtq4HAob/8Y152qJbdC7USVw62U6eb7w/fRxV15HdMAKtKS9SyGQQc0aeVbbRROnE9jIg3KQu0mPH8cBx4/7hxnAtqg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9e605336-a7fa-9d2b-8841-71387fb528a6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 420,
+      "total_tokens": 3205,
+      "cost": 0.007706,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007706,
+        "upstream_inference_prompt_cost": 0.005186,
+        "upstream_inference_completions_cost": 0.00252
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 306,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly prefers allowing migrate to a replaced migration that still exists on disk, which is exactly what the FAIL_TO_PASS tests exercise. Alternative error-handling is mentioned only if that is impractical, so a competent engineer can implement the stated behavior without guessing unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly prefers allowing migrate to a replaced migration that still exists on disk, which is exactly what the FAIL_TO_PASS tests exercise. Alternative error-handling is mentioned only if that is impractical, so a competent engineer can implement the stated behavior without guessing unstated APIs or messages.",
+  "prompt_tokens": 2785,
+  "completion_tokens": 420,
+  "total_tokens": 3205,
+  "cost_usd": 0.00809,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

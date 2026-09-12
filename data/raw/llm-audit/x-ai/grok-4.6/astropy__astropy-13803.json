@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13803",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2100
+  },
+  "response": {
+    "id": "gen-1789190666-vUN5cTC9WZ9gXjWGWeDt",
+    "object": "chat.completion",
+    "created": 1789190666,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that float32 values at the ±pi/2 boundary be accepted rather than compared only in float64, which a competent engineer can implement. The FAIL_TO_PASS cases check that exact acceptance, dtype preservation, and still rejecting values slightly beyond the limit, which matches the reported bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Latitude rejecting float32 representation of pi/2 because it's slightly larger than the float64 pi/2.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Latitude rejecting float32 representation of pi/2 because it's slightly larger than the float64 pi/2.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "643l9z1WT44zB1VjBUryzNGVqxSF2bxIqBCYH/IEyhTks/D6JzKYkbjjFzn72ulK79l6xX0VQ5kxxfDWtCS2oSgDzPgeG5LG6Jio1k441j8P5v0fcG4wKbS2MNlbz60DnxKBCTiTMducwRcBCoTxlPPESAdIMl44zmeCSTzDtpzOkOz4SLxsitWuKrGTYXMUJslwT34qWKWKDPdS5sIZwa/TBbFdBNnryFsyPt/KOxrIyg/VojAzBwDVlo6a+31JQnbe98OjSx14DUEzjnR8f7IgRAngOPSnH2+yj9irTXhTcY5Cn+lr5NsKn4XwSD20nv0lvm6NSyH1ZDKyO5GUx+kFsXsGGyIeUgT/soU4pU9bEGhZ99m3LNVUu59X4urZN76PdBVYreuF2YAqY+JlPJ8kEj3R/yixNjDxZnI6SZQNDtfvZup4shu7FD3mx4aMhyI5DfZ76a8KSjjyEaotN2cBd+QcQxbDh4BgfeARQzUXddzqsv51XtElVytJx18Ywz8TEthU57AKR5QjqbDHF++5FqiMrxJY2r4djFsKh2kUgy73WvXsu+aWAViUaRDV+mEWzKy0p1HW1VVvG0IJpVv+dgYn2fMSzDyiqkrRCH4+fFkrY9rZey3285aSMBEhfc+FgyxSA0Dd5BT1mbk+Xj4gSjtBcoy+R/ZiT8tBd/27Ly76G/ApvT38REzwCKTFik/phLtVYaKtFoRu2yibT+9xSLta/ST2NoM2dtmlStALWRpeMa2h+6QFfjlLl5KmqhCBK5vIsSMqLB/tJ8gQrkaJg7vjR7XcjurXmotuCn8RQsjQBt0VrqDqOVNsElWq/QAblkzx06NJk184bpo0kjOmkd6XNnqtjWFMtERscmdTlPRcpXx3+w0XuWWHl5weK0fIfERSKeGgTVoJIrCfE1zjyX0lhAxHL3PlqGLKqCDwehN04Y1IB4AkOe5K0H1TSLd/M54fvmJm0e1/wSc4avJC9QnzrqG9eM5casxEFqjnWD/qxqS/J+4TlKx8shb/rOY4huruhKMcfZ8v1NA2oCq8JpeowWAhIa4CsRSLyI2CHScC3UE1EUQbWAHE7Iu1PdtSRBwQTp1vCN5DvwgjO+YBCgB5vVp6sAYTc0t2HskJ0QNE4oLZy+3rokAPjlRc1Nbiv7x25ur6FGbyDHgqKkWeDZhoY1wnBsF80jkyg8G+sFq1HFvlPx3zUEeI4qvAHHDwZURkL9qi2DAGzKbEs3kqA7U0sKSD7TFS5aQV1iKyQJCYTXn6Aug4LwK6zH2+0V4N93QQrJ6L3fmUsq7oE5DAqFioTZxMTwhvcyurTLc77wa1r8y/55aWNp7LaZJzDr+n4/c/TIkRlf5pZ2we2SlhkrnPwMPC8crbLiWXhVnF1Xo8u3qL62MYDolJa1X4SkKsFdj5xMTbf4gphkKJ5e2otOLAFS1x9itD2aAqpcA3JIsGzGFMgXBIww9QWshVcek8pw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f340ada8-595c-9872-8399-639e6c18921c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2700,
+      "completion_tokens": 383,
+      "total_tokens": 3083,
+      "cost": 0.007506,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007506,
+        "upstream_inference_prompt_cost": 0.005208,
+        "upstream_inference_completions_cost": 0.002298
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 266,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that float32 values at the ±pi/2 boundary be accepted rather than compared only in float64, which a competent engineer can implement. The FAIL_TO_PASS cases check that exact acceptance, dtype preservation, and still rejecting values slightly beyond the limit, which matches the reported bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that float32 values at the ±pi/2 boundary be accepted rather than compared only in float64, which a competent engineer can implement. The FAIL_TO_PASS cases check that exact acceptance, dtype preservation, and still rejecting values slightly beyond the limit, which matches the reported bug.",
+  "prompt_tokens": 2700,
+  "completion_tokens": 383,
+  "total_tokens": 3083,
+  "cost_usd": 0.007698,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

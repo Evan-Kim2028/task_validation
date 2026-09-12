@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11163",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 865
+  },
+  "response": {
+    "id": "gen-1789190811-zN9E7YwNkOFYORsZdO0y",
+    "object": "chat.completion",
+    "created": 1789190811,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly specifies that model_to_dict(instance, fields=[]) must return an empty dict and even names the truthiness bug. The FAIL_TO_PASS assertions also cover exclude=[] and a non-empty fields list, which are unstated but closely related and already implied by the same condition.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about model_to_dict() returning an empty dict for an empty list of fields. The FAIL_TO_PASS test is test_modelform_subclassed_model which also tests exclude=[] and fields=['id', 'name'] e...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about model_to_dict() returning an empty dict for an empty list of fields. The FAIL_TO_PASS test is test_modelform_subclassed_model which also tests exclude=[] and fields=['id', 'name'] e...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fjuL6xJjqHNnMW5AmOhkeIK5CujfWXMfcU9NsKlo9JPyTEupdzi5G6+IQVl0TZHdAyHCahZ9kBt2mQmZ39NXKk3m/pbDCeM78+G29BKCGTlwzzCccoSYoktdK5wV65tTN/FpZ6aCcSXX5BZaNBLcVVAzH/ZenplHs78b4nOdKwi9iIv8H8mzWquWq1xYggL4JmodhWOfLxmsgmTREp4OqFnPrXdzfZD+q02higQZEqKUO6m2onacWMji9KJk6/rgLYEVUkDBXio2AMXxwBi61ACRESmjxRabHzntAqOTfFG2/DKZP2i78bttXcHrWWp/DQ3Mv1YnUU8DjHUtUWnzRjrsCLkJpyj3y3L5KLLZvN3hypS8vNC6zN5djbA1RIaDlWSKzMMErK9sDhSoMpiC58TCcpyIRgDuIVr8Pupz38sNvYnpUCyGPDkfCZnxYWSOElcHPE1l5VLnFMMxvVRJhxEDufG5jLKv0AXY1/0x3muTTmSFu3N/U1UBkYIdlIoTSyBBC/XyxcvqgglpZ7mLvsMbn49P1cYzRCL29sPDb1RaUZNx3L5D7w06Z4MdEpRFYYh+FU34L+39X5ZvLshJ056Yh0ByglEZUoFQvM9n1iqvLkfI0qQ9nMu6ZvviHScNnvhNKwN8i4D73QSA5D9KAU4nXBOcukhfhaka9iT3MNGkSkvm0JJ10EcU6XbyV3+q4t5rrBRR7lRi10PG3S1kHEmfN3WgzlN32YMSwat6atJiHs9+ONzPjpON0BxhxleipMsxlJpF0MeYepHY5cYDYdmupJL0S0EIVdSUXxruT2h9QdAtrtd2XufwykO0lcxqVlsceybl/I9rAoekZmvG72TrXh/EUiB71YRBuvLxXb2uskrGaKOVhWdln1Iiucd2z2lDPk9sjR/X2i426eOp5JBU9DOATIqUIXalIFC6MPwohV9Pd9ys4Ts7jZv0TJc7HqZ3I3UC7YjS//gSuJeJVoR7ObTrxWrIUEsZ4OsnfKVcCj8UJg5/VlAqBffuzO6cZsqTjZOyGdc3fg1/9sh/QEAnHlag4Xt56bdsetmSvc5rxZvcn2SE4WuE6FvLc5m96fTnx4ne1KW0eBt1PLH+Xt48TGoOJPP4ikCiLiFJdOyd8rLkM8LeYsut7sHC+X5xILOCR5iwKDqdduNz9MacnCrKRZFMpLZZu0HB4d2Ex47p9hHRGLGBmMv58yBNeIpZuMOBYrQkXV5YuUEIGQbPKB852dJBI70IJz40887td2Z75sVIUk+FEcBDOxYYBHqj3cPqzuVEkc7UgNxcwYsp1sR5v+hutlWtif2Ck8u5R7Eoop/IpcqY2/yCSZqya27PZzVLse7uy1q6wnBViTK4xCIL2c1alu6SKWpmz1Bvqz9GriGvvOu7xFNdqbSSwjKPGRHDuglVu/fZikfR0m8gYJVsp3HZOJb9TZge3iS5461H/gTnNr9y5fySv8NAb4LT1/KsAnAmsALB4fTCaejYdxuJwbh197ElKFVEhano2yeQ93Joh4sEUTcUIr8CHCn18fDqT9JDkPJXkYI4kmKTZpjBfD0WEUDyanl6dDgWqrHxgCRSgutP74oZeiHww+zuZ4xFAcq3FJakgtXs6ze4mYw+mLUaPnoQm3U2vJsEQhQkmon4V7/uHl7wXwR8Hjx8k0G/fSJO6RQNnZycu9DtUrWgNfDVUM0Hr1FuXC6zkUvSLkwwaC1XrcOi0fvCCpw4eoJPYt0eZTTASMs5wR86QP86O0CzAguJGhc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5b9b0960-4cec-95d7-9262-8bd21ea20d76",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1195,
+      "completion_tokens": 423,
+      "total_tokens": 1618,
+      "cost": 0.004736,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004736,
+        "upstream_inference_prompt_cost": 0.002198,
+        "upstream_inference_completions_cost": 0.002538
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 305,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly specifies that model_to_dict(instance, fields=[]) must return an empty dict and even names the truthiness bug. The FAIL_TO_PASS assertions also cover exclude=[] and a non-empty fields list, which are unstated but closely related and already implied by the same condition.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly specifies that model_to_dict(instance, fields=[]) must return an empty dict and even names the truthiness bug. The FAIL_TO_PASS assertions also cover exclude=[] and a non-empty fields list, which are unstated but closely related and already implied by the same condition.",
+  "prompt_tokens": 1195,
+  "completion_tokens": 423,
+  "total_tokens": 1618,
+  "cost_usd": 0.004928,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

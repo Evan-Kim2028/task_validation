@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-7356",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 7680
+  },
+  "response": {
+    "id": "gen-1789187518-zA836pIEE163VBJy7SyD",
+    "object": "chat.completion",
+    "created": 1789187518,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to restore underscore-based fragment IDs for Python functions after a dash conversion, without specifying a global make_id change, keeping dots, or new Python fullname ID construction. FAIL_TO_PASS covers JS objects, std settings, grammar tokens, module index IDs, and make_id cases that a Python-only underscore fix would not satisfy.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about Python domain IDs changing from underscores to dashes. Expected: `#example_python_function` instead of `#example-python-function`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Python domain IDs changing from underscores to dashes. Expected: `#example_python_function` instead of `#example-python-function`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "OX0mniXK8gNH9MnrEa8Q9bRnAI8GJQIdOjnqsQRWutvuIi7hjQe0M/P3d1qre6wSNxOmhuHeBIjBABU0MFGlu746KrwB6KJNbvw99d9xcgLtcfKSFyU/bkbhnn+QHZauxfQMWMBdAIRmsNezmFOP/2qvC+Qacw6yClydLs8I9S9uHV3pDfvtYhf5QnUd5I8hkEDf6azidgqCivx4ma5tVgGwjd29+gekwK/lfqfymRgwOzmfZkpuZifIQuS3GQjtM2ZTZ1qsftUed+a4uEuDb8KhZFDR+iCP67m3KVE2FQgeZGxxxHofilWVPMMzjnW9h8WiPm1qs4Cx3bXSLSMYwGFH6EC/AGtytZzPfpH4xln70e/ioO6WLUi9AAOrcLPZ0Qg9m8aNsM9l/mihtf+bHhkC3PLZxATrWcED7iAS/bEZ5K/RMec3yyFDHIU7P49BayXRkCO+nAiL5khZLQYGmU3S4rtd3po8AycU5SeHJHHba6u66AP0tpq5rHR5sGMd5sAwQy4JLOrBkBx5tAzKtuRoe2NGDvbqkKwtAj8iQpYtmk1Fe8BS6ky/lM2tiDQtTH4Dj/ss2yG7MaNaO9nGo7adcKF3hr91KKEJ74a2rAuqBhlQwcJSJ9mk3n2PbAlpXNaXXkhAotJBvklF14SPmfKfVDvqedzrKVgpabFaYeKDIya8rU6MyuDQDTZKQFI4wl6L8iwkyrTw7ua87/+vG2/u0CHzEhZV1wHqwu2eJUoLiGQ9jZ4rTsFOPDzD0q6W06XrO3qsaCN+SZ0S4fLirEijTx6a2j2n4FIcL/UklFH/4H5rdwjp/8q67APe5HKNwSBPtjr8CQYIK/JFLlsBAV6cLg2swTz/ZllfGY0+COTCvQZYVEXZe4b9wtyVt3/W3pjJh7SiPFEq219OAxXKKrU+Wi9HItwJx5YvxG5sclidb4TWie/USIGHq6yWNJOFP58m0Axw3iOH1g6yTnRUd8j3ehARiq5XfEgF/jTcLqNxNWmCzb9tGoJQTgYWYQEcCOfmHLFMba59JAAZl3GT5UBAdzNnZA1FRCkphFDGgE/9GGfhwXkDYCICOF40xurMJQ7vJoqUBvxVIscSvaz/o38zesgRPqr1EVePgeh6hacmHDymS0klGfy1RKGwfrg4cVsgzrqFU3bnQct2uXJU8OW0hsAkYBn5PHtYGnBsAWqh6QzvdERbh/e3m5mOjXJgroIqGwVz7wCltLmlX1EXprA4ZptECcoqSEoAdQqWF8qB4wHZJ6bjHMPqDg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_caa711e6-c1d5-96dc-83b6-df493141f1f2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9675,
+      "completion_tokens": 362,
+      "total_tokens": 10037,
+      "cost": 0.02133,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02133,
+        "upstream_inference_prompt_cost": 0.019158,
+        "upstream_inference_completions_cost": 0.002172
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to restore underscore-based fragment IDs for Python functions after a dash conversion, without specifying a global make_id change, keeping dots, or new Python fullname ID construction. FAIL_TO_PASS covers JS objects, std settings, grammar tokens, module index IDs, and make_id cases that a Python-only underscore fix would not satisfy.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to restore underscore-based fragment IDs for Python functions after a dash conversion, without specifying a global make_id change, keeping dots, or new Python fullname ID construction. FAIL_TO_PASS covers JS objects, std settings, grammar tokens, module index IDs, and make_id cases that a Python-only underscore fix would not satisfy.",
+  "prompt_tokens": 9675,
+  "completion_tokens": 362,
+  "total_tokens": 10037,
+  "cost_usd": 0.021522,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12503",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1050
+  },
+  "response": {
+    "id": "gen-1789191052-kvW7qTh0hxQ2Re7gA8Zr",
+    "object": "chat.completion",
+    "created": 1789191052,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that missing --locale/--exclude/--all should raise CommandError as the existing command already intended, so the required behavior is knowable from the ticket and current source. The FAIL_TO_PASS test is slightly narrower because it asserts a specific usage string and argv-based wording rather than only that CommandError is raised.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about makemessages not providing feedback when no locale is specified. It should raise CommandError due to a bug in an if statement.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about makemessages not providing feedback when no locale is specified. It should raise CommandError due to a bug in an if statement.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "IrY25WeV4ZgW8epNvGkIdsbrRR/LFpbDqo43DYeBx9q3HDRBP5yeO80/2v9k7eCtRH/QY/K5PbcaxqF6G80btN6x8wpU2AYt8Vc7WDN3UJ01kNL/AFVnrxcOTOIgRKLwD8MkHzkGeuYOLppVWujfKzr0QWJcm3KVDe89pKv+ZAvaQddJMsF2e5PHBKGoIJl7xZDVQoR/Lfw8rV3m659yh7ZNWGXYEnNP0yNz6E9iada2Y3qH85+Zp2h53pkmd6HevpY6eDzPZOR21TGe+nAFk2ZljarTRHZQZSK1P9Pa0Sks+gu5A57PghSLa5vaJ2WgL8+Kf+60+QF5rBXc1h1fElrKri6SPnSKsUImztScF+Q/GtnvYJNOVDDegLFE6F/JIeo+iDhMvs9Bm7fwzpVtLSsthH1A/uxmqn/76nvRcO9mJ+4VbqQm4oADvd0hBIJF2TCiYflgVe8BFxdHKVV6bxYFxd2eFP6TuMnaJSsOWViQJavyv6hAuYtc/MYOno6XxfO6vEwGM4MNXBNB8Wg5bOTAXkxZc2TwOogzb7hjbUVAXM3D9lwOUkYThvg9+9comVSuIQdY9Z3tF/5j3gsFmiMfUix/fCRCX2eh3OtQedoPDT7mhMdeiQ+2EyfF+5YDL2PAPT2QmNnZLxlzzDWn0ahym+vwKsvDSuiSwBELhQnE84YPOP6j60+kjUrcJRQGWhWclf1HntEiIOoTq20WZMK4/8GuglY9m4IQM3W7Sa8GINKgaBPe8Y8LtvDgQlwCOHaHBHhr/VzVjNfehDk4ZAu6wecKinc42qltR8Suss3AnYiGnPh0BeHXxNTS9gYwsqCNIb/Z+frD3DB0Iv1h+kWCR1V8BpbBmvqtCBTEnqLS7JTxQBPka7/inG6/1KSVwSL/F5TgqM7wZRFkq3H2+aDPoy/Y0dcAB+a7tvHh2+dMzxgmgzJxjRXtx0Tn2tZQO9mJvFmScnb2NPB3wMpHNWQoFXFjf1oLqw/y/jAPD7JOgwwo8xq1TOwR4unFCNwwoZx/J8ZCrO9Cw+APgmvHYQvhtkAAiyGh+nqrWjfoEfCEh92ZXuxNBLlWLar5a4JwopkuY3LC6+uSfa8yB3FUM1ZGZ9AQlkk0ZlopEoVJf8b1uOfoWf0os4/FyzXxk9/I6S11xzMpvc0pg7nADjZSx6kJpW25Biwu4ZJLrfAUAQpU8HbdgsiOVn/Y/4qTmArgqwFwnLeFi0KWMdd2XayR3aKuUK2NaIjey4gDDZtx93YVZ3SjH4VMrdxYRCjZ7lckAS9tYVvFtJpTwj96U9sZKEfrGJ9Z7q6F0q2rO50k7aUJwKDaptSwq1dZQJXky/OJWi+kLeyR5YRNzbK6uyBwyrumCphcxlyNoOsFC5imHWaz45L5SuHDxpfXGbA1/XCyDcv7ITfEKPybXWJalWjr3W6UgaUlHR3r6giAhMZsnKx5lFB/nYPhUni7Ky+01eDKJUTz68wpmwZMbtxNCtEUm3NHqFWMRxNUYZbQTIKc3XRsy80lJzwrv/3sVHIUUhLEChL13wizokBjTlS7dmgceDYZ5waQ6pQNAUyv7ddT42sUBKNMRuLaYNgrxMaXV2KddGq5nY9E1Ewx+0w59EVP7lAlQcTM1XtYe91dS3THnV3qqyaJFWBsgEG+4LYjzt8e3gCbBJuwmf4zkmckGc3L9N5e48C+KhrG1pcFjFos6C8mLjkk7FWa1L7zn0Tn5RSAtwE/oobB61jKM1SJSfF7wBTf9+QPFbfRwem2En1UBoW2RvLqaZOBRGsoJOKZ3AmhRYCxEa+DvjpP3YdCJzFE1BvYBCZLBcPDbqLenhZDiONozLQLSqWK.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8ab0e638-704d-9b0e-86e2-82de763ab812",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1325,
+      "completion_tokens": 426,
+      "total_tokens": 1751,
+      "cost": 0.005014,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005014,
+        "upstream_inference_prompt_cost": 0.002458,
+        "upstream_inference_completions_cost": 0.002556
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 303,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that missing --locale/--exclude/--all should raise CommandError as the existing command already intended, so the required behavior is knowable from the ticket and current source. The FAIL_TO_PASS test is slightly narrower because it asserts a specific usage string and argv-based wording rather than only that CommandError is raised.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that missing --locale/--exclude/--all should raise CommandError as the existing command already intended, so the required behavior is knowable from the ticket and current source. The FAIL_TO_PASS test is slightly narrower because it asserts a specific usage string and argv-based wording rather than only that CommandError is raised.",
+  "prompt_tokens": 1325,
+  "completion_tokens": 426,
+  "total_tokens": 1751,
+  "cost_usd": 0.0052060000000000006,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

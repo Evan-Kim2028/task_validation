@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1537",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1210
+  },
+  "response": {
+    "id": "gen-1789192134-0f2BMRkutQjJVESqkllW",
+    "object": "chat.completion",
+    "created": 1789192134,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly reports a TypeError when non-string values (float, datetime) appear in data together with files, so converting those values so multipart encoding succeeds is the intended fix. The FAIL_TO_PASS test only prepares that case and checks multipart Content-Type, which is a fair check that encoding no longer crashes.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about multipart/form-data failing when data contains floats or datetimes when files are also present. The TypeError is 'float' does not have the buffer interface.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about multipart/form-data failing when data contains floats or datetimes when files are also present. The TypeError is 'float' does not have the buffer interface.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "M8gUcewGgpf5VaUiuCLAQnRUrC1AUkVrVJwXD17f6GV6y75KFM+GO+KQSknzxtVpk9fmL/Nyi9t/XfKVbkF+rEHyJ6lb2VnNNf+xqCVmTlx/ruPYdc7/Tix74ux/S4Jwj3yifAbUpw8O9qmt4T1FYPbANVUnmBzGmB6jrmOyrjm04e29g5M7jPazg5r0tPI7NaCjgLW/+rWyyw5rBUPWg5botVjpiXhDfIAiA0MdM77IPAkFxDoSNlASf56WT68YyUtsOy6tqPqD/V/Yw99rqxzyjvu3CdcoyEdBWrW1NJD5irOJRN5CguIg/8axMaG96L+dc1D5xQsSXiU3ARcBpmAPUoWlE3clCdNPKnrD/s0PxyeMVdHMvktum6VrjAVbDAfhYA9etrJRVKSSWlSAkcky8jhZf/VE/4q7LAHG1PFMaIAgi9xhxUdgxLakCeq0t+vtdizojuZqlI9v/WYkj4vES8ZzcEMaeRcb0kl/vA4flCiiBOVghC46/8Z2+tJNssQB3rWZB1ZwqEy8TaVuGBLGqg0G8KeBJzbg8IeIp5CGPoC9FuAv73WZrOe3HXQkGDGSGp8JJOs2NwGV0fpdXiaZo7GTCEnZSDkG8gKgUjmN2Dj9KFV9UGjIGM3mVRL3+IOK1Rx9bdV0qM8RYMKYTFEt9L6Xz81F0nIvRvPXYOLq+sMymsw9akrJUcslIV1BJK1cAnhueK/lBInsMIUS9o3Qm8PSbVjl1Gx196iyntl7LqfEnxp+5jyt68KPNRFCXJvOxiJQgqS3CPjLygEFb9qPIEk+XnLJo/3mJui3qiKJjzsbo1sa8/FC6pCA/az6yuwiwhhTgENqDNnM5PRdtBk2ucsk3d/dSxEebFJebBzbKPBJMeyyl/yk8Bp8HpTUasJsUPX6cKTtyuY3fOnLo6OErVol7JIzbCC/0QB/0A3PHGrbyC0p7CuwmCq/cAdUiWN4dRnencySVTp1w1ibPjXzkurk8ZpJZav+rdCIT1LCDKSNnUNHcgmW7xq1fFsoJEL/pODOt3T4a83oB3MLiOEiBpPJFmQHQQwNEyTDwg6mPg1hgdLxlJpWuFyuU1hGpXQfSQhK+XovCP3QoBPzR0YYFyC/lQE8UsyYGDVDFvsphEJV09u9IPss87/u++e3F+a2K4DxvpQyLv0ZaHpSvor+K2XwZDTjZ8HnnFfEAIlK9AfLWrZcSsyrfZfIWbZRSZPnQv3f0Oa0oPcVqKkF/SOj358i5zlngP+Xz07TRJxBbKpAE6wdydE6ZpdGXanbrQmK7kf8DksRYymes793ilrswpSlxhW9rZe2iZ+xmq8QPeruNy15EHSW7nMfiwG4PEgTlYuunTU6OmS4W2sqg9f2sWbsA7x46OJiN4fCcY5iqH1uR25tyMn1r6BhV6oE+x3p3yYizp7AlQP0rZTrDrTdmLP9DFkflu3V/9u9hsOoa7Q229oV1D5JRyeQuw+57Ufd7UZhMJ1MUTxwmlP4B+OnFIqaMGVa37BiFH01zHN/AqjLx5H/xO58I1+PK+Ozr/yS/PJkabRCAahDoQNKmNjVZT/oYA/FA76ZEBN98tkfdw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f81e5e81-d88f-97cc-8473-1ee8bd207a76",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1632,
+      "completion_tokens": 386,
+      "total_tokens": 2018,
+      "cost": 0.005196,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005196,
+        "upstream_inference_prompt_cost": 0.00288,
+        "upstream_inference_completions_cost": 0.002316
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly reports a TypeError when non-string values (float, datetime) appear in data together with files, so converting those values so multipart encoding succeeds is the intended fix. The FAIL_TO_PASS test only prepares that case and checks multipart Content-Type, which is a fair check that encoding no longer crashes.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly reports a TypeError when non-string values (float, datetime) appear in data together with files, so converting those values so multipart encoding succeeds is the intended fix. The FAIL_TO_PASS test only prepares that case and checks multipart Content-Type, which is a fair check that encoding no longer crashes.",
+  "prompt_tokens": 1632,
+  "completion_tokens": 386,
+  "total_tokens": 2018,
+  "cost_usd": 0.00558,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

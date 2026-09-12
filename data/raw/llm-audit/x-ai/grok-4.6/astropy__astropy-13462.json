@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13462",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3379
+  },
+  "response": {
+    "id": "gen-1789190658-Z2wWxrWqWBZKaVw9eMFN",
+    "object": "chat.completion",
+    "created": 1789190658,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS and gold patch target day_frac, not the two_sum overflow issue described\", \"confidence\": 0.85, \"rationale\": \"The GitHub issue only reports two_sum argument-order overflow/NaN, so a competent engineer would not know to change day_frac rounding. The sole FAIL_TO_PASS test is an extra hypothesis example for day_frac_exact, which is unstated in the issue.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about test_two_sum_symmetric failing due to overflow/NaN depending on argument order. The FAIL_TO_PASS test is test_day_frac_exact, not even the two_sum test.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about test_two_sum_symmetric failing due to overflow/NaN depending on argument order. The FAIL_TO_PASS test is test_day_frac_exact, not even the two_sum test.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "i4U88vnI0bhOol3CbUkljc1gfB9xxzniDEk5NpRSHaE9BdIIFx7zVJiORW6bC/n2+6IZrGKvckXPtauD8X5AwZzRB4MceLbEDw9gE52x3KlaWMFFjQSpzget4Uwj9cTuaJ7Gaucfy59mciWv6NtDWrdtVGNxPc8U1KDqwMmUGtjQzeehuA4HpM1p3wCVg0QMnnADPJeLjmVGQLaHcNx+ZIWwr3xOZd03RAJP/jSJ3tGbOemC2yqVNaYYKl16HuNH4zC/bnk2rz+fG72C6mOCzxx5yGkYb0g7CojcBO70TaoEvcw+lJxqdS2q1JdRVJ/IHRvB4ZofEso/0VR2a8QCNtsTQKai2ILBQZq42gYCvuloxiBXqrzoFgeC+yGGpllJi6XTp+BJSGIE9FBcybKQVghAomYLeZxHYh/qv+fQDme8O00aasL0tJilBGQqlO5sTPanurfI1ON34ucrUG4t0Qwl9j0P0mjioiDHwjizGlHTnpFd4VwtLMbZHtEnkZwfUjpST/ZJJO+357QAZRUIgjG+/lK3AM+IwqMxRp3jI4hDrDTNB/+BPCl39uTXv/u/VzJrYoAr5jq8/Gvebdq22Cr+dJqvn4PhgLyFqMRZOe5/VU5NCU+wbyKAEt2OAVEfU+uVPFAOOUiMfZwPeuqM1IFBOwM9XC3805yebpJucdm5venYfkAN/1tMWw/NtxTNpmUBjW08CnntlFFeKwoI22RXyNLvaIUViJjRxtKlrwk3odO6DEu6BVS6ocwPrGjk19Uifx3xYThw+l9Pf+06bFumgSjzHo9Os4+6gqZc6NWEXCxA1UDpvUjb2zGKHo1DepmR08OAhdpNm5D4VHcuac6/FbkZ9SfMpQ4bCDEX9uLspDRuAjSyaF9SylAOzd6ufRs4V46p5Hc7PKrRDZ95mfBGYPcvizxiiePKdkV+j70EDvRIze9NX/fmPF13Pq6cV7jk9jFtaakinQo7r0NQaAP6THkonbh3NlS4J5gYxQjAPCcKZyZS9LBYBLfZniYTA59O4vU2Xuz9DAgEUfYcsVMz2Gy2Xb0hpG01dJIIh2ncgl39Hlu2owJf6MQBIWSL4uc6XHgPeNb2Nnr63UOY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e0962277-2907-9967-936a-729d1ca6cbed",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5216,
+      "completion_tokens": 343,
+      "total_tokens": 5559,
+      "cost": 0.012298,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.012298,
+        "upstream_inference_prompt_cost": 0.01024,
+        "upstream_inference_completions_cost": 0.002058
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 207,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS and gold patch target day_frac, not the two_sum overflow issue described",
+    "confidence": 0.85,
+    "rationale": "The GitHub issue only reports two_sum argument-order overflow/NaN, so a competent engineer would not know to change day_frac rounding. The sole FAIL_TO_PASS test is an extra hypothesis example for day_frac_exact, which is unstated in the issue.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS and gold patch target day_frac, not the two_sum overflow issue described",
+  "confidence": 0.85,
+  "rationale": "The GitHub issue only reports two_sum argument-order overflow/NaN, so a competent engineer would not know to change day_frac rounding. The sole FAIL_TO_PASS test is an extra hypothesis example for day_frac_exact, which is unstated in the issue.",
+  "prompt_tokens": 5216,
+  "completion_tokens": 343,
+  "total_tokens": 5559,
+  "cost_usd": 0.012490000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

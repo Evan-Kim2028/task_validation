@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13714",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1185
+  },
+  "response": {
+    "id": "gen-1789191300-OsOE4tblZaFdIVdnoV2d",
+    "object": "chat.completion",
+    "created": 1789191300,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that a missing SQLite database path is swallowed as a JSONField-not-supported check error and should surface the real OperationalError instead. The FAIL_TO_PASS test only checks that an OperationalError from opening a cursor is re-raised, which matches that intended behavior without extra unstated API.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about SQLite raising a confusing JSON extension error when the database filepath doesn't exist. The tests check that OperationalError from cursor (unable to open database file) is re-rais...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SQLite raising a confusing JSON extension error when the database filepath doesn't exist. The tests check that OperationalError from cursor (unable to open database file) is re-rais...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "MjTpqFvYCpU2WZbNdLTGplUx7TnikBtglfNlTkfTMpQrPIzj63gNqcTLxHiJFawIt8IDUik5rpF6DQZGlaDVtkrQ8lbAHRdHHYF0cFEI3Z5rOxkF0K55A6WKrShDWfZ2Kj2quf0TNBSp3Q5x+pq83g7XbRLYtHTWHfk7Pz4k+dRpkTAMYN29ycNKAKgtehjwhlWt+A0kCI4I8A4jq7yesCyk7ZBCI2e8LzlE2HMRQ6eYLxl9M0PbFgl5GXPcreaXPXjOg0We7J0m9hTaNAip3F7tgqMh5EwYQfAJsFPoYe+a3mz2YqP1uWCsqJwQ4oX6m6OZ2+olIM3tG9P5zMqTZHrHz5WYDxYgZCNi87ja73w3QB1aDP6zZ+SztTepOyg9/MzxzmbYB4A3rQDJWmS7LKzv+ML+8Pvb7eF/g0WQ1cShlbLRFkq4371YB1MFTduH7IKaMRxqxtPY/HgGH/6gc7aRxli3UvHEUtWTNoqLirXz3nLi404ojmVMqPJh2EmA/0Cgxm6xLnNsu0V+tQRBl2KGSLL+dbF0ZgNy6rKOFN0zOZ1Q/MsEhjotHIwOHMEmTTF8x8o6WA+STppplhl3RVhinsoj7TbYotVUqCVISgxuEdgqDiEpjy3W9FcF3l0bXRvZi2ZylivC9o+/+0o5Yy6KHQa33lUE2QHhLWltE5YC0rLBv+2exqebZCQ2MwxGeOY3KYgsTJ530l2TpmtUYlVIcBw/W4oqY03jLr1l6KP+OUwuyXxDoUovNtsWx28EVueYGHyDaeTtVnMv3SfT6TvlZr6XMdkqXOf5UEX3RIJmgTaTlvPs+J1COGbrazBivowqalTYC5PFejPGy0bQsLSJHF7tmHZdiZZdMwYjbpNc9IQ5ujj9iWc5s1Blr/zV98oK3q8R5F3NgppYF7xDjK9W+JJG0EjnOu688kjM2tpJxTTQ2A2UbYXwfAPcToqVh3B/DoBv2Lup4XHa6C6RjPxYQ9PtqQnufebB05pQs4rICaxdVjSqh0H1oT4/sqCMykkaFR5Yo+jqAKUZ8jvVdfwesthzCMEocq5z0KlBRd1QfoRlSdLtTYTulnTNiGA2/zg4LE78z8FkXTpqRYs+pSjeRNobspQ5e3EW2pcpn571Oy8cL6PfHp38yjZj2T9sHrwM9niuCLh2z20RtaN+McLymII+XLTWVfZVs3zb8kwAC2uYRRg7nB8IXub5UFPzsmNv/zgYw9Defikyeu064jx6X/Mv7kSAuL9fVCwTpqaEnC9R/sg9b6uHMOQIyxcA1ctz4cdswmLP9rSnmfEVFE8pTHA7VDqUBlXtadxdG2DT6Sba6QYnz/82iF4ni0KRF1TTiaPujGYwy1BcLIawqyNN6b7v13N/SybtVsmV1iJvlb3kVcifTgXf6hiGlvvb5s9zvlCvA2qLdjyvfkvjHKOqfGJQAcErkEtB25PRDSgg4dGD+ntqPueZed9jAOIdB5AraxgH9xllcqeZgjJzakglM07egViiukh5Qnr90VMabMWtkwERh1dUQIpY48rCSHUMaQjnpk/KciMr2Dh+mFLAk2badBf/CmTd9ppPDQP4UFpL+jvjWnQ6qXvSy+e7QycemZLUdbFXEU23LFzmEn4LkJk6FXUuVkFKUWYD4+sSDx+I29eDjgCo3kBOg2FXZzGFz2RdUauXJIpzfErAtQuxEQ5krk6L5NPuLfrPivXTp9CZJSd9iFCxSi8okj3VyiCZ/VzX4od5lQwA+ddg5JSTt3K3n0iNWRDB/qIjLGoua0OCZ/EpSIeWzSALbqJaF3guQmcMaO69k8AYvjcJDc1yALtG8RpD7SYUxGQwrh1+4Qzi.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f54e3b43-305a-9543-90ed-011d6dc8eb69",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1460,
+      "completion_tokens": 415,
+      "total_tokens": 1875,
+      "cost": 0.005026,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005026,
+        "upstream_inference_prompt_cost": 0.002536,
+        "upstream_inference_completions_cost": 0.00249
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 295,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that a missing SQLite database path is swallowed as a JSONField-not-supported check error and should surface the real OperationalError instead. The FAIL_TO_PASS test only checks that an OperationalError from opening a cursor is re-raised, which matches that intended behavior without extra unstated API.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that a missing SQLite database path is swallowed as a JSONField-not-supported check error and should surface the real OperationalError instead. The FAIL_TO_PASS test only checks that an OperationalError from opening a cursor is re-raised, which matches that intended behavior without extra unstated API.",
+  "prompt_tokens": 1460,
+  "completion_tokens": 415,
+  "total_tokens": 1875,
+  "cost_usd": 0.00541,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

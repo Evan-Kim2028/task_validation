@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-22835",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2613
+  },
+  "response": {
+    "id": "gen-1789191945-6SxdQX1TJqZsUHyTmIeR",
+    "object": "chat.completion",
+    "created": 1789191945,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to stop the BoundaryNorm inverse crash and lists several possible approaches, without specifying cursor-string precision. The FAIL_TO_PASS checks exact formatted labels that depend on a particular delta/sig-digit scheme, so a reasonable try/except or default-digits fix would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about format_cursor_data crashing on BoundaryNorm because inverse isn't implemented. The issue suggests special check, try-except, or making BoundaryNorm approximately invertible.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about format_cursor_data crashing on BoundaryNorm because inverse isn't implemented. The issue suggests special check, try-except, or making BoundaryNorm approximately invertible.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "d7tma3KykVW+lKUG333yX6ajqI7kef5aO1DGl9S6e+P2xZbp6UfhBlT/QcUkEWIJFE5aB7RX/GL8Pv5CutdzZy5CxDvUkaljDoHC8gcW9PMaZ3UrJHc8VWMl0bK7vmP9YAexiCvbK/kv2LR0OufFDQVYe8f7T4c1nOG+Nqfqc6rAI/RSVlaChXvbZ4fc4PEugHRi17XEU3wyVQegDj12s8z5/+v0OOVCUDHZv+xmbn88J3InjwT2ZpWIH5aGpSmm5t8qVb3qb5eSiH8OIhgttqF2u0WPJCgBm6K6Kk5TNK/dU5c8IsQ8YN1mUMS0C+I/gz8/qlry8UtUGN+7PL8Kqm0KnG05QHLOk8n++l474CfqyzIcomHQPU7NwIR56Dde21YAQfT7augMfw+eAZAAGqySSWHJUc7v0WcJyNSMHC62LjQzdkLIRrnF5K0e3EUBTL5zOiQMbGWkGGLozmEX1zW4qMjvtpccO25+EcPcWX7dRxEqQJWQxUU7P8szTj4cQDLmtPkqieDBUjl8PgoOJb57KZ6jQocoWpXQd5+yRr9kPBY5TrD/uEF6YJj7OmycB7vqVwHKFORE4sBHqhNjbqGG3JAoPGd8+bJECMbwQmdQ+KL8nrB+BS3f8vfsoSypG5+bIMJVjNn9ohc2lqobWV6rkaTw73elnhi5X35lFSY/2pLu2KMftuz4pEqCXgJzWoTmff0BoZZyKtG1LC0t+Pe7z7QIquJrBTaKHo5lWnM2gf1zgvpfVacHsFkf9U+3FBP/Dh0hwDJ9JY8Wt6f6e1xPpuRkcJqht5roOtSW0b69i6XOqDgAaZeJnEUe1ZbpZkFxuIM0WguF4pAZ2PtNshdzpQ0/4TbtcIPukE1NLo4JB0SbYgCC+A0Mm8NFw6fy1jD8gr5AaWQ/RFm+6N0EECofIPJ1/OJZ557b4nK2hUUqr2j3Qgc2kIXPk5ebsWAbALocAXIKtqNAehovepDlGZ6CU3qU699/OOI3PoWndFuCmGcTZr+OolN66IrjFDpfqnvbjJCfpMMYq4zXB215KeXE9Zk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bc1e9b24-2e69-937c-a3d3-a2f0bd22fb18",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3759,
+      "completion_tokens": 273,
+      "total_tokens": 4032,
+      "cost": 0.008772,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008772,
+        "upstream_inference_prompt_cost": 0.007134,
+        "upstream_inference_completions_cost": 0.001638
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 158,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to stop the BoundaryNorm inverse crash and lists several possible approaches, without specifying cursor-string precision. The FAIL_TO_PASS checks exact formatted labels that depend on a particular delta/sig-digit scheme, so a reasonable try/except or default-digits fix would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to stop the BoundaryNorm inverse crash and lists several possible approaches, without specifying cursor-string precision. The FAIL_TO_PASS checks exact formatted labels that depend on a particular delta/sig-digit scheme, so a reasonable try/except or default-digits fix would fail.",
+  "prompt_tokens": 3759,
+  "completion_tokens": 273,
+  "total_tokens": 4032,
+  "cost_usd": 0.009156,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

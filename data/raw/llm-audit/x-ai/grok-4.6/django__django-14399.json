@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14399",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1574
+  },
+  "response": {
+    "id": "gen-1789191414-YVeJTL3NXORy0gHtmAUJ",
+    "object": "chat.completion",
+    "created": 1789191414,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"GitHub issue is about Hypercorn/static-file docs; tests and gold patch implement USE_TZ deprecation.\", \"confidence\": 1.0, \"rationale\": \"The reported issue discusses ASGI/Hypercorn static file documentation and does not mention USE_TZ or deprecation warnings. A competent engineer following the issue could not know to implement the Settings warning that the FAIL_TO_PASS test requires.\", \"p_invalid\": 1.0}",
+          "refusal": null,
+          "reasoning": "The issue is about documentation for hypercorn and static files, but the tests and gold patch are about USE_TZ deprecation warning. Completely mismatched.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about documentation for hypercorn and static files, but the tests and gold patch are about USE_TZ deprecation warning. Completely mismatched.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "XQb5GvROmhShT+OCxYqqhZgPycUIYk+aWVC2dvXDvd490swnd9zgDMoijItod5sazkXqrc/dk1nsXFLsE1atupSNIHHahQVnOau4zfbpUhdFyPI6WbNLeRn7eOD4Ru3IZ7GCuEuLMD21oE01J6y4kAnCNYn7iyKqXYX05KG0av+jZrfZ/T4dGGVT+IR9H9xESnRg1Lgp0NWjtAb6jchKr04x4Wrp7j9zvVdBVlywFhZzydi0g/dy0C454WaQme3IqYPVxTaXyrqH4M02Sy3Jh7yVbFsgB2IWnBWF9EeigzPP/k0musvCyIhdka0+9XVtQqbCRRdEFj3wAxRDuxH8Zc11DUU45tja5uD0iVuOR2104Jw0gC8OxdDo8RAFURB0UwA9M02sT6jrwG8wbsmFRs7J5epeg3xpRQxY71Xn9AF67lvA7x7I41T0TaNkGER4hQIzlDroZbnrQlKM+8++AsAflo1VNxlBN11fvUwlc1QTdGPjckvXTNEUzNPDG9Oj3JKVFmK62g7m5T4y6113mCpBDBlP+ap6CVZbRFIvtz6W8Vuy8bjq0MEZwCaAZ1IcJekdVKeL9KYhqazGlNFYW7ZmwRBClOnZplOB4EbXlLf488kNDrKb3EsLHp1q3SpfIttPBpY4m+T19mOqZNW6aNfg4H2igN7kKZzMQNOauNz28kQUz5neJiPyWQcpmK5sa1XyRLQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a5e7c19f-aaf8-9bf2-b87a-37b3a90ac02d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1875,
+      "completion_tokens": 243,
+      "total_tokens": 2118,
+      "cost": 0.005208,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005208,
+        "upstream_inference_prompt_cost": 0.00375,
+        "upstream_inference_completions_cost": 0.001458
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 116,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "GitHub issue is about Hypercorn/static-file docs; tests and gold patch implement USE_TZ deprecation.",
+    "confidence": 1.0,
+    "rationale": "The reported issue discusses ASGI/Hypercorn static file documentation and does not mention USE_TZ or deprecation warnings. A competent engineer following the issue could not know to implement the Settings warning that the FAIL_TO_PASS test requires.",
+    "p_invalid": 1.0
+  },
+  "s": 3.25,
+  "p_invalid": 1.0,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "GitHub issue is about Hypercorn/static-file docs; tests and gold patch implement USE_TZ deprecation.",
+  "confidence": 1.0,
+  "rationale": "The reported issue discusses ASGI/Hypercorn static file documentation and does not mention USE_TZ or deprecation warnings. A competent engineer following the issue could not know to implement the Settings warning that the FAIL_TO_PASS test requires.",
+  "prompt_tokens": 1875,
+  "completion_tokens": 243,
+  "total_tokens": 2118,
+  "cost_usd": 0.005208,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

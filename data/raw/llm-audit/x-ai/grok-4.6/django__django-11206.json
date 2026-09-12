@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11206",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 974
+  },
+  "response": {
+    "id": "gen-1789187823-KjSbTLeSXmkFJidNnyo0",
+    "object": "chat.completion",
+    "created": 1789187823,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that with decimal_pos, values too small to appear in those places format as zeros rather than scientific notation. Tests mainly encode that for one extreme Decimal case (plus an unstated subclass path), which a reasonable cutoff implementation would pass.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about numberformat.format rendering small decimals in exponential notation when decimal_pos is supplied. They want 0.000... instead.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about numberformat.format rendering small decimals in exponential notation when decimal_pos is supplied. They want 0.000... instead.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_40de961e-fb32-949d-9fe7-4b33307ff12a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1306,
+      "completion_tokens": 529,
+      "total_tokens": 1835,
+      "cost": 0.005594,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005594,
+        "upstream_inference_prompt_cost": 0.00242,
+        "upstream_inference_completions_cost": 0.003174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 423,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that with decimal_pos, values too small to appear in those places format as zeros rather than scientific notation. Tests mainly encode that for one extreme Decimal case (plus an unstated subclass path), which a reasonable cutoff implementation would pass.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that with decimal_pos, values too small to appear in those places format as zeros rather than scientific notation. Tests mainly encode that for one extreme Decimal case (plus an unstated subclass path), which a reasonable cutoff implementation would pass.",
+  "prompt_tokens": 1306,
+  "completion_tokens": 529,
+  "total_tokens": 1835,
+  "cost_usd": 0.0057859999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

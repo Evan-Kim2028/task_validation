@@ -17,3 +17,7 @@
 | [0013](0013-narrow-openai-recovery.md) | Recover OpenAI's Pro rejection, not a general validator | Accepted | narrow milestone |
 | [0014](0014-validity-evidence-vector.md) | VEV invariants, not more proxy features | Accepted | evidence layer |
 | [0015](0015-pause-vev-causal-assays.md) | Pause VEV expansion; causal consistency assays | Accepted | causal layer |
+| [0016](0016-interrogate-verifier-by-behavior.md) | Interrogate evaluators by controlled behavior | Accepted | execution |
+| [0017](0017-harbor-pilot-not-population.md) | Harbor pilot, not 50–100 multi-bench Docker | Accepted | execution |
+| [0018](0018-treatment-grade-before-swe.md) | Grade treatments A/B/C/D before SWE Docker | Accepted | evidence layer |
+| [0019](0019-decision-tree.md) | Parallel decision tree; 20-task Docker frozen | Accepted | program |

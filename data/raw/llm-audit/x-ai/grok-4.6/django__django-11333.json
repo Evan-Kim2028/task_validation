@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11333",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1389
+  },
+  "response": {
+    "id": "gen-1789187717-PNLGwN2kh2dkM3XiXXQ9",
+    "object": "chat.completion",
+    "created": 1789187717,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue states the wasteful double-construction of URLResolver when get_resolver is called with None versus ROOT_URLCONF and proposes looking up ROOT_URLCONF before the lru_cache. The FAIL_TO_PASS test only checks that identity, which matches the described fix.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: get_resolver should look up settings.ROOT_URLCONF before the memoized function so that get_resolver() and get_resolver(settings.ROOT_URLCONF) share the same cache.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: get_resolver should look up settings.ROOT_URLCONF before the memoized function so that get_resolver() and get_resolver(settings.ROOT_URLCONF) share the same cache.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "EHgMSgUi1fnGMtpQkd4z8HthEq++qdB51svKB5KVQGrM87jv4qW1weAZ9/pUOKI8Y3AbKW/kpucGu/XNgKnlw7gBFQYB5l4RmCk/DijqwgtSUlLhsgaDL0XLHytsX31dAdNYRINBugIRaE6eMD243kso06qDh5SSmspXAnpv41zAI5kXG9WxFhDhgKsEJ//RFFp6q/Uepd8Med8c1dGpibPiOvY6Q7TG7wdhQ/JGBOWgS0vEqXimRq2G6wXLVklVVRxK6ts2q164cGtuj0EBtJW+dCV+x5OWePuDaMuz9UWxcjQiXk/4g2yihGpwvCHyPV/swfCxF0XgqoVh4oS67O6RO6BF+fXx11D8meOhd6xshNGpJC4atMACbrgCUTlTYqB//SUgLG1bekFUznIaOPj9RatqBOEk0E9IH19UAd7DGrdiLt08Z5MLbIfNEzMNnfy36gOE2AFTs6mkUQ99AONCJQkiYUdEmw7xG0HJnBBPCLx1A0g34ggaOE0s1/2zfO0web0T61KaNzQQc00q1DPlbKkhn5Mtvxg7rXzk7E/DndADmisBxuWc7PauVeXDzDxC6gcpPvA8vaJd904eaeO0nNd/Zh/3fAVnpQcigKyK+2NjZdkT/YgubLsCx1mB94p0IPx8f5YfrIx6PpX0qKqPg9g0+hbMxNsmmFScGwAkP9gl5PEfDkYmUGCzGImZvQZntUBLmovQZGvpMl5n7wT4xA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0ef0356d-46fb-9165-ac6e-2fbc11d36874",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1736,
+      "completion_tokens": 249,
+      "total_tokens": 1985,
+      "cost": 0.004774,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004774,
+        "upstream_inference_prompt_cost": 0.00328,
+        "upstream_inference_completions_cost": 0.001494
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 136,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue states the wasteful double-construction of URLResolver when get_resolver is called with None versus ROOT_URLCONF and proposes looking up ROOT_URLCONF before the lru_cache. The FAIL_TO_PASS test only checks that identity, which matches the described fix.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue states the wasteful double-construction of URLResolver when get_resolver is called with None versus ROOT_URLCONF and proposes looking up ROOT_URLCONF before the lru_cache. The FAIL_TO_PASS test only checks that identity, which matches the described fix.",
+  "prompt_tokens": 1736,
+  "completion_tokens": 249,
+  "total_tokens": 1985,
+  "cost_usd": 0.004966,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

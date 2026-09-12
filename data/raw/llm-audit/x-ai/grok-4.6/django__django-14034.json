@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14034",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1484
+  },
+  "response": {
+    "id": "gen-1789191370-akPGYaCeYqb31Qow4fOq",
+    "object": "chat.completion",
+    "created": 1789191370,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only describes MultiValueField validation when a subfield is required and values are empty, not HTML required attributes or widget attrs. The FAIL_TO_PASS test mainly asserts specific rendered required attributes and a different field configuration than the report, so a validation-only fix matching the issue would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about MultiValueField ignoring required values of subfields. The user expects that if a subfield is required, empty values should make the form invalid.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Gold patch only touches HTML rendering, not validation logic\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about MultiValueField ignoring required values of subfields. The user expects that if a subfield is required, empty values should make the form invalid.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Gold patch only touches HTML rendering, not validation logic\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bad5a7d5-9250-97d7-b1f3-4cf67aadc44b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1930,
+      "completion_tokens": 735,
+      "total_tokens": 2665,
+      "cost": 0.007886,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007886,
+        "upstream_inference_prompt_cost": 0.003476,
+        "upstream_inference_completions_cost": 0.00441
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 619,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only describes MultiValueField validation when a subfield is required and values are empty, not HTML required attributes or widget attrs. The FAIL_TO_PASS test mainly asserts specific rendered required attributes and a different field configuration than the report, so a validation-only fix matching the issue would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only describes MultiValueField validation when a subfield is required and values are empty, not HTML required attributes or widget attrs. The FAIL_TO_PASS test mainly asserts specific rendered required attributes and a different field configuration than the report, so a validation-only fix matching the issue would fail.",
+  "prompt_tokens": 1930,
+  "completion_tokens": 735,
+  "total_tokens": 2665,
+  "cost_usd": 0.00827,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

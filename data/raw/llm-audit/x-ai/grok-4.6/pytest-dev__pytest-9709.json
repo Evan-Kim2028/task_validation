@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-9709",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "534cdf19-dd73-92cf-a827-b79245cdca59",
+    "object": "chat.completion",
+    "created": 1789193885,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.76, \"rationale\": \"The issue clearly describes that set/unordered iteration is wrong and proposes restricting approx to ordered sequences with __getitem__ rather than implementing set equality. The FAIL_TO_PASS tests follow that first-step design but also require a TypeError whose message substring and a specific custom-sequence repr are not stated in the issue.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3226,
+      "completion_tokens": 119,
+      "total_tokens": 3815,
+      "prompt_tokens_details": {
+        "text_tokens": 3226,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 470,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 31341200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.76,
+    "rationale": "The issue clearly describes that set/unordered iteration is wrong and proposes restricting approx to ordered sequences with __getitem__ rather than implementing set equality. The FAIL_TO_PASS tests follow that first-step design but also require a TypeError whose message substring and a specific custom-sequence repr are not stated in the issue.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.76,
+  "rationale": "The issue clearly describes that set/unordered iteration is wrong and proposes restricting approx to ordered sequences with __getitem__ rather than implementing set equality. The FAIL_TO_PASS tests follow that first-step design but also require a TypeError whose message substring and a specific custom-sequence repr are not stated in the issue.",
+  "prompt_tokens": 3226,
+  "completion_tokens": 589,
+  "total_tokens": 3815,
+  "cost_usd": 0.009986,
+  "cost_in_usd_ticks": 31341200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2350
+}

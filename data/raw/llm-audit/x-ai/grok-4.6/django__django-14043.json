@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14043",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1331
+  },
+  "response": {
+    "id": "gen-1789187652-54TAk6gZ5P2OU6Ww1mUJ",
+    "object": "chat.completion",
+    "created": 1789187652,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue asks to honor a PostgreSQL password file for dbshell the way connections already do, which a senior engineer would implement as OPTIONS passfile mapped to PGPASSFILE. The FAIL_TO_PASS tests check exactly that mapping, including combination with service, without extra unstated requirements.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about adding support for PostgreSQL passfile to dbshell. The user wants OPTIONS['passfile'] to map to PGPASSFILE environment variable, similar to how service maps to PGSERVICE.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding support for PostgreSQL passfile to dbshell. The user wants OPTIONS['passfile'] to map to PGPASSFILE environment variable, similar to how service maps to PGSERVICE.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_77e2d917-364c-92c0-967e-ae1fb9ea5cdb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 470,
+      "total_tokens": 2101,
+      "cost": 0.00589,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00589,
+        "upstream_inference_prompt_cost": 0.00307,
+        "upstream_inference_completions_cost": 0.00282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 355,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue asks to honor a PostgreSQL password file for dbshell the way connections already do, which a senior engineer would implement as OPTIONS passfile mapped to PGPASSFILE. The FAIL_TO_PASS tests check exactly that mapping, including combination with service, without extra unstated requirements.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue asks to honor a PostgreSQL password file for dbshell the way connections already do, which a senior engineer would implement as OPTIONS passfile mapped to PGPASSFILE. The FAIL_TO_PASS tests check exactly that mapping, including combination with service, without extra unstated requirements.",
+  "prompt_tokens": 1631,
+  "completion_tokens": 470,
+  "total_tokens": 2101,
+  "cost_usd": 0.006082,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26011",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1287
+  },
+  "response": {
+    "id": "gen-1789192074-ORK9JSe3J7I50Q2EiWZW",
+    "object": "chat.completion",
+    "created": 1789192074,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that xlim_changed fire on an axis when limits change via a shared sibling, which a competent engineer can implement. The FAIL_TO_PASS test also covers ylim_changed and callback argument identity, which are the natural analog and existing callback contract rather than hidden requirements.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about xlim_changed not being emitted on shared axes. The user wants callbacks to fire when limits change via a shared axis.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about xlim_changed not being emitted on shared axes. The user wants callbacks to fire when limits change via a shared axis.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "EmHTQBqo19hagmdqlG94TSVNzn85/0auxrTrseUnNa43Q06AKYDyA0GVChbFL+zKWUrV3fg/kHMTk67bpT4yKyKF6nlQXUWc5VR1KdiXQFNqIvYgr5Rx8eigrXcRWs5rO3AeHac0dsw0I2C+I1+oXumADf/MQ1OZ3A7ww8/jLkavci5uDlcs1eq3f+EVxzm0MI/RXrn4CmXcpmwG8+EtkKBZfYQzLJTvJDK8mDa7u2epACQuKEvWm/4RCUqD2UTSddebmiwrXwoNOHiera0YUMuFBpV4zyMzzVf9Fyfvgw+q7ue9HlwSkpfYcD1hBDp9lbx+xWxwnY86bojTkeCGgGLGgN0b7l4KarLw2ToUdLRSznvPvFIn58uLQW6+2GXQx2/SBAAUmRnNR+8PwoemOOVBLzo/7nfNv6SiD17wwuItO+8k4JFx+q9qs6GIvYIcQFTHHEuSQjTpx39D5a8uPeRjDdyGX4X3T5Q/OTtW9YNV6pslBbFg67YxCiHItKVtoUvTQVIFfrU+fFlgU3dZR7pDyJkzyyjRe82xdhAFxjkLEUv5REMm9amFT/BQd1yro/+Lc/AFop3kVZcA644a7IiRxHFYClK0b3P8DJiR42RdYc4OsyXHJ6DfvAIfF3leFnb+oEwZe2D02Y+UZvsP4BTd7DNwOf+VdDk+6YwV+XrOItQ9HB8x6TqhdgTWqpWuWzWABvuldtZ7Fn+IDAgdxo+O0ksW5BkCFzOcu0vqrKIx6ZV2s78dgL+HCqWgimeN1BnEDCyR4yDtjJz7+N/5PLEY3AO2A/FJiuqWgxzcEX+MKizBBnvxO8kMax6pq0H738uh7RSh4QFU45uhRWIHANjhTrz2fxD2SSsyNWkTY4MPxl6pGXASAUGR+BdUJpgh8GZvyVnSDrKlCzCMNQeDdFVy25vOl86Dx+Dibtw5eJDxo/GqbtzeufdjnUOqMTp30HTjc5ciqOXf2zkWwMTB3iJtdYsZZGoovkDxn3747xr3VNZSwx1y1HKGZ4Ser2d3OuuoRmCM3CmEMO8xmOQkQjzLJI80azzzNnQoL1S+Y0kY+b46jTcPsisiP8woaGmBK7BRV0WlC4PsSIW6zcz8r0mOGi00IpsKZ5FjLVn+zW2N0mHuP1Kem6QaU3qExaLG5S316O0SnFOKjq+RicP2bJZSirwfpXmA8v1o1EOp5EC33iV+hRokE5SkBZpZl0pSxFGHetNXKSC5lKXVO/m1NhA4ObSUVZwOIsuVdVulAmqfeOESUVhTej+gsDXZo3Vj9mrJM5W+3FjwD2iWsNDihUfIjKwmYnG6su/kawV+fyL2qB3U0QNkSXrNXZqdzzlYbZsyuvzz7Qy7rjoB166XcUcTpo2w/ayV7SHSLPncIwV4x0Y1Df3Ka8MkZtX4SuoVrmEXX27y5wdmveb4x2eU9OFRUQy+iLX86hSyguLE9O/wrqsbJ4EVH5oYMzUerSnFKiCohWLviniIayLroloISBenB7DvLa4+DWYFE+igEcJwQzqlBotOuRSguAd9LfEwZV5o1/IspZP9yOxL7W+EpuAVKPqVks41OWG56/B56rEOY/yqAUizCjF/51kLAigRmDaxPsaR+JUvXZ9vVYHNwurj8LOKS6NDs0a1TMljyjG1CwHjbQZc59nolhkMLM5b/Ggy9xGnl852FeWul6RNc6jViClijCdFR2QTMQW760+USfX71Pl0XCkf8mhlYUo+JeunWIYoN+TdUU0Yc/YRRQGPghLJtOYLhXA0fXU/EVotKPt79aSaLB4VZr26NgztpbQjqz3fM/XiQi1da4kzBXi1PyDA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_64b276e7-247e-955f-a364-1dd3b79a09d2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1598,
+      "completion_tokens": 433,
+      "total_tokens": 2031,
+      "cost": 0.00541,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00541,
+        "upstream_inference_prompt_cost": 0.002812,
+        "upstream_inference_completions_cost": 0.002598
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 320,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that xlim_changed fire on an axis when limits change via a shared sibling, which a competent engineer can implement. The FAIL_TO_PASS test also covers ylim_changed and callback argument identity, which are the natural analog and existing callback contract rather than hidden requirements.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that xlim_changed fire on an axis when limits change via a shared sibling, which a competent engineer can implement. The FAIL_TO_PASS test also covers ylim_changed and callback argument identity, which are the natural analog and existing callback contract rather than hidden requirements.",
+  "prompt_tokens": 1598,
+  "completion_tokens": 433,
+  "total_tokens": 2031,
+  "cost_usd": 0.0057940000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13528",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2093
+  },
+  "response": {
+    "id": "gen-1789191251-qQhOOAB8S3Ow2jSGWzID",
+    "object": "chat.completion",
+    "created": 1789191251,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Tests require a new floatformat g suffix API, not the reported floatformat|intcomma chaining bug.\", \"confidence\": 0.86, \"rationale\": \"The issue only describes wrong thousand separators when chaining floatformat and intcomma, with no mention of a g suffix or force_grouping. The FAIL_TO_PASS tests encode that unstated API and would fail a reasonable fix of the reported chain.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about incorrect separators when chaining floatformat to intcomma in some locales. The user wants floatformat then intcomma to work with internationalization.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about incorrect separators when chaining floatformat to intcomma in some locales. The user wants floatformat then intcomma to work with internationalization.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "3zj1zi50daHxZyzXG/CD3payZvMhH2gMTFuRR54silEJ2ZHbukQYS6pTfMtyNTY4UOxvNBHUVM2Eyy285R5rglbcMeXigOPJYWFcSYIam8KcyDP9pyO2WL2iKX/AV3Niyb78XXzyvyyo5dU3+4auoqWR9I0ci+BikXLL0xG9S1uTPHhlFeRhqxIYE0h6jP0wUeF3FwV/zlYj90+ZCARmx8y5XqKG2PgxFe9PJQsbsKwT4x0xFNYti6IDUlPhOj+9HDOrTPkXVjUOTwSmPzJhS/6UO20WfpGyRA5M+gtUtDSS0jWVL4tbaHtmSdkidt+bgQcUmEqYToiOWfyPBWPkUyaD6CeYjX+t2U74ASU3sizKapttrEAXyeURjHt9KFZApS/Ay/eKKg872B1jD5tPyQShzR7fk9Wz1MqymrMSA9hyObq6oRBuDWj3sZoyMPI5kcPmD6zDQ/mvRynBR4/QwJp8cQbm1f2Zax1MZW1Or6DkAj8kECATJSEeHvV2cxYu6nwmIm3SF0ycne60np4bQci9Ie4C8PK+jmoPJhGEOOojH9vLmlP0gGAAK1E+OG30k+9acdAWd6+dxdIkUznpzbyQWy9YS+We6EAosKjOjYQXZ3umbi8NyIwWX8cQd+KFOezbikH/7ksR+aunfM7JvdFae2lxTCjcNJaR41tOeDRZ5JNXx0hJBEJYDzBgTJKVsYhaBr6mfVpj+ojV4uwYTiLhQHdt8INstwBnUQJ0iINtykh52Kn68Yk9w+uG5Yd4ngbeZtdZXV0ydBPCVKNFqt9THkcApryIyAjyzOuPDYOoqep3mxSTiTjbQh6qTwx5mvHcmcWNhPvSpPxP7KJrPd3uYT+UrXlc6N3qBThG9piZYEuO5L6MrLBiDX6Ln5grLuFMpUbhC/EMt2j8YeC7XfqMqNlHLzU+deJeAB5LfQA7jGR1gKhuTW+wkQtRGZSJTHt5tkRJgIcgr/nSih/zCrA9PQMAcAacSgPdPwmPNa1a9UJcQY4S9/MSbzjEFG5Qy0NKroY27j/9WSM+xZvqbW0XerDh3a3QgFyqo/M5RFwIa62bJx6EP2/IBxPsN6Tpt0SP4J/+YSwk4+CD/0dZ/1bcuX214vhhuA+UYvGFAko6mP0M25ZxFWSKnfBMwfBIM6O8+22JmNKVAlRyLXTjdu1AsAgnqiyh2bl7FbupKbyAS9ES6QBbDLKG2L3zenCYFaPoOLaqA8WQ8io6Wu8bj8XZr3WvNNc6wQdVh54DME9t94MlvABy9j1HAz2IoVWVhZD/qLaL64FTqxPRrSPeVaDq/vL7R4kxVF+vav89i92JUXlaEz/AOKyZPnbbw/i6vF4EQ9ftKx5W+gvDxqbLA4Kn8C+xiaueNgXMiv8I107WnC8BX4l/wgOE4dA4ACBZ7khl9foEnoSThDKcx50PUj3YNvFReUdw5c1Q1Yd0FmY5Zpn0XwSIaOkekJFtuqxE0kgDHbLYsYCN9EsGknVc3D9jywFYTbX+3BJuyQ5jAiz7XiC98w6atpSXqNIRzHZsxlLW7CAn3hfueYFHjpOxR6BBJL5d7QM6rQK2ZqzxEVpoc5c.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7de6362c-7e0a-9ae7-a3d1-834276fb077e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2689,
+      "completion_tokens": 383,
+      "total_tokens": 3072,
+      "cost": 0.007484,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007484,
+        "upstream_inference_prompt_cost": 0.005186,
+        "upstream_inference_completions_cost": 0.002298
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Tests require a new floatformat g suffix API, not the reported floatformat|intcomma chaining bug.",
+    "confidence": 0.86,
+    "rationale": "The issue only describes wrong thousand separators when chaining floatformat and intcomma, with no mention of a g suffix or force_grouping. The FAIL_TO_PASS tests encode that unstated API and would fail a reasonable fix of the reported chain.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Tests require a new floatformat g suffix API, not the reported floatformat|intcomma chaining bug.",
+  "confidence": 0.86,
+  "rationale": "The issue only describes wrong thousand separators when chaining floatformat and intcomma, with no mention of a g suffix or force_grouping. The FAIL_TO_PASS tests encode that unstated API and would fail a reasonable fix of the reported chain.",
+  "prompt_tokens": 2689,
+  "completion_tokens": 383,
+  "total_tokens": 3072,
+  "cost_usd": 0.0076760000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

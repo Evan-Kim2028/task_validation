@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3905",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1877
+  },
+  "response": {
+    "id": "gen-1789192237-0a8q08L6ihYvdT1Crxl2",
+    "object": "chat.completion",
+    "created": 1789192237,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to truncate overly long DataArray reprs by line count, with ~40 lines as a suggested cap and a numpy-style middle ellipsis as the expected look. The FAIL_TO_PASS check only requires the given (100,5,1) DataArray repr to be under 50 lines, which matches that request without demanding unstated APIs or exact wording.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about truncating array repr based on line count. They want something like 40 lines as a reasonable place to truncate.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about truncating array repr based on line count. They want something like 40 lines as a reasonable place to truncate.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d1bfe78c-cb17-9280-9192-dbcdf5100047",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2760,
+      "completion_tokens": 616,
+      "total_tokens": 3376,
+      "cost": 0.009024,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009024,
+        "upstream_inference_prompt_cost": 0.005328,
+        "upstream_inference_completions_cost": 0.003696
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 482,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to truncate overly long DataArray reprs by line count, with ~40 lines as a suggested cap and a numpy-style middle ellipsis as the expected look. The FAIL_TO_PASS check only requires the given (100,5,1) DataArray repr to be under 50 lines, which matches that request without demanding unstated APIs or exact wording.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to truncate overly long DataArray reprs by line count, with ~40 lines as a suggested cap and a numpy-style middle ellipsis as the expected look. The FAIL_TO_PASS check only requires the given (100,5,1) DataArray repr to be under 50 lines, which matches that request without demanding unstated APIs or exact wording.",
+  "prompt_tokens": 2760,
+  "completion_tokens": 616,
+  "total_tokens": 3376,
+  "cost_usd": 0.009216,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

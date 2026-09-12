@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11891",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 916
+  },
+  "response": {
+    "id": "gen-1789190956-WLAXtUkbI7PMhtXrycYO",
+    "object": "chat.completion",
+    "created": 1789190956,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks not to return 304 when ETag matches but Last-Modified changed, which a reasonable fix could implement in conditional-response logic without changing ETag generation. The FAIL_TO_PASS test instead requires omitting ETag on empty-content responses, which is an unstated implementation choice.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about ConditionalGetMiddleware returning 304 if ETag is the same but Last-Modified has changed. Specifically with x-sendfile, empty content means same ETag always.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ConditionalGetMiddleware returning 304 if ETag is the same but Last-Modified has changed. Specifically with x-sendfile, empty content means same ETag always.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qdooA5XnX9FSsk7zLmD+2sDysZqJJUq4adEpiblQe+ta9SvQSJiqj1ie2aep4NpsnoB5l4aKecjsYm6gj89GypWDmBR8A08cF7geFowMZaRWpKuE/vnV6Lf2VP1ZZBuwvSAxbBcXVWF6Zvv3FaEb9v9LoHbNuHVgmBN9KF1JamN61Hi4FQfjfhUAtHq8+ITEWHL81c6xepgKh6lCJiVne28MzIGwMEWFY25I11IkQEcHtGmMncPUlsaPZqSlvB5w4+10R+yuC8ZWfNzNA+j45kYxVhMgCQ2dBDqg9WtuiJSg3EVRzNS/IsTichmj3XKj0BXNS2zZs6F6ZjfAbhZiFOwm/CM/kCTpEKxpZry1cce9kri81FzgdemnMjcuGE0hm+03evJwUBNZoBOLcO2hSDCtXFaqY2x9Rs0xOsG4lxQOn5tMtgUwp99H41hQhPMN/XzGnFgoYHM1mSVsHnxVNHJCNAO9ZCyQLc0dSdWWkeGujg0WcYn0RM4b77uogPnF9lmUOMUeXDy/hyuH/ArirHq4FcIMWifiWElBc0iONjVxaGm/pim/TT2PSnvVz/U5/Jg3mzDgnDBoi2fhiCQdtJg7pwsbSIZXtnxE8pSj6PrzrQ/KCVql3E0eHdBWXHAo2NetCt8zwWX+UBweTZJqKlJ5jsEwe54gXwsGtGX5M9JRpz3HPbU9+1O3hUvaTqk/8ixYh+us9eL4KHLpHT5RZeFSE7qD8tMpcBtPQDkBA6qi8k4ZhaJdCDDPMSOPqStQu6GMiRIVuaiH4GbJzef2rBmMAhjiAqNzaQZQB5evhs7msoHUcJI2XOr3whLf/MFk6VDKvcZJJgReYbFMZYXj44CKNASDKT2WhoyFKR39vEzuyDEZ0RJ84Zwz3F0bvC4ePrqumxWGiO4PkZThvfvc8aE8RoATvxzVbxgz+hNCpYeBO5SRilLMAeiDjAe0z3ktwmrgB232y2gGsflWV19fnl/giIfkz5SWxCqrcCCyqPAs/yafxwEz3cS4929+SDoN0aslsxQ84EvwSX2l2eZ0Q04TCMMsDk3wfI/AG2Gm5Y1bCxsxum1X9rJDV8es7kXZ8tf3CRdsRl3GZBP2jbUG2DL0TssyLNYMpBTMFhvFDRnzkvlG7WBSfHHJmG5jKWIf6lnV272P5HovKUf4+ryZbqvT6BRE/gNO2lUv7rcdIU0mbpGjX9ib6EcLfEtFVXKiYD0xC7tJTWnUzqve3QuU2BolfQeQ4quKCjGVe4+JURfNl1hS91vsgUZlrVf1qxGPx0fMk76oUc+kMTROacAj+zoAufEZBBvxtkPmrSCZUp9W2bLcMxMS4lGoZOY7n2qEp/1bQPZ0OedAdMheIUHBB8XhI+v8BX5YEkUoRa7wStAoLWKrKWh+VnllfzmRNtVsaBC5TX903A+kR+JHbT7WDPHgrMF9Glecin/xIjc7vN7Ikwpr7OoJmii2223K4kGam6q0k4fWdDw2Bv72gcNSEs2lBg5hNdFAcorFEtzSCET6IjMdy6lYJ1Z5K/GCu5teZR5ki9c04x2jrXEuDzm55w6kcHmtZxQ2NsMjY0VpKqFDuUuwdWrf4/DS6oatEaR+fdlMEUucLSz1KlM0Ej/Bl7DRIhiHM7IaMXbjPCAIMb859i9gbjBazQ9fnaGIMc9nOWLQw/eP65W+Qb0coNxX7dV6bmIDtYeTFVUJF6CzzEu7Ic8l8+eKcKiIvZ0PiNRdBQ6/amv/vMNGye9ZRyVkgeVJvjlqyi1mfXaSV1Nnd4C5dhIoxtefIgI9MlwtXdlDuLSUpr6GtWcKLGFVaS2Y11MmhZoxHaksHEhBHs58QKJpIlkqiDmk74cBNlIzcK8Qe5uUA1p3DNJK0cLH2olKkoFAn0Sm6D6zSfhg9Q.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2c7cff02-9e2d-97bd-8056-9baba61eb5cd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1202,
+      "completion_tokens": 428,
+      "total_tokens": 1630,
+      "cost": 0.004972,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004972,
+        "upstream_inference_prompt_cost": 0.002404,
+        "upstream_inference_completions_cost": 0.002568
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks not to return 304 when ETag matches but Last-Modified changed, which a reasonable fix could implement in conditional-response logic without changing ETag generation. The FAIL_TO_PASS test instead requires omitting ETag on empty-content responses, which is an unstated implementation choice.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks not to return 304 when ETag matches but Last-Modified changed, which a reasonable fix could implement in conditional-response logic without changing ETag generation. The FAIL_TO_PASS test instead requires omitting ETag on empty-content responses, which is an unstated implementation choice.",
+  "prompt_tokens": 1202,
+  "completion_tokens": 428,
+  "total_tokens": 1630,
+  "cost_usd": 0.004972,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

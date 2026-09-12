@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-8365",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1379
+  },
+  "response": {
+    "id": "gen-1789187841-E4kmU6fBkzQDqPL9xif2",
+    "object": "chat.completion",
+    "created": 1789187841,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only requires tmpdir creation to succeed when getuser() contains illegal path characters, without specifying a fallback basename. The FAIL_TO_PASS test requires the unstated directory name pytest-of-unknown, so sanitizing or otherwise encoding the username would be a valid fix that still fails.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about tmpdir creation failing when username has illegal characters. The test specifically checks that when getuser returns \"os/<:*?;>agnostic\", getbasetemp() should contain \"pytest-of-unk...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about tmpdir creation failing when username has illegal characters. The test specifically checks that when getuser returns \"os/<:*?;>agnostic\", getbasetemp() should contain \"pytest-of-unk...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "weFkdjlRi+PGBJTfJLCcHNCXdX+vZalSGum4LEHxm2260ZBsEOLs+istDWlHwGgJpv20wAyPFFyFc1L/rCx9YPXLldroRLG7YO78RbrQUP15r1KV3aPvkp8hxhMny7tNMJFp4jz57467QdyFAu6cGZ6xRpAPG46iwfx2hxQbKEYMFnMeSWQ9NaMhB2LUELhxzGk1IzgeKgwgwrWKIgFzWD5NvHcXYSl4uUDsdLk69zxsDC5WN12tYFiPgTvKPDzKCcHFmuC5A1ql5nIrptiOKpFhiO45Wvi6DXDCAfrHyzrtK/YQTmZE0cDcffUp0db2/tNZHgUlV1Ngd3XupVlOYaGzNA68m8tiKfIXUftknmOXbhC5u6mdn978J6PwIZT1HlfvVm4kBOaFwJ2VsE9HYq5JXV7DWNwQNwWzbI+bsIJj6m80Z5T+h69+5rk07SKXY8T2hO8R6R3zQMf/V29Aqg51QIk55G89yacPCnqiLhLbMnDyqhwPaeevuk+tZGxCfzR4xrcsII8deJhJcb3tNa3CLnFX71EZqKnUv0lqUId2oE9DsyswtC0TbOhWzmWjeO20nZG70NPb/DEDe75B+UXzmE9vYTsXoxCfYbMDpLm7CMkIkq6Alhma2X3hg59eI7VEblob1pCW83CpChHFeOQJ9d4M2YGexpemTgC+LUnOezVou2kov2fLmXK5NZTAvVq68poSzpnEo+0MBDMUK3a9bUFqOvyaU6qz9C7W/HWB0a6FjFvJ3rqqIgOVgBuYXgRqbzwUHBEg3NuOWBsMBMe/4LuUSZSrliyvSxfWdcRfcglrEgzmfDDVQPglaBfqQBAMSk705r3v+pL+jz/aM2i+Fv9z.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a454ae19-ab0f-96c2-b3da-34314420adfb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1726,
+      "completion_tokens": 259,
+      "total_tokens": 1985,
+      "cost": 0.004814,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004814,
+        "upstream_inference_prompt_cost": 0.00326,
+        "upstream_inference_completions_cost": 0.001554
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 144,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only requires tmpdir creation to succeed when getuser() contains illegal path characters, without specifying a fallback basename. The FAIL_TO_PASS test requires the unstated directory name pytest-of-unknown, so sanitizing or otherwise encoding the username would be a valid fix that still fails.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only requires tmpdir creation to succeed when getuser() contains illegal path characters, without specifying a fallback basename. The FAIL_TO_PASS test requires the unstated directory name pytest-of-unknown, so sanitizing or otherwise encoding the username would be a valid fix that still fails.",
+  "prompt_tokens": 1726,
+  "completion_tokens": 259,
+  "total_tokens": 1985,
+  "cost_usd": 0.005006,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

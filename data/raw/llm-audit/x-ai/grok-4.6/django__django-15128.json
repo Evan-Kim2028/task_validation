@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15128",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2786
+  },
+  "response": {
+    "id": "gen-1789191547-ce2kzYqOByYqCM0uHXsV",
+    "object": "chat.completion",
+    "created": 1789191547,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly describes a crash when combining QuerySets with OR due to alias remapping collisions and asks that both orders work without AssertionError. The FAIL_TO_PASS test is a faithful reproduction of that scenario and only checks that combine succeeds and returns the expected objects.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about Query.change_aliases raising AssertionError when combining querysets with OR in a specific alias conflict situation. The user wants this bug fixed.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Query.change_aliases raising AssertionError when combining querysets with OR in a specific alias conflict situation. The user wants this bug fixed.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "frZwpgQ79Ls8ghSsBcYHS/5FoTDsBO1xnA+rMRknZ1i11A06hWqgabjHHK7jLyhyk5oA6fbfpmiyqgtMJgW1H6B3VlzxrV5rpJ3coq/yvvh6qExjfrabQkrUfH6gShkvd1RkLq1tpmp3lBQKA3lJa9PuMfN7FdfCm70Ky7QuATQKfw49Ivq2VYdAbllewNlVXMc3ie8pMCqi53QbYldYKUyZK2mVqgaN23hFtuwFUQ4QC+/ekamWi1aKQEdvmFAEfFz5atSJ9kmFm5aguqed5eXJpTr4VCSAtNj7UFvbZF7JG+8Su69+QzgA+TRJXG+Dp0lKahheLSfdkFAB40JVVbDsfXqYh6ZiTfNBpYWseiq196K+pBaluDTVJmI8Ch7tgZD2tLy6pTurQwgTLYiZxv3oCR11KzrD8RmXN2DeM05JKRu3jmPtsWSoldMoXX3tzsZNrSZBgSQK5GOs0oaRl/mOUmP97JCVaUcSSf46349pse5s5PRsWokD8ab8PHccdhdIxxg+V+U2nKJTvwLBT2IZ0HGfR9oGYbunrqxF4Hh7DJD+ZKIvw9mQYwqJ9KOmyvsuIxg21JDYChAWDn9GuGqfNW4BmnPp1HLFTgnzL4h48gHGG3muXnrxJYlpwKRZ7DlS/puw7HqduMe+omrYttmjOc6CupSuKP/+E3TB6NURtnxeRPhxj2z6HfaVaKxR/SCysrrzaeaTrsK8LEpQgKWYAbrHAeNs2BzUyMZDKfFHLRinTVAjMgiLWtb7xZfPeH+iwOqp+58ChCpf+l+FG62D3hxEmudFUSS/4uKCu7vzkxxDs8E3+aeD9z+rU/UegU+F1IJtAt9mS1woowR1Sl4tzNzcxXkb7cyZUxqCDQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cab0d0a8-6e4c-92c2-867a-9faf50ca3d32",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3329,
+      "completion_tokens": 248,
+      "total_tokens": 3577,
+      "cost": 0.007762,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007762,
+        "upstream_inference_prompt_cost": 0.006274,
+        "upstream_inference_completions_cost": 0.001488
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 139,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly describes a crash when combining QuerySets with OR due to alias remapping collisions and asks that both orders work without AssertionError. The FAIL_TO_PASS test is a faithful reproduction of that scenario and only checks that combine succeeds and returns the expected objects.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly describes a crash when combining QuerySets with OR due to alias remapping collisions and asks that both orders work without AssertionError. The FAIL_TO_PASS test is a faithful reproduction of that scenario and only checks that combine succeeds and returns the expected objects.",
+  "prompt_tokens": 3329,
+  "completion_tokens": 248,
+  "total_tokens": 3577,
+  "cost_usd": 0.008146,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

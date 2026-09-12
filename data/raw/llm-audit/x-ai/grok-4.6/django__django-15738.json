@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15738",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2002
+  },
+  "response": {
+    "id": "gen-1789191664-2RVMRON1dnQiK379d9O0",
+    "object": "chat.completion",
+    "created": 1789191664,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that unique_together be dropped in the same autodetected migration as an FK-to-M2M change so constraint lookup does not fail. FAIL_TO_PASS also rewrites expected operation order for an unrelated M2M-to-concrete-field case, which is not specified in the issue and would reject otherwise valid unique_together ordering fixes.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about Django migrations when changing a ForeignKey to ManyToManyField while also removing unique_together. The error is about wrong number of constraints.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django migrations when changing a ForeignKey to ManyToManyField while also removing unique_together. The error is about wrong number of constraints.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b00db314-dde8-97bb-9a87-033f3c963edd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2422,
+      "completion_tokens": 737,
+      "total_tokens": 3159,
+      "cost": 0.009074,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009074,
+        "upstream_inference_prompt_cost": 0.004652,
+        "upstream_inference_completions_cost": 0.004422
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 605,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that unique_together be dropped in the same autodetected migration as an FK-to-M2M change so constraint lookup does not fail. FAIL_TO_PASS also rewrites expected operation order for an unrelated M2M-to-concrete-field case, which is not specified in the issue and would reject otherwise valid unique_together ordering fixes.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that unique_together be dropped in the same autodetected migration as an FK-to-M2M change so constraint lookup does not fail. FAIL_TO_PASS also rewrites expected operation order for an unrelated M2M-to-concrete-field case, which is not specified in the issue and would reject otherwise valid unique_together ordering fixes.",
+  "prompt_tokens": 2422,
+  "completion_tokens": 737,
+  "total_tokens": 3159,
+  "cost_usd": 0.009266,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15334",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1793
+  },
+  "response": {
+    "id": "gen-1789191585-xYOsFLzMxc3QbMv4clOY",
+    "object": "chat.completion",
+    "created": 1789191585,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to prefetch related objects per iterator chunk and does not mention deprecation, a required chunk_size, or keeping prefetch ignored when chunk_size is omitted. The FAIL_TO_PASS tests lock in that unstated warning text and the no-chunk ignore path, so a reasonable implementation of the stated request would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about supporting prefetch_related() with Queryset.iterator(). The tests require:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about supporting prefetch_related() with Queryset.iterator(). The tests require:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "iZ0pOBVaG/63wnwXbJv3Tz66tJKWjylyZMPItS8Bz5PcL2Jz7gXZhbRhB+cp6pxK3B1yvY085CCaFlf5BwZc2wGr9Dm5fcj/bQa+I9XNOKq4MChqp9vQ03t0M78phsDWkwLTtxlN3nDXmygjS8Lu09MSE/9i5+qztyfZxMK4qKKmaC85fkohEjAMB3bRVQvt/Wm496UjmogLHfbUP0MvJJkwsRWwizenOeUgUqpcF9sTRvEcTYa5P5KelODHpi6ich6R45LA85T22pENUDOH/DHmwYiP1ymLz+ven03MoasHPDbSSQWewi+ERGzhVnIJlFLNi1ViQUW584DiWtUr9/mSDexe5A/Mwx4K5CHwQsqYkigY2z4ey4AmZ1hg1Qlcl2S3Z9eBnieqMmrJZhWq6wbgQ4BaHxvrgp/2e904hCIOG1/UF0kIsQI8XBUBa/Und7x2ZwPJ20vOHBW6P5uw1jGGpR5P3V3lMsfN3FvwKkJuVcX2M5LDHbYsgb+ECMFMZ44PM+aTWLdxxkxNGpPW2ZL4j2H6iBv6j2oOwS6j7JviCHDGgEtMqcv5ZypEJ6KRm1mqA5QD9IBB83TiUk7wSn7nv/M0bXUzMGE9cWyu75+mq3Uzxb1SkGPEdnXLRAMgSNAed+mLakcubrqbleX3R+9JlKB1VDTtnn8gAcYh7x4ZDJ3kXl0kkRG3AHuYDu/arNXCNtRXJRC4Wg3eMH50pa9BL8OHDFqCpz9mglsG8CJOfMDsTdoTSy0GCwTyEQ/8HHUGTJLscfF/gN+A1xJaIgv1PGzTlQvJeTzRpK6pzLl2V5upjk+F1ACtkVE4i7mpFxtTi8Pfk00yfZ4Xpwn8qoomOqh38Aa7hl/5H2fZfichwbBKizrZku51B16+8DPpJpoNzHlmpHmoteF5OKBzyjIS7d+bQC+sQcXtCjSZ9nLQVpXceb1g4+RRgPU4G9IR9y5qvWjiF+5sOcYnNfFhuXemwG070cYuJGD2rLx8/UQNdyj8GdHriF+yjZjDeM3UwpAf9zDAdLKWE1G7R7bfkjRqH7hvbL2m3hRkOcQE60McCL08S7spQkkUB66z+wQDgNhdUv+SJCx/F8uz9caUJRlMixjDJAccYTjJ47RkumsBn5r0LO+eevq47RkDmTanQHI32TxGwVYuFNfA5w+si58g17nvSF4lKOpkkVfah3L06I5ZVgkzvGj6HZH20xUEl86dHzlxSTg05RthxVX5BgQWcE7ULp1dOBdtcU8mJ1xpTyNdNcd3agJz0WkzU0+NJiuWJNqN4CG0tVOj3jxZahEEZx2WXIK/a4rGIScfXeuiWzlGBWUedrRUXPGQe8ZZoXF5zVxzqbkZpE/wzLTBNLE9iK/jErfok11rGKZuJ7MWSJaW7thIbbr+IEjNMmrKNJobqy+jiHoczP1HekHqSdvA5L44voYKcPtymwirobi7tftzJmAd96/sb0WAj8cFR3XhzX1Rp8No5GE0v2hCUmwoF160AUCxVeqbuWelPGKZ2Q66d+XfHHuxflSh4DoUwBjs8MQLUXLrcuaonUnLowbsAcAKaXLjWoZgGyLj5mZDEwPXS9YccHCJNdGV1Nf50gODOxnKFcIt61ZnUhQUKFz+wkBycbNPOZCBwqrRlBTnhj4fB+bCm7h+zTzSqcrjD8mIjOsDH7G9YFIGk1XULuhm9t+5yTXrvMM5k+qqRRtDeoChxfke/HLCNIYDcZ+HHNl1SQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1b4561ab-791c-929f-a417-89f57fc30daf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2094,
+      "completion_tokens": 403,
+      "total_tokens": 2497,
+      "cost": 0.006414,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006414,
+        "upstream_inference_prompt_cost": 0.003996,
+        "upstream_inference_completions_cost": 0.002418
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 280,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to prefetch related objects per iterator chunk and does not mention deprecation, a required chunk_size, or keeping prefetch ignored when chunk_size is omitted. The FAIL_TO_PASS tests lock in that unstated warning text and the no-chunk ignore path, so a reasonable implementation of the stated request would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to prefetch related objects per iterator chunk and does not mention deprecation, a required chunk_size, or keeping prefetch ignored when chunk_size is omitted. The FAIL_TO_PASS tests lock in that unstated warning text and the no-chunk ignore path, so a reasonable implementation of the stated request would fail.",
+  "prompt_tokens": 2094,
+  "completion_tokens": 403,
+  "total_tokens": 2497,
+  "cost_usd": 0.006606,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16411",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2541
+  },
+  "response": {
+    "id": "gen-1789191774-xjnaSl4o7xS8wrY4qEQa",
+    "object": "chat.completion",
+    "created": 1789191774,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to expose a hash that changes when the manifest changes, without specifying storage format, versioning, empty-hash behavior for old manifests, or changing load_manifest to return a tuple. Many FAIL_TO_PASS tests fail unless that unstated API and v1 compatibility behavior are implemented exactly.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue asks for ManifestFilesMixin to expose a manifest_hash that changes whenever anything in the manifest changes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for ManifestFilesMixin to expose a manifest_hash that changes whenever anything in the manifest changes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "2w3TwDAlubcmPjhkMRtwXfKXn+D8Zy2X4ZESpFBSN1+O3042n+Hv7RmNrF/TDR6sBes1JUUeI3Nibi9OCxnWw00WTcmNgQ9/RdIHbDH20XoVLh8kZFjgbqHxlKT8Q+NSjXFnBfKfQQ0RU78t3WNJebTGL1v3dFyYgArighQCw4q/cO2wHDDwFMPCnV8qzzDTdKedGp9vRqKmTa35vL+PKASY+kCzm2c22EnOgSMVH1qWqdR5ER7z2WYVGNJi11d6UW1c02EqmkaiVSjlsVEBNG3zjuhMYgKykJn1ETH1oXIllJi3u1WQnm2MpEcmXniVFzD76bFu+OTlZsWGcloQDJkwJHHB2vDXgxXtXwqPiqoVjgjVQLvdFMdtiv3pUdpaBRGmzLAFwfEsdaaesihI9HuuU7ATTW1G+t5AtulJBGZ04Opz3TdO3ukM1bT13mTxr0BeyA47eiohw27b928uB6UWHgX0HdsAz7M9/IUyswFuGtTK5C7QPeKX/pjEHfYoxOFoBKoMolOAkANwoXa+iC8GSdVoPfL/wEvmNcR+HCjdc13h+VLqb6mDsQbX6ReJd+6g720WJqW2RHxYtnG8vPKM0EHjfjxXTZu2INZlrE27TOnDRIHStQBh7tiH1J4lF+lef2U8b4GkG45CZA6kS7c2gf40rVophEnKupF811UqtsJFC293yVrJzM3Sg2LrBJA6CExt2N227/PYrW/d5qgc3K/OV1MGfGptxFWx8Jo2DWSpHxuovdtpE3Rn28Y80VsHE4CxeqyQBoiBiGBIznMW5WKiMgvdrSd76FraCHCenQzOQ16z9yDYvPhKviKWB9q2r9TlRWTGI4M3SPJMfzs+JIjDL902wHNvTkWt13kvo3/NDgIbj3sUXvBytAXi2gtaeMzP/aNNZEVGPFUwmdE2Lf/VxlyMHwcYTiYs/kpEMmWF8lOPUIRodSBn7OuAKNakazrDFjzObu6SgQFL/t7/K92Eo01ZLrb7PYchF86zyOOBdlLy16QddW/iKfzFoX06o7qMuxufpwXISCv6oUpRCqO+eglMh16Q4NjUyJMQON9qUOhON5MivRJmgQxs1sWHhe4s9d1FBwYsJZEmILIGjQMIRussPBnLz/EuthuFonRPkI9iqbHci7rd352sjPM3OLZBZmzjrFAJE9LhkUegU6t7a22rhfzBh9sod+sDi2O4xFsmRP6VPogoej4Aai/0jDUnbpHCu//yStvEGUsUpG5xWgO7mdHzbg6S0jjvyatGcFkLOqHHNWHIWrzcYLfsK5gkebLk7MgArcG163NCjlshFTCfCST+X6KOEch3Yy/NAvgtEJM0mD82RQVstA2P1DzHN9IWgffo9VxsCFfa0H5xZAq4p7ed34i6uLIabw3/dAUGe3nIod6T+yNejTKGjoZj+0CjRO59cVr8UuIDLWK/9Yq0t2q8607H7vTIwE4y945QAlaXGiWLzVMl71s5ZDADMyDxp1jfRo/bVV5c2UMLH4uaB/Q9y3ERrtJd5pOkmpH7ooJymbb9seBkYRmURkhm3zVPSeTmmiWnfeTsKrhWh9QhdtbQFOMmURNSV3i/dlJjfVtRyYEsEO5iRY86IqP7ouoWm7uD2fsRams6unPqxojdGViugtO/lGYYlwgFc6gqhrFk4INE1NDgcg+neQ6ZGGvuYb4GHtdTrxV0qBHkI+J4OaSdHjixHtmN0QU.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2bd42a08-caa8-9122-8c46-28a5c7fe0986",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2903,
+      "completion_tokens": 412,
+      "total_tokens": 3315,
+      "cost": 0.008278,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008278,
+        "upstream_inference_prompt_cost": 0.005806,
+        "upstream_inference_completions_cost": 0.002472
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 294,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to expose a hash that changes when the manifest changes, without specifying storage format, versioning, empty-hash behavior for old manifests, or changing load_manifest to return a tuple. Many FAIL_TO_PASS tests fail unless that unstated API and v1 compatibility behavior are implemented exactly.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to expose a hash that changes when the manifest changes, without specifying storage format, versioning, empty-hash behavior for old manifests, or changing load_manifest to return a tuple. Many FAIL_TO_PASS tests fail unless that unstated API and v1 compatibility behavior are implemented exactly.",
+  "prompt_tokens": 2903,
+  "completion_tokens": 412,
+  "total_tokens": 3315,
+  "cost_usd": 0.008278,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

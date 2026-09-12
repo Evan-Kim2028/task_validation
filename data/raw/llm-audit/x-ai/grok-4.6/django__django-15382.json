@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15382",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 899
+  },
+  "response": {
+    "id": "gen-1789191594-xWsPIAGiNFY9AzSNEpYl",
+    "object": "chat.completion",
+    "created": 1789191594,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes that a negated Exists over an empty queryset incorrectly drops the WHERE clause and yields EmptyResultSet, so a competent engineer would treat ~Exists(empty) as always-true and keep other filters. The FAIL_TO_PASS test only checks that combined filter still returns the matching row, which is the behavior implied by the report.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is: filter on exists-subquery with empty queryset removes whole WHERE block.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: filter on exists-subquery with empty queryset removes whole WHERE block.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f7acf4e1-0340-9544-84a7-35ddfab1c266",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1177,
+      "completion_tokens": 525,
+      "total_tokens": 1702,
+      "cost": 0.005312,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005312,
+        "upstream_inference_prompt_cost": 0.002162,
+        "upstream_inference_completions_cost": 0.00315
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 400,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes that a negated Exists over an empty queryset incorrectly drops the WHERE clause and yields EmptyResultSet, so a competent engineer would treat ~Exists(empty) as always-true and keep other filters. The FAIL_TO_PASS test only checks that combined filter still returns the matching row, which is the behavior implied by the report.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes that a negated Exists over an empty queryset incorrectly drops the WHERE clause and yields EmptyResultSet, so a competent engineer would treat ~Exists(empty) as always-true and keep other filters. The FAIL_TO_PASS test only checks that combined filter still returns the matching row, which is the behavior implied by the report.",
+  "prompt_tokens": 1177,
+  "completion_tokens": 525,
+  "total_tokens": 1702,
+  "cost_usd": 0.005504,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

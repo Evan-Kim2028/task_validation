@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11179",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 886
+  },
+  "response": {
+    "id": "gen-1789187652-o65hjx6jEuuG1D4WfXdz",
+    "object": "chat.completion",
+    "created": 1789187652,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue explicitly requires that delete() on models with no dependencies set the instance PK to None, including a pointer to the fast-delete path. The FAIL_TO_PASS test only checks that a fast-deletable instance has pk None after delete, which matches that request.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is: delete() on instances of models without any dependencies doesn't clear PKs. It should be set to None after .delete() call.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: delete() on instances of models without any dependencies doesn't clear PKs. It should be set to None after .delete() call.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "wnoDcJ0DgQcbh+PIZOQb1KeeWniZH1cvQVPuIgmPRGBvOTbbmYehM7v4AzpP4a/pgIek+kvnWuYQjvpvU45KwfaFb2mzrOwg/d7tGbFf6x+Nkc8Q+jt+px+U/kZkffatMCI2eEKHbHDvfAM5+NNXZzPf33uslLPEHkRvjGP8I6yAbIpsoDrgL4tyGUmLne/g3T/dpZ3Fi4YNdtvdLNirjRKPKseNtnC7hjUGMoBRYbPoG9MaLEwdqjUUmxvWzkKHbrQ9owjmsDlKw2gfUiepjpXtjhDdRv0ehfawDxtnFxOVoa9kQuluYlLaFNE8rnS9btfFsGbd3wUVPCSMNAHEx21HYtZMlBwdCa90vjhLXv12isTIellMxo1x6H0r5Lc89ZD/A8x/ysZs+bUh5qaLvdrT03msH8w0wvuLQ+t4aCkd/QBfJHuRhlHCmGMVOPMrEi2JKevujZHB6dT4/Na3HImICub918F/sDK29qVTcnA90Xg0g7Z5oO/efYB6saLYIRYEuDKfKNQkXhQkLkDjVDAEAAHVKlYZ2SirevlLYqA96bYOXyed0lgMdLHBSdpFT3uCu1UnSt4PvnKyaA2aGmHsL+w9R7N6IhH0pRpTBZHviv9/Aw4jpP22046+e4ywcQL/y66NoZhV/b2cO+PmI8XqY4bS3SDiqXIEeD5g5dEMKfE/wsbOsUbAjbnAbfvqymeyZeLfSq8F+u/mMUJL1j7t8w7yp6yVOMwRjzEgjub7+/CkqE22e9osB9l/bRooJstDqJpl775rh6MK27rxoUJtubJPWHpCekJxNhz8C6u0OAC/Yx7EvYnd+qqRoSbO76KTYA1FRZa0Drxv4P6gyVh4i42+PfzADZWOw2oHLEf5WoMG6ydHg6Ag/F05mSxfHVnYPRdR8MiQqCPFfFhohdd5E6Nm67jAAeQwyMN1hSAlhrvIn8iGb5cc3JBtKe1L2iqPRrcv9cP1EG5nmbF7tO+ncKmhuUgquw22wAbNFOD3gtsbAYmwpKSccmvPg6lSx96d+s04.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_542cb2f6-0097-9ebe-82bb-3cb2146394e7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1198,
+      "completion_tokens": 295,
+      "total_tokens": 1493,
+      "cost": 0.003974,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003974,
+        "upstream_inference_prompt_cost": 0.002204,
+        "upstream_inference_completions_cost": 0.00177
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue explicitly requires that delete() on models with no dependencies set the instance PK to None, including a pointer to the fast-delete path. The FAIL_TO_PASS test only checks that a fast-deletable instance has pk None after delete, which matches that request.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue explicitly requires that delete() on models with no dependencies set the instance PK to None, including a pointer to the fast-delete path. The FAIL_TO_PASS test only checks that a fast-deletable instance has pk None after delete, which matches that request.",
+  "prompt_tokens": 1198,
+  "completion_tokens": 295,
+  "total_tokens": 1493,
+  "cost_usd": 0.0041659999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

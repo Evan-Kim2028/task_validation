@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12308",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1028
+  },
+  "response": {
+    "id": "gen-1789191013-6c0P5vrFmPKTMK7TIexS",
+    "object": "chat.completion",
+    "created": 1789191013,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.76, \"rationale\": \"The issue clearly asks to show readonly JSONField values as JSON via JSONField.prepare_value (and to handle invalid JSON), which a senior engineer can implement. The tests still pin exact dumps formatting and a tuple-key fallback that is only hinted, so they are slightly narrower than the written issue.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_81d2da3a-6f56-9f88-993f-1e674c3bfa5c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1365,
+      "completion_tokens": 621,
+      "total_tokens": 1986,
+      "cost": 0.006072,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006072,
+        "upstream_inference_prompt_cost": 0.002346,
+        "upstream_inference_completions_cost": 0.003726
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 505,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.76,
+    "rationale": "The issue clearly asks to show readonly JSONField values as JSON via JSONField.prepare_value (and to handle invalid JSON), which a senior engineer can implement. The tests still pin exact dumps formatting and a tuple-key fallback that is only hinted, so they are slightly narrower than the written issue.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.76,
+  "rationale": "The issue clearly asks to show readonly JSONField values as JSON via JSONField.prepare_value (and to handle invalid JSON), which a senior engineer can implement. The tests still pin exact dumps formatting and a tuple-key fallback that is only hinted, so they are slightly narrower than the written issue.",
+  "prompt_tokens": 1365,
+  "completion_tokens": 621,
+  "total_tokens": 1986,
+  "cost_usd": 0.006456,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

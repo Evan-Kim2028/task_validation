@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-12973",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "c433e1be-489d-99ba-b2e5-22e7b71b2839",
+    "object": "chat.completion",
+    "created": 1789193963,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly describes the conflicting copy_X defaults and proposes that fit(copy_X=None) should keep the instance value unless the user passes copy_X explicitly. The FAIL_TO_PASS case checks that passing copy_X=False to fit actually allows X to be overwritten, which matches that proposed contract.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2567,
+      "completion_tokens": 120,
+      "total_tokens": 3028,
+      "prompt_tokens_details": {
+        "text_tokens": 2567,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 341,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 24248800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly describes the conflicting copy_X defaults and proposes that fit(copy_X=None) should keep the instance value unless the user passes copy_X explicitly. The FAIL_TO_PASS case checks that passing copy_X=False to fit actually allows X to be overwritten, which matches that proposed contract.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly describes the conflicting copy_X defaults and proposes that fit(copy_X=None) should keep the instance value unless the user passes copy_X explicitly. The FAIL_TO_PASS case checks that passing copy_X=False to fit actually allows X to be overwritten, which matches that proposed contract.",
+  "prompt_tokens": 2567,
+  "completion_tokens": 461,
+  "total_tokens": 3028,
+  "cost_usd": 0.0079,
+  "cost_in_usd_ticks": 24248800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1626
+}

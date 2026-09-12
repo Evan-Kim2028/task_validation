@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14067",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3628
+  },
+  "response": {
+    "id": "gen-1789192373-vqZwbZIdzTkFK7cE4Avm",
+    "object": "chat.completion",
+    "created": 1789192373,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue gives a concrete ARDRegression failure mode, reproduction, and expected accuracy on an easy problem, so a competent engineer can target restoring prior numerical behavior. The FAIL_TO_PASS test is the reported seed and error metric, so it fairly checks that regression rather than unstated APIs.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about ARD Regression accuracy degrading with Scipy 1.3.0 vs 1.2.1. The test checks a specific seed (45) with a threshold of 0.01 on coefficient error.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ARD Regression accuracy degrading with Scipy 1.3.0 vs 1.2.1. The test checks a specific seed (45) with a threshold of 0.01 on coefficient error.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "H7vyAoUsRB8PqqZ2uF2mhLBQM4h6u2wqboGQ59r1RKHIHZFJdS0BLN7A/Q0SIBz6gwJmDWnIRChI2MFfKDFUSyl9lEXiGcY2rRtxRevC8EgsI09b/JD4WvFabzMZ+2XiTzHeDlcRcBJcxuZ5FNomrg9KBujPSmV26Iy5bOsk/T4fgWJ9bdEXPOEfX1oFDjuiYVyi9RD9CVMpwK/tCy7u8E1ZeauunhB39HLa72pZeIsLQShDtnUGjMgbKiP/h9kf/7nIGJIDClLBmMXoSz6Au4DMLrBHEykhsa7fi1FWR4FBXTK1uAJ9idzQ3pdURfAk1GoVpVsnn9Y3uARR7XcwAms6vRqAeans3rJSxFa+6YFot2HfoKhcNK2a4DFf/QU+NIxIOofSss9B+Hs3ZUy5YPb6o5a6m6yQ6QIAzANnsvLxU0f05R9uqb8HEPQCd7UNNbyQ7fUwHVYfNjyjMCQjNahpYLwlPlv3QCusNmTj93FCKk/EmTpInlprdB49gop18Eo8ZWHFf8VSFwY2w8143aK5iEOyRdT20VRXVyB0+AcAQmV1AQltVFnH/YLeYV1aQsNmfUB9loC8DhJ3Jsf4Qj9xNL7tU1/enJzRxZkqKzp5KB21P1IQhLDLeK1OubVyVLzGbqJFVz9CNXnb/kPF+yggO4UlIONxrbcTw2h3HVpdWUNs5wzcgs1Ss28yKhKCnlurSkF8hls0tqrkoBH0yK0Cn/bNy+NZvor7n7ocde9ymkjXsyRnaYl/OjEjLKE89P4HSP0iTEiZox8g5FSQ3EhF1IIS1Blerw/tnMj9viYZs21s3L9/gxClOYn2u6Fd12P6XBeEC1aN/UFiXaote7OWzabvmh6F6O4tskDaIJN+EHKRmLN/FI4OilFrZPIbylzr0VddKciULL11h4ReiJDR0pWqsN859p+YAvHL02w/+O/3LY1LiDr+INlKr94hKbx2cF4NJk99dp0YMWdjwNW6UY0YXwK8MLCkzABi85/V6nIvZNmk1dF9b13r5V2euFg77Rdpf6u1oK8HFABcEKajVnK/R0y2jr2JYTaaNKwXX8mESNaMVYVcKXmTUXZ9lfQkQT/8YGd3EaAmdyRUln8ro9CdnEsuGz/SY93dv2l/3599AHzsMSezg4vi7Y7CKZttkQi4EJ/t8M0qDzrZVOPQVF9JYQ9NgiHOTeZZsNRL1ofIRi9zxryzZxsa1tSwN5j3ASeY4W4pamt9qQq+xv8g1LIQyJBph2fMLH9/hgs1M47V9AJKIQVp/0zLA0B3M3iRgQYlPol3irG48Se941QjjDywhfYQ4t6JnqYk2QA3Ts8a6LxW7VCP2XfkcgAx6Ww1OMMdGi1wSGAMk8aoRYpqvzseSVrOp8EMpKfW5ldaduc013BmcLEEIQqwicx+T2qR5wOpenv4GxH+dUWubMkT70GM+tXq7QRnn9s.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_904d3ec9-fba2-9e61-8dbb-5f9ecc3cad04",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4555,
+      "completion_tokens": 363,
+      "total_tokens": 4918,
+      "cost": 0.011096,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011096,
+        "upstream_inference_prompt_cost": 0.008918,
+        "upstream_inference_completions_cost": 0.002178
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 248,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue gives a concrete ARDRegression failure mode, reproduction, and expected accuracy on an easy problem, so a competent engineer can target restoring prior numerical behavior. The FAIL_TO_PASS test is the reported seed and error metric, so it fairly checks that regression rather than unstated APIs.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue gives a concrete ARDRegression failure mode, reproduction, and expected accuracy on an easy problem, so a competent engineer can target restoring prior numerical behavior. The FAIL_TO_PASS test is the reported seed and error metric, so it fairly checks that regression rather than unstated APIs.",
+  "prompt_tokens": 4555,
+  "completion_tokens": 363,
+  "total_tokens": 4918,
+  "cost_usd": 0.011288,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

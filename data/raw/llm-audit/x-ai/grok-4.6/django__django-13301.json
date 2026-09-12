@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13301",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1870
+  },
+  "response": {
+    "id": "gen-1789191193-6wW2k6lTCrOZYX5wj50R",
+    "object": "chat.completion",
+    "created": 1789191193,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that default-username uniqueness must be checked on the database given to createsuperuser, which a competent engineer would implement by threading that alias into get_default_username. The FAIL_TO_PASS tests match that behavior but also lock in an explicit database argument on get_default_username and a particular interactive suggestion flow that the issue only implies.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about createsuperuser not respecting --database for default username validation.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about createsuperuser not respecting --database for default username validation.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "YwOfMv1mTADGaB/ryY3x0S5LUTUFCVafl4GUiKExtNt9rn6tKqprCYH/0j+ne9yLCf2tmT1+v0gATM9a8lYjJASGUm6vVA6+YtbnpQe/FMmXIhRzABCUTcvm/TaIJzcFATEKYynOhrVhLYqm5KokTtcqbExWG9j77DFZVlh7wxQXDBfRB5gWnT/7YiWiFeh/RAWWD2DgEvh5WfRFKLRMkiVFV9rnK8KWGXtbImCRfFApIb76gys1YQMKt5dJ+lsDxOAWPetYWrI5y3nMRR3/ljyvBsNg64CptGA2D7fE0rsrJ3Eqis61y3hbClJ+oZxK2Hq9dmm/4Fr4CX0LRCaoCZ3Qf2zBixf/3ZUz35TeFaj4ZOQe4WsdGg4Fu58svxuOvfqUtaUlRoWCPKP+Jx6BG9fg4fUICy8J/zM3VAK5Hir7O61LYWqSinMMuDP7u1ZloxVzS4oRSF0byCMY4T5yPC9cvDYrPDFYxOdmVsQz1jDRbHNTf0AxG4dTjbc71B+M5iafikiKXk8ma45uubaS2xANoEMW2IPpNpDsevQHcrn67iWK/O/fg1Xe0qqszShW/1dbkh8liZlLu+zRf1UfOpPPBIMPQTqwb/1G6Gw7isViyQW6bus4G5urkkqZ/6uiODTs7Bn8vCU/yQ4zUOMA9U37LCSwslc/oH07WEsQZtQQoiJudx1baijuK1QFmWqN8oC2qLirT0s/+9Q/nWW3I5zMVibOyF4WcEHWMEeyj8vvQmng+c7AzGQJ1q4Dn2+ls638RyvjU8cusVjZ/oiarZ9DUOkQeCz+oXrOCGSbVahvzYIxyFhFFKUDcI2oLjNB+zfBhImqWN2eU5YZas+U22W161jNOizx5P96zXvGyzoyv5HpZV/hOJIx7B9mibuiSBiM1gG5ODUwBjU/AgmF/tG1JVB4jS1a2VTEOPIORUfDqX8QGKFqAAbdFR+Cp5ERM5HuGt/OgLGR3dyX7JU7nxXezGDbEKX7vV6xf2P7UV1pZhdG7dXsvcLi57tov9bBoDMZgpRb/esff52GwzHI11U+ndCfZwfGGl7MCsVSK4f7eH+H6usG6Db1CJChMdzDBFTzCbA7+xn93pSD6Q7LM2yM/mDWiY4IFEPFoox2Gueuk7/w9mUI2Bs4f/ncx5YiO8w21s6Emhkl/GTMypMBsihIDj3jgkFA0Wlv7ivI6PuoQHfJj6B736GvZkxJXL3vLfUp+hHKBUKYZgruTsGkMebvgt8A9SxzWZVPV29wCRwUIzjC7hP+CoLsjdELueYLYHgK6u/cx+3ovJAPvWhYsGEMXOzVWoJmkY0AxyRBtblFcOm5U24k7/uaXzZjw05gxHKCGc2mJwFacM+eRx0XEOe6q8xOpKCRZbbvQIDRMv3IieMZ7WWrzpHVzP8+4poyjCVeqQvMKuduU6go5VBnKCkfFqHClyhIvatxmHWNQhJldbm1CcrM6blVYpnB9TRFlttjQHKapxSmnTj/zeVU9O0beF0qowr2hZHDii6y5hqGadXLG+TaqC+mSKY4UWT0Y06BqT89v8mKvhP3az6Wke+7dHeY2U1L+bqRvTLJx9lsrtJngDupLYPCqPQDJSc2EXGuUYzFiety99uMKc9k3yf74Ff2rz/N4zzIv3sfdr9TSOD0SEjRU7Jq0rUKxVN5lRAdTgHH4hWCLB+c7k05L1UMeiz7U/hGJS7ouzYKfcbhXeLgn6P/KX1XuRTHKXZ/roc4emkpRpGt25rPuFoT5f8vbKD/azXi/YgJxstN9hp5RkD9VY/0UYfHF/F8vb+2s1N/5+shHpA4U8nIiNg7U5OP/FXlU8mZ5ywKMT3jrfy7dBXG1hk9aSd2rUdI1Wqj475o/fgG8fwkYNoD5/rv3l8eB3EJNnK0Aplr3jnxi9j+rKwNXpLKbi4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_df535bde-589e-98a0-82cd-3557ec598d0d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2175,
+      "completion_tokens": 450,
+      "total_tokens": 2625,
+      "cost": 0.006666,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006666,
+        "upstream_inference_prompt_cost": 0.003966,
+        "upstream_inference_completions_cost": 0.0027
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 321,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that default-username uniqueness must be checked on the database given to createsuperuser, which a competent engineer would implement by threading that alias into get_default_username. The FAIL_TO_PASS tests match that behavior but also lock in an explicit database argument on get_default_username and a particular interactive suggestion flow that the issue only implies.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that default-username uniqueness must be checked on the database given to createsuperuser, which a competent engineer would implement by threading that alias into get_default_username. The FAIL_TO_PASS tests match that behavior but also lock in an explicit database argument on get_default_username and a particular interactive suggestion flow that the issue only implies.",
+  "prompt_tokens": 2175,
+  "completion_tokens": 450,
+  "total_tokens": 2625,
+  "cost_usd": 0.00705,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

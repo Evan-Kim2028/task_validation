@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14077",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2310
+  },
+  "response": {
+    "id": "gen-1789187663-4X1g849cGxTZBawduOCH",
+    "object": "chat.completion",
+    "created": 1789187663,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks for JSON key extraction via values/values_list on SQLite to yield Python booleans rather than 0/1, which test_key_values_boolean checks. test_lookup_exclude is an extra related lookup case not described in the issue, so the FAIL_TO_PASS set is slightly broader than the stated bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.values()/values_list() with JSONField returning integers instead of booleans on SQLite.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue description and test_key_values_boolean clearly specify that boolean values from JSONField should be returned as Python bools not ints on SQLite for values_list(). test_lookup_exclude is listed as FAIL_TO_PASS but not present in the gold patch, so it may test unstated exclude behavior or be a pre-existing test whose failure is incidental.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.values()/values_list() with JSONField returning integers instead of booleans on SQLite.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue description and test_key_values_boolean clearly specify that boolean values from JSONField should be returned as Python bools not ints on SQLite for values_list(). test_lookup_exclude is listed as FAIL_TO_PASS but not present in the gold patch, so it may test unstated exclude behavior or be a pre-existing test whose failure is incidental.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_784eda6a-b5d0-9b83-b683-29c56b6a9ada",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2844,
+      "completion_tokens": 849,
+      "total_tokens": 3693,
+      "cost": 0.010398,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010398,
+        "upstream_inference_prompt_cost": 0.005304,
+        "upstream_inference_completions_cost": 0.005094
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 722,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks for JSON key extraction via values/values_list on SQLite to yield Python booleans rather than 0/1, which test_key_values_boolean checks. test_lookup_exclude is an extra related lookup case not described in the issue, so the FAIL_TO_PASS set is slightly broader than the stated bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks for JSON key extraction via values/values_list on SQLite to yield Python booleans rather than 0/1, which test_key_values_boolean checks. test_lookup_exclude is an extra related lookup case not described in the issue, so the FAIL_TO_PASS set is slightly broader than the stated bug.",
+  "prompt_tokens": 2844,
+  "completion_tokens": 849,
+  "total_tokens": 3693,
+  "cost_usd": 0.010782,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

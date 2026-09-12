@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1327",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1964
+  },
+  "response": {
+    "id": "gen-1789192129-OOLoXK07hN9GE3T5neBd",
+    "object": "chat.completion",
+    "created": 1789192129,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue lists several incompatible designs and only loosely specifies sort order, so a competent engineer could fix matching in get_adapter without changing adapters iteration. The FAIL_TO_PASS test asserts exact list(s.adapters) order, default https-before-http, and dict reassignment, which would reject otherwise valid solutions.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about transport adapters not working due to dictionary key order. They want sorting by longest key first, then alphabetically.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about transport adapters not working due to dictionary key order. They want sorting by longest key first, then alphabetically.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f4ece2f6-08d6-9570-8dbc-5b3178f6940e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2281,
+      "completion_tokens": 757,
+      "total_tokens": 3038,
+      "cost": 0.00872,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00872,
+        "upstream_inference_prompt_cost": 0.004178,
+        "upstream_inference_completions_cost": 0.004542
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 637,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue lists several incompatible designs and only loosely specifies sort order, so a competent engineer could fix matching in get_adapter without changing adapters iteration. The FAIL_TO_PASS test asserts exact list(s.adapters) order, default https-before-http, and dict reassignment, which would reject otherwise valid solutions.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue lists several incompatible designs and only loosely specifies sort order, so a competent engineer could fix matching in get_adapter without changing adapters iteration. The FAIL_TO_PASS test asserts exact list(s.adapters) order, default https-before-http, and dict reassignment, which would reject otherwise valid solutions.",
+  "prompt_tokens": 2281,
+  "completion_tokens": 757,
+  "total_tokens": 3038,
+  "cost_usd": 0.009104000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

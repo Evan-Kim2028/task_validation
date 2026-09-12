@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16649",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1631
+  },
+  "response": {
+    "id": "gen-1789191805-j1LW2wEPwS2tTEIRCbKj",
+    "object": "chat.completion",
+    "created": 1789191805,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue mainly asks to document that annotations are appended and treats a behavior change as optional, so an engineer could reasonably only update docs. The FAIL_TO_PASS tests instead require preserving values()/values_list() column order for annotations in unions, which is unstated.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about annotate() columns being forced into a certain position which may disrupt union(). The user wants documentation mention or possibly changing so annotations aren't always appended.\n\n...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about annotate() columns being forced into a certain position which may disrupt union(). The user wants documentation mention or possibly changing so annotations aren't always appended.\n\n...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "tb9elKAVKgoGLvKYKMHRZXrr6Zl3ZIZARX9zRNA25e4FYP8V7g08VmmmPhh8wUtzBTeO6h+O0YQ2pNyeD/CIdZpJNF4CTvHroVlUozksaARhmfiS2g9VwOOsNrfsv20Xzm0zac9AGr45uiwwmyiffDxfF/1nY2O114KILLVocPdPYFWURsq3HGRRSCAaLwvJvo85/FDLZgJwFKx4Wm0LIuaL0yD+8KZbvyM80u8dLiWwRwrC6G74IbaGfiXnhqId/faai2vlZw4JCsUUGD8jsFknm9PvXxmo0npFXMzRhdPJZlhenjC4uxuSNIyemDwfUwaYqKVvkrSy+JSRinKwD414LdDbA4kX+UnUa/BnHkM35px3dXIf1YZhl9n8moRjAvn4UNWi8FDOJYY9hLSqTjRAJICQQUNB6iywfpmwbLjieox1PF9jw2gkV+MN5nEQrrzh2mJX6m7DmunjShrqJKLNxGp3sNrWkS94sVoS78ZPC50eE4T+Q/weJzG732Mt/L9Lq6S57H+DKPXHSq9wVqgBAfZCHWtEHlVTGKIAiOGo2BW1efXVPMUjHJBRAkPZxWvgallpwEDXjBjcRp9bPwLrov2O4vFMDqOrl8Ou0VfGss+OoXia80JrzS8JU2DXlVnLcAOkBKU40zymu1DXK/gj2liZn4RiSXFv59TurMnhNDD/WZY88tX0+gsgQNFOoArJCsqWo4la7jCDqnEVEIw8Tz6pGMmDQc/5RbGljQXkmXln57VUsDx9960pzbj09begRaVd5i99389SkCd4ZrxSRVfVMkmKto8rEH1yhoCv2xzsmspqNHHzuRyp95wpRmR45rmEC161P/4IwtabuFyrTq0TnVXsefOgehy/SQdNU+4DQSehTLwGVJl/08wLYOq7bzOmz5ZxLkCKuTtztykMGD6tAMUuNWtGuGTotqaWPwP69qOvEgnt2Z6A3wlZzQlxaOqyeZrff6vy9jo5uUDHYd2Fj3lqmzdDWBqC8FFFsH31nnjaGvcW3OtSlmlAUhYCEcG7Br8cIsCdzjjTOw7se41uBiGo+uVAdKx+kYDpFvjQHFRN98wtvCfWc2XlKDuEZDkBgyHbUQNWs+49mpyuQKcO0TL0sqdxTs+batD5BpRwaXpOk2/k1n9WQcC1a8aSA8SjbRp7aV6wylegrzU2rLYYKoki3OWWdM9rSNiAImQLQceIF2J53KSLA4DgEJd8gAEEOJCWikfRjoJyb4rmTLTn/C92YMANRk752b9rY6TPqcOuvyH6Dq1XQ88u3fZIs+eBTVHaZA6VDvht+yTsClugFMnd79FD2/qn38a8QnctB4roJ/8rWHTkI9f0DJJvls3txJTQ3FRAF2okLxEulV6JR4lxwJxzuYcXSUXYzdbzFu6eHBxfnoRARf9YSXIUMKjpfy7UZMre4GpPN8JaxtN1ptjH9BgCU5Y3Jz2buq5Jz0CijPKNMyX7HIR8eMl8xc+eIT5FyvcUia07zqFoUeNfXn6xR6A8iNBS2QwZOtJCMBgVzYcaqSTgO7bIfR36dQMsIGPEOeuWGvyoJ4zZ2+E7lkvfcan++FrTbRYEQF/twSxd5MTKrKVPmTE89gqziiQ11WK+RJrp8xc6YOKdvbW+oxsrinbtdxkF7zQY+tQaqj7TBBXyIJYgBwr8rbV1o1PT2af6WBe+ALQa4ANUNGlhJriiNvtj+xB9v90OaMj7N6EgzSNwppZ5t/hCSG45wssEuVjHPKvqd5bspf0RgCvrkbIIAJWrAA563Q.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f7da1b00-cb11-9acd-8544-bafdbba81dec",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2014,
+      "completion_tokens": 387,
+      "total_tokens": 2401,
+      "cost": 0.005966,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005966,
+        "upstream_inference_prompt_cost": 0.003644,
+        "upstream_inference_completions_cost": 0.002322
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 277,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue mainly asks to document that annotations are appended and treats a behavior change as optional, so an engineer could reasonably only update docs. The FAIL_TO_PASS tests instead require preserving values()/values_list() column order for annotations in unions, which is unstated.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue mainly asks to document that annotations are appended and treats a behavior change as optional, so an engineer could reasonably only update docs. The FAIL_TO_PASS tests instead require preserving values()/values_list() column order for annotations in unions, which is unstated.",
+  "prompt_tokens": 2014,
+  "completion_tokens": 387,
+  "total_tokens": 2401,
+  "cost_usd": 0.00635,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

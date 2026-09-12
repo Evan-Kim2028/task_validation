@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12299",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 984
+  },
+  "response": {
+    "id": "gen-1789187563-B07tn2BNCWu4XPIEMjAR",
+    "object": "chat.completion",
+    "created": 1789187563,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to reject update() and delete() on union/intersection/difference querysets with a descriptive error, which a competent engineer would implement via the existing combinator guard. The FAIL_TO_PASS checks reuse the established combinator error message rather than a newly specified one, so they are only slightly narrower than the written issue.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description and gold patch are clear: update/delete should raise descriptive error after union etc. Tests use existing assertRaisesMessage pattern and _not_support_combined_queries which produces the expected message. The second test name is likely from dataset and not affected by patch.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description and gold patch are clear: update/delete should raise descriptive error after union etc. Tests use existing assertRaisesMessage pattern and _not_support_combined_queries which produces the expected message. The second test name is likely from dataset and not affected by patch.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "/f7AM2fBvOG5gNV/8L0POYdTUtyc8VXkZNLU973qaw4BSc3UMFf7B6l6gPpC+NIAGeb2Z1YE3cyQyNK3XO2ijKmo85vJRusMXcaGxbbbMf3vIjsiGVlacYReO6Gc7IJRrgeFDnFgfKnb4H/vY8WTfbkbRFhACidBM/Kb4ODIszqyUw+q3YIT5YpmzjArwWcCgoRzkjKjhF03SNMwzjglJo6glqCm+G8FaydknDyPe68Lk/+4u3JenZcYRNMapVTmTJb5P5xVG2Y/wdrikQJwo6F30MYCPrUd+hdM/dXswyfP9HrNe6EvgtYzxuKPtcmM0KGPb4OjkWDRjW23tjDVqfSESDH/JFpIF0D6mVRQrpX1qvV8GM7eKWGoFdoBJ9V0JNgZBO65XjQAiDTLBgxlHg5HIaRRDqJhRgrPwCgaTu+YN5B0D4dXJCYHC8fitrVW6k2rd0auYTOpb17rkXBg5FkEplTsCND8wYZ/pCqqTE8iJvKvBg5p/qvtbXGH3x146oogG2DFYLDes5816tBBVzwtORIBXGIOiM+pYZueITK/OJ1vXgw4npLZGj9hUiptBaPUZvZntyQ42VvOIxTC3XILBeVnI60JZPeEbF7eA7gef08G+W3EdAQX3vfXpKwzMfeiyr88GaRJlV48crgq+cWfjAnz+MUhc5GjA8yJp7/mgPPYcdc40QdqEvM+A+rs5ASl+iWsG5IlGPn66alIRTm+IDIcyZY3OLslPzhi8ridrWh0CJfMrLi7jdLt9r3uwCXHkwpuKC6SczODUqhl2AU7TjBk3DUydR/p9NRp21cyJBfm8otwrUH9mHx+f7nYL8pMqSfNY6XFDmjnBsU0FY2MXjr46UTP1R9WFadsrjpezzGSbeC8F6JhefBV6FiAHSSA7M9jwNL7qG/5/JQ9MvwEQ0dUlJNiy9m6qMQclSVN9i9ey965xojPWBH04yflb8FjY3wgyz5QWOK36kPsFgP1AAeq47qYuO2GgZfDhQS1r607ebDP698OiY/orfWrfoQxwj08Yksip4SYREnLMjh17Gue1e+1skwK1+kAdHi8G9Kdi0acXexvLU+VMdIpmAw0p6AL0MgeZGtSwmaBHD+V31RyHA6SJ86nUroHrEq++4uhBfS1P3PRcbaA07tdMPPG3b1kkfOvE1slORjdJkRPDpVqDsvA48z0/XsGZbS+XH9IDYCBg6fkBW6NPD11i1PH+fwZn7dYNkpKRJAaTw5rjTsH0Acl95S6yOd43CEFLuRLGlJ8pZGsJP7FvWkrXqRSllbozkvWKpibxPIGQruCnHiAIjq4Eka5gu0kF8vxbHq5xTL1NqY6nHUcemHXPMXfVSMc2LuNA2f+OFLpbtNhc0Iz8bX0YXmMk+TuaalGiAqA+U71Rr3UX/Wj6kbqaPBMJS01JGZwW21FFjgTu7CV8nszFiArSwP59cV81ep2U46dNmmnjkpyTB5ka/YnGzTObzUT4INMQgQ8VAfsiTNFv2OhsRWA9WAQ3ndCla8JPx5CYDdFpK5xOm+GBHKRr7QtKQoCvgkML1RFiYVjQnlx18+GTL5Fto10/Z566MVhFxaEWyl1u0vpzmxRc47LQrpBuTJszZyjGc0gnKeW2d14OXrf2kAyAjatdoSt9r9BF7DBo5D7ADKyISQBilaneInQEqN7WkWr3iUFVhoAXbtueb35RcwVAMZCfK19wptLxaLFrRzjAwtDEoWmAV16K/UNsqjpnCh6MASygkoNdjuOa7RfJSUf+Oe/a+Y4NI6XLEc7KNX3V2RQGHG7reWRxT4Wu4WzTl0Td1FU1e0godYZOiMbu7SObw/97dyvRN16o9HOZzCHfYH6Xp4Uzk0M2VCiqi+C+Ylg3UrVFrKnWPmWB6plat1Lej4iooiXDdKZEaYYmo3gQ/+/6xeRmt0C1FQqFMuRBVzegaoAJHvXJ4/cAYrdROLn7/kvIlQWcOHgqj3uuCi4p9yyzhrxOFhT8EYNYvr4h15ILqLo5X3++V7uqBqALWU7Q/++rm+laIIwHPuNLFLaf2mGz/mAp5bmBKfzOZgEWQs6Yhv0NIZewofUQ1wkaamRDgF9qNg1TMUGk5SvP9ZAB+fWA3SitrCJt+izWlMHl/Rze8C6gAFT8T70rnGqoLuq0nw0cI9f7DicmVGqWMSYhNyDIHlvWrY7TxC1IiTM4sq/hXATwWJeNqFf1u9d0K81dlLvVpe/fzlQsgjuNpJIn47PaOekoNNQfzkC1qPXLZzOnqnEgStV1gn/tfLSEUWyLmmv5BgVMmULRhYPq7AWK+RWIkjyJPVct1BK1aUlobQbb7Kcro1YpSncXnZX30GiEqm6LvlxflwhO/EXFjSQXE1jxhO+vL8hdtFXvVFswg4MEjaOXAOx5zw7lOsne/v4g7X6XWitSnUbyCEwdTDWq5g4/bnRKREcJweantgwg0RbDjG0dwBcoTmYgC7RvSIMVaqodZApUrnpHcstF5dhcMr3ODOhAuLshAzOf0XOWbefxNdBF8spvw3IhgAQOgbd5Q7TtXrzJLKz3cMDTQXG4Vj2Qh552xT6rYVBDGQ69ZcGaVZMrPhLhn7t4DYrVpqFX2uzVhxs8K5Yhs+enzb6YNGNB7BXcnbsKapm6Q6bccJ38YiCwCWRfM88ZFLGP2AUBYU74CW1ZyTCiP/pVveyaLDRxdwXxJO/udTmLGg7veIk+hXJF39lIvWRZn57H8oBgbkcIgZzDITbg5zksTu7fj4AG1EqkoDc1XZjJltANEJzTAiTLO2z58JlzGqnhvG9IjyEGeL8/Q6CQelSnd/H9p6O4+t+v9uFT0mmUx2s/Byn41KFIqcIeNvVnFAVeinpDozHSRcaiuAtKjsGOo9xs2HtKxARvLwy0LF1ogUkL1tIgWGLqhZWmeFtOXe7wj+jUrqsNT7x2gFvRAMs0iUFyw6nBofRJMCib397wJTGb12sGRTwwZLvggsPkjen+Vxw3kpGgw0riKi25sfRqV87k2rTLMN3TzZvMBMDeATD0bGbkaF98ryFU+zoq3ekC4SQNUYdb6e78nemI+khLDxKgWn28HZxUOmCwr35QIjaG3vXSAqg5FZnyYMMWa5xGE5iQimVH73nO6eNTwmcCKLtAOPvUmjHjEwujeUUBjsmhFu7VJq851SFibcuTf0EwWjj7mZAyokLFSy/x0qUY6i4FJOSSwtOG6xnBCL6teIkCuRdygpkPVN3ClcXlBuMk46WDi7bEKTY2qVqwPH3wYB9KE28od4Z2B+AHhkIt5RlU916nSQN3OG44JYv3AQuYouHMqfNFos82nc7EOBL0GLZK/5r2k1cjhrRufGbEBF4wCeUPTShLHilsaEW2v/MXm+q0hsjioO3uMUxgnFt2ujiZwm16SyHw5dFKf/YIDZYHtovXgndCTavUa2UGa5y4msoEiY/NEBcBwQ3smJUE+D71saQmRIeda1LKYhjmkElUQpCIQHB6rPmM4D8lHaTroZisPRuoPh/te87LnzRLruB3z3ek83i7GtjYTeiMq4P8GABjchyTQDA9Ixu2IROYzDzMEX3aZSpXpStV/5O5dd91g.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_82cf9ca3-b707-911f-b1b5-736dba8ff169",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1301,
+      "completion_tokens": 719,
+      "total_tokens": 2020,
+      "cost": 0.006916,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006916,
+        "upstream_inference_prompt_cost": 0.002602,
+        "upstream_inference_completions_cost": 0.004314
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 595,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to reject update() and delete() on union/intersection/difference querysets with a descriptive error, which a competent engineer would implement via the existing combinator guard. The FAIL_TO_PASS checks reuse the established combinator error message rather than a newly specified one, so they are only slightly narrower than the written issue.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to reject update() and delete() on union/intersection/difference querysets with a descriptive error, which a competent engineer would implement via the existing combinator guard. The FAIL_TO_PASS checks reuse the established combinator error message rather than a newly specified one, so they are only slightly narrower than the written issue.",
+  "prompt_tokens": 1301,
+  "completion_tokens": 719,
+  "total_tokens": 2020,
+  "cost_usd": 0.006916,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

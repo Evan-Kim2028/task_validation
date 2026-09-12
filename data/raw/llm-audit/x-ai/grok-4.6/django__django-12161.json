@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12161",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3313
+  },
+  "response": {
+    "id": "gen-1789187675-xnBC2ygujQjINFtQH5rZ",
+    "object": "chat.completion",
+    "created": 1789187675,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to evaluate callable through_defaults like get_or_create defaults, covering add/create/set. Tests also require a single evaluation shared across multiple added rows, which is a reasonable but unstated bulk-add detail.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about supporting callable values in through_defaults for Django M2M. The tests check add, set, and create with callable through_defaults.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about supporting callable values in through_defaults for Django M2M. The tests check add, set, and create with callable through_defaults.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d09d5558-829c-900e-a092-ac3fe508355d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3736,
+      "completion_tokens": 498,
+      "total_tokens": 4234,
+      "cost": 0.010268,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010268,
+        "upstream_inference_prompt_cost": 0.00728,
+        "upstream_inference_completions_cost": 0.002988
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 394,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to evaluate callable through_defaults like get_or_create defaults, covering add/create/set. Tests also require a single evaluation shared across multiple added rows, which is a reasonable but unstated bulk-add detail.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to evaluate callable through_defaults like get_or_create defaults, covering add/create/set. Tests also require a single evaluation shared across multiple added rows, which is a reasonable but unstated bulk-add detail.",
+  "prompt_tokens": 3736,
+  "completion_tokens": 498,
+  "total_tokens": 4234,
+  "cost_usd": 0.01046,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

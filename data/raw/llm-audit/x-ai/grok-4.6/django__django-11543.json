@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11543",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1346
+  },
+  "response": {
+    "id": "gen-1789190885-cwdiRAGtVUyP5BCldDcu",
+    "object": "chat.completion",
+    "created": 1789190885,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that a non-threaded runserver must not keep keep-alive connections open, so a competent engineer would close the connection after the response. The FAIL_TO_PASS test checks that keep-alive requests get Connection: close on a single-thread server, which matches the reported hang.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about runserver failing to close connections when --nothreading is specified, due to keep-alive connections blocking the single-threaded server.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about runserver failing to close connections when --nothreading is specified, due to keep-alive connections blocking the single-threaded server.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LIZPmnruN+otEzLZ98vTdiFxk16TU9TOBV2EeUjDKzVpM7Y4A0B0E0A+5t1cO5Vhihz/myTXhwxy4sMZmyzXNWTlmlRHom86KBaM3da6pKck0KrnEv4yFqsfnqDD/71rrmxevmJkvtqcj/g4sjwZyM92l6tUqmgk5esG4KrlHMa0erBxNLexa0//6b5RzMlwIkF7IP3ykckBh5OSvoj0o9KOFf9mEUBj/KoAeB/GcYw6OjeWMyAUJmrknDAp37QHNW7RxqdcPuwnF8/zUey5a8g0AA2zolAnpxpnOwmtX/YyPFV0+4pCSmjIsNXMf1h47hY+pZx4TbGIgG10pai+51bmArXv98lLuDPbLo9HSOw0qKt6M62W+wy7YhPCRdXshoL82hrD6vqP+ghnOKm+QIzTiYYbnoUXNyOoQDjXONIFBk5dvrUnEPZNS7ZmfEWbtLSDOatUk/2zdglj0QsIVZmmIl78epaWX/lPHoJoTMwnU23MXrLrzSVYnovOZnMvd5erVCBLK3YmT0iPiEyyZuF9DM8B/5r5RGX1UJojtVM5nzlwtQJ33UU00DoUT05z96Ok0waSzE5b8wVPmoBJ/vogkwiVPxjlGsI9ilXUVJhWJDxWcwN/WtI+uV6Jze88rnEPoFTSpqaA6Y1S0FV7Yt5K2wxtRcdPCwA6ksjzS6N3bxnUoaLPjpRyJvrkCRETWiDcyZv1+5pfFCEGgayg4DoxpzmengM92c+Dg27372i384PyEf5DlZkYIU9rvcElWQJyfREPdSiPV7fz2+STr643N7j102M08ZN2r57xgjcsHhMXzGfUq/SiBS+8WibP9PlWcA5gcNjky9SY2z7QRE0FhSxoo4RPosMnUvMzkE14Ch3NiI+VPRhwBtWYJ8aoTVpDyjblp89btvmWfxdIY027LfBihA+uxKU/drCXwTVdLR22zVmBbJ7X96bdwLe+ATE7TSKvyTpDn6bqqpmZFQ8W5Fz8cJf/PREWD1/jVXi1eq2IDGl+hE4KrDy1nTwhALMcATIw6h+k6NlyKGvkitW4h7sqF9m/eHTIvEr7oQiXgVxQ2uDOCCIPe3Ve/ymKhZ0UR9JTtit5RMcz4bD9BHaU2rrQPbZgWv2GQQfPCNTXRUgDROy1uqGS4MJGylarZ84JGZhELHjjdAvucxiSH2yaU5o16L2YHaXFRxrGLV95sYkJI2fjeemp0E+smgq1QeeCLf20RkIlunPYt9VPc6tOPfVYdriT1ru9boABVoG8elT1zloZEcfFokTY/ETADYJQnQ04xvW5b+deJEGseKNa9ye7KxtB9rXBhAkjo1qbj6PrxXlqba3m+QKjxbqEuUUNy6DN06m06fIfd/YaAxQFc7NDKvJc4/XqWY4cpK56mRPN2hyDEor+oSHrc/AeL/XnpG4pq8+ssIH1J1YIeu4j2kdMt+kAbNu7mD6ZjfYQE92GlLaW3hDOj0NfiKy006cs79Bc5+/2KNIGrCSL07kG8tyu4i35SFkHsC/aGLw5nn8u1L6PqxDbxPy9xoGPVzPgbuQMIF/vvIQAQHd1H/dEXVQSWLSxHHw0gNwoBMH3go9mGG7rcHgzYUYPWQPj13EmQkYkcg3N8KY7pPNllRRU4lgGlBesFecaNV8iwHPpbfdjjeCdK65ii3Eqb03hwwm4vMBDDBq7eTV5BqTjscxpXwBLNXYBj1Y/6phoehEe5yJvsOt3fG+mo6Xt4JBzB+xrvPzxh4JOwxHJN0aM7kzVl/j+Vug5y0jA9gFbu2hifExI1zRXBBmoIhw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_648752bf-b227-91b5-a6f1-1df88665fc4d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1660,
+      "completion_tokens": 408,
+      "total_tokens": 2068,
+      "cost": 0.005576,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005576,
+        "upstream_inference_prompt_cost": 0.003128,
+        "upstream_inference_completions_cost": 0.002448
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 291,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that a non-threaded runserver must not keep keep-alive connections open, so a competent engineer would close the connection after the response. The FAIL_TO_PASS test checks that keep-alive requests get Connection: close on a single-thread server, which matches the reported hang.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that a non-threaded runserver must not keep keep-alive connections open, so a competent engineer would close the connection after the response. The FAIL_TO_PASS test checks that keep-alive requests get Connection: close on a single-thread server, which matches the reported hang.",
+  "prompt_tokens": 1660,
+  "completion_tokens": 408,
+  "total_tokens": 2068,
+  "cost_usd": 0.0057680000000000006,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

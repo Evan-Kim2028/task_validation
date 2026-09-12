@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3733",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 23941
+  },
+  "response": {
+    "id": "gen-1789192237-mWps9BHcsWQbyQeYugbX",
+    "object": "chat.completion",
+    "created": 1789192237,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS dumps hundreds of unrelated tests; new tests also require unstated polyval/Dataset APIs and names.\", \"confidence\": 0.86, \"rationale\": \"The issue only sketches DataArray.polyfit(dim, deg) like numpy, leaving Dataset support, polyval, skipna/full/cov, datetime handling, and output variable names unspecified. The added tests would fail most reasonable implementations that match the issue, and the FAIL_TO_PASS list is dominated by unrelated suite tests.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge specification fairness.\n{\n  \"underspecified\": 3,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests demand Dataset.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge specification fairness.\n{\n  \"underspecified\": 3,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests demand Dataset.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_921e57c2-1b66-9bb4-85c0-0a97b2c359ec",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 34390,
+      "completion_tokens": 725,
+      "total_tokens": 35115,
+      "cost": 0.072938,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.072938,
+        "upstream_inference_prompt_cost": 0.068588,
+        "upstream_inference_completions_cost": 0.00435
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 576,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS dumps hundreds of unrelated tests; new tests also require unstated polyval/Dataset APIs and names.",
+    "confidence": 0.86,
+    "rationale": "The issue only sketches DataArray.polyfit(dim, deg) like numpy, leaving Dataset support, polyval, skipna/full/cov, datetime handling, and output variable names unspecified. The added tests would fail most reasonable implementations that match the issue, and the FAIL_TO_PASS list is dominated by unrelated suite tests.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS dumps hundreds of unrelated tests; new tests also require unstated polyval/Dataset APIs and names.",
+  "confidence": 0.86,
+  "rationale": "The issue only sketches DataArray.polyfit(dim, deg) like numpy, leaving Dataset support, polyval, skipna/full/cov, datetime handling, and output variable names unspecified. The added tests would fail most reasonable implementations that match the issue, and the FAIL_TO_PASS list is dominated by unrelated suite tests.",
+  "prompt_tokens": 34390,
+  "completion_tokens": 725,
+  "total_tokens": 35115,
+  "cost_usd": 0.07313,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": true,
+    "gold_patch": true
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15139",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3204
+  },
+  "response": {
+    "id": "gen-1789187726-Ybz9SV03pk2af2GN69CP",
+    "object": "chat.completion",
+    "created": 1789187726,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to deprecate PickleSerializer and move it out of core, but the FAIL_TO_PASS suite also requires session expiry to work with JSON via datetime ISO-format storage and a specific RemovedInDjango50Warning message. A competent engineer following the issue alone could deprecate or relocate the serializer without those unstated session and warning details and still fail the tests.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c864fbbc-0bc0-9b3f-82f1-33fc99277a23",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3553,
+      "completion_tokens": 468,
+      "total_tokens": 4021,
+      "cost": 0.00953,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00953,
+        "upstream_inference_prompt_cost": 0.006722,
+        "upstream_inference_completions_cost": 0.002808
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 338,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to deprecate PickleSerializer and move it out of core, but the FAIL_TO_PASS suite also requires session expiry to work with JSON via datetime ISO-format storage and a specific RemovedInDjango50Warning message. A competent engineer following the issue alone could deprecate or relocate the serializer without those unstated session and warning details and still fail the tests.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to deprecate PickleSerializer and move it out of core, but the FAIL_TO_PASS suite also requires session expiry to work with JSON via datetime ISO-format storage and a specific RemovedInDjango50Warning message. A competent engineer following the issue alone could deprecate or relocate the serializer without those unstated session and warning details and still fail the tests.",
+  "prompt_tokens": 3553,
+  "completion_tokens": 468,
+  "total_tokens": 4021,
+  "cost_usd": 0.009914,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

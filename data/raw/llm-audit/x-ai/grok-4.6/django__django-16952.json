@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16952",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2823
+  },
+  "response": {
+    "id": "gen-1789191850-hrTSvPinN6LStvk1ljMO",
+    "object": "chat.completion",
+    "created": 1789191850,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only describes a create crash for diamond MTI without extra parent_link fields, but the tests require a specific models.E006 check and a working create path that uses an explicit extra parent_link. A reasonable fix of the reported crash on the issue’s model would not satisfy those tests.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue describes creating objects with nested MTI crashing, with an example of ItalianRestaurantManyParents inheriting from ItalianRestaurant and Place, causing AttributeError.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes creating objects with nested MTI crashing, with an example of ItalianRestaurantManyParents inheriting from ItalianRestaurant and Place, causing AttributeError.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bd67d659-7909-9c72-8213-b48b6eaf185f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3216,
+      "completion_tokens": 463,
+      "total_tokens": 3679,
+      "cost": 0.008826,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008826,
+        "upstream_inference_prompt_cost": 0.006048,
+        "upstream_inference_completions_cost": 0.002778
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 347,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only describes a create crash for diamond MTI without extra parent_link fields, but the tests require a specific models.E006 check and a working create path that uses an explicit extra parent_link. A reasonable fix of the reported crash on the issue’s model would not satisfy those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only describes a create crash for diamond MTI without extra parent_link fields, but the tests require a specific models.E006 check and a working create path that uses an explicit extra parent_link. A reasonable fix of the reported crash on the issue’s model would not satisfy those tests.",
+  "prompt_tokens": 3216,
+  "completion_tokens": 463,
+  "total_tokens": 3679,
+  "cost_usd": 0.00921,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

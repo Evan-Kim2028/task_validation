@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25712",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1394
+  },
+  "response": {
+    "id": "gen-1789192062-P3OSp5RIJYH0DkDcunBj",
+    "object": "chat.completion",
+    "created": 1789192062,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that fill_between with an axes transform must not autoscale data limits as if the fill extents were in data coordinates, which a competent engineer can implement. The FAIL_TO_PASS test is the reported reproduction and only checks that limits stay unchanged for fill_between with get_xaxis_transform, so it is slightly narrower than the full fill_between/fill_betweenx claim but still fair.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about fill_between not respecting Axes transform for setting axes limits. The expected behavior is that using transform=ax.get_xaxis_transform() shouldn't expand y-limits as if y is in da...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about fill_between not respecting Axes transform for setting axes limits. The expected behavior is that using transform=ax.get_xaxis_transform() shouldn't expand y-limits as if y is in da...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "v6WynD5+3X2vBOJWAJuocoEK7tfZBC4Rfzss+TlxMbas41L2IFtMjRqQRovVfTzHQyxKqOcY6o5XH3vlDFpRbeouAp4TaDjJ7FVKQ5jYGaCzz3WXejYnt9zp7/M5ohWtuRNbomJgd4l9lzOv6RpvC479sZLF7P4rUz3946KICd1JpwLkPXHBCLEi6W++7ii4HjQR4Uuktp+kpNoPZBN2qskaeh+QTONfGRGKh12Dnhm/+N6LyW4UVvZghogwtwCxOeBQ78nP/bX0w2JRGpqvyrVhmri1al0S1dy2coTDLaUbfy0d0zkkItZzYuei9RyvE8h0SkecJI943vTel8mE+Ce89wV5lh6AhZDHTOBUy+mx+Mxys0DPm1ewudfpe3hZvxhTQjT/35TBpBaxguk0RI43lAH24uGvWZIhpxpSXDndcR0ANaSALfcZNoEeJ/u0RxlqjgzcLqyk0OeRYz4oKzlxgSeqjIpljK55GQHBqehC2DOB2eqYgrfMcy2ZXOFfWM2eYfDuPA6yuomvP8wYHbQ2np7ZHbVp2AzF6GwQ9EBfdcwDhC7qFY9ouC2RXhTR4z4wr8CDwAra+jcsf64VBC0SwRY6QVCQghACrJQ7c12hm4fRJPDCQgdSLbY7/NfZPCVpnGQoPpfBRJ2B5LHwt9I8zrmFlLrmeLjCq1S5lhDIgGGkOLQ5MwbG3B6EvOK1evvogSXZBFHpVPhrkbd6yXMTwS4YMFJWJ/lyLjStsK7Ufq0ZWdkKbfHFHoTv4uJ7IeFdouI+fmVEwaaFWVwGZrfoomkNd4Yv//ylCUaDpQLXmxNQ9dzkcqY2PebbliXo73l5r8LWyDFYoBuOtHvWlg0w1bahzKWxBZtQEJCJhj+XK5G5NSY+bRr/Wows/xlaEBUkTY887xB1YYsEXfHbi/+U5J18fO46RQWB2rkh/IazpN+F4sCM9ByoApeEYpv0rWxbjSYk12BwgHIoyUj8/T0EK416yPEVX62YET9qQvKJkreNfEDGO/YLj5cWae9O+s/ynfYbKgrogCxMIy1tj0B7FF02rwiL0llBFuCRWtQMAerwnlEal5WJo8ftayMsc9jyU7ComVEeZsqR9n8B54oyXZ3NM+8k9px2RgxlFGsmDzUS+9PVReZlIUaS06zvPKS/+pRMnlvsGFBXv2omZDU8kM8Uky79SuDKvqPvHhAWs1jYpJEdEbfp06g8bRzakPjeFwhd6697/9y6G00amTzeEvzqKcqF2itxfzTcIFT54em+yE4QbPkgVhtIsxrC76gTcbk6WvnYzKhD4zLDVn5BWH1JubUEDBaqkJtjYNEeNyL/M9OJ3aCuyR82noYq.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b2d43de5-58d0-999c-9e5f-56fd7d490e33",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1874,
+      "completion_tokens": 369,
+      "total_tokens": 2243,
+      "cost": 0.00577,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00577,
+        "upstream_inference_prompt_cost": 0.003556,
+        "upstream_inference_completions_cost": 0.002214
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that fill_between with an axes transform must not autoscale data limits as if the fill extents were in data coordinates, which a competent engineer can implement. The FAIL_TO_PASS test is the reported reproduction and only checks that limits stay unchanged for fill_between with get_xaxis_transform, so it is slightly narrower than the full fill_between/fill_betweenx claim but still fair.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that fill_between with an axes transform must not autoscale data limits as if the fill extents were in data coordinates, which a competent engineer can implement. The FAIL_TO_PASS test is the reported reproduction and only checks that limits stay unchanged for fill_between with get_xaxis_transform, so it is slightly narrower than the full fill_between/fill_betweenx claim but still fair.",
+  "prompt_tokens": 1874,
+  "completion_tokens": 369,
+  "total_tokens": 2243,
+  "cost_usd": 0.005962,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

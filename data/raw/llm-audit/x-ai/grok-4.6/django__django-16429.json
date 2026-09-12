@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16429",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1128
+  },
+  "response": {
+    "id": "gen-1789191775-01iB5pZ4rtXJEyy2pV4O",
+    "object": "chat.completion",
+    "created": 1789191775,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes the TypeError for long intervals under USE_TZ=True and even points at attaching d.tzinfo to the pivot datetime. FAIL_TO_PASS re-runs the full timesince suite on aware datetimes rather than only the reported month-plus case, which is slightly extra but still aligned with a correct tz-aware fix.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about timesince() raising TypeError with USE_TZ=True and >1 month interval. The user even suggests the fix: adding tzinfo to the pivot datetime.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about timesince() raising TypeError with USE_TZ=True and >1 month interval. The user even suggests the fix: adding tzinfo to the pivot datetime.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1daef489-8618-99b0-9795-018e5cb3651a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1554,
+      "completion_tokens": 674,
+      "total_tokens": 2228,
+      "cost": 0.00696,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00696,
+        "upstream_inference_prompt_cost": 0.002916,
+        "upstream_inference_completions_cost": 0.004044
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 547,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes the TypeError for long intervals under USE_TZ=True and even points at attaching d.tzinfo to the pivot datetime. FAIL_TO_PASS re-runs the full timesince suite on aware datetimes rather than only the reported month-plus case, which is slightly extra but still aligned with a correct tz-aware fix.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes the TypeError for long intervals under USE_TZ=True and even points at attaching d.tzinfo to the pivot datetime. FAIL_TO_PASS re-runs the full timesince suite on aware datetimes rather than only the reported month-plus case, which is slightly extra but still aligned with a correct tz-aware fix.",
+  "prompt_tokens": 1554,
+  "completion_tokens": 674,
+  "total_tokens": 2228,
+  "cost_usd": 0.0071519999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

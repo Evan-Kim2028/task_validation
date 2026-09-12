@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-22945",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2673
+  },
+  "response": {
+    "id": "gen-1789191956-hkV5zkCpp6fJEMxcGaaw",
+    "object": "chat.completion",
+    "created": 1789191956,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS checks Collection.get_datalim null bbox, not the reported clip_path/tight_layout crash\", \"confidence\": 0.86, \"rationale\": \"The issue only describes an AttributeError from intersecting a None clip_path extent during tight_layout in animation, so a reasonable fix could be in get_tightbbox without changing datalim. The single FAIL_TO_PASS test instead requires a specific no-offsets PathCollection datalim result that the issue never states.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about a regression in animation causing AttributeError when clip_path has no extents (None) during tight_layout.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Test is unrelated to clip_path None extents in tight_layout; gold patch targets Collection datalim but issue is in artist.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about a regression in animation causing AttributeError when clip_path has no extents (None) during tight_layout.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Test is unrelated to clip_path None extents in tight_layout; gold patch targets Collection datalim but issue is in artist.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "5YyOcSDomOGMlHbHRu3t8D5WlFYZHJX6AM4usfiZHXRtGpR/lvq4V9am9FpJI9AnRWDVLko/tR8h+zREGDHKLWI9/3ZNGLqA6JHm3FAFKWhDKj+/9W5RQuaHoV6K89H0Li1z0o6dRv/7sTCkO5kzs+KCKUnNGw0SDKbEue18wSKly61EY4dOWRkbtVupjMpH5lmHoqqJnk7FwyNhEdMG5NFsbVaEvtkU6kBG9JcKsJJYYhMJiRRJgCulEHwguxESHFcNEth1fmzFHr6ROaQxWkINNzVEejii1ij7fKAW9kurnhP5kDk0ap30jd9FmcOGUikLbPGqJfVhqKxZmRMlrTXUVXSnEQ4HY1TC8wUtwQp4Idls1tXtAT3MaQe7b2FAND3oV+QfDvDuDY7hboRz1/hglARktxgFjtZgrwjbAwBTf66FfEvPqIs6ul1AEeMut8pXc/ztiH/6wL42qBEEe6aTddWlVdmKNXyuUvRGh6TZQg9GQk3YnvQoLxvss3MGoUlp4zLlQqPjGrIa7bGEkG8LJJX5vyb3SrDbjvJW/5B3PN/HiWV4EDwrlxLjJ2MvtlAPVxUHlyQwMS0zX7usLeIUBeWdBucAZKaOrSRbN3sXTliTrxoCJzWopxrHJ9m1OUDuts9Sl3OVEH6Rfc0vD5hU/brVjYWMTBSFCgxnFwl0qzDzurW+0OjxFfnpjflkkkXm2OzQNDUiDuDAcheCWFAs8N5OW2pSJMwxsoLiig/20ycvNAbgnxnsSmbZvWrd1LjY4MMye3LCwOwtvA5FcCN60l7+RbbsJrwZ1VSiCk7gogwDn9+ADWvZMutFNS652bE24zOuuN1ACj5FyJPssdfWw/T06clkkheh2kgedGw59SkziATBkOnFmTMFCOp/A55A3rW7rJWHsnHMBZ5931pbWI5PpgqRyqPjNf0+UmkZRN/4zDRmmWlcD5lHakqM6BtxzByN+yn3VIyujpv6dNJxsocVL0pnHWfSzX9T7V4U4CBiL82df0yO9FtEQDIGSTWUjf8LdY6mH4U9LvSDZYYBPYf8lZewoY6m/b6/Pu9jKfLjHZXDn4oeEOh1+jP85SqlQQT6dnjTGGs3Nq1WzN0JFJ1ddUTjLPvACf7ci3bywue6WbRO64LXx8Aem96mvwUd2ec+joIvx2ahVqZe1Kea8b92aPVCR1gmsOjUBfrvxm+wpPxgAqL3HOu8a3yfCk47/j4ft9MnpNwE8GuKZh0Y83r+RqRTkdcf6QZ5KoVprWY/jdz7W7P8H4ctN+wos7sV9fMTYbatg94VlzSWg71u2hFXHnanEH2x7/w1yB8wOSy7SD1WJF8eqfGxIB5pAnrQO1wg0IJz6A/mazyADCIB9pLaZ4yfRcfcw1awbGkx1sTjGIOBPxfl3CSQVPA+8aD5BRTEU8y/XI0iHj4FtkzJKB4794yWNhqksLYd24q7T6Co8goXrL18JmuYt0AmmDPruuvdrSjVQLYQpggfHWa7bMiASwuACR0JRRhO01uDpXvLtaGE3upfQrfcqXykPUh3X+AFkSnHalLXqwhLISNZxeb+tngeg+2oYPuFxJ5hNPD/t1jALf6HjdkkAH0vasR4xLpcu9Zh0J1fZzl2ny8qI6Gtgjw34dycK6WxVkB521nIAvN3jgljfFUnaiV4XoBmnXW0BP/7pq83G8f4i7AEP+/q01GVT3qBnNFUZbYD/7UdwgydBOhoW3JJKyShBT09hpDJJqtCCA+hpI/w7Qi7V2yRcLdG4Z7EoIC+fOOA2rWw5d8DYoE2eKPHX2So8XWwltlxC135Oq8cXmhd8o9qAxvKSVz4RAksMo0UeM0w4qeg8rv4Xa6Wk7ip8EGQLkqtQy3GhXyixJsYKyVUGNH+oNrtfQUq8GpBibIHIFJa4KSlCp7JPxW2kUOFfXaMbcDmcuvgbZVPnUl5ygFC/7zMfPW+zpEYWDHyRikGsYFrB3JbJLMWVbYLw/kSoQmREOjogZmA1Qe0OupqMiZWh9gP/OkMVasQtPQKdDZHv8DIEcMJO5UmmNR0kfCN7e5ta1mWoIx0nx4IgnnMapyzix6sPGPEc4beGvpGi+cKIhdWF3juP4Pn/g/rnHfG2GwUu8mVRxt0FXa8ODdvvJnoQjayVuKH4R71oc1rAYtow50R/sjhxAqbJhY5PMXuh6DPMFLiIFumfGhu76uwV/QFLjL/9HzhFTc2Yig2tF71DWWNvO0zryTCaNWzk2RxEyPcxDITRXKO.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1a530357-e264-9844-a940-4206038a987e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3228,
+      "completion_tokens": 537,
+      "total_tokens": 3765,
+      "cost": 0.009294,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009294,
+        "upstream_inference_prompt_cost": 0.006072,
+        "upstream_inference_completions_cost": 0.003222
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 390,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS checks Collection.get_datalim null bbox, not the reported clip_path/tight_layout crash",
+    "confidence": 0.86,
+    "rationale": "The issue only describes an AttributeError from intersecting a None clip_path extent during tight_layout in animation, so a reasonable fix could be in get_tightbbox without changing datalim. The single FAIL_TO_PASS test instead requires a specific no-offsets PathCollection datalim result that the issue never states.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS checks Collection.get_datalim null bbox, not the reported clip_path/tight_layout crash",
+  "confidence": 0.86,
+  "rationale": "The issue only describes an AttributeError from intersecting a None clip_path extent during tight_layout in animation, so a reasonable fix could be in get_tightbbox without changing datalim. The single FAIL_TO_PASS test instead requires a specific no-offsets PathCollection datalim result that the issue never states.",
+  "prompt_tokens": 3228,
+  "completion_tokens": 537,
+  "total_tokens": 3765,
+  "cost_usd": 0.009677999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

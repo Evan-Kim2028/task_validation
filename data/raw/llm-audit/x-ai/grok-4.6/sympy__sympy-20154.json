@@ -1,0 +1,104 @@
+{
+  "task_id": "sympy__sympy-20154",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1424
+  },
+  "response": {
+    "id": "gen-1789193162-ppz2qEl8qffju0OXEfwd",
+    "object": "chat.completion",
+    "created": 1789193162,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly asks to stop reusing the same dict by copying before yield so list(partitions()) is correct. The FAIL_TO_PASS tests only drop the previous .copy() workarounds and thus fairly check that independent dictionaries are yielded.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: partitions() reuses output dictionaries, and they want it to copy before yielding so list(partitions()) works correctly.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: partitions() reuses output dictionaries, and they want it to copy before yielding so list(partitions()) works correctly.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "5QQF1ABjr2o7zWPtS9W8364S/HJBnTv4gqwzX9rVVa5AZrY9h9BmRGYoygwcRi09qzTOC69wa+kQPazMe197ZxjwROdFMjqi5BSmDkVGpSMIZAtrF4dXh4mxAtANpEioRJA9yuSiPoj65JtzQPMX69UyDfsogz8REFv98ILlBQSALgByTXTzhcM2IOqjQT2qhqJOC039jlZxZ3RSS9elf454gJgMpeopY/nH+tPwNmTESy9UXn8O7sygteTIN3CJZxN1P9EMMOmxvwifXQ/PcPm5b5EJFw2sNJc3V4xGJ+ta1eT4rQsrEMXRyxIpoNk2/JEHUXfHkXmOuDz/utUwJ1OQHo6JzdKHptWa6QxKZRXMwyfCrA5mZY80fJcO9pd32RZR6Iskh9csD1H/FjW65VSuMCoG/5AiobCeohvdBcXAGJMzUvGPetMS66wYT8zPtgcP+H3BJMtoQMFZlbtaJK7eRvwwndFsaEX+79Dy2vYavInLKiCZB9rKEzSm5y3hmpnggEYIAqltDMFWiUQ/gLl/PO3ByU/VE0DmgB0vASaTLIXxvCoLOzW/QwpjBprvEbviQ2dvhE2339XQsUgQSNI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_784abf2d-5485-9c2f-91cf-77a6696a38cd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2171,
+      "completion_tokens": 193,
+      "total_tokens": 2364,
+      "cost": 0.005116,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005116,
+        "upstream_inference_prompt_cost": 0.003958,
+        "upstream_inference_completions_cost": 0.001158
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 88,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly asks to stop reusing the same dict by copying before yield so list(partitions()) is correct. The FAIL_TO_PASS tests only drop the previous .copy() workarounds and thus fairly check that independent dictionaries are yielded.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly asks to stop reusing the same dict by copying before yield so list(partitions()) is correct. The FAIL_TO_PASS tests only drop the previous .copy() workarounds and thus fairly check that independent dictionaries are yielded.",
+  "prompt_tokens": 2171,
+  "completion_tokens": 193,
+  "total_tokens": 2364,
+  "cost_usd": 0.0055,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

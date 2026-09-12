@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8969",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "2a8fd66f-9f5d-9a99-9f63-7215e0e8a5a6",
+    "object": "chat.completion",
+    "created": 1789194277,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks that csv-table :file: paths starting with / be resolved relative to the Sphinx source directory, matching figure, while ordinary relative paths stay document-relative. The FAIL_TO_PASS test checks exactly those two resolutions via fixture CSVs and does not require unstated APIs, messages, or extra options.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3267,
+      "completion_tokens": 123,
+      "total_tokens": 3679,
+      "prompt_tokens_details": {
+        "text_tokens": 3267,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 289,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 27356400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks that csv-table :file: paths starting with / be resolved relative to the Sphinx source directory, matching figure, while ordinary relative paths stay document-relative. The FAIL_TO_PASS test checks exactly those two resolutions via fixture CSVs and does not require unstated APIs, messages, or extra options.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks that csv-table :file: paths starting with / be resolved relative to the Sphinx source directory, matching figure, while ordinary relative paths stay document-relative. The FAIL_TO_PASS test checks exactly those two resolutions via fixture CSVs and does not require unstated APIs, messages, or extra options.",
+  "prompt_tokens": 3267,
+  "completion_tokens": 412,
+  "total_tokens": 3679,
+  "cost_usd": 0.009006,
+  "cost_in_usd_ticks": 27356400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2388
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16514",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2084
+  },
+  "response": {
+    "id": "gen-1789187775-iNWuJBG9OyiKgYsjJEFW",
+    "object": "chat.completion",
+    "created": 1789187775,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue asks for AdminSite log lists to show only entries for models registered on that site, but never mentions a get_log_entries hook or keeping the default site unfiltered. The FAIL_TO_PASS test still expects the default admin index to include a Car log and only checks filtering on a custom site that overrides that unstated hook, so a natural default-filter implementation would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about Admin Site filtering LogEntries by registered models. Currently all sites show all LogEntry entries.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Admin Site filtering LogEntries by registered models. Currently all sites show all LogEntry entries.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3ad97706-c6f7-9788-b9ca-bfc8f53697c1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2594,
+      "completion_tokens": 529,
+      "total_tokens": 3123,
+      "cost": 0.00817,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00817,
+        "upstream_inference_prompt_cost": 0.004996,
+        "upstream_inference_completions_cost": 0.003174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 394,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue asks for AdminSite log lists to show only entries for models registered on that site, but never mentions a get_log_entries hook or keeping the default site unfiltered. The FAIL_TO_PASS test still expects the default admin index to include a Car log and only checks filtering on a custom site that overrides that unstated hook, so a natural default-filter implementation would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue asks for AdminSite log lists to show only entries for models registered on that site, but never mentions a get_log_entries hook or keeping the default site unfiltered. The FAIL_TO_PASS test still expects the default admin index to include a Car log and only checks filtering on a custom site that overrides that unstated hook, so a natural default-filter implementation would fail.",
+  "prompt_tokens": 2594,
+  "completion_tokens": 529,
+  "total_tokens": 3123,
+  "cost_usd": 0.008362,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

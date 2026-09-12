@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14534",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1353
+  },
+  "response": {
+    "id": "gen-1789191451-vYx7QqWNP71A3DeSnyjk",
+    "object": "chat.completion",
+    "created": 1789191451,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks BoundWidget.id_for_label to use the id already placed on widget attrs (including auto_id formatting) rather than a hardcoded id_%s_%s pattern. The FAIL_TO_PASS suite also requires None when auto_id is False on a Select iterable, which follows the attrs-based fix but is only implied, not stated, in the report.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue mentions auto_id format-string but test changes include auto_id=False case requiring None; gold patch uses .",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue mentions auto_id format-string but test changes include auto_id=False case requiring None; gold patch uses .",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_66ba5ed7-3b8f-94e2-88bb-9ecb654eaa9d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1740,
+      "completion_tokens": 589,
+      "total_tokens": 2329,
+      "cost": 0.007014,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007014,
+        "upstream_inference_prompt_cost": 0.00348,
+        "upstream_inference_completions_cost": 0.003534
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 456,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks BoundWidget.id_for_label to use the id already placed on widget attrs (including auto_id formatting) rather than a hardcoded id_%s_%s pattern. The FAIL_TO_PASS suite also requires None when auto_id is False on a Select iterable, which follows the attrs-based fix but is only implied, not stated, in the report.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks BoundWidget.id_for_label to use the id already placed on widget attrs (including auto_id formatting) rather than a hardcoded id_%s_%s pattern. The FAIL_TO_PASS suite also requires None when auto_id is False on a Select iterable, which follows the attrs-based fix but is only implied, not stated, in the report.",
+  "prompt_tokens": 1740,
+  "completion_tokens": 589,
+  "total_tokens": 2329,
+  "cost_usd": 0.007014,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16302",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 5274
+  },
+  "response": {
+    "id": "gen-1789191756-TkaCoXzvGPIJ4ygF82mi",
+    "object": "chat.completion",
+    "created": 1789191756,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to allow CharField(max_length=None) and skip the positive-integer validation, but the tests also require a backend feature flag, inspectdb emitting CharField() with no max_length, and the exact admin-docs string \\\"String (unlimited)\\\". A competent fix of model checks and Postgres varchar SQL could still fail those unstated assertions.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit specification fairness of a SWE-bench task.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit specification fairness of a SWE-bench task.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e1cc6e2a-e851-91bd-90bb-df679f92565e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6011,
+      "completion_tokens": 707,
+      "total_tokens": 6718,
+      "cost": 0.01588,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01588,
+        "upstream_inference_prompt_cost": 0.011638,
+        "upstream_inference_completions_cost": 0.004242
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 576,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to allow CharField(max_length=None) and skip the positive-integer validation, but the tests also require a backend feature flag, inspectdb emitting CharField() with no max_length, and the exact admin-docs string \"String (unlimited)\". A competent fix of model checks and Postgres varchar SQL could still fail those unstated assertions.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to allow CharField(max_length=None) and skip the positive-integer validation, but the tests also require a backend feature flag, inspectdb emitting CharField() with no max_length, and the exact admin-docs string \"String (unlimited)\". A competent fix of model checks and Postgres varchar SQL could still fail those unstated assertions.",
+  "prompt_tokens": 6011,
+  "completion_tokens": 707,
+  "total_tokens": 6718,
+  "cost_usd": 0.016264,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-24768",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2542
+  },
+  "response": {
+    "id": "gen-1789192019-5YVoMNU6yVU9Q3yvhcgS",
+    "object": "chat.completion",
+    "created": 1789192019,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly describes a crash when combining artist-level rasterized=True with Axes.set_rasterization_zorder, and the expected fix is that PDF save succeeds. The FAIL_TO_PASS test only checks that this combination no longer raises during PDF save, which matches the reported bug.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about pcolormesh(rasterized=True) conflicting with set_rasterization_zorder(). The expected outcome is that it should work without crashing and produce a PDF.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pcolormesh(rasterized=True) conflicting with set_rasterization_zorder(). The expected outcome is that it should work without crashing and produce a PDF.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gAdHU2OQ4nx92YHDEZY8J/R4InI6fHNVA9byru9K6i8fM/hUMsPg4er6LQ0g5mPQzaP//Poravenr6lsAYttinolHYL8g5MGEcCU2Mvo2HYU6r0W4mR6K84fHxWSGQL8ewP4JoZtyyh+8ZPc/1+uD5EaDul8N8HR8Kgm1iPTis8XyihOTEFkybjJYiJkN++OpgLfepYM5hG8fHVXwYzCsppMHHf7UGD8iyZi13pXmVO12KcfoMoe5ycfzbLFCAEHx8mxpLg68rtnygnlc8BL2HWlryHYFd2or53Jjkr3GoPlEVBgEVB+cg0qSRtIcIAGrfn0fYtHJSX8EPKJfHw6U6kUN4nRlWUwnXKRD3jwyW4DM93FqImwwEBmwggBto51DWimQ5WLCJE2ohXVMAbL8g7P/Gx+9GMeMGGWIueSrVaYvIEXGXLoql2shCJYmlnEfKj7+OijDgtaHJqJQQ8so3qVVSRMOEo1/dQ88kcg4ve/VfVq0S4N6nfj9gqyTuDqbCcfFCwN0JyTx+ajcPJtZpTBFb6mWR/bJy8xqq2w/4VejO6OXYQrWhUIJExGEHFd0l01v7+Gm6PMwPbRvmPq+zJxlDyL2zSRei2rwtMOXA3hOK0VOwWVzBtzxI017rRKkL7H6xsXTM5QO3DsH5+bGRxQ/pg9iCYpxUPckH8h67b3/3jovVbPtT+gFsOxa99St0mxl73PopJDMHwvy9m2MlSxWQC4G6coM29zmG870XblDCh9KLO31dT9NAowgQTV4HvkRpK8YkkaPstIM5GhuDIXZHlXz4eh8A8AazczynLFZ4kn7LrH7YPVFosZDLTuEP0pALVSV3goNt92FOqGKDRvu5eHUuM+N5ZmkrrPC7Ng4hcp7qZU/cDzA5OaFJuY1juXbULkh8YALMLnzXtLVLvN61lXyYEk5wmc0kdINC3VVwzsNjqQCj0tc0hJ2qavsrxK3V7DpOTDWR/xvyrPEhM9sjOBriGpJH9Df4VHFIwSISSaDpf63S9sU5diCELp4GPmfp9rFhB8aXzKjL0NngcYaV8t.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d02c7b0a-671c-9d84-b13a-e3b6c0fe1d14",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3161,
+      "completion_tokens": 323,
+      "total_tokens": 3484,
+      "cost": 0.007876,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007876,
+        "upstream_inference_prompt_cost": 0.005938,
+        "upstream_inference_completions_cost": 0.001938
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 208,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly describes a crash when combining artist-level rasterized=True with Axes.set_rasterization_zorder, and the expected fix is that PDF save succeeds. The FAIL_TO_PASS test only checks that this combination no longer raises during PDF save, which matches the reported bug.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly describes a crash when combining artist-level rasterized=True with Axes.set_rasterization_zorder, and the expected fix is that PDF save succeeds. The FAIL_TO_PASS test only checks that this combination no longer raises during PDF save, which matches the reported bug.",
+  "prompt_tokens": 3161,
+  "completion_tokens": 323,
+  "total_tokens": 3484,
+  "cost_usd": 0.00826,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

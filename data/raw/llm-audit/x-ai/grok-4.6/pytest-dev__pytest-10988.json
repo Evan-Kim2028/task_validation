@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-10988",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "106d1957-85a3-9566-a1e5-642b1f3c0933",
+    "object": "chat.completion",
+    "created": 1789193767,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks only to stop OSError from Path.exists on overlong non-path CLI args, which a try/except would satisfy. FAIL_TO_PASS also requires unstated testpaths-as-initial-conftests behavior and a new _set_initial_conftests argument, so a faithful issue-only fix would still fail those tests.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The user wants me to audit specification fairness of a SWE-bench task. Let me analyze.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch adds unstated testpaths_ini parameter and changes function signature, but FAIL_TO_PASS tests expect this behavior without issue description mentioning it\",\n  \"confidence\": 0.8,\n  \"rationale\": \"Issue only describes OSError crash on long filenames in _set_initial_conftests, but gold patch also implements testpaths loading which isn't mentioned. FAIL_TO_PASS includes tests for this unstated behavior. Test helper update and signature change make tests pass only with full gold patch.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 13147,
+      "completion_tokens": 130,
+      "total_tokens": 14126,
+      "prompt_tokens_details": {
+        "text_tokens": 13147,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 849,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 106760000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks only to stop OSError from Path.exists on overlong non-path CLI args, which a try/except would satisfy. FAIL_TO_PASS also requires unstated testpaths-as-initial-conftests behavior and a new _set_initial_conftests argument, so a faithful issue-only fix would still fail those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks only to stop OSError from Path.exists on overlong non-path CLI args, which a try/except would satisfy. FAIL_TO_PASS also requires unstated testpaths-as-initial-conftests behavior and a new _set_initial_conftests argument, so a faithful issue-only fix would still fail those tests.",
+  "prompt_tokens": 13147,
+  "completion_tokens": 979,
+  "total_tokens": 14126,
+  "cost_usd": 0.032167999999999995,
+  "cost_in_usd_ticks": 106760000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 11004
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14960",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1462
+  },
+  "response": {
+    "id": "gen-1789191511-lmizMRbGpeaKJSYSEJFw",
+    "object": "chat.completion",
+    "created": 1789191511,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that REQUIRED_FIELDS passed via command-line options in interactive mode skip field.clean, and that they should be validated like other paths. The FAIL_TO_PASS test only checks that interactive createsuperuser with a CLI FK option raises CommandError from that validation, which matches the described behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about createsuperuser not validating REQUIRED_FIELDS when passed via command-line in interactive mode.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about createsuperuser not validating REQUIRED_FIELDS when passed via command-line in interactive mode.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "IcqV9pgbn/2Y1vxQ7kdc6vSDMxJlZoPHttknGph3XbiTwXnVHNN2SR64LKKVaN73YGMEriNTZM9QQ3qIoHjqMX/ppBvCwMvH3AC5k7SBpVpfHHITWpd6qEvECBGhbKyI3i7lRaqc0J/mDq8Tksb0GIhGCwLfD+6bEcIPuJN+MC+dV5gT2x1b9Y5dgHxwm+SgmTx7zyEyWU0fkWiHUMv1ZdcPN2IM1xC6DwfDW8hWceLUcPDuB3SQeHYeozTCSKrwz3eeZQcmdg2Otc4J8HVWONKy1Ra7ZUj93V9mGwbQ+b3U+Ci1JAZEsmep0/z20XOQ/6+M4HbuXhZtqmlhWlqo8M7jDcm2FrrO14BXKAnZ+n3OFv3NI0rIumXAqtWQU7A8lZJN1PjouK6KQs78QbRDN1wJnF3K3MYL0TjHbC+1glf7d9i3dO0M/TyrcPtiTe43jpLbFOLxO4wHIriGgmJWy/8209CCe9UeAkMLaELBC/OMMNHWeLx0eN8qBgksFWjS+avX+ak/u1zifNx1KLaDudZ/olKuW3dRqr4Fl+E63M9sp3yOjvC6sRhcfh/WX5AFXM54GKynuF54A0/vP4QMp5frjxGQwq37YvF8m3Gd9uFFJ+ZvXBhjG3ZFwOKw7AfMmpR27Ui5OxVaRZUa+dZhtgdDXYeNRNsDfUV5jToFANKrha8UNxDsYxbMm5L8QjUBrHLl3DKNVgHH8LYWEbsZWgohP+jF+jkE7D5HvyFMHom3idFdzVHemJ1EosYrkm1IaxBr2THyX2GXfhfGRfA7xVVAn0Y7uq3pyJbL0Z3ycqUfXBDwS/upxOktcYdJver+kUWQ3ehJkoAGb5ZgJfaB8GNSOlxRwhNNl8EjCO8Z3HlEdQO/BDVPTdFwPHEbEX9LGmyE2Io49Pgh6omEbe+cUErQESD/XTnz4Jy6wKKGQM/gMME+gyBbvqRIbgCu7qFKqTdyDTfY/C2RQH1Ow1KXdz7Oh2Nj/xqhplYxhM8xkygy9hqhMrZTHFcgk72aV0Au3j2xxt12bMxTpw7PeUh2rl9uHsLnYVQ5vBEqmL5mmwbB4SU2/aqmB+r458pSnYa6TzCiYL4v+GqSV+0LOjPQX685qOIHmup4DA3/WHdwQi8ZpLV1mTRWb/7cvESWg2teuO/Jx+ke3X3/k3aLoSXTpaUMfm4A4bgaT0U8lw8EJl0+KEyhXP6HS5XeE9ST6T3sesD/SfARPp0k1YJbKzjLa/29htpU2YZp+Vpx+twzLMVA5J7pOyUKI1UIRXbEBzH/brYmMBivrj8LXAB4bc36l7rRPvTSuO0htpXzPZlpvylRXkP+VSJVaezBZhPfQEa2XYQ1sGKukmPxHyYwb190K88vWVcAOcPLNDJyEIda0a/1x+8fCNaxlK9lUZuT00/EKFQ/TImxMEE/Oq0sps1kg2skSRu3p4lzf4N1p2VtI5Pyhc67y72VbWKY05eW+wd8OcRRcM6IxPXLLSyVZxFVpCcGw/vmXd6FmBKSJ+l6NxOU7GZ9v/6pQp4RsaINS2YxHv2STEhC2lmGQX25/oe4kQuheJUXOoTHO8glJDWwX1GT6XyhduvL/CFMV9wLt16ZaT+BpxK4oZTb4mT/gYybAgwVbSmAwcxInCOeSega0EVDtotSceglDvSwTkB+V7ChgRfRkWcgq1ULQF+/ReE7.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0fbda4be-5293-9c58-a6f4-ab4e947f4d6d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1766,
+      "completion_tokens": 388,
+      "total_tokens": 2154,
+      "cost": 0.005476,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005476,
+        "upstream_inference_prompt_cost": 0.003148,
+        "upstream_inference_completions_cost": 0.002328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 269,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that REQUIRED_FIELDS passed via command-line options in interactive mode skip field.clean, and that they should be validated like other paths. The FAIL_TO_PASS test only checks that interactive createsuperuser with a CLI FK option raises CommandError from that validation, which matches the described behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that REQUIRED_FIELDS passed via command-line options in interactive mode skip field.clean, and that they should be validated like other paths. The FAIL_TO_PASS test only checks that interactive createsuperuser with a CLI FK option raises CommandError from that validation, which matches the described behavior.",
+  "prompt_tokens": 1766,
+  "completion_tokens": 388,
+  "total_tokens": 2154,
+  "cost_usd": 0.005860000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

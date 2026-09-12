@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-9681",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "5c452ca8-2f0e-9d98-9839-613f86c37aa9",
+    "object": "chat.completion",
+    "created": 1789193883,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue gives a complete repro (pythonpath, importlib, conftest, nested tests package) and the expected outcome that collection and imports succeed as they did before 7.0. The FAIL_TO_PASS test reconstructs that layout and only asserts a passing run, so it fairly checks the reported regression.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2775,
+      "completion_tokens": 120,
+      "total_tokens": 3103,
+      "prompt_tokens_details": {
+        "text_tokens": 2775,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 208,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 22297200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue gives a complete repro (pythonpath, importlib, conftest, nested tests package) and the expected outcome that collection and imports succeed as they did before 7.0. The FAIL_TO_PASS test reconstructs that layout and only asserts a passing run, so it fairly checks the reported regression.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue gives a complete repro (pythonpath, importlib, conftest, nested tests package) and the expected outcome that collection and imports succeed as they did before 7.0. The FAIL_TO_PASS test reconstructs that layout and only asserts a passing run, so it fairly checks the reported regression.",
+  "prompt_tokens": 2775,
+  "completion_tokens": 328,
+  "total_tokens": 3103,
+  "cost_usd": 0.0075179999999999995,
+  "cost_in_usd_ticks": 22297200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2240
+}

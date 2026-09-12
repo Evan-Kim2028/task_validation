@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13132",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3157
+  },
+  "response": {
+    "id": "gen-1789190643-C6oRQkt7HibfafoOUeMd",
+    "object": "chat.completion",
+    "created": 1789190643,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The write-up clearly asks for Time to support numpy array functions, with np.linspace as the main example, so a competent engineer would implement linspace over Time start/stop. The FAIL_TO_PASS tests only exercise linspace, including array broadcasting, retstep, and mixed formats, which is a bit more than the snippet but still a fair check of that behavior.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about adding `__array_func__` for astropy.time.Time, specifically so np.linspace works on Time objects.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding `__array_func__` for astropy.time.Time, specifically so np.linspace works on Time objects.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "joc6ruVzrz5xjHaTo5BqgMyfUwsluMl8PI8rzNakanNS1Aj4kyOKg7Q7cM3WB12/yDYuWCwhU15JOoQS1sHrjdu63jZGpnHQeTq3K9BKhQeiobcm5Xm7i4QsAUxkDulxhXpnhkBVWh+Swtbdc2T+pPUlC9GhdaI5RGHGqaSzEkcVZR+NEtDGzdILosPVhJVNxlf5hAW2WXGr6aXzmndi3YJL6ShlUv7tf+91eSGimn3rMXiDD4nsLLOPVCibSjixUmp1WylQm34KJQNZC+7MMscGwF5nGIi4EkxSTy5zAiA5/3LztO1GPqzs9G0TLqRZ30YwKNdC+4F5Ja2T/RSYS9MKJtk1WyhPDfDFKHsAtro4PzN/TK5YY8l66MhUPyDnULCgxzvagWbfmKe3IFJPrXgILrn/FDYuuDXYfPvDsx0kIdPlF0dH68TpxVhf+fc8RMW5z8/zrGitF+A+nVG+IDhjLR8ypGA7v4u5rObn+fXSgh7ErpVDdOqx6n4YGbnjpQzADM8hWGy3wkdI6t5j7GvXIva2rdPSfgFd5CQzAIyIAWPGYsbnty5QAy52qDDP7wk+oA17QypgN8DipZ0/GrNP/ndzPA9XdB0ZYqfQl7IuuMDr3pzZ65FfnkIVnlc9unW1+vCkWLaSxUkgJNai/V9VI/43Rj7KEzuH0U3Cx6+w4pqdhequRg8mFfXjEx9j/OmOuESLQ6LLSzuo1JvU2RA/kLLAaKV8dd2Nay4c5GQTMqwz9RJ7BmZdllbjT04SkL0pkf9+jMRcLy/zTUQ8di9+QYUlDcUBevW1ocX5Zx9EpikKIq+sg42GFnKUohkbbADS5lnplis05NK8ykdhMsaBDCbClRVvTopnZGkXJ/cxl8TGH5CqDZZYGttxG8Ki/3djIU1qLCElEBzohNo536MG4L//D/R/AUhiFwG5bGuEtMT6VoKPq3OL0r/8IOA4LQjiKh6G2T5HnCh6LHh8FP1MsDTPEmxDalfI6zMxzMxrLqsdR3qI7lqH9Fs/EiguEn7BwUGxz1axt5KEOC2gNfbZlRmHn/d+c/RuzrgtEXAj0zsBEvtNGvcFRC1rJjYGp+8Fg4G5NaQ/unmtotbJjNyGK5dpfDK5VIgm04FlHRZxUIM+rChydco377Qly8EwxN5Wrn9bs53Yl1swU3mkqkv9FWnAx7b4GjwWfl6yzxtgiuW8SaxJxlU/zXsvEJ/v+O+lCKpcb9TZGTlmMD6VO1W50ggDmo9qkq2ZhBzcvbXJw+RidSJy3S+QnfgbIAq6LJXHA0mIP+LJR5Y4VU6IA80hDXdpXwrJuS7qnc2ykVzyKWurQmQ5IByDKUhd7tb4jXQjveHzz0YhX2Rk/akFOd/bt1WyODeCMcMFM/UvVt2ulRButNolnYvG1dP4WOfek0wfXYkm3CaKkevpHIAA8aRTi0T6XRhP1tvNHo03EyiQjq8nviQSB1p4eFdbQJEqdUliKF3zxTTv5CujFNBc9spaB66HJna+hNLNdMzQtwH+gM5rM4MAZlex2kBE+HPM0yeG1S+kpmaQ2lRvXb1XqQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4bbfd179-5347-9ea3-a67d-880fdaf1597c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4094,
+      "completion_tokens": 393,
+      "total_tokens": 4487,
+      "cost": 0.010354,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010354,
+        "upstream_inference_prompt_cost": 0.007996,
+        "upstream_inference_completions_cost": 0.002358
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The write-up clearly asks for Time to support numpy array functions, with np.linspace as the main example, so a competent engineer would implement linspace over Time start/stop. The FAIL_TO_PASS tests only exercise linspace, including array broadcasting, retstep, and mixed formats, which is a bit more than the snippet but still a fair check of that behavior.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The write-up clearly asks for Time to support numpy array functions, with np.linspace as the main example, so a competent engineer would implement linspace over Time start/stop. The FAIL_TO_PASS tests only exercise linspace, including array broadcasting, retstep, and mixed formats, which is a bit more than the snippet but still a fair check of that behavior.",
+  "prompt_tokens": 4094,
+  "completion_tokens": 393,
+  "total_tokens": 4487,
+  "cost_usd": 0.010546,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

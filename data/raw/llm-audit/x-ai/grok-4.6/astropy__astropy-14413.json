@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14413",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3007
+  },
+  "response": {
+    "id": "gen-1789190692-guDSKinM7cMgKYT4DxNK",
+    "object": "chat.completion",
+    "created": 1789190692,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue and examples make the intended no-leading-space and scale-unit spacing behavior clear for unicode/console, so a competent engineer could implement it. FAIL_TO_PASS also pins exact multiline alignment, latex scale-only strings, and function-unit formatting that are only loosely implied.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about Unicode and console unit representations including an extraneous space. Expected: unit.to_string(format) should never start with a space, independent of format. Also mentions space ...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue expects no leading space in any format including multiline; tests expect leading space in inline=False console/unicode for alignment, and gold patch keeps it.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Unicode and console unit representations including an extraneous space. Expected: unit.to_string(format) should never start with a space, independent of format. Also mentions space ...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue expects no leading space in any format including multiline; tests expect leading space in inline=False console/unicode for alignment, and gold patch keeps it.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b6cae3dd-0ff4-99b0-bacd-2718a0e247b3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4042,
+      "completion_tokens": 678,
+      "total_tokens": 4720,
+      "cost": 0.01196,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01196,
+        "upstream_inference_prompt_cost": 0.007892,
+        "upstream_inference_completions_cost": 0.004068
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 563,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue and examples make the intended no-leading-space and scale-unit spacing behavior clear for unicode/console, so a competent engineer could implement it. FAIL_TO_PASS also pins exact multiline alignment, latex scale-only strings, and function-unit formatting that are only loosely implied.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue and examples make the intended no-leading-space and scale-unit spacing behavior clear for unicode/console, so a competent engineer could implement it. FAIL_TO_PASS also pins exact multiline alignment, latex scale-only strings, and function-unit formatting that are only loosely implied.",
+  "prompt_tokens": 4042,
+  "completion_tokens": 678,
+  "total_tokens": 4720,
+  "cost_usd": 0.012152,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

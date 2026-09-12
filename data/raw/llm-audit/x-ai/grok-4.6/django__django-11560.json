@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11560",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1113
+  },
+  "response": {
+    "id": "gen-1789190890-KCB5kRAP9MEefLfdfvfa",
+    "object": "chat.completion",
+    "created": 1789190890,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only describes ExtractYear failing on DurationField and asks to raise ValueError, without listing the full set of forbidden components or the exact error text. The FAIL_TO_PASS tests require a specific lookup list and a precise message format that a reasonable implementation of the issue could miss.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about raising ValueError in Extract lookups that don't work properly with DurationField. Specifically ExtractYear on DurationField fails.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about raising ValueError in Extract lookups that don't work properly with DurationField. Specifically ExtractYear on DurationField fails.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_77a5d9df-a829-9688-83c6-3f96f9dfd380",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1420,
+      "completion_tokens": 525,
+      "total_tokens": 1945,
+      "cost": 0.005798,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005798,
+        "upstream_inference_prompt_cost": 0.002648,
+        "upstream_inference_completions_cost": 0.00315
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 412,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only describes ExtractYear failing on DurationField and asks to raise ValueError, without listing the full set of forbidden components or the exact error text. The FAIL_TO_PASS tests require a specific lookup list and a precise message format that a reasonable implementation of the issue could miss.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only describes ExtractYear failing on DurationField and asks to raise ValueError, without listing the full set of forbidden components or the exact error text. The FAIL_TO_PASS tests require a specific lookup list and a precise message format that a reasonable implementation of the issue could miss.",
+  "prompt_tokens": 1420,
+  "completion_tokens": 525,
+  "total_tokens": 1945,
+  "cost_usd": 0.0059900000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

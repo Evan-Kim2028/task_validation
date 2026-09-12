@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11808",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4451
+  },
+  "response": {
+    "id": "gen-1789190937-ZqCNjruEs3MrPrwHpBtL",
+    "object": "chat.completion",
+    "created": 1789190937,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that Model.__eq__ return NotImplemented for non-models so mock.ANY works, which a competent engineer could implement from the text. FAIL_TO_PASS also requires the same change on Message, validators, Context, expressions, indexes, constraints, FilteredRelation, and Prefetch, which the issue never mentions.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is specifically about Model.__eq__ returning NotImplemented instead of False when comparing against non-Model objects. The tests however cover many other classes: Message, validators, Contex...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is specifically about Model.__eq__ returning NotImplemented instead of False when comparing against non-Model objects. The tests however cover many other classes: Message, validators, Contex...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "4KVYCeSNAPyQ+Iz1FQmaYNDRSH9KA+X6sHtCMup3Ok4W4+Sch+TJQ/5rHUwT9TK/l2eRbMWqyJBSO+yUhmz7DGyUPyv2ZRw22rbHJLhZz29HyKAAnAtLvHlW8MQCNmltpbse2KgIWBS5tTxWx6GPzBRYK8/6LtWGayEg2o4VBMjaWQ9E862W6hzJEuKOrRwvZYcyu2BTluTNuKFJtcMQaSHOCzvL2PmyUSCVmXNoLXy+U5sikkuDvY39ui4Ru66KN06PXSPW8dzLPN7IhLGDnh1pUs3skQNQmsGOXWsWHE/C2vNztlXJie90LNest6fENBhUnRkhNzSlJ4uso7PZnXyif0tP86BNjjP6TDZBTMeTOOjxsupusQ7hyPHnlvg1m9j280Ahcku0V4QD/FtvLUBEexIB3QIAU4aQjgTd1IbYiyT5zpU/9kS5+fJJ5ZNpmeeGohabVsRiZUononwylvjY/ARYvBX8HREgbSAUMg0/mISJNkJgFUHrnRHvZY+ncGlWLCvp4TwtFTljj0xflY7ksuaAtEcSSY++rhV19Wf2zBpLjIh4OmNvtvSMMlQD+DzJ7MLWzJeMydhwFV+IL4/Wu8L43Nx045014Yoh6RTmA2J6vKY+17OP0TYbwgKjjnuY7dsNVd4nukHuTEMF6Sr0IdKhMRnf1G4HfbFmbfonhZiEgA53ww7EBdaGEZtO5As6sZZEPI2sc6vBUpkzR3JYyMqL84lNVT1YrPBgbRsh2+CFPqWutK+11vos0uHSDhFVeehHTXfYnJ6Lym8Fc8yjhZf20o9cFSB0zNqRTlrl8xHESzXvwlUAA/cJAgP/sRZ39OQKXUDSdYKB7OWXRvuozjg7sDb9S9gz8sxEcLCoZRYJfkZSRPi289UDty5PKbCinUn9xpAc2pRpmG2iagR4jy2EC/3AocIj12ircsumjwgiWJLkJgbpgELoUdUUHKNe/bgpe/P9xe/x22fRbnq+YiBsONrD+qlDepQ9csKi/RRQ2lK/a3IRdWg6Rwu4UMGJLSMLdl2AOc0D0OJNjr3OIKrhVND1ZReWxR/em4lG3U1W0Brytmg9HZ1dFdgUgIvqSASW234H3Vyj5SdAKfUtnItq.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e63032be-a6da-9cad-a28f-dd1dc07a966f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5069,
+      "completion_tokens": 293,
+      "total_tokens": 5362,
+      "cost": 0.011512,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011512,
+        "upstream_inference_prompt_cost": 0.009754,
+        "upstream_inference_completions_cost": 0.001758
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 170,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that Model.__eq__ return NotImplemented for non-models so mock.ANY works, which a competent engineer could implement from the text. FAIL_TO_PASS also requires the same change on Message, validators, Context, expressions, indexes, constraints, FilteredRelation, and Prefetch, which the issue never mentions.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that Model.__eq__ return NotImplemented for non-models so mock.ANY works, which a competent engineer could implement from the text. FAIL_TO_PASS also requires the same change on Message, validators, Context, expressions, indexes, constraints, FilteredRelation, and Prefetch, which the issue never mentions.",
+  "prompt_tokens": 5069,
+  "completion_tokens": 293,
+  "total_tokens": 5362,
+  "cost_usd": 0.011896,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

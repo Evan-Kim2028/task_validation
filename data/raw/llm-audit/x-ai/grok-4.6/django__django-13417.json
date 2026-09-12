@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13417",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1045
+  },
+  "response": {
+    "id": "gen-1789187585-n8ID2Vl30b1HqV4soICe",
+    "object": "chat.completion",
+    "created": 1789187585,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that QuerySet.ordered should be false when annotate/GROUP BY drops Meta.ordering from the SQL, matching the intended property semantics. The FAIL_TO_PASS cases check that default-ordered annotated querysets (including values().annotate) report ordered=False unless an explicit order_by is added, which is the behavior described.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.ordered being incorrect for GROUP BY queries on models with Meta.ordering. When you annotate, it creates GROUP BY, and default ordering isn't applied in SQL, but ordered st...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.ordered being incorrect for GROUP BY queries on models with Meta.ordering. When you annotate, it creates GROUP BY, and default ordering isn't applied in SQL, but ordered st...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d327f37b-8aac-99d1-bd06-45f22f5846be",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1378,
+      "completion_tokens": 478,
+      "total_tokens": 1856,
+      "cost": 0.005432,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005432,
+        "upstream_inference_prompt_cost": 0.002564,
+        "upstream_inference_completions_cost": 0.002868
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 352,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that QuerySet.ordered should be false when annotate/GROUP BY drops Meta.ordering from the SQL, matching the intended property semantics. The FAIL_TO_PASS cases check that default-ordered annotated querysets (including values().annotate) report ordered=False unless an explicit order_by is added, which is the behavior described.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that QuerySet.ordered should be false when annotate/GROUP BY drops Meta.ordering from the SQL, matching the intended property semantics. The FAIL_TO_PASS cases check that default-ordered annotated querysets (including values().annotate) report ordered=False unless an explicit order_by is added, which is the behavior described.",
+  "prompt_tokens": 1378,
+  "completion_tokens": 478,
+  "total_tokens": 1856,
+  "cost_usd": 0.005624,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

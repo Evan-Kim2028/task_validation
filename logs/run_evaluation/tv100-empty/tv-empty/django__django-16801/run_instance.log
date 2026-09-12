@@ -1,0 +1,18 @@
+2026-09-12 00:17:18,503 - INFO - Creating container for django__django-16801...
+2026-09-12 00:17:18,679 - INFO - Container for django__django-16801 created: aa8769fade35be45453c98988e652c08169fea5abff3c0ac13c7d7d0fd6f83b7
+2026-09-12 00:17:18,878 - INFO - Container for django__django-16801 started: aa8769fade35be45453c98988e652c08169fea5abff3c0ac13c7d7d0fd6f83b7
+2026-09-12 00:17:18,878 - INFO - Skipping model patch for django__django-16801 (--no-patch mode)
+2026-09-12 00:17:21,169 - INFO - Git diff before:
+
+2026-09-12 00:17:21,169 - INFO - Eval script for django__django-16801 written to logs/run_evaluation/tv100-empty/tv-empty/django__django-16801/eval.sh; copying to container...
+2026-09-12 00:17:39,233 - INFO - Test runtime: 18.01 seconds
+2026-09-12 00:17:39,233 - INFO - Test output for django__django-16801 written to logs/run_evaluation/tv100-empty/tv-empty/django__django-16801/test_output.txt
+2026-09-12 00:17:39,289 - INFO - Git diff after:
+
+2026-09-12 00:17:39,289 - INFO - Grading answer for django__django-16801...
+2026-09-12 00:17:39,290 - INFO - report: {'django__django-16801': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_post_init_not_connected (model_fields.test_imagefield.ImageFieldNoDimensionsTests.test_post_init_not_connected)']}, 'PASS_TO_PASS': {'success': ['Assigning ImageField to None clears dimensions.', "Tests assigning an image field through the model's constructor.", 'Tests assigning an image in Manager.create().', 'The default value for an ImageField is an instance of', 'Dimensions are updated correctly in various situations.', "Tests assignment using the field's save method and deletion using", 'Tests behavior when image is not passed in constructor.', 'test_assignment (model_fields.test_imagefield.TwoImageFieldTests.test_assignment)', 'test_constructor (model_fields.test_imagefield.TwoImageFieldTests.test_constructor)', 'test_create (model_fields.test_imagefield.TwoImageFieldTests.test_create)', 'test_field_save_and_delete_methods (model_fields.test_imagefield.TwoImageFieldTests.test_field_save_and_delete_methods)', 'test_defer (model_fields.test_imagefield.ImageFieldTests.test_defer)', 'Bug #8175: correctly delete an object where the file no longer', "Bug #9786: Ensure '==' and '!=' work correctly.", 'If the underlying file is unavailable, still create instantiate the', 'ImageField can be pickled, unpickled, and that the image of', 'Bug #8534: FileField.size should not leave the file open.'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-16801: resolved: False
+2026-09-12 00:17:39,290 - INFO - Attempting to stop container sweb.eval.django__django-16801.tv100-empty...
+2026-09-12 00:17:55,001 - INFO - Container sweb.eval.django__django-16801.tv100-empty stopped successfully.
+2026-09-12 00:17:55,001 - INFO - Attempting to remove container sweb.eval.django__django-16801.tv100-empty...
+2026-09-12 00:17:55,081 - INFO - Container sweb.eval.django__django-16801.tv100-empty removed successfully.

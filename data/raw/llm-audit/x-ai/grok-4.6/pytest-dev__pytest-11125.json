@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-11125",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "2ee9cd3e-26de-9c8a-be2e-9d03ba4527f1",
+    "object": "chat.completion",
+    "created": 1789193767,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS suite is mostly signature-coupled to an unstated _set_initial_conftests refactor\", \"confidence\": 0.85, \"rationale\": \"The issue clearly describes that CLI paths should not load extra testpaths conftests, which a competent engineer could implement. The FAIL_TO_PASS tests still require an internal API change and extra collection behavior not specified in the issue.\", \"p_invalid\": 0.9}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue clearly describes the regression: pytest 7.3.2 loads conftest.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6450,
+      "completion_tokens": 127,
+      "total_tokens": 7188,
+      "prompt_tokens_details": {
+        "text_tokens": 6450,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 611,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 58915200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS suite is mostly signature-coupled to an unstated _set_initial_conftests refactor",
+    "confidence": 0.85,
+    "rationale": "The issue clearly describes that CLI paths should not load extra testpaths conftests, which a competent engineer could implement. The FAIL_TO_PASS tests still require an internal API change and extra collection behavior not specified in the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.25,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS suite is mostly signature-coupled to an unstated _set_initial_conftests refactor",
+  "confidence": 0.85,
+  "rationale": "The issue clearly describes that CLI paths should not load extra testpaths conftests, which a competent engineer could implement. The FAIL_TO_PASS tests still require an internal API change and extra collection behavior not specified in the issue.",
+  "prompt_tokens": 6450,
+  "completion_tokens": 738,
+  "total_tokens": 7188,
+  "cost_usd": 0.017328,
+  "cost_in_usd_ticks": 58915200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 5218
+}

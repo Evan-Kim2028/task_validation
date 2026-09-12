@@ -1,0 +1,351 @@
+{
+  "predicates_frozen": {
+    "T1": "Among the 27 maintained TB tasks with a pre-fix execution result, tasks whose pre-fix reference failed (9) have a higher rate of ABA major findings on tb2 than tasks that passed (18). Report the 2x2 and Fisher exact p (stdlib implementation).",
+    "T2": "Once the census has rows, the TB 2.1 tasks whose reference fails or whose nop passes are enriched in ABA tb2 major findings versus the rest. Report counts; if the census is incomplete, report on the rows available and say so.",
+    "T3": "The ABA Verified major-finding set (39) versus our judge p_invalid and solve rate 1-p_i on the ~500 Verified items that are also in the 1,699: AUROC with 1,000-rep bootstrap CI for each, and versus the 2024 conservative label as the old baseline. Predicate: judge AUROC vs ABA-major >= 0.70.",
+    "T4": "ABA Pro major findings (static 85, trajectory 220) versus openai_style_risk and cheap_risk: AUROC and top-decile enrichment, plus overlap with OpenCompass 102 and June Kim 109 (Jaccard). Predicate: none frozen beyond reporting; this is descriptive.",
+    "T5": "Do our two execution flags (django-10097, django-12503) appear in ABA Verified/any findings? Report what ABA says about them."
+  },
+  "T1": {
+    "predicate": "Among the 27 maintained TB tasks with a pre-fix execution result, tasks whose pre-fix reference failed (9) have a higher rate of ABA major findings on tb2 than tasks that passed (18). Report the 2x2 and Fisher exact p (stdlib implementation).",
+    "n_fail": 9,
+    "n_pass": 18,
+    "n_skipped": 1,
+    "fail_ids": [
+      "build-pmars",
+      "build-pov-ray",
+      "caffe-cifar-10",
+      "crack-7z-hash",
+      "hf-model-inference",
+      "mcmc-sampling-stan",
+      "protein-assembly",
+      "rstan-to-pystan",
+      "train-fasttext"
+    ],
+    "pass_ids": [
+      "adaptive-rejection-sampler",
+      "compile-compcert",
+      "configure-git-webserver",
+      "extract-moves-from-video",
+      "filter-js-from-html",
+      "financial-document-processor",
+      "fix-git",
+      "gpt2-codegolf",
+      "install-windows-3.11",
+      "mteb-leaderboard",
+      "mteb-retrieve",
+      "overfull-hbox",
+      "polyglot-c-py",
+      "polyglot-rust-c",
+      "query-optimize",
+      "sam-cell-seg",
+      "torch-pipeline-parallelism",
+      "torch-tensor-parallelism"
+    ],
+    "skipped_ids": [
+      "make-doom-for-mips"
+    ],
+    "fail_major_ids": [
+      "protein-assembly"
+    ],
+    "pass_major_ids": [
+      "configure-git-webserver",
+      "extract-moves-from-video",
+      "filter-js-from-html",
+      "install-windows-3.11",
+      "mteb-leaderboard",
+      "mteb-retrieve",
+      "polyglot-c-py",
+      "sam-cell-seg"
+    ],
+    "table": {
+      "rows": [
+        "pre_fail",
+        "pre_pass"
+      ],
+      "cols": [
+        "aba_major",
+        "not_major"
+      ],
+      "counts": [
+        [
+          1,
+          8
+        ],
+        [
+          8,
+          10
+        ]
+      ]
+    },
+    "rate_fail": 0.1111111111111111,
+    "rate_pass": 0.4444444444444444,
+    "higher_rate_on_fail": false,
+    "fisher": {
+      "table": [
+        [
+          1,
+          8
+        ],
+        [
+          8,
+          10
+        ]
+      ],
+      "p_greater": 0.9896262395118232,
+      "p_less": 0.09440122044241038,
+      "p_two_sided": 0.1925006800979341,
+      "p_obs": 0.08402745995423341,
+      "alternative_greater": "row1 major rate >= row2"
+    },
+    "pass_predicate": false
+  },
+  "T2": {
+    "predicate": "Once the census has rows, the TB 2.1 tasks whose reference fails or whose nop passes are enriched in ABA tb2 major findings versus the rest. Report counts; if the census is incomplete, report on the rows available and say so.",
+    "census_incomplete": true,
+    "n_catalog": 89,
+    "n_census_tasks": 76,
+    "n_complete_pairs": 76,
+    "n_flagged": 2,
+    "flagged": [
+      {
+        "task_id": "build-cython-ext",
+        "reference_fail": true,
+        "nop_pass": false
+      },
+      {
+        "task_id": "build-pov-ray",
+        "reference_fail": true,
+        "nop_pass": false
+      }
+    ],
+    "table": {
+      "rows": [
+        "ref_fail_or_nop_pass",
+        "rest"
+      ],
+      "cols": [
+        "aba_major",
+        "not_major"
+      ],
+      "counts": [
+        [
+          0,
+          2
+        ],
+        [
+          12,
+          62
+        ]
+      ]
+    },
+    "rate_flagged": 0.0,
+    "rate_rest": 0.16216216216216217,
+    "enriched": false,
+    "fisher": {
+      "table": [
+        [
+          0,
+          2
+        ],
+        [
+          12,
+          62
+        ]
+      ],
+      "p_greater": 1.0,
+      "p_less": 0.7073684210526315,
+      "p_two_sided": 1.0,
+      "p_obs": 0.7073684210526315,
+      "alternative_greater": "row1 major rate >= row2"
+    },
+    "note": "Census has 76 of 89 TB 2.1 tasks; results are on the rows available."
+  },
+  "T3": {
+    "predicate": "The ABA Verified major-finding set (39) versus our judge p_invalid and solve rate 1-p_i on the ~500 Verified items that are also in the 1,699: AUROC with 1,000-rep bootstrap CI for each, and versus the 2024 conservative label as the old baseline. Predicate: judge AUROC vs ABA-major >= 0.70.",
+    "n_aba": 500,
+    "n_aba_major": 39,
+    "n_joined": 500,
+    "n_major_in_joined": 39,
+    "n_conservative_positive_in_joined": 0,
+    "judge_p_invalid": {
+      "value": 0.876216697257912,
+      "n_bootstrap": 1000,
+      "n_defined": 1000,
+      "seed": 20260912,
+      "ci95": [
+        0.8275573073972399,
+        0.9237162508544088
+      ]
+    },
+    "solve_rate_1_minus_pi": {
+      "value": 0.858918738528283,
+      "n_bootstrap": 1000,
+      "n_defined": 1000,
+      "seed": 20260913,
+      "ci95": [
+        0.7839651308402328,
+        0.9227079975338325
+      ]
+    },
+    "openai_2024_conservative": {
+      "value": 0.5,
+      "n_bootstrap": 1000,
+      "n_defined": 1000,
+      "seed": 20260914,
+      "ci95": [
+        0.5,
+        0.5
+      ]
+    },
+    "pass_predicate": true,
+    "threshold": 0.7
+  },
+  "T4": {
+    "predicate": "ABA Pro major findings (static 85, trajectory 220) versus openai_style_risk and cheap_risk: AUROC and top-decile enrichment, plus overlap with OpenCompass 102 and June Kim 109 (Jaccard). Predicate: none frozen beyond reporting; this is descriptive.",
+    "n_pro": 731,
+    "n_static_major": 85,
+    "n_traj_major": 220,
+    "openai_style_risk": {
+      "static_major": {
+        "n_positive": 85,
+        "auroc": {
+          "value": 0.5132489528319067,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260912,
+          "ci95": [
+            0.45084030934738517,
+            0.5797712813984893
+          ]
+        },
+        "top_decile": {
+          "top_frac": 0.1,
+          "k": 73,
+          "n_positive": 85,
+          "n_positive_in_head": 9,
+          "rate": 0.1232876712328767,
+          "base_rate": 0.11627906976744186,
+          "enrichment": 1.0602739726027397
+        }
+      },
+      "trajectory_major": {
+        "n_positive": 220,
+        "auroc": {
+          "value": 0.5499510763209393,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260912,
+          "ci95": [
+            0.5010512645931106,
+            0.5927151895336626
+          ]
+        },
+        "top_decile": {
+          "top_frac": 0.1,
+          "k": 73,
+          "n_positive": 220,
+          "n_positive_in_head": 21,
+          "rate": 0.2876712328767123,
+          "base_rate": 0.3009575923392613,
+          "enrichment": 0.9558530510585305
+        }
+      }
+    },
+    "cheap_risk": {
+      "static_major": {
+        "n_positive": 85,
+        "auroc": {
+          "value": 0.5087415771262065,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260912,
+          "ci95": [
+            0.4501368709959675,
+            0.571584067551084
+          ]
+        },
+        "top_decile": {
+          "top_frac": 0.1,
+          "k": 73,
+          "n_positive": 85,
+          "n_positive_in_head": 5,
+          "rate": 0.0684931506849315,
+          "base_rate": 0.11627906976744186,
+          "enrichment": 0.589041095890411
+        }
+      },
+      "trajectory_major": {
+        "n_positive": 220,
+        "auroc": {
+          "value": 0.5468955701832414,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260912,
+          "ci95": [
+            0.4989574653237118,
+            0.5927649516730429
+          ]
+        },
+        "top_decile": {
+          "top_frac": 0.1,
+          "k": 73,
+          "n_positive": 220,
+          "n_positive_in_head": 19,
+          "rate": 0.2602739726027397,
+          "base_rate": 0.3009575923392613,
+          "enrichment": 0.8648194271481943
+        }
+      }
+    },
+    "overlap": {
+      "opencompass_n": 102,
+      "june_kim_n": 109,
+      "aba_static_vs_opencompass": {
+        "jaccard": 0.1761006289308176,
+        "n_intersection": 28
+      },
+      "aba_traj_vs_opencompass": {
+        "jaccard": 0.21509433962264152,
+        "n_intersection": 57
+      },
+      "aba_static_vs_june_kim": {
+        "jaccard": 0.17575757575757575,
+        "n_intersection": 29
+      },
+      "aba_traj_vs_june_kim": {
+        "jaccard": 0.23684210526315788,
+        "n_intersection": 63
+      },
+      "opencompass_vs_june_kim": {
+        "jaccard": 0.8839285714285714,
+        "n_intersection": 99
+      }
+    }
+  },
+  "T5": {
+    "predicate": "Do our two execution flags (django-10097, django-12503) appear in ABA Verified/any findings? Report what ABA says about them.",
+    "flags": [
+      {
+        "task_id": "django__django-10097",
+        "in_aba_verified": true,
+        "label": "major_issue",
+        "static_major": 1,
+        "trajectory_major": 1,
+        "finding_class": "test_quality/misaligned_fail_to_pass/2;environment/fail_to_pass_contamination_unrelated_tests/2",
+        "any_finding": true,
+        "construct": "mixed",
+        "severity": "major"
+      },
+      {
+        "task_id": "django__django-12503",
+        "in_aba_verified": false,
+        "label": null,
+        "static_major": null,
+        "trajectory_major": null,
+        "finding_class": null,
+        "any_finding": null
+      }
+    ]
+  }
+}

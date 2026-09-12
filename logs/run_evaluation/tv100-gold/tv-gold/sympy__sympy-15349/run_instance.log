@@ -1,0 +1,47 @@
+2026-09-12 00:46:33,435 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:46:47,247 - INFO - Creating container for sympy__sympy-15349...
+2026-09-12 00:46:47,401 - INFO - Container for sympy__sympy-15349 created: c5e4f2d1e69829140031744182034cc52c86c6a3f3b87fe6ce64c1ac53fcfba4
+2026-09-12 00:46:47,614 - INFO - Container for sympy__sympy-15349 started: c5e4f2d1e69829140031744182034cc52c86c6a3f3b87fe6ce64c1ac53fcfba4
+2026-09-12 00:46:47,615 - INFO - Intermediate patch for sympy__sympy-15349 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-15349/patch.diff, now applying to container...
+2026-09-12 00:46:47,732 - INFO - >>>>> Applied Patch:
+Checking patch sympy/algebras/quaternion.py...
+Applied patch sympy/algebras/quaternion.py cleanly.
+
+2026-09-12 00:46:48,117 - INFO - Git diff before:
+diff --git a/sympy/algebras/quaternion.py b/sympy/algebras/quaternion.py
+index b84e7cb95..7eae8d73d 100644
+--- a/sympy/algebras/quaternion.py
++++ b/sympy/algebras/quaternion.py
+@@ -529,7 +529,7 @@ def to_rotation_matrix(self, v=None):
+ 
+         m10 = 2*s*(q.b*q.c + q.d*q.a)
+         m11 = 1 - 2*s*(q.b**2 + q.d**2)
+-        m12 = 2*s*(q.c*q.d + q.b*q.a)
++        m12 = 2*s*(q.c*q.d - q.b*q.a)
+ 
+         m20 = 2*s*(q.b*q.d - q.c*q.a)
+         m21 = 2*s*(q.c*q.d + q.b*q.a)
+2026-09-12 00:46:48,117 - INFO - Eval script for sympy__sympy-15349 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-15349/eval.sh; copying to container...
+2026-09-12 00:46:59,427 - INFO - Test runtime: 11.26 seconds
+2026-09-12 00:46:59,427 - INFO - Test output for sympy__sympy-15349 written to logs/run_evaluation/tv100-gold/tv-gold/sympy__sympy-15349/test_output.txt
+2026-09-12 00:46:59,484 - INFO - Git diff after:
+diff --git a/sympy/algebras/quaternion.py b/sympy/algebras/quaternion.py
+index b84e7cb95..7eae8d73d 100644
+--- a/sympy/algebras/quaternion.py
++++ b/sympy/algebras/quaternion.py
+@@ -529,7 +529,7 @@ def to_rotation_matrix(self, v=None):
+ 
+         m10 = 2*s*(q.b*q.c + q.d*q.a)
+         m11 = 1 - 2*s*(q.b**2 + q.d**2)
+-        m12 = 2*s*(q.c*q.d + q.b*q.a)
++        m12 = 2*s*(q.c*q.d - q.b*q.a)
+ 
+         m20 = 2*s*(q.b*q.d - q.c*q.a)
+         m21 = 2*s*(q.c*q.d + q.b*q.a)
+2026-09-12 00:46:59,484 - INFO - Grading answer for sympy__sympy-15349...
+2026-09-12 00:46:59,484 - INFO - report: {'sympy__sympy-15349': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_quaternion_conversions'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_quaternion_construction', 'test_quaternion_complex_real_addition', 'test_quaternion_functions'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-15349: resolved: True
+2026-09-12 00:46:59,485 - INFO - Attempting to stop container sweb.eval.sympy__sympy-15349.tv100-gold...
+2026-09-12 00:47:14,858 - INFO - Container sweb.eval.sympy__sympy-15349.tv100-gold stopped successfully.
+2026-09-12 00:47:14,858 - INFO - Attempting to remove container sweb.eval.sympy__sympy-15349.tv100-gold...
+2026-09-12 00:47:14,915 - INFO - Container sweb.eval.sympy__sympy-15349.tv100-gold removed successfully.

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16322",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4143
+  },
+  "response": {
+    "id": "gen-1789191765-fkWpWLpa2deEkg0Z6B00",
+    "object": "chat.completion",
+    "created": 1789191765,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes broken SQL when annotate and aggregate share an alias and that a subquery should be used, which a competent engineer could implement. FAIL_TO_PASS also rewrites an unrelated aggregate-over-aggregate error to a specific FieldError message that the issue never states.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Django producing incorrect queries when the same keyword is used in both aggregate() and annotate(). The expected SQL should use a subquery.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django producing incorrect queries when the same keyword is used in both aggregate() and annotate(). The expected SQL should use a subquery.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f40583c1-dd92-940e-b81c-b0de3393834c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4389,
+      "completion_tokens": 476,
+      "total_tokens": 4865,
+      "cost": 0.01125,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01125,
+        "upstream_inference_prompt_cost": 0.008394,
+        "upstream_inference_completions_cost": 0.002856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 365,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes broken SQL when annotate and aggregate share an alias and that a subquery should be used, which a competent engineer could implement. FAIL_TO_PASS also rewrites an unrelated aggregate-over-aggregate error to a specific FieldError message that the issue never states.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes broken SQL when annotate and aggregate share an alias and that a subquery should be used, which a competent engineer could implement. FAIL_TO_PASS also rewrites an unrelated aggregate-over-aggregate error to a specific FieldError message that the issue never states.",
+  "prompt_tokens": 4389,
+  "completion_tokens": 476,
+  "total_tokens": 4865,
+  "cost_usd": 0.011633999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13773",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1099
+  },
+  "response": {
+    "id": "gen-1789191313-RbD3pX5D18XabITo1iBK",
+    "object": "chat.completion",
+    "created": 1789191313,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes a crash when swapping field names through a temporary name across an optimization barrier and points at RenameField.reduce skipping other RenameFields, so a competent engineer would stop that invalid reduction. The FAIL_TO_PASS test only asserts the whole operation list is left unoptimized, which is slightly narrower than “do not crash / do not produce duplicate field names” if a solution still reduced the three renames among themselves.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about squashmigrations optimizer crashing when fields' names are swapped using a temporary name. The test checks that a specific sequence of operations does not optimize.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about squashmigrations optimizer crashing when fields' names are swapped using a temporary name. The test checks that a specific sequence of operations does not optimize.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_15d462a2-fee7-9ddd-9b7a-7a67c932236b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1334,
+      "completion_tokens": 667,
+      "total_tokens": 2001,
+      "cost": 0.006478,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006478,
+        "upstream_inference_prompt_cost": 0.002476,
+        "upstream_inference_completions_cost": 0.004002
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 526,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes a crash when swapping field names through a temporary name across an optimization barrier and points at RenameField.reduce skipping other RenameFields, so a competent engineer would stop that invalid reduction. The FAIL_TO_PASS test only asserts the whole operation list is left unoptimized, which is slightly narrower than “do not crash / do not produce duplicate field names” if a solution still reduced the three renames among themselves.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes a crash when swapping field names through a temporary name across an optimization barrier and points at RenameField.reduce skipping other RenameFields, so a competent engineer would stop that invalid reduction. The FAIL_TO_PASS test only asserts the whole operation list is left unoptimized, which is slightly narrower than “do not crash / do not produce duplicate field names” if a solution still reduced the three renames among themselves.",
+  "prompt_tokens": 1334,
+  "completion_tokens": 667,
+  "total_tokens": 2001,
+  "cost_usd": 0.006670000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

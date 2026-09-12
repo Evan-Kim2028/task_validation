@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14463",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 23941
+  },
+  "response": {
+    "id": "gen-1789191434-hsrE5Uugp6nQlyRPbb9w",
+    "object": "chat.completion",
+    "created": 1789191434,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The ticket only sketches table/column comments and even proposes db_column_comment, leaving migrations, checks, inspectdb, backend features, and introspection unspecified. FAIL_TO_PASS then requires the unstated db_comment name, specific warning IDs, AlterModelTableComment, and inspectdb formatting, so many reasonable implementations would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge specification fairness based on the GitHub issue, FAIL_TO_PASS tests, and gold patch.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge specification fairness based on the GitHub issue, FAIL_TO_PASS tests, and gold patch.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_babeef38-a3f5-9cbb-8316-0d7cea6003b3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 25708,
+      "completion_tokens": 820,
+      "total_tokens": 26528,
+      "cost": 0.055952,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.055952,
+        "upstream_inference_prompt_cost": 0.051032,
+        "upstream_inference_completions_cost": 0.00492
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 695,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The ticket only sketches table/column comments and even proposes db_column_comment, leaving migrations, checks, inspectdb, backend features, and introspection unspecified. FAIL_TO_PASS then requires the unstated db_comment name, specific warning IDs, AlterModelTableComment, and inspectdb formatting, so many reasonable implementations would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The ticket only sketches table/column comments and even proposes db_column_comment, leaving migrations, checks, inspectdb, backend features, and introspection unspecified. FAIL_TO_PASS then requires the unstated db_comment name, specific warning IDs, AlterModelTableComment, and inspectdb formatting, so many reasonable implementations would fail.",
+  "prompt_tokens": 25708,
+  "completion_tokens": 820,
+  "total_tokens": 26528,
+  "cost_usd": 0.056336,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": true
+  },
+  "cached": false,
+  "error": null
+}

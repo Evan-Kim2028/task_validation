@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25805",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1376
+  },
+  "response": {
+    "id": "gen-1789192393-F4VOmfKiALv246nsOLJz",
+    "object": "chat.completion",
+    "created": 1789192393,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that CalibratedClassifierCV accept LightGBM-style fit_params such as eval_set that are not aligned with the training sample count. The FAIL_TO_PASS test only checks that an arbitrary extra-length fit_param is forwarded without a length check, which is a slightly broader reading than the reported eval_set case but still matches the intended fix.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about CalibratedClassifierCV failing on lgbm fit_params because it checks consistent length on all fit_params, but eval_set isn't sample-aligned with the training data.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test requires blanket allowance for any inconsistent-length fit_param, but issue only concerns eval_set; whitelist approach might reject valid non-sample-aligned params.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CalibratedClassifierCV failing on lgbm fit_params because it checks consistent length on all fit_params, but eval_set isn't sample-aligned with the training data.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test requires blanket allowance for any inconsistent-length fit_param, but issue only concerns eval_set; whitelist approach might reject valid non-sample-aligned params.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8ccb67ba-a46e-9078-b55e-3ac5b251d5e7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1774,
+      "completion_tokens": 527,
+      "total_tokens": 2301,
+      "cost": 0.006326,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006326,
+        "upstream_inference_prompt_cost": 0.003164,
+        "upstream_inference_completions_cost": 0.003162
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 395,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that CalibratedClassifierCV accept LightGBM-style fit_params such as eval_set that are not aligned with the training sample count. The FAIL_TO_PASS test only checks that an arbitrary extra-length fit_param is forwarded without a length check, which is a slightly broader reading than the reported eval_set case but still matches the intended fix.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that CalibratedClassifierCV accept LightGBM-style fit_params such as eval_set that are not aligned with the training sample count. The FAIL_TO_PASS test only checks that an arbitrary extra-length fit_param is forwarded without a length check, which is a slightly broader reading than the reported eval_set case but still matches the intended fix.",
+  "prompt_tokens": 1774,
+  "completion_tokens": 527,
+  "total_tokens": 2301,
+  "cost_usd": 0.00671,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

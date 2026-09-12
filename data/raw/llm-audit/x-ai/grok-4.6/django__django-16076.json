@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16076",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2524
+  },
+  "response": {
+    "id": "gen-1789191720-oBIRbHvjhFdUKhPzJkLP",
+    "object": "chat.completion",
+    "created": 1789191720,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The title asks to support registered lookups on relation fields, which a senior engineer could implement, though the body focuses on startswith on the local FK attname without a join. FAIL_TO_PASS still requires an unstated exact FieldError wording and a transform-on-related-PK case not described in the issue.\", \"p_invalid\": 0.68}",
+          "refusal": null,
+          "reasoning": "The issue is about supporting lookups on relation fields, specifically things like `parent_object_id__startswith` without joining.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about supporting lookups on relation fields, specifically things like `parent_object_id__startswith` without joining.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0b7b5438-1c76-9796-ad78-f86e09673a69",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3094,
+      "completion_tokens": 607,
+      "total_tokens": 3701,
+      "cost": 0.00983,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00983,
+        "upstream_inference_prompt_cost": 0.006188,
+        "upstream_inference_completions_cost": 0.003642
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 487,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The title asks to support registered lookups on relation fields, which a senior engineer could implement, though the body focuses on startswith on the local FK attname without a join. FAIL_TO_PASS still requires an unstated exact FieldError wording and a transform-on-related-PK case not described in the issue.",
+    "p_invalid": 0.68
+  },
+  "s": 2.0,
+  "p_invalid": 0.68,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The title asks to support registered lookups on relation fields, which a senior engineer could implement, though the body focuses on startswith on the local FK attname without a join. FAIL_TO_PASS still requires an unstated exact FieldError wording and a transform-on-related-PK case not described in the issue.",
+  "prompt_tokens": 3094,
+  "completion_tokens": 607,
+  "total_tokens": 3701,
+  "cost_usd": 0.00983,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

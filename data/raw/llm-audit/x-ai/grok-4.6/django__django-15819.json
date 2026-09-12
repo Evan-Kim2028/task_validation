@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15819",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1286
+  },
+  "response": {
+    "id": "gen-1789191681-DTzc6OM2RbuzSsYrFFaM",
+    "object": "chat.completion",
+    "created": 1789191681,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only sketches adding related_name when the same related model is reused and even suggests related_name equal to the attribute name on all such fields, without a naming scheme or when to apply it. The FAIL_TO_PASS test hard-codes related_name='inspectdbmessage_author_set' on the second FK only, so many reasonable implementations of the issue would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about inspectdb generating related_name for same relation links to avoid reverse accessor clashes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about inspectdb generating related_name for same relation links to avoid reverse accessor clashes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Xm/oP3nmZLkhTZ7mFaREQopjRHW37Vlp25aj6fiZyLU9b69UVIp/yxJZ7H/Ac6AdtXvqNU1vNlUfBfvclHI4vssHM3eyNaGdqU38tQmorUiUEk9HUstUKzBBfxSihA5kheeJAi+3C3hTusjg+P+rgEaJUUQQJiY7TgeaDov26gackiQ7YfRLlI69T+fIrsljDyS5L3WrMrUM9A8TPWFciJnZEGbpm8+LUQ0i14njYAUeDM7YW57jAnRSR5DnKKq9jecbGmUeXZeQsLlvwnYfjgYtWAsBw2+S7uHAK33x1Rkl7rfzRaXXzW7H3t2yUKIXg73IOlQlDu4BBAUAJ7OnoOdtlptG8qqg2EUn82TFo8/1ZyS12yHur1NrtSMEfBsmKdp+5ExpvCjZn17kNiMtUrt40bVRj8FN0JnxirFFgeFRutqmjF3jo3b5sE4axSyUR3V2OQYMmaurv47o+wqI27zNBfg5+OQf6MT09N9/PmNuLHXhVUiL+QmhEUWOkBgLx3HlsWSclUR97Yokj9PwHZMQmKaBLg6qiZ7Q4oM7n74Ge1nWD4WulaDD2lL2IWP3CazhiS6tFKOJ6aiaTXEKm8mwtMS0/EjG/j6bG2QsZC/ERKf7E1ajHuEnfwl5YUfEjTA+ouOypfPb70pEIE1LGvHqOtW2nAxm04OznuB1Y2hSxKtLsGVpR9cAPB1Q2pXvYZg2SupkRQHoQq5P8kwZS7HqhxD+dXVffaFiLs9haO1IsdbIvHicxtCesuBtsliJLMKF85ZfKdXqoypm1U44LEvMYLuz3YG2aain5Iy8qyfd+QRaSzFkBxDQnacLxRmtamIL7fG68SJwdDxzmjOdE56GZTX6RUbFXNyWfAomj7staWUCe2ozhdPsHAL4M3oKF83p72E4LaCppCnHDLH1qyDXgJe1hDdNW9f5skHretD6B/blr7HJOityhF57UMPeRiAqQ7lwA9Wj1usYfARXKG5GHzcAJd4JDZvx6+YEcraI2+TPzD+QYNyedFNOQzny0JCXehOxU8/Zw1tv3miPyzWqfW9cwFeytKnmZb5S2hi5Zf8kl/GIAcNrRa++DsD8GPqbql6OSbkMhmdO7jBYn3ObkJH2DUpO+qnIGzYMv0EQ8xA8PMTCBO+o9CDCpmWV7EVuO0QhIQPP0oO2FobP6wRMZx83CGKBO1kG9Sc/4TxqpMTw6sH4jbC6pw5bRZIJRKkAMQYWi7zvoTk9WfLg6VB0JM2MKbD5B1tPghddRzLbGth3nIufAvwaEjPallwI5613ApuSCv96bI8tU7v5yOdzaKftzdeVO5c9PaSvcMANzAhtcECIQ0phcQ4Vcor5UJaS5cmzpaawHu3OGsPOwIZPWCmk33Jol9TiriiIGdGvHG+Hh0XDnAvdcjBFEqesO0/RJ8s5+DAJGusmDVRR657qrPQJNFdwi7NhHyCFXXvCPxTlaJ6sLpwh4A1lGyYomACQT7cJgLkF8kdvyRYCp7SaJRm3B78.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_562eaf0e-ee46-9e0e-921d-fe62e252d36e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1548,
+      "completion_tokens": 391,
+      "total_tokens": 1939,
+      "cost": 0.005058,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005058,
+        "upstream_inference_prompt_cost": 0.002712,
+        "upstream_inference_completions_cost": 0.002346
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only sketches adding related_name when the same related model is reused and even suggests related_name equal to the attribute name on all such fields, without a naming scheme or when to apply it. The FAIL_TO_PASS test hard-codes related_name='inspectdbmessage_author_set' on the second FK only, so many reasonable implementations of the issue would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only sketches adding related_name when the same related model is reused and even suggests related_name equal to the attribute name on all such fields, without a naming scheme or when to apply it. The FAIL_TO_PASS test hard-codes related_name='inspectdbmessage_author_set' on the second FK only, so many reasonable implementations of the issue would fail.",
+  "prompt_tokens": 1548,
+  "completion_tokens": 391,
+  "total_tokens": 1939,
+  "cost_usd": 0.005442,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

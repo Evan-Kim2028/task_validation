@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15433",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2681
+  },
+  "response": {
+    "id": "gen-1789187796-oEeHEgaSrDDYsiLruo3E",
+    "object": "chat.completion",
+    "created": 1789187796,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.65, \"rationale\": \"The issue clearly describes infinite AlterField migrations for ManyToManyField targeting a swappable AUTH_USER_MODEL, so an engineer would know to treat that relation as case-insensitive. The FAIL_TO_PASS suite also rewrites general ManyToManyField.deconstruct() expectations to always emit lowercased model labels, which would reject a valid autodetector-only or swappable-only fix.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about ManyToManyField to lowercased swappable setting causing infinite migrations. The tests check that deconstruction lowercases the model names for M2M fields, and that autodetector doe...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ManyToManyField to lowercased swappable setting causing infinite migrations. The tests check that deconstruction lowercases the model names for M2M fields, and that autodetector doe...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2cb3d91a-941d-9f53-a97e-ae62c6a48be8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3173,
+      "completion_tokens": 552,
+      "total_tokens": 3725,
+      "cost": 0.009466,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009466,
+        "upstream_inference_prompt_cost": 0.006154,
+        "upstream_inference_completions_cost": 0.003312
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 416,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.65,
+    "rationale": "The issue clearly describes infinite AlterField migrations for ManyToManyField targeting a swappable AUTH_USER_MODEL, so an engineer would know to treat that relation as case-insensitive. The FAIL_TO_PASS suite also rewrites general ManyToManyField.deconstruct() expectations to always emit lowercased model labels, which would reject a valid autodetector-only or swappable-only fix.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.65,
+  "rationale": "The issue clearly describes infinite AlterField migrations for ManyToManyField targeting a swappable AUTH_USER_MODEL, so an engineer would know to treat that relation as case-insensitive. The FAIL_TO_PASS suite also rewrites general ManyToManyField.deconstruct() expectations to always emit lowercased model labels, which would reject a valid autodetector-only or swappable-only fix.",
+  "prompt_tokens": 3173,
+  "completion_tokens": 552,
+  "total_tokens": 3725,
+  "cost_usd": 0.009658,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

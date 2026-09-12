@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-10481",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1724
+  },
+  "response": {
+    "id": "gen-1789192442-2vGyybTK6hkVm2VTFyoE",
+    "object": "chat.completion",
+    "created": 1789192442,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to treat language=None as English and to log that users should update conf.py, which a competent engineer could implement. The FAIL_TO_PASS tests require an exact warning string (including the misspelling langauge) that is not specified in the issue.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue asks: when language is None, treat it like \"en\" and log a warning asking users to update conf.py.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks: when language is None, treat it like \"en\" and log a warning asking users to update conf.py.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "QvKmNcx3xE1Itzzlwdqu+rFFWFcOTQQ/fx1A/tbTdqyrm5yov9W1XHDh47t8z/2DPfQTxB1C0dRADaiX4rgIPconBP5JAUcKpYnJMcVCJ4WdLr4hOf2mulpa0QXEV50gHFk//ISfExN263z6QWyCvo5ROasWdjLNf7VIM5GyqEAu3tAcxp/y+mllgeAzjmu3gZ3BCfreq8A7gzOj/yLl6e+ewbQUYgJAcUguR4kdu2sbyk5Ucu5CO5IJe234/pcUbVZnSomQoeZ+ewJYvwSfDfDTbkDGbZpEcMxb0bkx5wqYY/LsI/1TJy2sSiTU7hHRRmZOHczKlAApSDT+/QcU/BHppExzvpOPhmor0ZnDt9dUto+6qhdOPQ/j910bdg9S3s3xr/atwMrPEJ0MF85BYLrZ9CespCxHWObkOSxVs6wMGvDurAeD9ndmcUV6N/bGV8NIUDcGfX3Z/An0ZpHbOmouMReA62CPcG64Ce2gSOCcnWTh9jclh12+QRHll4N/WQnVyMV23J6AjFsA/924scpRkQngUHrQs/U8SCYuY6h2lyBs3FV9NO3Q9ebtd6vheDFFyptULUJzkjGP+Xhxmx2B2nL2UEfWUCMqkowEr3Gw7xoG06hTxetpJEbO+KOGM0UlMJIwwg6LW/1LJ0mgsXQL/f1ql+9KOE17LrK/dlti/t0xgpNH/2dkBOUuiVR10s76A33nf0NMXSAzgwax0G6iKRXYF9FvF7ie0MhHAMugTJDkk8fnuin7/PoXGrDUe/vQqVNvTtpzsX7l+hwkqidhk6YmWJMXHkVKv2w7Xyqzu14VYZt5uzIjyCZQ5ICoOQa8BA5qR+n9O4ih8wxMkjOnUlvn0dgDWIRiBQQP4vUkuFkR/86YBb46qmUN6og0ofMfh+9Xhgkyy3cQw2sc8r5oWX9R8Ju9Y7q/atBw0GxwAmbmpwbaaSHi2ekPYIIZSd1q3gKJdFsLm23/NLb5LBTEIsJ6P+FpKclvhJCQfwJ0jrMP0RYq7LTsUUQIu/8sZYOw8KmUpXVgkNIJfevqFQvFyAzrA0b3bcHKxy/xDtiJFF4yBuJf4LLMXN7ho4AkIspdWvnoqcYJtCXSuh5wpoG3s+vMO8MtQtcmTMTMcUURwL72oxaywvvE0djgMLhSJInQtSuAkE+ezgOWfoitBM8Paunwf+A0iB2sd53TDnwhrk6/rFU5OcQjQKZdk0OsjVH+/LBq6q7Fgj6xNCSdNCiXemtKtuVYD1Lb1r98hZIJr0EL+nybDnvkUoMukZqNdcPQuLZc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e5b79a32-2236-9089-a5cf-ea76c0977052",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2104,
+      "completion_tokens": 342,
+      "total_tokens": 2446,
+      "cost": 0.005876,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005876,
+        "upstream_inference_prompt_cost": 0.003824,
+        "upstream_inference_completions_cost": 0.002052
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to treat language=None as English and to log that users should update conf.py, which a competent engineer could implement. The FAIL_TO_PASS tests require an exact warning string (including the misspelling langauge) that is not specified in the issue.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to treat language=None as English and to log that users should update conf.py, which a competent engineer could implement. The FAIL_TO_PASS tests require an exact warning string (including the misspelling langauge) that is not specified in the issue.",
+  "prompt_tokens": 2104,
+  "completion_tokens": 342,
+  "total_tokens": 2446,
+  "cost_usd": 0.00626,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

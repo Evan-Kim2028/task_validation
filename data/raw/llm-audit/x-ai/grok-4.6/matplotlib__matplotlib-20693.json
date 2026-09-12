@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-20693",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 8100
+  },
+  "response": {
+    "id": "gen-1789191916-JPIlQji2K2Jksx8yVlDr",
+    "object": "chat.completion",
+    "created": 1789191916,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue asks for a supported way to update selector and handle styling after deprecation of rect/rectprops, which a senior engineer would reasonably implement as set_props/set_handle_props matching constructor kwargs. The FAIL_TO_PASS tests still require those exact method names, artist internals, and per-widget property keys that the issue never specified.\", \"p_invalid\": 0.75}",
+          "refusal": null,
+          "reasoning": "The issue is about lost functionality of interactive selector update - users used to update selector colors via selector.rect.set_color and selector.rectprops.update, which now deprecates. They want a...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about lost functionality of interactive selector update - users used to update selector colors via selector.rect.set_color and selector.rectprops.update, which now deprecates. They want a...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0edabdf2-9724-935c-9817-131411168545",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9353,
+      "completion_tokens": 463,
+      "total_tokens": 9816,
+      "cost": 0.021292,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.021292,
+        "upstream_inference_prompt_cost": 0.018514,
+        "upstream_inference_completions_cost": 0.002778
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 336,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue asks for a supported way to update selector and handle styling after deprecation of rect/rectprops, which a senior engineer would reasonably implement as set_props/set_handle_props matching constructor kwargs. The FAIL_TO_PASS tests still require those exact method names, artist internals, and per-widget property keys that the issue never specified.",
+    "p_invalid": 0.75
+  },
+  "s": 2.0,
+  "p_invalid": 0.75,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue asks for a supported way to update selector and handle styling after deprecation of rect/rectprops, which a senior engineer would reasonably implement as set_props/set_handle_props matching constructor kwargs. The FAIL_TO_PASS tests still require those exact method names, artist internals, and per-widget property keys that the issue never specified.",
+  "prompt_tokens": 9353,
+  "completion_tokens": 463,
+  "total_tokens": 9816,
+  "cost_usd": 0.021484,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

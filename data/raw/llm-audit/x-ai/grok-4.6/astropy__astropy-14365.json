@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14365",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1293
+  },
+  "response": {
+    "id": "gen-1789190685-k5RBYp11yPuz2YYzfQjm",
+    "object": "chat.completion",
+    "created": 1789190685,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that QDP commands not be required to be uppercase, with a concrete example of a lowercase READ SERR line. The FAIL_TO_PASS roundtrip parametrization lowercases entire non-comment lines, including data sentinels like NO, which is extra behavior not stated in the issue.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about making QDP command parsing case-insensitive. The expected behavior is that lowercase \"read serr 1 2\" should work.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making QDP command parsing case-insensitive. The expected behavior is that lowercase \"read serr 1 2\" should work.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "aafIGTjjRx62+IrJ42EfTDi34domhxkrMqt9Ea0Rqj352Wk+vDqZI8wrVsMIEA7KbAIEvVGNzybJbxoil4M3BBmvX56ug5bBOCSPrahrC57KO/XRPoir1ZaI1yuI+x/999/07h5laprUpCiLf1U68Gai+TezTttLxFk+Oy5JklReXtC1PwA9nnfhrSJXcraJCcBk/oeAk8POhsrZOFhaDw9swuSeSVyFMDsz4fXk7ej/AEaI20Ga1AXO1AhAaAsA2AZNoKB8XX6w9DG0MPdfwTglGpA/5rHSkqfOXaKlBFOHNsyPzoyBrkrQ6LagEH2t6W6VK1v+CjoRQvG3NLPKeoPU+xH4ZYcz1DuAQ8Q5zJQInyyLwCOvPIkonv+f+Crx1WKv2I2iscZac48NNRPOl3Q/Ea2cLU4di1iuwMFyFTaiST996MhNuCfy/2t0TJV1UjNoHV3r0RK2bSfXvFqKQAWhim0yy8TX3gl2H7DCriKb1LsJQLchKTyyhpnShSCloTFbc5RvVLFhCMxrYiL2SJ/kaD1OwQzeIRNJRZSPagANlVjrHx2LsiwLaOl2cCNb75b1pqF35mx5ATWnd5WucERKBPkwihzWQeBNsoRlU+ruV3Nx1hAoupRLPSaiAnLdXf2eAqI4UcstVnqJYnWOaB+TYIp5nXTPDD4EAlW30N1JVQD9I1mxeDHUesV8gjaTqMBFZcdVzR8Nym9NXh03Bd9oeaRBrbtLa+Ra7a9HYriseWVUTwVf1UuceDQ5I7ZD/H21CEStv/M5Vd3QnWhYaB92E97M44Gd/M0c3oTXsTirGhffsWG5ahKeQ56OF1kMCrbq4zWS5Cvgusc1OnrVXJhsvaYVY0mS3OdM2x15adxT3Y3VgjrO9VbXTBzd5ADeV96IIDDZ7tiD1QFHw50yWhP8gdTFT1U5nCQR7OrekIjP6f2y+hukBTFd+hsnC/e6w5EfmppyZ3zrtxKsPI6VGyLdoqdQ8eNRzDYTDasrTVHoq5oGAwgYLCZrsM0icDHy8InZysWIash4FRMFsTxtN2Ri6ffOMiX09lEqk3aVHwzMyT9nq00IdsTMc1YnqNC2b/7aLfV3ZB2ZW56HJr0QkfC7h0QSHQyukdiPaA0AZ4jbXKH+G/fTwG4hQMTpI30yTNJKvp8ynbt0Ei9XgGzZOIbd3ZKoFT7Oz5J/N1IKSkSKDYU20/sEkvdP1mkHhu1hCp4LTqdkSyHIzOmSIusFQafzWBo2jeCSYAWV9Yt3jn2os71lE4yNBgSdUlsoVJgOcL485rGZWwOW08d76CdofKLDafZP9K1DM4TxAvLpWOopdLqpBpj46wj4N91fME3BilUd+ZuVMrz2tiq9nk3HTV2DdGJL4NnuUGR9tl3G/oOa6GwMiehGbxtZL4e3tuz+Vx2/R0jKB6zuJdYDjM6OVtSx/ZgheAosdHLElm/0WxsJXFoS+LVvW06xmkd4cRt9/IlyU+eIo3+CM4X/9+RxBE4ZgiBWZBbtxwRcMtR+Ma7CmofuLP70We9f08jpiL0MWniENvQBegcnAa9Lek4A5BFnU1eqw1ldmprMUkxxUqxHZ5nZP9M82tC3R56kquBhAorDkIdqnlKYPIz6oG1BiisxIFYFNMBtzgpjhVw+d/b6zMe8eM9GPGTbH3J587Y/HoY1w9It3duYH/lT4mfv0fVFe6BPmDRuiEg6LYqefv0pxx8LqOuheevtRa3p0eck5mwdejlkUb/2/fziyWo8GsTS/ZAUdJrANHafxC68UBQna+lt8bv27hXMiEgSfcFv62RUyjgOqr46HqukOMvRXtFw2UqAHceE4MNvrusobCP/d2w6xTOGybnckY8/L4efnKlxtdT0sRy/8BuA5Y7noB76BwaSWsILcFgB63uvGwuof1Dn5xFnhiK+oFXGHMaf88gIT9s6gNP3ipEHU02TIu70SZMX5N9CB0uHVQ73getq723wW8nA47FxRACjlfNmqSkjsb2wBkRJ4foWGOz5+ZcUcOst0iPIj72BxEjup8hqRMgGuoDdzFqwCRSyGNZjdWHcqkkPz46hg06ocmgAOyd3DLDpUnKTnsnhWXsEtt1KRzNk/PA4ee3PS62WSeBwT9s8OjmZ9PoB5B6FbE+aZ/r4Tsp2aR6FyRzP7rROvu/c5wzv9449S9mi1N5P8k7hoWjBIROnGkfDwQ8XliqSG/gT+wA3mZqHHfKv1G/zlOzkTpSs5vRbPImy6MNxYuYH74Pg1rNsJjG5NDItTXnTMxwZbSJ2lDJuOblm6sgcrCRPTRVk+r0KRw4Dx/LKkwziiw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9fdbba24-b62b-9e3a-bfbd-a9241c6e0f3e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1924,
+      "completion_tokens": 531,
+      "total_tokens": 2455,
+      "cost": 0.00665,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00665,
+        "upstream_inference_prompt_cost": 0.003464,
+        "upstream_inference_completions_cost": 0.003186
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 413,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that QDP commands not be required to be uppercase, with a concrete example of a lowercase READ SERR line. The FAIL_TO_PASS roundtrip parametrization lowercases entire non-comment lines, including data sentinels like NO, which is extra behavior not stated in the issue.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that QDP commands not be required to be uppercase, with a concrete example of a lowercase READ SERR line. The FAIL_TO_PASS roundtrip parametrization lowercases entire non-comment lines, including data sentinels like NO, which is extra behavior not stated in the issue.",
+  "prompt_tokens": 1924,
+  "completion_tokens": 531,
+  "total_tokens": 2455,
+  "cost_usd": 0.007034,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

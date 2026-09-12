@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2317",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1060
+  },
+  "response": {
+    "id": "gen-1789192174-E08H7HcYdd9jvl9xNBX8",
+    "object": "chat.completion",
+    "created": 1789192174,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that HTTP methods given as binary strings must be converted to a real method name rather than the Python repr, which is enough to implement a correct fix. The added test matches that behavior, though it only covers a bytes GET and the listed FAIL_TO_PASS set is slightly broader than the issue text.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5fa92818-752f-9374-a2f8-6932c3e4ef16",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1392,
+      "completion_tokens": 681,
+      "total_tokens": 2073,
+      "cost": 0.006678,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006678,
+        "upstream_inference_prompt_cost": 0.002592,
+        "upstream_inference_completions_cost": 0.004086
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 561,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that HTTP methods given as binary strings must be converted to a real method name rather than the Python repr, which is enough to implement a correct fix. The added test matches that behavior, though it only covers a bytes GET and the listed FAIL_TO_PASS set is slightly broader than the issue text.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that HTTP methods given as binary strings must be converted to a real method name rather than the Python repr, which is enough to implement a correct fix. The added test matches that behavior, though it only covers a bytes GET and the listed FAIL_TO_PASS set is slightly broader than the issue text.",
+  "prompt_tokens": 1392,
+  "completion_tokens": 681,
+  "total_tokens": 2073,
+  "cost_usd": 0.00687,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

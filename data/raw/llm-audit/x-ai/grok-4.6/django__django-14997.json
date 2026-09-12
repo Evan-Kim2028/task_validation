@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14997",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3313
+  },
+  "response": {
+    "id": "gen-1789191513-oOSbaUdZP39oTVRM9Vh4",
+    "object": "chat.completion",
+    "created": 1789191513,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes an SQLite remake-table crash for UniqueConstraint expressions, so a fix targeting that path is knowable. The FAIL_TO_PASS suite also requires unstated coverage of functional indexes and a specific Expressions.rename_table_references-without-alias SQL shape, which a valid crash-only fix could miss.\", \"p_invalid\": 0.7}",
+          "refusal": null,
+          "reasoning": "The issue is about remaking a table with unique constraint crashing on SQLite due to \".\" operator in index expressions.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about remaking a table with unique constraint crashing on SQLite due to \".\" operator in index expressions.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b381a0de-65ad-94bc-8548-453481fafa53",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3959,
+      "completion_tokens": 561,
+      "total_tokens": 4520,
+      "cost": 0.011284,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011284,
+        "upstream_inference_prompt_cost": 0.007918,
+        "upstream_inference_completions_cost": 0.003366
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 438,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes an SQLite remake-table crash for UniqueConstraint expressions, so a fix targeting that path is knowable. The FAIL_TO_PASS suite also requires unstated coverage of functional indexes and a specific Expressions.rename_table_references-without-alias SQL shape, which a valid crash-only fix could miss.",
+    "p_invalid": 0.7
+  },
+  "s": 2.0,
+  "p_invalid": 0.7,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes an SQLite remake-table crash for UniqueConstraint expressions, so a fix targeting that path is knowable. The FAIL_TO_PASS suite also requires unstated coverage of functional indexes and a specific Expressions.rename_table_references-without-alias SQL shape, which a valid crash-only fix could miss.",
+  "prompt_tokens": 3959,
+  "completion_tokens": 561,
+  "total_tokens": 4520,
+  "cost_usd": 0.011283999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

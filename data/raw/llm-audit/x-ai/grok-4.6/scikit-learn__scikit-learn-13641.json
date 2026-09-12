@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13641",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "851a21d6-bb15-985f-8e24-b021bde54bf0",
+    "object": "chat.completion",
+    "created": 1789194017,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only reports that a custom analyzer ignores input='file'/'filename' and is explicitly unsure whether to change behavior or document it, so a competent engineer would not know to decode first, emit ChangedBehaviorWarning, or match a specific message. The FAIL_TO_PASS tests require that unstated warning, message fragment, exception types, and coverage of TfidfVectorizer and HashingVectorizer.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3399,
+      "completion_tokens": 138,
+      "total_tokens": 3862,
+      "prompt_tokens_details": {
+        "text_tokens": 3399,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 325,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 29294400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only reports that a custom analyzer ignores input='file'/'filename' and is explicitly unsure whether to change behavior or document it, so a competent engineer would not know to decode first, emit ChangedBehaviorWarning, or match a specific message. The FAIL_TO_PASS tests require that unstated warning, message fragment, exception types, and coverage of TfidfVectorizer and HashingVectorizer.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only reports that a custom analyzer ignores input='file'/'filename' and is explicitly unsure whether to change behavior or document it, so a competent engineer would not know to decode first, emit ChangedBehaviorWarning, or match a specific message. The FAIL_TO_PASS tests require that unstated warning, message fragment, exception types, and coverage of TfidfVectorizer and HashingVectorizer.",
+  "prompt_tokens": 3399,
+  "completion_tokens": 463,
+  "total_tokens": 3862,
+  "cost_usd": 0.009576,
+  "cost_in_usd_ticks": 29294400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2588
+}

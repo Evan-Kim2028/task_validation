@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25631",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3345
+  },
+  "response": {
+    "id": "gen-1789192059-Dem8nqwMLtWjC9WtnJA1",
+    "object": "chat.completion",
+    "created": 1789192059,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Tests require rejecting kwargs rather than making tight bbox produce a valid movie as the issue describes.\", \"confidence\": 0.86, \"rationale\": \"The issue reports broken movies when passing bbox_inches='tight' and shows a correct movie as the expected outcome, without stating that those savefig kwargs must be rejected. The FAIL_TO_PASS tests instead demand TypeError with a specific message for dpi, bbox_inches, and format, which a valid fix that actually supports or ignores tight bbox would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about bbox_inches=\"tight\" not working for writer.grab_frame(). The expected outcome is a proper movie without snowflake effect.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about bbox_inches=\"tight\" not working for writer.grab_frame(). The expected outcome is a proper movie without snowflake effect.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "UcqnBhvjjTOevucFXyhiBAsgA4dNH3OSusNc++bn4KW9GyEF+lO4yKp3ybZMEDFZf9CFN53d7HUVFE8k5Cu/mRmtuRinxnxXmz1oNTlEBMagomK9g1uW6kxwMCIs0TfQYYMVGEDWj2N0VRw53C4b+3FSvMSINmvm7ctuIZebTm24gfJxj1BNsvxaP9ftoRep+XwASV4F4PZN/x1NlBux1EZVqsHEjNbeyQQCyv5o+2uMMJ6AqFauk2t2F26FsQQ9Aho+vr0zSCrR6t9GR8hVbafp0RGIcJ3SCKdt3TJ/v+/jterfzQSMS061uCc5zuGjWTMlGWR4SHCIc06zRdjUULzIKqyTFGmPnWKHl6Wry2K6rgCK8aMuVZ9GWmqwMoXXwEl+MVesofD+iMUoP0qub+nvPdPmbWUx2MDtRAxBaXwku895JmgfwyKFcTJLIyMtlobimFC0lbygPsF47KAlDnVcyjVgjEO7emnDeFmcKkK1LH9WzhipKwav9JASthoXr69FizAnoSrYZmZ41/tBNe9y4V6e/b9leyodwuyW2yjIWWk0+VK25QDZV2FyxLS6PZvZnJmkPEc9rBC0Yo6UZA4LIIhIpJKQCGYf9LkCxbVOJk1tihzJJsw6BHTES3C3mWXEiWPOL/5cJUm5c+No6qhZFUboyLGBRjW2tZsvva08nHa7RdBj4i3r5JNAaW9uZjDB3ywaE231ld9ggGCUkEEQueOR4dvVd/zK/wSaAsMIAGdiNREeHJimC0MU+a/Rb36lxJPObpCGARQA3hbk3oLJxYNmN08b6Y4z1H3I0z9IRAJz1kZMIW4NQ0D6N2rJP9MDtkK7A5vAA31bsYeDo9I1Vh2SCsNt4AX03n48yzZ6GVtknd+4RltakeYFUrxcA7QYjJa4NTBOjZ72DgqoJFXTcVJfZVrPned4GBExEHmHUcHyhflW8NFW1NsMKTCuY4tpQhVRSesl9BT5v7SuCesTFrgCo7XXQYj6S8ZDGAQXA8RHloi/G1U/JMFV6hZmjdAoEYLNL9lQ6t2TwN/GNBD5xqEayahXKFyPhEleRR3vqHLv/gGthVBnDZ6stO3uEYRb2fnCdleiBADQ+iJu6szr//4Sis6X6SpbChWZyseGi+KjvMBbXwD0FnOeTlJHPhMOZ5K9F0KfrN/dNFuGEiaVnGE8DYZTLsUiuoF6GF55l96KnQyq09sB5QqReW+pBsYNTxlM9VuYTxu1oOmbmRR/zcRkwde11ppw9UBmJVt6JA6xw6A58tpEDcdKq/yi1g27Rz85QpB4puSFTmvXj2APx5fusRRtlYFWK/EL5XHwW3LRfMcrdY+mNu1pRandyK4wgm0vZFgIHCW/Fg4tAXuAJIDyZbo1L+zmnd1IlC+9QPbhg6pLIub+dK3dZ8gHOkPX6bIX7dGq+q+rwESYVUewkUTFu9Hp2PPSfjVdPsIVzKEL1InOB8SZqg0KmW2wcT9TEplYYNo9OTyY2+mL16BVOkg9/gjOOO2KpJeR55EB25BdyUg3lFakCEx3WSrQJf11cFj8x50xrggGItDuxfYE24szw8CBldxAmRZIPLnJPWagrejuUgZDoJwmEJshhlve0G/6EPldMhHWqKBXltaUVPRcJ+63ACQWKoYpTlg3mB23PPD3ndUuPZ27lGJeN75p2uuudL+jbcjWI3nQhbncVrNngPR1UvntRCLeEiG0aZYTBchbWKF6wmsfJ5M7CbcaEt5QQAPn6VN3Jb3x0rhdx8ZiLgboRV1eqxxxjXYStAjWFEUbYkyF8f9Uh9HDGaXO//5DgRm0lOzSsSSSyXaQ2xE16uAphfhHF/phiQPbIuGGopLgGI+s5zk1u72G644cM/YuJBuZxbvK/jLpLaQoCkKHy/rqea5n0beOgGqCk3tp5x6y2tqT/1bDi3CLfKraFt7hLfz7D5384C7FX+P2/lI1KaKDECdm8FO+CEynqWq9CCHqagObV8QH8l5H18PTdLtUkPpNjb4KnRVVjw4vLznmQNhzdF6ZjovHZbe6ApPjP+yQVXskMdewVBael9+f1R+C.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0b12291e-0255-9665-904a-01f43f0f9cf6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4049,
+      "completion_tokens": 481,
+      "total_tokens": 4530,
+      "cost": 0.0106,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0106,
+        "upstream_inference_prompt_cost": 0.007714,
+        "upstream_inference_completions_cost": 0.002886
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 335,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Tests require rejecting kwargs rather than making tight bbox produce a valid movie as the issue describes.",
+    "confidence": 0.86,
+    "rationale": "The issue reports broken movies when passing bbox_inches='tight' and shows a correct movie as the expected outcome, without stating that those savefig kwargs must be rejected. The FAIL_TO_PASS tests instead demand TypeError with a specific message for dpi, bbox_inches, and format, which a valid fix that actually supports or ignores tight bbox would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Tests require rejecting kwargs rather than making tight bbox produce a valid movie as the issue describes.",
+  "confidence": 0.86,
+  "rationale": "The issue reports broken movies when passing bbox_inches='tight' and shows a correct movie as the expected outcome, without stating that those savefig kwargs must be rejected. The FAIL_TO_PASS tests instead demand TypeError with a specific message for dpi, bbox_inches, and format, which a valid fix that actually supports or ignores tight bbox would fail.",
+  "prompt_tokens": 4049,
+  "completion_tokens": 481,
+  "total_tokens": 4530,
+  "cost_usd": 0.010983999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

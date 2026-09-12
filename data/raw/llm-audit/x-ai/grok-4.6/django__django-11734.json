@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11734",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1601
+  },
+  "response": {
+    "id": "gen-1789187796-0Ave42pwWsbwg4NzAIDs",
+    "object": "chat.completion",
+    "created": 1789187796,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly reports that OuterRef inside exclude() or ~Q() is resolved against the wrong model and raises ValueError, so a competent engineer would know to keep OuterRef as an outer reference through exclude/split_exclude. The FAIL_TO_PASS test uses different models and also asserts post-delete existence rather than the reported queryset, which is slightly narrower than the issue text but still checks the same OuterRef-in-exclude behavior.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about OuterRef in exclude() or ~Q() using the wrong model, causing a ValueError.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about OuterRef in exclude() or ~Q() using the wrong model, causing a ValueError.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "5R8OVTDOsHy0ZHYJa+cthu0CAAlsTPJnItF+JW4npPYiGUYxXFAYwMFVuV124cnYy3DA1FYkiujapF52Ny/b0pwn11tLTkJly1U2vLqKb4wM7/NUXJSGa68y9BBiT8cI80Ue0f106GTdeLDovzGFnkvvb3qtrbDqngWQUnvMdoCUsFYyH4MoNybjcBhrPhtRfzZItBkp0R5GZyXrADuzxXR0yvokdFcwAWyawt/L+Az2WQp7G/ciPT608gZTlFJzyZIlz2sU0RnH6xhE9M4QSMadZjV9IpyLTFZGiqO5W1wLx+Iy7brBWbKNnlFjSkKnlXrrZqP39k+1gUopqAYlZpGbRzzU9VVdBfyeNq5tWgDES6y+ZJNVFddtk4L8mxij3Mh1b+hWp3GSyhz8z+85JL+fkchyTrqF7dpamNywNIMRzTfsaMkWHRttz38zplNWD9+AquxFPcfgnQ5asW+A71lS106UpGOB7exyXhi/oURQnhIsUQBshvF09FNzDAENOcWyIUyd/4JEDIseMnazSvm5IvkpLbblUlkpFnV16R+1yeFRua2RrcseVinL7YQUO0HAuDD4da4X4FfDHS+wiyrkVnaNE8SnOEJzMOxbR0ejbBhF82zHK9I+4irDAIOOKBkRmprJTkorNUt/IUVUnqmPDVwxAkPGpg41KFZjqEQ1CNBcvgT/pWhVeUZZBIKMKC2X4ujCMWGCF+hq4YQQGwhIcQFjl0JxIZhyVVgJ2OTykxLWdPajsnEJfbpNgo362lN32nKbedkSzodmGIraCZa8GubfJhEFleE2vza/k7R0dHk9ZcUalNjDl4d6ZuvDdyWFUvf75EAyXYkHfYj+7lqYaCTfQ3Pnne1VADJFLQPs7FVTostwBHnCQx84qVmbK+PqiDZZOvDWg1zSkX8NxHIjn+NfSn2LRxTmM94FWIqT/orfnTswCZ6ssvSREWGQU/PS8KL3VA1Pi+MmyEWNrZsznx9OkpW9dRmSwINydQFetR6muth3kWL1ZOs5z/GnKiX1QX9W1k1gTmPDsroUCAReHLmRjcQdZAUk5TRNjMJG+q4OfDPzjxb4NE0HNv5blpUvVpS6r6Tw7fNtIrsiCpv0/7+xRqfYp57HgpRpkNlQpxu9MceF74gQYlD4X6LtjpYhoVgGGlVG6yPb7ZYy9PeXlrdsqdVCxeVzpfHLzL7Odpcb1pE5OU0iLK0rXRU/TYFgMT6zuglHEI/Y3PnPmYKHiDACSMjRyEuJeTD6hzSjqJQJChL5m054sH4iIoeLj/JWgUx97VVpLDdB3dojOCx7y0nTPDp4BJX2NdPH1AYv4NFGT9AQyhKRJCyoK6hnbdUy+hMJkSlVxoScJCErDlOdUVXvW9s3ENcFhWZQ++f7szJ6d9q8nUIpwvrDOtRm+Lz+sXj1ZPeHkC3Qgbdh5z9+eljmmgR/hsToHFqmEC6xJp43rxtbCpd1v61ROTuuC96NJwprs0EyZ6f/tac+VK45KKFGQ80VhkoQc8KB5KODVBBYG7I0IIsl1a0N2cAt9o5HONwGeettKadJ+Ot53AbXtpCiOfJtIkUFctNnYCR1ZIeF8rUbQorEIjGISr42AicxLlK7Xo+8E+mqxq5qlQmQBV/WJpguXJ8UQ701g9DKWIQYrQgyE5ofse8m5UWlOZMK1RgpRc6odn9mUQCKhYSLZk28uY/hmqYjPR0yjMEyJbfL4JWh/xt/0VsHDab+jI/Fi6wn4KqfRhLbKfa6XmsQ8ByEmQ3nLqE7NRVF0ZI7T/xyiHS7TFhbGs9ljkGYiDP45em6ze6fa7pyKPqFzhEXE8MllZ57Fzqm6MWhwrZ48a/RD1TVdIrShA8KF5kbXOJil18yWqdgHyU6JtHYDUU5igH3Tmb17QDkSIK5vpuhnQbbO5sWox7Bjn8ZJb6Kdxs/PZrJc3TddokJe4bZy6vpvgA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_899db317-3be4-9bc6-84b0-ea83e3f8d1e5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2073,
+      "completion_tokens": 476,
+      "total_tokens": 2549,
+      "cost": 0.00681,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00681,
+        "upstream_inference_prompt_cost": 0.003954,
+        "upstream_inference_completions_cost": 0.002856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 331,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly reports that OuterRef inside exclude() or ~Q() is resolved against the wrong model and raises ValueError, so a competent engineer would know to keep OuterRef as an outer reference through exclude/split_exclude. The FAIL_TO_PASS test uses different models and also asserts post-delete existence rather than the reported queryset, which is slightly narrower than the issue text but still checks the same OuterRef-in-exclude behavior.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly reports that OuterRef inside exclude() or ~Q() is resolved against the wrong model and raises ValueError, so a competent engineer would know to keep OuterRef as an outer reference through exclude/split_exclude. The FAIL_TO_PASS test uses different models and also asserts post-delete existence rather than the reported queryset, which is slightly narrower than the issue text but still checks the same OuterRef-in-exclude behavior.",
+  "prompt_tokens": 2073,
+  "completion_tokens": 476,
+  "total_tokens": 2549,
+  "cost_usd": 0.0070019999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

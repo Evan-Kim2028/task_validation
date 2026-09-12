@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13033",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1944
+  },
+  "response": {
+    "id": "gen-1789191134-A19EYkqGIT4g3w5GdiWu",
+    "object": "chat.completion",
+    "created": 1789191134,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes that ordering by a self-referential FK attname like root_id should sort on that column without applying the related model's default ordering or an extra join. The FAIL_TO_PASS test checks exactly that distinction versus ordering by the relation itself, which a competent engineer could implement from the report.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about self-referencing foreign keys not correctly ordering by a relation \"_id\" field. The tests check ordering by 'author__editor' vs 'author__editor_id' with different expected orders.\n\n...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about self-referencing foreign keys not correctly ordering by a relation \"_id\" field. The tests check ordering by 'author__editor' vs 'author__editor_id' with different expected orders.\n\n...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fcb0520e-f5e1-9c9b-a3c1-6f8ebc2ce6ce",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2531,
+      "completion_tokens": 516,
+      "total_tokens": 3047,
+      "cost": 0.007966,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007966,
+        "upstream_inference_prompt_cost": 0.00487,
+        "upstream_inference_completions_cost": 0.003096
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 397,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes that ordering by a self-referential FK attname like root_id should sort on that column without applying the related model's default ordering or an extra join. The FAIL_TO_PASS test checks exactly that distinction versus ordering by the relation itself, which a competent engineer could implement from the report.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes that ordering by a self-referential FK attname like root_id should sort on that column without applying the related model's default ordering or an extra join. The FAIL_TO_PASS test checks exactly that distinction versus ordering by the relation itself, which a competent engineer could implement from the report.",
+  "prompt_tokens": 2531,
+  "completion_tokens": 516,
+  "total_tokens": 3047,
+  "cost_usd": 0.008158,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

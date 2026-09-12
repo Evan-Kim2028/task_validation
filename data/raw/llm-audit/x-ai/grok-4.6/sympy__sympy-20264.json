@@ -1,0 +1,104 @@
+{
+  "task_id": "sympy__sympy-20264",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2911
+  },
+  "response": {
+    "id": "gen-1789193166-MfQGcWLNcZMXEKnpZ2aW",
+    "object": "chat.completion",
+    "created": 1789193166,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks to stop RecursionError for unevaluated Pow of unit-numerator rationals, and nearby working examples already show nested-fraction latex, so a competent engineer can infer the intended print path. The FAIL_TO_PASS checks also pin exact strings and a -2 exponent not shown in the failing snippets, which is only slightly narrower than the reported bug.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about RecursionError when converting Pow(Rational(1,n), -1, evaluate=False) to latex. The tests check specific latex output strings.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about RecursionError when converting Pow(Rational(1,n), -1, evaluate=False) to latex. The tests check specific latex output strings.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7eba0663-ca97-98f4-84e7-0fb22ef00148",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3671,
+      "completion_tokens": 686,
+      "total_tokens": 4357,
+      "cost": 0.011074,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011074,
+        "upstream_inference_prompt_cost": 0.006958,
+        "upstream_inference_completions_cost": 0.004116
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 555,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks to stop RecursionError for unevaluated Pow of unit-numerator rationals, and nearby working examples already show nested-fraction latex, so a competent engineer can infer the intended print path. The FAIL_TO_PASS checks also pin exact strings and a -2 exponent not shown in the failing snippets, which is only slightly narrower than the reported bug.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks to stop RecursionError for unevaluated Pow of unit-numerator rationals, and nearby working examples already show nested-fraction latex, so a competent engineer can infer the intended print path. The FAIL_TO_PASS checks also pin exact strings and a -2 exponent not shown in the failing snippets, which is only slightly narrower than the reported bug.",
+  "prompt_tokens": 3671,
+  "completion_tokens": 686,
+  "total_tokens": 4357,
+  "cost_usd": 0.011458,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

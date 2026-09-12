@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11292",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1149
+  },
+  "response": {
+    "id": "gen-1789190844-fNKOPB2k3Tprne81AVlr",
+    "object": "chat.completion",
+    "created": 1789190844,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to expose the existing skip_checks stealth flag as a CLI option so commands can run despite system checks. The FAIL_TO_PASS test only checks that --skip-checks lets a command succeed when checks would fail, which matches that request.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is to add --skip-checks option to management commands. It's already a stealth option, expose it on CLI.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is to add --skip-checks option to management commands. It's already a stealth option, expose it on CLI.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ztmkaqqWqoj4j7w+MWWki+ggEzF34OMSGXF3V8ZdWpxOfINk7vSInNsleUgM80ytvcwPg71ouMJ9HZLegWmrGLlM9bu6UAbMdbN+LPdS88YTpmR0l5iMHBdFiPFbGSwwIBaVf9H/8vBpqjdY7FKCyyS+I1MI1ta7qLDIScYEDnDeX1YETmPkRtFCLNlNBV6jPqvbQe8syV02SlUq0XXA2UpJ+iMOzsgKsYFISfQ945R6VCvsdgDKbWe0YfUoRXaD3nlQQQlhx/0sN5VfBzdA+IqD0ixKQ1LVngNrvcjgDhgXMC1ag+MgawjmaL4h3ZLKa95hj5jQPpaWtIR4xLmpLJS4HrNzQDMjgvuZinrqAKzMExboxyztxqsyC6GI2GIVvp78GTnaU3kfJf8Hd024oqeToTdVozWCneLEFFH76t5kaaj5AaO7eG3qGrfdwAed32DEoJ3cUA7RNhB7Kuu2R33qLGjnaOw++uUvUKf4xxzZRtI2zzhoDrTxagGf1NilxdDYY2uqG4wcfo//F5Dj5cWQDW2/nG8A1JSin8UH2ZtObGxBrrlSGHxGJujO2qc1c5XV4XVtVe9tmrDwObJJq3EKYeyJmj0AGWZjaDdBFBVCaS8laDKbJ4YRSlwq5m1NPjS6iha1T8o/zNRsz/Koxf1rfEePq6czDMXlkNdcteblh5qSErxwtBGJpWQpdgy5PQd5uDH4GMi5IbbuK6YN3ZhGxT/wh1w6YrXT9I7Es5Y5dFK7RRdyZC+WheBb+fqF9ggl7pJGTSBx7rTkqDQTsI+GDGnV8MmOpZ6hTqJR5BeGSA1tiUemCoDEiDnLw473vqg6c8mcBNVIkU7p7XrMN4KGN7pWJ0sEE2EbJKvi4tmduE6pQhvWdQLj2Rn10rg+rC933O2fYxoOMXBXTpBvWVA1x20KIQ04v9UeSUbURkmirU/z8MVooccCCJWs7HQpBtk8mPFxrvYoZbzXPQ+lqYf55WzBBOWvNjpl+0cgMI5niTHzQjbSs0YeEjgw3pqx3fGuufS3/zcfe6hf46+nrm0ZctDjE/jGJbWdM/Io8Yj28hroySP2DJK09dokv8q586VxTG416d2DeDOxEtIgFvZgej2WWNeOBToguxUBrXV6XAci6iVxM/ks8GOc4XpxNwlSpdyXNyGTpmkCGlu/ZinL6m8A0lJMqSsdG1A+7um0R3109itogCBtRwTUFrfZmvta3cMAVgU7f7RuESuJNnA3YBDh6rU/viv+ig7D2PhNzJ5yuwJIaWEovEhLz7bvWWdP4rlfUOCI+uZCMETrL9UwacQ52fdbpsAWz8cePDe+MwihA7ItUG6zt4GlOu1hhzuhnlXphXhfVdZj2trVqINiJd5oARiBR3vQu4yV9lCfstCwjDF+VoMNJEOD1RSpoJI8wJaQyopqkrMdykKUlKsPGli8JtjnqHg8WLyP7xP3BuPoHC5zbukyWEvCEc5q6jh2LFyE6zlktehzMUO4P0pP75pt3jjXKcCNlkSlhMYybsF/acvxAJy3qhKQPuQTmGW14QKjqLcRusj0vlER4rHBEt+F5i5NBei0Xx7xp7/vBdWOal2FTI5kwiQuA0YOS/e5D4BU2q1ZQ3yOWsbxQwCNXFLqXZaMm8vQPhhWAxiWOw19O5haimx77IWezMPzYItyssXRLyZrntvLooS6hzc+oWs7rajWY4HmL5nL9eUvzb8vVi+uyHp0uK+GFZHx1mFO+OBxHVJpqb0HV3+ssh6J6Fv8FbR8MILzFngcGjwvR69VboGbfIjX3n2xPoO9PsNOA6aQT6pRzWj2PtK3kqBe1kkGCe3i3FYH7ZQBJeQ2h1A1Kk/xFXj9ICKxSMcOpa2euONek5kwwxiwi6zQX/yC.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0664d19b-ad8a-9cde-8495-d91f99c99472",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1440,
+      "completion_tokens": 439,
+      "total_tokens": 1879,
+      "cost": 0.005322,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005322,
+        "upstream_inference_prompt_cost": 0.002688,
+        "upstream_inference_completions_cost": 0.002634
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 331,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to expose the existing skip_checks stealth flag as a CLI option so commands can run despite system checks. The FAIL_TO_PASS test only checks that --skip-checks lets a command succeed when checks would fail, which matches that request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to expose the existing skip_checks stealth flag as a CLI option so commands can run despite system checks. The FAIL_TO_PASS test only checks that --skip-checks lets a command succeed when checks would fail, which matches that request.",
+  "prompt_tokens": 1440,
+  "completion_tokens": 439,
+  "total_tokens": 1879,
+  "cost_usd": 0.005514,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

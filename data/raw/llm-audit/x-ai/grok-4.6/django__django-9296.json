@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-9296",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 822
+  },
+  "response": {
+    "id": "gen-1789187446-pNaTsf73ZVOMzNPzA1z5",
+    "object": "chat.completion",
+    "created": 1789187446,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states the desired __iter__ behavior and even sketches the implementation of yielding pages over page_range. The FAIL_TO_PASS test only checks that iterating a Paginator yields successive Page contents, which matches that request.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: implement `__iter__` on Paginator to yield pages. The gold patch matches the issue exactly. The test checks iterating over paginator yields pages with the object lists.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: implement `__iter__` on Paginator to yield pages. The gold patch matches the issue exactly. The test checks iterating over paginator yields pages with the object lists.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "GaQvje78OwNoTM3J6CUBv5/Ukj2e2Hu9sbZ6OThROQgTU+crFOFVxoBDtZA7oWt23KDPhxL6+aplH3fAsPEDEKFhxAc2bSl0BBiQQBUtGt9w18uQJvbdW8FK5DVzEuyx3iF/ASkU3WvCrXBpnywstmMMo587ebhcYgdOsQIA/NN5TzSNEEd6nT12BwVVm2+aVjEUHlKi9wTe0y2ukKTooZQDCi4ifjqa8v17HeESZ5U37ZMuGd+/q8caYVikrQ4kOtUX2IERaBxgmxJvElWAla1JYZejUtTvK6b8vbSsxXU4XIrfoaPWv82ZJHkXEe6k1qRzq7nyyYJchVqKLc3QqxroF45kr01gLnCBjoVUlZn/xKKtGRDHeouNn+YZeJId/E6zyXqfVO0yV9Ctn3b4CAUksSbqkSuhDHShB1j+vNsxWCWiO4ZXWDJzUT3KdSfMuzZvzZtV2d1uaAYgO8lDX8hY7Hq4tpJKG4xLqppBnwbjVZ+KiystChP2KPkj3G3kzE9dVnCZLQod8zhc3Ey4Om9MNOIOWfTs8+XaPldJDCN2UvKDquDQke5EeULqvYZiSkNMFlC2VdzZbgfld8xNy4OGVRgj7qIE0E7W1oj8eycPInl3p3Rv4vTu0NwEq0HgAVvo9AqlObeZT3t1tQ4756f7Ub6CDkNUxJWHpj+1EkoDL34sLx5RRZTfIyCjOZqWPSK4zAU+RcEv4mOgLxgEiNUCabGxa4eGoPw/biM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d057637e-0e7f-9995-8342-187e5dd65387",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1134,
+      "completion_tokens": 225,
+      "total_tokens": 1359,
+      "cost": 0.003426,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003426,
+        "upstream_inference_prompt_cost": 0.002076,
+        "upstream_inference_completions_cost": 0.00135
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 124,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states the desired __iter__ behavior and even sketches the implementation of yielding pages over page_range. The FAIL_TO_PASS test only checks that iterating a Paginator yields successive Page contents, which matches that request.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states the desired __iter__ behavior and even sketches the implementation of yielding pages over page_range. The FAIL_TO_PASS test only checks that iterating a Paginator yields successive Page contents, which matches that request.",
+  "prompt_tokens": 1134,
+  "completion_tokens": 225,
+  "total_tokens": 1359,
+  "cost_usd": 0.003618,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11517",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2106
+  },
+  "response": {
+    "id": "gen-1789190876-sTBNofqz4ganeVdxX62v",
+    "object": "chat.completion",
+    "created": 1789190876,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes call_command failing for subparser dest/required actions and for options defined only on subparsers, which a competent engineer can fix by considering nested parser actions. The extra nested-required command and exact CommandError/TypeError strings are slightly beyond the write-up but still aligned with the reported failure modes.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e94bee82-0123-9035-8efa-f58b6341eab8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2552,
+      "completion_tokens": 560,
+      "total_tokens": 3112,
+      "cost": 0.008272,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008272,
+        "upstream_inference_prompt_cost": 0.004912,
+        "upstream_inference_completions_cost": 0.00336
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 439,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes call_command failing for subparser dest/required actions and for options defined only on subparsers, which a competent engineer can fix by considering nested parser actions. The extra nested-required command and exact CommandError/TypeError strings are slightly beyond the write-up but still aligned with the reported failure modes.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes call_command failing for subparser dest/required actions and for options defined only on subparsers, which a competent engineer can fix by considering nested parser actions. The extra nested-required command and exact CommandError/TypeError strings are slightly beyond the write-up but still aligned with the reported failure modes.",
+  "prompt_tokens": 2552,
+  "completion_tokens": 560,
+  "total_tokens": 3112,
+  "cost_usd": 0.008464,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10426",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2046
+  },
+  "response": {
+    "id": "gen-1789190751-lXFnMnY2CQIdQqsaiXAD",
+    "object": "chat.completion",
+    "created": 1789190751,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS is an unrelated squashmigrations test; patch also changes unmigrated/plan output.\", \"confidence\": 0.72, \"rationale\": \"The issue only asks to add app_label validation like other commands and does not specify SystemExit, messages, or treating unmigrated apps as success with '(no migrations)'. The tests (and listed FAIL_TO_PASS name) therefore demand unstated behavior and do not fairly match the ticket.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about adding app_label validation to showmigrations, similar to other commands from tickets #29469, #29518, #29506.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding app_label validation to showmigrations, similar to other commands from tickets #29469, #29518, #29506.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5e7f5b13-580f-9914-8d3e-bc474e3eb9e5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2459,
+      "completion_tokens": 537,
+      "total_tokens": 2996,
+      "cost": 0.007948,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007948,
+        "upstream_inference_prompt_cost": 0.004726,
+        "upstream_inference_completions_cost": 0.003222
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 398,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS is an unrelated squashmigrations test; patch also changes unmigrated/plan output.",
+    "confidence": 0.72,
+    "rationale": "The issue only asks to add app_label validation like other commands and does not specify SystemExit, messages, or treating unmigrated apps as success with '(no migrations)'. The tests (and listed FAIL_TO_PASS name) therefore demand unstated behavior and do not fairly match the ticket.",
+    "p_invalid": 0.9
+  },
+  "s": 2.25,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS is an unrelated squashmigrations test; patch also changes unmigrated/plan output.",
+  "confidence": 0.72,
+  "rationale": "The issue only asks to add app_label validation like other commands and does not specify SystemExit, messages, or treating unmigrated apps as success with '(no migrations)'. The tests (and listed FAIL_TO_PASS name) therefore demand unstated behavior and do not fairly match the ticket.",
+  "prompt_tokens": 2459,
+  "completion_tokens": 537,
+  "total_tokens": 2996,
+  "cost_usd": 0.00814,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16136",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1545
+  },
+  "response": {
+    "id": "gen-1789191736-vo2M195DDNrTD0qNg9S0",
+    "object": "chat.completion",
+    "created": 1789191736,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes that GET on an async-only View yields HttpResponseNotAllowed that cannot be awaited, so making http_method_not_allowed async-aware is the obvious fix. The new test also requires sync views to keep returning a non-coroutine, which follows existing View patterns but is not stated in the issue.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"test_mixed_views_raise_error not in provided patch but listed in FAIL_TO_PASS; likely pre-existing and unrelated to this fix\",\n  \"confidence\": 0 0,\n  \"rationale\": \"Issue description is precise and matches gold patch exactly. Test checks the exact behavior the fix implements.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"test_mixed_views_raise_error not in provided patch but listed in FAIL_TO_PASS; likely pre-existing and unrelated to this fix\",\n  \"confidence\": 0 0,\n  \"rationale\": \"Issue description is precise and matches gold patch exactly. Test checks the exact behavior the fix implements.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5117ce41-e21b-9f01-abbf-c04f087bb813",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1954,
+      "completion_tokens": 750,
+      "total_tokens": 2704,
+      "cost": 0.008024,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008024,
+        "upstream_inference_prompt_cost": 0.003524,
+        "upstream_inference_completions_cost": 0.0045
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 628,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes that GET on an async-only View yields HttpResponseNotAllowed that cannot be awaited, so making http_method_not_allowed async-aware is the obvious fix. The new test also requires sync views to keep returning a non-coroutine, which follows existing View patterns but is not stated in the issue.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes that GET on an async-only View yields HttpResponseNotAllowed that cannot be awaited, so making http_method_not_allowed async-aware is the obvious fix. The new test also requires sync views to keep returning a non-coroutine, which follows existing View patterns but is not stated in the issue.",
+  "prompt_tokens": 1954,
+  "completion_tokens": 750,
+  "total_tokens": 2704,
+  "cost_usd": 0.008408,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

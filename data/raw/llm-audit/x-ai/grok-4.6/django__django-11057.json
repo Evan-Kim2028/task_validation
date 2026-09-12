@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11057",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2040
+  },
+  "response": {
+    "id": "gen-1789190788-vEEnZq28rWqlEJIjVVBr",
+    "object": "chat.completion",
+    "created": 1789190788,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks that AuthenticationMiddleware subclasses satisfy admin.E408, but the FAIL_TO_PASS tests also require subclass handling for MessageMiddleware and ModelBackend. A solution that only changes the AuthenticationMiddleware check would be a reasonable reading of the issue and still fail those tests.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about admin check for AuthenticationMiddleware should allow subclasses. The user has a custom middleware wrapping AuthenticationMiddleware, and the check fails because it looks for the ex...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about admin check for AuthenticationMiddleware should allow subclasses. The user has a custom middleware wrapping AuthenticationMiddleware, and the check fails because it looks for the ex...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "IMbCTyl9FsWP3X6pEqhbidoXd5Q6mVEFIaaO45j3kloFkL5jla09n7BlKzlTKZ47owV2FxAbJ73jH60ztiybi2pO9Zj8BDnECJ/4Y96+8MNQiH16eCfwzzXYF3pKU9x6jL1+vNNAx0XoLzOE6zFIgBu/kyBnADTacoThwE9KdMOeOnu1PsJ2PTLXYHab2WlTRJU0zQF6P3n63HcuzPhLSs2yCs71ZI/Lpavjdz+tAOR3JrBSTaQUna+pvZqu4PejeFS+glrd3TqR/t/jT9ANQ0ffD0n3MUXUnRqRvG/rbjsvFE8+gHpE3hxNOMOCrlNdWH51sjJFjCd8W8oZRIoXrd/e33iJBPfdTC4Es6tQ2k5dm32S6zN/ZWoWoDjxij0j9R/5FirMCFs9if8maCBb0BSv99txUGK3Y4RozFvbzJ2KTfKuIGeOKyh8r5BiYbbtZZUb1wNvQKRhd1nx4VoHpUEfZkrSbuTRfmWaGNM+aHEGEALej3jS/14mKJWZopPlv5Q5eTW7rbJPvjfsYEpuBvVW7iZ/mY6wB1IY0mXItROcyP5b5tqaFuoLw47DGaY0gglWvlkGsC2PpFpVhOb5PBqU8CKaXz1QBWLueSC4zSFnYFrxIxIRsKoBv8H1XNBZ8aIJ7j7aazWaBpUWQ9K03a47eBvW3dpMVfyTy5yNBXNADb6JucmKNKn0yCatk0BwpuSftstEnsfe/0veUIqzJmv9ooUZJrDlN1InYNYnLsbeanev7BfuXAF9xuQPVGmbbfYY0BFo+a2PtPzs/xBn39+R4lNy8BcYGBiXLEtFksNmHyJf2dKXPs+XGaKUD09nzvE+Co9+b+cPufiFl2T9lrppnmwqQ2TZiEgSUMgLnm5f+X78zru7lktf8UuWCOyohRBuHxz4VEOUmGu3DGKsiutZV4f5Y7vg83FcGr++cyIRfAdx8BUV0JtSLhCkCmOSIQ/Fp2H10wyI4iwj/CZFMWttqo13pZlzV+cs1eEzSPT6xKLD7Ze0u3lzuxUyWCJz2IJPKmt7yav3jndUXvVII/hm4cYO25FeEaaenrwnsKI8POzAOEi9nFR1+JcGjq1JIFc60AC+I2nMLGm78sMnjt6tXm3Q+/j/SdINlCCQ1khub8wqlZgccMqR+W28A17XlwwHDItxe6kJ5v9lyPmytnDMAUWHqOUzVna+EYKLiMKtA6V2KnEvH5w+fsA+kCjPA1I93Xc+/9J8+MPtktxtG2nhSBTflKSpZCEnVhpJ4bWPaLkor+iQ5Hsr/Q5JSdbZTSy0EosuRGgoh6aPK/2cWcnX2v1gIk2unb06dTdyM4E3110YZvQytV4IqTnVVXQgeu9lqk+C8mPViWtNmC3ccBxynLAS6KWbZ9MPu2miHzJWiiCkLWj9u/Ca98alol71ZNsKujTsNlUUGB21Z9QMgMETSYbx8xljZcaRdVnqT7wtKejrfYz0PLHrZJkLpsCPlI9703Azx1l5P79ohwz5DYeykQbxQ3AwBmB6Meds/1UXpzXgNiUMlZ4OO3pz7Rcjb2uGlEVOA7ewB2QTcZ1S/mGIpTpNXktyxrMsj9ATZJEj/Y+j7rNoA6rboGq8nd1Xn3ijsbfJ2cxi2d9jKmq7bi0wCOHmqXFN7Q8weCydLtjiyJ4C8YTOu8zoJ1TyJjazbNJj6A6/ncDnqp0qFVp4eMziYSBYRcbQcO7oHMdXH7qY99ETL+0NKMpkm3JvKA6CW3Cz2Nhy9M6wnPczb3KUWDXFKYcSc/NV93gM+HxzBfxYLm1uARX80SP/YutfboCq4YbneGQ/Cvxj4keN2rYzUFSc7FzyBn4Vj1aDSzWRam5XrrKYpEov4Wve5Fm/8keX+SgyYDJOyXmUvlooLO3RrpaHVFk4pSQqBpt5zGeSbmHhFVl6G6Gkclv8Rc5NGikO4lA3zsyb1FFkxKnEtRPYz69h9qcHmnKzu9a3K/9mQb8vjWKF7Dq4rgwMAZOBT4uHYFVCuSLgdEIZt1GeJIDZ7ylLLGEyOZaw0+hfNYxAXR8H6jGRrFLVRZuGQi3J2t3svhC8a7AsGX7t0r4Fo1z+FOwOzo8wgVJrYWnQetx5p/ZzOfuRrWc6e0doyoi/sB+paaHb5nCOdA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_584bcadc-832c-967d-8b51-adb9d3d46f67",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2290,
+      "completion_tokens": 433,
+      "total_tokens": 2723,
+      "cost": 0.007178,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007178,
+        "upstream_inference_prompt_cost": 0.00458,
+        "upstream_inference_completions_cost": 0.002598
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 322,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks that AuthenticationMiddleware subclasses satisfy admin.E408, but the FAIL_TO_PASS tests also require subclass handling for MessageMiddleware and ModelBackend. A solution that only changes the AuthenticationMiddleware check would be a reasonable reading of the issue and still fail those tests.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks that AuthenticationMiddleware subclasses satisfy admin.E408, but the FAIL_TO_PASS tests also require subclass handling for MessageMiddleware and ModelBackend. A solution that only changes the AuthenticationMiddleware check would be a reasonable reading of the issue and still fail those tests.",
+  "prompt_tokens": 2290,
+  "completion_tokens": 433,
+  "total_tokens": 2723,
+  "cost_usd": 0.007178,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

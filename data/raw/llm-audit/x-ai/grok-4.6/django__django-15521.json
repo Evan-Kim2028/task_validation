@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15521",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2598
+  },
+  "response": {
+    "id": "gen-1789191617-5KtcxI0VL6yrIWxfh9Bc",
+    "object": "chat.completion",
+    "created": 1789191617,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that hyphenated private subtags like nl_NL-x-informal not be rejected as invalid locales, without defining a full locale grammar or suggestion messages. The FAIL_TO_PASS tests require many extra valid/invalid cases and exact did-you-mean strings that a reasonable fix of the reported hyphen check would not produce.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about makemessages skipping nl-nl-x-informal / nl_NL-x-informal folders. The check for `-` in the locale should only be for the first section.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about makemessages skipping nl-nl-x-informal / nl_NL-x-informal folders. The check for `-` in the locale should only be for the first section.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7c5e2435-ae74-90f4-aa04-c5237607c590",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3036,
+      "completion_tokens": 541,
+      "total_tokens": 3577,
+      "cost": 0.008934,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008934,
+        "upstream_inference_prompt_cost": 0.005688,
+        "upstream_inference_completions_cost": 0.003246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 415,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that hyphenated private subtags like nl_NL-x-informal not be rejected as invalid locales, without defining a full locale grammar or suggestion messages. The FAIL_TO_PASS tests require many extra valid/invalid cases and exact did-you-mean strings that a reasonable fix of the reported hyphen check would not produce.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that hyphenated private subtags like nl_NL-x-informal not be rejected as invalid locales, without defining a full locale grammar or suggestion messages. The FAIL_TO_PASS tests require many extra valid/invalid cases and exact did-you-mean strings that a reasonable fix of the reported hyphen check would not produce.",
+  "prompt_tokens": 3036,
+  "completion_tokens": 541,
+  "total_tokens": 3577,
+  "cost_usd": 0.009318,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

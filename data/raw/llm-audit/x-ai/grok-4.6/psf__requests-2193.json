@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2193",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1051
+  },
+  "response": {
+    "id": "gen-1789187558-84gbWHqRLkqUxmrQpB6i",
+    "object": "chat.completion",
+    "created": 1789187558,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly reports that urllib3 ProtocolError on a refused connection is no longer wrapped, which a requests contributor would map to ConnectionError. The added test also requires wrapping DNS failures on a made-up host, which is slightly beyond the reported localhost:1 case but still the same wrapping contract.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about urllib3.exceptions.ProtocolError not being wrapped as ConnectionError when connecting to localhost:1.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue clearly specifies wrapping urllib3.exceptions.ProtocolError as ConnectionError in adapters.py.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about urllib3.exceptions.ProtocolError not being wrapped as ConnectionError when connecting to localhost:1.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue clearly specifies wrapping urllib3.exceptions.ProtocolError as ConnectionError in adapters.py.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_017c79bc-8390-948b-ad54-bff6f14eaa25",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1363,
+      "completion_tokens": 608,
+      "total_tokens": 1971,
+      "cost": 0.006374,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006374,
+        "upstream_inference_prompt_cost": 0.002726,
+        "upstream_inference_completions_cost": 0.003648
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 493,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly reports that urllib3 ProtocolError on a refused connection is no longer wrapped, which a requests contributor would map to ConnectionError. The added test also requires wrapping DNS failures on a made-up host, which is slightly beyond the reported localhost:1 case but still the same wrapping contract.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly reports that urllib3 ProtocolError on a refused connection is no longer wrapped, which a requests contributor would map to ConnectionError. The added test also requires wrapping DNS failures on a made-up host, which is slightly beyond the reported localhost:1 case but still the same wrapping contract.",
+  "prompt_tokens": 1363,
+  "completion_tokens": 608,
+  "total_tokens": 1971,
+  "cost_usd": 0.0063739999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

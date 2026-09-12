@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25126",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1151
+  },
+  "response": {
+    "id": "gen-1789192030-K5h0pQDAGZekT3Jql5lT",
+    "object": "chat.completion",
+    "created": 1789192030,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that a line plotted after a log-scale histogram vanishes when the y-scale is switched to linear, and that it should remain visible as in 3.5.3. The FAIL_TO_PASS test reproduces that scale-swap scenario and only checks that the resulting figure matches a linear-scale reference.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nvwCeP0/C5WhlD8DX/wZQgEIBprFKm2mr73+p0NgYThs1FqLP42ajnyU1Wo+CTMHUqupkqPMf6eptnVcZPC4oX7sZGKdaiCpiDMT9Pj59eJ+IJkMEvjcHZuZ1ULvW+XPk33kRcWy/AbwGwpWAJJBOoRYuEtNaIuO1TkMDQnBR2+zioNdlaoJrVq7wBSvj9ygLLst9O/mqiUGVpThrv+cYMprCF9/Y3vqx6yuFcAs02138ejO/htUd0Ub8CMx/URC+xEda+5ScWAdXb2TdB7OtG4ayJkBmMyYN4bpg533c1TMSj1+WkH9y6uGnFIw9rD/itzzk7pclpcfTf6dj2M7jnQYog7uEZ1FPi+CNneaqeCo0OQNzua2lba8LBYm4M735vT3s5yKsDp2lE+SYETwvevMDP9VvsIBxqssjA1/NKcznTadDe/skSq+aXx8fyUchigL1B5Tv92XENJmzVZK/W3nmFa6MnR5pgAAxjyURYUsQbEdMZDfE1Psu92KF5RnWFHo9NeG9dR0NHmH8tKM+9q6pvJgym040DK7UO9KeEK9tiHglUVGh3xKvEieNPa+E0awNS69by78Kw1rXR4ZPDRlcmjQaurZSiVPSDOzhz++ffEUpAFcsgQfen7cJ/kiQoo1xtjtm1kObqzMtl/NYI3J5WMNtdwPU8RmvFZjKIqaZIIeA5nfNqlNNHLyEEVJGis1JvJBevOxoMitP4VI0zOD7wiWpGQEWqbDVpKB8FQKXleHBE9yVNG1o1CHmjsfsmu+ofGyBAoFU5S0F0W4/mcuZUFSe7ux999w1n9p3C+LMYN9sn0KMQG9ZW2CFmDOBw3YXNYqVbBT5ZSlkJo9+gYX7Qtfu7qjlY1ZCvk+EKCxW1e/PBFYjrF2jYkNnbmr3TWXnKab9WW6bJ9+vFMlP35S47S2rUX0FUH7AcrCsLUBaCZMQvBG4YUNc4cyvicEcW8SBZ8ffQ56luWbSD0WnJdaUV3BOtMFZ3KFkC1S+4unyYYJtFw6rtaKLIhCorgFhO7fY2y2030CEToh0lWK1QbBzt57bPwPKufAOFcy+fXrV+f6Nm2LNFu7YzJ5FL+Bas6SvSR+i1S7MaoFxe6NuNR5MO/gpfxCChNxJsy0zrubiZLr7bs13mcDnTzKGOGY7pSGdO4XtVNLYXA7THcRX15fGPxqRghSHSFQ1sbSLl0+0mnC2vHHoEqpHFDKdrKHBAbCKeLOwcgGCdSiiKtCoiQjcmCg9YzJFhEyW/XFFGQWBPYJQ0OJLWZDA0CbNA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9e6e5492-7805-991d-86da-853d7d9f7736",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1550,
+      "completion_tokens": 336,
+      "total_tokens": 1886,
+      "cost": 0.004924,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004924,
+        "upstream_inference_prompt_cost": 0.002908,
+        "upstream_inference_completions_cost": 0.002016
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 214,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that a line plotted after a log-scale histogram vanishes when the y-scale is switched to linear, and that it should remain visible as in 3.5.3. The FAIL_TO_PASS test reproduces that scale-swap scenario and only checks that the resulting figure matches a linear-scale reference.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that a line plotted after a log-scale histogram vanishes when the y-scale is switched to linear, and that it should remain visible as in 3.5.3. The FAIL_TO_PASS test reproduces that scale-swap scenario and only checks that the resulting figure matches a linear-scale reference.",
+  "prompt_tokens": 1550,
+  "completion_tokens": 336,
+  "total_tokens": 1886,
+  "cost_usd": 0.005116,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13028",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1854
+  },
+  "response": {
+    "id": "gen-1789191129-Gg2jwewgZJNISBhj050Z",
+    "object": "chat.completion",
+    "created": 1789191129,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes NotSupportedError when filtering with a model instance that has a field named filterable, so a competent engineer would know to stop treating that attribute as the expression filterable flag. The FAIL_TO_PASS tests only assert that such a filter succeeds and returns the expected rows, which matches the reported bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about Queryset raising NotSupportedError when RHS has filterable=False attribute. The problem is that a model field named `filterable` causes issues because Django checks `getattr(express...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Queryset raising NotSupportedError when RHS has filterable=False attribute. The problem is that a model field named `filterable` causes issues because Django checks `getattr(express...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2d7dd7eb-e771-9393-91b2-e8f193abf9c2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2450,
+      "completion_tokens": 513,
+      "total_tokens": 2963,
+      "cost": 0.007594,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007594,
+        "upstream_inference_prompt_cost": 0.004516,
+        "upstream_inference_completions_cost": 0.003078
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 393,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes NotSupportedError when filtering with a model instance that has a field named filterable, so a competent engineer would know to stop treating that attribute as the expression filterable flag. The FAIL_TO_PASS tests only assert that such a filter succeeds and returns the expected rows, which matches the reported bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes NotSupportedError when filtering with a model instance that has a field named filterable, so a competent engineer would know to stop treating that attribute as the expression filterable flag. The FAIL_TO_PASS tests only assert that such a filter succeeds and returns the expected rows, which matches the reported bug.",
+  "prompt_tokens": 2450,
+  "completion_tokens": 513,
+  "total_tokens": 2963,
+  "cost_usd": 0.007977999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

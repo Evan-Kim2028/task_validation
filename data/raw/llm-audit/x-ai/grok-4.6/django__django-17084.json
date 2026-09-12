@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-17084",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1303
+  },
+  "response": {
+    "id": "gen-1789191856-3ooBIS46f3HjwlzN5hir",
+    "object": "chat.completion",
+    "created": 1789191856,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly requires aggregates over window annotations to work again after 4.2, which a competent engineer would implement by wrapping like existing subquery handling. The FAIL_TO_PASS test also asserts a specific SELECT count of 2, which is slightly narrower than the reported functional failure.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about not being able to use aggregate over window functions since Django 4.2. The error is that aggregate function calls cannot contain window function calls.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about not being able to use aggregate over window functions since Django 4.2. The error is that aggregate function calls cannot contain window function calls.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "tc/b+ElMqianvy7WRBO5uC9fYLV7bMG11ywktBRLN832wnIpUHzgIyA9L6VInShx6icGCT3y0eyeihRN15syV5EpdV1IeoVgiXQOko08dN4eQBilR+8hlU/8I3BVx6YYDE9bqGQdPOCXJSGrR9CPb/uYvFtHl5/AuXV7M2KeXSOoBa8InDe8vlPC8ik153mjQjCd2TAUBtliJe772eoS4Uqdm/aLnc75FgWwv4Mn8CmfTwi7Acl802koWpfOMuAIWAJal0w07pDiwbfmNQDou/oAFlkDR5YnsaKaPVCw3SbQB/7k3GTqDfN/CT11s3wWZLp6z8yI9imOr8gS/qgRejJNeH6ehnu2oqR7tZpxrkQcxmU2dD7/lFxLKknoqORzWHcJwhMMehaFzFEp/71KwViu8vj9IX/b+Aj/xHQDFx+J5JFAjgB5R9jqqoHzl1saG3zJqfXczigzMCfR4iyGlj1B6bHnOgVfFRqtT+A5Cq6a/8rk71LGRrd5jOZl3ucX8bzEjOhO1HUX5xUYcVoXs9hLMtRH9+nRKallUCIWoRW/BN+JxFUUgKt6w7kGZ9im9sMhDoQr6Q64Jh6cEAvLwOnOCs5qPVVzFSbevg8IGCb1ToKTnprielbqK8N2GWbWdCOrEGcHhAHK93guWDjkkOmq6AY8a4wi1nY1ZN+8915z+5mByEW8TTRYFwvSYjqq5dMNr8iJrDxXrKHyAWvJSZ9kbjfP3VC6U6iS46TJIGGJ3AbKaxwZvL1h2tEYwsWWSijQdZ+NBecVjHH02xGqiP36vVg8UgJx6xX6OTU0+B+zpqbbP4RWRKF7Eob+Y4f3WEl3YC6mVRNe6gv553zT/WT/Hye7BIzAsSAR40WQw7dIavO/S8CEieKPNffvwcR6ycjINFiCNgLLZsMYFScqXXo5rzgdwpOjwmeYewPaH7MaJQnGuwaBPAxUPYO6hCaUu1Ss+QAQhbo3yr4dGsnfBrfeOP2RgIW61GjNYSkbLMm/RvP27QNDwxvZBwqvXAZ0aUY9gxhD0IACJdif7UQQNF+gzZCdts70iOYdh0rSFRsxGUsvFsvUX6tyQgALh87kihS7b4+N1Gx3jH02LnhM1E8oYpXByJM/pW1s81K+EjaXvaHWbpjAlFr3495P/13557HnnJR66xNf8Nyv8lHWBBQSIf1V4NLcY2EMi3ARG1vwjdfk9jg6MAh94bjaL6gvGHt55BgEqwgmK7jXb6xJxSb7fJ6HLsPPydNzKxMcRAfkywQ5MTMtZ/QyKiRYtt+6r7fjJnghD+7BgKEaUSHSaRiMT1OXNe0Iughcg2VUsY+iautxxUP34hdOmyt/g6IrXNAP0mkA07iarATEEzF2fiAEjoZO38U6c3cftsVeiFidZEJIWMImNFzntOzBiHQKrUvIF7+skroA2GCa/Tls2UQ+/I+BgET52fr95b9VFruzdvITYkFRgv+10kvjozAJRmcU6TOZRSQhMBc6ZWnQBOyj2yGMkcSQrZPnmermvTn+08qdD43BgIr4CP3m8gH9aNYcpeePRzMaVfbUeAtOsIytbipBW7/KC1jBmPq0lHYBiEn0rTyUnG5VuXn3k4o+jQAwbdcJbN9MZXsJuacuImzz/HM27dmd52k+/h9JqtNTW01AQQxSqX/hoyMJvSvquQsVsEp2ZM+wqzSNpx1By86P5pcpZSLU9TrY5jQ4shuHJw9T8IYeCHdnhIcw7Y31cyYNRKZcanQ2ktEG80glMgi5FAPo9lUXrGoVyoewXB/tAR646gufoqGWVpC1jGOS64EhbkaLpsX4EvNkhmduYxIL3WaNU4HpXmEJSpokSYaOWbAVp6tgZIgZb5AV/JWjafwqpUZUD5BgmlpmUM1AheTrKIbt2l/PbNoTuzumCLVAmzRb6de1W15rcdVs7Ewl+KNYLJ2+fQ8PH6U53pL59sy5SyvJ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c0ffa570-4f9c-9ce7-b197-aa239cc0a0ef",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1619,
+      "completion_tokens": 410,
+      "total_tokens": 2029,
+      "cost": 0.005698,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005698,
+        "upstream_inference_prompt_cost": 0.003238,
+        "upstream_inference_completions_cost": 0.00246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 298,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly requires aggregates over window annotations to work again after 4.2, which a competent engineer would implement by wrapping like existing subquery handling. The FAIL_TO_PASS test also asserts a specific SELECT count of 2, which is slightly narrower than the reported functional failure.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly requires aggregates over window annotations to work again after 4.2, which a competent engineer would implement by wrapping like existing subquery handling. The FAIL_TO_PASS test also asserts a specific SELECT count of 2, which is slightly narrower than the reported functional failure.",
+  "prompt_tokens": 1619,
+  "completion_tokens": 410,
+  "total_tokens": 2029,
+  "cost_usd": 0.005698,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11396",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1578
+  },
+  "response": {
+    "id": "gen-1789190856-cSdVoUUAhwURPmTPByZ9",
+    "object": "chat.completion",
+    "created": 1789190856,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes a PostgreSQL ORDER BY constant failure for annotated Value expressions, which a competent engineer could fix by casting constants. The FAIL_TO_PASS tests also demand an exact FieldError message when output_field is missing and extra order_by(Value(...)) cases that the issue never states.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The FAIL_TO_PASS tests require exact FieldError message and specific ordering behaviors that aren't clearly stated in the issue description.\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The FAIL_TO_PASS tests require exact FieldError message and specific ordering behaviors that aren't clearly stated in the issue description.\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d4a0cbc7-e1aa-9e8e-862f-e13fee2f54c0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1898,
+      "completion_tokens": 707,
+      "total_tokens": 2605,
+      "cost": 0.007654,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007654,
+        "upstream_inference_prompt_cost": 0.003412,
+        "upstream_inference_completions_cost": 0.004242
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 590,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes a PostgreSQL ORDER BY constant failure for annotated Value expressions, which a competent engineer could fix by casting constants. The FAIL_TO_PASS tests also demand an exact FieldError message when output_field is missing and extra order_by(Value(...)) cases that the issue never states.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes a PostgreSQL ORDER BY constant failure for annotated Value expressions, which a competent engineer could fix by casting constants. The FAIL_TO_PASS tests also demand an exact FieldError message when output_field is missing and extra order_by(Value(...)) cases that the issue never states.",
+  "prompt_tokens": 1898,
+  "completion_tokens": 707,
+  "total_tokens": 2605,
+  "cost_usd": 0.008038,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

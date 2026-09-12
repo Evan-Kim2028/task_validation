@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14441",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 743
+  },
+  "response": {
+    "id": "gen-1789191428-QciZwCNG4aGohHfcGfgH",
+    "object": "chat.completion",
+    "created": 1789191428,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to stop a crash on a missing path and does not define the return value or exception policy. The FAIL_TO_PASS test requires (None, None), which is unstated and would reject other reasonable no-crash implementations.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is: Prevent get_image_dimensions() crash on nonexistent images. When using get_image_dimensions(), if a non existing file/path is passed, the function crashes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: Prevent get_image_dimensions() crash on nonexistent images. When using get_image_dimensions(), if a non existing file/path is passed, the function crashes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "m5S7paJl4voBRbYQwTIRbdN2aO0g92O+lrMyIHJl2TqhwKXbtiDmKJ90SdvOknZk3pEV/BXBk7OqmftbMkCBXoX5GgOx9Q+sjWYdvQ4d6yh7AK9/459Ex1gXEYQEz8iTQgtGI0SIzYNA+YUBfclc6KNUn5VkB1pLGewZK/Lm/mhJbwWfl4vNraghzH+QPjd/dSJp/GA0E5p8NoKSFrNf86T0fW4RijpSjZzqNRR0wniJ0fXF83LNeYRF6iO/x0L7PxrMLKvbLvtX2EHO0elohf1C4AK8dfj2KiO2QZoTFyY1pvjT1UPx4nlxvlX1t+XJm3YryFusZ8eE1b+Lpyett+qC2uzrD4WK43TmvWH6joN01LJLAz8KQtSO+EJmYsutRWMIUF5ICvb0ZDmOOyf+8tRFpk50oKeNL+v6knahS14Orf8JnTzQs1k/fgROK5yHED72xNzu8tyohK2mxxIGJzFjiXoZt+/CXdiU/zwUOmL7rO0Eim+Bgrz3PsioOzQ+84xYGJmGQA56d9037oJhkYHencIHiFBN0LdAIk4LDoli4DfSdc/ki3BdeDCLccYHGM8b+nyAjiXXrijUUI7C7NlObxsGa4wrVFgY0neJFdus7ZTvqPszzoeWDC7+V/Lh82OA/iIP9l+TZ5YX/MXMNeDpLbm4CMAn6dylwDfOYx8BZECc8BQ15AcjFGbZczlU4D9X5fFiq9FIPsVYMGdzh0oYtpI0k3Dvsr7+xgJyQi7QYY7GPowtVxCb2UAA+MRmbi6tUtCWsfw1M6MOiPUv8nipNfjdDMIAum5WAMsgKTPAMT5yfH2aK+QnSt4camYi5AQSPXsZSLkAXtrmbriXLcmFB3augnvW1YuXqHWaIp5RXD77pjQmdonxYjzfuSe5VWPXqo/dMrhbbZbVZz/677wNNO999n0S6cTrJ+eKvaIKm5e9feAxuKUcSEA+hxdBglO3HolabTNzrEzxO63SpMvuoYuj7Z5n1k+zuN9AKtJ24p/rTA/dskuZLnd12NpWADaWfqnXut8NWWqiV6C5r1VP4E6mXKc5LlVX5pxFwpuE4v0FxYSpoSHTO8MAYy1PGBWyPQ0nKlhYPLeMETi1uBlTy8xPbPdflhYQ0WvkMMpgFTk6WIRAyL4E1ajWJag+goyB4pLcpRhiuX7bulpwT2MtIO6QezLBTnLEccwqYMYU+y1cdZC1qw31w+567nNSX+QS4sO7esSe6VVTyZg/OA03Fxw4lHXlphH4+5g9+95Valx5PPhYpXtCcEhsy7McHbc2qoCb5HQbnYw7q8F2fh2bB5V+NrXcpAC7jz51lvESkPL/LTe2i4aZxZHJsoYKkFnkp6a9uJSpO2QLwx7IWCGbxZpnh5VZMGAFZuIWwIUTVjXrE0ylQgCVqG0MBG7vRm+f8hYTzDUp+w6tAzjcpqJahQTVfT/m1lR4hsSFJ6iJQwYljAid4/sqGGjkPVZonTxImfKsED0xXNzW20/sHIj2V+yIvAS8OwNfRklv7mGkcY74I8mZTQU1DLWNCUksuC30/bkh3ZEHOBItEHjmCKu9UWtGpLBD7Yl2DAfS4Fx2XsWrGyKK3pXIf5+SnlLPUMSQiQaB3OOLsLLjW5G1xCmxWF0HtbpxYpvLow19v1HKbylz2FHpCXKjQKW7EzIhYYyRoWw/psu8fBSk4TbA1A14IM6TBzNCCRYz4pho3krYp2s5Q+X+3AHER+v/E3/6Va1AKMSm96TTwIZMZ1N/nstKBZSMnJypjhRMQ7nyhVcg6KctCf5TWM9nb9WjhjTky4GgoFhbkO4aiPdlIh1od4Dh.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4918092f-529d-9511-9b8f-71656d4b5a4b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1056,
+      "completion_tokens": 410,
+      "total_tokens": 1466,
+      "cost": 0.004188,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004188,
+        "upstream_inference_prompt_cost": 0.001728,
+        "upstream_inference_completions_cost": 0.00246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 305,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to stop a crash on a missing path and does not define the return value or exception policy. The FAIL_TO_PASS test requires (None, None), which is unstated and would reject other reasonable no-crash implementations.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to stop a crash on a missing path and does not define the return value or exception policy. The FAIL_TO_PASS test requires (None, None), which is unstated and would reject other reasonable no-crash implementations.",
+  "prompt_tokens": 1056,
+  "completion_tokens": 410,
+  "total_tokens": 1466,
+  "cost_usd": 0.004572,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15413",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2037
+  },
+  "response": {
+    "id": "gen-1789191597-ghwIFi9iRirx1XCHMqIO",
+    "object": "chat.completion",
+    "created": 1789191597,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue asks to fix inverted middleware adaptation logs and even sketches a different message scheme, while the FAIL_TO_PASS tests require a specific unstated wording (\\\"Synchronous/Asynchronous handler adapted for middleware ...\\\"). An engineer following the ticket or the cited docs would reasonably implement another log format and fail those tests.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about log messages for middleware adaptation. The docs say look for \"Synchronous middleware … adapted\" but the tests and implementation have it backwards.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about log messages for middleware adaptation. The docs say look for \"Synchronous middleware … adapted\" but the tests and implementation have it backwards.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nxaT9VWhfFKATZ0Dke1CjW65eeotlCka1mp9fjODBCU4hblFvRBKH3iErn2TzA8g/+Lad6QNBbRhq/YFYKTWenFPAGy/WirbYiy5n644MOssAkWuiSbWvg6Ue4AgutABztvDlCnFmkB79RybnLaxgiU4/ffu64JOyZ8ITgkjEXMK/og+OnQRlFZofa15lwP6xsm11hswNapdduhC01FnWMWEFl2nN/hHCkPc5BjgX81Au3o/OHXE+AWtvkek+jzCiLc5aTQJ90iOd53NsxcKXT+mMrTVZXDkbo1HVFrP2CQziQ9DndKJc0GWnsofVRGzWBvaYq4wAJJUmph8dU6KZz3v7QQrBgkDWguLgV32MaV8D+FKG6HRup9bAeFSHGZ7ntDVulI2AOUiELWO2RsLH3UqN5Gw7DFE8fgtvHrdrHtQ8vZSKTN+nb4PAEX9EPkMY5PFRxwbbV5Pj1v/Tdy+Hm9VuYo6IiPiRaaFXU0Whp8wxrRzEtqOLYMiK37cUnVxh5UQlNvt2ZaODrdB8/bS8JX7snWByFoQLFpzvzq+pFcdcSJWQqTFuD+bnps/u10xS3VX8+bSGvsemTgYBYyJQdxTY2UX/it8vXaKvv5SSMtyfgZ1kYyghlaqtQvDQupwRiaCDbzQxao2LnLIPpKgXqpbDSy0UDKJnxGKRczptjnBdGBW6Cy743ArPGwUg26mPoghBwN6JgU7WSA8rLYDeOqHpX+EcL7wOHRFNHZMtVz/5lYWmGu1Dv8VCmLbDJxuW841PNAhfGVw5+lqqUp93fT7fEbBfE1GvkkBnGEUl9XZl8A+MAdwA/dY+TiAEgLVt8eUnfuRp8eVip/A8Gf7OqaUMij4seFQqKoVWMvyC4rQQM98e+Z5b+7jCaJJPRtD2cPzgGyT9qxpbjZMhxzwO4bDALTYI9hyM6BYZHqPp6DNB+X79px9yuFX5W/EPK5BIznAeZE6rz1hnG1cx69wvezO4sXKI7voh/kDqZojoVhYDrhZ6L32pUklRJme47Yj3nbIN5y7SLUwwC6cfsuoUyXPOVd0eOhTNa6ZQjjOUZYOhW5PzF1+Ye7b03zjPPrDcETe3EOGcDkvXLfByT2n1uRFaZ2sWYy/2r7p6gHftmNr4WYfv7+/TxxWfPbtvOR7P0ELCtQz9dvR/kxb6IfHdHw6OFMEI/HAE2iOq8o2uYyfwB3vF5yEHi6HY39ewvKVRB99c88drlSWUPq4XxD8Og5iDr4g75n7xUmFxnbO83XUXp2lUD1dlWNF0GgMGklpo2yQ9g5PIY5uHx3plO2zvWgsiBkq+H/hIe5dOQ/Kxlxcb3XRbR4nGHrjJzW1TYnHQomtZ/cmU2c5GHmCqIC9IA93zHBVG3wEBwkh2nr30nZ47p8OmeXSbIceyj9905yDWUlFFmvHGEdLmgE5Pw0CQ24GACPelpBy+Yhec5SFAyvmi35cuVibkP644B5bNhI+qfOhmrr7Ejzq6hUL69lA+Bj8IYmE3rUpmSc4qSUhC8U6wvcrC2ehG/HRn3BJcGR4+IgcHUU+alMpCPsCB613CFQIxVb76UUtL36pRzDJLe3wyHetklinLzHXecXjdJGdLJ7ynWuPAkA5JdFYzVQneIUSg8fHiLUQAw7g2A7zWiYA33K+mI+Qlrfup5TiDsoMR6fTP0F35B2PhA4XSWiFK/KhREkNkPdNweMTLEUrv1SAntWO2bAkYkyO0VbA227XSwkaIXI1+JMU7jF/gF/N09nx0JPGIk0XGajC+IYVN0BugcX1SEvLGy++HGWkz53QaVAbCN6eywx4IhDu/x6+6O3S+oP20la1n9j8O+KPipSwuLdheUjUtTGKs1mGXapdbAKgp7DtCD0i8GN4u6trLfod72IVr1IHKdzi7eor9nD+YVZ++sdN2E61l3VUu7WE7KBO3407dUmaL6d192UePhUW6MVvBoTqITIET1wZABpY0TCgX7545pSaUe4/NSzDxrIaaXwhFaChmDDVi1jOD5CTwp9kNiAefv04hEcg3W43qeKLQWnOSXMjoB/ZFz1luZ5MmCvkzVd8L+PU2Q0MMKUk6wfqYhirbPcQ73U9txITAmmUaaAUEcRk2nzNEMmI5jxf702TuwCJExlG2cvxUhKChoKaaU1j/BKCDMNgLocmf5RMdww4nSmcsch1F6d66pRXWNx52Lq2/+nt7o2mbxXbgiyrYIcOXhhWtAde+4YcNovrHHRXL8rc4JzrvAAYctXd26X3Z+NduCuLnrn6OziPbZTAT9VN98lms6bVm0GNWF9G4ZppyX8ZQkjtewDn5w/ZeBYzK3yRU+t6Fz15Grr61K28MQURx7XzP557Oh4pWqtwV1WysvY3vRDIoRF3qvEO9SfY3XoXPcFLJOsnOOFa8FEfRph2G0uvqOUfygdlF7RTqvkeeSaCYjikAgQIbAL24a4KXpMrdqG7RbfIMOADFj6DM+dhtXoL5KkrOaNAYD0aXNC6l9GVfkKDanUwbiB5YCh0pZBfC2LlooHuLvUpCIZOTjdhh0tCaOlCIPTYfl/o3gj0n1IdiNskfio.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_97bfb20f-8482-96e6-afde-2adce66603ca",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2308,
+      "completion_tokens": 521,
+      "total_tokens": 2829,
+      "cost": 0.007742,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007742,
+        "upstream_inference_prompt_cost": 0.004616,
+        "upstream_inference_completions_cost": 0.003126
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 401,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue asks to fix inverted middleware adaptation logs and even sketches a different message scheme, while the FAIL_TO_PASS tests require a specific unstated wording (\"Synchronous/Asynchronous handler adapted for middleware ...\"). An engineer following the ticket or the cited docs would reasonably implement another log format and fail those tests.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue asks to fix inverted middleware adaptation logs and even sketches a different message scheme, while the FAIL_TO_PASS tests require a specific unstated wording (\"Synchronous/Asynchronous handler adapted for middleware ...\"). An engineer following the ticket or the cited docs would reasonably implement another log format and fail those tests.",
+  "prompt_tokens": 2308,
+  "completion_tokens": 521,
+  "total_tokens": 2829,
+  "cost_usd": 0.007741999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

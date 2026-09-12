@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8007",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "3e49d5a3-c7a2-91b7-9b6b-67bf6a37bd03",
+    "object": "chat.completion",
+    "created": 1789194204,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks for some option to keep user type aliases unexpanded and does not define a config name, a dict mapping, or default unfolding behavior. The FAIL_TO_PASS test requires autodoc_type_aliases as a name-to-string map and exact signature rendering for overloads, which a valid boolean or differently named option would fail.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4407,
+      "completion_tokens": 127,
+      "total_tokens": 4876,
+      "prompt_tokens_details": {
+        "text_tokens": 4407,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 342,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 36271200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks for some option to keep user type aliases unexpanded and does not define a config name, a dict mapping, or default unfolding behavior. The FAIL_TO_PASS test requires autodoc_type_aliases as a name-to-string map and exact signature rendering for overloads, which a valid boolean or differently named option would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks for some option to keep user type aliases unexpanded and does not define a config name, a dict mapping, or default unfolding behavior. The FAIL_TO_PASS test requires autodoc_type_aliases as a name-to-string map and exact signature rendering for overloads, which a valid boolean or differently named option would fail.",
+  "prompt_tokens": 4407,
+  "completion_tokens": 469,
+  "total_tokens": 4876,
+  "cost_usd": 0.011628,
+  "cost_in_usd_ticks": 36271200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3504
+}

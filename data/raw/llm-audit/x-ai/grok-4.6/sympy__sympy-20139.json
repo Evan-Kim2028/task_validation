@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-20139",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "3dd72102-e8fc-9a02-a506-ca1995d9f5dc",
+    "object": "chat.completion",
+    "created": 1789194753,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The title and release note clearly require MatrixSymbol to store a Str name instead of a Symbol, which a competent engineer could implement. The FAIL_TO_PASS tests mainly check that printers, srepr, args, and unify see Str, which follows from that change though those surfaces are not spelled out in the issue body.\", \"p_invalid\": 0.22}",
+          "reasoning_content": "The issue is about using Str instead of Symbol for the name of MatrixSymbol. The GitHub issue is actually a PR template with a title \"Use Str instead of Symbol for name of MatrixSymbol\" and release no...",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3954,
+      "completion_tokens": 120,
+      "total_tokens": 4433,
+      "prompt_tokens_details": {
+        "text_tokens": 3954,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 359,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 36658800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The title and release note clearly require MatrixSymbol to store a Str name instead of a Symbol, which a competent engineer could implement. The FAIL_TO_PASS tests mainly check that printers, srepr, args, and unify see Str, which follows from that change though those surfaces are not spelled out in the issue body.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The title and release note clearly require MatrixSymbol to store a Str name instead of a Symbol, which a competent engineer could implement. The FAIL_TO_PASS tests mainly check that printers, srepr, args, and unify see Str, which follows from that change though those surfaces are not spelled out in the issue body.",
+  "prompt_tokens": 3954,
+  "completion_tokens": 479,
+  "total_tokens": 4433,
+  "cost_usd": 0.010782,
+  "cost_in_usd_ticks": 36658800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2617
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13660",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1900
+  },
+  "response": {
+    "id": "gen-1789191279-q4DRRQhuWJ0okYS0CxB9",
+    "object": "chat.completion",
+    "created": 1789191279,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly describes the NameError for nested functions under shell -c/stdin exec and asks to pass a globals mapping into exec so imports remain visible. The FAIL_TO_PASS tests only replay that script and check the printed version, so they match the stated bug rather than extra globals details.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about Django's shell command crashing when passing Python code with functions via -c. The problem is that exec() isn't passed a globals dictionary, so nested functions don't see imported ...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django's shell command crashing when passing Python code with functions via -c. The problem is that exec() isn't passed a globals dictionary, so nested functions don't see imported ...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4b032a77-0af7-9d78-bcae-455d840d6914",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2397,
+      "completion_tokens": 635,
+      "total_tokens": 3032,
+      "cost": 0.008412,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008412,
+        "upstream_inference_prompt_cost": 0.004602,
+        "upstream_inference_completions_cost": 0.00381
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 520,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly describes the NameError for nested functions under shell -c/stdin exec and asks to pass a globals mapping into exec so imports remain visible. The FAIL_TO_PASS tests only replay that script and check the printed version, so they match the stated bug rather than extra globals details.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly describes the NameError for nested functions under shell -c/stdin exec and asks to pass a globals mapping into exec so imports remain visible. The FAIL_TO_PASS tests only replay that script and check the printed version, so they match the stated bug rather than extra globals details.",
+  "prompt_tokens": 2397,
+  "completion_tokens": 635,
+  "total_tokens": 3032,
+  "cost_usd": 0.008604,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14915",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1088
+  },
+  "response": {
+    "id": "gen-1789187736-PYO1k9by3cLjrQYkeJbx",
+    "object": "chat.completion",
+    "created": 1789187736,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks for ModelChoiceIteratorValue to be hashable so membership in dicts and similar containers works, which a competent engineer would implement via hashing the same payload as equality. The FAIL_TO_PASS test is only slightly narrower by requiring hashes to ignore the instance and match another object with the same pk and instance None.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is that ModelChoiceIteratorValue is not hashable, causing TypeError when used as dict keys or in sets. The user wants it to be hashable so `value in self.show_fields` works when show_fields ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that ModelChoiceIteratorValue is not hashable, causing TypeError when used as dict keys or in sets. The user wants it to be hashable so `value in self.show_fields` works when show_fields ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "PJBmvZabl1Q6o0XL6kaKZxjDHzr0NyRD2r1opxVAAuMsWWzBWi8crJaNarq2cdFrQsS8FITgOe1ON2nwu7DmFuAgeXXDAGxlXTOQdUnDJQzezEh+WPQjOWWMVE4IwPSfxnLw0FTrI6d5NiWAIa9p3xS73WfEE1rCClmmsuZ2uaIBIRsColxWYzg/wiUSgKriOaYn9LJtr3UPfYtAbRjvEL1fXs2e6DvMbu4bCLhn3DNq0JlI52QgaWo/w2ffDGUER+1GjyxenD2KyPAcLU1hA4r6FqN59wEdbu+4XUGPVlE+lnCltZHbVt2S2kGtpAtcyIb5m92WP2jpmn1Nz/nbn557/jxaoxQkXwrCbRSyWaYCm+fZCBvU8JO+gDmfu3tA3TUNct/zRZhegxp9XJ7O24cv84WcLuLdhqI3dHD6T0KXFtStQD0v/MHeAsCv+rfUmk/NMJUZ2Un37RjWqDwR7xY8pCv6QtVupT5gX54ahZnkwofazcjEb+Eb60Hrs8yrNwn3K2qDiGCRs0Vsmrj1rfHUs4lxm2KSEM2aovoSFFoJun29LPLabtKMYFPNnW0AYN2hj6aRF3nYwGC8xnfJptt9HOQBUbsmQtQTWxc3m7zgx7xcV7HgeWlqjyxtVP9rERYQMfrCwcIFbcGQwQ2gPREUWAoLqXhn5J9iVLBn0Nm8XYO+nbwlm527UJ1R3G9AN7sEvMKDcKDVyrW5zJR5oogx0Kx0frnGB58FudhSIRUvrT0IC/j2owDmDflqcsPizbg+4P8mN7tEoeRq4pIbvx97OCrQ3HoNruyD+0SfoJNs0GFFJl3Lxw2qP4WKgEwFNIbXNtJDewjpuC9Oug3afkyCBLrptaMe0N73LcV/0HSJNfAZTQSEPLddWpandgNPteK4JxKU6ELI0QPLfORKAyy6NB3BETtUZ5bojQq03jFx8QlmFWrw8h3ysUm2GkXvmXWTW10UUlJFSXaRhcZBR04q4dCHvg48bEVr8hTNid8Xltv49sJJ8miqxBc2n3nXmCfp1TootaqnE32lxK9NYDwplK5pg+uOgjo39BADVX7Wqc6zTaXiupKNbPXs0M3Cm07P2Zq58AUlMgwXH6Ck9fucN0iFR6jac2dKokgfLbWMzhhjVkBCO3X+Z6nFQMxNCGNayGkFP1K1TvzKpcpbkV2i2Ypg/hbG3s+0c9sPm0Hw2P1XfHuHj0zqd5naQZ+4/BOBccntYkdhl0pDbPCef9rziPGgYvYk4xNKFu6zpTzC/CSi/xLPm9QKV4FZlGMkVg7JnVYTgas17UwzqOJ8XU66KZC3Xz/Eh/s+NjOPK4SpVxugiZTDBl37PiHwpl4P7zluP9DAh3qAIFGVoRSkh2VLpWEPs9MC485cXedfpjGSX4tFUszJmZaTsZxF2v+QAWnDImGGb1FxBY5walFEXO7JbxuswjrfNE+utFmTPDrOYVlukgJShsKjpXsNU5q/CtNwv2/3DNmUzkSDDbzd5PQGKZUKSGzK2O42tN7bmdF1qPm6u7xpngG6E8c338xGyhbhVo7GqeTrCTpv/eBP3R7bLigAMmowcFyBjNWYvcKgeKjywtdsMuKOvbcUpCEzaMP8BIt14TNjm9ej9BntytjifkbWioKmWcCfuat6uprXm+XUXuWYrr4RJKIwbJTQz4wnShONGFdbawzEb8zFCVOrlc2x1jBdw/zHQoA5x8sQ6oNe+fXgTygbtPg3N2eZQGtjqwQQDB7uJ6zep9QCf9H9Uj/aBE/+U0HjHiS4pALJKjbSxAnAFUkUL2wzGu1CC5NL4GkeolotnVC4YrHwCyue5weqAUiOrsv7/OnYQdRAqngiNtDmNc8kf9mAwzNVpVbXwHQwH3xx4gDF+yu0ABBeTbVVWyOzBfqFg3hkkSs+ektiGdSkQ8bB3uV3x1zyWRC7bi88S0Rt+dBh/R+zq6W8Jw1EAdHkrMBSHDipUnswoHfaSyI/sN8t236W0//iEsKPgXCSn9y/KXhJYp+VG/IiX7oBkrFA5iWmgmiup05BfhhcABvKkuPZer6h3tm4G8yn0fJg5EAVtl3GSxS13nwAU14NJTfEjiQS40bsdAOu/xxYjFhdoW+ZE5tuRj1wupIv7p/LJcSSGdcpIMPRWY9UoiEon/rVNa1NoqivVruz5eQELJXcftW/YLE7NAvdwgDJot8gdM8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_51e9ab9d-162b-9471-861c-932da92cb4a4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1441,
+      "completion_tokens": 509,
+      "total_tokens": 1950,
+      "cost": 0.005744,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005744,
+        "upstream_inference_prompt_cost": 0.00269,
+        "upstream_inference_completions_cost": 0.003054
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 387,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks for ModelChoiceIteratorValue to be hashable so membership in dicts and similar containers works, which a competent engineer would implement via hashing the same payload as equality. The FAIL_TO_PASS test is only slightly narrower by requiring hashes to ignore the instance and match another object with the same pk and instance None.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks for ModelChoiceIteratorValue to be hashable so membership in dicts and similar containers works, which a competent engineer would implement via hashing the same payload as equality. The FAIL_TO_PASS test is only slightly narrower by requiring hashes to ignore the instance and match another object with the same pk and instance None.",
+  "prompt_tokens": 1441,
+  "completion_tokens": 509,
+  "total_tokens": 1950,
+  "cost_usd": 0.005936,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

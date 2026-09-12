@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-7441",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1922
+  },
+  "response": {
+    "id": "gen-1789190723-mOHkjPdDPP20C5d6E8oA",
+    "object": "chat.completion",
+    "created": 1789190723,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks for a to_timedelta conversion and optionally numpy timedelta64, but does not specify a datetime format, constructor-from-timedelta behavior, or keeping to_datetime. The FAIL_TO_PASS tests require format='datetime', TimeDelta.datetime, and to_datetime() rather than the named API in the issue, so a faithful reading of the ticket could fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks for TimeDelta to support conversion to datetime.timedelta via to_timedelta method, and mentions to_datetime is useless. Also conversion to np.datetime64 and np.timedelta64 would be grea...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for TimeDelta to support conversion to datetime.timedelta via to_timedelta method, and mentions to_datetime is useless. Also conversion to np.datetime64 and np.timedelta64 would be grea...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "FYJF11x7omdrI40Re5Hbd86pMJXNBZTN0ykhTKPN5UUT2o9pRc7PUy32bsBD2h24m3FTHJpyMmmzcgHac1HlHtCqpds18IvRfaEvQlLgl9p2IwFT360yn6Mv3je55e3MdRDh6jmz8AZqHuYGUYFrLC6jpX9odjF7n6VrZtbWQl62hlcpndEYL/qM36AU1i3+IETQUxIC4ivfqqpA/uHQ2oR3JF5GLegw68Kv5C/q9v/BK5+S++mzXmF0o5aoV3PEBGZkGx/H7kyQTKkoJf13D/uk0yia8zzr6EVe3q5EIqp+h1mgVFwX57u/nyaJK3UNZdAHxUU858sB3CH4+NMkfD/iuj9mimmIfz76CGaXJ+fHvCDobR1VEz13EcFRWiZpA37R4V/Dy0DHhgrzvZdN8Ciw9g8fdJHmWiOf/DiFv3uF4pm19693ESNIAZkm5v9gTTtCsnloqxpTH674gQ2KYDu+9L2cVq+u6hDn4Dlp0A0SfFtw0xfp7D62z6YYRoz6VXepis/mDicp1JWmC1yWBGwGL7+xzO3n1TFwYsQbs35Kc79ut5jQyX0mw3eek9M9eOpr28jZLruNx0woqYldr8wdDNsTClxptjSvj/KbmWB4+DaU7sIRNHGwYANOxU4w6NCvyLEJZq1XGPhdcGNrRXtno9rMxYJe5kImII7sUzkk9XPeGD/2CW6KjmsrpdYjcmk95QgJTqdXAHr7GHS1UL5hLlfquL5cNG+bLlpLL97Pl2MOxEuQuTZxa1mj0DtxBsZrkpMs2Zy7pkwBqGAt6knsGwK2FRWaU1QBd7/EuZTIiPg7Kubq9tJawXhMEzNBDyQ47qKD3MMlWfOYOlWjjamXLbflk/tMCdJrDI977tXlU8jwExYXwGW1Lp3K1I17YMH+7F5MHGGUb2mRG7tyGni2PljLoyqTpC2RT9Xg7VuMAFTXbL7LIcop8Vn/2+uiZUDie+wBI/VrDzRE9nN7ZY3y3aZIIVYRK3xNvTLSLNkUnCAIh5cN4H/yEWkIY/sOIX0/cEa26K4B2Vj8rS+gvua9Hc0RUOgsLePxFex4GNdnFYcmzITeBP+DkJEFkkKe+C4fLrFhoF24dcWfR59TMYwq8whyRf5sjQzq2VTbdw0H7lzEKOfkv+6ncafusKmdHRsJIKgkO9QmAucDFxjAIssxhaPlWWLrE8p9SnoNRdzfNFylvBIrCfViOk1j+o5weYv8u2Sue6LTHWR6phYQ1s2MW2vJ47H+lmwbI2yCjqmwaMkywdc0OZiVc9hBOsr1rKbd+kS400gN9qjnwcCrA2KlzZd14unn9JVgdiHJ8eNSttB4yCZan0FvM9Dj5el/sDtaw+RCNvo/ygSfDVA+teGb/mVpseMWsWbTGpr3i0BbgreBKehEoPUvsU56Ibfdk1ppxarceCmxLRp/p8feLtyw61mhab8OSHqqBAqIWQjtwMhYfITGL4GhOlZlEAnOeBQL/j/tjF4eyc2fk4EqdsYrZjgvnUrA9aad5VvPnFfNMFvtDRYF4RVF0r0rsnjOZ9agiwnUMzsnzg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_16ca911d-b9dd-95e3-94a9-40a712d267e0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2517,
+      "completion_tokens": 385,
+      "total_tokens": 2902,
+      "cost": 0.00696,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00696,
+        "upstream_inference_prompt_cost": 0.00465,
+        "upstream_inference_completions_cost": 0.00231
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 253,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks for a to_timedelta conversion and optionally numpy timedelta64, but does not specify a datetime format, constructor-from-timedelta behavior, or keeping to_datetime. The FAIL_TO_PASS tests require format='datetime', TimeDelta.datetime, and to_datetime() rather than the named API in the issue, so a faithful reading of the ticket could fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks for a to_timedelta conversion and optionally numpy timedelta64, but does not specify a datetime format, constructor-from-timedelta behavior, or keeping to_datetime. The FAIL_TO_PASS tests require format='datetime', TimeDelta.datetime, and to_datetime() rather than the named API in the issue, so a faithful reading of the ticket could fail.",
+  "prompt_tokens": 2517,
+  "completion_tokens": 385,
+  "total_tokens": 2902,
+  "cost_usd": 0.007344,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

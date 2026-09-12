@@ -1,0 +1,209 @@
+{
+  "source": {
+    "huggingface": "opencompass/SWEBench-Pro-Verified",
+    "revision": "ae466f824cdee69d2c010b6c954b7418c411b6e4",
+    "license": "Apache-2.0",
+    "arxiv": "2609.08149",
+    "provenance": "opencompass_swebench_pro_verified_2026",
+    "features": "data/gold/swe_pro_features.jsonl",
+    "verified": "data/raw/swe-bench-pro-verified"
+  },
+  "predicates_frozen": {
+    "P1": "The 102 repaired IDs are enriched >= 1.5x in the top 10% of openai_style_risk versus the 102/731 base rate.",
+    "P2": "The overly-narrow-tests subset (75) is enriched more than the misleading-prompts subset (22) in that same top 10%.",
+    "P3": "The lowest-risk 20% by openai_style_risk still contains > 5% repaired IDs."
+  },
+  "mapping": {
+    "n_verified": 102,
+    "n_matched": 102,
+    "n_pro": 731,
+    "n_unique_verified": 102,
+    "unmatched": [],
+    "methods": {
+      "exact": 102,
+      "prefix_strip": 0,
+      "prefix_add": 0,
+      "unique_prefix": 0
+    },
+    "jsonl_n": 731,
+    "jsonl_exact_overlap_with_pro": 731,
+    "category_listed": {
+      "misleading_prompts": 22,
+      "overly_narrow_tests": 75,
+      "overly_broad_tests": 3,
+      "other": 2
+    },
+    "how": "exact instance_id == task_id; then add/strip instance_ prefix; then unique prefix only",
+    "min_matched": 90,
+    "mapping_ok": true
+  },
+  "n_pro": 731,
+  "openai_style_risk": {
+    "score_key": "openai_style_risk",
+    "all": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 102,
+      "n_positive_in_head": 14,
+      "rate": 0.1917808219178082,
+      "base_rate": 0.13953488372093023,
+      "enrichment": 1.374429223744292
+    },
+    "misleading_prompts": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 22,
+      "n_positive_in_head": 4,
+      "rate": 0.0547945205479452,
+      "base_rate": 0.030095759233926128,
+      "enrichment": 1.8206724782067247
+    },
+    "overly_narrow_tests": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 75,
+      "n_positive_in_head": 10,
+      "rate": 0.136986301369863,
+      "base_rate": 0.10259917920656635,
+      "enrichment": 1.3351598173515982
+    },
+    "overly_broad_tests": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 3,
+      "n_positive_in_head": 0,
+      "rate": 0.0,
+      "base_rate": 0.004103967168262654,
+      "enrichment": 0.0
+    },
+    "other": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 2,
+      "n_positive_in_head": 0,
+      "rate": 0.0,
+      "base_rate": 0.0027359781121751026,
+      "enrichment": 0.0
+    },
+    "tail": {
+      "retain_frac": 0.2,
+      "k": 146,
+      "n_positive": 17,
+      "residual": 0.11643835616438356
+    },
+    "auroc": {
+      "value": 0.5087128651142492,
+      "n_bootstrap": 1000,
+      "n_defined": 1000,
+      "seed": 20260911,
+      "ci95": [
+        0.45282763639414647,
+        0.5689669621026797
+      ]
+    },
+    "predicates": {
+      "P1": false,
+      "P2": false,
+      "P3": true,
+      "YES": false,
+      "P2_note": "score is not category-specific"
+    }
+  },
+  "cheap_risk": {
+    "score_key": "cheap_risk",
+    "all": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 102,
+      "n_positive_in_head": 17,
+      "rate": 0.2328767123287671,
+      "base_rate": 0.13953488372093023,
+      "enrichment": 1.6689497716894977
+    },
+    "misleading_prompts": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 22,
+      "n_positive_in_head": 4,
+      "rate": 0.0547945205479452,
+      "base_rate": 0.030095759233926128,
+      "enrichment": 1.8206724782067247
+    },
+    "overly_narrow_tests": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 75,
+      "n_positive_in_head": 13,
+      "rate": 0.1780821917808219,
+      "base_rate": 0.10259917920656635,
+      "enrichment": 1.7357077625570776
+    },
+    "overly_broad_tests": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 3,
+      "n_positive_in_head": 0,
+      "rate": 0.0,
+      "base_rate": 0.004103967168262654,
+      "enrichment": 0.0
+    },
+    "other": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 2,
+      "n_positive_in_head": 0,
+      "rate": 0.0,
+      "base_rate": 0.0027359781121751026,
+      "enrichment": 0.0
+    },
+    "tail": {
+      "retain_frac": 0.2,
+      "k": 146,
+      "n_positive": 16,
+      "residual": 0.1095890410958904
+    },
+    "predicates": {
+      "P1": true,
+      "P2": false,
+      "P3": true,
+      "YES": false,
+      "P2_note": "score is not category-specific"
+    }
+  },
+  "june_kim_overlap": {
+    "n_repaired": 102,
+    "n_june_kim": 109,
+    "n_intersection": 99,
+    "n_union": 112,
+    "jaccard": 0.8839285714285714,
+    "intersection_enrichment": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 99,
+      "n_positive_in_head": 14,
+      "rate": 0.1917808219178082,
+      "base_rate": 0.1354309165526676,
+      "enrichment": 1.4160785941607856
+    },
+    "union_enrichment": {
+      "top_frac": 0.1,
+      "k": 73,
+      "n_positive": 112,
+      "n_positive_in_head": 17,
+      "rate": 0.2328767123287671,
+      "base_rate": 0.15321477428180574,
+      "enrichment": 1.519936399217221
+    },
+    "june_kim": {
+      "n_prefixes": 109,
+      "n_matched": 109,
+      "path": "data/raw/swe-bench-pro/CLAIMS.md"
+    }
+  },
+  "constraints": {
+    "used_audit_labels_as_predictors": false,
+    "tuned_weights": false,
+    "eval_only": true,
+    "llm": false
+  }
+}

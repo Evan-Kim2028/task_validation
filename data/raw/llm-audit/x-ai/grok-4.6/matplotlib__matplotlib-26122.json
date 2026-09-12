@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26122",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1933
+  },
+  "response": {
+    "id": "gen-1789192082-OnLz04obm3w9cE2PcEtl",
+    "object": "chat.completion",
+    "created": 1789192082,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states that default aspect=None should not change axes aspect when the image transform is not data coordinates, and it explicitly notes the transData-branch exception. The FAIL_TO_PASS test checks exactly those cases plus an explicit aspect override, which follows the request.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about imshow() not modifying axes aspect if transform != ax.transData.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about imshow() not modifying axes aspect if transform != ax.transData.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fVJY320Jtj6bNsoKi3d5jJvQ4MURtO6g/99aOyF5QeVbVnPuBmBdHPphbfNeJSt57siV6Or4RCXCfKzGm31P0bL9Wu3FBsu4u8Km99eYytwCD6AXufRRPzhWPSWYS88xofniG9qPXuoSDbf/j9J4ZxsCbhklpU8EQCgnEP5bWnXUW28uPXzx91Nh0spz+JhG87RXh63e8FwS3rxr7QUeXBgN4cVe9CynwDlkI6+vipbUiyuRDqUEXS+WNpp9KF5uyUdyMvo7fOtID9XajemOod7w9pCJbRYL2sZfO9NPA+G8Xwi3TKYqgQ8fku9otzclzfDKZ/fmDQM4K/Ew7sFeAZS91wkLwCIn5nn9TsiZJZBpj/ZEIzigv2ZNjyaE8F1cWGfJMZPOwoWN+HV9mUJ32bv8RoCX7LLtAgt+RASzu8vs/6uvCANmDcC4bh+NVaG1IVQP+yaLc9e9upQ9nU0aS8leb4wnNY1dX48zD1mYkC9CYwSWuEdA9JkHfQxuQCSZi9kCwNE5iEjGFt/iH5SxKin6ChSGz/NutaHqTBk8T1+nw36I3NHhivLMYTQ1b2RXU6Ir9eekNVJ9Rt/YyMRk68bxZTQL1znA1saCWARZ46nlXOhR9ZH5i3mdZ1toQbLk06x08Y2MNNK6E30MSY1PbIH6ZKVRFPnTILAsc6YzZ2bWRcxAvP3jnO4ZxeUhSO3I2yzppFhFHzUy/hhZLh4FiIqigbAuhNNXq7qnq5SJm0j7Ur7uy/WLAa4tlB5+LnClU3R06DvsKGCb0fvnR/1ZrU0VHS3kbo8hWJBdJeB5y5/mf8rEsuxSROSBUAKv8u59soeoCSmvt4iP9hAD4IbmkuN8MOJ3IKwqPGA+UiARkq+RoqEyrFY7ZNi0Oy26IKTdlM0huwwmQnlSZshzCjLrvxiELasLjUC4NOVJ+NQsdkVCGbpIMU3qd+hwXciBCQY7AW8Yq9pQoYr6Mk5gjwXoaLLFd6WHn/FpFDJOOUG5c4MLqB8VVltIybVBnrekX3d6tbhvBomOn0WqEC8p4X7v63H3HEQWgUOISEpptarZOoRRp4ezYbGdPo+cngDr6IOIEUP89SMfeael83DExPKsawKIoBKWtHEy9sfH8q3JPOfsjEPKMPHn6mW4gDGcaCfyrnDN/FbYNNF/Of1DmntpfkegMSR+T3CmXYUCceNy2k+0meVc1Lgfr3pMQR1D1RrisrdY4x0/kFdolBYvBxe5/8dQSk29exHErZ9EkZsdoU/rNi0uQF2ZcLuivIE85UKMK40mC4SQY+2DhboCEGeKkacWIbqklXF8m60gx/DwcJ2m+R1sxBOM.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_35d2dd65-c7cb-9d2f-bee2-f509334b3172",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2337,
+      "completion_tokens": 351,
+      "total_tokens": 2688,
+      "cost": 0.006588,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006588,
+        "upstream_inference_prompt_cost": 0.004482,
+        "upstream_inference_completions_cost": 0.002106
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states that default aspect=None should not change axes aspect when the image transform is not data coordinates, and it explicitly notes the transData-branch exception. The FAIL_TO_PASS test checks exactly those cases plus an explicit aspect override, which follows the request.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states that default aspect=None should not change axes aspect when the image transform is not data coordinates, and it explicitly notes the transData-branch exception. The FAIL_TO_PASS test checks exactly those cases plus an explicit aspect override, which follows the request.",
+  "prompt_tokens": 2337,
+  "completion_tokens": 351,
+  "total_tokens": 2688,
+  "cost_usd": 0.0067800000000000004,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

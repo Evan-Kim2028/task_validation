@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16116",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1121
+  },
+  "response": {
+    "id": "gen-1789191730-LEOwKRAnhn8bQNEWuNAn",
+    "object": "chat.completion",
+    "created": 1789191730,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that makemigrations --check exit without writing migration files, matching other --check commands. The FAIL_TO_PASS change only asserts SystemExit and that the temp migration path is absent, which is a slightly narrow proxy for not writing files but still aligned with the request.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about makemigrations --check generating migrations inconsistently. It should just exit without making migrations.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about makemigrations --check generating migrations inconsistently. It should just exit without making migrations.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_681b7f35-f07e-9d26-8dcc-2040eb423f69",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1355,
+      "completion_tokens": 469,
+      "total_tokens": 1824,
+      "cost": 0.005332,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005332,
+        "upstream_inference_prompt_cost": 0.002518,
+        "upstream_inference_completions_cost": 0.002814
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 354,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that makemigrations --check exit without writing migration files, matching other --check commands. The FAIL_TO_PASS change only asserts SystemExit and that the temp migration path is absent, which is a slightly narrow proxy for not writing files but still aligned with the request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that makemigrations --check exit without writing migration files, matching other --check commands. The FAIL_TO_PASS change only asserts SystemExit and that the temp migration path is absent, which is a slightly narrow proxy for not writing files but still aligned with the request.",
+  "prompt_tokens": 1355,
+  "completion_tokens": 469,
+  "total_tokens": 1824,
+  "cost_usd": 0.005523999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14528",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1411
+  },
+  "response": {
+    "id": "gen-1789190695-3xbhwpc0BZS5SnB3GLsf",
+    "object": "chat.completion",
+    "created": 1789190695,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only requires that zero-dimensional ImageHDU data must not silently produce a corrupt FITS file, without specifying constructor rejection, TypeError, or a particular message. The FAIL_TO_PASS test requires raising TypeError on ImageHDU/PrimaryHDU construction with np.array(1) matching an existing message, which many valid write-time or reshape fixes would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about ImageHDU with zero-dimensional data creating corrupt FITS files. Expected: never silently create corrupt FITS files.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ImageHDU with zero-dimensional data creating corrupt FITS files. Expected: never silently create corrupt FITS files.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "JLCM3zTCboK1K8MfggskDgbJwECifh8IgYUK1P8SPp+wQBEeW6RKBGiQzfOaIKQtUtOhCpJL64gOswcNejehpEDlbSt6gCxA53o5WI4JLswOUgzSmt6zH6bnTruh8+RRpPNBsG65nJSwsBSJbBahW/Q6Um2OQa8+tJ6fd27YYpLf4ktUnbA/Uzhs5AN0M+4H2swo/eYtKKBMhlZjsdp7fxzCS0KTMIRQjFZVyaX9JMkM5xV3K8rTffBFSay80jzHw99vSghba2qPsK9sNaG+voybeQTBDPWHjyVSKCQXcDDyXpicROD424tpH+J8d26apAD/KDbtuVeq7D1Di0CYZ+p15MX4PNO/UhiDWc3dFQ/dQyRKKZ+LRvLHgP+foBxeWODJ4U3ViY+9eKUoobxov8AKmFT9Rl44HEpTi2Un6K92WMP4x8+m2X/CxP4KduBvZFzeBpPYHbec6AUY1DFNh/6cCKoGIouuahGwcT68ZMmWKK7u96sGbG5gPE6Sqt1tHySOpTBVfJrdGUAmUJw7spHwLkPM4s2d3umuaOeIackunDrwYjfLvUhlmo4ASz6Z6nBjOKGM5PWWwkKFMzbN0RLniZFP+sPvK9Q9WuzeFfsVeTTCu76Dur5Id4G37XkpvIrW0kUuxFwV66XVI0ZDGkf4sU0+GBTWRjWoBczvE6G5aSB1fjgh3AF93asvtx3lgbCOsjVOyJqQLTdCrhvtWkYFNgqiknCJ3hS08LPcRr+Lz4wooLjpcK8y7feXNh6+7rKh1XYnQ2qzjpcRoMdQC037gy12Gw/zwRBgJskcaaK31J6w3jJyLaWV5T2k1fn0H4sxXJDBBB3cD3MjJ0J3XJ5ezvlDAJdCK7Kf4Vn7jf9Y1/ve+5llicISZkBrIvlIiYfFsCZnJCP0uPWb4xmzfQJ+jS+S3Ai0JcT6sg46JpHnrXcx6v1KIpLEOy80fB0bQJNbabs3H69SPoejZm5qYiTkb/u1k+KfRL+NtG02lQJG24ckjsEB3nGTjaawA75vvL9vElTc5jma3UTtm+XJcXIXIIaQMtsNjG0d0k3RMIi0TrlhQDgToGRaea6EA57WDJsutazOZIj7GfBMvaTK59+k7JyCnJJKHhL1TkDM9iZAVfZAOP+taGb+ZDbZSqd+7f8f7cTKx6kWM334rM3E0eE6V0ZhNi0E8uH+/ZHeIbl2iG0ZFlqGe64K107hX3SghfIJZ9ThbzxHGhGbw8HgI2pgF6Jwk8xE9IaQp5ZIgcAiLN9mOoineni3y+T7P2aPznwBNBynEFVW8rtzcD+0rw8K2YDbgZJWJjCjxKipSZYTwHJD8/m2+tcp.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a61459cc-c87c-91b4-9b4b-4055c1536552",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1902,
+      "completion_tokens": 372,
+      "total_tokens": 2274,
+      "cost": 0.005844,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005844,
+        "upstream_inference_prompt_cost": 0.003612,
+        "upstream_inference_completions_cost": 0.002232
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 238,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only requires that zero-dimensional ImageHDU data must not silently produce a corrupt FITS file, without specifying constructor rejection, TypeError, or a particular message. The FAIL_TO_PASS test requires raising TypeError on ImageHDU/PrimaryHDU construction with np.array(1) matching an existing message, which many valid write-time or reshape fixes would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only requires that zero-dimensional ImageHDU data must not silently produce a corrupt FITS file, without specifying constructor rejection, TypeError, or a particular message. The FAIL_TO_PASS test requires raising TypeError on ImageHDU/PrimaryHDU construction with np.array(1) matching an existing message, which many valid write-time or reshape fixes would fail.",
+  "prompt_tokens": 1902,
+  "completion_tokens": 372,
+  "total_tokens": 2274,
+  "cost_usd": 0.006036,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

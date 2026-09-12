@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12172",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1124
+  },
+  "response": {
+    "id": "gen-1789190992-twdaCfxzhZVoc1wrp4TB",
+    "object": "chat.completion",
+    "created": 1789190992,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue allows either a setting or an env var and does not name DJANGO_ALLOW_ASYNC_UNSAFE or require a truthy string value. The FAIL_TO_PASS test would fail a settings-based or differently named flag that still matches the request.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue asks for a flag to disable async-unsafe checks, preferring an environment variable. The test specifically requires DJANGO_ALLOW_ASYNC_UNSAFE='true' to suppress the check.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a flag to disable async-unsafe checks, preferring an environment variable. The test specifically requires DJANGO_ALLOW_ASYNC_UNSAFE='true' to suppress the check.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "WoGk6s9zKaCnFf/zr6YnZzTGfesdj2OqIsRT+SxEZQNn9QiCHG2MfC9BwR0bjKPQK+9Bzn8ZM1GLs+GVmT61ggci5Toh051OSHu6FescrHwE7mLsEMAJtRQMjvn/BEwLqyg82Fvwa+KFuKMKN7NfugJ/BLGC/f/fbPRXL8lzmf9Gc1fXmVx5RTaHVjqkl/CX/1mZJ3cPhQBae7x7RjAny0umeNiqZFU7JObdoEg4EOwHtAHV2Nq61sjdQ+V9vsPyWhV+8b/8TCctWZlJuxLV/hn+LFqGs0AVtr9K55zY/wQLM2mVfxpSuF3W1r74GXpmuitP1o/LN2U4JKASPiQzYxPdot5zNTR0WBPKhzX/a9ZO1fjXOIJ6PHYiT9TZyYVgThTPxfqw/0p0qOJ76mrxXk2hu1lZjXTsqr3571z6welusdeJOTdyTYzd100n3FnKgzjoPp5d9GrIAf3D6v1+GqSSdrgzRWDcJvFCSMlkiXk9kvaQhIhbEa/2GyJCPX1O/byrymtYNuQmx4g3inWOYgc5kE+T0Ooj7YbmT86Nsw8tvLL3bGw6qGyY0G8e5RNkru4v+YmuTgt2rmqZpOyCerUIC7FstNQk13Vg+OeejwBvbCAzq7g2kkUfKQNh5K6o8p7NKForHbQ1eHDYDiZlV30pBzJ9xzVmr/IViNoqGQ0gWxatHzyCihty3Ta9yqi/3wYxcsj7383mUYGwTXeacM9qdhEbXltdXeF5tzzkKMdoHbfRG2V3Y0SM4C9mDhN80BFhgjVlfY1IJ2PJ8MttIg8nq0DUY5wRc0TBSI5c9b9j/JCZUwOswyrtoZJfZ9ZiYJnV5vpAh2ElyLA3PdqBgR2IF5WgQKMjAFKjbQQZ0fqFDB1WO3Nl/aR41LlPHOf0dDXeIuqnJKJ8uFB68wulycb4hg16rcqVX/ShVkE7z4WpS5kdQIa3XCF6nvCEsluYZK5zFUDKpjkfjTcfwnOSySe+4RNYxehh6tMJYtFrAhSefgi0FkS2OatKoLlDyrCqBrqXRjmgduD7Y2JP+tta2ho5vA739bGiTB58+h49jaMrm7BwENR569QarbQQfEqavP484FfPuWQTZv8LehebDN8q.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7108c81f-3a24-9486-9f4f-1618ec749d6a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1375,
+      "completion_tokens": 300,
+      "total_tokens": 1675,
+      "cost": 0.004358,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004358,
+        "upstream_inference_prompt_cost": 0.002558,
+        "upstream_inference_completions_cost": 0.0018
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 191,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue allows either a setting or an env var and does not name DJANGO_ALLOW_ASYNC_UNSAFE or require a truthy string value. The FAIL_TO_PASS test would fail a settings-based or differently named flag that still matches the request.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue allows either a setting or an env var and does not name DJANGO_ALLOW_ASYNC_UNSAFE or require a truthy string value. The FAIL_TO_PASS test would fail a settings-based or differently named flag that still matches the request.",
+  "prompt_tokens": 1375,
+  "completion_tokens": 300,
+  "total_tokens": 1675,
+  "cost_usd": 0.00455,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

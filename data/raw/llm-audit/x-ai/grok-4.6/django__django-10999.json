@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10999",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 961
+  },
+  "response": {
+    "id": "gen-1789190780-0Axti3grUsan3qYFBxhh",
+    "object": "chat.completion",
+    "created": 1789190780,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only describes a lookahead that fails to match some negative strings and proposes allowing optional minuses on each component, but the tests require a leading minus to negate the whole duration and reject mixed signs such as -01:-01. An engineer who implemented the suggested regex would therefore fail FAIL_TO_PASS.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about fixing parse_duration() for some negative durations. The regex doesn't match negative durations properly because of the hours lookahead.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about fixing parse_duration() for some negative durations. The regex doesn't match negative durations properly because of the hours lookahead.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "tpYH0M5Aui3ie+CVMMUYUdYCS9v3xdg+1YDAPgfT49lsoll0xKEwtuEWerHiKXxsFEAnTMs/HtzfwmJDhoApi7Ih+Z7P7KhfmDxib7XDxM5ryj206Uu9sG1llLo9bQeuHLaFyEunhEn1uncMLGWgipJnND+/zpwXPcL1sIsJYON6KkVPive9t5PFgCNypAjCxjp9zAz1ukAISI7asKoGVQdr7cF8Qdej93T2qhL9lxjpr4wBmRj9dRoGSM9yaSYZM0woCx+rLHypno8bfzSY4pv5kf1Fd22EBQtJyZObNowurBx1UzKoG+C9PrHTCeBE/dC0e2Ja2j2lM+hB9ZWMUdWXhhII9C+xlfElIPQ+8gOIW5MUJp/a60PgKFsabz8n4j/6/uW/+Hj6Gyj0AZrSBom1AqABO0PPE6YJ4XE/kzh2+5M20Emt02crV27Re9YtGiuCQcgEg7K3JBRm684QQLO/SGrXgr9WD5kdAjbe5JUUHwAAAskjjCVYrlB9SnQeW5/f9QpYw/BK76tONGHcgNQE5SIOjcjFt5Gx3s3WZJdnrT3Bdg65IfFAqnABv1qNSXXfJ3ejnodX9e/UKgTa75TCThIwQWNSR9Zl2kuY19HD8NFkboJ7IMZOY+ADJDK7UKJg/g1+kiasLt1aGgweFhTgl98NQuDzsR/cgKRZvVpFCyCNz2v22Bqm0SCML+CfDfSzOXp9JmPUZkBI7HIfELfm9yWvVr0TuPuG/EazCH2DoaK69LNHK0FQuZh+7tTH8nYsz0ODt7hJZZOdzU0tiAekEK5M7wYH1QXMAb0jTU2V7VT5eS9gOZ4Z/vurnAfg4XDz8bySBkYLw/8Wg9wRrCHtsJnL5jtYjdQbDzYei78NQ3EnFB+DU0ATIRRKZWAvyglinggb/aJcKh9dBJCeI6Fbh3oQxsYDvwwh2EQJN1SZ8rlLgdtQC+VqmLSxSZviRVuHOpHjvPfwMEbFZcHVjjctLlh3eOODideBPdJT86O5oIpep1Bbvw26OqcYBsAOWKfTSH6VZD8by3BUG6KSlP/FoaRRAOZDZLAO5G3e7VJOkZpt/e4RI3Bu+ayqZUbZf/S/UKcFnJXwVUaSDML13RLuWm44BZBZ1tUSrDMl2gmf1OaA0jRACj1W4MVh6pmxvK4nuot/RmIW+nXr1P8nfD2cy9kleR6sf0hz0rZhZmvIZ5eht2zL/iAPkPLS6i7WYlmX+XrYOP2DYvuLefHXkMBFI475OQBJ7Zzlp3ghjKkzTPWgTH2abytTMrd8GO/Bp6jGLxflFCJ4i/XZAo1WR1A595iVWJCG0O1pEnCgeSku8YS/zCsfQzinRfdK4OBv+FVJAyViPA70gRsWXbRHJyeJdZj3mA8rG8YV8/fqwbZU/XJ9JibSANhUSqg7Bys/IiogsRoOiaCRdgyVi6W8PcVCX0/SHdKK1A5nqgAOX7hE1irHqusVbd7anLvPBV629vYjmaqlaj8lTv3oOfR9IjxOffTctBsgH4Jr+IwP5uWZ7QUMOH4L9NRGKuTlk9xyRI9Eh2Fvizb5CGT6XQDUPpaiwphR8TaP7JG9X486p6pJn7Xky0GxkN47ah/BY+qjH37x8H7T1hQNDtBvNiwbQvsGMkqQYU4Q+TW/7IvJQ7jKI7X/Ldx2lVB3FziVQKs6H0SU4zbBzuI7LHiuMRyMY3DcXEVS8uScg38ZqyjrLd8/kNxFHoo2pVEbx9FwYx5UFck3ldWMYi8GvpTXKADjMh/4guQ/Q5yz3fDcLepdt4IlVAN2ZKd4KlwQldUzaVIUcVPKImsJ3jh9Yasku0v3IymXH/cBw3jyzcdnZ6btSkXgeQgbk3gq7u3WTsMLmcOdhFEwHgZyyPYEeYs/fl/L54To+53tPTHYQYSbygsQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ab86de5e-bb6b-97dc-938c-37161464e78d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1454,
+      "completion_tokens": 441,
+      "total_tokens": 1895,
+      "cost": 0.005362,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005362,
+        "upstream_inference_prompt_cost": 0.002716,
+        "upstream_inference_completions_cost": 0.002646
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 324,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only describes a lookahead that fails to match some negative strings and proposes allowing optional minuses on each component, but the tests require a leading minus to negate the whole duration and reject mixed signs such as -01:-01. An engineer who implemented the suggested regex would therefore fail FAIL_TO_PASS.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only describes a lookahead that fails to match some negative strings and proposes allowing optional minuses on each component, but the tests require a leading minus to negate the whole duration and reject mixed signs such as -01:-01. An engineer who implemented the suggested regex would therefore fail FAIL_TO_PASS.",
+  "prompt_tokens": 1454,
+  "completion_tokens": 441,
+  "total_tokens": 1895,
+  "cost_usd": 0.005554,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

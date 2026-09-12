@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13192",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2329
+  },
+  "response": {
+    "id": "gen-1789187546-eHFuytiWLeTGVTnNAPQ0",
+    "object": "chat.completion",
+    "created": 1789187546,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only describes Header folding past 75 characters breaking Address() on newer Python, not a change to ASCII display-name encoding or exact exception text. FAIL_TO_PASS still asserts unstated outputs (unencoded ASCII names, specific ValueError/BadHeaderError messages and extra injection cases), so a reasonable fix of the stated crash could fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about emails with names over 75 characters being incompatible with latest Python because Header.encode introduces newlines, and Address() no longer allows that.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about emails with names over 75 characters being incompatible with latest Python because Header.encode introduces newlines, and Address() no longer allows that.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Yr9C3S73QscDmVJfCiq7GtwyKTjG28PDDYvzFllrabnrA9TLU5MqhOm7Q3E9k/ip6kCCLhX5U47qBDKlxXouyTXzBFiiuOtE2LRwbNciVB0Jt+4naccjpfoEP9UyI41Q/6puJJTT6gbYE177dmLK/0VKrZqQh+02bdCAv/wgoorrY4Vo2RCSyQnBmxkf0x9fOjrWtGtpoAUbns/J5dOzwfRgYSId6rFTF2MkygJKFhEkPSgfqlLUjUjFR3YRLL85KjRPkH0ca+mqIehb2I6DnXGHzC1sycvcNPtOWOHBydgNSuCaUCzTBp6dqf96pPkaMuy9DgZ6MhOM4mqSK8QZdPPtHkb6vqOA/04OkAvWQgrPDsZmu5ZyQAxjy9JEZcz4FIbSREY8MxM7t2IIioYmiHm1ug/V7eAtp//m1ebwfUr5/TwCkkpVMU+H5irp55fxC7OqSePVr8mX+qwD3d2KPo1Yt6ziOZ0rzNbXdBRz0n2VTQIgaIEQEFZCiknc4fEXYtPyVsG9auNDySE+o8h706EuHKRG+Og4X3P8pEJscV/B/1rTNI9D2M0E2kLDCFOQtBHDILnDRJwhVaGiKk5pH9VcwOmeP7s/FqrRr6tv7UPYmS0BNMz3MiB/LCAbIOMqZEl4q+9vX/xAXmNXiX1XdsbrbY9oJLdI1G0xumj8eY0JN6oRNlZDOd4VUvH5B14Peq/3eXvAvzXpoJE93x+P2O4qGpOdpvusMirNXLWY7O7rjeGy8PgA7mQXnrq+EAXbuze5Hi0dUhlyZ5Pp0CNYsFjOGmOwtYT9bR7cBUXMWeTRYhZIJJHsE2TTaWV5dhqJmV9mgDwAxTV1b6MsyRkvnFH1sCV+WfObf0qHCqRYZaZqaAZhs15YXkevR9i06Jz6foTg6V2D+/w9PyOHOmetc++H6NfgpDkABfBXweM49JyigWGt9Yatw3O1O9CtuoSyr4Rhb/YRAHDurtvEmKJd8JEj03WpmDFgl0FUP7hc8mLJeKytGnWTLVHsGKu4WDJf1vHeHZKsqiMRQ6uO5YL4o2jMc2ecu0XuBGWn8wfMJSnQnAUljzNVKwy56/Dc2HBKrcAS/S4KsRIZAKSsj31paNq9JBvwdqB0I84c2zrlUB9R987C3Y/hze5usi9ivVvF3MZ+DqvN5vJ0cj8Ydxl6H5fXwdbhmho5d8undBPg3V9Q3AFWBHSlesC7NSu2eaEvXXbAEmWEMr58WocIyNlQxdhzpIIGCRC0H9fIocbiGh27O+gJIOFn45dp23zFCoTdW8wG6T37n6vUqyMTfa9s+FfJevKfDbFHNaZTIl0CM2LG05qP87FKow37bYxckNhrR1eS6Jo+MAvGirfgz7RkIS65cL34B3mVTreVPashZMgsEbVebIcAg2o7RC/p/k+O6kHTxevrKXVm5x0oFoUd3TT6K69hIx5LBA9t/4SRIzEhxBGw/k7cb99WL4FTtbkmlhNe9XmABp+msTdBUqPsPmea6vB3b0OdRtrZUvkFJPFzXJeJV8UMa4TC5OsE0eMFPv45SqN35DymTsAH8omTykrvAk4CGgQp0F+szd/wjKPV/rgv8plPpr/jmMdgaPXOqCM+7Wb5XebvsnahK14hm/cz6nPZLxY89TSsX+ndCSx4/yrPoNC+tSL66j8Hs54gFgBG+aAp+y+cDigtamc0A/uJVKhpk47Oy/5WLuMpUuo2ewFHRv39LhLrrYipY6aLkZeDWQtl4M1akdWitDRE8W/ViFcwjV8spcnZfqvzYPr3/kc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bc274e2d-a088-9b4b-a894-489552e2ee51",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2846,
+      "completion_tokens": 403,
+      "total_tokens": 3249,
+      "cost": 0.007918,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007918,
+        "upstream_inference_prompt_cost": 0.0055,
+        "upstream_inference_completions_cost": 0.002418
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 277,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only describes Header folding past 75 characters breaking Address() on newer Python, not a change to ASCII display-name encoding or exact exception text. FAIL_TO_PASS still asserts unstated outputs (unencoded ASCII names, specific ValueError/BadHeaderError messages and extra injection cases), so a reasonable fix of the stated crash could fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only describes Header folding past 75 characters breaking Address() on newer Python, not a change to ASCII display-name encoding or exact exception text. FAIL_TO_PASS still asserts unstated outputs (unencoded ASCII names, specific ValueError/BadHeaderError messages and extra injection cases), so a reasonable fix of the stated crash could fail.",
+  "prompt_tokens": 2846,
+  "completion_tokens": 403,
+  "total_tokens": 3249,
+  "cost_usd": 0.00811,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

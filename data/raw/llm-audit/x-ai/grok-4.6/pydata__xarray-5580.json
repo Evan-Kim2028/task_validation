@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-5580",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1927
+  },
+  "response": {
+    "id": "gen-1789192291-0l3G7bvDhCtUHL6zlp6p",
+    "object": "chat.completion",
+    "created": 1789192291,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue asks to raise default display_max_rows; tests require unstated truncation split.\", \"confidence\": 0.85, \"rationale\": \"The GitHub issue only requests a higher default for display_max_rows, not a change in which reprs honor that option. The FAIL_TO_PASS tests would fail a straightforward default bump and instead demand that standalone coords/data_vars reprs never truncate while dataset_repr still does.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about increasing the default `display_max_rows` because 12 is too low. The user wants it increased to 100, 1000, or 10000.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about increasing the default `display_max_rows` because 12 is too low. The user wants it increased to 100, 1000, or 10000.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "v/c0OKyRK5Iwlw8sU2C5QqxudmmvVh8jv8r4N7olPxtKQtXlCbn80L2tF+9aIe3QHByEu+/7HVTngCQbNAHAMn0yzDxGqaKjQInMqr022JZqt30k2iBteb1epacA/UA9/v9Nv7UQ95TSWSO3nhe7yuh7dH5igOSPKz89VcJ1daJ6rBDd3DseL3dBbim+aXH7N6YLaE+nOmLSN8rVNZ9MjSi6MxBJi0O6EkxrQ4fjpOIotsJcNPETN//WdD6KqqSDz9AaFmoEtzgNChQ9r7TJ6zAFL3tDxQnujCVShR8SMI3Cdaq++MANL1RblOr8+eF+axVKtoOSLdhE3oTPcgs8HcypimML/DyssiWR7OLtd10cpr0GhFYapUJwQzL5OvbYC1RE7oraGUwf1SymHFjjU0CrzgzR9Xu68YmWRh7H4t58T1l00+DTZ+Gr0+qeTfRsJOW3oh1SQchk8ltBRmq3couqvZH3cZaLE9qy4P81zQF4nw9tVbqLPv26ZyJDrjeylityjskig4L8MRRSPTel+HSrVg/JsCre5Vv3RLSvq0ja61RcaR2YIIcvdYUSwGp1nkYpqSKB0RrVwomX5zeBVEs44aCYGuE5+Io+D09ccFdcS6ZjoJdp4exC524+PdEj0AURiV8SiD3a2JaBVh4qozlTgKck02JQIIj5eU+gkyPCRbx2O1pm4yo50c02vb/VkmeqFDdzYS5CaW85Aj+vQRYKFNfTlPi7KLeqX0usEjoT/fsAgQUPS2Ij+QIPkpvhidrmKsfMfMnirPYrUiR33sADvib3f1pAsMUx0SIuq927p/S5Dbfc/Khm3AUVm1z6PBlHaWL1OuIirjRQ7QMkyZ1Y8QoWvn8+Jc66aFbutl13GcTersw4G3sUqYAaoMy7M01tH6NS9IfC30F+p0G3FIt6VNBDSG1mb4y/wlCRPSZ5AlcSeELLUvL6mWsxnqSWCblDEKA0UUPrquWGWwM3qYYk8nabPdUSP8TJJXoN1dJazP7zQM/pzMJZYVS/9MvwJfQ7mqRoFA382P+vTAX25uPqWvLl/4eF1eWscFEK0rRxj4hGbmFmaQMfcdQAiuBNYbOsROlXNSaV0I+E7OJGB6MaTui1IezcnFXVkzRB3Ifci1X/+iAZT7Jlvvz7xtw2709eyMSJ9PkcHHYy2wLgPT1eZjmvDYkQEH3idXsbNJYDHLyCI61XougXi5g54muN4xdNpAv5rlk9AzUAUzuFzbzh+KrAT9SIJVHxe4GqmSuJJI/JyZKyCQEtX118BKtPaHg/m8jaCe/Zl+1iqoq1nO/OTvH36y8y9rAisonHqhxaOFGbObUNF9K35tSkljL5BdsHDrmzasLnSIesdC+eSvX8LV19MwEFJfi8t9/Ikqxl3yRKEBN453CABRT7M38KhmlxO36sQLeLUNYL0WSHfUfo+wqqHLMlIqw+OavXCQIL0w6KpaddRvkj50ZGWpeaLK1du/n2nIvjclgQyOjysomA7bB/H5k7E9QBSWfmjq919AGUS4wll4OdraVZCnVn6Rppakp/bQq2ZWyqYXzz/StSpi1nfIoBaelEw7qf7oIAvJiTuPjbCBkHKG5sJAyskFoFlL5ZTC4tsxdhA2g23a7IsglkocGOGHA+mtpUDM/zonXX63YNHV+7jsrjJbUGuqY/ANeCbY3TlwbJ7PbiI7YjMkdyTRdWjMSQ/fn5JiiAW6lSEMcYg0QHIdffMQd4fxYYeaa4PmFA6/jc0Qpgk9pYsb4rQ9AppwV2ZerGbIRQDcTYrXqu80G7812Ksc1zOO0m+7R/yVG0xON+ENTGPtCyShFLb/sYfS5pURqctwe5wLlI9fAXbYiS4urIYUgb7SCh7ZYTZ53xOXWj2sDfnDREaGdSGdjQWTa42nki4ZsBCtUkMBJfX5FB4Q2tVdxoDsRuxHjeO7DZldZR40lBd2OmwhaXO3f3lDYfBu7ej+o79fwnEmHjj1kDX2kNJ4FHw5klnvnuy1T7pEEuQ9xvgrbDgiVUoBKij2kHUZdbvRQqcB7diqdsKQgFC858PEYUnofJ1phIH3bX.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_59fdd13b-4e6b-9958-a03c-daf31c2c3dca",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2507,
+      "completion_tokens": 504,
+      "total_tokens": 3011,
+      "cost": 0.007654,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007654,
+        "upstream_inference_prompt_cost": 0.00463,
+        "upstream_inference_completions_cost": 0.003024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 370,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue asks to raise default display_max_rows; tests require unstated truncation split.",
+    "confidence": 0.85,
+    "rationale": "The GitHub issue only requests a higher default for display_max_rows, not a change in which reprs honor that option. The FAIL_TO_PASS tests would fail a straightforward default bump and instead demand that standalone coords/data_vars reprs never truncate while dataset_repr still does.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue asks to raise default display_max_rows; tests require unstated truncation split.",
+  "confidence": 0.85,
+  "rationale": "The GitHub issue only requests a higher default for display_max_rows, not a change in which reprs honor that option. The FAIL_TO_PASS tests would fail a straightforward default bump and instead demand that standalone coords/data_vars reprs never truncate while dataset_repr still does.",
+  "prompt_tokens": 2507,
+  "completion_tokens": 504,
+  "total_tokens": 3011,
+  "cost_usd": 0.008038,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

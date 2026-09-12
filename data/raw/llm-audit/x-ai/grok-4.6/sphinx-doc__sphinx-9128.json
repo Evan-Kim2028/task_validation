@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-9128",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1948
+  },
+  "response": {
+    "id": "gen-1789187463-jKjCY0VlmPGOU1xIIvQI",
+    "object": "chat.completion",
+    "created": 1789187463,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to suppress autodoc duplicate warnings for aliased objects, without describing Python-domain :canonical: handling or object-registry overwrite rules. The FAIL_TO_PASS tests never exercise autodoc and instead require specific note_object order, node ids, and aliased flags that a valid autodoc-only fix would miss.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about autodoc duplication warning when documenting aliased objects like example.StringIO and io.StringIO.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about autodoc duplication warning when documenting aliased objects like example.StringIO and io.StringIO.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Wz9cWfgA/eLv1quhWqavZT8lBXLiOGvgSU6oaAIzvb7IW1fKEcC4xzRp2Nq7M4FSoL2QFhJzKFFhz9hNfXXl+YQ1aqfkgKpagKauJaGISwmdb8ZH/1yEdaiOdqLlirE4bjKlp2IC1FYpUFlHR0WMFq/MqG7PSYYl60xxpsgxq1kdsIMAZe3kDAC12jdjCJZCsMa1rJC/4+jbpClAecltEE3rRIN6FIDDcraFv0qtOFdVYaGQh6dlzI002c4CAhtoRPUP7bzr//xPDcIIJ9q4l7C0ogEXiNW4yYE7mdrdA0ymIeo3LNEq6cw/TEDVsv+XyMVy42JOe+sOfnODVmJrou72fB39d9aYN2QnzH/sKA5YoKPUzPhNOGkhP+YeDf0xD4ZbTcu1ww+TP1UEz91F6u4AgC6FaKGcp8rzuvQ6npkI4f3TbIJcvoOc82pGwKZMuizycV/RaOlYt7VDZ72KgihOV+WEt7+HbijeuaaVJgxh4Fu3wuw2VA4rRLzl5FkugZdQB6dMfz+cXpN9mQPToneYynOTNTWy9KyArkxQ9h53XgGL2mrPhUfzctmNVzILQvV/WSY1sMlDYDEy54ROwGa0FxbmyUeTEY7+3Vnu4Rlpxfgr7poeVECW+mAOzuMDSsZoA0duxXPjnJK5ZJsmrlaQ4k83ZQYYUUpPknV1soF1xSVkypjC4VS6ccQzK456nFhDAVCMPROq7to/l6BnGF+TxiUJzU+lKtcwK7nrv0J8+EOBfnL2tWRgGwm2HgXZeRa4CW4RE3WUrpFpuC+Voxa3BG++YQgBQ7J7a8YhRe0SWDuj3FGzNuLtKnjJZS6JvREK4Vav/OOPBRUyomuH7uxm2nAs3OjsYAVA3lCvQkpKZ9+yT8Y3Y3HjMmnqZwLd8S7MgVd05XM+/S33GrJoXu5axihjBUdLBHFVy6bO6IcqF7BTGxBceBagbe3EjK0eWeb51WdK7PoB/zIgIb5xBC7mdpe8OUSgsXOxnOM6waN+KgSOS0V5Iry1UO4o4mya9A7lUpAhwNAYYnGCUxziMZIKPlOfulhvEBTT1KgDcgMRu54r8Xbffcb7nV2jQIaJIkEcVnOtTIG5AKY/SmqyddO353QaAPGAXw3iUYvp+zzRc1AH7WkyAQkZ66cWYLGRrarfyrsGh+COPtEYStInXvFZ4qe44z17ref089kSETs+TDlMiwpvrMQ+wzBYbOcBzr1cSC0sOqRb+mKiHFHVyRZPRMv2HrpTUdsGqa0c/pdUmcBlJKOO7CgTn2BW3PjL8J92Vgi04ZGEqSBrvPS81j4ycj6R0p1cKXXlpKH2f9Lbl3Zgau5GotWyjRtdMoYxk/2tMJeHLU898EV5D6nQx8vQv/Zl90hH+UshcQIzTQ9j7E3CqRuLKdbaLKuqf4FHFIIZ9Vn4BsxI7nIKR5/UD/bvT67+J75VlOwKvqW/Ot1tOuaF2dC5qzaZ5T+wm3C0fQonEJlcPJlgm4h/0aadf1jdhsoXBBAFy/xBMFIamibChGYvXVBYIsV4SI15XY8vEnySylPo5tR3Ru1khxQ1K8dPUkVhJ1vTmETQfHnuqjoRD8ZZg1u1MVwY2YemSXn6qqHysn9kRmIQSWTqePr0xujPOzARqolzKT4UYqDjfa68GZTsIE5w/UFwDZ4D5wT7AUh5kBGPRb49eBh4Rh46o8DF6G68XbC9EzFXinLbUmXwWjtx/wHBcnc69g.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6dadc7c0-df6e-94bb-b748-31ab7dc7a98d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2373,
+      "completion_tokens": 396,
+      "total_tokens": 2769,
+      "cost": 0.00693,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00693,
+        "upstream_inference_prompt_cost": 0.004554,
+        "upstream_inference_completions_cost": 0.002376
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 274,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to suppress autodoc duplicate warnings for aliased objects, without describing Python-domain :canonical: handling or object-registry overwrite rules. The FAIL_TO_PASS tests never exercise autodoc and instead require specific note_object order, node ids, and aliased flags that a valid autodoc-only fix would miss.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to suppress autodoc duplicate warnings for aliased objects, without describing Python-domain :canonical: handling or object-registry overwrite rules. The FAIL_TO_PASS tests never exercise autodoc and instead require specific note_object order, node ids, and aliased flags that a valid autodoc-only fix would miss.",
+  "prompt_tokens": 2373,
+  "completion_tokens": 396,
+  "total_tokens": 2769,
+  "cost_usd": 0.007122,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

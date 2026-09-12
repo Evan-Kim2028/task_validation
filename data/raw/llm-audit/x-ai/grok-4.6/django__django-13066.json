@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13066",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2422
+  },
+  "response": {
+    "id": "gen-1789191135-BGprcGt5Fuo3E3inUqy2",
+    "object": "chat.completion",
+    "created": 1789191135,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks to default Argon2PasswordHasher to argon2id and to adopt upstream memory_cost and parallelism, which a competent engineer can implement. The FAIL_TO_PASS tests fairly check that default encoding and still verifying older hashes, with only a slightly extra encoded-prefix and sample-hash shape that follows from the requested default.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue asks for Argon2id support as default for Argon2PasswordHasher, and syncing with upstream: argon2id default, memory_cost 102400, parallelism 8.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for Argon2id support as default for Argon2PasswordHasher, and syncing with upstream: argon2id default, memory_cost 102400, parallelism 8.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3e0fa073-8539-90b7-b270-f42e0d8f62c8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3038,
+      "completion_tokens": 517,
+      "total_tokens": 3555,
+      "cost": 0.008794,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008794,
+        "upstream_inference_prompt_cost": 0.005692,
+        "upstream_inference_completions_cost": 0.003102
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 392,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks to default Argon2PasswordHasher to argon2id and to adopt upstream memory_cost and parallelism, which a competent engineer can implement. The FAIL_TO_PASS tests fairly check that default encoding and still verifying older hashes, with only a slightly extra encoded-prefix and sample-hash shape that follows from the requested default.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks to default Argon2PasswordHasher to argon2id and to adopt upstream memory_cost and parallelism, which a competent engineer can implement. The FAIL_TO_PASS tests fairly check that default encoding and still verifying older hashes, with only a slightly extra encoded-prefix and sample-hash shape that follows from the requested default.",
+  "prompt_tokens": 3038,
+  "completion_tokens": 517,
+  "total_tokens": 3555,
+  "cost_usd": 0.009178,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

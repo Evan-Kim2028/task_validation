@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1766",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1029
+  },
+  "response": {
+    "id": "gen-1789192149-pLpyOkg2EcNyG6ekq2ML",
+    "object": "chat.completion",
+    "created": 1789192149,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS lists several unrelated pre-existing tests the gold patch cannot fix\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires quoting the Digest Auth qop value as in RFC2617 and curl, which the added test checks. Extra FAIL_TO_PASS names beyond that test are unrelated to the specified change and make the task unfair as a unit.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about quoting qop options in Digest Auth. RFC2617 says qop-options should be quoted with double quotes. The gold patch changes `qop=auth` to `qop=\"auth\"`.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Extra FAIL_TO_PASS tests unrelated to qop quoting issue; test patch only covers relevant test\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about quoting qop options in Digest Auth. RFC2617 says qop-options should be quoted with double quotes. The gold patch changes `qop=auth` to `qop=\"auth\"`.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Extra FAIL_TO_PASS tests unrelated to qop quoting issue; test patch only covers relevant test\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7a60fcef-3db4-9589-b0bb-e215224efd1f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1407,
+      "completion_tokens": 716,
+      "total_tokens": 2123,
+      "cost": 0.006726,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006726,
+        "upstream_inference_prompt_cost": 0.00243,
+        "upstream_inference_completions_cost": 0.004296
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 593,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS lists several unrelated pre-existing tests the gold patch cannot fix",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires quoting the Digest Auth qop value as in RFC2617 and curl, which the added test checks. Extra FAIL_TO_PASS names beyond that test are unrelated to the specified change and make the task unfair as a unit.",
+    "p_invalid": 0.85
+  },
+  "s": 0.25,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS lists several unrelated pre-existing tests the gold patch cannot fix",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires quoting the Digest Auth qop value as in RFC2617 and curl, which the added test checks. Extra FAIL_TO_PASS names beyond that test are unrelated to the specified change and make the task unfair as a unit.",
+  "prompt_tokens": 1407,
+  "completion_tokens": 716,
+  "total_tokens": 2123,
+  "cost_usd": 0.00711,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

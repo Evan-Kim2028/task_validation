@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11559",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1034
+  },
+  "response": {
+    "id": "gen-1789187452-YCahJWwB4mu0Vq3BiMuT",
+    "object": "chat.completion",
+    "created": 1789187452,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes a crash when Meta.ordering uses expressions and a child queryset orders by the parent pointer, so the required handling of non-string ordering items is identifiable. The FAIL_TO_PASS test only exercises that crash path by putting an F() expression in default ordering and does not demand unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue is clearly specified as a crash in get_order_dir when Meta.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue is clearly specified as a crash in get_order_dir when Meta.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d90d6176-ff8c-917a-8fc8-5e10b0a7dc1d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1323,
+      "completion_tokens": 586,
+      "total_tokens": 1909,
+      "cost": 0.00597,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00597,
+        "upstream_inference_prompt_cost": 0.002454,
+        "upstream_inference_completions_cost": 0.003516
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 464,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes a crash when Meta.ordering uses expressions and a child queryset orders by the parent pointer, so the required handling of non-string ordering items is identifiable. The FAIL_TO_PASS test only exercises that crash path by putting an F() expression in default ordering and does not demand unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes a crash when Meta.ordering uses expressions and a child queryset orders by the parent pointer, so the required handling of non-string ordering items is identifiable. The FAIL_TO_PASS test only exercises that crash path by putting an F() expression in default ordering and does not demand unstated APIs or messages.",
+  "prompt_tokens": 1323,
+  "completion_tokens": 586,
+  "total_tokens": 1909,
+  "cost_usd": 0.006162,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

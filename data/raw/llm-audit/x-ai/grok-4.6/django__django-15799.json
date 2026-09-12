@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15799",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1141
+  },
+  "response": {
+    "id": "gen-1789187488-sPuF3htgrKxu8SGluwHz",
+    "object": "chat.completion",
+    "created": 1789187488,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks not to attach the multi-select help message when SelectMultiple.allow_multiple_selected is False, which a competent engineer would implement by tightening the existing isinstance check. The FAIL_TO_PASS test matches that intent, though it is slightly narrow in requiring help_text to be exactly an empty string and using a somewhat awkward ModelAdmin setup.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about SelectMultiple in ModelAdminForm displaying help text when allow_multiple_selected is False. The help text shouldn't show in that case.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description and gold patch clearly specify that help text should be suppressed for SelectMultiple widgets where allow_multiple_selected is False. The test is slightly narrower because it asserts exactly empty string help_text and uses a custom widget that may be overridden by filter_vertical, but the intent matches the core requirement.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SelectMultiple in ModelAdminForm displaying help text when allow_multiple_selected is False. The help text shouldn't show in that case.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description and gold patch clearly specify that help text should be suppressed for SelectMultiple widgets where allow_multiple_selected is False. The test is slightly narrower because it asserts exactly empty string help_text and uses a custom widget that may be overridden by filter_vertical, but the intent matches the core requirement.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c973668f-b129-957c-ab49-38e356fe1ee1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1423,
+      "completion_tokens": 813,
+      "total_tokens": 2236,
+      "cost": 0.007532,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007532,
+        "upstream_inference_prompt_cost": 0.002654,
+        "upstream_inference_completions_cost": 0.004878
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 684,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks not to attach the multi-select help message when SelectMultiple.allow_multiple_selected is False, which a competent engineer would implement by tightening the existing isinstance check. The FAIL_TO_PASS test matches that intent, though it is slightly narrow in requiring help_text to be exactly an empty string and using a somewhat awkward ModelAdmin setup.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks not to attach the multi-select help message when SelectMultiple.allow_multiple_selected is False, which a competent engineer would implement by tightening the existing isinstance check. The FAIL_TO_PASS test matches that intent, though it is slightly narrow in requiring help_text to be exactly an empty string and using a somewhat awkward ModelAdmin setup.",
+  "prompt_tokens": 1423,
+  "completion_tokens": 813,
+  "total_tokens": 2236,
+  "cost_usd": 0.007724,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

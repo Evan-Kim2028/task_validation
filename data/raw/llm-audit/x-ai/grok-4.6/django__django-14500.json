@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14500",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1059
+  },
+  "response": {
+    "id": "gen-1789187558-clCEaRNGIf5ETuOnj3UO",
+    "object": "chat.completion",
+    "created": 1789187558,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that unapplying a squashed migration must also mark the squash replacement itself unapplied when replaced files remain. The FAIL_TO_PASS test only checks that migrate-to-zero removes the squashed migration from applied_migrations, which is exactly that behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is: When unapplying a squashed migration and the replaced migration files are still around, the MigrationExecutor should mark the squash migration as unapplied, too, not only the replaced mi...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: When unapplying a squashed migration and the replaced migration files are still around, the MigrationExecutor should mark the squash migration as unapplied, too, not only the replaced mi...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "TcZDtiwMU/2+i3Urtwwy5eSNqNFH4Kn0s2V7jB22UxaE+fZXR09bFEPoh4Cikf1XVKCKuZemTMGCP0oME9iMu+RhH6R/mBHEdIeEO6dtyogyLfyVvbvh6YxYtQhqFvzLrC5T1OAUCNGN2Je/Y43NLiVxK8da+a6UiGx9fe5L8NpoBo2sDwFo7KjAwzRprOyNvff3mhfAmGbJHDCIcEyFoh6XZX2ePLfN+S4ZqlNtvvrs/L/8eAcU86G2txVlIvldZIpKy9WGXZp0QP3MBxOhui599LPlizzj+YdQiKGOy0lHvmK9JKK+3zBbAFR/Nq4eTP1pYU6LAsDmABNZ7p8oTXHP3+mlsxGuvlu3YjeaUe27XngKq51hoxUzEIlN4flPQ8YflE2dJ2YUAeVt/1bBgOfDyJY5fiO8osVWfiuCS2IZvBlP1APqKJZVOcarWUmKc8iddtC+M7V4uS/FbYEJYpWN4JZvLjXHFUcEiDEfuBcUU6X3IiwSRqbwJh08RoxX4gAzB6zbu0rk/lQydOFETzxym2WqyZBXvKuAiE9Rs1y67joJNTt8yIkCvXvOGKmGVZVnqZhtwtrY+Vff2EM0RowBpJ1xwGuLH9EuVEjkNftUwx7eSYQ5KkUf83YYvRgoohgIRCywj5DgPlgBZVHi1q0449BBHbvbfX4bczQvg0GqyOa2TrHhY8p8botx9LFCQVTTJHz3XyJZv2V+Lq+Aa9mXJRy4OXq8+ncr56omi0W4F5XL8PBAIHoxF8Z8Q5DUxMffJ3EkbbuyLBFRUCTcx1+/RQ4FVQvRF+OANse7Hoq4UZd9ntMbJRxslwkmu/g9bUEdk14M8SPM96QOGAvrgG3P5h427AGM68unqSGSCA1qqIdYyPtueSu8v2a7bNU1YKQrGWm+W/y7vcdRraSeioZBVfVlh7nKF3IxLQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2edb22e8-0028-9556-a7c9-1c209aa8a80c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1294,
+      "completion_tokens": 276,
+      "total_tokens": 1570,
+      "cost": 0.004052,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004052,
+        "upstream_inference_prompt_cost": 0.002396,
+        "upstream_inference_completions_cost": 0.001656
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that unapplying a squashed migration must also mark the squash replacement itself unapplied when replaced files remain. The FAIL_TO_PASS test only checks that migrate-to-zero removes the squashed migration from applied_migrations, which is exactly that behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that unapplying a squashed migration must also mark the squash replacement itself unapplied when replaced files remain. The FAIL_TO_PASS test only checks that migrate-to-zero removes the squashed migration from applied_migrations, which is exactly that behavior.",
+  "prompt_tokens": 1294,
+  "completion_tokens": 276,
+  "total_tokens": 1570,
+  "cost_usd": 0.004244,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

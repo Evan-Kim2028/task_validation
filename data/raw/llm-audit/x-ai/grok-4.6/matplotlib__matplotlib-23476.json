@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23476",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1545
+  },
+  "response": {
+    "id": "gen-1789191968-83b4CSrGg6JHltk9avHO",
+    "object": "chat.completion",
+    "created": 1789191968,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly requires pickle/unpickle to preserve the figure's logical DPI rather than compounding a device-pixel-ratio scale, which a senior engineer can implement from the traceback and expected loop. The FAIL_TO_PASS test is only slightly narrower by using a synthetic _set_device_pixel_ratio setup and asserting the unscaled original DPI on a non-Mac canvas.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about DPI doubling after unpickling on M1 Mac. The expected behavior is that DPI stays the same after pickle/unpickle.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"The test correctly captures the expected behavior by restoring original dpi after device pixel ratio scaling, but the issue description shows dpi should stay at the scaled value like 200 on Mac. The gold patch aligns with restoring original dpi, matching the test intent despite the apparent mismatch in expected outcome.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about DPI doubling after unpickling on M1 Mac. The expected behavior is that DPI stays the same after pickle/unpickle.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.8,\n  \"rationale\": \"The test correctly captures the expected behavior by restoring original dpi after device pixel ratio scaling, but the issue description shows dpi should stay at the scaled value like 200 on Mac. The gold patch aligns with restoring original dpi, matching the test intent despite the apparent mismatch in expected outcome.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9c837d0a-8051-9b10-923b-a77848ab0840",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2212,
+      "completion_tokens": 903,
+      "total_tokens": 3115,
+      "cost": 0.009458,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009458,
+        "upstream_inference_prompt_cost": 0.00404,
+        "upstream_inference_completions_cost": 0.005418
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 771,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly requires pickle/unpickle to preserve the figure's logical DPI rather than compounding a device-pixel-ratio scale, which a senior engineer can implement from the traceback and expected loop. The FAIL_TO_PASS test is only slightly narrower by using a synthetic _set_device_pixel_ratio setup and asserting the unscaled original DPI on a non-Mac canvas.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly requires pickle/unpickle to preserve the figure's logical DPI rather than compounding a device-pixel-ratio scale, which a senior engineer can implement from the traceback and expected loop. The FAIL_TO_PASS test is only slightly narrower by using a synthetic _set_device_pixel_ratio setup and asserting the unscaled original DPI on a non-Mac canvas.",
+  "prompt_tokens": 2212,
+  "completion_tokens": 903,
+  "total_tokens": 3115,
+  "cost_usd": 0.009842,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11555",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1237
+  },
+  "response": {
+    "id": "gen-1789190889-1smhoGdSaGXc38OgDfDZ",
+    "object": "chat.completion",
+    "created": 1789190889,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes a crash when Meta.ordering uses expressions under multi-table inheritance, so a competent engineer would handle OrderBy items when resolving parent ordering. The FAIL_TO_PASS test also asserts a specific result sequence rather than only non-crash, which is slightly narrower than the written report but still the natural intended behavior.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about order_by() on a parent model crashing when Meta.ordering contains expressions. The test specifically tests ChildArticle.objects.order_by('article_ptr') with parent having ordering b...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about order_by() on a parent model crashing when Meta.ordering contains expressions. The test specifically tests ChildArticle.objects.order_by('article_ptr') with parent having ordering b...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "5bNFyApfIhofqy1M8Que3ZoiDeLvkTk6J2r042tlE42P6RRoJqbrAnP3SniEnOciIzxuQn/FiZq6apeLNrGZOoxihVSIjTZ4JojmYQe0RBUuUuRzajT86eLW/Ba6uCGdleisXusP2F32APBlELSgOdIm6+g1w2AC4CbOvE9NDKcE/9PoGvykfr03qpoNPn9T+1M2gSLZH5EIL56uQ/c2i/6SwJouEs3a90P7R1aJlkl6hFvRF+9V4OwA1tD3QmYrGfui3AC13vHI5d/ifKgV4QGZDGdc6S/IYTnbujaWIcerEKmp1dKnB9j74+4JXXVdkr10dzcV39rqM7nYomqqMClLLdLvK5bIuUbH2mtwxhpVOUvmirO0gnQK6rKgKK/YX04oXspfHzneCnflzYdZ6TMm0rj16R9/P2sBm7zQ94byLS8ANXc993/0DBV10dqUwCNsbVjR7xNeOUYOzMi9N4KmIj67aDNWi7V5O2NYHW5wmppCvrfKUgKBoLj3iXwmxOJ9BAK+dX92CxkwyndOb+ccOWsNmj9vDfWlUA+EWPuv158lI0Ka5sojgOEiZFyou2Tdj4nuqIypKZe2QA2bwdI6fCcxD4qTuGMUNas0iYbn2xKALcTU9SHuO46oES609I0ZJAZHWF5U7O9iYubCeLlCiEznr2ZZfUNUURaDY0OaNrHQrdyE2X5Hvody9Q9ltOhERisIgGeCWDn9EuVQau2roB+amgWOobSY0PTzpHXWo+JtvpKyRzeYe9uf820UKGl7F1uKnEyl1n/7tpxJaL/6Mzn4RIxA2ynETWb15tCzX0XhScqUtGlTq1Rmg1CKdizxbQZpKhAbJrZ1Nwbc81rP1lbMnkpgpu8J7V1WfT9EsxzIsUvbYnFloinzoAMLieeODOAp9iEABn/9EP3MQM90Knp3gVGZYLH/BOmhcEhoRWVD1NFNTACLVL4Tkv3cebuTzNyvzF6ofqFFMVZ1Bt5aPpdbnjGjxOp69pfuHL65qYR9T9H0lG72E74Be49vSCtNtXt6sOuOaYdHh6dgXxX8wWVXVFhRYKt9dsWbFlLlBzg23PnEE03mVC1wCfI8MI5ZhgkydNNNYU2BSHM08O/8hpopQeiMx3/cY99YsiA1VZFJqN2De9K7BIZQC7fga5NHU96Y1FkkPpQ8uAAIKyAMIGV6AlwWIY91XO4VMmt1OsmRx3D/vSD2v/NyVAvIaDk3ULVgAoSaQ72XWkiog9QOM9PVRvaJb6inYWzhT7rpNGAo6B5GshIOWkcqFcKei+4PM7yd8F3Xj4sO6SXSAF8tFiQQmU4gBTi6REv6dFR+NuN2G5AAc0l7w8/YHKvukaoUh2kKU4pakiPtlr+OuN6iLm9qZsiBfUzCBXX4T+2erJQsqYRPTnl/8D/0mal8gaSUskWaGs3zLXe1b++zS47cSW2hXei/ZjmTnDtl8nHun3d8GoyyhXnjAvL3BxxeMeXGUa183uFKWXkPOgRiYgBriZt+fScYlb1pQxHm9F0n56U0pIa3apZT6klQlLBcNlVtS3B5s6GLtOYM28pCriApLP4dej1jEv8Xz8XRUG7ww+UsZAvE55uyEo2Nd3KnrIGAYN5rSPMNivAPReutfij0lKuphSwQIUf3dGIFaSbRkhO1R7qwEB/MQ5pDJ16olnbvEYa9/zQoUG1bXk5UZs3V8CpSvLVSMCj+2e0haTRq8saLKXIzQ8tiuWfSUj5XvmYlv5g+A2UkMUeG7pcXTGChv8FDobILrGzsu7mcQdhG+xAw3M4/s++L9cs7fIN6riMGNTSmKQ7UW7M19FUEf9Bvssv7KE4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f44b0ae6-fdb4-99dc-b141-f5fdd10c116e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1561,
+      "completion_tokens": 420,
+      "total_tokens": 1981,
+      "cost": 0.005258,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005258,
+        "upstream_inference_prompt_cost": 0.002738,
+        "upstream_inference_completions_cost": 0.00252
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 298,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes a crash when Meta.ordering uses expressions under multi-table inheritance, so a competent engineer would handle OrderBy items when resolving parent ordering. The FAIL_TO_PASS test also asserts a specific result sequence rather than only non-crash, which is slightly narrower than the written report but still the natural intended behavior.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes a crash when Meta.ordering uses expressions under multi-table inheritance, so a competent engineer would handle OrderBy items when resolving parent ordering. The FAIL_TO_PASS test also asserts a specific result sequence rather than only non-crash, which is slightly narrower than the written report but still the natural intended behavior.",
+  "prompt_tokens": 1561,
+  "completion_tokens": 420,
+  "total_tokens": 1981,
+  "cost_usd": 0.0056419999999999994,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

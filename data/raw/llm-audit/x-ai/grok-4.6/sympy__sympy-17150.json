@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-17150",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "5a25ddf8-a2bc-9eb3-9ea8-cc0cd63e6382",
+    "object": "chat.completion",
+    "created": 1789194608,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly describes wrong integer-floor extraction of base powers for rational arguments of log and the expected rewritten form. The FAIL_TO_PASS assertion checks that same extraction behavior on a simpler equivalent example.\", \"p_invalid\": 0.05}",
+          "reasoning_content": "The issue is about incorrect extraction of base powers in log class. Evaluating log(Rational(408,499),2) produces zoo, but should produce log(Rational(51,499))/log(2) + 3.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1834,
+      "completion_tokens": 96,
+      "total_tokens": 2191,
+      "prompt_tokens_details": {
+        "text_tokens": 1834,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 17142800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly describes wrong integer-floor extraction of base powers for rational arguments of log and the expected rewritten form. The FAIL_TO_PASS assertion checks that same extraction behavior on a simpler equivalent example.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly describes wrong integer-floor extraction of base powers for rational arguments of log and the expected rewritten form. The FAIL_TO_PASS assertion checks that same extraction behavior on a simpler equivalent example.",
+  "prompt_tokens": 1834,
+  "completion_tokens": 357,
+  "total_tokens": 2191,
+  "cost_usd": 0.00581,
+  "cost_in_usd_ticks": 17142800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1089
+}

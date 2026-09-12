@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23174",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1254
+  },
+  "response": {
+    "id": "gen-1789191963-zxc4f4ktdPe7VCJWKkCN",
+    "object": "chat.completion",
+    "created": 1789191963,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly reports a crash when calling clabel on contours inside SubFigures and gives a full reproducer, so a competent engineer knows to make that path work without AttributeError. The FAIL_TO_PASS test is the same smoke reproducer and does not demand unstated APIs or outputs.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is a crash when adding clabels to subfigures. The traceback shows SubFigure has no _cachedRenderer.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is a crash when adding clabels to subfigures. The traceback shows SubFigure has no _cachedRenderer.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "BXUwaVKWOotlHZpI+xMjQSmGeLY9p6kAxdBOCsGQxjfoCyGImlEJEy5MYW6LxRyPY3nFLd1So/FKBvoWU8Ti/bFxvwpbVsR5VwxZu/3+/4hOtypfr/uk+4adu2KU2GzTfRUl+tW8E3uovH6h7xWoeY7nmoMxNGTmJO3gpQToxZbUmM3WG9Rg5MJtqQ+moGkRB2Myrwi3BizawpcX/C8cGWua8Ht78cadCYkr0j1vKGtfLwp3DHJxXA5oPMKjLK+psOA+DbdqynU+o68GFhUawxc++Lf0Ag7/egumVLvylYGWmjypy7Hy5cN+NpTHVINcpUScILL1JKdg8gYDfj9RinBhLQqUuLmPDUJzQo0rwjxz+SsT7/TqBC/1FMRzvKbmKB1cccNeYvwCob1jQaT2/Ynz4AYn6IJ9hGp3NplsPE0ndNVKDouqEZgR9ZzhRyvoES2kIvtMUzYH2wQjwVSTAHHXTI73Dg0F/HKgGiaKLy6TFSlk1Z8C7yXAVFSux7VZol12kvD/bImPPyG1jjhd2TY1WrT8uktnGBylE+a5qu75OXozOKeFsbM+tmmwmm3NbFXZfWSSgiVoAybyhampSnD3IEtOViD81UbnO1MAOCY99BdqwvIqInWnrvvOmH8alZNpIXO/qS8zwkOHMWTWLeADIj34EMTtTK8NOQguE417AFWT9YRM+b4YbWGsxRne1EJetmbpzTxuJimZqx6wuXUZNvm5ZjOA+bAc34TaPVX9DNXjk1zN8x+uKCo.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_78a3a277-55ef-9c83-a60a-c4893e7d3f14",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1781,
+      "completion_tokens": 247,
+      "total_tokens": 2028,
+      "cost": 0.004852,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004852,
+        "upstream_inference_prompt_cost": 0.00337,
+        "upstream_inference_completions_cost": 0.001482
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 132,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly reports a crash when calling clabel on contours inside SubFigures and gives a full reproducer, so a competent engineer knows to make that path work without AttributeError. The FAIL_TO_PASS test is the same smoke reproducer and does not demand unstated APIs or outputs.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly reports a crash when calling clabel on contours inside SubFigures and gives a full reproducer, so a competent engineer knows to make that path work without AttributeError. The FAIL_TO_PASS test is the same smoke reproducer and does not demand unstated APIs or outputs.",
+  "prompt_tokens": 1781,
+  "completion_tokens": 247,
+  "total_tokens": 2028,
+  "cost_usd": 0.005044,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

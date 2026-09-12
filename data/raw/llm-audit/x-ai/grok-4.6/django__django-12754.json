@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12754",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1378
+  },
+  "response": {
+    "id": "gen-1789191086-OIlD4oM0g50nENTtQDsL",
+    "object": "chat.completion",
+    "created": 1789191086,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that CreateModel then RemoveField is wrong and that the autodetector must emit RemoveField before CreateModel for a field moved onto a new subclass. The FAIL_TO_PASS test checks exactly that operation order and the named field/model, which is the behavior described.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about FieldError when migrating a field to a new model subclass. The autodetector should order operations so RemoveField happens before CreateModel.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FieldError when migrating a field to a new model subclass. The autodetector should order operations so RemoveField happens before CreateModel.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ZtjiksqsVkKnlSA0K0KZZwCm2olB0cPjg36EdSCnHQqbbyaoGYK8+TxBCKgAYX1WoayLFSul9qe3Z+6kvZv2zsVCDYysQhNcuRFEUbtbQEGfHK5tlEagg5qCzhEETXo/D4mHq922D6j73CmQ5pgcFVrtnUVXZeb8O2hfzzrj/+k+ZPzn9CabIC5jcdPJfZigAE+k/ITsqI7Pd6rFPQgWV1CEq0l9ck3R5BOaKKIULxnPdpTrXBqa2NmAPshduGdghfyoeL0TlQl0nZLzj+73qpiED+zZ8aMpTI3pza70rqyO3q4xIs8EphulaVy6rqUWyXlo77BeWYveq6eSFYp+Jh47KOtMtV4xvKr9iO3ZfceGdLiV8RTA7HfaFhHyLo86emqlc1LCJBdqI9n9agbtThiyD7Kls563NbnzdKBzHr+cvyIEKfSoXIYrSyU1lDd59IMsup/qHVhimxUx3kY8MceTWoRhdFgTklOFFdHrH4k+wwuJh21zwG52tDg3TH4wTt1hceN/6VJtWQrWEO1ku4niCZKSZiob9EWkgAAq8+uFvgWPVpicigMZpttjTXSZ4Fq8gPMEyxBbTIj36VYfd4IhUOiDH14WFNeQndfOlrP1yXUNCEEAkWNTBdg+HgBX+tUFk7DLQnQmU+YabYY7FYSceKymzwg8DKahA6G67JxIMgu+owOMNVb68wW98mCgtRaRcYfnbb17Tnb9h/pSExGcFzYObJ7/WB4DMxsgh4jbnB7nRN6V0YZsPX81GOEs38wStaX5gJqBHQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1618aa99-83ce-943e-b3f5-75ecf35f2666",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1669,
+      "completion_tokens": 249,
+      "total_tokens": 1918,
+      "cost": 0.004448,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004448,
+        "upstream_inference_prompt_cost": 0.002954,
+        "upstream_inference_completions_cost": 0.001494
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 135,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that CreateModel then RemoveField is wrong and that the autodetector must emit RemoveField before CreateModel for a field moved onto a new subclass. The FAIL_TO_PASS test checks exactly that operation order and the named field/model, which is the behavior described.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that CreateModel then RemoveField is wrong and that the autodetector must emit RemoveField before CreateModel for a field moved onto a new subclass. The FAIL_TO_PASS test checks exactly that operation order and the named field/model, which is the behavior described.",
+  "prompt_tokens": 1669,
+  "completion_tokens": 249,
+  "total_tokens": 1918,
+  "cost_usd": 0.0048319999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

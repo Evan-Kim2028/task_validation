@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14071",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2486
+  },
+  "response": {
+    "id": "gen-1789187569-J4wamFxjGCdNhKuTJrS1",
+    "object": "chat.completion",
+    "created": 1789187569,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to reject raw_id_fields entries that match attname rather than field.name via admin.E002. FAIL_TO_PASS also requires rewriting refer_to_missing_field to say “not a field” across many unrelated checks, which the issue never states.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about admin.E002 not catching attname mis-references for raw_id_fields. The user specifies that _check_raw_id_fields_item should check field.name == field_name.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about admin.E002 not catching attname mis-references for raw_id_fields. The user specifies that _check_raw_id_fields_item should check field.name == field_name.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "mpbGW2AED3sv+m+TXUvvBHABAzE6LUi0ypDsEiEyKtWmgd4CCIbkCjtN+eTDLmF7oa6GgBFsVa3+jwmdM9HbL8MWGuguGi7S3ISdPWr7rfSXkO7LJKIQk2NvLA3oQE9dEnXwoyuP03PTZuv5BFME25/fMXVlGY1SEJoh3aDCVU4kIauRkiVJi6daxOt164dlp6UiDy7GM9Sw3zn8oQt5DwdLYyveJyqmwYd4zTRove+O0jWOFCTcDuWRXmh13CAgXVSSLOODPKiog/HPkwiMq1ZsKmGBAst9Hgpz4YYDjD6uCbAzMEzZmZ1ulxON2Cdj//51hanFNd98IGzLkkLZklz4vVDiZpLDYR2EEyqV/nKIxE2CsENfhmBpQ3cgzklKwXzfkv+pmHNw0mC5mfLrxiVvKgHsvTREPtyH3Ht+sKGelnHkfArHZqnZ630xtoeUP02mV5gF2XaFhAeu22SuOzGLPhaOProYpE2jqkwyazW4kCD3ZW93ZpBtbGiTTkZcufPP01tZyzJiPvMKXlIHV1PBZJa+u3NjlZ5htRSex/kGtUR2S01lk5uN1Dh+hs8S2kLBmIK6soaHsqrMVgm7yKk0yQLa3DwBSpxY+V94KEKm3tBm/7g0rY1BCEciiC1/CbwMb7LDePVTl6bI+6gJPRTgOtU1MdRuFa8knxW2hr8KkbzNFKkF74Xc0Z7+Ipita2ZXrEqK7+IR3HWcGhKbfUAjoeECI4MVK8wmoU9ba3gVN2JPIG4Veqg7pdltJXxuHyaAShJsV/Xl16iSFctSlLvRww4Zr44crNlWeGU2cg6qkfTXhoD1e51kRdnCUiAI1wh24kBWJka7KRdYR9d9HCbVxF5v67+t1EigV0wlZ4zmL7tjpL6TGOOZfe3BXeIXH8nqVq9gQgEcvXO+31V9H/G8pyIYc+GyfITVpoFT7oU1mnzhElmvSmHKtlr9rN8n7yiV3IJy5jpOV1gtoVu0GkkYLv9ZrLvQGMVKmHTcUOOZAEYiKTgWjny7xwVvrGDFkX6dPXjQMh/WGK4RGtZBlf0Jk+d+XHpNcjIKRg/iDpl3CIRlkCr41U7KtarnuGN/1earl2+0q9genrsD/Io2E0DJOaUFZ224mSXS3UHNnPdGKIESLwS8uqiuaO0557joR5Q3fBxv1e5wsKdJA7PIv++v/FaxoOg7/10IcETRP1AMsXXzO7CX3rngkc2+yIr9TuHkAti7HkrvnG2sTV6eOxKKCBLIILO/peL16tOdTi4wHbFBCCMZFeek54hTdL40uvx2g1ZLHkPh+qM5kMbMQDEBEk+N771RWBIXALshoLVvUBZYag7yl3meSvcc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2304411c-f479-9680-90c9-c28ba3ace958",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2863,
+      "completion_tokens": 349,
+      "total_tokens": 3212,
+      "cost": 0.007628,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007628,
+        "upstream_inference_prompt_cost": 0.005534,
+        "upstream_inference_completions_cost": 0.002094
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 235,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to reject raw_id_fields entries that match attname rather than field.name via admin.E002. FAIL_TO_PASS also requires rewriting refer_to_missing_field to say “not a field” across many unrelated checks, which the issue never states.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to reject raw_id_fields entries that match attname rather than field.name via admin.E002. FAIL_TO_PASS also requires rewriting refer_to_missing_field to say “not a field” across many unrelated checks, which the issue never states.",
+  "prompt_tokens": 2863,
+  "completion_tokens": 349,
+  "total_tokens": 3212,
+  "cost_usd": 0.007819999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

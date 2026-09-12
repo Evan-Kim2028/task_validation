@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15018",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1522
+  },
+  "response": {
+    "id": "gen-1789191518-dbBnmaqKqYiXcLHiyap6",
+    "object": "chat.completion",
+    "created": 1789191518,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks for a way to invoke call_command when mutually exclusive options share dest, but does not specify rejecting **options with TypeError. The FAIL_TO_PASS test requires that exact error and message rather than making keyword invocation work.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about call_command() failing when required mutually exclusive arguments use the same dest.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about call_command() failing when required mutually exclusive arguments use the same dest.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "JC8is3ieGId8iQmE8XI+R0ibAh8aePY6A9B3DTWfM88/ORA9c+ueknnIHAEl97oUwzarscd39q/pKDtTLUSEyqmanAhlzRcFAGDaaytL3a2hPw6AJi/Ynu7YY8TK4Fk1BbRMrR2oCf1WWKlQLkUE38oc60w1eYEjXCQHfZlxK+tNaV46fBqq+Gm4dHb9yT6RR/iFC2COrote3ylaKX0B3gfJl1ZT9R22ouRmv3UOJI/pW9DELxDG6JYfFt7C00fbWhHHPQfgVe9RiB3i+PuAjKgHZuY+Zp43D7LDwEVGAOBuwEb1kNxIUvstEQZ4MpyIwBB6UjBt6lYvXvSpfebbh2oRKDGiz8O0ldq3tZJQ3P4cqsVYBDllu1EeoCJODUtYWyv/O5MpkyQPOAEoQ9a58Mvm71C/O+3k6Ljf+kAewfVw9jOd6Unw4tyIXTlJV4ZAEduPxI4+VNwowjbTENdGRxegIQZDYjXl+69BOZbNJ2NZOHYMvSPQfwS7c1z69zz7MwZGJRAJ6k62zpk6dI9Wc15yhGu0V1YgSWLsK4kFvjhel5+K8gQzSmy44+fhEpUIguL+wPlIL4z3yM1rIOSSiFvV2Ehz5lAZczZ1nVraxjM7LD/aGHiDBE1yoyYyCDnJTl390eavoE/kfYOnQF6+cj41uofWxf4G730tveqQkF3niZofzlEb+Wp7LnHQunwLDOakAz7CZN71mAdw1KknbVXrUM+wZMuELscz1Sg5CzbmEGdNK63eNdE80D9GokCKij4ayqch8wYnHAX3zZf4eLxe7/M28Tj6KwnsQ3j5lCbWTtRuPjYAaufdWqBnNdvwUqglP6q9FwMtQPManYsK+oK1wtb2SDn3fuMdTcEN0a8jwVvFDF+Ksi/cAPN3vF+8DjJmX9dqRpdtvvUXEOGWGXEf6mGEINboUwsNvdIuQoWxETiTnGnuUHxCIPY9ZOTlyXZ0tisB9+zMpLlbApSCv40Nr0ebLaeIy/jyRCdDDxvWY10kOMpFRuryVitGsQZ+7KhmKSQIawboUyvNIAt2hri1BvmNVL++AMd8SLtkV23VrjSeqhBzci/pCwGM9qNfY8gMUi9bgo+yYzJzYjyiE0dfLvCVMHKFvuYF+h1rogq8X4nNvICKiB+9IBPAur98IZKKJrYxaSaJipxA35UyRu9YH1rF+h8AYY4CQP5TapzU5aRQNJQvsGHVXZJI+frIfHtB0gJbxqwCMZ281bWAkQdmP1IZ/p25iQDCU2UZZzIRLXSTiw7M9QH6IJY/bWYjBI529AZjLkaoESAVgBv3kARksOkdfsisBwAvqRo5gvOOWVjNVk7IgS/qI3FG5c1v/5usKsNUT84F4i2/zBu6IOdOhba6cHBpyy35SaAGRfcnmLOmDwJgJdhif6MLZz5gXyfhDPmBrxNlIYfPwtbFF8w6pddqADNBbFeTcyCpQLpLUESPfU8t+LEc2i31uHWFM/SPAB5zQRZ2OCL3GIQ64C41mqFbepKLo+NKv4QwsDynsbpTZ6y4moBoW8pnXUUTIx5Ucux8kAg3w88Me26jJYhzNtLMDUV8tepV2z/xpOwIaneYmnECaeOnetlQ6/LMNRpkInml+KLWXOsNzcVvx+RZKLo75Ot4uv9tj0XjUvonLWflPxzgZVUOCBJ0sOmUBKjPt5cf+Z+AQSJWjvSFHssMKUnyt/JREosfLgQ5yHhSF1Ma0C9STYZqYyFK4P49Th5zsOny4eIm+w4E0T3ct4+a/Zzs7unKaCvXf2jUia5cjerWVpz2sgHM31mf2l1+MHyCvsyuZ/TthIikt9skvgEW+eSoX0yRYxO4XMckfxeUh/5OL4ehFB//TCR1Ufy9CL3ufKX0Hl1HXCT1M4hplNAbRizEYbI6P1yEKtwJEBYgNxvx/XdYa7d8Z8K5tQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_aaa5211d-3e1b-9fa4-b410-e78df2500d3e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1838,
+      "completion_tokens": 416,
+      "total_tokens": 2254,
+      "cost": 0.005788,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005788,
+        "upstream_inference_prompt_cost": 0.003292,
+        "upstream_inference_completions_cost": 0.002496
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 312,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks for a way to invoke call_command when mutually exclusive options share dest, but does not specify rejecting **options with TypeError. The FAIL_TO_PASS test requires that exact error and message rather than making keyword invocation work.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks for a way to invoke call_command when mutually exclusive options share dest, but does not specify rejecting **options with TypeError. The FAIL_TO_PASS test requires that exact error and message rather than making keyword invocation work.",
+  "prompt_tokens": 1838,
+  "completion_tokens": 416,
+  "total_tokens": 2254,
+  "cost_usd": 0.006172,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

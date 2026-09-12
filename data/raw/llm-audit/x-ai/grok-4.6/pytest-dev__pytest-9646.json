@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-9646",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "4ed1e72c-808d-9dde-9467-88cb60a759ce",
+    "object": "chat.completion",
+    "created": 1789193880,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only requires that pytest.ini filterwarnings can silence the Item/collector PytestWarning, not that emission must move from class definition to construction. The FAIL_TO_PASS test would reject other valid fixes such as applying filters earlier while still warning in __init_subclass__, and it also asserts both warning texts at from_parent time.\", \"p_invalid\": 0.86}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue clearly states that pytest.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3499,
+      "completion_tokens": 123,
+      "total_tokens": 4115,
+      "prompt_tokens_details": {
+        "text_tokens": 3499,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 493,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 33748400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only requires that pytest.ini filterwarnings can silence the Item/collector PytestWarning, not that emission must move from class definition to construction. The FAIL_TO_PASS test would reject other valid fixes such as applying filters earlier while still warning in __init_subclass__, and it also asserts both warning texts at from_parent time.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only requires that pytest.ini filterwarnings can silence the Item/collector PytestWarning, not that emission must move from class definition to construction. The FAIL_TO_PASS test would reject other valid fixes such as applying filters earlier while still warning in __init_subclass__, and it also asserts both warning texts at from_parent time.",
+  "prompt_tokens": 3499,
+  "completion_tokens": 616,
+  "total_tokens": 4115,
+  "cost_usd": 0.010694,
+  "cost_in_usd_ticks": 33748400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2687
+}

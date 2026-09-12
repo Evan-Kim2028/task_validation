@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10737",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2039
+  },
+  "response": {
+    "id": "gen-1789190761-ovyzUsJKowuq9Eg8jtxH",
+    "object": "chat.completion",
+    "created": 1789190761,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that FieldError messages include the offending field where possible, without specifying which raises to change or the exact message format. The FAIL_TO_PASS tests require a precise parenthesized field=repr suffix and particular compiler paths, so many reasonable implementations of the issue would fail.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue asks that FieldError messages include the field that caused the error. The tests require very specific message formats including the repr of the expression, exact punctuation, field names, e...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks that FieldError messages include the field that caused the error. The tests require very specific message formats including the repr of the expression, exact punctuation, field names, e...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "2mG0+7M2RvytNnz69+Rr47raCbQ0VYDUd+kS6/0dzBulolxXS3Cxw44Dc6V8DM26wah7etNcTuzUCUANqQWihD4LzpTvHegJeqiFXOWVbiJRA12csx9yvmhmB/Ts3/hfNiXoPxNx+Qy9IoCHsFP3wXdvUtV1ImGelPo2i2eZHyHmEex6HzQvSvgTtjNoN7sB0+AZc2u34Uti/aged/qbOrGn1gKTbDiCQ+mi7UDZajD6EAHQcV+ic7VyLDWEnp/si+x4Zzfp8Yn6RVztrloR5rRU+JsWpAOC12ET++MyJZKLyJXmWQizNblNwkSO86GMv2QQIXvxew1gwRWblxOnBphpja9omyFRNZkkExoFbGqZlGECJ9mBlZ/q32HKQQMd2pHRz7LxW0DfpFln/G5Zv6fQBf61Frf5trzg/xpfhT0ruxrVsgLRpbXunNtiAvbCz0w8/z0+uB73tapxBk/XgDkrDkQs1pZrbmqjlHTNGABWx6W4+qkvEPLVR0OuKXhgLbh3yDIhNlNHK/opTcWldiQFmu+6vapwE5ORmP5UctQEt8mtathfToO9/DpnsGTkTC5JTEGb3iJPIQjcVnLHmQ+tNCiDwfiqgpgOOia2zvBmdoF/RLNoC+FiCJo2mPRAocCaZt8Acw5S9FzYMDFB2Dgi7ssxeLjRUjJzYk3OE6wanzjKSCpuW1OUsKYWzGAT3pafXM1/VNUrwvfwqM2sDR1+50TBCD/oWQuRZTDhHJuAmUodz+6KRxu0qB6+qYDS3bMYwGpGOay1WUsxdWr3vlkxG+dwec7iX7gsf3ENp0LCcufTC6ocSFvlBMj/54N/DApxvKWDCBaWaOkzIiWid0p0qmkHnX6msj07PHdqi7Rsj6vPTq7AsE1FDHSDRbqVB7Srr7x2ITKuW/9hmsUChBa8hMy8D6NFfLEQbJaOIBJsi1llDz4xr59dh/gN+WYVG/d1QJ2MZip0RNPE6kvl4O8jKUiQKeFt1LM0u5vtw5Kz9Vb4K/DQMiDv117rQ2ew5wpgQ5gNvxPLznUd9jaA8q02bNH8EWRQoX79O8/rY92pk+O1FyT2gp38Ff8afWOwLdlmle4kz7qIaxthrXnrz7uSsXBLRkFKuX0L+jo3JX6ILFLURbxcpIE6+Fme/lrOdC8Pf2qqZHmEKY8ucEUsqv1gu0kqzZoIAkmaNTbv+IhfKu0/BOKXEVZXT+B+JMAKm4iE7O8AXNx64QNn0ODPHuvc3Xhb9qrSfMHSWdPmbGIE1kf0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b2dad6f6-a093-922b-8863-da23fd1a015c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2236,
+      "completion_tokens": 317,
+      "total_tokens": 2553,
+      "cost": 0.006182,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006182,
+        "upstream_inference_prompt_cost": 0.00428,
+        "upstream_inference_completions_cost": 0.001902
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 204,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that FieldError messages include the offending field where possible, without specifying which raises to change or the exact message format. The FAIL_TO_PASS tests require a precise parenthesized field=repr suffix and particular compiler paths, so many reasonable implementations of the issue would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that FieldError messages include the offending field where possible, without specifying which raises to change or the exact message format. The FAIL_TO_PASS tests require a precise parenthesized field=repr suffix and particular compiler paths, so many reasonable implementations of the issue would fail.",
+  "prompt_tokens": 2236,
+  "completion_tokens": 317,
+  "total_tokens": 2553,
+  "cost_usd": 0.0063739999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

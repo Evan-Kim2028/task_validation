@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-15596",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "93f02436-de04-9986-802d-182031cb8c7d",
+    "object": "chat.completion",
+    "created": 1789194529,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue only asks that degree on a rational function should fail rather than return a misleading integer, without naming the exception or the full set of non-polynomial cases. The FAIL_TO_PASS test requires a specific PolynomialError on one rational, which a valid solution that raises TypeError or another error would fail.\", \"p_invalid\": 0.72}",
+          "reasoning_content": "The issue is about degree() on rational functions. Currently it returns 1 for (x-2)/(x**2+1), and the user asks if it should fail instead if not implemented.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1848,
+      "completion_tokens": 118,
+      "total_tokens": 2300,
+      "prompt_tokens_details": {
+        "text_tokens": 1848,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 334,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 21787200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue only asks that degree on a rational function should fail rather than return a misleading integer, without naming the exception or the full set of non-polynomial cases. The FAIL_TO_PASS test requires a specific PolynomialError on one rational, which a valid solution that raises TypeError or another error would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue only asks that degree on a rational function should fail rather than return a misleading integer, without naming the exception or the full set of non-polynomial cases. The FAIL_TO_PASS test requires a specific PolynomialError on one rational, which a valid solution that raises TypeError or another error would fail.",
+  "prompt_tokens": 1848,
+  "completion_tokens": 452,
+  "total_tokens": 2300,
+  "cost_usd": 0.006408,
+  "cost_in_usd_ticks": 21787200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 994
+}

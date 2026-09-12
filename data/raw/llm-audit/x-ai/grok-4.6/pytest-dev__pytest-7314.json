@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7314",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1978
+  },
+  "response": {
+    "id": "gen-1789187721-Kqaei21e76Mdfsfy24vZ",
+    "object": "chat.completion",
+    "created": 1789187721,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests cover F/S summary aliases, not the UnboundLocalError the issue describes.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for a fallback so letter is always assigned in pytest_report_teststatus, but the required tests assert -rfF/-rsS summary aliasing and unique lines. A correct UnboundLocalError fix would still fail those tests, so they do not fairly check the stated specification.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "KcIPi3vlSZ9d456xtE8cT9pehkOd9bPvqQzmGDUnGGpTdC1s0OKYmylTLc7b+VsnfG1aupvttctgOOWITqWqtaWkrNi1tHQxlbgGKq3RFZ80UO7kQTSwegjXWyp1qii3P6pYbXH1vppFKXRMMAv6eFyEGwGs5pXrYL5fG6e3NXMPngXxFLOS/pMlysY+1LKFRYAefic/ioYVU+4Ij220GXMtph7zMcSw7igsL95Lfcln8sOR6Y5mxp+a8uRVYt63ZG1yLngwj/FVXxcaKLOf+L/nLijIhVUUHroUuftoq0bVxq9yDekEIdy1g/0l7TvxH38ULnlSqWML2gIrshU4eBW7VyXH7EUcUN2jY/aYpv5YrRXbdvTYrpjndFkRNpoPnr4MoXyHTYmz4mgCKY8nB0QeDjsWPIRLDMLeJm54jpC0yek6uumXahwDcl83XFRe59kHWBQWHBHjyAsPaJ+h5DuGth1tQDGn5njXCZ7FVVclwQig8kZQ6jfsa6gPc1a2ur3dTxUpknUuKf7DrrK9k7MCu9Hn+BgS2VFkEY+YzP58+3hsvKOpkMXl2dzEo232R1FYKTxfS8Ngr9Fh6szIFD2izwEMNG8INzwVeEepK4JTmC99resIOv5EoVWM++aALqCh6ODKapzw12KKzrlCOLqdy+tf6IlLg0p7SlSF0oF+OZ/qi+R+LF2yjfsfBRfH9xhDaw1WlAjhm8yes1GtAqNCSd5jmRi4bifNPHBA9WKblMKv1nawaAkf37yx4W916P0SAE5wY+VijcTnUo3xA7g1G7B0KMCdOEXqHmfzYUqElIgNVtVuwzz3qPC5BcPe0NoI192r/B6HEveCYMmXiIMReVgJbtEnfGa7awu38w9qYYBtC5zMMiZkBsQoT8PJyQZ/GI24n4S7UU/VH0ONgq6FHCuk/9EZe21taZc0nTsCSpb66VIljvVcFIHHq7qwaUa+O7Y75ArL46SGInZgp6cshjYa6AMp4xZtLa1SY9KL8f5zYp1m68XyGas8wJX1yjnDMcGy6CgZT1OVfoZKSD2zs6L/4vY8QDkLjsyXZ8XECJx8hoDy/h6Sd6OMfuuE6JIGqKqRg4ANujbNY9vNU1QsqRqqyxS8e498tARIlS9VNhiySnCIvSw+FyFHSDTCmZyEVdZcoxqV4WIFS7rY/0C0a6iXCffarqXc8Vr7JkN+hlZGFtcxflOD15j+mzcNr5Xt6hOX26bAyjetyaJUXCRTNgHIQQSmQlPQsLkQuMy9zztGe/9RIidmtL7OyT39f+bBc2o3eE1y68kw3FtatdsZ8C3EEPuX5bS6AoUArvCSwWYd37pBJ6I/2PCEVUVomsUHzDV+sLJswOi3IzkZ/XQ0TYNcww18BW38CS/yuh3nCgj5R5X6oIUb+mnATPkbNQaKAnm7rtbtf8qHxY0JieGqhcB84EUSpr13ZivaOaq0LyMH8nmDxGozgAFloGf0knuQGTsd9xIN+7QYI11Zqaogr0y24jNeB8LCT14lb9BUtO5RHnpHkE1Vr1KI24TfGux950COLiUOsVd5zNFJH3Du7eO43drMFOUfmo8drZITOV9qQiP/wyL1qJsgEIgGAS5EkLZB2BT9dFc69V+yLoemn2eq6tIrtSsPskc2FvoDCYddNzj2RY+9HWT15XG4kSb5bT6KpjNPVjWjpmJOEh+yIP0lLCQd/ZOrbV9kfPo14EFj/945OXixSv9p16Ln/WH2Y1RwfQRSdQYLPlFL6fuBHzNrJOLxZjE02rdOA+lCUXRMjxVztspFSlEqa9IsovDX95vvVims6ton2Rw+GyTpHmLOBbGrIuhTS9sl6uobXsyQHgpbtK5kktZDUHBlUjZKBlUh5hAc1mMj5JZvvhltXKCyaNvCDqr+gtIOmP3XhqwfGsW2Ud6ptWi5Q7T4FZdv6r9UA8g6DoJc4XwVDHlu3FQ5fqKoFBa3WKTxG6RUSm4wRUIm3EfKuOgIBDM8W9hXBNNEOAhEsB1CpM9sYCUHen2DzlMnbBbJIndtWQWE3smKOue1+i3HdyH59YsM49U9YBn7sdCwRDtVZqlEP3c4zmOfgf9DzDd1TUgPric5JRkrMgAPy9HR9+eL66BvhYdbKCwh4tpEN7HXCdvrgObu9PBWKNoWXewxWnmhYysbNVdcRCRUPMbPTclRxDmHv6GVVioJBSgiJu0fqe1vIuLL2cnjB2WYimlWCb5glK9t5OfC4/QJIlHd3FEDvzIKNhf3dCMQcPDMRDVnZym7X4ax8CGLR5nQ8Xv7T20nR81RBNpCfBHbZlZ0J4E.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b25943b4-6014-9d3c-a8ce-1dbe2aa18206",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2389,
+      "completion_tokens": 539,
+      "total_tokens": 2928,
+      "cost": 0.00782,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00782,
+        "upstream_inference_prompt_cost": 0.004586,
+        "upstream_inference_completions_cost": 0.003234
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 400,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests cover F/S summary aliases, not the UnboundLocalError the issue describes.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for a fallback so letter is always assigned in pytest_report_teststatus, but the required tests assert -rfF/-rsS summary aliasing and unique lines. A correct UnboundLocalError fix would still fail those tests, so they do not fairly check the stated specification.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests cover F/S summary aliases, not the UnboundLocalError the issue describes.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for a fallback so letter is always assigned in pytest_report_teststatus, but the required tests assert -rfF/-rsS summary aliasing and unique lines. A correct UnboundLocalError fix would still fail those tests, so they do not fairly check the stated specification.",
+  "prompt_tokens": 2389,
+  "completion_tokens": 539,
+  "total_tokens": 2928,
+  "cost_usd": 0.008012,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

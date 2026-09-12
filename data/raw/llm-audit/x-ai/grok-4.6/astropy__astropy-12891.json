@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-12891",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6752
+  },
+  "response": {
+    "id": "gen-1789190625-F2KtMrEWDFFL5nBKZDeP",
+    "object": "chat.completion",
+    "created": 1789190625,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for Quantity support of numpy reduce where (especially mean), but FAIL_TO_PASS also requires Masked mean/var/std/all/any where behavior and mask combination rules that are never stated. A solution that only updates Quantity would still fail most of those tests.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about `where` keyword for `np.mean` not working with Quantity. The tests cover mean, std, var, and also masked arrays, all/any, min/max, sum, nansum.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about `where` keyword for `np.mean` not working with Quantity. The tests cover mean, std, var, and also masked arrays, all/any, min/max, sum, nansum.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_88bb1dcc-7143-9585-813f-b147294acc6e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 8922,
+      "completion_tokens": 501,
+      "total_tokens": 9423,
+      "cost": 0.02085,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.02085,
+        "upstream_inference_prompt_cost": 0.017844,
+        "upstream_inference_completions_cost": 0.003006
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 387,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for Quantity support of numpy reduce where (especially mean), but FAIL_TO_PASS also requires Masked mean/var/std/all/any where behavior and mask combination rules that are never stated. A solution that only updates Quantity would still fail most of those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for Quantity support of numpy reduce where (especially mean), but FAIL_TO_PASS also requires Masked mean/var/std/all/any where behavior and mask combination rules that are never stated. A solution that only updates Quantity would still fail most of those tests.",
+  "prompt_tokens": 8922,
+  "completion_tokens": 501,
+  "total_tokens": 9423,
+  "cost_usd": 0.02085,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

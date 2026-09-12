@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-10207",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "71f15d97-f97f-9c0f-ac9b-f9dd93e4c393",
+    "object": "chat.completion",
+    "created": 1789194116,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue text concatenates unrelated bugs; FAIL_TO_PASS mostly latex footnotes not described in the issue.\", \"confidence\": 0.92, \"rationale\": \"A competent engineer cannot infer the required LaTeX footnote and autodoc changes from the pasted issues, which mix search shortcuts, napoleon ivars, and dictionary abbreviation. The FAIL_TO_PASS suite would fail any solution that only implements the described napoleon or search behavior.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to return JSON only.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 13424,
+      "completion_tokens": 134,
+      "total_tokens": 13946,
+      "prompt_tokens_details": {
+        "text_tokens": 13424,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 98668000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue text concatenates unrelated bugs; FAIL_TO_PASS mostly latex footnotes not described in the issue.",
+    "confidence": 0.92,
+    "rationale": "A competent engineer cannot infer the required LaTeX footnote and autodoc changes from the pasted issues, which mix search shortcuts, napoleon ivars, and dictionary abbreviation. The FAIL_TO_PASS suite would fail any solution that only implements the described napoleon or search behavior.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue text concatenates unrelated bugs; FAIL_TO_PASS mostly latex footnotes not described in the issue.",
+  "confidence": 0.92,
+  "rationale": "A competent engineer cannot infer the required LaTeX footnote and autodoc changes from the pasted issues, which mix search shortcuts, napoleon ivars, and dictionary abbreviation. The FAIL_TO_PASS suite would fail any solution that only implements the described napoleon or search behavior.",
+  "prompt_tokens": 13424,
+  "completion_tokens": 522,
+  "total_tokens": 13946,
+  "cost_usd": 0.02998,
+  "cost_in_usd_ticks": 98668000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 10532
+}

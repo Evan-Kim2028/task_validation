@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16143",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1401
+  },
+  "response": {
+    "id": "gen-1789191742-o53dQjb9utHXgnspMdS4",
+    "object": "chat.completion",
+    "created": 1789191742,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to remember why needs_rollback was set and make the later error more helpful, without requiring exception chaining or __cause__. The FAIL_TO_PASS tests would fail any valid approach that only improves the message or stores the reason without setting TransactionManagementError.__cause__ to the original IntegrityError/DatabaseError.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue asks for tracking why needs_rollback was set and using that for a more helpful error. The tests specifically check that `__cause__` is DatabaseError/IntegrityError - that's chaining the orig...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for tracking why needs_rollback was set and using that for a more helpful error. The tests specifically check that `__cause__` is DatabaseError/IntegrityError - that's chaining the orig...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "oBTX2sBcg3+i2HOWtECRGjTNH3sN5gdLAS3D80Cr7DLJYOjevh4e6SS+uqdnGpM9jZFDm/eIaIQJWokOOGhjKJjqO1SPnbAaEPJDOD6r57DSzK+a1w3htQvlhq0YreXfjSkcho4e3QVhWUWw6+nOW2AnEGeyZQcZMvNj9+WkR+U9HMPXiareHkmw6h4+xkoyiZOYo+TMKqsz5897OcSq2KrMfoomOTihr004jxok9deRokYt2y9IPGjn7oTDmI21uYAuEyxaJ6meCSdt5DFpfTmHERkJnGewZG2t9odwSn7IkzVxidtAqovTrSE36cXKEcj2wdQMirWXYx2V8YWeM+VdBuTdyvNE3yH4P2isyfh53YwG22QuFvDHToKZAso+6E5i77LACZkRsyAcNifQ/bE5DXccyhQDhk/Mzl9fCuKpG//aT8R0DyPRKAZ9vbzK1vYSNw0CDd5hGx1uDLv2bTamWZJ5hImxOlV8cUgkHBIiPi0K4ks7FAfL3qKgjIR925n5vsxm/NxrebLaiE1uq0gp7i0p1h5tW9dRbDtk54a2zvCDL+EVn+6RAXxpXjRcRWFxQQkFRC9aEjT2c8HAue/3Dn3cCKoYMIW9Dh32k9sLGOBFBwWXmkfswfNqItkhR0JP2OJYbXSJsdLNrHqXtHjQCZ8Vp488w0eTvFrZbdN8srZ6O7XPyG2S4s0ZSCR6pOkScV08yl53cP520FhBCC5+0O9q1Rlzgngo2WCqcLbzn+bhL7ML1ohVUhkAvOABVXV5tJ2ihy3fZPLze9He1iu88GSrHSxVyfLtwDe6B0SyXxF3tHajSGSGuwA6SX/TviVL6UWlKxWV71G7jWozItasRnptL/5ddtew+bh6XIF+BzMgTrRkgJ2Fj+89fhqeYcxQsyFVLj4gUGRyMHaJgZ/Q+V9AOopYRqdIr6694fbc742qVa7UgnquI3TCWuFmtuHs7mFFQGraFNRpNtiMMhIaF7GksXLfK7JMm52BU+ZWeE71WC8tc3cWl8sHwPEvburtRT4UA/S8tjsqoWGgb9f1XAM0kRM+O2dKrEGHTBt+5eKHgt2RS/qPV4gtTIqYHubsqLkewK20sZU0oXSr/7CDE8NNAP/s1/cUpEtLmK379nCb7ugekrxOsFn9+G4T0L8b+/DChsBYGWFEJPUPe1n+gTEV6vyvvighw+Nw0kmaPTraw6cAWUTK7NLVULS2opCyN58hNK4DB8PMtM8bkEK58SfrZvuLnCEauiBkCxHZXJW0od80hdb2quzMNJDlc3s8kPhQsm26EzCn/Aw9EOpFEgFVkx7poJ95GDHDDlwxZvm1U4TuX4tNeWcEJsJ3hKsXp4xgXsbIY0POb85vGP7XGRuWeDqNpsCWApwP8rAgdVBg1XoGuJMEvRaqczhBFBaEqo6rli6/yJ/qu10WXTjJifHEL4zNMbUM1t4R+JKTS5edTUs7y91gt/K2eBtVOVdSy0f0OR/eRRC12U8bpFNkQ8NVRL7ojJPLL2OitCiGO145LdQ6VqLwQ8bIv9N7ZjYncGLbs7W2bZh/5IbTPpJM8rY1PxQ7g6dh+ynvWnQ7Z1xu01c4YnVouE/T9WQ6giiwm3VhLRWQaGI8vLcXbb9Q+xKzX31xd5lhb+XgvI6Q1k3w1nvV/gwo88EUsb4ttjttLUkvT4dAUwC9RPtRq/eaLuoJLv3Ws4bxVICauW/QqB+fpdmps6z1HgtFOHQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_66958c3c-09aa-9bce-ad25-25f57745d954",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1610,
+      "completion_tokens": 399,
+      "total_tokens": 2009,
+      "cost": 0.00523,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00523,
+        "upstream_inference_prompt_cost": 0.002836,
+        "upstream_inference_completions_cost": 0.002394
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 278,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to remember why needs_rollback was set and make the later error more helpful, without requiring exception chaining or __cause__. The FAIL_TO_PASS tests would fail any valid approach that only improves the message or stores the reason without setting TransactionManagementError.__cause__ to the original IntegrityError/DatabaseError.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to remember why needs_rollback was set and make the later error more helpful, without requiring exception chaining or __cause__. The FAIL_TO_PASS tests would fail any valid approach that only improves the message or stores the reason without setting TransactionManagementError.__cause__ to the original IntegrityError/DatabaseError.",
+  "prompt_tokens": 1610,
+  "completion_tokens": 399,
+  "total_tokens": 2009,
+  "cost_usd": 0.005613999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

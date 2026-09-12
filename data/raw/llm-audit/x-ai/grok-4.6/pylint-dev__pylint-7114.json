@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-7114",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1554
+  },
+  "response": {
+    "id": "gen-1789192306-omIzgqEB63EofmBAf6DG",
+    "object": "chat.completion",
+    "created": 1789192306,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires that linting a directory named like an inner module without __init__.py must not crash and should still analyze that tree. The FAIL_TO_PASS test checks that scenario by expecting the inner file to be linted, which matches the stated expected behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about pylint failing when a module contains a module of the same name, like `a/a.py` without `__init__.py`. Expected: `pylint a` should succeed.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pylint failing when a module contains a module of the same name, like `a/a.py` without `__init__.py`. Expected: `pylint a` should succeed.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nAXZpbF1kVNmxj23DYRt8tpeEswwBQwV2U8QlK1nWCkTrnV/Z9S3HXS8TG+lDJgmJ6LUwG4DoDsVu9aFzdJRpsQEAzRHOVdrSh+mKdgEzcvbRU9njIEIUqKzMJWQAu7A8o9p933V4rkT0WhypK9+2rYSCQvp3NYdpyxgqY6mLFQuvyGAr6+fMrD0B+AC5/4U5vFEBDV3nzIusSVlCeQ0Ko13MtTt7R81Oe4tKFACSzDpf9xvsh47lYv+OdV+u4A4kEPoZ2MDudiXKJjTn+Br3LQsOdqARiuNwuCL1cP1ggIcJ5sblgTble8+bWb4dWcFrKTJXOa6iFxOGOGWYSWcQ/NMOU2VlRTvr3eBMcRz8I+7cwvbuwZF4OPXE5KyW1TZp1/wQ7yHxxbd53fYYLEYKnLRPa5vRDDDN/SITfGUjZ7AlINCiG8RS7EHT58e2dZefN4xCtNtcztxnlnd8W9XU6+bZC0wAseQo0Niz7ycOZjVKZKdzILLGarqGI9Y80T2QUficcU9YzHo8Bo8ZIpuhTbpCYRFxA62eMnUb2kDDjXq4DFT70GUEFIIIghie8VfG+TEneb4nTorOEDgBf0xgAVkcFEOOEYtYPP8OGjEgCcaQnMWDkdbgb2KDlaP9NE40+JUuCP/dbx1KAeMZWuESFaJguF5g/7vmEjzv4AGyZCu1jBLfiGOicGudvid9n3g2OqpiLVJvr8bdSWvz1Dn795+6za7Bcd5jP5OOx1CHd+a9q+mULHNySLBMM2UMF9U+RhBxVaYxAeys7YMKy5+IogCKNZG5uh98myBfoVjZnSVkO92hcGdeCugQVMIlnU9Zb+XwxWANk35XR6t2iHXpDiRHgYB0tpwCkWlbZgAxBgipzdzzcSrerzZCs86hpiymHSxcdv428LM9gYX729CvsS+gWONOwYb0OEBQIohEYnTuJ1JrsXlk/k181ReutEaLCqfieYLNVHL1Ra879rvfJY4lgRXt9OX/OULqb6s4i/qpT2uYZ4BGuYMzyjefpF5Bi+xjtK32w+dIW86/3iT6yfjGCezDRIdLTddpakfZasROcK0kxLPsBMFTFi/1SdGPhrGnuf9y3Fn56QS9U3p45VW6/JLF1/gOnAPtbhVvJmdUaiRRHcvh5Sfs2HGFiDI7Ia2CVnDUKhI3hQ/7Z5v/foWMfXElPj1OI0Z3guHkeR5C4zkua79uSAZIynnzSSkVVSiJTrG0MOogZpvcmZFhFn7NJbBT7Psoo277FQmguqNU9oFR9WmBzLohB34QOTJpwvv1tjrbaRAlt+OTDb5dsYq3zWX2REFpDKFo92S+kS1VCIpaHHQwOhooItP6IgEEwuG3Y4pnAuvRZZbSWRMf+Q5YZ8eHHGuoAdKZGJ9lB5I9VPB88ld8GipyvJaZWv32PRt3OrJZeb8PqwtBLE9oRWrbgmIeTsJVHfMv+FC8ezal8cc9tR/7/nFcCc8aUC9pbiGqbwBimyktTNRMvehkw0KAFIyAG4rRg12lOaYVwn/WKdvFMLTeYkYFkL4gsr0MUsM5rowbts18P1SxwMjG3V1ExLZInUFzpB8gJeRx+j9PA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a8c9de46-93ac-9e58-a1b4-0b48888bbcb4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2021,
+      "completion_tokens": 381,
+      "total_tokens": 2402,
+      "cost": 0.005944,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005944,
+        "upstream_inference_prompt_cost": 0.003658,
+        "upstream_inference_completions_cost": 0.002286
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 270,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires that linting a directory named like an inner module without __init__.py must not crash and should still analyze that tree. The FAIL_TO_PASS test checks that scenario by expecting the inner file to be linted, which matches the stated expected behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires that linting a directory named like an inner module without __init__.py must not crash and should still analyze that tree. The FAIL_TO_PASS test checks that scenario by expecting the inner file to be linted, which matches the stated expected behavior.",
+  "prompt_tokens": 2021,
+  "completion_tokens": 381,
+  "total_tokens": 2402,
+  "cost_usd": 0.006328,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

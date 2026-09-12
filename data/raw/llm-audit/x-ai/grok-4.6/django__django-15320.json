@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15320",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1021
+  },
+  "response": {
+    "id": "gen-1789191578-g6dA7AnrnCFFCU6lFmdG",
+    "object": "chat.completion",
+    "created": 1789191578,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to set query.subquery in the Subquery constructor so as_sql wraps with parentheses instead of stripping characters. The FAIL_TO_PASS test also requires cloning so the original queryset is not mutated, which is reasonable but not stated in the issue.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is about Subquery.as_sql() generating invalid SQL because it strips first and last characters instead of wrapping with brackets. The user suggests setting query.subquery = True in the Subque...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Subquery.as_sql() generating invalid SQL because it strips first and last characters instead of wrapping with brackets. The user suggests setting query.subquery = True in the Subque...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_53576531-fa41-9744-b00e-ed3d67134a3f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1343,
+      "completion_tokens": 467,
+      "total_tokens": 1810,
+      "cost": 0.005104,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005104,
+        "upstream_inference_prompt_cost": 0.002302,
+        "upstream_inference_completions_cost": 0.002802
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 357,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to set query.subquery in the Subquery constructor so as_sql wraps with parentheses instead of stripping characters. The FAIL_TO_PASS test also requires cloning so the original queryset is not mutated, which is reasonable but not stated in the issue.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to set query.subquery in the Subquery constructor so as_sql wraps with parentheses instead of stripping characters. The FAIL_TO_PASS test also requires cloning so the original queryset is not mutated, which is reasonable but not stated in the issue.",
+  "prompt_tokens": 1343,
+  "completion_tokens": 467,
+  "total_tokens": 1810,
+  "cost_usd": 0.005488,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15498",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 830
+  },
+  "response": {
+    "id": "gen-1789191613-h46N5CXYhk6YkrxBcP2x",
+    "object": "chat.completion",
+    "created": 1789191613,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to restore treating an empty If-Modified-Since value as ignored rather than raising, which maps to was_modified_since returning True. The FAIL_TO_PASS test checks exactly that empty-header case and does not demand unstated APIs or extra invalid-header behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about fixing handling of empty string for If-Modified-Since header. Empty string used to be ignored but now raises exception.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue description is clear that empty string should be treated as ignored (return True), but doesn't specify behavior for other invalid headers.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about fixing handling of empty string for If-Modified-Since header. Empty string used to be ignored but now raises exception.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"The issue description is clear that empty string should be treated as ignored (return True), but doesn't specify behavior for other invalid headers.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_466e4c20-e21d-9589-8ebb-39ece39ef165",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1140,
+      "completion_tokens": 507,
+      "total_tokens": 1647,
+      "cost": 0.004938,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004938,
+        "upstream_inference_prompt_cost": 0.001896,
+        "upstream_inference_completions_cost": 0.003042
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 391,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to restore treating an empty If-Modified-Since value as ignored rather than raising, which maps to was_modified_since returning True. The FAIL_TO_PASS test checks exactly that empty-header case and does not demand unstated APIs or extra invalid-header behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to restore treating an empty If-Modified-Since value as ignored rather than raising, which maps to was_modified_since returning True. The FAIL_TO_PASS test checks exactly that empty-header case and does not demand unstated APIs or extra invalid-header behavior.",
+  "prompt_tokens": 1140,
+  "completion_tokens": 507,
+  "total_tokens": 1647,
+  "cost_usd": 0.005322,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

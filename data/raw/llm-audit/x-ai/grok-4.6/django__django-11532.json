@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11532",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2527
+  },
+  "response": {
+    "id": "gen-1789190883-aQfh2lUqMNTML1eQAQ40",
+    "object": "chat.completion",
+    "created": 1789190883,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue describes the crash, the required punycode conversion of the hostname used in Message-ID, and even a concrete test shape. The FAIL_TO_PASS test checks that exact behavior with a non-ASCII FQDN and iso-8859-1 encoding.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about email messages crashing on non-ASCII domain when email encoding is non-unicode. The user even provides a test and a fix: convert domain name to punycode.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about email messages crashing on non-ASCII domain when email encoding is non-unicode. The user even provides a test and a fix: convert domain name to punycode.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ALlS2krwOvbhKXSM+evxozvd2rN20snKbzoUZDFh8Z7a/kqrcS0vcvrd/R3OydS2dP/PbWr51XGXGCteM221H5s9m4TAZNvXe7TQG09FtYMzvW9z7QmG9zO1WxlBczdHvhDYX1Y92qgR5hj3dZz8liDFomTOpB22WIT9MGFH+YLrjjfNFpO8zLtNZ0blCi71JFT6TIKz/KN5QyAUSI4asfIxq6tKNaqzy1xnkiFe5BlnNMy6pate0lnlEu0heVu/WL2AgQ8A0kZZZ/MAQ0JyDWhdbwB8kI9teVhNyqxl1sS48IAkUUEbDyikGiGkOsDyC0o6lmAn+cwvL4UtzUIxX7ah9TnuTK5TPiZ8u3eXknb0k7ZqINZdF3WScmJUUDlqZ7X2zLeXkD7UHejYuNMBsuELUevTKCbwGLTvpGGi2NQzCMMwGZfyfD7jb5kRMWuJH3La1A9sXKo8uC0lqJHBPF+AJqXpumvvcEcl+b9/OMwRWRtSl4mr7mssLP52t8ZqxoRDdO1qpgVP34zY1P72Dy532OoxdAwr+GbkB/oOPLggSOS1oqHzHwxH5S6OdvDsxYUqr7SDna6zsalEdWc63KlXsm1pay+TNM8Fg3M/y1gTuxcGykkUIeAbGGXE2RQckr/uSKQw/6kXsOCo3m1cKvw37tVPaw4ahLQTzKxfNWNuxCrkBF/ngllPVobvi3pM1JUub+7UQUhUMhTaV85AnRSRVlDINFVhWQpGnuoGVtUFWNgvN2CxSaOk9Ge4EiWiophV4uggIZSJnku/yP5CWARJ3oLZP2LivEDF7LPqsCVfRu2ul9E1upKASiQgglT9yMXKXpnmRX8WtN+Mq26ySwGZR3qH6jtTZ7UtEPgGKDtB1YJ+nq6DlO7wwgC4uj1E0qwR0yEXai1Wo0XWQwIcd+n7jGCn25QAkauKqngpOKY4DtpfDdo4J9xvsh8RSNgiY/EpPrFfIwo1gL5TPe5zAvogmI6t6E0DsJutgTrKhQDTJFP5bK/VEWhhSkhqlczg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_05674597-69b9-91f2-a621-95dcf062ce1e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3120,
+      "completion_tokens": 307,
+      "total_tokens": 3427,
+      "cost": 0.00789,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00789,
+        "upstream_inference_prompt_cost": 0.006048,
+        "upstream_inference_completions_cost": 0.001842
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 196,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue describes the crash, the required punycode conversion of the hostname used in Message-ID, and even a concrete test shape. The FAIL_TO_PASS test checks that exact behavior with a non-ASCII FQDN and iso-8859-1 encoding.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue describes the crash, the required punycode conversion of the hostname used in Message-ID, and even a concrete test shape. The FAIL_TO_PASS test checks that exact behavior with a non-ASCII FQDN and iso-8859-1 encoding.",
+  "prompt_tokens": 3120,
+  "completion_tokens": 307,
+  "total_tokens": 3427,
+  "cost_usd": 0.008082,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

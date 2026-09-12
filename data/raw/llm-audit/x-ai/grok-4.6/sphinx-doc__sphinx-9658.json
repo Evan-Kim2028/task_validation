@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9658",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "7249dce7-4fc3-99f0-91df-c5747c9182a2",
+    "object": "chat.completion",
+    "created": 1789194319,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only describes truncated autodoc Bases names for mocked parents, not that sphinx.util.typing.restify/stringify must return a particular mock class string. A valid autodoc-only fix could miss test_restify_mock, so the FAIL_TO_PASS check is an unstated implementation path.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2570,
+      "completion_tokens": 120,
+      "total_tokens": 3045,
+      "prompt_tokens_details": {
+        "text_tokens": 2570,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 355,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 24554800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only describes truncated autodoc Bases names for mocked parents, not that sphinx.util.typing.restify/stringify must return a particular mock class string. A valid autodoc-only fix could miss test_restify_mock, so the FAIL_TO_PASS check is an unstated implementation path.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only describes truncated autodoc Bases names for mocked parents, not that sphinx.util.typing.restify/stringify must return a particular mock class string. A valid autodoc-only fix could miss test_restify_mock, so the FAIL_TO_PASS check is an unstated implementation path.",
+  "prompt_tokens": 2570,
+  "completion_tokens": 475,
+  "total_tokens": 3045,
+  "cost_usd": 0.00799,
+  "cost_in_usd_ticks": 24554800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1603
+}

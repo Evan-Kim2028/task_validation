@@ -1,0 +1,71 @@
+2026-09-11 23:58:55,754 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:59:42,982 - INFO - Creating container for django__django-15744...
+2026-09-11 23:59:43,480 - INFO - Container for django__django-15744 created: 93d16eb29c660b9270f3b55f4c0813856720d26776a1e52219627835f671f0c7
+2026-09-11 23:59:43,929 - INFO - Container for django__django-15744 started: 93d16eb29c660b9270f3b55f4c0813856720d26776a1e52219627835f671f0c7
+2026-09-11 23:59:43,940 - INFO - Intermediate patch for django__django-15744 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15744/patch.diff, now applying to container...
+2026-09-11 23:59:44,111 - INFO - >>>>> Applied Patch:
+Checking patch django/core/handlers/asgi.py...
+Applied patch django/core/handlers/asgi.py cleanly.
+
+2026-09-11 23:59:45,135 - INFO - Git diff before:
+diff --git a/django/core/handlers/asgi.py b/django/core/handlers/asgi.py
+index 11c8bc209b..cfe5101ea4 100644
+--- a/django/core/handlers/asgi.py
++++ b/django/core/handlers/asgi.py
+@@ -171,14 +171,14 @@ class ASGIHandler(base.BaseHandler):
+             )
+             # Get the request and check for basic issues.
+             request, error_response = self.create_request(scope, body_file)
++            if request is None:
++                await self.send_response(error_response, send)
++                return
++            # Get the response, using the async mode of BaseHandler.
++            response = await self.get_response_async(request)
++            response._handler_class = self.__class__
+         finally:
+             body_file.close()
+-        if request is None:
+-            await self.send_response(error_response, send)
+-            return
+-        # Get the response, using the async mode of BaseHandler.
+-        response = await self.get_response_async(request)
+-        response._handler_class = self.__class__
+         # Increase chunk size on file responses (ASGI servers handles low-level
+         # chunking).
+         if isinstance(response, FileResponse):
+2026-09-11 23:59:45,135 - INFO - Eval script for django__django-15744 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15744/eval.sh; copying to container...
+2026-09-12 00:00:20,603 - INFO - Test runtime: 35.41 seconds
+2026-09-12 00:00:20,603 - INFO - Test output for django__django-15744 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-15744/test_output.txt
+2026-09-12 00:00:20,656 - INFO - Git diff after:
+diff --git a/django/core/handlers/asgi.py b/django/core/handlers/asgi.py
+index 11c8bc209b..cfe5101ea4 100644
+--- a/django/core/handlers/asgi.py
++++ b/django/core/handlers/asgi.py
+@@ -171,14 +171,14 @@ class ASGIHandler(base.BaseHandler):
+             )
+             # Get the request and check for basic issues.
+             request, error_response = self.create_request(scope, body_file)
++            if request is None:
++                await self.send_response(error_response, send)
++                return
++            # Get the response, using the async mode of BaseHandler.
++            response = await self.get_response_async(request)
++            response._handler_class = self.__class__
+         finally:
+             body_file.close()
+-        if request is None:
+-            await self.send_response(error_response, send)
+-            return
+-        # Get the response, using the async mode of BaseHandler.
+-        response = await self.get_response_async(request)
+-        response._handler_class = self.__class__
+         # Increase chunk size on file responses (ASGI servers handles low-level
+         # chunking).
+         if isinstance(response, FileResponse):
+2026-09-12 00:00:20,656 - INFO - Grading answer for django__django-15744...
+2026-09-12 00:00:20,656 - INFO - report: {'django__django-15744': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_post_body (asgi.tests.ASGITest)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_concurrent_async_uses_multiple_thread_pools (asgi.tests.ASGITest)', 'test_disconnect (asgi.tests.ASGITest)', 'Makes sure that FileResponse works over ASGI.', 'get_asgi_application() returns a functioning ASGI callable.', 'test_get_query_string (asgi.tests.ASGITest)', 'test_headers (asgi.tests.ASGITest)', 'test_non_unicode_query_string (asgi.tests.ASGITest)', 'test_request_lifecycle_signals_dispatched_with_thread_sensitive (asgi.tests.ASGITest)', 'test_static_file_response (asgi.tests.ASGITest)', 'test_wrong_connection_type (asgi.tests.ASGITest)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-15744: resolved: True
+2026-09-12 00:00:20,656 - INFO - Attempting to stop container sweb.eval.django__django-15744.tv100-gold...
+2026-09-12 00:00:36,519 - INFO - Container sweb.eval.django__django-15744.tv100-gold stopped successfully.
+2026-09-12 00:00:36,519 - INFO - Attempting to remove container sweb.eval.django__django-15744.tv100-gold...
+2026-09-12 00:00:36,589 - INFO - Container sweb.eval.django__django-15744.tv100-gold removed successfully.

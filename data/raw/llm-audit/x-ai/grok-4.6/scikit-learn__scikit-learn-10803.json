@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10803",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "811367ed-4b4a-9424-b5e1-54f99760e3fd",
+    "object": "chat.completion",
+    "created": 1789193910,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks for per-sample weights in KDE and does not specify the fit API, validation rules, score normalization, sampling, or scale invariance. The tests require sample_weight on fit, specific ValueErrors, constant-weight and integer-repeat equivalence, weighted sampling, and scaling invariance, which a reasonable implementation could miss or do differently.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue requests weighted KDE support but provides no API details, validation rules, or behavior specifications. The FAIL_TO_PASS test only covers bad-argument cases for sample_weight, while the full test patch adds comprehensive positive tests. This makes the listed FAIL_TO_PASS narrow and the overall specification incomplete.\",\n  \"p_invalid\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3124,
+      "completion_tokens": 126,
+      "total_tokens": 3972,
+      "prompt_tokens_details": {
+        "text_tokens": 3124,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 722,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 35278400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks for per-sample weights in KDE and does not specify the fit API, validation rules, score normalization, sampling, or scale invariance. The tests require sample_weight on fit, specific ValueErrors, constant-weight and integer-repeat equivalence, weighted sampling, and scaling invariance, which a reasonable implementation could miss or do differently.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks for per-sample weights in KDE and does not specify the fit API, validation rules, score normalization, sampling, or scale invariance. The tests require sample_weight on fit, specific ValueErrors, constant-weight and integer-repeat equivalence, weighted sampling, and scaling invariance, which a reasonable implementation could miss or do differently.",
+  "prompt_tokens": 3124,
+  "completion_tokens": 848,
+  "total_tokens": 3972,
+  "cost_usd": 0.011336,
+  "cost_in_usd_ticks": 35278400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2303
+}

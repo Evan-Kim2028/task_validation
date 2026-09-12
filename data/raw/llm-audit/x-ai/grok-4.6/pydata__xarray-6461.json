@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-6461",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 983
+  },
+  "response": {
+    "id": "gen-1789192625-dUbmt5LYoHXFoNlZLyri",
+    "object": "chat.completion",
+    "created": 1789192625,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly requires xr.where not to crash when keep_attrs=True and x is a scalar, which a competent engineer can implement from the traceback and existing keep-x-attrs intent. The FAIL_TO_PASS check that attrs are empty is a natural reading of that intent but is not stated in the issue, so it is only slightly narrower.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about xr.where failing with keep_attrs=True when the second argument is a scalar.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about xr.where failing with keep_attrs=True when the second argument is a scalar.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "vUUAOF6RuhHwdJ4yN8tXkGFxA5HUFn16fIr5M+rDzyeBcJsWzYjC4kIAVfqY2gy8/L5hINnNx6ycHzEG0iJvlVjXA1thrTERqAKN2rWfqb3wMgYo+e+lwlM6nb3NFFXJurF1qY31JOgXsDh3q0jDyyQBh97qRrmi/Q6ywf9o6PGAI47cP8Ba7qNPzVv+vyjzOtE8v0dCy82NSRQHxsIn30U7OklynFOllYe4MlOEwLgEM3r8BCF12ldHLQ9nPxHVLJGMxSKwJBHy0+tSG63K8sE8r8iU0w7KmbwvquAtUF81zoorR2va9/LUo7d/8nKqfRPg3m2IGAW12RSyubEz9vhXRvoWhVcqTl9YUvxuXT0atKREiIkZ6IR09eh9tDgTaoLtAAYuaB22SU1mMI26DvIsN9gaf6CUcbPVLWlgeExMXGx1c0qC7PUsig43jminle/+mbeSmgxcJuiuM99f2MuMaQ0+MY2VdUF2CixMZlRfwytC7TeXjrrGE+iruTwjbyQhq7FgFmlws9SOqCQk0Ad4TQ/waGmNt1eYJ9Hul3by+j0esqgFlamV8GkTANlzRpffUu7Z8SwW0uEqSRVfWRbHqOMcrPPKnQ0cY9ycsH+HXmzRnvaz4RpklnlgYOELy2wXsNu8qZfPCOThi28AmYQsx4Sc+8BbVH2Uraw5ZjLC2XamUaH8Jt4xwuK8LvHUP47S2oSvN1lZpD6Dbko2XhGyxaW1VrN2T6nCVxLKQu35UJXS3Duz/oQRyUNCFhS8hScl0z7vLMp0xdIU5ybO1JNuL0WzJO+G5tbEZPqOWzTXI1BTIkks/bgzqQxbwKGWTGf6exaMtMSyCJZFadjx8BrDSitYJ06uW83q+7GjHm93JYyg+aZnrK/lzyhkWBxEGY3OqH7mjzOWI6wbs/AmUQdrxS2sdxbQGumzO6X9R87Rqu4cw2kkr6ijY2fCO4t6x7tFAFypsmRGh3+vo7HlRgQB2aU7LnvZgS8H7DEfIFw6AE15Mm7j17cFRFaN5c27XcDoFQkQSPZ4DN9PeEo9fbSvYboV0TY60e6Cg59AsgsAe+2aQqOSiSUUPH5fhZ7aAsjRPpnNvvp3PDdfFGIA+t9u8B9OT1Je8vk0RcbPJPS2IUzd3ORvvFbY6/QmvZ7/xGUInf/+RaSWxKvMcrwruRt+Mv3a5vG5+NI5SjHQrmOc3zp94HGzbYWT/gsUqVwVxywwWgDIjC/5MpL4DEvwkxbdyQZTcBD4NvehH16PszDAvhg3vKNwBhF3HUtABsKsqioN++NJsa1KxX1C25+JVJdFWWTa/FuBrdJAXVxhwJ9pCSKwpZimtDFwVjJBjYAJeDPuKwKkd8MI7Kz5Hd/ojIkGnKBp4wKIUcLHifJeSLuemifIU1OTNk78tLfhVg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_21e332a4-1acc-9b15-b823-1755da9e16df",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1344,
+      "completion_tokens": 389,
+      "total_tokens": 1733,
+      "cost": 0.004638,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004638,
+        "upstream_inference_prompt_cost": 0.002304,
+        "upstream_inference_completions_cost": 0.002334
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 261,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly requires xr.where not to crash when keep_attrs=True and x is a scalar, which a competent engineer can implement from the traceback and existing keep-x-attrs intent. The FAIL_TO_PASS check that attrs are empty is a natural reading of that intent but is not stated in the issue, so it is only slightly narrower.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly requires xr.where not to crash when keep_attrs=True and x is a scalar, which a competent engineer can implement from the traceback and existing keep-x-attrs intent. The FAIL_TO_PASS check that attrs are empty is a natural reading of that intent but is not stated in the issue, so it is only slightly narrower.",
+  "prompt_tokens": 1344,
+  "completion_tokens": 389,
+  "total_tokens": 1733,
+  "cost_usd": 0.005022,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

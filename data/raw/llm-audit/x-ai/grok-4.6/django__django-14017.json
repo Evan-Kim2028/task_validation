@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14017",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1231
+  },
+  "response": {
+    "id": "gen-1789191367-KANUGl7LuS2vebcA1TBP",
+    "object": "chat.completion",
+    "created": 1789191367,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly requires commutative & and | between Q and Exists, including empty Q(), which is exactly what the FAIL_TO_PASS tests exercise. A competent engineer could implement that without unstated extra behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about Q(...) & Exists(...) raising TypeError, while the reverse works. Operators should be commutative.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Q(...) & Exists(...) raising TypeError, while the reverse works. Operators should be commutative.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "nBBJrVD2m1XyRxfRhjqki4vmgU3xmO7vKQVrUD2C7PvzZ7ApY2lD/nlGiTwIwfOZaG8JWVwd51GX+pJU2wirVU3Bm7NnBvVTh/DdtuCiEcbyAM6IYf3sbu+XjOhveEVAuvaTQUBtl+nscMAjZHcGeuwwF3jNg/UjcQFgsHD3zycf1kowY4c3VrENOVgD+hxjzoGY2LnS7mOHbjioknyAe5Ke6S/QyvPO5fCQ3Qc4ydixJtyJ6XodShQmoXfAnIA+32lfWJv2+hO18ewmO/0tWp7OOcj/a5tBbyxWuji0lzVTWPmDopqD3ydfqPQWR88QPKjD+A+aIt0s4/0wj6d+v8pfGAUCqSE385NjdDITVnYBVT/WBh2FM+8y/rExgii8srvjnOtco+G8GjpBqKNH24PSWWo9GXw6mGCzqyBOkjV0/yGSbKQKp8PSeQOCxjp72kzHqHAm2JG2Qbod7tTSa8iDfo8y1Wqv1cUYndmPDsmznmVsG3q+NOCYnVmAPsQ3mfdMFbpaQGIVjsaVrDCvX0p2g4L6vsnaoqgke+UthbAzRHGSkrqBCXIJG5NUi1yOSj1Pw7cDsvuBHI/EpXKflXLmwfbqbN4FOU/3LET8V8yuFZGnxSQkHqF8VvquOSytHSWImS7fjnu73IzPee37mLCoqud010cwWYPXayZib8spsuuu3xhhyvKQ5XUb3SJTqzia53t2BQrrD8zJNzKtG8us7KUbVhtkDmDylMIGJWckfcMBEQwffTyI/ULD5Fji9z0WQdjhrfkxDabcuuupY/w3hERzStum5ggo3+1mjuXwAP8ZJvFugQVy3devg6ssltpAMdY/CFG5lISfgY6nACwgfnbu7finX7sYvhZePV6R5MaPmqcoxKvp0EIZHtiNwdRTlWQm+D4Ym3VIVjTScTApjG90UhIJYyZf5NKgzNYq1Ma7UDWKRX0iMtbrhjSPf+St5Lvv2dl2oDysfM6EZNSQ9vTyyRU+8lsI7JdNQG8gN7TmEZ9iF8ES0p0caKGadGdvmkkLm0Ku8zpnblm5oH0VXm8po/svH9T6Q3uzOaIQ5Z0DrO1U60HviwLe2GETJH1OMNaSTA+taZ3b/mXTSfUg7BtPjTBS5Imov6nrbCFc9sXUVGETLiGfxBKlQkZoi8Ocw4voX6U4o5++QRQYqwolZRih7JM4jDUhYTQVi+raSiCYmGNaxhkWM+Hp1RC6a0oaoN+oWn/cCXvWqFcxdHvQ4Ohd+T6EToquND5tKG/xEh1tT2JzW7SAjfLAiaN/66OdAJ3SSe45LC4a0GwVBpNnmiqncEvxY8X6+nlWwuXllF6sS5sxR6ngWfkiH6Ubu01RnLYb3NowJgnrBdeXxOthWoshvLtok5+5DBu9TA3L0CfZKEoo1T2QWAcFaY1xmZuV0kzoWYj0V3RDT41SAIivsdqE5YmV35DzSfnStOuEU4XDpp5Mi1xXhrlDMpy1O5iIhmHHT9SVOf0zZj+Kpj3hiXwxNgwkFW2nvldPnMcL+JQLdbhKtJhh10YvjLTIc7m36srX8n0FwNLPT0WHFFkSHurrnpQe6ark+cErHRMs7RF5nfALeEstDn5N6YcJPbr4z6LoeyA4bSSDcwGEXpYdRXp31LAe9d69DNYyBlIzTUIaKcm8VsHewyZeKJL0xybNEtNjU07kbnmWhPy5HOW5C99fzuULFk54cEve+fGxP9YI7r7hfVzjf0L+DGVIN2A3GrZ4ktzsljK4WpOXEIIjXxoZv+WLOAbQcj8ObzAIZSILDCuknFFZzaIPPNqJQGiKPP8YX9SLDG5O+sLlrANQL5G8Oy9gO5uOZBXR7IcPTlthaqj3iBxtE2Ku1QUhNOnssp06ZHzSAiVNxkNVz7mO4ACRDmAt6KW3rVJMIOe5BntCxclZsLA5CLAM4YezW3gML9ikQAr1eNq4tdvv/uIE8yEBDlc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_824b4fdc-f669-9bda-b761-aaebf874e7d0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1642,
+      "completion_tokens": 442,
+      "total_tokens": 2084,
+      "cost": 0.005744,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005744,
+        "upstream_inference_prompt_cost": 0.003092,
+        "upstream_inference_completions_cost": 0.002652
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 345,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly requires commutative & and | between Q and Exists, including empty Q(), which is exactly what the FAIL_TO_PASS tests exercise. A competent engineer could implement that without unstated extra behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly requires commutative & and | between Q and Exists, including empty Q(), which is exactly what the FAIL_TO_PASS tests exercise. A competent engineer could implement that without unstated extra behavior.",
+  "prompt_tokens": 1642,
+  "completion_tokens": 442,
+  "total_tokens": 2084,
+  "cost_usd": 0.005936,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-6526",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1611
+  },
+  "response": {
+    "id": "gen-1789187546-Xadft1DNAejWZMNpaSA4",
+    "object": "chat.completion",
+    "created": 1789187546,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue describes stat files landing outside pylint home when linting via stdin, but never specifies how cache filenames must be derived or which characters to replace. The FAIL_TO_PASS cases lock in an unstated sanitization scheme and exact Path names, so many reasonable fixes for the reported location bug would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about pylint writing stat files to the current working directory instead of the pylint home. The user wants to know how pylint decides where to put stat files, and documentation about fal...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pylint writing stat files to the current working directory instead of the pylint home. The user wants to know how pylint decides where to put stat files, and documentation about fal...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c06679d6-a10d-95bb-9bbf-9c0cf29b38bc",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2190,
+      "completion_tokens": 478,
+      "total_tokens": 2668,
+      "cost": 0.007056,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007056,
+        "upstream_inference_prompt_cost": 0.004188,
+        "upstream_inference_completions_cost": 0.002868
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 361,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue describes stat files landing outside pylint home when linting via stdin, but never specifies how cache filenames must be derived or which characters to replace. The FAIL_TO_PASS cases lock in an unstated sanitization scheme and exact Path names, so many reasonable fixes for the reported location bug would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue describes stat files landing outside pylint home when linting via stdin, but never specifies how cache filenames must be derived or which characters to replace. The FAIL_TO_PASS cases lock in an unstated sanitization scheme and exact Path names, so many reasonable fixes for the reported location bug would fail.",
+  "prompt_tokens": 2190,
+  "completion_tokens": 478,
+  "total_tokens": 2668,
+  "cost_usd": 0.007248,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

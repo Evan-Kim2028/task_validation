@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13952",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3979
+  },
+  "response": {
+    "id": "gen-1789191353-GRMnMOnZdmc6fIIEVuhB",
+    "object": "chat.completion",
+    "created": 1789191353,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to route migrate signal verbosity output through the command stdout so call_command can capture it, which a competent engineer could implement. The FAIL_TO_PASS suite also requires stdout to be forwarded as a pre/post_migrate signal keyword, which the issue never states.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about migrate signals verbose stdout emissions not being capturable. The migrate command has --verbosity passed to emit_pre_migrate_signal and emit_post_migrate_signal but stdout isn't pr...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The gold patch correctly passes stdout=self.stdout to the signal emission functions and uses kwargs.get to route output to the provided stream instead of sys.stdout. The test_args update verifies the stdout argument reaches the receivers and contains the expected content. The FAIL_TO_PASS list appears to be an artifact of test file changes rather than a true failure set.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about migrate signals verbose stdout emissions not being capturable. The migrate command has --verbosity passed to emit_pre_migrate_signal and emit_post_migrate_signal but stdout isn't pr...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The gold patch correctly passes stdout=self.stdout to the signal emission functions and uses kwargs.get to route output to the provided stream instead of sys.stdout. The test_args update verifies the stdout argument reaches the receivers and contains the expected content. The FAIL_TO_PASS list appears to be an artifact of test file changes rather than a true failure set.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ebc81579-64ba-998d-904c-5eb12790fb66",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4117,
+      "completion_tokens": 1093,
+      "total_tokens": 5210,
+      "cost": 0.014408,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014408,
+        "upstream_inference_prompt_cost": 0.00785,
+        "upstream_inference_completions_cost": 0.006558
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 980,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to route migrate signal verbosity output through the command stdout so call_command can capture it, which a competent engineer could implement. The FAIL_TO_PASS suite also requires stdout to be forwarded as a pre/post_migrate signal keyword, which the issue never states.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to route migrate signal verbosity output through the command stdout so call_command can capture it, which a competent engineer could implement. The FAIL_TO_PASS suite also requires stdout to be forwarded as a pre/post_migrate signal keyword, which the issue never states.",
+  "prompt_tokens": 4117,
+  "completion_tokens": 1093,
+  "total_tokens": 5210,
+  "cost_usd": 0.014792,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

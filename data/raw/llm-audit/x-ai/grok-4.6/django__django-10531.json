@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10531",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3649
+  },
+  "response": {
+    "id": "gen-1789190755-bf4alggu2aQfKoFbqMjk",
+    "object": "chat.completion",
+    "created": 1789190755,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that history messages prefer human-readable verbose names over raw field names, but the FAIL_TO_PASS tests require form labels (including Meta.labels), passthrough of non-form field names, and specific stored/gettext strings. A solution that used model verbose_name alone would match the ticket yet fail those tests.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Django admin history using verbose names instead of field names. The tests go further: they use form labels, Meta.labels, handle fields not on the form, capitalize things like \"Titl...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django admin history using verbose names instead of field names. The tests go further: they use form labels, Meta.labels, handle fields not on the form, capitalize things like \"Titl...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "kzUjYF5lgAe9Xl8EwreswPl7q+sonWtIi2dhoJpenFcvL8EYqKn/Bns1AIGYl2W2u7XYbCZ04fA0fRzLgUsPkg5l6/+OxkaV0eWAH41I8rvNQw7rofwdYhRmWSge5++lyjX2jusymTYh3LbsP3xzDJQG2CcsZiKLbwFueVqVDITTV1PF+00b4dIh567FhfzFtON+c+JMZC46wegTHBTlOMhI9gfNUiFieyRltmnHNCLGJmjJEVBmTIbl418oCz26dIsTb1ZRGc4KWNyUK8tU2gSlms0d/+WCXwJkjKjoqm5u03UsQ3/NcKQrXKmeDkzOaTUtiDlQvzCdfMXQbll94qQxYpLS9xrkMXNN360UXWSSyIBNd4nfJRkz9/hqQQBTa29QqAK6XNn4RD6CgPTTA4Fh/+Kjt5XbzNZkggfC0YHJPkzND09LXNBrtwVhCYNj5h+NuLVgL1XtMHncpxG98mxi81/rhSkp/Udx4PTnYvHVatRtw+AXlK9fqgjteT1Yu6MrXiz8QeYYv+aMvUVoBsQeAgGHeP3GEK0suKbW6PLA0lM7IGxbTfACbB/IrPsu/defSBqwRzUi72UcGki8N5DnYD7SugRmrDT9aUkzXCYj23Cw3ZOUX/4UbDWvx3p1R/5Q5qDASlVDQsLKF/0dgGlJ+0qOUg1WRL4pf2cw9ThlxRz6tjGabrrPaWhZyutnltlkUgdRaMjhQckP7ucYBl73Bl/YmPwQGtEBVfhfFBt3k3ge3OmadfHZR9/BRDsW9Y5BBMX2vl10LI5JrxwITp0cIJh4MSYIgLJy6+fze00SF98LnjQZVuJHqII1o2eCn8qd0wMRTOIwwvax4LgStMLSKVJBASzd0o1YX4UhVcLhvdXlqGmeaJRXuIVGHBa00yrrlDTAzQveMnZwSH8sY/fvGpuQNwpcdLVTUz2L+SKN49IVctApEsUv8vO/dAZPiFa7psQ1r/7iGm3bcKdadNfl+ZZx/KnVUl9EKd7R+mlrzZzYnG/xyWnqRIBzOJNogrRYLlalnS7iI654XsPkwOhICcq0BZZsSyTUOPvQvhmDZ9h3k3nWeEa46+svAkJTvLplI2lppFD+RUSmxvNJsPv/Tdp80GSLluiCA76S1FvjWeNGsnWiMcwXRcefSOg9BmRBiNqc9YudE6orUoujlXuiJQIuUkQigj7NbvwOQq3/k5C8QpR0DXvn7C0VQ6qTLlqDaC6YOjbtk+CKbvMNsMilPU0zdP/sQFtc/l19jqEjAZhMdLPP7tLYx8KClr0zG1VxE1J6YGxUFXTWNkRkFz4OzjgGkofD0jPrTunJcqXupo9e+FL2EUFzPTqro0OuwQjlkuQwIDmVXTx4+LIM2AFsJt1Zspn9bmD3TkLMFcGgQopmQyDBBNrbNuDNNdo+BBDScmC9z3JtMDsZtW1B78owbWwaQwrpdA0NIxxs8nMwhveiXGB6qf+JpS2cc/KYlMsjldOKIKqTEuNF4aSAnugNQycJLGPSaASjOyX4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_87be43b9-504a-930f-a731-76ea4cd32472",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4210,
+      "completion_tokens": 381,
+      "total_tokens": 4591,
+      "cost": 0.010514,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010514,
+        "upstream_inference_prompt_cost": 0.008228,
+        "upstream_inference_completions_cost": 0.002286
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that history messages prefer human-readable verbose names over raw field names, but the FAIL_TO_PASS tests require form labels (including Meta.labels), passthrough of non-form field names, and specific stored/gettext strings. A solution that used model verbose_name alone would match the ticket yet fail those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that history messages prefer human-readable verbose names over raw field names, but the FAIL_TO_PASS tests require form labels (including Meta.labels), passthrough of non-form field names, and specific stored/gettext strings. A solution that used model verbose_name alone would match the ticket yet fail those tests.",
+  "prompt_tokens": 4210,
+  "completion_tokens": 381,
+  "total_tokens": 4591,
+  "cost_usd": 0.010706,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

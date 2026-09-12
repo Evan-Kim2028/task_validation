@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13234",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4395
+  },
+  "response": {
+    "id": "gen-1789187877-pPZymbvBWACiAh5pV8D1",
+    "object": "chat.completion",
+    "created": 1789187877,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly requires ECSV round-trip of structured columns whose field is named name, which a competent engineer can implement from the traceback and example. The FAIL_TO_PASS cases mainly encode that, but they also tighten mixin comparisons (dtype, wrap_angle, nested field names) beyond the stated bug.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about structured column serialization failing when a field is named \"name\" in ECSV round-trip.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests include extra dtype checks and wrap_angle filtering that go beyond the core bug fix in serialize.py\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about structured column serialization failing when a field is named \"name\" in ECSV round-trip.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests include extra dtype checks and wrap_angle filtering that go beyond the core bug fix in serialize.py\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e250dfa8-e81a-909a-b125-8aacb70d32a6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5781,
+      "completion_tokens": 667,
+      "total_tokens": 6448,
+      "cost": 0.015372,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.015372,
+        "upstream_inference_prompt_cost": 0.01137,
+        "upstream_inference_completions_cost": 0.004002
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 549,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly requires ECSV round-trip of structured columns whose field is named name, which a competent engineer can implement from the traceback and example. The FAIL_TO_PASS cases mainly encode that, but they also tighten mixin comparisons (dtype, wrap_angle, nested field names) beyond the stated bug.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly requires ECSV round-trip of structured columns whose field is named name, which a competent engineer can implement from the traceback and example. The FAIL_TO_PASS cases mainly encode that, but they also tighten mixin comparisons (dtype, wrap_angle, nested field names) beyond the stated bug.",
+  "prompt_tokens": 5781,
+  "completion_tokens": 667,
+  "total_tokens": 6448,
+  "cost_usd": 0.015564,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

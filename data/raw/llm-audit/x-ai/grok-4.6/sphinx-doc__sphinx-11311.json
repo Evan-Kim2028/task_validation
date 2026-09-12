@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-11311",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "d7d10e73-14d5-9db3-a4db-24a38376f3b7",
+    "object": "chat.completion",
+    "created": 1789194144,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks for _sig_element registration via __init_subclass__ and for fallback to preserve original node type on inline nodes, plus when not to fallback (all SIG_ELEMENTS visitors or visit_desc_sig_element). Tests are only slightly stricter (exact built-in SIG_ELEMENTS membership, attribute name _sig_node_type, and desc_inline always falling back unless visited) than a senior engineer would infer.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to evaluate specification fairness of a SWE-bench task and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7939,
+      "completion_tokens": 144,
+      "total_tokens": 8603,
+      "prompt_tokens_details": {
+        "text_tokens": 7939,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 520,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 64266800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks for _sig_element registration via __init_subclass__ and for fallback to preserve original node type on inline nodes, plus when not to fallback (all SIG_ELEMENTS visitors or visit_desc_sig_element). Tests are only slightly stricter (exact built-in SIG_ELEMENTS membership, attribute name _sig_node_type, and desc_inline always falling back unless visited) than a senior engineer would infer.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks for _sig_element registration via __init_subclass__ and for fallback to preserve original node type on inline nodes, plus when not to fallback (all SIG_ELEMENTS visitors or visit_desc_sig_element). Tests are only slightly stricter (exact built-in SIG_ELEMENTS membership, attribute name _sig_node_type, and desc_inline always falling back unless visited) than a senior engineer would infer.",
+  "prompt_tokens": 7939,
+  "completion_tokens": 664,
+  "total_tokens": 8603,
+  "cost_usd": 0.019861999999999998,
+  "cost_in_usd_ticks": 64266800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 6605
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15569",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1382
+  },
+  "response": {
+    "id": "gen-1789191625-PLSpaCyZYMalpOskFIYN",
+    "object": "chat.completion",
+    "created": 1789191625,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue states that _unregister_lookup must clear the lookup cache the same way register_lookup does, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that lookups/transforms are gone after unregister without a separate cache clear, which is exactly that behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: RegisterLookupMixin._unregister_lookup() should clear the lookup cache, like register_lookup does.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: RegisterLookupMixin._unregister_lookup() should clear the lookup cache, like register_lookup does.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "leZsiWPc6v3oFFtuhOT9iax9judrmpqv3LDttH7okRkmOO28e73/9IQT0kpa4JtNZtc4n6zWPFCNybopy/A9MAi1eEZShVoh+8YegXDPEuhzZOfEg+Rg/kMgiECXiuRu3KF+R2Spg1SlHrpnWMgpLpQYrhg1fiPSVOaM9tfow5YInrCr9KVjFUDwAcjAHZTBXlpMsKLEGqMzjC4Kca6+PI4rEVr+g2ScIavqz9XxUFyvh1May2ky3HQqkFuQUdb1HjTvxISfG3o7FsQaT5OFklapIgv/TwNsKwXHpjEzLsKUcd2dVsKY5cQI0eoNJfuVcY5rzMLU4P4M2tOSmJa4xiybXEMXeO3CzxMR7FVfTXL/+Vz3QYFGTTCHIY7Gv1sJv9hRqFbaZ2t8OjD/EYvwlus4x0lcpBigE3uevgSHKnKWxsf6ZhaHTY6nUmaRRwgdU3kwY+U4CVtrke4FnNlXF76S08ZFYttFUAJsivz/t28YOJdmRw2nljIMrT10Yeqibb7QloFHdyR1qxY2S6JwvQJesr+xo59H0mvlloF38GkmfPucBz7CgOWytYsbe5FeGl60lPcESg1uhvx6sFCude6+zJC7JJDBvkjXcfdx+I79kSBFUTeVvuhw8E6weVjxGm/V56jUceqbfxt6GS8QUVVmszP4SJSL9IskU7iqDg5v/Kz80wq/9mA1nD4Ctcev22dhI+/byEQXeuy/NRy3hZ+H3lCAIDVszY+n9Eecn7VF2lf9B2oy2wMQAexbfhUXNcfcCU5jOi4jhZr+PjblcxPGUoevnHpxEXMzVM1+wCy+D23vUasiV/UBwBnO8AmAfkN1tnCkn4garYRy8t1r/B+nwVRYSLKBjK7HULUyWQVSeH+TEuaaoIU2hKCfLBFDdyLPNEszBCF9HUgH1eyprH+f2TmafUa68NIAJfHAAMRWZucgeowzjJqhxI3WGtS1gOV59wM3mlqNb2rv0ecaF600ahtx3bftGYzSAasZgMziRIcp.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_82e06e83-a668-9895-a3b5-8a986e8b8ab1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1693,
+      "completion_tokens": 292,
+      "total_tokens": 1985,
+      "cost": 0.004946,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004946,
+        "upstream_inference_prompt_cost": 0.003194,
+        "upstream_inference_completions_cost": 0.001752
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue states that _unregister_lookup must clear the lookup cache the same way register_lookup does, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that lookups/transforms are gone after unregister without a separate cache clear, which is exactly that behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue states that _unregister_lookup must clear the lookup cache the same way register_lookup does, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that lookups/transforms are gone after unregister without a separate cache clear, which is exactly that behavior.",
+  "prompt_tokens": 1693,
+  "completion_tokens": 292,
+  "total_tokens": 1985,
+  "cost_usd": 0.005138,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

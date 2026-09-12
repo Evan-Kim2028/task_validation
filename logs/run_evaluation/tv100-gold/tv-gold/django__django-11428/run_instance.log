@@ -1,0 +1,47 @@
+2026-09-11 23:28:05,864 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:28:18,032 - INFO - Creating container for django__django-11428...
+2026-09-11 23:28:18,798 - INFO - Container for django__django-11428 created: 24fc67a99177724fbd32cc6c9a4faccbf823f6294cf7e1f3b15490afd167a8e0
+2026-09-11 23:28:19,010 - INFO - Container for django__django-11428 started: 24fc67a99177724fbd32cc6c9a4faccbf823f6294cf7e1f3b15490afd167a8e0
+2026-09-11 23:28:19,011 - INFO - Intermediate patch for django__django-11428 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-11428/patch.diff, now applying to container...
+2026-09-11 23:28:19,109 - INFO - >>>>> Applied Patch:
+Checking patch django/utils/autoreload.py...
+Applied patch django/utils/autoreload.py cleanly.
+
+2026-09-11 23:28:19,889 - INFO - Git diff before:
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index cb7cd1c725..a339c061f0 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -74,7 +74,7 @@ def check_errors(fn):
+ def raise_last_exception():
+     global _exception
+     if _exception is not None:
+-        raise _exception[0](_exception[1]).with_traceback(_exception[2])
++        raise _exception[1]
+ 
+ 
+ def ensure_echo_on():
+2026-09-11 23:28:19,889 - INFO - Eval script for django__django-11428 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-11428/eval.sh; copying to container...
+2026-09-11 23:28:34,313 - INFO - Test runtime: 14.38 seconds
+2026-09-11 23:28:34,313 - INFO - Test output for django__django-11428 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-11428/test_output.txt
+2026-09-11 23:28:34,384 - INFO - Git diff after:
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index cb7cd1c725..a339c061f0 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -74,7 +74,7 @@ def check_errors(fn):
+ def raise_last_exception():
+     global _exception
+     if _exception is not None:
+-        raise _exception[0](_exception[1]).with_traceback(_exception[2])
++        raise _exception[1]
+ 
+ 
+ def ensure_echo_on():
+2026-09-11 23:28:34,384 - INFO - Grading answer for django__django-11428...
+2026-09-11 23:28:34,386 - INFO - report: {'django__django-11428': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_raises_custom_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_raises_exception_with_context (utils_tests.test_autoreload.TestRaiseLastException)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_no_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_raises_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_common_roots (utils_tests.test_autoreload.TestCommonRoots)', 'test_watchman_available (utils_tests.test_autoreload.GetReloaderTests)', 'test_watchman_unavailable (utils_tests.test_autoreload.GetReloaderTests)', 'test_mutates_error_files (utils_tests.test_autoreload.TestCheckErrors)', 'test_calls_start_django (utils_tests.test_autoreload.RunWithReloaderTests)', 'test_calls_sys_exit (utils_tests.test_autoreload.RunWithReloaderTests)', 'test_swallows_keyboard_interrupt (utils_tests.test_autoreload.RunWithReloaderTests)', 'test_sys_paths_absolute (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_directories (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_non_existing (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_with_directories (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_manage_py (utils_tests.test_autoreload.RestartWithReloaderTests)', 'test_python_m_django (utils_tests.test_autoreload.RestartWithReloaderTests)', 'test_run_loop_catches_stopiteration (utils_tests.test_autoreload.BaseReloaderTests)', 'test_run_loop_stop_and_return (utils_tests.test_autoreload.BaseReloaderTests)', 'test_wait_for_apps_ready_checks_for_exception (utils_tests.test_autoreload.BaseReloaderTests)', 'test_wait_for_apps_ready_without_exception (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_files_with_recursive_glob (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_with_glob (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_with_single_file (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_without_absolute (utils_tests.test_autoreload.BaseReloaderTests)', 'test_file (utils_tests.test_autoreload.StatReloaderTests)', 'test_glob (utils_tests.test_autoreload.StatReloaderTests)', 'test_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_multiple_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_multiple_recursive_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_nested_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_overlapping_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_overlapping_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_ignores_missing_files (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_updates (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_with_duplicates (utils_tests.test_autoreload.StatReloaderTests)', 'test_check_errors_called (utils_tests.test_autoreload.StartDjangoTests)', 'test_echo_on_called (utils_tests.test_autoreload.StartDjangoTests)', 'test_starts_thread_with_args (utils_tests.test_autoreload.StartDjangoTests)', 'test_watchman_becomes_unavailable (utils_tests.test_autoreload.StartDjangoTests)', '.pyc and .pyo files are included in the files list.', 'test_check_errors (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_check_errors_catches_all_exceptions (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_file_added (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_main_module_is_resolved (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_module_without_spec (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_paths_are_pathlib_instances (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'iter_all_python_module_file() ignores weakref modules.', 'test_zip_reload (utils_tests.test_autoreload.TestIterModulesAndFiles)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11428: resolved: True
+2026-09-11 23:28:34,386 - INFO - Attempting to stop container sweb.eval.django__django-11428.tv100-gold...
+2026-09-11 23:28:50,454 - INFO - Container sweb.eval.django__django-11428.tv100-gold stopped successfully.
+2026-09-11 23:28:50,454 - INFO - Attempting to remove container sweb.eval.django__django-11428.tv100-gold...
+2026-09-11 23:28:50,533 - INFO - Container sweb.eval.django__django-11428.tv100-gold removed successfully.

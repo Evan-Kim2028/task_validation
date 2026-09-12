@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-22926",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2589
+  },
+  "response": {
+    "id": "gen-1789191950-mkgLq4IiBT8loNpJ2NpN",
+    "object": "chat.completion",
+    "created": 1789191950,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly reports an IndexError when initializing RangeSlider with equal valinit values and asks that user-provided initial values work. The FAIL_TO_PASS test fairly targets that case but also asserts specific polygon extents in axes coordinates that are implied by existing widget geometry rather than stated in the issue.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about RangeSlider not accepting valinit when both values are the same, causing IndexError because poly.xy has size 4 not 5.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about RangeSlider not accepting valinit when both values are the same, causing IndexError because poly.xy has size 4 not 5.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b9402158-103c-9ac6-b343-a2911a6f60e7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3421,
+      "completion_tokens": 482,
+      "total_tokens": 3903,
+      "cost": 0.009542,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009542,
+        "upstream_inference_prompt_cost": 0.00665,
+        "upstream_inference_completions_cost": 0.002892
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 367,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly reports an IndexError when initializing RangeSlider with equal valinit values and asks that user-provided initial values work. The FAIL_TO_PASS test fairly targets that case but also asserts specific polygon extents in axes coordinates that are implied by existing widget geometry rather than stated in the issue.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly reports an IndexError when initializing RangeSlider with equal valinit values and asks that user-provided initial values work. The FAIL_TO_PASS test fairly targets that case but also asserts specific polygon extents in axes coordinates that are implied by existing widget geometry rather than stated in the issue.",
+  "prompt_tokens": 3421,
+  "completion_tokens": 482,
+  "total_tokens": 3903,
+  "cost_usd": 0.009734,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

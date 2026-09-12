@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10997",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1405
+  },
+  "response": {
+    "id": "gen-1789190780-JsT54DnWevmGO6as1H3Q",
+    "object": "chat.completion",
+    "created": 1789190780,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to show applied datetimes on showmigrations --list at verbosity 2+, but does not specify the exact output wording or datetime format. The FAIL_TO_PASS assertion requires a precise '(applied at YYYY-MM-DD HH:MM:SS)' string, so many reasonable implementations would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about adding applied datetime to showmigrations. The user specified it should only apply to --list with verbosity 2+.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding applied datetime to showmigrations. The user specified it should only apply to --list with verbosity 2+.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4173182e-873b-9f4e-9b6d-c45ac3b370e8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1607,
+      "completion_tokens": 599,
+      "total_tokens": 2206,
+      "cost": 0.006616,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006616,
+        "upstream_inference_prompt_cost": 0.003022,
+        "upstream_inference_completions_cost": 0.003594
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 480,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to show applied datetimes on showmigrations --list at verbosity 2+, but does not specify the exact output wording or datetime format. The FAIL_TO_PASS assertion requires a precise '(applied at YYYY-MM-DD HH:MM:SS)' string, so many reasonable implementations would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to show applied datetimes on showmigrations --list at verbosity 2+, but does not specify the exact output wording or datetime format. The FAIL_TO_PASS assertion requires a precise '(applied at YYYY-MM-DD HH:MM:SS)' string, so many reasonable implementations would fail.",
+  "prompt_tokens": 1607,
+  "completion_tokens": 599,
+  "total_tokens": 2206,
+  "cost_usd": 0.006808,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

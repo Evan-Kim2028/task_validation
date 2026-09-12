@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5787",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "26fdfd29-604b-942e-bb77-d7ebd4fb7060",
+    "object": "chat.completion",
+    "created": 1789193798,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that report serialization preserve exception chains so xdist can reprint them, which a competent engineer can implement from the examples. The FAIL_TO_PASS tests fairly check round-trip of chained longrepr but are slightly narrower (explicit `from` only, CollectReport, ExceptionChainRepr/section details) than the issue text.\", \"p_invalid\": 0.18}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 12890,
+      "completion_tokens": 124,
+      "total_tokens": 13323,
+      "prompt_tokens_details": {
+        "text_tokens": 12890,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 309,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 93874000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that report serialization preserve exception chains so xdist can reprint them, which a competent engineer can implement from the examples. The FAIL_TO_PASS tests fairly check round-trip of chained longrepr but are slightly narrower (explicit `from` only, CollectReport, ExceptionChainRepr/section details) than the issue text.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that report serialization preserve exception chains so xdist can reprint them, which a competent engineer can implement from the examples. The FAIL_TO_PASS tests fairly check round-trip of chained longrepr but are slightly narrower (explicit `from` only, CollectReport, ExceptionChainRepr/section details) than the issue text.",
+  "prompt_tokens": 12890,
+  "completion_tokens": 433,
+  "total_tokens": 13323,
+  "cost_usd": 0.028377999999999997,
+  "cost_in_usd_ticks": 93874000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 10529
+}

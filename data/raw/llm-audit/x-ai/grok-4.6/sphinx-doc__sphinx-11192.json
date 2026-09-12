@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-11192",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "4e2b5ca3-58dc-99e9-8bd1-1332912871f4",
+    "object": "chat.completion",
+    "created": 1789194140,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states that parallel HTML builds produce an incomplete searchindex compared with serial builds, so a competent engineer knows the required behavior is a complete index under -j. The FAIL_TO_PASS test only asserts the docnames list for a small fixture rather than term coverage or search results, which is slightly narrower than the reported failure mode but still aligned with missing indexed documents.\", \"p_invalid\": 0.12}",
+          "reasoning_content": "The issue is about search index being smaller/wrong when using sphinx-build -j auto (parallel builds). Tests check that with parallel=3, docnames in searchindex are complete: ['index', 'nosearch', 'to...",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1994,
+      "completion_tokens": 131,
+      "total_tokens": 2390,
+      "prompt_tokens_details": {
+        "text_tokens": 1994,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 19026400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states that parallel HTML builds produce an incomplete searchindex compared with serial builds, so a competent engineer knows the required behavior is a complete index under -j. The FAIL_TO_PASS test only asserts the docnames list for a small fixture rather than term coverage or search results, which is slightly narrower than the reported failure mode but still aligned with missing indexed documents.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states that parallel HTML builds produce an incomplete searchindex compared with serial builds, so a competent engineer knows the required behavior is a complete index under -j. The FAIL_TO_PASS test only asserts the docnames list for a small fixture rather than term coverage or search results, which is slightly narrower than the reported failure mode but still aligned with missing indexed documents.",
+  "prompt_tokens": 1994,
+  "completion_tokens": 396,
+  "total_tokens": 2390,
+  "cost_usd": 0.006364,
+  "cost_in_usd_ticks": 19026400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1147
+}

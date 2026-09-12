@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10904",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6735
+  },
+  "response": {
+    "id": "gen-1789190768-FCnUkaCIyHEuJrNpQ6h0",
+    "object": "chat.completion",
+    "created": 1789190768,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to replace OSError aliases with OSError (and simplify SMTPException handling), not to raise more specific subclasses. The FAIL_TO_PASS test requires FileExistsError and a particular message, so a faithful OSError-only change would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about replacing OSError aliases with OSError. The FAIL_TO_PASS test is test_not_a_directory which now expects FileExistsError with a specific message instead of IOError.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about replacing OSError aliases with OSError. The FAIL_TO_PASS test is test_not_a_directory which now expects FileExistsError with a specific message instead of IOError.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "O3fGHkzXQ9lvw/dSLpiJAoqqGw12Y618qs77GIGwQ5oibIaRb/jgfh1tiwbqgsoOL1dNlMK4UO4img1vaT91Y/vzPJmqUkMuM91kH2d0DYr6aVebxgdkwMDfVoHaZC9mHXLjWkPk/+Vx6hgC+m2/ak1pyt4aZ0OD7Dck2GJM6dxQ6fMFgyiwwjXLfr5oQLjAesAqilquuG8+9C9SHoQ+1FcXNKaTa8K62OiAnIgaxknVFbXwwvMXxU+id/lKwGzNOo34qNqE0Kr5eO+01qrfNAovG33zOYtWsJuYCD6feu+sgPS7LUNg/fD/F2wNLmY51Y/qRGayn5mhurl1VbfOvpGE7GjaoWsiME8e4whIjPeYXuFfDkd7D/9ylsMQ+gwyZnNAJ/ZZ9xzLf7seALLREImXjqz03+utUEb+JXM8sN4auFhgf9Z+5ZqHIXNtl8ggS9AWesAwkENwlo2rZPUPsleHUnozI8cys7wdSxU/8cachPVahP8D3YSW3oApzMCpEOlSueLzioww0c3ko3F5WChnQ5mjcKxXkUWdQ6emvycmdzgqO7qv2bA4WtGv+3DQy5QhW/rIhnlFXH/wxkDCHSUJvD1Ia3IzLtRVpa3wAzFaUM0HV7i1WQXxn1QJjkdVHYqvaJ9z7NVhVEmJbvvkdhqYQnPu59LqdjsjX9dW15GavFIiYJ4Ng4lfKdPX8g0U3WX65f1XVbIthT8iXM1g5llAVPO9DNS8CB7M4OHg+PZKrvYyJt7YG4kym8/1+dwPHvbNcF5nPgOK0kzp+AHPYmm0RQ3xaLFoKvXYyjhyoW9kgTkDM4CaPKcS4TzoO/b79EtwtV5LDHfhpyM/rNKM8Xel96V+J6ipb+BwRmr0SCeComqmLZ4fu/nWRMqRulB92BtKXYUxZA3rwBGsMlsjwELGWZrgIOhgOIFa9JH4aWfaddyOkJtVTPC7WPG5dcOllyhCJ6qpkfI03cA7fXHqmjnYnKmmyE4RUsrh7cGLqBTKeYeSv8P9jw+ltHjEufVOBhj2S9SI4NaKnNnZDDe14/WAF1qpmR7/XHgFKueY9w5eTHK0ogRhB8Xj82Kn1p0ZYpjnBAACqaWAYLcli6z88V5kXLQdg9MKyH1EkBvZECjsHjNXHxnow6gXTWWwCTrPB8ngcdpp5yMp1NuHDpb/htLT08Wyz8QmRhlZFcIrmAPOoDKAfzFfIcwTa3+d+O16l7IKiwmn/DCDyo6XfNbSb8udqmguwihW87QqC6eEUWsItEjxOcGjXq4UCVDBDzUR/LyYo0bv/teraHds+okjz5eVqfe4apkoVMb7toc1AZSszboGcT61Ds51xYhQW+kmd4/0plXlkrTsw/vLUFFyDOPOm9XD9gmffxiJ9acBwPHc7wBghZ9AeOfpsbBvlMuxLyfbJ2S2ji2q/hqPGSBb5Qis7DWOT/is5Y3SFAn4aPUj0doduXnuuJSfRLoj9JD0sewDiaZmbT5w1oLkinjrHuTT/WaOVLk+uco+SfKVXi+7R2Vs5ZIbrCUSeqJPzaL0lu4YDSQM+6eXzUrA2hCuKgss7Hte.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d87f49c1-1228-92a5-a321-71888e40f700",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7593,
+      "completion_tokens": 362,
+      "total_tokens": 7955,
+      "cost": 0.016974,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.016974,
+        "upstream_inference_prompt_cost": 0.014802,
+        "upstream_inference_completions_cost": 0.002172
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 254,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to replace OSError aliases with OSError (and simplify SMTPException handling), not to raise more specific subclasses. The FAIL_TO_PASS test requires FileExistsError and a particular message, so a faithful OSError-only change would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to replace OSError aliases with OSError (and simplify SMTPException handling), not to raise more specific subclasses. The FAIL_TO_PASS test requires FileExistsError and a particular message, so a faithful OSError-only change would fail.",
+  "prompt_tokens": 7593,
+  "completion_tokens": 362,
+  "total_tokens": 7955,
+  "cost_usd": 0.017358,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

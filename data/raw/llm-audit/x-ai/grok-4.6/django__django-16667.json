@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16667",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1558
+  },
+  "response": {
+    "id": "gen-1789191810-N4101P5t2LcFgODL3BW7",
+    "object": "chat.completion",
+    "created": 1789191810,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to stop OverflowError on huge SelectDateWidget inputs, but it does not specify the widget’s return value. FAIL_TO_PASS requires exactly \\\"0-0-0\\\" (and DateField treating that as invalid), which a reasonable catch-and-return-None or ValueError-style interpolation would fail.\", \"p_invalid\": 0.75}",
+          "refusal": null,
+          "reasoning": "The issue is about SelectDateWidget crashing with OverflowError when large integers are passed for date components.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SelectDateWidget crashing with OverflowError when large integers are passed for date components.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c966dab4-5b7c-9677-a5d2-ff2ba6c16aa7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2021,
+      "completion_tokens": 721,
+      "total_tokens": 2742,
+      "cost": 0.007984,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007984,
+        "upstream_inference_prompt_cost": 0.003658,
+        "upstream_inference_completions_cost": 0.004326
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 598,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to stop OverflowError on huge SelectDateWidget inputs, but it does not specify the widget’s return value. FAIL_TO_PASS requires exactly \"0-0-0\" (and DateField treating that as invalid), which a reasonable catch-and-return-None or ValueError-style interpolation would fail.",
+    "p_invalid": 0.75
+  },
+  "s": 2.0,
+  "p_invalid": 0.75,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to stop OverflowError on huge SelectDateWidget inputs, but it does not specify the widget’s return value. FAIL_TO_PASS requires exactly \"0-0-0\" (and DateField treating that as invalid), which a reasonable catch-and-return-None or ValueError-style interpolation would fail.",
+  "prompt_tokens": 2021,
+  "completion_tokens": 721,
+  "total_tokens": 2742,
+  "cost_usd": 0.008368,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12532",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1671
+  },
+  "response": {
+    "id": "gen-1789191061-hJlKU4itbenJyCCAU9MZ",
+    "object": "chat.completion",
+    "created": 1789191061,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to align ModelMultipleChoiceField with MultipleChoiceField by using the invalid_list error key. The FAIL_TO_PASS tests additionally require a specific RemovedInDjango40Warning, exact warning text, and continued support for the old list key, which the issue never states.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue is: forms.ModelMultipleChoiceField should use \"invalid_list\" as error message key instead of \"list\", matching MultipleChoiceField.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: forms.ModelMultipleChoiceField should use \"invalid_list\" as error message key instead of \"list\", matching MultipleChoiceField.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "H+mUqRhm/FgMPxOdqcJTYc3X9a7SsyV9177aFQC8i1AQjjP4jNRELnzCBhHMSX6ZgV7aQZCEApxZcQTUM+Rz7fXcBfgi7sTA0DHzr1ikKTN6XN7g4sbvj/zXuj/Bglh4k+nacSa0TbLsNqB3BamVVHFfkb88NiUsdWR2F41ChYrapcenEde5h/FBcDAYYgTDVqHKkFMmxQPHFXN0EZVJTN4wcBb4lW52KD2c9hNRww5uTK/gTk10WFX073mg8Zh/J+vReqjQ93YdNLb++guFIzTdDB+aSuw9ADlQQFJ2QrrJDTNjwonHcj+DA03SL/f1fHbxcnomnhMWbufAY7+uOd9AjJz320nCNMoURCrSpk240siQXf4QVJSN5SovpuvT2gR53doUBouAGmt98VcL2HQjaI5/qR1gg0rFBy9gjYP3J7PJZHlE7lIR50pgHO6oMKEvgh95tivPmaP1p+5gKAgAd0iIvHPVfuvRYvuLSmoYKk59G+xmmNhW9Nw+vBquuj58dFWMmIMRR7Er7DEi1NOPn6DspHWKcMpGnWJG/A4XKB6fMPu/jdO1emwySoRT6YqRu2/eMP02RdHZncrov3SLBo1iKA2fbW2T53FEEQKGFSjpEVobjAFLdtu/emVPf18xfMfdorcnqz/bLnm0vp7INCcWimZLBag0v9/gGY/xL6ASRBIarqTwxeGRSu2XavbWsmmowGgTH3ihn9Rz26Yo9NxXuBVFxEQAcDe2HxAqOrW2cZ1QEFW/WV3aPHIFsmsvzykzrbu8jCFsLPYXnnjWTMq/XYKXtp1+UWx3q3VAoboo+nU1qJmwXYoHIv0zzNtaqQy5MUKQVuOAlR3VMIyV04TcepNbxF59c33CF0g79Yo5Wyx4KaJ6XKJdqLhnldrztKmeL6anGlSn/qmwhQ9YKAZWKUi9JGHoY62+VDliC/S5kCT2t7jsvND8Q9EcCIavn4Yj7aGNoLn4ftw/9uCiZhE0fAX7FqQ+ysiJn/KYaCmJbFFvbTqNPSX6ODoou073zfgcXrVuAonRtnVufSPiQl25NgXLoDA5BnZD8+XYIyhYRycGx7X27SeCIwj5bPcEY5M+8FYtVn+NPIw/30TN/eNxqE8DDqj7haNtht2niDRk+BsmZNmAvu4C7FK5BVzq2cAsoKuxA0JGEXZkfcMkUANzHfoxpsunbBnOhbqJ0nfOLELWj1t/NPfHf1c6pAgQBi3aUIpMj71JcYncbryCWnF0vxvEwwCVJDXHWVAkYp/9aHgdKN+VfM8owJRFjxjr6vBntfjOqc+fByso7cR/fQvlhRCrSYbw7lA5pAqmN34DjOCTB6SaWMxZ/PUt5Jde.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c25b60e2-f1c1-97ae-b160-737ec5221f6b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1954,
+      "completion_tokens": 333,
+      "total_tokens": 2287,
+      "cost": 0.005906,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005906,
+        "upstream_inference_prompt_cost": 0.003908,
+        "upstream_inference_completions_cost": 0.001998
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 219,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to align ModelMultipleChoiceField with MultipleChoiceField by using the invalid_list error key. The FAIL_TO_PASS tests additionally require a specific RemovedInDjango40Warning, exact warning text, and continued support for the old list key, which the issue never states.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to align ModelMultipleChoiceField with MultipleChoiceField by using the invalid_list error key. The FAIL_TO_PASS tests additionally require a specific RemovedInDjango40Warning, exact warning text, and continued support for the old list key, which the issue never states.",
+  "prompt_tokens": 1954,
+  "completion_tokens": 333,
+  "total_tokens": 2287,
+  "cost_usd": 0.005906,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

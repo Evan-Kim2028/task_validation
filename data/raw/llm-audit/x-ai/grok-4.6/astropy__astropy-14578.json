@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14578",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2012
+  },
+  "response": {
+    "id": "gen-1789190703-VyZg77WwEMVZSfO9YbWo",
+    "object": "chat.completion",
+    "created": 1789190703,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only reports a crash on object dtypes and asks whether to stringify or raise a clearer error, without specifying VLA write/read success or exact exception text. FAIL_TO_PASS still requires homogeneous object-array VLA roundtrips and a particular TypeError message, which a valid issue-only fix would miss.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about writing a Table to FITS failing if it contains objects. The user wonders if they want to write objects by string representation or provide a more meaningful error message.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about writing a Table to FITS failing if it contains objects. The user wonders if they want to write objects by string representation or provide a more meaningful error message.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Y/B6HNzElrCUR2KXGzRm7JJq9e59rbJB06kKsfRlgQcVEV285Bo/AwcCYFzxK7sL3IkLbPKkaZhAvPorLz769nbXGwkHIDIoWzI41AQ4HnjjBSixrtiUAufL6jtd1kvVn7bFnyFeQJjvzWeGSr1IY/x+gZkVqiHSPMIg9GsLyQn0MNNa2XJtp5mcC69muA46VZJ91eXb4s6vkSlPs5/i4OiPq02EyUEI3zgbJmiTSOO78Ra3SQeWrjM/MfR9HYzewzla2/eMagS1rrUrBPQO8AzPFMAiLz8FDlIj5FJHavsPNecXeypFTk44ppScbzqxsEp4SUHQ7bdY/xZqg5lCB4YcL68K6wIeS4dGD9QkHKanECQN8ZKkOStfv3Eh4rFux/OFkPUHJcoR8Cv7IeFp5kNJcOi4E5vfXYKMoIx99oyZOxMuhUuJT6GlKfEFvNEJlyKussXuLQA1EtIv0lMTnuQC3vKfP+43mo19XLv5DItExEaLWCobLkwTaVaay4C/9CaXGWJUyafmV/huDo59g5whRpGoVm+gccCjnHF4JJB5DIwm0x3uMalLy4DF1KQqQ8tPX4YVJK13wVTGQpWVdOCKneECCUXdNMSY8ONEHayTDtxJMNs/3K6Ibr5weK7QUE7UMkMkkW3RdxUX7TJWAt8Dvau1AASqyuj6Xsa2DTitYPGFKel98cEQxB2VrsdnCd3nxW9YjxP4zd4I5Cpr0An7q3GyCSlDTkE8Z8k023asNsqje+rHVNuiVrNd0RFSXd700X2fYPaMelvYkJ4f9EWObPQtUhrZzebFddhAgLMRvYDJZWziwF11rFUPKTVi8EXwHktG8d4QWRUubTeb0c9kM+Ux5pyml7bu2F/WpN04/lXaQPlJCkFiMlTfxRwqcqyz5UFQHL9BTtwf4fRh6bbuqhWJ/n3ZdNoI3NosowH8yCkWfW0CEoOlWF9h8nqcE9ckC65SABVYpGk99KiXT6O3nYyxzqJOCAIFMee78ubEbe12zjhhMuHqGisgpv6RSS7iDJ2rDlhs7u4mlIOHs+ETVM+gsYvXiyIb6ikCV8cjg+milbskOZLwBW1P8D7ceG6Pxu5XL0J0okcs4Yn43IyhQncE+rORYueEuoLwCIyrYMsUMIAkl3b7ji/CtM7ZIKyHtwn28nkmF+5x36gW8gBRn+Q2s0tcDmGNjMQxvevvwsAY6X4Hawb9n+7V/grXO0/g3i8l33jJRhF6DjVOG2Ui34HxflfiICcGBWgFxrKmLHi/dAVqmgDVYnLcSeLMQOFUJ+X88za3lbFVtNtfvo1wRsWmwffAc4tBy3L2VdErw6QvrpbyI07I2faibK7HDExJi2H7NZYGkqbG3TITvh1kMKRzGQqvx1FyH2pv3nUWBd5L68LgX+aCMdie+whNvspK/FYHbehHnbTmlWRc69yxGxwxY+5YcH87u2evVuqQcdadd094gJSM0J6ZHZLRvnN1hYnQbVDesaDkMGtxYUsUwVrWVONbmjwOBhhssFWNrwOB7VWiKCdBmup6I2kJmEHLzlCouaA67rdWxSwUB1lRiNj8GqfFY3BzLvpKWhEZSjlNnkS/o927nQ7D9UZNHLt282Mjk2sQohGG0fJoxA+DHXPvGl4tlGY0RQhBgj2WEFV3FBz/swCwJQTrKa0ExzsETyXDu//wPmPcsO11rJpB5LRLyvqiqoXZW1+0fMvj4u/t+aeFn26ugcokgA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d3733ad8-b9e7-91c3-a3d6-19dd328cbb4c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2690,
+      "completion_tokens": 393,
+      "total_tokens": 3083,
+      "cost": 0.007546,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007546,
+        "upstream_inference_prompt_cost": 0.005188,
+        "upstream_inference_completions_cost": 0.002358
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 272,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only reports a crash on object dtypes and asks whether to stringify or raise a clearer error, without specifying VLA write/read success or exact exception text. FAIL_TO_PASS still requires homogeneous object-array VLA roundtrips and a particular TypeError message, which a valid issue-only fix would miss.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only reports a crash on object dtypes and asks whether to stringify or raise a clearer error, without specifying VLA write/read success or exact exception text. FAIL_TO_PASS still requires homogeneous object-array VLA roundtrips and a particular TypeError message, which a valid issue-only fix would miss.",
+  "prompt_tokens": 2690,
+  "completion_tokens": 393,
+  "total_tokens": 3083,
+  "cost_usd": 0.007737999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

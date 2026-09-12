@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12928",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4189
+  },
+  "response": {
+    "id": "gen-1789191108-DzseXQgJkyTbo9HUUT4A",
+    "object": "chat.completion",
+    "created": 1789191108,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS covers a large unstated autoreload rewrite, not the issue's cache_templates API.\", \"confidence\": 0.86, \"rationale\": \"The issue only sketches cached-loader autoreload via undocumented OPTIONS and does not define modules, helpers, or watch/reset behavior. The tests demand specific django.template.autoreload APIs, is_django_* utilities, Jinja2 handling, and many unrelated autoreload cases a valid issue-only fix would fail.\", \"p_invalid\": 0.97}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge if the issue is well-specified and if the tests fairly check the issue.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch implements unrelated autoreload infrastructure and tests that don't match issue description or proposed API\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge if the issue is well-specified and if the tests fairly check the issue.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch implements unrelated autoreload infrastructure and tests that don't match issue description or proposed API\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dd840ca8-9cbe-9ae5-a0b5-1324d5fa7dd9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4863,
+      "completion_tokens": 723,
+      "total_tokens": 5586,
+      "cost": 0.01368,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01368,
+        "upstream_inference_prompt_cost": 0.009342,
+        "upstream_inference_completions_cost": 0.004338
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 580,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS covers a large unstated autoreload rewrite, not the issue's cache_templates API.",
+    "confidence": 0.86,
+    "rationale": "The issue only sketches cached-loader autoreload via undocumented OPTIONS and does not define modules, helpers, or watch/reset behavior. The tests demand specific django.template.autoreload APIs, is_django_* utilities, Jinja2 handling, and many unrelated autoreload cases a valid issue-only fix would fail.",
+    "p_invalid": 0.97
+  },
+  "s": 3.25,
+  "p_invalid": 0.97,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS covers a large unstated autoreload rewrite, not the issue's cache_templates API.",
+  "confidence": 0.86,
+  "rationale": "The issue only sketches cached-loader autoreload via undocumented OPTIONS and does not define modules, helpers, or watch/reset behavior. The tests demand specific django.template.autoreload APIs, is_django_* utilities, Jinja2 handling, and many unrelated autoreload cases a valid issue-only fix would fail.",
+  "prompt_tokens": 4863,
+  "completion_tokens": 723,
+  "total_tokens": 5586,
+  "cost_usd": 0.014064,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

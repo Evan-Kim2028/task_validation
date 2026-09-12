@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14598",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1595
+  },
+  "response": {
+    "id": "gen-1789190704-Kk8UqSYGeq0PzCBTym7h",
+    "object": "chat.completion",
+    "created": 1789190704,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires that Card values containing doubled single-quotes round-trip through str/fromstring without being truncated to a single quote, including when the quotes sit in long CONTINUE values. The FAIL_TO_PASS cases check that same round-trip on three long strings with trailing or embedded quotes, which is slightly narrower than the many lengths shown in the report but still matches the stated expected behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about FITS Card handling of double single-quotes inconsistently, especially with long strings. Expected behavior is all card values should be handled properly, meaning roundtrip via froms...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FITS Card handling of double single-quotes inconsistently, especially with long strings. Expected behavior is all card values should be handled properly, meaning roundtrip via froms...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qcJHnx32PnTHCO0VhyExxNczYarQt5WueEf85re8uLQDlq4FQ1ByzN01TNpoTxBispVq3eBDq3algWvJvtnKb4Akjg2LFdiQUt844+UlziExMHcvATDIib6bZq00wokpt5/HFurfEvBe/jnVOStGdcMcKFAqGTiAdpduTOtQ92R0N7LWLjNrGddweNIh4rt7JPRgnna+w2UwxkMCmVmbY2lf2dcVSYtSA+XQP05zT0SKmLcUYeXoVIm2eOXozht85ppe0NPFYt6OELZY1pg6uA5dUUfZo78zbftWm+kiIpCaRS0joP3oZBBMoiEWlM7FNMeu1HFhMglmqSNzA5J+T9wmylSjQv0ovaM9pXA81/4TeWJqUsVdfYicSgj22kArbhiVuha0PtZ2dsQ85dAnYfzXqYl3rXtx+1+hUdS/FPQrEk7LLqp4xLFYfe8O5M6+2jTEA1Yic1x2Ie/RqfDrCij7vZkb6aZRHiK0/+kMzSwKpkFwgNm1t3KevNLQ7ZLfFnwYTjt4g6fgID8F7RTmFolv/m4e+8+CQ/XP4lx0Ou7IDLSS/Ft17EbTcLKKCOD2zYkYm/x+uMbJBqBv2PcaVp/qrOdwicA31d3ZGPE/og6dPW+n/LhIWY9hPtmDXmhDnYU6wkI7r8WEJPBKQCS6Z0tx3rTUJR6IdXH0uz22uzAm9+tHKquWMQW+wfN9OwPKCA5qsLjx4q63ENJD2rdtRlPBlu2wOE7owfIe2N3THADFjZ2MdrNRNerfDb643VbHlNJg7v77xZ4OZtj0jbcTpnMq6DCxVrwTDu6++6mhEuFb/RvZnAafDE/SxBufCBb6UzY1c/CJCOq0tfN5EWYgB/ztc7gQJ/PtO+srs44ckzaqAexFrL7gM6AuXjL1EEW74QgwB7qLJdKXRyYDGLlmFACJhIP1GX57l+a8E1apL317Agfovjs633HrcLX7DiQV3edi1FhINeyshBGF9YpENaAWI3E7B+kAgi11qhnylHII+9TMXNQvcIApG9Lk6CIk9na2VGJ7cms7th3XQm9Ws7enBUHQH+wk0EKC6XbwDN/cH/wwQIMydzRbO7RSBX+ntskZThiq5uA6eATfyizIu9nfDyJpM65FZs4BEYUKQHs0ZdSnuf1JQFpkaj7DXtrWn7wyxO7IQDkwO91eAEpkMIX0GXk2kA5tfqpzrQNlbOoZChTnl6p5w17YpOGJuJdpDwofrE08oWYht45mvlEygObYMgypHPVWC11jw+MhB/Bec8Q0f0T81vWsGNbH8sjX7nntUuTBoQt/TkpejlW5JjgAKSeKxwx3qTfTA7HzNW6Ve0F5aGPIrHa+UTnaZABo5uL+tOdtuIVM+o7UEjzUvDC0WHI7zAhuGVH8MH+Z9Wjlx08PpkYo7tWq2xlfIZsHFz27z+GdLYmP5uIiRFqkux9MT4qOZFx1sA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_27c4dda2-7da8-9dfa-a954-28eae52da9aa",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2116,
+      "completion_tokens": 390,
+      "total_tokens": 2506,
+      "cost": 0.00638,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00638,
+        "upstream_inference_prompt_cost": 0.00404,
+        "upstream_inference_completions_cost": 0.00234
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 254,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires that Card values containing doubled single-quotes round-trip through str/fromstring without being truncated to a single quote, including when the quotes sit in long CONTINUE values. The FAIL_TO_PASS cases check that same round-trip on three long strings with trailing or embedded quotes, which is slightly narrower than the many lengths shown in the report but still matches the stated expected behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires that Card values containing doubled single-quotes round-trip through str/fromstring without being truncated to a single quote, including when the quotes sit in long CONTINUE values. The FAIL_TO_PASS cases check that same round-trip on three long strings with trailing or embedded quotes, which is slightly narrower than the many lengths shown in the report but still matches the stated expected behavior.",
+  "prompt_tokens": 2116,
+  "completion_tokens": 390,
+  "total_tokens": 2506,
+  "cost_usd": 0.006572,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

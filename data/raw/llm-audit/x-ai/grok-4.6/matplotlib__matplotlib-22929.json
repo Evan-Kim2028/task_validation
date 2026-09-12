@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-22929",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1989
+  },
+  "response": {
+    "id": "gen-1789191956-Str8v1bvus3PHQRVdMTI",
+    "object": "chat.completion",
+    "created": 1789191956,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue explicitly prefers raising for a missing bar value and only skipping when the error is missing, so a reasonable fix could error on case 1 and still match the report. The FAIL_TO_PASS checks instead require empty labels and particular ylims, which are not specified in the issue.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about bar_label failing with nan errorbar values. The expected outcome from the user is mixed: Case 1 raise error, Cases 2 & 3 ignore missing values.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about bar_label failing with nan errorbar values. The expected outcome from the user is mixed: Case 1 raise error, Cases 2 & 3 ignore missing values.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RRUN7nhqk2iXHGUeOtglykhOcF+6IJDzbH41MMxpdcVTbXc2b7tP3xBcsEd44tBNPfspW3kzNwmHhw2fL9cmFpKriJ+sa7SnoDN7Ew0q0UQZOtjM5b9x5U9iQQFUAcef9emfY6zsVURUjImaEnrh+y7AMA4e9UhCbJk1TjPWTzqDYuG6ibyuBz7ZD4a/ysnbn35UQ4VgqbLg5OGi370bW/4zoU3g95vUzOm6P9ZG4Y/Si8/mf3O8bn1+4upOeTEQWAikZ+rePGzWeI1wr7etdAcLAr0Mo7RFhbZuXKynTBL9Jg1tcZ/G+n9WnwEAl3d0wTTKRaYQM4jyeBuvG5Mkc3srpUsO9mqklcfaJFbSOyEmMeV5daFRiMrREXZ/IHJ2WE+SsPrCrNb6vttFrmb5rv6GV2bmHzdsyeLHf6jVD+K11TYMYC8rrwNpEOs+q+IwYAJLlHHdL6WdxDFFEYLAVHdT07C7jy89NbZb/OgbZFyjD9iQFKsRa5buup4XTk6AB9Br9hfh9dM9KpWVyBl9ZXIFXFgUdqu0aNIMX7GvL7TuzXfxKF02AviJ0UOPsqaKRH95P/pG5Twfb0cM7wMurPkwvQIWk9u0INWKijZLJMowt9Ib9Tp3/fy8hdZkrF5Bl9RxKMe7ghk4JR8uG8lDBE4sQPBlS5+/ugNN8wLXw45uvy/9yTOXvdtFd1RRglzXfXTGSfx1KfKY7GMnIzvsrzX5ZVtsglguy+rlSxQu7dNPSgZiUnsnGdx7F1dC7FieZOZlZCFhmlaMlmtL/poJVg2iUBIaUEqQdNXiE5gLfsXHSTVTUNDg2AgbtQF7uZmRkkOOsb1uMpegFQ4oTVsHGw/0kcuSh5aOTROEMOOAR3mkj2h18S2tQpYlgjF8rjwBmbaZ3Pcr2h3MURrNlFPmGOhw2dC3LXXlIbVvVVQd3LmGOrrUxOoYv5RbIW0ci3f9glNuqv0g3qnVL23XkGWpnBcmC4iDlplDRiuydW+K/Sc4V9zw/AHmaz7b1tov5y2njlvsM8L27tFWZ9ijGiAR48kuPtHW7q5x7rP9X428P8JdxQRXhNXII1D7SHl4B3nH/HZDeVdxjK9oxG3ANpXVp7ey/BD8NqYt4JJBYTGlAtRa6uIAKo+wFwuUWOCT/2HehypnCi7RiJhI8fu1W+9TLnMV9EZXvBuaYTd4Di3aehr5Y0lHVCamFD7DHSIwbXPeIdW1pDswM7DUqMpNAlGMBEzp7v24b8Zos1RFHDAkUefweD91wHb6T099yEym9cE8K5AV62HxpfhF1OstfK63PLLT5gJJuA8cFK6D/maIMebcqXa1Qu5NniwKNIMzB7MZY7Zdb3qmJP4YhjKSKGhdfg0yyhujZB+7McS0huvdYsKF+XWUXOEON269SPafdQBXAp9fdTffhaBQrA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1be36a83-9217-9a37-a555-b83482f663b0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2777,
+      "completion_tokens": 380,
+      "total_tokens": 3157,
+      "cost": 0.00745,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00745,
+        "upstream_inference_prompt_cost": 0.00517,
+        "upstream_inference_completions_cost": 0.00228
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 266,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue explicitly prefers raising for a missing bar value and only skipping when the error is missing, so a reasonable fix could error on case 1 and still match the report. The FAIL_TO_PASS checks instead require empty labels and particular ylims, which are not specified in the issue.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue explicitly prefers raising for a missing bar value and only skipping when the error is missing, so a reasonable fix could error on case 1 and still match the report. The FAIL_TO_PASS checks instead require empty labels and particular ylims, which are not specified in the issue.",
+  "prompt_tokens": 2777,
+  "completion_tokens": 380,
+  "total_tokens": 3157,
+  "cost_usd": 0.007834,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

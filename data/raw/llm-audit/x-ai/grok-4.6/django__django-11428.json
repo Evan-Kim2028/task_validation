@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11428",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1229
+  },
+  "response": {
+    "id": "gen-1789190864-C2CefTDeVBVS7C9M4Et2",
+    "object": "chat.completion",
+    "created": 1789190864,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to stop reconstructing exceptions with a single argument and instead re-raise the original value so custom __init__ signatures are not masked. The extra context/__cause__ test is a small unstated check that follows from re-raising the stored exception rather than rebuilding it.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about autoreloader crashing when re-raising exceptions with custom signatures. The gold patch just re-raises `_exception[1]` instead of reconstructing.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about autoreloader crashing when re-raising exceptions with custom signatures. The gold patch just re-raises `_exception[1]` instead of reconstructing.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c5f51a9c-7baf-952a-b562-6e026dd0d8a0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1535,
+      "completion_tokens": 489,
+      "total_tokens": 2024,
+      "cost": 0.005812,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005812,
+        "upstream_inference_prompt_cost": 0.002878,
+        "upstream_inference_completions_cost": 0.002934
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 376,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to stop reconstructing exceptions with a single argument and instead re-raise the original value so custom __init__ signatures are not masked. The extra context/__cause__ test is a small unstated check that follows from re-raising the stored exception rather than rebuilding it.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to stop reconstructing exceptions with a single argument and instead re-raise the original value so custom __init__ signatures are not masked. The extra context/__cause__ test is a small unstated check that follows from re-raising the stored exception rather than rebuilding it.",
+  "prompt_tokens": 1535,
+  "completion_tokens": 489,
+  "total_tokens": 2024,
+  "cost_usd": 0.006004,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

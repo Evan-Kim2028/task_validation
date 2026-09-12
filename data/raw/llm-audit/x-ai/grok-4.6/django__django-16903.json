@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16903",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2763
+  },
+  "response": {
+    "id": "gen-1789191837-CiJTG8meJtcRDJWayw2z",
+    "object": "chat.completion",
+    "created": 1789191837,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes diamond MTI plus a PK default causing a duplicate insert/IntegrityError and also notes a redundant parent save, so a competent engineer would know to save the shared ancestor only once. The FAIL_TO_PASS test fairly covers that create path but also pins exact query counts on create and a later save, which is slightly narrower than the written bug report.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test specifies exact query counts for create and save, but issue only describes duplicate PK error; solution must preserve test behavior.\",\n  \"confidence\": 0.75 ,\n  \"rationale\": \"Test requires exact 4 queries on create (1 INSERT per base) and 4 on save (3 SELECTs + 1 UPDATE), matching gold patch's parent caching. Issue author's save_base change would likely produce 5 queries on create, failing test.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test specifies exact query counts for create and save, but issue only describes duplicate PK error; solution must preserve test behavior.\",\n  \"confidence\": 0.75 ,\n  \"rationale\": \"Test requires exact 4 queries on create (1 INSERT per base) and 4 on save (3 SELECTs + 1 UPDATE), matching gold patch's parent caching. Issue author's save_base change would likely produce 5 queries on create, failing test.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2b778e58-6039-9a02-90c2-6cd54fdaf169",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3114,
+      "completion_tokens": 889,
+      "total_tokens": 4003,
+      "cost": 0.011178,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011178,
+        "upstream_inference_prompt_cost": 0.005844,
+        "upstream_inference_completions_cost": 0.005334
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 759,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes diamond MTI plus a PK default causing a duplicate insert/IntegrityError and also notes a redundant parent save, so a competent engineer would know to save the shared ancestor only once. The FAIL_TO_PASS test fairly covers that create path but also pins exact query counts on create and a later save, which is slightly narrower than the written bug report.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes diamond MTI plus a PK default causing a duplicate insert/IntegrityError and also notes a redundant parent save, so a competent engineer would know to save the shared ancestor only once. The FAIL_TO_PASS test fairly covers that create path but also pins exact query counts on create and a later save, which is slightly narrower than the written bug report.",
+  "prompt_tokens": 3114,
+  "completion_tokens": 889,
+  "total_tokens": 4003,
+  "cost_usd": 0.011562,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

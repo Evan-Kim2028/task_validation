@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11527",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1737
+  },
+  "response": {
+    "id": "gen-1789190880-XFm2ej6EOtO512XtEp5K",
+    "object": "chat.completion",
+    "created": 1789190880,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that sqlsequencereset avoid silent empty output and even suggests a CommandError, but the tests also require sqlflush and sqlmigrate plus exact stderr strings. A reasonable implementation matching the ticket would therefore fail FAIL_TO_PASS.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about sqlsequencereset informing that no sequences found. It suggests raising CommandError if no statements, or bonus points for backend sniffing.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about sqlsequencereset informing that no sequences found. It suggests raising CommandError if no statements, or bonus points for backend sniffing.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LvUHVQVUhn+LDB+hRJJC3UIJ3qbKXxS2eMhZtHpXcC9LCKYsq7mSiR6M86ZjYldAfGThWex85I9IHXTzvAEQO7cvOwFUs2+MQukTX8UmhPm8FjtHWcHCkV7gXTwCU9hnbi49iHz8BC6xyCMDtrV7RHNeB0sVjVNmXn6HYBI81c2VBqXfI+9yXKsaqIxIL2AI7ffmm5mUjfMxRggWKHUrJKhGqtgLtsTfufWizykHU2CI1uVVlUB3NW53dOwVxfYicfEdn1wxG0MdqQJh+WXAoy4PZhu8o0rsKjK2uOatZC8sNTi1Yd6lS14WVp++6k1LRa8+IYxaxmIuN5YOi7v6ikVapsWakcd94RFQsvZwYbA0zfEjxaQz4gWwb8QYT2h2YH1kHvLHiM6fZNWnrEowOaJ0LhquZcnCel78vSp/LbS1XzaTGKly0MrWVRU2BmAsZFSiEHYzVcyCWys358HyRU/KPrtQ9DKCbCAgeXkSfKY8sKHOc7VHdXl2RlxGItCoSniE9nrNlTx9gc3tj6RLsCgJ0r9tQ8IuObC2jkOezyaxOLwgQM2Y1iYz+9tjU/gxv1Iex/Z2wwG11uUa1K80pq5vUWBadnYpskf3jScfi1LUTn6NtZ9djm8+3wMb1TR34wmkUcUKJLUV4tl1A9DeoMkAXzLVRjHnho+lYvTSKQ5flMPNrgk53jFkVYNAO7A2SAbc32poOUksHzXq+4es4bYPNRlqUNA3xMn1TGElPEyUzE/6vyBrGsG4mbjnPysrPRmRyMqaU3IBQ+Yu/FS/qwCMYoPskmg5XHdlvuz/Rc0Lk0NoxF5mTYjW8QQaKN/Edh1iCCO+DuazNrmUlrj0Ye0EIZv7nLoAe4hWU/Psbkqwn9kRvbDeoGUpu3L7/0HORnp2DAvJt29jbmuuPF9bUhH2sx9UF9XiUcplcphwLiav5n8jKxjqthrShtxKO6YPNzjyNq0CmWdr5Z/TQslBndajn6gRKhGzJx9AQImWiCWFgCmtoCXZFsGb1l+4CrfsgyoRDY3nCj0O562UgpoFegV3AcASuo+s9ZP7vMYoe737vytoT80dHApWQVBnYz/ypkXHI1a4u3lD4Xl/J2gYZ7+IVZC8f4msYbVB/6r1S/U8fYvJqhGaI/I41bxyb6SDOp+UDSU0Yya6UzTmoKCfkrt8DdX7+Tua6N5m+rhu96keZ0hYD1hiYyfuSuJwE89VcynOjEkCXhy8rtddHYLwPbWaiborgTWUIr193KdqcwWiuY3/i1TrOWH/yhh+FAalbBbK32Tp17mPKMTOkNsoftWsheHuL2K6AK6+ldXqIsensyguTisIDcGCvUtzRflx5W1NqocPc5XlrKdWgUV0Mvp5o1cna8PZcKy8PIMA8NGrIUMQd8tLwbsW.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7f063868-61b3-9cb6-aee0-7e9fbc0d4a4f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2146,
+      "completion_tokens": 339,
+      "total_tokens": 2485,
+      "cost": 0.005942,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005942,
+        "upstream_inference_prompt_cost": 0.003908,
+        "upstream_inference_completions_cost": 0.002034
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 233,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that sqlsequencereset avoid silent empty output and even suggests a CommandError, but the tests also require sqlflush and sqlmigrate plus exact stderr strings. A reasonable implementation matching the ticket would therefore fail FAIL_TO_PASS.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that sqlsequencereset avoid silent empty output and even suggests a CommandError, but the tests also require sqlflush and sqlmigrate plus exact stderr strings. A reasonable implementation matching the ticket would therefore fail FAIL_TO_PASS.",
+  "prompt_tokens": 2146,
+  "completion_tokens": 339,
+  "total_tokens": 2485,
+  "cost_usd": 0.006326,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14771",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1667
+  },
+  "response": {
+    "id": "gen-1789191488-GmvCOgVhTeH22QxfdTan",
+    "object": "chat.completion",
+    "created": 1789191488,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks the autoreloader to forward CPython -X options so child processes keep the same interpreter flags, which a competent engineer can implement from sys._xoptions. The FAIL_TO_PASS test only checks one encoding of True vs valued options and empty-dict patches, which is a slightly narrower but still reasonable reading of the Python CLI, not a hidden contract.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about auto-reloader passing -X options for CPython. The user shows that with -X utf8, the reloader doesn't pass it so encoding changes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about auto-reloader passing -X options for CPython. The user shows that with -X utf8, the reloader doesn't pass it so encoding changes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "w98mqCMhVsPcE9NlOXmhmkGo5LY9ctS2KRTLL2eu8dugO0ODoVv9mL35q6wpe/W++IWqcqkVZ/YcWsp6CPzCCRvb5qZkr8GEXGYFRafvgDNUCPLEnFHhZXNVcWwloqHlsW2Gm6asyC+7kZbO5nbxPwYbNona6NZa/s5Al/p1vtYSCsHvB+Shb45PdaiVRPge+RekgrJAwLNjEFMz3QKfLcwt8bNWqy44PEC/k2VfN7baXjfCFUFSvM60g5YIeloSGl+2/n0fzxHgkX/9sC7yySZE5SKDls3O+u4WyYifgw2Ej8KkIeLCRhIKPSa7QrK5O6dy6gTriosTuOMoO+HHJmw6PdBdLYCF9/E3vkfTdvTxGpC2SyghIWU4r9RGDfxeXk1u9tK9DW9e4UBwmJd/Qs8yYnT6h3PhS2A54WekFf/NwqqNNK3UHKpFvSwusPxkMI1E4MWltTa7p8RQn4zds80MdVvaVNRjmCRYMZZ8bGr+HDpmjmZ7wc46i6OGpKQ29bvN7+fulNS1UEclkAIvg3LKX7pFTHBontev3lg6VYfzK9pMWFt4PQAONET8piv7IqhhNvwdMzLyC7wLlrFqd/mw+qKou05j7bm9HBvmyphuwhELT9zFGiH2BUe0/B3T+H4UIIChLKDi0xy3GbBEmCP0HaCsBBeh4P0kcFavPdpx4BCp2Anl31Yq4o7PX0uNtTjjKJMzVt9hKIMtxRx2wNaZoK2FDlM6hgrsJTyvNAG+ZCRUoSiO93LpFS9Gz/C0GUVI92h1qvgAP2Zu29l/5mM6qla1kD2wQm2yiBnReIt+Fate6/LHwoK/kLDm0+eUJAJgJZ9kV7trdlg14dyzySI/NORBOoIss4B48mFwe7Q++namB4e974XL+KE27po8mbJnr2G7yfnOxNGLALasGPLTCE0UiVIHt9jguW0SsGlhpZ0xl5LeBnQnMEKc85983kRncx8eDlnnujKi9bxIIDUdTkmSvAsMmerPmtmbPc+YTjEQs0iHkJssB7RFRZoOIiuIY2uH2iWfDhFhc/BtpTZ8SwA6km708Pdw8p7mgkWiP59leE+zOvT2Jl4F3LfS/ferqfDX1UobqOBPMcXeAWx7LV5UmoEZcIHsefUYvVUPCk8OnciZgxmiEqImEO8IqofM1OWXjxmhDvZjLd1sLyob5jEpdCHxpV42nXAGqzPBmf4FkT73EqVR9e7t8EzvrthUIT8fSuZOSvvl/6a3lrAofeeLLNP6ZiAxydsMTWp8Roc8Tysv+NMFuydeGdSCjcpgz8g9S7eZGjVHP4naVw9bYNhJEmM7.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ac4eaaf3-0c11-92de-bcb7-02b06bae085b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2234,
+      "completion_tokens": 371,
+      "total_tokens": 2605,
+      "cost": 0.00631,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00631,
+        "upstream_inference_prompt_cost": 0.004084,
+        "upstream_inference_completions_cost": 0.002226
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 240,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks the autoreloader to forward CPython -X options so child processes keep the same interpreter flags, which a competent engineer can implement from sys._xoptions. The FAIL_TO_PASS test only checks one encoding of True vs valued options and empty-dict patches, which is a slightly narrower but still reasonable reading of the Python CLI, not a hidden contract.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks the autoreloader to forward CPython -X options so child processes keep the same interpreter flags, which a competent engineer can implement from sys._xoptions. The FAIL_TO_PASS test only checks one encoding of True vs valued options and empty-dict patches, which is a slightly narrower but still reasonable reading of the Python CLI, not a hidden contract.",
+  "prompt_tokens": 2234,
+  "completion_tokens": 371,
+  "total_tokens": 2605,
+  "cost_usd": 0.006694,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

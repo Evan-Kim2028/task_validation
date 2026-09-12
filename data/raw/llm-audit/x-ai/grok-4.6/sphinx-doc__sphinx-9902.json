@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9902",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "fee2faf2-1b01-90a9-8c8d-7f2bb71b2d99",
+    "object": "chat.completion",
+    "created": 1789194340,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue asks that a short :type: name like Unit become a clickable xref without a fully qualified path, but it never mentions Sphinx leading-dot or tilde syntax. The FAIL_TO_PASS test only checks :type: .int and ~builtins.int pending_xref attributes, so a reasonable fix for unqualified names as described would still fail.\", \"p_invalid\": 0.9}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2531,
+      "completion_tokens": 129,
+      "total_tokens": 3034,
+      "prompt_tokens_details": {
+        "text_tokens": 2531,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 374,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 27472000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue asks that a short :type: name like Unit become a clickable xref without a fully qualified path, but it never mentions Sphinx leading-dot or tilde syntax. The FAIL_TO_PASS test only checks :type: .int and ~builtins.int pending_xref attributes, so a reasonable fix for unqualified names as described would still fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue asks that a short :type: name like Unit become a clickable xref without a fully qualified path, but it never mentions Sphinx leading-dot or tilde syntax. The FAIL_TO_PASS test only checks :type: .int and ~builtins.int pending_xref attributes, so a reasonable fix for unqualified names as described would still fail.",
+  "prompt_tokens": 2531,
+  "completion_tokens": 503,
+  "total_tokens": 3034,
+  "cost_usd": 0.00808,
+  "cost_in_usd_ticks": 27472000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1758
+}

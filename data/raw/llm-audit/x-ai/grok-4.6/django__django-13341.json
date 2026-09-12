@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13341",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2671
+  },
+  "response": {
+    "id": "gen-1789191200-ERaTo61fRHRhQYTVjquT",
+    "object": "chat.completion",
+    "created": 1789191200,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Issue concatenates conflicting requests: stop passing kwargs vs fix SimpleLazyObject while still using kwargs.\", \"confidence\": 0.85, \"rationale\": \"The issue title and first paragraph ask to stop TemplateView from putting URL kwargs in the context, but FAIL_TO_PASS tests still require those kwargs as context values. A reasonable implementation of the stated request would fail those tests.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about TemplateView automatically passing kwargs into the context, causing SimpleLazyObject issues due to deprecation wrapping. The user wants to stop this automatic passing.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about TemplateView automatically passing kwargs into the context, causing SimpleLazyObject issues due to deprecation wrapping. The user wants to stop this automatic passing.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_106986f2-77ec-9582-93b6-124f041773d0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3111,
+      "completion_tokens": 459,
+      "total_tokens": 3570,
+      "cost": 0.008784,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008784,
+        "upstream_inference_prompt_cost": 0.00603,
+        "upstream_inference_completions_cost": 0.002754
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 339,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Issue concatenates conflicting requests: stop passing kwargs vs fix SimpleLazyObject while still using kwargs.",
+    "confidence": 0.85,
+    "rationale": "The issue title and first paragraph ask to stop TemplateView from putting URL kwargs in the context, but FAIL_TO_PASS tests still require those kwargs as context values. A reasonable implementation of the stated request would fail those tests.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Issue concatenates conflicting requests: stop passing kwargs vs fix SimpleLazyObject while still using kwargs.",
+  "confidence": 0.85,
+  "rationale": "The issue title and first paragraph ask to stop TemplateView from putting URL kwargs in the context, but FAIL_TO_PASS tests still require those kwargs as context values. A reasonable implementation of the stated request would fail those tests.",
+  "prompt_tokens": 3111,
+  "completion_tokens": 459,
+  "total_tokens": 3570,
+  "cost_usd": 0.008976,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

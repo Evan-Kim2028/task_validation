@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-14701",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 23942
+  },
+  "response": {
+    "id": "gen-1789190708-miyF97l2rnxxFTXjkOfN",
+    "object": "chat.completion",
+    "created": 1789190708,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only sketches registering Cosmology.write for latex via to_table plus some column formatting, without specifying write_latex, latex_names, _FORMAT_TABLE, cls, or error text. The FAIL_TO_PASS tests require those unstated names, messages, and column-mapping details, so many reasonable implementations would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit whether a SWE-bench coding task is specification-valid. Let me analyze the issue vs tests.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect specific internal details like _FORMAT_TABLE, latex_names param, and exact error messages not mentioned in issue\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit whether a SWE-bench coding task is specification-valid. Let me analyze the issue vs tests.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect specific internal details like _FORMAT_TABLE, latex_names param, and exact error messages not mentioned in issue\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_481d6d66-4e04-9bcf-b649-1c68817fe950",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 31157,
+      "completion_tokens": 720,
+      "total_tokens": 31877,
+      "cost": 0.066634,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.066634,
+        "upstream_inference_prompt_cost": 0.062314,
+        "upstream_inference_completions_cost": 0.00432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 597,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only sketches registering Cosmology.write for latex via to_table plus some column formatting, without specifying write_latex, latex_names, _FORMAT_TABLE, cls, or error text. The FAIL_TO_PASS tests require those unstated names, messages, and column-mapping details, so many reasonable implementations would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only sketches registering Cosmology.write for latex via to_table plus some column formatting, without specifying write_latex, latex_names, _FORMAT_TABLE, cls, or error text. The FAIL_TO_PASS tests require those unstated names, messages, and column-mapping details, so many reasonable implementations would fail.",
+  "prompt_tokens": 31157,
+  "completion_tokens": 720,
+  "total_tokens": 31877,
+  "cost_usd": 0.066634,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": true,
+    "gold_patch": true
+  },
+  "cached": false,
+  "error": null
+}

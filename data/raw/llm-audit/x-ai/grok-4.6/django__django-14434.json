@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14434",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1145
+  },
+  "response": {
+    "id": "gen-1789191425-IXeSSmtGTW01FOU3f15l",
+    "object": "chat.completion",
+    "created": 1789191425,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue names the buggy method and the exact type mix-up that makes references_column always false, so a competent engineer would pass a table name string into Columns rather than a Table instance. The FAIL_TO_PASS test directly asserts references_table and references_column on the unique-constraint SQL, which is the reported behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is: \"Statement created by _create_unique_sql makes references_column always false. This is due to an instance of Table is passed as an argument to Columns when a string is expected.\"\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: \"Statement created by _create_unique_sql makes references_column always false. This is due to an instance of Table is passed as an argument to Columns when a string is expected.\"\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "WibwwP+MfS+vSbJiziZTyLvDeiW+MZ4Tm+s3s4IwuKW6nP3iEfYB7A2HutS1HpcbwPZ/m6LPDbgVw+juzEJ59KwjbUNDvwqOSMgYi/yMELkLA6ki8yiwBVB4m+rNK1N2ki7LoTZVgV4STHdTbftSFfPYDVdQsq4yzRWmS1xY3B5yoeTF9OlSHadoIZRLjDQnB0Tlka4AOOymGrsS5jZVRYEKRsBT92JV3NYPiGlzyaqX1oSrWzCtFT7aBOXj8m/7KjtmuVIMaVGJGyCeuUghmxPJ62uLnAu9ntxo3AQxRn76jHizUfylj9moH5xEHZ30j7+8UPgIP9Lb5EsAy0w5p+jusRtv38d2sDAFwNfHmFWPSBLg9m8tLCeHRMorkFVC48UxnTfDI+Y3aZg8GjVsSl8EHPP3veQk7TmJAz6HIGk+7BjiddEOyzzS29OVoWgRMKrxJMdN7QZfM3s6V3jWhT7vPNYFrBWQU1e35/fINvj9Smf0pzNUyD4tV+gKvy/tcS+Mir0Bu2pXyEPC8ozcTioptQPZWKc/vafMUFjssMTzY1kJoCFG8xhXWUCaiL3F9GCwNHG5VDQk2iMdlBzrpAckh1kDw0U+wBRm38K544VMnwNK7wpQzeRbRULyfVQ/36KzTbHoGl3qUQMeh239Y1lg0qbrENVxAiLmp+idCkbKieEqPXF+fPrBQAypEwR9kOICUeCo/Gten0Nq+BtVx3GZ0YzB5PVo8SImWdCoNpVleZ8/WhnUd89o3R0/Y1ynjYRgi/yiDogjSLlZm8qNfqaYAuiPIqklaKpiGSKwPv1q/GtpmahoKiyn4KJ/JvvUuxO9bqgDR0jKZ9ImR+DgTgeH6FUz3XlaxYdJZydUy8zkzis1oye3/qYSQ3k6HxTF7rg3/wbR2uhb0GazAXPeR+y4bvjhqr53R9VVpNBS2m1k+ti+axwPWyRZshz1L6wwR6EHk3Mk5Xecg3wHQTffWzD0HOj15Ohw8sQK9wjtMulNLuG34M9bFFA7R817i/VNRgJzevaEN6Jj8T+a5Ugcz0FeufBbEstWBqGRK0yFuQCEmOmxz4kRYo62xnDvJhuBjBtoTBCjTWyz5dGGctlNoZs6zCv6EBgZF5noi7PrBWzWpR0VsJ8j8/eWRCaOMMOmBeclN3eeISd+Bg5Z7mmTSdIjyaVtGHLkAaLf0jNC2vJjHDKzk2Jy2Bzt1/In4PyfDbyKrH25Biasc4LicuKdA+NG6uMJlJOLntM8lOFyqT9Hk1uWbgFLbGn1Xlj2VXhnMJ4ZnUsgTvrGFCfpe2C+1ZFSBNb1veMydKCHYzPbNHXGr5S/F30sPZMaJXJwncnZRQXFx0KVyrH/fu/aabKJs+iVBQJgkCCFn0mqqh9bBZG1PKLEJ2P7Cu3LIdfPnFk/E8DSAx9RIUo.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e6741f11-6146-9850-bdb2-4256086a4fb2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1426,
+      "completion_tokens": 362,
+      "total_tokens": 1788,
+      "cost": 0.00464,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00464,
+        "upstream_inference_prompt_cost": 0.002468,
+        "upstream_inference_completions_cost": 0.002172
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 239,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue names the buggy method and the exact type mix-up that makes references_column always false, so a competent engineer would pass a table name string into Columns rather than a Table instance. The FAIL_TO_PASS test directly asserts references_table and references_column on the unique-constraint SQL, which is the reported behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue names the buggy method and the exact type mix-up that makes references_column always false, so a competent engineer would pass a table name string into Columns rather than a Table instance. The FAIL_TO_PASS test directly asserts references_table and references_column on the unique-constraint SQL, which is the reported behavior.",
+  "prompt_tokens": 1426,
+  "completion_tokens": 362,
+  "total_tokens": 1788,
+  "cost_usd": 0.005024,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

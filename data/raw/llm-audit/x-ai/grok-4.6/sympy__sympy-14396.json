@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-14396",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "ec201a4f-20c0-96e5-9422-df3fdef93727",
+    "object": "chat.completion",
+    "created": 1789194480,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to accept polynomial-ring domain strings like RR[y,z], which matches the FAIL_TO_PASS checks on Domain.preprocess. Tests also require R/C/CC aliases that are only implied by existing Z/ZZ and Q/QQ patterns, and they ignore the requested error-message wording, so they are slightly broader and narrower than the write-up.\", \"p_invalid\": 0.22}",
+          "reasoning_content": "The issue is that Poly(domain='RR[y,z]') doesn't work, and the error message wording could be improved.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2585,
+      "completion_tokens": 134,
+      "total_tokens": 3026,
+      "prompt_tokens_details": {
+        "text_tokens": 2585,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 307,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 23310400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to accept polynomial-ring domain strings like RR[y,z], which matches the FAIL_TO_PASS checks on Domain.preprocess. Tests also require R/C/CC aliases that are only implied by existing Z/ZZ and Q/QQ patterns, and they ignore the requested error-message wording, so they are slightly broader and narrower than the write-up.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to accept polynomial-ring domain strings like RR[y,z], which matches the FAIL_TO_PASS checks on Domain.preprocess. Tests also require R/C/CC aliases that are only implied by existing Z/ZZ and Q/QQ patterns, and they ignore the requested error-message wording, so they are slightly broader and narrower than the write-up.",
+  "prompt_tokens": 2585,
+  "completion_tokens": 441,
+  "total_tokens": 3026,
+  "cost_usd": 0.007816,
+  "cost_in_usd_ticks": 23310400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1571
+}

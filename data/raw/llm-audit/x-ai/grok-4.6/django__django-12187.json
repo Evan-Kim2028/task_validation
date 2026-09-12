@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12187",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2451
+  },
+  "response": {
+    "id": "gen-1789190992-sEv3Sd0eoeThLibQoNPR",
+    "object": "chat.completion",
+    "created": 1789190992,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks to configure where the staticfiles manifest is stored but does not specify an API such as a manifest_storage constructor argument versus a path or storage options. The FAIL_TO_PASS tests only pass if ManifestStaticFilesStorage accepts and uses that unstated manifest_storage object for read/save.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing configuration of where to save the staticfiles manifest. The tests specifically check for a `manifest_storage` parameter on ManifestStaticFilesStorage that can be a differe...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing configuration of where to save the staticfiles manifest. The tests specifically check for a `manifest_storage` parameter on ManifestStaticFilesStorage that can be a differe...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "QCos+gvhGjc/dYRx57Rhvv+hPXqjSVktFOssaOUBB1f0XTq3RjidpdVpS9Amw1pQATg0OFL4ZElpbHU8S9mvop+UqmtB1UDMGIX8WkYVREAtScfrkSck4oEUD7phPXt2aI48Zh5gmCjfv9MgFkOCYaEZuTtdwR7VoZ1uJ66aY2GWks+4ARkGqvZWrQAJETIW9taVk2aHmrn1teTAKEytSVCEdTryfOHl7F0oQXlEZGxViypYvTFRgjc0MLY0Z0n739qm59iURuCi9KX+ao77Rz/aGXApmJH5fav/MW/ZMBfBTxJh3x4GyZ+6cDYIvviDsCX/R96URv5gbjbAnunirLyq4QpXdW92LzYr439KDnwDRGgLNTr7XareW7ItMQiTe/Hsmgs2Xfp5iYj2iGW/w/gYG84V5b1G7v8QcPx1+grrpyxd4OkjSo4B8uZQgkydD7kqWZmhJ8+t38um22X16fUy5GvZv0X41ZSreznNu7XFoT0GpA48uEsooaUKxsdeTEXbMR7DKGEdtBPcTOXa8r9bPQWFIJz0GbnJbaKKdeO3gCVvOfDQL1fIge1pr91gFU7TAQ4+qZlhwsPi0A4SSRtN+XZFleUQOFs4F8hKZPiRiOOXmO7cvHgI0Ed2uCb/dOqof+4gZjL4ouPD0SI7y48aBWSr3JYtcBmoYWeZyHwCPQe64/GtHnhPKI1qlXytJebk3azv7260ohZOm1+V2GGqVTjNXf2h0oojgB0WS6NmIzhTG+F1yYVPKF9aoEX6wjZpidvqjkhzTRbygWy3a3dYf6zsFYwzpMvKvRhq7urg/OIjkqy2cooBRkwutsbvGi87uYUEBDUE+VmGIkDn/5ZAJk3LdEzCWNoDLAuTgWEJnEUdYN0kg22KMxpxrkg7sV7A7a2IQeEsVD6wwELWqHpEU3v8xQcLxw+xEGsZ+CM2yqYC6ud396m+Kcm1/bOMASAgM9WyqVEZqWngcrw5e6hsbX1n5K6Hi17VpIT781sLaBCkhaVcFwyoPBnQZqfoGm2Ze45xKjrrXSLf3CkqeVdJrJXZ8ERxxonsX+8eenXrQwet4X+hNmuIS+nIZ5olgysTeVqtNxwMwrKexHmMLxxhl9HM4P1UWKnIig/rgfyW9LKyuor8C0hrb9+W+1D6xsRwDajtUw6Yoizbo65MpaX6pAsarHJGMj5LYrsmvFWY0REUOX7RN9qNX+UZKUte8RrDPBrV3R9+B6ezATfJdWj1AVb/irDk0e8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6a8c700e-9f44-918e-84d3-ba7dd8f9a5e6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2602,
+      "completion_tokens": 309,
+      "total_tokens": 2911,
+      "cost": 0.007058,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007058,
+        "upstream_inference_prompt_cost": 0.005204,
+        "upstream_inference_completions_cost": 0.001854
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 192,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks to configure where the staticfiles manifest is stored but does not specify an API such as a manifest_storage constructor argument versus a path or storage options. The FAIL_TO_PASS tests only pass if ManifestStaticFilesStorage accepts and uses that unstated manifest_storage object for read/save.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks to configure where the staticfiles manifest is stored but does not specify an API such as a manifest_storage constructor argument versus a path or storage options. The FAIL_TO_PASS tests only pass if ManifestStaticFilesStorage accepts and uses that unstated manifest_storage object for read/save.",
+  "prompt_tokens": 2602,
+  "completion_tokens": 309,
+  "total_tokens": 2911,
+  "cost_usd": 0.007057999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

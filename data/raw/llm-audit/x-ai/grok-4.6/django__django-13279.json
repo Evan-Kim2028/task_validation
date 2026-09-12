@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13279",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1595
+  },
+  "response": {
+    "id": "gen-1789191183-q4ADUCvMcomWOBD3Y09q",
+    "object": "chat.completion",
+    "created": 1789191183,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states the transition problem and explicitly proposes using legacy encode when DEFAULT_HASHING_ALGORITHM is sha1, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that encode under that setting yields data _legacy_decode can restore, matching the requested behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about session data not being decoded during transition to Django 3.1. They changed the format for session data, so setting DEFAULT_HASHING_ALGORITHM to 'sha1' isn't enough. They suggest u...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about session data not being decoded during transition to Django 3.1. They changed the format for session data, so setting DEFAULT_HASHING_ALGORITHM to 'sha1' isn't enough. They suggest u...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "cfr2En9neK7UwHOyASo8k88g7G1bK/UvW0Gmd7ykqLQAxFYKAQt8iMbY7czNggxbvVwPF+RlRp8JJlmKzTTqCpiZSDTF+BFyTn9FnGGNn2fDa9EE/iDL2zhfdxP0hFmEz+BrJOmSkUwZ32hcnqtDroZlQKZCnxUeyxB5Iac7kWJehvybmrOOVDVcMJ6P9SyHo/YHKxoTFfVi7oHYkk/LW8zBKwY5l5C0eMucSAQLdK8WH6WWPirv7JpB/WzjhPyhLvSZ5x0xdlH5yXotqXPUtREjUXZHwI+eHqCahSG4aZJJWgre0fkwwwT5imsedm1lNydSWUEP1FEJTOLbTZfO+wZWuAJ8vkR40H5dT+0HhMbYiXY3QnTOAgrI4ImLYth+dL2aEKFFOj/aQDZsSZf6qfJ7ujohkvCcoAr37lFGTP9iyThWDh95PteGH7rBYGSiA4lIODR7OOxqQO6uv9DeHCc/iWs5HDRRK2IvBVwN0imqvk9+Az96yNFRWIoJZ6++LtbszgNCVvn1QI0kMWKHANmxsgjW0juVUvW83GEzDnb3WSfr6AijPI+DM6Qh3YC4f44mhGckTc6SU6zzIDThz5GEO4UwVDcJq7hmRs5HLZtScbGxGTvJWKFwFQwJsVGT+0eOZKTgL+fgtV37IplGHjA6iCOhmnR0zGd2qpW8jYDJ6/141UaIeyxWWlhvf+z4s+qbgPQGzTZ7ZkChpuM/iLRbLG7a0rnVvUCCzfM1xTrtPjZN/HoFXAU5iKZrwiQmBJKTh/pg0m4iab79jME4xjlvWrLFFINPeeM13MVe7Oj2xtbaKsSXEYgquKvu7K1sKDNdd2D0zFlvbbKK4zRrIKjPzt+tDOlLm3pK2MLrxv/3a1dNL5oJs+Pg+PFqdEqPXmYQuv2B9zQf4AGCg9dpNhtpgQIYJfhtEtznQQcEehqATncJzM6+qEjJEDxQISvycVm4QIVHNUlvV4V6OF+ljeSmGOQ6oVz9/Qc0bRqi0WIcoOX/vV3N6E+h4nZnSu9KsBStvZqcG34RlpbloPa+G7LnbdB5wPQTlPk0aOm+DZveiwIPpDpP//qtE3qo+zFStWjtzJ7u4gngBS1dfXHrIon9mcS1yy6NtzKx1MWE0FoHVn0NCoAUaXt9PR3oA8BqBje6HpnH1MMvYziWb8cp9MdfdpSFRvNeWg8ve8IK4dOe5OAyIUnj1AUtLHA3PATLeceZgqS+xzZHfVBH7LaABFX8bhzZwmCUm4Y.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_075ddc6b-1a2a-9fc6-8551-02a9bf91dc07",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1946,
+      "completion_tokens": 330,
+      "total_tokens": 2276,
+      "cost": 0.005488,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005488,
+        "upstream_inference_prompt_cost": 0.003508,
+        "upstream_inference_completions_cost": 0.00198
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 214,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states the transition problem and explicitly proposes using legacy encode when DEFAULT_HASHING_ALGORITHM is sha1, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that encode under that setting yields data _legacy_decode can restore, matching the requested behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states the transition problem and explicitly proposes using legacy encode when DEFAULT_HASHING_ALGORITHM is sha1, which is enough for a competent engineer to implement. The FAIL_TO_PASS tests only check that encode under that setting yields data _legacy_decode can restore, matching the requested behavior.",
+  "prompt_tokens": 1946,
+  "completion_tokens": 330,
+  "total_tokens": 2276,
+  "cost_usd": 0.005872,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

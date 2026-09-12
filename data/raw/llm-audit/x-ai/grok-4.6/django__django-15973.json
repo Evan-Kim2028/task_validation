@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15973",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2548
+  },
+  "response": {
+    "id": "gen-1789191698-ftOQjRxuyGESvesS4fxn",
+    "object": "chat.completion",
+    "created": 1789191698,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The report is about migrate crashing when a string through model lives in another app, while the only FAIL_TO_PASS test asserts a specific autodetector split and dependency graph that is never stated as the required API. A valid runtime resolution of through strings would fix the issue but fail that test.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about AttributeError when using a through model in a different app for M2M fields during migration.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AttributeError when using a through model in a different app for M2M fields during migration.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6d9b4f46-dfba-93fd-90b8-a3d369f35eba",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3231,
+      "completion_tokens": 502,
+      "total_tokens": 3733,
+      "cost": 0.00909,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00909,
+        "upstream_inference_prompt_cost": 0.006078,
+        "upstream_inference_completions_cost": 0.003012
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 387,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The report is about migrate crashing when a string through model lives in another app, while the only FAIL_TO_PASS test asserts a specific autodetector split and dependency graph that is never stated as the required API. A valid runtime resolution of through strings would fix the issue but fail that test.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The report is about migrate crashing when a string through model lives in another app, while the only FAIL_TO_PASS test asserts a specific autodetector split and dependency graph that is never stated as the required API. A valid runtime resolution of through strings would fix the issue but fail that test.",
+  "prompt_tokens": 3231,
+  "completion_tokens": 502,
+  "total_tokens": 3733,
+  "cost_usd": 0.009474,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

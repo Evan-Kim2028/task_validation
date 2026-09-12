@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12708",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1745
+  },
+  "response": {
+    "id": "gen-1789187609-jKpi1KspPYm0Wv2uapJ1",
+    "object": "chat.completion",
+    "created": 1789187609,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that removing index_together must succeed when unique_together covers the same fields, without dropping the unique constraint. The FAIL_TO_PASS test exercises exactly that scenario and does not require unstated APIs or messages.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about migration crashing when deleting an index_together if there's a unique_together on the same fields. The crash happens because _delete_composed_index finds two constraints instead of...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about migration crashing when deleting an index_together if there's a unique_together on the same fields. The crash happens because _delete_composed_index finds two constraints instead of...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "T4/8alfEfItZ+E8kx5AylvdljbOrQ8YIkllMvI1AX39rkZhmuCS6qpJCt8qpSy1910Z0Q+W9Iv31IBwil+Qe/AVGS3UHHLVJrXd9mW5HJtKl53jx9s3FoMH2obnydDAVtrK72ZGXphwons4UBU6fHKI0Uxq47dhjPgJkkzCOC0h9ISQh6mwKZ59CHM3Q8ZCtTIrKHJ2Wlv7Ix9sTZgIuSu/CFj5x57YRb3+gDTG117af2bExqh3NvX5eFblPxQ4LN7V46qhxfRtajXEImSeUliUwuWfgxN5srNNXMRGOWmhuJpupdhyQP971kqmg4fD1McIU9p2cGQAveuTmeNecG3hE2+8h5ygM++DQbpkXky/F8hvzjAmdofYBHOIJMtMWizNMjkxyBC96Q68tdWXf6UmOfkfYbm3X7KZIPqWPnmqNaGpmy4ylBDF+oXtq6FBhRvBtiZFRwwenLIZtnGdmgAWt8aYOzKmQKssr5Bjitgujs4UoM5b+GctEu+bfWwj9t9GJYIPwpGU6CckhEChDZt65Q760rtcYHIk2V5OCHFBs+xZc1Ol8d0my5iRA0Rry5ye3RtvhmFsGOc1E7lTwtXBFMAz/Idwfe9RlWHbWupwKWaEFqA71Bxss+xA9P+xIkCC/QJmRtZvrLd5lv/cwRVd3DUzwV+HC6GwJpLjWoP8Mdc2SxBqB8xBVjFE3P8pbU5MH/pXYHnmLpje+G20kh9p5iWxKFRnS7POdmXyKq+sktF4sh2OYOyhyNLMLH9LeS0w9AtGwne9GNNKFkKuhimkqbfxiJSrp8Fnik0Zy63VOCGK2ByB7ijtAdZtkvol37DMgw8oP8kdI0VR2h+cpYPjto5vpzYXdIjqwfQFaCqQPFlnxY2Ym44Br0C05ELDDW3fu1B700IBKQGfGreBQ1u8nntUVWrdpE+zRAsS1vrhbQBSVB/N/KwaMcHL4hWkWXJXwPOX/rP9kGMfdtG/TYmlIIOYjUa3u5MD0ndkWt5B+brkQrMt0yNDuXIz4Vwv/HYfA7mrCodzCL8eyQbFxfqMt7slgsCXTTKzomvXRG7Q3KUPT/WAUeqS/aVW0OAdNfy82pinoCT9YHwJz9zluPS/6lHXJqEs5V442C+6GTcbzWf0TmNHXteSqEGUrT9U2/3Xgoy4xuw2ueaxEEgK8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e31a56d4-ca17-9882-9990-cb30243ba450",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2054,
+      "completion_tokens": 281,
+      "total_tokens": 2335,
+      "cost": 0.005602,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005602,
+        "upstream_inference_prompt_cost": 0.003916,
+        "upstream_inference_completions_cost": 0.001686
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 178,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that removing index_together must succeed when unique_together covers the same fields, without dropping the unique constraint. The FAIL_TO_PASS test exercises exactly that scenario and does not require unstated APIs or messages.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that removing index_together must succeed when unique_together covers the same fields, without dropping the unique constraint. The FAIL_TO_PASS test exercises exactly that scenario and does not require unstated APIs or messages.",
+  "prompt_tokens": 2054,
+  "completion_tokens": 281,
+  "total_tokens": 2335,
+  "cost_usd": 0.005794,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

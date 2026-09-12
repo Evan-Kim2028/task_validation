@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-26289",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3457
+  },
+  "response": {
+    "id": "gen-1789187829-m9UnF45CCzuAGdMW2A5D",
+    "object": "chat.completion",
+    "created": 1789187829,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly reports export_text crashing on numpy feature_names due to truth-value checking, which a competent engineer could fix. The FAIL_TO_PASS tests also require class_names array handling and a specific error-message wording change that the issue never states.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about export_text failing when feature_names is a numpy array because of `if feature_names:` being ambiguous.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about export_text failing when feature_names is a numpy array because of `if feature_names:` being ambiguous.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_abb682bd-6b11-9827-84f0-f954c553aff4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4569,
+      "completion_tokens": 572,
+      "total_tokens": 5141,
+      "cost": 0.012378,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.012378,
+        "upstream_inference_prompt_cost": 0.008946,
+        "upstream_inference_completions_cost": 0.003432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 462,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly reports export_text crashing on numpy feature_names due to truth-value checking, which a competent engineer could fix. The FAIL_TO_PASS tests also require class_names array handling and a specific error-message wording change that the issue never states.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly reports export_text crashing on numpy feature_names due to truth-value checking, which a competent engineer could fix. The FAIL_TO_PASS tests also require class_names array handling and a specific error-message wording change that the issue never states.",
+  "prompt_tokens": 4569,
+  "completion_tokens": 572,
+  "total_tokens": 5141,
+  "cost_usd": 0.012570000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

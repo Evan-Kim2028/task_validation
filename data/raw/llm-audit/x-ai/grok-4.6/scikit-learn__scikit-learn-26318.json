@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-26318",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1292
+  },
+  "response": {
+    "id": "gen-1789192414-BS1IVGqqeNhkzxDnSTMl",
+    "object": "chat.completion",
+    "created": 1789192414,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to either reword warm_start docs or refit a whole forest when n_more_estimators is 0, and does not specify skipping a second OOB computation or a particular warning. The FAIL_TO_PASS tests require that unstated skip plus a UserWarning match, so a docs-only or full-refit solution that matches the issue would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about incorrect documentation for warm_start on BaseForest. Two potential fixes: reword docs or change behavior when n_more_estimators == 0.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about incorrect documentation for warm_start on BaseForest. Two potential fixes: reword docs or change behavior when n_more_estimators == 0.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "hKHdLQf2G4O5nV9b46Df2vejvxx3veweScxB8BftgtmJCNkleToDyLUamnCgLChRbXiz1DapBaDH6ByxJ8/vLFAui7wGy+NGjjQ1HzQ0VkrscCUg56UAGWZs4V59MD8lv/JbLe1d51ss7nTJ7X64/YHlEZGbP4+h0wcjiaVkNaHwj1tWrtnxKR3KNVE+moysPXC8kWa1PtJu2uCTYX/cFWoihU+Gzl34W2yWPpdJv9dPJv2cwURGndB79c9kcrCGi/LDMq+fL6IiBlqripOa7c0WpbdAii8Hnz2UZS/nCltXOt/qSgCiysFEaSCOyktylvS6VuxRZGwcmQbSn0cuRllWFUiOqFHSrcus7YRup0QvJ1IFTEAnPWN1skTOr8OB1yhOVsgSoo3YnDDRwTfr75Dy7UVvDhs9wW3luwC3FrZ4QXLlK9KFMoq401J/0zaJfReYpJTd0t0ApdPKZjeoubvwrvucIAT0MuPmFFRaoHkNobQUIlitnUSZK6GL+ffSNW5T2druqpBY/1ADRmeYijqDgKL+Kf17YwQtQcK2dXRo+jXRgDlH8xwTXvI02JfBE9zgpQcdyBiiEeQ+CxAxebq//9Xg8HGy5SgbYvo60roJ9odvQK6IRBYDbyJ4EPdBPxREoxblrRjae+zj5rGaCW1xbFMKIcZUFjKZnV2mTVsMszW+aengjh1TB5Nsj3CqKCSCRskEkCnEaf2mts92ytYcR4OulSJu230Wcd7OAg4KjyraGwO5OrpEML0567oC8CEqsvWBamIY1o/pAKt5HFg7mpTLTFEy9WvBunC0sQEEjFjI6CU4ntAw4+zU30kmO/dNVX/a4vpMbCeyckPozWdbNmNW+RCauTh92sxdaBqYB/EPqke/rCjmV+lnfPV8EotxFxvOe32vqiPgXtQ3m/CUbz++fDJ9TsJCadIcCW5yp22/AQ8wANy1MrPPw8EoR9Gup3sSY3urMqeIlB76+XvILXICNK1ROFWUNDVQfYmAjLqRi/Qg9PS1YhM7c1Qf8vcgnzADQKoNv7Xhjh5pJXgBDEnRx2InmCvxM0PhQ0QTOlkyAEJZ7e0uZqgyBm2KO9tsQHiI2ySgvnQnMDp1pzpPcW3iPPTRBSzhAhF5tQJOvbN7E+lzO8J7L+00Zg4q+BZ8g324SQlDFsrr985W8ngPQDwTaMTK8olyLlWqbnMBYiWZz2NDREMcL0P+u4pE3NtGMyKOdxRFgaQnn1niupdndH8bGH55YWwV6YzYmu+Y6ov00LMWfYjnGj3spbH/o9Uu6timvyvQDCjXpGel59i/o7ODkOqmSDnFyLfkTA+pf5v2QtRqaOB6/DfuiyKII6JdRoWgSiQIRNhcAWfbSmmn81iGNdFwI9ctf1AG41/NBhd+YyBxaiFwo9P8rYoWJiYeTnuwr+6G+z9teUzME3LOfl1VwNcyx1zkCWvRyrxCKn//fFO7//sZ+s4GN+u1SCwImwfOMmp/vC5Dlaii9lNxTk7OHIKofpoiK6W6d/VwhQ1HKj4nToPPTN2lv7cUv1Nz+zneRFal3+KyLMK3jKmAvAC+YvInJ4DmSgUd6TpTswrbdotpPTF2hAFq+yQTBttEgKmRcS9n4HAOvXzgrdn1hUXrouasSWpSykYEz1AFz3Zj4WLFAc7fJ0TES6oAyZfLzrvmDUcw+LbWGdVkCpFE7gJgXnnaeS0glPFSj8ajUqkiCoYJ48xgz/f6UjYzevY6shf67y1+ctMniD/Mj4T6zbxfuj07PkvMh7k9hy3I9g.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_84f13600-569b-963f-9380-e907918819ea",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1662,
+      "completion_tokens": 434,
+      "total_tokens": 2096,
+      "cost": 0.005544,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005544,
+        "upstream_inference_prompt_cost": 0.00294,
+        "upstream_inference_completions_cost": 0.002604
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 300,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to either reword warm_start docs or refit a whole forest when n_more_estimators is 0, and does not specify skipping a second OOB computation or a particular warning. The FAIL_TO_PASS tests require that unstated skip plus a UserWarning match, so a docs-only or full-refit solution that matches the issue would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to either reword warm_start docs or refit a whole forest when n_more_estimators is 0, and does not specify skipping a second OOB computation or a particular warning. The FAIL_TO_PASS tests require that unstated skip plus a UserWarning match, so a docs-only or full-refit solution that matches the issue would fail.",
+  "prompt_tokens": 1662,
+  "completion_tokens": 434,
+  "total_tokens": 2096,
+  "cost_usd": 0.005927999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

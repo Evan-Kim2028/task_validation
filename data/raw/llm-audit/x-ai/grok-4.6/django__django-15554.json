@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15554",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2315
+  },
+  "response": {
+    "id": "gen-1789191622-i8Wl5k0aS92OARsHeTgm",
+    "object": "chat.completion",
+    "created": 1789191622,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that multiple FilteredRelation aliases on the same path with different conditions should each produce a join rather than being collapsed. The FAIL_TO_PASS test fairly checks that behavior, though it uses a simpler annotate/values case than the reporter’s Case/When example.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about FilteredRelation with the same relation but different filters being ignored - only one JOIN is generated.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FilteredRelation with the same relation but different filters being ignored - only one JOIN is generated.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "zGlFkBO5YHKCxJ5zeZUG7BUjwjwV8uQo1HXv9VgwpMmVJ+FkC91H+MaFDHIXDbsJAwPanFwBwmhmKUBPnelQBCTfF9vIMwKlaF0AbGyei3lgDpnZEBWQCKfFOy0P6rT7aKXRPyh14eFAJcGfMO1scz0om/L7XZ0mMFM8yNxdjKuoL4mlB2+s7Dfnt8OF16tloHLSSEU55UPfkZPMWUf8wO1FbtIsj7pcOn2BdHlPIO75dvJ8GV/lw7erRGI889Bo/xG37F/fRBR8CEqmZpEZwG6xpOom3YD4ctWfdhUPLbQIaCXXWWaRMRu1bQEMgOY61zcNPnTwp2lQNmqQuPbZxcLppkmMcOlgL6md9IykdAKiH37z0FurDiR5r2w2U3GY8tjTTPqWY8ylMiLVoDsHsoM+OX2WtbP0hQ+hPbR+NvrRa2iRMvHuWJoR1xWY/nJc62M6WA3L6jtaic7fMllWZnVdVe64WacpyAmVSNCZ2h/HiKIc4G2gcrN6/r0VTQ+2UvLEFykG/aK8UjAUKTdUC5n5KuuYaGNa9F4e56KayHFqJ24wXxurziTH0nMhDNQs1FVtJU2U2sCn50ENLoal5MKGG74W3MitGluer0myPDCh5OiLQfoA9+tgM4DyY9aFLkYe0R0iEtxEcbCfinyMaciwwXffftVa3j4qFhWgOgLYRx/fXrpD7jcMECi+qRIRk8SIiY0tm1+DYAOolFzta3fjstpi38Q4kB9ss4PS8686kuPd4+VTkqWHNdALkNbu/13YSuhzLnvPt6FrR2R4kDXVRCa+IkmRD4AU/eHOMxUTlnYLcJ5dg+uPGdQ3IWB6WmpYigYPfAugnHscm80U/zoSfMvQDSPji483rCZ0SnOu5KOIlD4MSQb4eJiTNyks0PdrpNsZ0xHxUNRcloLfuUaenqdFj4tFFR1rtbHJSR6dYA2i7NBJ0TnP0Lda88Nge1iLD22pbnYSQ0530OMP7P8Na6XPiBkBgDVMhJVwmqdmC5IFWl45Cc7FOolfN8Q/e6Nx67qvR01kXPja96cT/dBXu8KT7fK7bHonHTBCI5Uk49JzLXtgEk8maeOmlDgJ9tXS90SK/dN7QhFFybF+5+KPLoVwir2kefe7FFduxlQP+Bz7Ka/JSU4L/2m2PbuUAxgWtuFjjtjT1/v9TrlsQLa5r8FF12kFfK5VK0nupNFXGucd2Fwj3iH6TLK+Qnw4HDkJIOvLRzoxn+TnyIXGYkyZa2ajz+BNwgjQLWYcOHFLv9bTzdcqrtVpSsYGsW5obR7a2652//3ZTNUfmXHXywxXJAlFa4eK/Zi3+GP+z7SMQpOO+/AGlLvBjSFLzKbyYmrH+RUg3P0xL8m1X5hYmw7MQTIR1uNKCmnJPUcoEnu82YKhj2tcR4j318QwEaWHJTahhr+n1SHVva2AZe5Dv/C+YLqw0GDnIQgmDId/FmFz1wnfwaYE5hERCR2+7iXYn8z8da29qCjY3sT1oHxzyZV4b37dsE2qVdBds6B7jG8UintJrNYyVcmXFi7bWB6nnF+weJnQkmkbPAnszwf0NMhaLbsjsAsRnvylTJilWc0xuZJafo3Zq0LjIZT5yfaYzhAmRvG1frJEnZ4rfqc5yx37NL8ZG2675nnmYCwIXuZeMUKOkqDtJLkY3IvX7p8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_14cd5b6e-2e57-9c9d-a654-aa76bfc0d8b9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2649,
+      "completion_tokens": 376,
+      "total_tokens": 3025,
+      "cost": 0.007554,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007554,
+        "upstream_inference_prompt_cost": 0.005298,
+        "upstream_inference_completions_cost": 0.002256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that multiple FilteredRelation aliases on the same path with different conditions should each produce a join rather than being collapsed. The FAIL_TO_PASS test fairly checks that behavior, though it uses a simpler annotate/values case than the reporter’s Case/When example.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that multiple FilteredRelation aliases on the same path with different conditions should each produce a join rather than being collapsed. The FAIL_TO_PASS test fairly checks that behavior, though it uses a simpler annotate/values case than the reporter’s Case/When example.",
+  "prompt_tokens": 2649,
+  "completion_tokens": 376,
+  "total_tokens": 3025,
+  "cost_usd": 0.007554,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

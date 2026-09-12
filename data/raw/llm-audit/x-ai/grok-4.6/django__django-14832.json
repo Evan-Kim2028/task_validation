@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14832",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2368
+  },
+  "response": {
+    "id": "gen-1789191496-8KIA1s9yQWua9Tefc3ej",
+    "object": "chat.completion",
+    "created": 1789191496,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue describes localize-block/USE_L10N mismatch and only vaguely titles forcing unlocalized output, without specifying a floatformat argument suffix or the 'u'/'gu'/'ug' syntax. FAIL_TO_PASS tests require that unstated suffix API and even rewrite existing templates to use it, so a valid context-based or settings-based fix would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about making floatformat independent of USE_L10N and allowing forcing unlocalized format. The problem described is that when using {% localize on|off %} with opposite USE_L10N, it doesn't...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making floatformat independent of USE_L10N and allowing forcing unlocalized format. The problem described is that when using {% localize on|off %} with opposite USE_L10N, it doesn't...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "1Fy1GDlLJUq+i7GJGV9S7+Q0UoHwW/htjHQy0HK4g+GBl4TwYbMB4j2xJXjvCaT9mWO4PaIonOMLthogMdtgQNVNIqMNTSm7DLAlv4U7ST6YINRwU6ASDKYg4AuUbV+SJHiKe5nKqiubthcX0pjYSjPW3yHSB7LgVwPasUeKvPNW0+WDQjGiTO4b7vQ/v/JF0cm/A8uj2i4RsocGIDOTnhyXWTgBFWVpWjIXwp3+eMKyluVRuiL5acMr4U/tGmL8HYXkuPNGSfp6fQaEfVZUaCAUinM3yK3feIQPu3ay8kB/C/1utCfZngNW0u6Gtx89B6e7QGzpEUh2iqmFRwbPQkCMI7Un8BNd1NQxlLxjmSi1XALx/YEALHebbzQSDXeZ55lNxxF6qqVzNIjM+w9Ny3Qe8V0zZl2ZSXhX87c2BLd7n0D+Nh5/7iDRWVBEeS7QMKaJj5dT7nizsxV/7LaVwQbCE2wGb74hVX//Wld59JJOhjqPDiTpuDR6TgakulkEB03FL3sNx5iiuPRltFqC+E9fL49Lt2CvQ5Gzu7OdaW+h9FtTvRo42qMy2v+xpS5TBW81+MKTaIDXhPGSsRbJeMzGsSaLIc3yK8GC3r2KW5yIC4j++PlglHgHp06FYs5mS/DnPkH+Fl/vLF9pp4E4Dyf6VT7LjwENUMqjyMPfEB7qnBUtSGKLzoYRtYDD5mpx5GNKAqz11HO9uPAwS8tEsgdNCEWqPBZvS2azBQKTkkixYsDfRkDtY8TLTY8YX6zU0RP4LVuUDb8n5WgpFMGa3aiAyr7wiC02G8ve4SVdDJaw/E/cbFLvKpmFQiD/xSfN/Bw9I+W8ZvT3R75UfIT+AekVha8+1GN0+EC+oiTKhVW7QYJfKMK6Kndtv/0xu+PbAUCoW1qfUnl5J0Inq3zMFFbIB6B9wgc512N/NCPgE4wyAiya2yDMEv6FpEmPNKIJq3lyVDzlP5MDPnmKG0Y4OJe63lX5mLQEtVMywT2/TrSDtXO7HaP5r4JYUZ1jZZ1tKDopciAXfJaTv5via1nDETjZrOKE+mZObL9qCTb9Ljjyvlem5uj/hiN+JCgv14XahZJsiojvaZp2RB7y8ZyJsDPIhG+ZAUnceVJc0dCFYC7wBx93HXmIliwiJFCk0tct8lto1Tsd/qeBuJP04ZQqlFQB0/9tlpXpPhD0/3YGeIhmUg7/NuiuABJbBrWfpw2pjyWN/zbuxFYeRmd+jJbSNl1wmV2JBCFYapbtnhDvWe2eT60zNf8OyVRugDvI1IbyrICLl0u3nxKNGe5xadkULpba6OGpHjhpEJBtUjo53tYqyjUin9QZFqLJj15ykmMEuOy4y56DgRZW9KA9euKFvdClm8PdwzST53EixDJ7NSsnHoPpgUvIYR/g3A2Dsq106lZ/fxdmlybElVuZJzSsr8M8BD/+/vwTu/cuzag1waxCHHjFUzmcRMIeQO2BavPsoDaYOIW3KQxmgRhcJmOkfRX3ZfNmXVzyPxoItydtr0PHkZEJNOJOjGNRBHutDsB/C1mn1chQ43qs/5eRVk31i1FpbVZ/ZDR4oxhV44r7McsJtopyFeUZ2vkMWq9GkecgvgzhfQV2R1jIuVeP/XCWEAtDhgTHnvsC+wTUvrAV+X8o0D3iAeirFgUEVhn00XIryxj896icgl5UC7D4t2XTPyTtL+X7/07j9uReHKmYqosUctcKQfOXijOqNCrkU6emprEAvQRY06k9mGbiXBpIA3Eb4aTS38d/266jZ19RKLaLRwyql5NoEwywC7jtk5GQUu1G427g.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c2619b4c-a181-90b9-8d88-1f05a7d8a955",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3028,
+      "completion_tokens": 443,
+      "total_tokens": 3471,
+      "cost": 0.00833,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00833,
+        "upstream_inference_prompt_cost": 0.005672,
+        "upstream_inference_completions_cost": 0.002658
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 311,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue describes localize-block/USE_L10N mismatch and only vaguely titles forcing unlocalized output, without specifying a floatformat argument suffix or the 'u'/'gu'/'ug' syntax. FAIL_TO_PASS tests require that unstated suffix API and even rewrite existing templates to use it, so a valid context-based or settings-based fix would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue describes localize-block/USE_L10N mismatch and only vaguely titles forcing unlocalized output, without specifying a floatformat argument suffix or the 'u'/'gu'/'ug' syntax. FAIL_TO_PASS tests require that unstated suffix API and even rewrite existing templates to use it, so a valid context-based or settings-based fix would fail.",
+  "prompt_tokens": 3028,
+  "completion_tokens": 443,
+  "total_tokens": 3471,
+  "cost_usd": 0.008714,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26184",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1587
+  },
+  "response": {
+    "id": "gen-1789192088-Onjx0YocG9tq2cpNnb8e",
+    "object": "chat.completion",
+    "created": 1789192088,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that AnnotationBbox extents be valid before the first draw so constrained layout does not collapse, which a competent engineer would implement via get_window_extent (and likely get_tightbbox). The FAIL_TO_PASS tests fairly encode that by dropping the prior draw, though they also pin previously hard-coded pixel extents and tightbbox without stating those details in the issue.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about AnnotationBbox not returning correct window_extent before first draw, causing constrained layout issues.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AnnotationBbox not returning correct window_extent before first draw, causing constrained layout issues.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ldIS8bovoyFDKxbvvhNxFN/pT3LAXPpZ+iM0C3glruK7LJgx5G4lU6tegsaXv5R5CqOUAQwoUOJ4ndbnovr5DE5bgOfxtNbgoQVC1a1HiIoioMBeZEfTngaSQCsCbwxj3qUJppiGXUoJwJyND/KR/dE2N/pKl0ofABT9lwEyMJmehzY2EgFTY/GBfXYi7EBtCqa1qF6Q4j3U9UahT4J8pwSz2NCxptfQ7YLH5te8qymdHiSFpCrcpJn++tOubxn90uyyMs/4geTtZ2uvIKKbC93cKHGLnGikfgh/uSFyVDWHr46nWeeVn27FK7E7HKWxBKF/YymJJ1SWgAWkovP6HaxWMj4+sjA41l1PBTgbD0x7BUMvgZC3dMbDQYHN4yU8aiYKqhP3Ivo21OYuMqjBbicQJXelKgEJaCvc7xHnjm0/28v0QSXgINY4dvIIK8G7LntFnqRiPYKVBNuC8I+D5bc0Pj1nLAGD8BhM0H893iDG0SV3tYg3FR6OXBcbh4rjfmqGUi/wxuvIzRPmJZsOuVopfIB3BG+W1FPm9q8+ibWuSQep37jlLHl7PT6gA27fUiecDFAVHQgMW65akxuJMa4aMmY/5Sx7OjY9xliP9xSAovNO0THMAErPiusDG4knUMHior29OYUFcxupXA2iushULzaQCl0axV2lGm+0jsWwNyiFSQ0G2tTcspZ4ncH60IN6R65QTDuwYVhmhdEAcoskFD8/Xwd7HMwbvSy7y42Jfc5AyGmQbjBwtwdtPEBt/gGIlg4KRJfPgCIMKi6xPRPULW4ozpLFJNpjHGltEWO2Dfm6bs68+oPzsJ86/XP2YAQ2x716U5h1bqPWc/F7SpiFj4hh19mdt2MgN+mpvrf+MNz2M5aZpx0uUqqgYGuUZlRy8jI9TgArJ3Gw/KGWFuM9pTMLRqPZvk3nvVOmsXLh1u+H3e74quEWh2W+XGF8ZaJljNIKj99U5toenRWOtX+xhibh/vfkSnekgRtKBfkOVaslA001BTxKAN/MgPblfeatJpMGupM9CmGbnluwVZTgcsZNUkBJhfyvwODFEjuVWNgHZL6HuPElaXPF8yvJwydJcOsU1BivPiAmjzmmZQEhG/IJsWR+oOvZ4JUxiUDME6mLUHX3lZV+8Iy1+DZyWvwKulVP1qKs+9Me73kQKJcTIVejV2hLrB7KAmpdiKzi8saT62jdJI4Qzrf18BxywCEpXmNCkSLJ8F1BDDUjBfEnJwymZClTTGvSGEfEC/2DSK5gt5Qmdx7ybESicrI16HsEeb41S8a0Yf71HJuYmFZ6Wmp8UsoIay+1v9WEZ5MMyPm5UQR5SoIxxZru0I54upaWWK8aPnNFgYYifFk7k+qFMABpRQ96x8TllkAQG2v079388AVLT5sYDwQd07Ur0a2VCTf6mjKJ+1fn3oLXFYiJKoMnFYAtGU8sPg3FBj+7/mfp0D5RTriqrXqmlbDcHHpPWBHZ411xYumxl6EP3htjT3U1m6z9fezFgJqza3jN4bujLQOX9lcdG7G7RnrugFpK2N3PqrgB60Zak2131nYeIZRYHUizocXPYwng5ZkgDrPR2F+6ewSWzKvOBvNH1QSbPXn6tE0kVZ8qGMvYJodOyPGk2KMqV3arvIN03olmT9GJMqRaJlQ7v2srZZk8xuIiZXLw4jvvmIu6Pw0LAywRnVx2Gr0pVrehiQdLlAg9l6jtfrApi/wVDPqFvoyJ9213SE0GV7Pky9SxCKRN3gfHnNY5qhvpw71nzFCDwwuHpj2sukcZkQj0WgReI1xm0BI4CCtrobNU/FlNJJUYXsyZ4rTpP/LAcccLMfpbUKYNuBcB+3k61GEFcGAG+w.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_918eadc0-edae-99d9-a4fc-a663f1e2caf6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2039,
+      "completion_tokens": 423,
+      "total_tokens": 2462,
+      "cost": 0.006232,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006232,
+        "upstream_inference_prompt_cost": 0.003694,
+        "upstream_inference_completions_cost": 0.002538
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 289,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that AnnotationBbox extents be valid before the first draw so constrained layout does not collapse, which a competent engineer would implement via get_window_extent (and likely get_tightbbox). The FAIL_TO_PASS tests fairly encode that by dropping the prior draw, though they also pin previously hard-coded pixel extents and tightbbox without stating those details in the issue.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that AnnotationBbox extents be valid before the first draw so constrained layout does not collapse, which a competent engineer would implement via get_window_extent (and likely get_tightbbox). The FAIL_TO_PASS tests fairly encode that by dropping the prior draw, though they also pin previously hard-coded pixel extents and tightbbox without stating those details in the issue.",
+  "prompt_tokens": 2039,
+  "completion_tokens": 423,
+  "total_tokens": 2462,
+  "cost_usd": 0.006616,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

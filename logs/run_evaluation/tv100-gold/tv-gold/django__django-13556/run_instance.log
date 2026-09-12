@@ -1,0 +1,47 @@
+2026-09-11 23:34:49,389 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:35:09,853 - INFO - Creating container for django__django-13556...
+2026-09-11 23:35:10,152 - INFO - Container for django__django-13556 created: 1367748d2f1fe7d579bd8ca55723ee8a0c2dfff1bcb53aeb304a9eb1a55e631d
+2026-09-11 23:35:10,462 - INFO - Container for django__django-13556 started: 1367748d2f1fe7d579bd8ca55723ee8a0c2dfff1bcb53aeb304a9eb1a55e631d
+2026-09-11 23:35:10,463 - INFO - Intermediate patch for django__django-13556 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-13556/patch.diff, now applying to container...
+2026-09-11 23:35:10,551 - INFO - >>>>> Applied Patch:
+Checking patch django/db/backends/base/base.py...
+Applied patch django/db/backends/base/base.py cleanly.
+
+2026-09-11 23:35:11,896 - INFO - Git diff before:
+diff --git a/django/db/backends/base/base.py b/django/db/backends/base/base.py
+index fcaa4b46e9..42b4b178bf 100644
+--- a/django/db/backends/base/base.py
++++ b/django/db/backends/base/base.py
+@@ -632,6 +632,8 @@ class BaseDatabaseWrapper:
+         return self.SchemaEditorClass(self, *args, **kwargs)
+ 
+     def on_commit(self, func):
++        if not callable(func):
++            raise TypeError("on_commit()'s callback must be a callable.")
+         if self.in_atomic_block:
+             # Transaction in progress; save for execution on commit.
+             self.run_on_commit.append((set(self.savepoint_ids), func))
+2026-09-11 23:35:11,896 - INFO - Eval script for django__django-13556 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-13556/eval.sh; copying to container...
+2026-09-11 23:35:38,134 - INFO - Test runtime: 26.20 seconds
+2026-09-11 23:35:38,134 - INFO - Test output for django__django-13556 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-13556/test_output.txt
+2026-09-11 23:35:38,331 - INFO - Git diff after:
+diff --git a/django/db/backends/base/base.py b/django/db/backends/base/base.py
+index fcaa4b46e9..42b4b178bf 100644
+--- a/django/db/backends/base/base.py
++++ b/django/db/backends/base/base.py
+@@ -632,6 +632,8 @@ class BaseDatabaseWrapper:
+         return self.SchemaEditorClass(self, *args, **kwargs)
+ 
+     def on_commit(self, func):
++        if not callable(func):
++            raise TypeError("on_commit()'s callback must be a callable.")
+         if self.in_atomic_block:
+             # Transaction in progress; save for execution on commit.
+             self.run_on_commit.append((set(self.savepoint_ids), func))
+2026-09-11 23:35:38,331 - INFO - Grading answer for django__django-13556...
+2026-09-11 23:35:38,332 - INFO - report: {'django__django-13556': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_raises_exception_non_callable (transaction_hooks.tests.TestConnectionOnCommit)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_db_query_in_hook (transaction_hooks.tests.TestConnectionOnCommit)', 'test_delays_execution_until_after_transaction_commit (transaction_hooks.tests.TestConnectionOnCommit)', 'test_discards_hooks_from_rolled_back_savepoint (transaction_hooks.tests.TestConnectionOnCommit)', 'test_does_not_execute_if_transaction_rolled_back (transaction_hooks.tests.TestConnectionOnCommit)', 'test_error_in_hook_doesnt_prevent_clearing_hooks (transaction_hooks.tests.TestConnectionOnCommit)', 'test_executes_immediately_if_no_transaction (transaction_hooks.tests.TestConnectionOnCommit)', 'test_executes_only_after_final_transaction_committed (transaction_hooks.tests.TestConnectionOnCommit)', 'test_hook_in_hook (transaction_hooks.tests.TestConnectionOnCommit)', 'test_hooks_cleared_after_rollback (transaction_hooks.tests.TestConnectionOnCommit)', 'test_hooks_cleared_after_successful_commit (transaction_hooks.tests.TestConnectionOnCommit)', 'test_inner_savepoint_does_not_affect_outer (transaction_hooks.tests.TestConnectionOnCommit)', 'test_inner_savepoint_rolled_back_with_outer (transaction_hooks.tests.TestConnectionOnCommit)', 'If outer transaction fails, no hooks from within it run.', 'test_no_savepoints_atomic_merged_with_outer (transaction_hooks.tests.TestConnectionOnCommit)', 'test_raises_exception_non_autocommit_mode (transaction_hooks.tests.TestConnectionOnCommit)', 'test_runs_hooks_in_order_registered (transaction_hooks.tests.TestConnectionOnCommit)', 'test_transaction_in_hook (transaction_hooks.tests.TestConnectionOnCommit)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13556: resolved: True
+2026-09-11 23:35:38,332 - INFO - Attempting to stop container sweb.eval.django__django-13556.tv100-gold...
+2026-09-11 23:35:54,318 - INFO - Container sweb.eval.django__django-13556.tv100-gold stopped successfully.
+2026-09-11 23:35:54,318 - INFO - Attempting to remove container sweb.eval.django__django-13556.tv100-gold...
+2026-09-11 23:35:54,478 - INFO - Container sweb.eval.django__django-13556.tv100-gold removed successfully.

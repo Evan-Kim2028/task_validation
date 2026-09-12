@@ -1,0 +1,83 @@
+{
+  "task_id": "pylint-dev__pylint-4398",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "89d9f01c-1e2e-9286-81b4-a714bb8d79f8",
+    "object": "chat.completion",
+    "created": 1789193700,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue asks for a --fail-on flag that fails on named messages or categories without changing other exit behavior, but it does not define enable-vs-disable interactions, category vs message-id semantics, or exact exit codes. The FAIL_TO_PASS cases require those unstated rules (re-enable a disabled msgid, do not enable a disabled category member, mixed fake ids, and 16/22 vs 0) so many reasonable implementations would fail.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4320,
+      "completion_tokens": 150,
+      "total_tokens": 4978,
+      "prompt_tokens_details": {
+        "text_tokens": 4320,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 508,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 40188000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue asks for a --fail-on flag that fails on named messages or categories without changing other exit behavior, but it does not define enable-vs-disable interactions, category vs message-id semantics, or exact exit codes. The FAIL_TO_PASS cases require those unstated rules (re-enable a disabled msgid, do not enable a disabled category member, mixed fake ids, and 16/22 vs 0) so many reasonable implementations would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue asks for a --fail-on flag that fails on named messages or categories without changing other exit behavior, but it does not define enable-vs-disable interactions, category vs message-id semantics, or exact exit codes. The FAIL_TO_PASS cases require those unstated rules (re-enable a disabled msgid, do not enable a disabled category member, mixed fake ids, and 16/22 vs 0) so many reasonable implementations would fail.",
+  "prompt_tokens": 4320,
+  "completion_tokens": 658,
+  "total_tokens": 4978,
+  "cost_usd": 0.012588,
+  "cost_in_usd_ticks": 40188000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3048
+}

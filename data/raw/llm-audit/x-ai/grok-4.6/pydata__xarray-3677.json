@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3677",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1075
+  },
+  "response": {
+    "id": "gen-1789192233-e84RbRCmGs85NjsR4eHP",
+    "object": "chat.completion",
+    "created": 1789192233,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that Dataset.merge should accept a DataArray the same way xr.merge does, with a minimal reproducing example. The FAIL_TO_PASS test checks exactly that equivalence and does not impose extra unstated behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "lIlLqxXzz7hYufmdN8dbgoVYep5w1FvOJU7xeBZ2TUKLkf+L0BAs2aqp+QgdEjI2EIyTq5t8qswDEd3JlFVGdb7eW6cw1mB+CCW0eJZFmeK4P9cVoy6o6oAchU4ATYwnrKcYP16YHMWWlydWYaXmoW0qHjstDHh8QvFHdRDhw9UfuSdmo8NI+mzKaLWU/65Z6l6VLbMY18kTxmWtYxAmT1u9wsLw4tj9RvAIqx6mBbvZXOQR1uIjQXATW6nvLwhgObfeOdrYFyCNhtBImREx+lPCGtFt61HdQGUpctbrrEzk+Lu+zyFM/aY8QhXXRkNLwFfRWdWbGOkzE9bOrPRY1vAYqVjuTl9epunlfQ/Rm95gdJvxqbZwSukep8as9ChA7P7FEU1dMULWosoCT6r1kmrxQL1g9uRl0M+wsF5A+zSFb1cfql0Az+nbSXKW3Ria/rrnRXQAjfrznOrbOKuBQX2xY5F68TFIsttq6cacqxgSmOa5h0uKnHlVKubG1D3msVirDGbMDx0lAwbcnD9E1NFpj2a1Lw8qquCtz9rLblasl4FzVD4zgiAxYu9VvD+PeP0twQoWFO2fDh04Ej06s0gU6yxqjCoFOhXoTi/yvIuMgDlEPFK52Yz0y3LDLRF+aLFsXQ7G4HwQ1WOcpKiL5HrXc0EtmaEv+5IfQRfTVAjVdHt3pKxye5zH3tuLjkXeTvjaQKuwxMjhfB17sGMd1S5og9ZgzelVKP4mDQ3IM0GWCtk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_60259223-34fc-92da-a961-be95dbceacc7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1509,
+      "completion_tokens": 245,
+      "total_tokens": 1754,
+      "cost": 0.004488,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004488,
+        "upstream_inference_prompt_cost": 0.003018,
+        "upstream_inference_completions_cost": 0.00147
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 145,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that Dataset.merge should accept a DataArray the same way xr.merge does, with a minimal reproducing example. The FAIL_TO_PASS test checks exactly that equivalence and does not impose extra unstated behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that Dataset.merge should accept a DataArray the same way xr.merge does, with a minimal reproducing example. The FAIL_TO_PASS test checks exactly that equivalence and does not impose extra unstated behavior.",
+  "prompt_tokens": 1509,
+  "completion_tokens": 245,
+  "total_tokens": 1754,
+  "cost_usd": 0.004488,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

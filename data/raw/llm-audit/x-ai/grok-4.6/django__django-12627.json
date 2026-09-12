@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12627",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1078
+  },
+  "response": {
+    "id": "gen-1789191072-lBvdkKixI7ypAJOkIjLo",
+    "object": "chat.completion",
+    "created": 1789191072,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly requires TypeError for non-str/bytes passwords, which a competent engineer would implement, but it does not specify the exact exception text. The FAIL_TO_PASS test hard-codes that message and the type name, so many valid TypeError solutions would fail.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue says make_password shouldn't accept values other than bytes or string, should throw TypeError. Tests check exact message 'Password must be a string or bytes, got int.' and also add test_byte...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue says make_password shouldn't accept values other than bytes or string, should throw TypeError. Tests check exact message 'Password must be a string or bytes, got int.' and also add test_byte...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Glw+cdxfIOO8J7f1OAxB3IHzWdediWV0rkAvg2gyxbHwuF+5r56Dyyq0VE3qodtE/N9WeUayGOq1SzA/+yZJ8Om+W/cDYckbdp2uUzmVNHrC1sYryGBzq+DoiUsU/9ChsChAZZ1gIG+YZjyVJVlw55GwXkZrUr0z1rKEjZzCK0rcuRLNiVGnjVB5HVG6ZezCRsQaXsieKZmMnSZ0te/E0M2emUuJoYWx/4l7TlP8HkYNmfSwMcaKorJ2j4upoqh0CHNPQgm2tdtj+jF08obPr0l3yG2xuBmlaCdrwn6I0E3tWKokvB2xwpUP4cab2IscyfGYTBIK2AOrJNH0aNL0Y8yjvJWUbO5xi9AvE3/sGsixkS9nCV2n9+ZZgMvHHCjB+bV+Qkpt4ZOxvVpnsKhx1dUVAfeYOIlHuNTfwTKfrQGku5+l9Kq6nXGqirJ24ifAN8ITWTi2d/R815clQOJOrZ1iZEjKb0sP+PMaIyUhpslysHHGaQ1tm/l5KQFSYoy7ALTAtpv+G1RF17Q0fJ9CBEnh6ix1y7oqSJtJ0TfEsCZtN/Ap1OlYOMxOeYnoAYhoOwstnOACbdX81sOL/JuEV6R6jI3IQXihSN7wTmFaEMxOW8JKf1INXehSJsxF8qUWapxk8bb2uVRU2n8x3VLh0rqguaN+v9j3FtFD/r6SB1V2Hhd9ILTrVRUjFjrGH0ipVgudowgWV7p7RtEQi6lti3J1HJgOQlwds1wMN8HnGiK1eC+QRlE5bgW/8+QH2FjAV6rcJLODl4UUq8UU+Q3Qz0/00IJVlHH1vOeXEs7KqZ6w+so33E6D2pRebmYygzSTCQQLukstN6MAKp9+1xSqoZnbfVzPBuGon/DyQDG12AqUTq9+MH55AAVY+IrU3NkzAG928xdcUgDeaeCGAjX5L0kXnpmM57iRW9F8DVOMR9rtVl3hqm3k5XWwgM6Y3q6VTu2vX64ISI5cbHACfCVDZnSYd1tMbfTkM8qzGwx5Ffb4bCGymtOhsUKvgQJxDUwqGprqF2jhRHVKgEI0O4FM5Ih8n5dxpl6MNh8iyULAln4UJgRYJDDMWQYLyuEI/UoWm5NShTId/bPAfHrUCQ47+jTG0baw2Zk6QTfGmGN4o+wLnFGawKAW6jCHhDxkKnGOItxusyK+xQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_31d09f36-f02b-9a62-bd3a-cab71d383d7d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1398,
+      "completion_tokens": 307,
+      "total_tokens": 1705,
+      "cost": 0.004254,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004254,
+        "upstream_inference_prompt_cost": 0.002412,
+        "upstream_inference_completions_cost": 0.001842
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 195,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly requires TypeError for non-str/bytes passwords, which a competent engineer would implement, but it does not specify the exact exception text. The FAIL_TO_PASS test hard-codes that message and the type name, so many valid TypeError solutions would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly requires TypeError for non-str/bytes passwords, which a competent engineer would implement, but it does not specify the exact exception text. The FAIL_TO_PASS test hard-codes that message and the type name, so many valid TypeError solutions would fail.",
+  "prompt_tokens": 1398,
+  "completion_tokens": 307,
+  "total_tokens": 1705,
+  "cost_usd": 0.004638,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

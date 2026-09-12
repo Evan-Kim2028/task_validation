@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11446",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1926
+  },
+  "response": {
+    "id": "gen-1789190868-RdnntHRY2WUfDkhLfJPQ",
+    "object": "chat.completion",
+    "created": 1789190868,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that the DEBUG=False 404 fallback be a full HTML page and sketches html/body around the existing h1/p, without requiring doctype, lang, a title, or the same treatment for 400/403/500. The FAIL_TO_PASS checks exact markup including <!doctype html>, html lang=\\\"en\\\", a titled head, and all four default error views, so many issue-faithful wrappers would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about default error pages not being correctly-formed HTML. The user wants full HTML with html and body tags for 404 in DEBUG=False.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about default error pages not being correctly-formed HTML. The user wants full HTML with html and body tags for 404 in DEBUG=False.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "wX3c5fFRSIDbRaA+N2eGtRtoB0BRs8bbHN8G+c/vgdRLd4dA3nxboXjUea8BrfKLAJzTtBRyTwBdhgn/4k54mabqLNAjfjREqU2y9F6OAHEoQLp6Q0pip8a7nO7++sk/rhNLz3EmlKB3mFoDyDOl0r2LHlAunzD/Ie/3CcFjv78yHGP2Uz3lXgRn21cEbRXOmpLABGAjQnfRUhZYy6+QlBGgPE0By6W4tYA5LKemEB7VmLk15/Dp5G6fYFQz8fYs62MGYs1pwwXYpV7hbe8d3MlT/OxSMJitJ8v4dt/epbWGp1S6G5DCHoJp5Mg0Vo7guPGgvNBG7+ZlWBtsOhQWby8R2crla3wGJ/p3PFs6JIhWJNSMu9OKhOkR9TGO9pIjDDD+XTq2KI7W1jFpJjkrGzPCoCZjQJoZEJmz4/GrojsiCAucP+nl8MX0krq0/3hZLrfJi2nLJGaNzHKIB9d/rDO0SrnAdLUZ0CmN9H3HVTt8p+rhbeGtfwGS8p/ZeYzspoe2PliZgRGX4jbkCwBfrtgguCul47l7LuGvTEgAGi10rNK7x3NEUdLEM1WmTVZReGJqrK50+/HJNGkkkW6RVmD84b1dbUh6RY44lmNrHrdilwIlFAcF4CzuyaRz8JvT3zB5hf7jwOngfJRlCFOhmtekUt49JpEMHTONjEaY75gt4zjsvRT3BGf8/HXJSDEXm1L1GRb70JBAKH49l2kjE367+jeqYPgvzcZvDbECKr4CjjQqaKB+Y+pWOneb/RCcXcc1NtRItGGvMfdn05p/CImvio2qlrDX4DOG+SC3Pg0I6LABwIIO9TktFzBrlAsdnHGfyE9pAwKtrzXAOotoa8PAfSju7ffL0wzzsl7//PBCsgcI/fu/dUEEoDjZ/Hyq1Mko5xxUfPHY12sDATpzrI5bq6XtxV9IKKulRBCtuOeKyAklZLs2dTZgQJz8FDy4kh79xawguikfZS/UH8FGXJqDQYojniU3pg08.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f1f29394-6a42-94b5-839f-41b58a6b57b8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2329,
+      "completion_tokens": 358,
+      "total_tokens": 2687,
+      "cost": 0.006806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006806,
+        "upstream_inference_prompt_cost": 0.004658,
+        "upstream_inference_completions_cost": 0.002148
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 209,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that the DEBUG=False 404 fallback be a full HTML page and sketches html/body around the existing h1/p, without requiring doctype, lang, a title, or the same treatment for 400/403/500. The FAIL_TO_PASS checks exact markup including <!doctype html>, html lang=\"en\", a titled head, and all four default error views, so many issue-faithful wrappers would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that the DEBUG=False 404 fallback be a full HTML page and sketches html/body around the existing h1/p, without requiring doctype, lang, a title, or the same treatment for 400/403/500. The FAIL_TO_PASS checks exact markup including <!doctype html>, html lang=\"en\", a titled head, and all four default error views, so many issue-faithful wrappers would fail.",
+  "prompt_tokens": 2329,
+  "completion_tokens": 358,
+  "total_tokens": 2687,
+  "cost_usd": 0.0068059999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

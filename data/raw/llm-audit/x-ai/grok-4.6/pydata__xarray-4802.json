@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-4802",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1706
+  },
+  "response": {
+    "id": "gen-1789192273-P2axOrfWgNM1s4HSTfPJ",
+    "object": "chat.completion",
+    "created": 1789192273,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that length-1 list scale_factor/add_offset must decode like scalars or 0-d arrays, matching the traceback and prior numpy-array behavior. The FAIL_TO_PASS tests only check that CFScaleOffsetCoder roundtrips those list and scalar combinations, which is the behavior described.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about decode_cf failing when scale_factor is a length-1 list. The tests check CFScaleOffsetCoder encode/decode roundtrip with scale_factor and add_offset as scalars or lists.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about decode_cf failing when scale_factor is a length-1 list. The tests check CFScaleOffsetCoder encode/decode roundtrip with scale_factor and add_offset as scalars or lists.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "A4FCKZo9klxcJXrxNoO4+puUhnE0PVcO6MjF4NInOb4Km+stRXHsQr7wnGWfAnrgZmcJi195BKygjFL0ZJ8qNOxfQEsewewl3H8dbR4Qy5VGKLf3mm+a8nJ+oabcbveOduG8h6tIKuQn+aOsYRuT9c45MkGyg2JSoxbPKvkE5fM7Sdm1BVbQPy2DZ8DHQ1ZiS730a4B/PdzqnEbeqNpkmVcGEukF79jVGk8ULFfFOhonH0YwitV/FOBs3BRtwIUYuZcLQdQNZOtu4p/hjH5Z7Wf4ICHxuZC/a70V/H/aWRkJ1JlLIFqRoNndy8ZFGO4/Jj9LIT+ouUz8nWed7Opp8R9O05g6jzeMbWJhi0UbTkUGWrkhp7jzNyP8Carc9ZpMEHmQoRubsP37T/7NzleDNJz+L5SiQShe5FDiw2fGqpo8Gx+xtD1q8/eUu22XvXTogAvtR4t2Gtm0AgXL0SWTOy/2spmFxtxw54cUEp9SLgyJyM7QOQDNEiFl92ZNXJql8vG9vLdMZPyNldZxHLtxGY66KPLCTbE+Bpxy/JPNu2DXSblgkS1o0Nm4pgVS8SgeoJQRBwnGTNaiTBxFl1u1FlmrtHdTyko7h1yH3dBYFD8+JaTQsxTnZFBINfgKwVj07AlEv2AM8Swp/Ts8bQkq+gGGgemd52h5OYR2c5KImvghTYB8KQmpIx0YSiSvbfvPoALyHlnVOu7cNEYJS6pZWbcPuCrGP3XQEIU12Q0XGfalbOgx0K3+uibBtH3Wrw3Xezud4wauuwr4bfTGuPr/D4mJ/gbH7z94LeFcOwxQSo+ZfybGnTa3bB+1qvQNCn/XiPYRVZXtlZ6SFU9d12V+up+HDQQuMt+LHez69oA0XloIzb+tZj8s0RnnTbDbeOH42bMMHYhhNrtHGPEneA5jE637YZXGK9g6QR//i2N7B0FzfLySd0jf2NziLpHx+MbVLw4QJQcBNXp/+hdfThQ8PdPQSg7PJeDH3eeDN4ok+tUjreaa2NYZv4ZukmKx.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_febd4487-2dd8-903c-8c19-7a9c52d67337",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2152,
+      "completion_tokens": 289,
+      "total_tokens": 2441,
+      "cost": 0.006038,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006038,
+        "upstream_inference_prompt_cost": 0.004304,
+        "upstream_inference_completions_cost": 0.001734
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 169,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that length-1 list scale_factor/add_offset must decode like scalars or 0-d arrays, matching the traceback and prior numpy-array behavior. The FAIL_TO_PASS tests only check that CFScaleOffsetCoder roundtrips those list and scalar combinations, which is the behavior described.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that length-1 list scale_factor/add_offset must decode like scalars or 0-d arrays, matching the traceback and prior numpy-array behavior. The FAIL_TO_PASS tests only check that CFScaleOffsetCoder roundtrips those list and scalar combinations, which is the behavior described.",
+  "prompt_tokens": 2152,
+  "completion_tokens": 289,
+  "total_tokens": 2441,
+  "cost_usd": 0.006038,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

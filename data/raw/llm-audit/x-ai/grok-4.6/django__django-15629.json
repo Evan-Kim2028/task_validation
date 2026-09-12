@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15629",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3921
+  },
+  "response": {
+    "id": "gen-1789191636-De3YhqCSjEj2ncnt8AAU",
+    "object": "chat.completion",
+    "created": 1789191636,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly requires FK columns to inherit the referenced PK collation so constraints succeed, which a competent engineer would implement for related fields. The tests also cover CreateModel and M2M through tables, which are reasonable extensions of the same rule but not spelled out in the report.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about db_collation not propagating to foreign keys, causing MySQL FK constraint errors. The tests cover:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about db_collation not propagating to foreign keys, causing MySQL FK constraint errors. The tests cover:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "KstwvCcgUXkVDPYYDDzd+Hq+Lhfl2q9amW5KbGvKl+jPNRv2qAe9OS3XrLbRrfwxYYF2Qmuw/kWyFrntjtif09nyCuHWIuWXfvkLZVrpyk2GqAv1fNS82/Jj+yIebTndykhY+mwLLnZGSvrKVahaJuT15eN21glEGfIESS2EAK2alyBWQb5oTDg8twmh1L3uioqalW/0/an7kxsuw7yoRLr3KmelDy+VlxXgEVvBCn35mnqzjLzK5kXURKgLtXVJH+OKDnrS2BUrhHVN/LuzbEp/oTi7BVzYxAj6azZJjT16hMoEJC+okDkEtvbjKoSDNgXSeKtcp1wYYIxsS2n1Dl2W3q5uxigjCdx4f0t60J0yP4lySqD74oyYOtc24VTf5m44MA6RmhH/0IIrFBaVk6G1j1h7VLt9Q4s3exn1ySFTY5El3pZbGEHR/pwAfYsPd//Qyt6Kum0ltxhUm8X3wL1lS3n5PBK9Z5cjDMFBmndK0Vu2/bhSowHbcE1p6g2AtrSDKxUlswx6L+vnxD5p4UR785QJjCsXClVSJpABE+X7ox2g1AWvbyFYzC1IiKWTJ2kAkBzFU96hvASCTWJj80vWd3PZgCMMCMhgzLCc7+wZ70AY1EIT+cyG9qupl764b97ZIXLzFbctW37tXlZ+Ma1xVhbE3IWimqGew3o/ySvCpUqKAwpLYewEUw4CGEFxlh1As383jMOm6WnTdFeRwHEGhx1Xyz22vOGNYVuHa37sDYoA8eWgCe8qT6TVJbXMtJWrASiJ/K/c5B0fEGBI5JEo0aH33C6uFa67WPcqVsjq4+u3xMFHrBh+mDjZofXF5BGYbSVfcLgCihSrUAEJW/pEIBcM8SWXdEjOu+eT3PwClx/JKMIPRpJX9zRA/jKP6IAFoJXK0zjhLU4T95jw3zHYTjhnGTKapFfSocKG/18nKq+XJN0CvYKy/77s8p8+DX0/qGvjcXM5nQK7oDQFaHv82vp3T0ODUZt4nE6vL/7L/nicNlSk6DKVrveB/wvsw/EZ8u5SN/qZEAmgm+Xi63gTF5M/xpfMmEBQ32kzs0rpEbHeK7cfBc2eTYSsL0HX7iSYwsQe+IbM53Qelkk3cZQfmb+uiuVVnBdw8XGx8xE+OE2fPj9WJSwiUiZ0Q0GEzBRR4wZ0W+bYUcgiCZvz/DuwXXHyZwatUYz7id3b3jnnpxMK/dFjwnSZimpt+ZqYhVjqMOx9NATVViSDNGmuyMvylicDEgqQB9FOhvdXUhHNRi1H60tvC4ulaT4SuwTpDIQfkstXRz3pw2k2elOkxgheHye7DnM7DH+QdgLja+/FgbTpSIbm8C27O15GRVwUMtcp9mykwzV4bEwAe4c/YdzXzYSn9cv/7h6XVpMHU024FO1JI0V0rt3qD+uVbGVfUDoLOA5PIoVS7K8Ibafqs77HOJE/qMSP8PxAsepIx7BM6C5aFW3BLQAVjyo2Dvfq1zHaMClNNiS6Vdyqoc4Bz/LYmKsb+KddkX7BLxP23UKSRzuemaVn45Jngo7+4Pkt9oJSEvMoKkb17gkNKnv0lJEuwAMvGXACgmJTkw8vVDeyRqRUDp1UgDFv+m95.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fc72c29d-e67c-9a93-9d47-60b5cd46de3c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4503,
+      "completion_tokens": 394,
+      "total_tokens": 4897,
+      "cost": 0.010986,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010986,
+        "upstream_inference_prompt_cost": 0.008622,
+        "upstream_inference_completions_cost": 0.002364
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 284,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly requires FK columns to inherit the referenced PK collation so constraints succeed, which a competent engineer would implement for related fields. The tests also cover CreateModel and M2M through tables, which are reasonable extensions of the same rule but not spelled out in the report.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly requires FK columns to inherit the referenced PK collation so constraints succeed, which a competent engineer would implement for related fields. The tests also cover CreateModel and M2M through tables, which are reasonable extensions of the same rule but not spelled out in the report.",
+  "prompt_tokens": 4503,
+  "completion_tokens": 394,
+  "total_tokens": 4897,
+  "cost_usd": 0.01137,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

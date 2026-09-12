@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15643",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 961
+  },
+  "response": {
+    "id": "gen-1789191636-btH03IDPaTuVaHYSJbIJ",
+    "object": "chat.completion",
+    "created": 1789191637,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes SQLite migrations dropping an explicit PK when that PK field is altered, which is enough for a senior engineer to target schema recreation of the same-named PK field. The FAIL_TO_PASS test checks exactly that preservation of the named primary key after alter and reverse alter, without extra unstated API or message requirements.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is: \"Migrations changes to implicit primary key when primary key is altered on SQLite. Migrations drops explicit primary key defined on a model when it's altered.\"\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: \"Migrations changes to implicit primary key when primary key is altered on SQLite. Migrations drops explicit primary key defined on a model when it's altered.\"\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_269341e2-4d86-913c-bd26-da5f11653021",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1259,
+      "completion_tokens": 537,
+      "total_tokens": 1796,
+      "cost": 0.005356,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005356,
+        "upstream_inference_prompt_cost": 0.002134,
+        "upstream_inference_completions_cost": 0.003222
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 414,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes SQLite migrations dropping an explicit PK when that PK field is altered, which is enough for a senior engineer to target schema recreation of the same-named PK field. The FAIL_TO_PASS test checks exactly that preservation of the named primary key after alter and reverse alter, without extra unstated API or message requirements.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes SQLite migrations dropping an explicit PK when that PK field is altered, which is enough for a senior engineer to target schema recreation of the same-named PK field. The FAIL_TO_PASS test checks exactly that preservation of the named primary key after alter and reverse alter, without extra unstated API or message requirements.",
+  "prompt_tokens": 1259,
+  "completion_tokens": 537,
+  "total_tokens": 1796,
+  "cost_usd": 0.00574,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

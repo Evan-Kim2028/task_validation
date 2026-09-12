@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-26242",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1516
+  },
+  "response": {
+    "id": "gen-1789192413-l1oAk9SRJIkSuDy03lwp",
+    "object": "chat.completion",
+    "created": 1789192413,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks that AdaBoostClassifier(base_estimator=None).fit not raise, and even suggests only allowing None in parameter constraints. The FAIL_TO_PASS tests also require AdaBoostRegressor and a FutureWarning with a specific message, which a solution matching the issue text would not necessarily produce.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about AdaBoost deprecation of base_estimator not handling base_estimator=None properly. Expected: no error when fitting with base_estimator=None.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AdaBoost deprecation of base_estimator not handling base_estimator=None properly. Expected: no error when fitting with base_estimator=None.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "bvt29//xeDYs6vflsKOHRgD21Mzyoj2y0MjCJnWPyuylp5V/acvkobgKQitgSPPoF7L7I9dMMxFIauqann6/zijuKPCQefxT5424gtq5VJkvmL9I9u1IlYRMPdnFP2IyLApC3M6rM+yjJ7OqdMPzctf4ZTd8kwf+LvJoAPkeQapykjIhJPR00hKcYef/n3/Dk4y+ha0uytvpcR3lsahaG814pAHNJiylcM8qn26gRQjgji9SZh2jBh8vMr6CgmnssMDzsz+jiKM2tcVIOpzPbdOlLmN4eOecWIGnwoiuDTChIF8B8kJfv/2YRIjePXxFWRZAFfY8KSXYbC+CmzS2nsYZXR9e0yR3EWCIU6zON4R3xk6hVDsIOH32Q5EeFINJS0wvXjb5NwEBC5br1uGjt43LCFhz3q0nOPlZyu7Vsrcwhkqz53xVN3PnvWBJnAzy1Qk9o+giaxxm/nao+zEVJ7sjMwqtuwaJZV4azQ+2yMl45MZDpe6xOHozYt9sdWhji0dXZU3MyPkG0aNAnyIt8ZsZiVCe9qs9GJwKKPCU6dGRjrHCRQpna5R1A1GATBkc7PL68i2CQna3XwhtRDps60TW46ASliLK05Ml9sbTQWiIxlR/P30oTlppUdObe5tspyWYru3QmuVNGLrHWrjkVDv/L/J/UgsDJMJ/leji1JkRuxl4f1Tgx2LN6cq1tiHa1TZzfSXGUulDvRJ24Y6UUuPoqDmDxwvDp3P+lERf1Eqn3ht8aHUL/57A9eEXCQ6ZygxiIrkAJwm/ttKpVIxPUl98OpRJnoL+DP306lRpFwEeZ31EouLginOD7PlNaTNkgNYdtIW9/TFFnZy00+voMUNY9yG3TANacHCMjeDYeNTbWjhrkZHxRAr6ixbqshd0hC2AhrzwxfIAeLLmlzLEodGeTwb5mr3mZwanxPpUxMCBYOfer4hDAkVDeEElWDCdNlNSG+iTdhobUKoKK1aq4+eMYCPj0vrdBu35PI0ka9mmbfl4pFoQ4flMg+0/YNq8FzuWYUNcBh/1+C+V7VFXNWNkX4oUcS2jyOX0tzBC6X1HrxmcZ+uGtKndz3kTCblp0IwC/LZ5ublFG7BKUNzmtELGErqTcoVbr13Dz8xEVuEUBJDpjSdQ4kQmEDFuG2MeJOBGB82/NwqFxwvU4jzwbbnRy7UhCMAj2D+5HCGq1uXZgbPV3M1Vsl/+0RS7aAGN/A2SiJd1V8bagyFdq1kPcTMNfr28JZTXLqabcDGsoO7R9rFLSXLSLIW3ZhFejd35WjE3JHrtguqLu7qFqQ10JoswqGRwaZ9+Fq7eytnpX4ZW9bu6c2IieOB6qUf3F1O8PmFjIlLH8aCi11Z1cSyRO7v7jUqjx+ogvmcUIqIsbE9NHEyA4V5qavdgjCp1mwy7lG3smWi81J/M91K+Dk4Y/L8mvDwSBmNLldmyVsLaE6lJoOAlDS3ahjkdggmSi+6O5xl1a7KBdjCyE/RamYyHXMrpcAUwPPvsavpRCrLE1kxdGd1IZTyzDsR5uZ3EsMltpdfvXRaEqUHZsY2QKz6Ph+S4NCx30GDDwAaA64Vx/iSjnCAMK5QOTeOFyBzvRrsFfH2PO91EGU0vUC74+dMTaxwmgkJHNbqIkvpTO4mDkJHZrPtEqvV6jE4hatBrrYVotnFHFTKKjvWS4+vfsfEA168psMw8WlLOAaNxAeTvKGPjJz5t/uVfHEZUZCGtgoqLyQZAyuEkAeFaOrgA5tML0ok+xqpz1ElIiKn1sU9cvllTWdrYTLjk505vsB+PGjR/Fm09lobp5n+8aQMIe+IAzY65NfKVT+VUKc9n3E98CHncOMfGPJq1rZjLBZkL/ILOIvIEq1sMRBN35UAWZQmLQU65GFpN8nQVr61BtA97jDiD9qbyKw+uf8PMxWQMixut+OtcJrseYXxBGfyryUc5kH1KlGgIGTH6+f89om9Ucif73PuY2je95X5rlQUOE0Wq6ItNCV1y/XsQ55Xz9zoDh7TYdbZ6NlRmreBTBAbrIxVzMcuy0Nu0XAOQ17pRWnnHv5c4i/X9/N1t1IXrouMkKR2J/beDreHXq/ZxYRLhu9AeJUnZxM8Py3CNuH+UAUxGAxe11II0R7UevuqpkdwL+WYrSJO31kZt/AccZBPC4xCK0S8d+xEmZEyZWIa3xZVOFkOe7v39ajFDG3G2U+5SCjhGL3aoJdIZ/YTOTYmDrxBW+tv21l4RcP0MCTgy5O0uniZ3VeKezWxhOE7uMUK4PuMiSZpyFR45sktwJH2SQjLOzidH4q8pswWeTcJVuwinwtMjcAohUIar88xzzNxf8rJ5z5oQfaqHN2Tv87SFPDlDEZvS7hG+FHYRNG80vj3zCerQrdRIwawRwSoE+/nRkMwqqpgu5IKNdMjHvtJmd6JNWtf0JAO2dliVh0MqLDuxFjmfdQcXLTh0jVYj5+vXriSeK8/+Cb7QigtAEXdJQOkn7FM2zLGtUB5pO74G8pkMndMdIx7EuuP4ZL1xqVdJOZrU2X5WngNE9Stp2mQ9TJ6OQ966JJIW3LBIVCh+vldt.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_85684f01-1694-966c-b216-b2e7cac018b2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1907,
+      "completion_tokens": 542,
+      "total_tokens": 2449,
+      "cost": 0.006682,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006682,
+        "upstream_inference_prompt_cost": 0.00343,
+        "upstream_inference_completions_cost": 0.003252
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 425,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks that AdaBoostClassifier(base_estimator=None).fit not raise, and even suggests only allowing None in parameter constraints. The FAIL_TO_PASS tests also require AdaBoostRegressor and a FutureWarning with a specific message, which a solution matching the issue text would not necessarily produce.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks that AdaBoostClassifier(base_estimator=None).fit not raise, and even suggests only allowing None in parameter constraints. The FAIL_TO_PASS tests also require AdaBoostRegressor and a FutureWarning with a specific message, which a solution matching the issue text would not necessarily produce.",
+  "prompt_tokens": 1907,
+  "completion_tokens": 542,
+  "total_tokens": 2449,
+  "cost_usd": 0.007065999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

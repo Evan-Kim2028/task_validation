@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13485",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "d6b47edf-c134-92fa-81e8-93c49f50c4d3",
+    "object": "chat.completion",
+    "created": 1789194005,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly asks that CalibratedClassifierCV accept 3D (and similarly higher-dimensional) inputs instead of failing in check_array/check_X_y, which a competent engineer would implement via allow_nd or equivalent. The FAIL_TO_PASS tests only require that fit succeeds on 3D/4D arrays with a dummy estimator, which matches that request.\", \"p_invalid\": 0.12}",
+          "reasoning_content": "The issue is about making CalibratedClassifierCV more tolerant of 3D (or n-D) inputs by not using check_array with defaults that reject them. The user asks if check_array is useful or if they could do...",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2070,
+      "completion_tokens": 133,
+      "total_tokens": 2475,
+      "prompt_tokens_details": {
+        "text_tokens": 2070,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 272,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 19074000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly asks that CalibratedClassifierCV accept 3D (and similarly higher-dimensional) inputs instead of failing in check_array/check_X_y, which a competent engineer would implement via allow_nd or equivalent. The FAIL_TO_PASS tests only require that fit succeeds on 3D/4D arrays with a dummy estimator, which matches that request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly asks that CalibratedClassifierCV accept 3D (and similarly higher-dimensional) inputs instead of failing in check_array/check_X_y, which a competent engineer would implement via allow_nd or equivalent. The FAIL_TO_PASS tests only require that fit succeeds on 3D/4D arrays with a dummy estimator, which matches that request.",
+  "prompt_tokens": 2070,
+  "completion_tokens": 405,
+  "total_tokens": 2475,
+  "cost_usd": 0.0065699999999999995,
+  "cost_in_usd_ticks": 19074000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1318
+}

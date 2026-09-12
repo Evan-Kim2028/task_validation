@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-24924",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1356
+  },
+  "response": {
+    "id": "gen-1789192020-3VMkGn2P2Xqgjb2pJltP",
+    "object": "chat.completion",
+    "created": 1789192020,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly specifies that set_tight_layout(False) must disable tight layout and restore get_tight_layout() to false, which a competent engineer can implement. The FAIL_TO_PASS suite also requires the same toggle behavior for set_constrained_layout, which the report does not ask for.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7798d39c-a2b8-9829-8aa6-f10af58767c6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1701,
+      "completion_tokens": 519,
+      "total_tokens": 2220,
+      "cost": 0.006132,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006132,
+        "upstream_inference_prompt_cost": 0.003018,
+        "upstream_inference_completions_cost": 0.003114
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 401,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly specifies that set_tight_layout(False) must disable tight layout and restore get_tight_layout() to false, which a competent engineer can implement. The FAIL_TO_PASS suite also requires the same toggle behavior for set_constrained_layout, which the report does not ask for.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly specifies that set_tight_layout(False) must disable tight layout and restore get_tight_layout() to false, which a competent engineer can implement. The FAIL_TO_PASS suite also requires the same toggle behavior for set_constrained_layout, which the report does not ask for.",
+  "prompt_tokens": 1701,
+  "completion_tokens": 519,
+  "total_tokens": 2220,
+  "cost_usd": 0.006515999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

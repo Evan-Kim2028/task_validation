@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15324",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1354
+  },
+  "response": {
+    "id": "gen-1789191578-7OSBfP6L3i0WSxuu8ADv",
+    "object": "chat.completion",
+    "created": 1789191578,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to avoid a 500 from null bytes in uploaded filenames (possibly by escaping the tempfile extension), not a specific sanitization policy. The FAIL_TO_PASS test requires stripping all non-printable characters from the whole name and an exact resulting filename, which a valid crash-only fix would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about file uploads crashing when a file extension contains null characters. Django tries to create a tempfile with that extension and gets ValueError: embedded null byte.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about file uploads crashing when a file extension contains null characters. Django tries to create a tempfile with that extension and gets ValueError: embedded null byte.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_37266058-8c45-9da4-9197-353e545791cf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1686,
+      "completion_tokens": 505,
+      "total_tokens": 2191,
+      "cost": 0.00621,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00621,
+        "upstream_inference_prompt_cost": 0.00318,
+        "upstream_inference_completions_cost": 0.00303
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 386,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to avoid a 500 from null bytes in uploaded filenames (possibly by escaping the tempfile extension), not a specific sanitization policy. The FAIL_TO_PASS test requires stripping all non-printable characters from the whole name and an exact resulting filename, which a valid crash-only fix would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to avoid a 500 from null bytes in uploaded filenames (possibly by escaping the tempfile extension), not a specific sanitization policy. The FAIL_TO_PASS test requires stripping all non-printable characters from the whole name and an exact resulting filename, which a valid crash-only fix would fail.",
+  "prompt_tokens": 1686,
+  "completion_tokens": 505,
+  "total_tokens": 2191,
+  "cost_usd": 0.006402,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

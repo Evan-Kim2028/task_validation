@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15742",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1299
+  },
+  "response": {
+    "id": "gen-1789191665-1PkTDoRk3h99Cc7UF5OM",
+    "object": "chat.completion",
+    "created": 1789191665,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly describes double-escaping of blocktranslate asvar results and the two intended fixes, both of which yield single escaping on later output. The FAIL_TO_PASS test only checks that outcome and does not require unstated APIs or messages.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about blocktranslate asvar escaping variables but storing as str, leading to double escaping. The user suggests either assigning SafeString or not escaping variables.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about blocktranslate asvar escaping variables but storing as str, leading to double escaping. The user suggests either assigning SafeString or not escaping variables.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c564ce93-a226-9b9f-ac58-c0c7859714d1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1631,
+      "completion_tokens": 486,
+      "total_tokens": 2117,
+      "cost": 0.005794,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005794,
+        "upstream_inference_prompt_cost": 0.002878,
+        "upstream_inference_completions_cost": 0.002916
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 380,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly describes double-escaping of blocktranslate asvar results and the two intended fixes, both of which yield single escaping on later output. The FAIL_TO_PASS test only checks that outcome and does not require unstated APIs or messages.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly describes double-escaping of blocktranslate asvar results and the two intended fixes, both of which yield single escaping on later output. The FAIL_TO_PASS test only checks that outcome and does not require unstated APIs or messages.",
+  "prompt_tokens": 1631,
+  "completion_tokens": 486,
+  "total_tokens": 2117,
+  "cost_usd": 0.0061779999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

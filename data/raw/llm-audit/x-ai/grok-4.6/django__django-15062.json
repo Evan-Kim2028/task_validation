@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15062",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2851
+  },
+  "response": {
+    "id": "gen-1789191530-yVdcEHjYfgxmUxPw1K2H",
+    "object": "chat.completion",
+    "created": 1789191530,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that DecimalField comparisons fail on SQLite when the value is wrapped in Case or ExpressionWrapper and shows working vs failing queries, so a competent engineer would know to make those expressions compare like a DecimalField. The FAIL_TO_PASS tests check exactly those two wrappers against int and Decimal literals, which is the reported behavior rather than unstated extras.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Case() and ExpressionWrapper() not working with DecimalField on SQLite. The tests check filtering with ExpressionWrapper of Value(1) with DecimalField output, and Case wrapping F('d...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Case() and ExpressionWrapper() not working with DecimalField on SQLite. The tests check filtering with ExpressionWrapper of Value(1) with DecimalField output, and Case wrapping F('d...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "7pFhdaz9O9NqHhdMKBwArw6bobpd2q3O6Co0nknTu5s7BvfXvIKljCZQnXJHjmOdRQP817BDqcBJmjapg3LqpvVIi8R0AVIG5QUdRiie/Mk5eTc1aObgiBi/6dBp9llW4AocCZ7bLqOy2F5SX0k6IFlr/sS/K2Wnb4UoJtY+E06jn8pbgmowX/DllEJfqirJX92NeKQ4bq0X2XKPOw0KwPg33XgII7iu+VnveGASgODkibA2ppk4JdWTTUBfMur57OdRtxCLS+1YzD8N4buohOw4zf+EZ+NsC4O+kG7dSPiy6zUTCuDFaAJy53alcpUOR4PWI4+D0R0sM5AD2fOXDky58YIFnpM2rQTmpmiLEwib21FYT1W88WztiHcJ164FXAb8e+7eNYHSk7eYGFoA+71ON7kCyeU6wuKKG63fILxekOX89KfYyv83FW/rDlYBqzP5HnqnseBqenW99dwRhO2B9UpLfKl7Scyl1u9T/n62yyKOnGXR2BVfF15gdioB5WjfpbjqIY3CdrPi+/OY+qdU2PeQow34aw8EIEWO8xrFlT5TZNiNdM36l00gaNK/TMqZDpYZMUsx1JzkByIXjTjPKKriJ3KvFeE9A46yb+WSAzYHqRbTkyzsyUNtsUmvgnFj7OPvgavOrul5UMnyiZE0sqzCaiRRxTHb5J1godB/Rk7VbvkspL3RZbqOQznnoqEQY0BYm81HpfqlwuY1D0PV9Cr8Vj2CYerhpwPEARGLzCahITEL/+N5Le9A2mUUzICE4fjPOaXRazOWkkcUmwc/XuvYTvYV8owpTDGu59uBDaQ387x5izSLg0z7xKT16LkdGS4j70/5vE4AYG7RkD4BmQpTn5tEX3acuqqQcbfe8R7nWenF/tNW3mJAqXHPFkaHvODcfuwVJii5viBHMK2yYbJGhpPWZLpO4wcyTNik3Hdm9fu86r97qdWNfW7t6Q7UJimV85VVbANnwJezFiANPMhApMXkTH9cd+z84ov6cL+bI3TlT/54d4U+VLYNKEG1P05P5d2mus6rJEYCgGEyjWq4xzI400a5sP03CAPqL90XgeMSVI8cg1mfzE7DQDOQE7/rS10HWE11IJelFcAzMfm15zHUdIb5yjKNYXdzYsqCfYdKA/qi4PxBPXdKBGG/SNHkFGx675Bgzr89Kf+HkOLZiOD6K1XsWDxenRV1Cps+Kssdqvztl2JBd/OF1/eFojJC3AR8vIOBMF4RT3tDY9EYNQdMU9PrrAnZsMMs6x6sNckvrqRdcNe4TXVe5A.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_44310a4b-09de-9352-aa0d-30409e80391e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3149,
+      "completion_tokens": 335,
+      "total_tokens": 3484,
+      "cost": 0.008308,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008308,
+        "upstream_inference_prompt_cost": 0.006298,
+        "upstream_inference_completions_cost": 0.00201
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 206,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that DecimalField comparisons fail on SQLite when the value is wrapped in Case or ExpressionWrapper and shows working vs failing queries, so a competent engineer would know to make those expressions compare like a DecimalField. The FAIL_TO_PASS tests check exactly those two wrappers against int and Decimal literals, which is the reported behavior rather than unstated extras.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that DecimalField comparisons fail on SQLite when the value is wrapped in Case or ExpressionWrapper and shows working vs failing queries, so a competent engineer would know to make those expressions compare like a DecimalField. The FAIL_TO_PASS tests check exactly those two wrappers against int and Decimal literals, which is the reported behavior rather than unstated extras.",
+  "prompt_tokens": 3149,
+  "completion_tokens": 335,
+  "total_tokens": 3484,
+  "cost_usd": 0.008308,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

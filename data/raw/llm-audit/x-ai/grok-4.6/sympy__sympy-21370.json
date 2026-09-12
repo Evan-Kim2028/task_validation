@@ -1,0 +1,104 @@
+{
+  "task_id": "sympy__sympy-21370",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3820
+  },
+  "response": {
+    "id": "gen-1789187575-7oZtCBXStxnUdPJc9C3E",
+    "object": "chat.completion",
+    "created": 1789187575,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that minpoly succeed on a given algebraic expression instead of raising NotImplementedError, without specifying Factors rewriting, extra minpoly examples, or _choose_factor loop behavior. FAIL_TO_PASS therefore checks unstated APIs and a different huge expression than the one in the issue, so many valid fixes of the reported failure would still fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about minpoly failing for a complicated algebraic number with NotImplementedError due to multiple candidates.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about minpoly failing for a complicated algebraic number with NotImplementedError due to multiple candidates.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0c76f9a9-9365-91bb-96d9-f54982e599e9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5152,
+      "completion_tokens": 530,
+      "total_tokens": 5682,
+      "cost": 0.013484,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.013484,
+        "upstream_inference_prompt_cost": 0.010304,
+        "upstream_inference_completions_cost": 0.00318
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 402,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that minpoly succeed on a given algebraic expression instead of raising NotImplementedError, without specifying Factors rewriting, extra minpoly examples, or _choose_factor loop behavior. FAIL_TO_PASS therefore checks unstated APIs and a different huge expression than the one in the issue, so many valid fixes of the reported failure would still fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that minpoly succeed on a given algebraic expression instead of raising NotImplementedError, without specifying Factors rewriting, extra minpoly examples, or _choose_factor loop behavior. FAIL_TO_PASS therefore checks unstated APIs and a different huge expression than the one in the issue, so many valid fixes of the reported failure would still fail.",
+  "prompt_tokens": 5152,
+  "completion_tokens": 530,
+  "total_tokens": 5682,
+  "cost_usd": 0.013484,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

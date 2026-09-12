@@ -1,0 +1,104 @@
+{
+  "task_id": "mwaskom__seaborn-2457",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1034
+  },
+  "response": {
+    "id": "gen-1789192108-ElYuybqVnTgH1ktMKMjv",
+    "object": "chat.completion",
+    "created": 1789192108,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that lineplot treat ci=None by warning and mapping to errorbar=None, leaving helper APIs and other ci values unspecified. The FAIL_TO_PASS test never calls lineplot and instead requires a private _deprecate_ci helper plus exact warning text for None, 'sd', and numeric ci.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test targets internal helper with exact warning strings and tuple return; issue only mentions lineplot behavior\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test targets internal helper with exact warning strings and tuple return; issue only mentions lineplot behavior\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cd1090fe-d745-9bd0-9e18-29fc641790e0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1480,
+      "completion_tokens": 732,
+      "total_tokens": 2212,
+      "cost": 0.00716,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00716,
+        "upstream_inference_prompt_cost": 0.002768,
+        "upstream_inference_completions_cost": 0.004392
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 611,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that lineplot treat ci=None by warning and mapping to errorbar=None, leaving helper APIs and other ci values unspecified. The FAIL_TO_PASS test never calls lineplot and instead requires a private _deprecate_ci helper plus exact warning text for None, 'sd', and numeric ci.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that lineplot treat ci=None by warning and mapping to errorbar=None, leaving helper APIs and other ci values unspecified. The FAIL_TO_PASS test never calls lineplot and instead requires a private _deprecate_ci helper plus exact warning text for None, 'sd', and numeric ci.",
+  "prompt_tokens": 1480,
+  "completion_tokens": 732,
+  "total_tokens": 2212,
+  "cost_usd": 0.007352,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

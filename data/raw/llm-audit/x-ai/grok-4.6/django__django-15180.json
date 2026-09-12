@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15180",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1692
+  },
+  "response": {
+    "id": "gen-1789191552-LhebOGpHzSalV6NTP9Gu",
+    "object": "chat.completion",
+    "created": 1789191552,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks path/re_path to TypeError when kwargs is not a dict, which a competent engineer would implement. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specified, so otherwise-valid TypeError solutions would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue asks for TypeError when kwargs is not a dict for path()/re_path(). The test checks exact message: 'kwargs argument must be a dict, but got str.'\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for TypeError when kwargs is not a dict for path()/re_path(). The test checks exact message: 'kwargs argument must be a dict, but got str.'\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RULJB2UpBj5t23LHaIgO37s7jgGJGzzNhux81DdRe7HN9rnMvXPDNzL0AjaCCwMODgE7R4+56weCnSarfdzuug8G68VigiLiWECIVN8ZOsV7NPNtjCQf65oMdh2DtZeYMn9ovcsh5ldH59Ueb0E2Kc2GkEkhi0eGMfE7u44JYHbrUhYbX/nWwWQNjDmAztt3uF2AI0LLLlqh51b9t8OKycYRUyA39suf05/GUWfmXFxHCAUarf1joPCJ9lYHrtwtCETrLWhQRiXKMNFmxqiu/ArzVrdfu2cCiFF8DNqul3ThSqhP1ymktFVQCK8Enl/Sm7BlruQ+4JaVlUV8JUphH0L6pJ4WAYzqsVenpD/tlSLincILxDduCFcJupptR8HoNhQaXKjQIca2NWuYwJDABlwuQF6+yIkrjdpQPaQ70SY+aV9YOXz50n6r1SAeyPuwknOne8hmzq5cHr1SDr+3KRULB4Sgma55x6aUOeA82wTZcxxtNBFaqdpFt5HDdIAKrsOPmMJ2pp5Vzsv6J3gPNVGDHWNJn/PVhbBar1AIridq/mC8lkB7zflHfp3AP4WCo5aXaXARqtR86fcajPgkAbl9GrUUssOHWLMY+/QWXAu/bOWgx0t33GvtSQ0ux0lPlBE37rp6i96cp1TINu1dNZcTox4MA6bWw2MiNNe+HoEMa3D2CfOcO+B6GtQk7qkRj5egZHim3OTw0FQ5RM8RMNze+VZM+TE+w+egMUI0RiweclLKonOHiGbZWst8+YHP3296UWrsdK32a8os8fplP5Jd+RvrwZENm7x/Ulx6Kqn43Y0SMbNBavtveiPUpOjZVZzdDln2uyuC+nW4CKMFa/Y0QElWLg2t9ty8zkCwnRR1IuvJXLgYMhhLubWfaifdUpfoxsnkLmAo9Ij/NJxcDzDCycBigZZzWdI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5df0eaa4-25a9-9c9e-a061-0fb79ee6fc55",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2068,
+      "completion_tokens": 288,
+      "total_tokens": 2356,
+      "cost": 0.00548,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00548,
+        "upstream_inference_prompt_cost": 0.003752,
+        "upstream_inference_completions_cost": 0.001728
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks path/re_path to TypeError when kwargs is not a dict, which a competent engineer would implement. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specified, so otherwise-valid TypeError solutions would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks path/re_path to TypeError when kwargs is not a dict, which a competent engineer would implement. The FAIL_TO_PASS test hard-codes an exact error string that the issue never specified, so otherwise-valid TypeError solutions would fail.",
+  "prompt_tokens": 2068,
+  "completion_tokens": 288,
+  "total_tokens": 2356,
+  "cost_usd": 0.005863999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

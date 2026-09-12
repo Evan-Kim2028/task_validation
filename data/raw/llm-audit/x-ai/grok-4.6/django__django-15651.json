@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15651",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3915
+  },
+  "response": {
+    "id": "gen-1789191642-AqWYQFEer93BUVQbxxww",
+    "object": "chat.completion",
+    "created": 1789191642,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue explicitly asks the autodetector to emit RenameIndex when an unnamed index_together matches a new named Index on the same fields, which is the core of the FAIL_TO_PASS test. Remaining details such as pairing with AlterUniqueTogether and exact old_fields tuples are reasonable inferences but not fully spelled out.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about implementing RenameIndex in a backwards compatible way, specifically for unnamed indexes from index_together.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about implementing RenameIndex in a backwards compatible way, specifically for unnamed indexes from index_together.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "t6yKtKoCmwQ4PR5DckPhDBudf2YMJsrZ+GI7kdPSt3pklv8z4G3A878DIKa6sTsbLQ2YCVbCLIIzCkeL7et3wiqogZocsZZ/sPdlvESBVVHl5vq7bm09o0ruNox4NP5MgVeOXwsGJcQnqWVz8eFx7MfERvcjRnu2Sf66wDBp5jCMlzoHNp6xu19KWHd/fj21tWGMFWpFCx/c1HSJnAdI4vwu7J6odlF9pYQzEqXYh2LWjnij11aY+sRJGNEkPiE1lkpIHECp4UiA8hjNBiMuZBBhshTg0wMQCQq6sA19cH8wwZoTFKGuD3n5cEC2q41y4JbsljBXnOM7f9Xnd5E2DrM8kliVWXrSJUH5l/PcMAI53Qk4eDQczMkQOa+1/D5Zwv3wgSMaDAmLRCSevWAWNYpZ11Rp36WBuLVn7J/laZR3DAXPs0NvvtAV7t+WO8dB9pzP1KcFrOhTFSs99TLjduhfcygocc29DyeQvGzP4KZYp2+OZt2nigJ6Ub8MGKktF8r7dx6tkRci4Xf7wHlSUyPgVDc+YrzTp2xXJrzt+U3ueYgKT5MPMDwQ5hgSCC7WDl7wDzSoYxLkerWPSbQIYna7e6ebtKtxrjmv6bnSeb7PkilrlsrBQNW3+/z3YO4KNBDBc1aQjtpYR5yfqYvbrkRXHN6jeO2qppV6bfSdtZV8rKuhf4D2DdjCB8iDvG7OcVgAiOZ2bS+0hQ6skymZfJtMCH/Bgt9sFu6fo+YhRhjZf8tOCuaPpgmm+WA+MAzLJ/Nmvg5WEIOsPkI5yWu6YSqkkAdt2Wc9RWkNlsGBOGgK8WZjDPCdUTX8GUzjW1d3VhPuHrgk1XdojNMHJen7apmdGBSh18GhcnXCI7xgjTxuorT7Y5BYe09YpZnxrjimMvmMs0nSxnVYsKvn0PIwbP/uO7Ps08YwwDKdvRg85EqgGRoJM1+f1h0fhLC+QxyE2G1K5WNFm7IfrwulpsYPf3vAqx93PPlf2EjiktjIY94T2xiX5zqbufBSgMUamTI9JpdfbR7tvqRIqxTAXxMc5lp55rwUVtE6vMR1ZH3OP2ntPFwil+e+vLkHDPv4W3/VbbpD4Ab5PBs449uZJf8VoYLLYqnBaGJW3P8F8J0C/+qydWbgd+qekc1DXeAhiOOLpT7LBIOABMZ0KpMdPCe8tU/Ve9jK42XAyE3TGhkrXuWIAHYlJmRuz7BgP/vEU6sNa+vYFx5xhIqtwGAbgBuTZHn1yc9zq41tWSf48CD1gVt62pIBUDUBvjyF6wXQLgvw3+WS5vbaIytn7L1m2nbjDuXrOAFOIuHER3nG1b3n0zqvD0sgVD2LZIcRvN3loh25Q3eDqjhfDwSomgZBEhm4oWL8CdSLA3wT80sPvhBo0BXFeEwUsXGkWymIP+6A3ZweSL/2x21k1RSBx+hW1UIK4KsbRqudcUE7Ilbs+xJ9r0lQzGVH2uiTEoZCwHZRQmnSeH+vC+mJ/fcVoV6GWw3Q28Dos2AI8HNFwFxjkctsRVIXlG4zrYAEnMwy+bg+ytzi5PHjJW8eoRfvYthJpCpb18bao5vC79CI9eXiOG5E+8dZvj5daoMvxvWhcZm+ss4TjrVp+sP1bo8tFHn0YEYvxi4fWZSSR0EdobnEJUhuzLaZfbfNVLWvpuu6Be3V1Hi4O4sbBNaSqKl0FzMt0EgkS1y+WliJ9h7oSmCPhNp6+z07sHzG9cNwK/uceLDDpNGn6V29+9rjV3r7zQXUXjp7sgiUEPbbyIgTayF/sTSDQQt7o0n7fOQtSFLgeWP9mXEc6aHI4IURaWyOCgC9695IEbyjcwSe/vg14n6ZtHLAMPMerv0Id3QyTZdqVnTj/f3AWqQDOUWlJpYUyf9lVkVuud/NLduIc4Os.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_30828ced-368a-9768-914b-0b15f3c3c387",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3935,
+      "completion_tokens": 436,
+      "total_tokens": 4371,
+      "cost": 0.010486,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010486,
+        "upstream_inference_prompt_cost": 0.00787,
+        "upstream_inference_completions_cost": 0.002616
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 316,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue explicitly asks the autodetector to emit RenameIndex when an unnamed index_together matches a new named Index on the same fields, which is the core of the FAIL_TO_PASS test. Remaining details such as pairing with AlterUniqueTogether and exact old_fields tuples are reasonable inferences but not fully spelled out.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue explicitly asks the autodetector to emit RenameIndex when an unnamed index_together matches a new named Index on the same fields, which is the core of the FAIL_TO_PASS test. Remaining details such as pairing with AlterUniqueTogether and exact old_fields tuples are reasonable inferences but not fully spelled out.",
+  "prompt_tokens": 3935,
+  "completion_tokens": 436,
+  "total_tokens": 4371,
+  "cost_usd": 0.010486,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

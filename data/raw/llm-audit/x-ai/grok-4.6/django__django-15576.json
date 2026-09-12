@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15576",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1039
+  },
+  "response": {
+    "id": "gen-1789191631-0jwEcbAsGYh1lk8DxFGQ",
+    "object": "chat.completion",
+    "created": 1789191631,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue states the exact condition for keeping select fields on distinct exists() queries (only when sliced) and the inefficiency to fix. The FAIL_TO_PASS test checks that a non-sliced distinct exists() query does not select model fields, which matches that specification.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about clearing select fields for `.exists()` of distinct, non-sliced querysets. The proposal is clear: fields should be left on the queryset only if distinct AND sliced.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about clearing select fields for `.exists()` of distinct, non-sliced querysets. The proposal is clear: fields should be left on the queryset only if distinct AND sliced.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Ag/63dLaWB/9b7fnworPJ6WgdyLGWnaAAuqAKkKy9sxSS4g+WiQP9RGjeIqqmzcCn8i6BZxmRa23CUskm07uHoV70snczvnxDrOZiVPEUmrSvcmTvqLFS9lfI1sVUXrCkZHFu32iHOuAX3xjz7IhdNB3gYEkKwFIWPFgHPiXXRgb5ekfhg7Zk9545/nSDiQVFbSUehr9XwgbajXS0UNkGwryo8pAqksEw1VPzWt+937Z6JJM8e6DCLt5IqOynSfi9co3rAH/Ub+PK2q3ktXwi21HeB2xXRQg32BZzw/07hpWfQQIdm5iVMwjlQ5QRXYlwPIN+OgKfO4dNpzhQZDjTh4Cv0nq09rhu6rKiytE/FctHcOgAu0hcTKeDOM0LyotSTpZvduLFrsD1OEeWK4VlZXr7xwWMHvHrZxAFrhQuws/SzOqRPlptGq9qyP2BhDw6+MI3cx4pJTVKiDZiRxEG6gTdJxvLz643bYxvrXiyRbhA87ef5tRMRdgjh5HDX+I5XBxtU3KEIxT7xwCWB5SVz2evQxzSpqJbjzpJ8+T9zznoKHdDN+jbW2omuv05OuXtwQopgewCGN3YGtCAEg/BAirT+xgG6bSOaQ/ymAw1sQFUd/YxdgyiHtrGAg3i+9QRxJUTZDqh/jwtjkJ7pVVEtvJFaspTi59kscAGXC2yqjJIyUOOznV3yRQs9eegbx2l/7cAlo7goXK7u0vUb1MBO+gPhDDpXg7rLmYgF1oDishmYEA+myg1FU/UhlK/lShyMTPJOkgRHDLkZBPwBBPfJl/x5+BQ4x8q/EVRhZc5L69kgVG+V9a/xgosGl60peI/f1mzChCv8OlOanrxW2ezBMNZOkdZb63sfREXhIliUkDcOKzYNTGt4HCSynJImFYApW7AMBf5w5yQWdPcUE++ysYJgFOpxb7AuPj+8JlPaCdnWQrvFL+PZ08XfPs4iAQljAEBdxX2FYQ17oS1orPpZ0YRCMd/pJEZDUJom81GFs01g0G7Z992fUp+6j/z9ViSXrHp/4pQlgMnwGwY4wRA5CZJiEUmAQziB1V5Mnh11FUQgGh9hvUAzv5L+xG8EcA2Bx57SbLfVKl6kk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e08e71d1-390d-92a5-ad33-9d450f369565",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1374,
+      "completion_tokens": 309,
+      "total_tokens": 1683,
+      "cost": 0.004218,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004218,
+        "upstream_inference_prompt_cost": 0.002364,
+        "upstream_inference_completions_cost": 0.001854
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 199,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue states the exact condition for keeping select fields on distinct exists() queries (only when sliced) and the inefficiency to fix. The FAIL_TO_PASS test checks that a non-sliced distinct exists() query does not select model fields, which matches that specification.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue states the exact condition for keeping select fields on distinct exists() queries (only when sliced) and the inefficiency to fix. The FAIL_TO_PASS test checks that a non-sliced distinct exists() query does not select model fields, which matches that specification.",
+  "prompt_tokens": 1374,
+  "completion_tokens": 309,
+  "total_tokens": 1683,
+  "cost_usd": 0.004602,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

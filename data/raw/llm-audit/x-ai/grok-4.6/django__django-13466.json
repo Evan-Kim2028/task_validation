@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13466",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1926
+  },
+  "response": {
+    "id": "gen-1789191235-n5Xbf1peRNbAcRhlhcEM",
+    "object": "chat.completion",
+    "created": 1789191235,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue only describes call_command failing for a required mutually exclusive store_true flag, so a reasonable fix could be limited to boolean options. The FAIL_TO_PASS tests also require append_const, store_const, count, and store_false to work via both argv-style and kwargs call_command, which is unstated extra behavior.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about required mutually exclusive groups not working with boolean arguments when using call_command.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about required mutually exclusive groups not working with boolean arguments when using call_command.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e4e33ed0-d7cf-914a-a7a9-a734ee4a3127",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2336,
+      "completion_tokens": 513,
+      "total_tokens": 2849,
+      "cost": 0.007558,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007558,
+        "upstream_inference_prompt_cost": 0.00448,
+        "upstream_inference_completions_cost": 0.003078
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 386,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue only describes call_command failing for a required mutually exclusive store_true flag, so a reasonable fix could be limited to boolean options. The FAIL_TO_PASS tests also require append_const, store_const, count, and store_false to work via both argv-style and kwargs call_command, which is unstated extra behavior.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue only describes call_command failing for a required mutually exclusive store_true flag, so a reasonable fix could be limited to boolean options. The FAIL_TO_PASS tests also require append_const, store_const, count, and store_false to work via both argv-style and kwargs call_command, which is unstated extra behavior.",
+  "prompt_tokens": 2336,
+  "completion_tokens": 513,
+  "total_tokens": 2849,
+  "cost_usd": 0.00775,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

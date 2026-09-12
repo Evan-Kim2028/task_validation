@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15744",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1263
+  },
+  "response": {
+    "id": "gen-1789191666-M1j0c2t6lnO1XsysL0uM",
+    "object": "chat.completion",
+    "created": 1789191666,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that the ASGI handler closes the request body before the view runs, so accessing request.body fails. The FAIL_TO_PASS test only checks that a POST view can read and echo the body, which matches that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is: Request body is closed prematurely by the ASGI handler. PR introduced I/O operation on closed file because the ASGI request body is closed before getting the response, e.g. accessing req...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: Request body is closed prematurely by the ASGI handler. PR introduced I/O operation on closed file because the ASGI request body is closed before getting the response, e.g. accessing req...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "3MU46gNT8pRraZtQFPmwr0ifJ2/O3GpPt7aMu6pgHKLbFCia6EHBcffetGagf3K9emjFagVP1LpAFzJtKv3cB0Ysl50owRiPkS4ax0j5ZMAgkfdm+GXLS/xkKOp+cuu0zFYAqzkqoZnyqzXv5ibNKGHfl3L2mXKtyEQQ80hq0M8hvoXLsBCoUB/C4Y/n8bW9a3ArX+Y5GgcsAHPB2pcJVq/bXYULQz1o0oPfplh7qzVyuM6yZ6DW7iSohPu1S27ZWkrxu6sTiB6U6vODOEoMnjADhBBsAMARDLgjtd/4O6WepeQUr0aVD+5Qr0dUO/QNo+RoJyKKG+NWt0/sxo8VtpxJU45CBW66DwNRWZe8ExI99UstvFgKZTEfX9NgzbU8l5UB+AmqypNTXMnXv288bD3KhMvNOdQpys7auskEaY4/CFylnJ2UxvicjpPWSeX2OWscxe4W6HrfFwcUDTt7RYzZQK5vFGqeLDiOAGVvF+6t9OdvH88QXvEow3zBIuB7DrHkc7DoGVVy/58bzPu5RlkSLa0OD7UZtXZqGC6+gSjv9pWFkwsG0GT33mqrwf+msktrkDb+lq7n3UwfBbsBYU3K5rl7wriwSDuCPOHL2861YUvH4hMwsTrTk2KO21WYeMZYRWSewLSmGIMwc9QUAoxIqFxXA/fMOTVQHbU53hrdGF5wKTRV8XxwGpz67zK58lh8ReUZsCZCaJ8aFBseH1jOPqe7vAf5/bakj2Wc1CCfye9zpUt1LmdwaCXJ1ts1FHLRvimZAHbmsYDuvwa2ToVIBn3VZLTFkN9ONfefpiwMeCvPLN9QslNWjBwxiEREqPB7aci8RnZquZ5XVruBm94EDmX/hPepbIgghQLs/pFd3zHe8O5pxiGqxMNAA5ikqZSEufw2DnekFWlgjYjZS6exa+kP7Q.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3657ac01-88bb-90a2-9a68-325c0b8026c9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1598,
+      "completion_tokens": 253,
+      "total_tokens": 1851,
+      "cost": 0.00433,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00433,
+        "upstream_inference_prompt_cost": 0.002812,
+        "upstream_inference_completions_cost": 0.001518
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 149,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that the ASGI handler closes the request body before the view runs, so accessing request.body fails. The FAIL_TO_PASS test only checks that a POST view can read and echo the body, which matches that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that the ASGI handler closes the request body before the view runs, so accessing request.body fails. The FAIL_TO_PASS test only checks that a POST view can read and echo the body, which matches that requirement.",
+  "prompt_tokens": 1598,
+  "completion_tokens": 253,
+  "total_tokens": 1851,
+  "cost_usd": 0.004714,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

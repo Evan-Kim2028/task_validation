@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11451",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1461
+  },
+  "response": {
+    "id": "gen-1789190870-WPOiueI0S4mA7yztO9rF",
+    "object": "chat.completion",
+    "created": 1789190870,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states the exact early-return condition and the motivation to skip the lookup and hasher when username or password is missing. The new tests check that authenticate with empty, username-only, or password-only credentials does no queries and does not hash, which matches that specification.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is clear: ModelBackend.authenticate() shouldn't query the DB when username is None, and they suggest shortcutting if username is None or password is None.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The issue description and suggested fix are precise, matching the gold patch exactly.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: ModelBackend.authenticate() shouldn't query the DB when username is None, and they suggest shortcutting if username is None or password is None.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.95,\n  \"rationale\": \"The issue description and suggested fix are precise, matching the gold patch exactly.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0bed7aab-d53c-962b-aba9-add318ac8ead",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1690,
+      "completion_tokens": 576,
+      "total_tokens": 2266,
+      "cost": 0.006644,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006644,
+        "upstream_inference_prompt_cost": 0.003188,
+        "upstream_inference_completions_cost": 0.003456
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 465,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states the exact early-return condition and the motivation to skip the lookup and hasher when username or password is missing. The new tests check that authenticate with empty, username-only, or password-only credentials does no queries and does not hash, which matches that specification.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states the exact early-return condition and the motivation to skip the lookup and hasher when username or password is missing. The new tests check that authenticate with empty, username-only, or password-only credentials does no queries and does not hash, which matches that specification.",
+  "prompt_tokens": 1690,
+  "completion_tokens": 576,
+  "total_tokens": 2266,
+  "cost_usd": 0.006836,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

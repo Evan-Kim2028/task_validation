@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14779",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1927
+  },
+  "response": {
+    "id": "gen-1789191489-JHjB299MvDVgUtrIQzd4",
+    "object": "chat.completion",
+    "created": 1789191489,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to raise the same informative TemplateSyntaxError as the existing takes_context check instead of IndexError when the tag has no parameters. The FAIL_TO_PASS tests only cover that case but pin an exact message string that is implied by the current error rather than stated in the issue.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is clear: when a simple_tag or inclusion_tag has takes_context=True but no parameters at all, parse_bits throws IndexError instead of TemplateSyntaxError.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: when a simple_tag or inclusion_tag has takes_context=True but no parameters at all, parse_bits throws IndexError instead of TemplateSyntaxError.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "9hSuOp9OtAA5Wusk0ePqfnzCIFy79dDL5qA6rL/bvtA5MPIZXw20TDnXCQgiCxDWW2tKfY9S5j/uoEXDGTbJdM13GMgbcmCAFjFcGEz1MO6R/EgJDoz16Tdcou1uJFEsGIQvICGTRNm9/2bf6W/3qDbUJebp31UaPmdDbL7pFMZbzLr+q8iPMIAhoGS077VGNsAkfOLTNOfMVYUbrR/h+NIQRShkg5J62r53I3dpOP8rPFjm+EeshshIpqAeCfAbS7zzfL/Iw25KlqdPRsbQ5YJNdzxKBpKgoIUijR1FDyLYcLpYfLincIOHWCMD7WNwG8EdV61ZhHjL4AAygvwS3vAujgJbbvAiztFOjpN7ePZQJLZzSfpw+gTjcvFTwX50bUYlS03e91rz8iB0tyvtj+7g4IerFvWzR9lTdk14NHhJOwuAo3J+PntFg2WWEXx+akNvToiKkJYbCez+A/KRC3VZPekTkSaSflPKPNpU6bS8OtbjPOGXflJ9KiNnC97/3ILhQy4hvP4OB+xkwWsMZwV3B1G3NA5byzdR19igEAZTxW5ut1pKQxtz6Fc2aKAcyHju0WzV2aYr3KGF8HSkVTnEFZ/pFIOY5S1rLgxSmL7Po4xYSya3ZNe3/mz19DpcQmIqu9CnR5ypLnh4lRBazVTCX5pOThan4/3TdWQRkF7+G75WYLwrqClPoYzteNouUIh8uQJoFS+rQTFpv04UmtXFpwXNtuWcfLQ3xy4jPnkwRPIZciglTogk96QyeQ5FjLqWAhtZLHWeIHj70sfpPr2wGgYEUL0zp4/i0vQ1V+Iki+1IeISTIY9Nmfbrf3U4j29UVNJYQk0UD57GYQ1mnm7Gm/2MuL/1d0RdkmoWIvir9ZAY/IuWZLyrnmeI69TosycszYbXP/hkV0V/TOScBgPxki2wuL+s/y2kcgbR3yy7/HLnIBfOUBlVejWi/O2wK3HOBcJHKRfCe84DWJyJT3RmqSm36+0mdOAhzpznKnc5k6LmnlLJ5vLLBV6tQTa9VfrxfWYMY8iS89zE5CjDvBJ16Iu6TJME7own8iUiVSizdf/+6j3MukroYB37CAgjxRtxsQR4o5SrS2DG8eNYIX/O8pcWRoud6oPbu5Y+nsotHRVaclD6CuxZyXMW3aX0kqU5Gq7BTojeA0v3tB8yP6SRUtpAGgYjfkB3FIveZyX4DizaOEeNYoY9hN6VSskC0XLicakwGw5YeGZK42ZHvgT+B+FqDHw19sGy2gpkvL/duA20485oO+pEjOEHyO9E6DavY/2XfxbkFIllWVGH+nzMwOHyNjbWov6GhNve511w0AFce9oiHN/QJ9lKRQk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5842312a-e857-93b0-a128-4d0c68bc89ef",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2389,
+      "completion_tokens": 331,
+      "total_tokens": 2720,
+      "cost": 0.00638,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00638,
+        "upstream_inference_prompt_cost": 0.004394,
+        "upstream_inference_completions_cost": 0.001986
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 215,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to raise the same informative TemplateSyntaxError as the existing takes_context check instead of IndexError when the tag has no parameters. The FAIL_TO_PASS tests only cover that case but pin an exact message string that is implied by the current error rather than stated in the issue.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to raise the same informative TemplateSyntaxError as the existing takes_context check instead of IndexError when the tag has no parameters. The FAIL_TO_PASS tests only cover that case but pin an exact message string that is implied by the current error rather than stated in the issue.",
+  "prompt_tokens": 2389,
+  "completion_tokens": 331,
+  "total_tokens": 2720,
+  "cost_usd": 0.006764,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

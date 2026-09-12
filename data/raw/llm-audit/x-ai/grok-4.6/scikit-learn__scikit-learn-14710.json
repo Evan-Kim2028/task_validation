@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14710",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2563
+  },
+  "response": {
+    "id": "gen-1789187578-yotJ388JlW7gRq8YUG5F",
+    "object": "chat.completion",
+    "created": 1789187578,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that string labels with early stopping must not error and even sketches encoding y_true before scoring. The FAIL_TO_PASS test only checks that fit succeeds on that reproduction, which matches the stated expected behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is clear: HistGradientBoostingClassifier fails with string targets when early stopping is on. The expected result is no error.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: HistGradientBoostingClassifier fails with string targets when early stopping is on. The expected result is no error.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "B7mN2xmT1IFtsIDpGCTLcTPytUYSmB2WSc8lAHFYzN2rfqOSS8e7bXp3aW3dVBloMNLKeLwEHPJD8H/6pUpuB7jRwvzMIP0jOeDW5ZG/GyrUIpLYgjhngxrwaAF1+S5SbQRUWltzr5LYRspFdF/9OHleYZtn9Z6Ty90Eqy+GwPsakUahlKjGJU4a4ffgpamJCaKdlgYjBZbS+rgxBhIWpq+rePs6ifgwYIKCN9+nZa+rdqGdnf8ec2aBkOIbqUWqZPrh8nlZHocm0+of3GWzTOHYmU9wOpOvf/Gf94exS3AdxX0lgZOFuQqSu3IK/pFutvquNhvHhqLUBMqzYMAs94vzgwGtt32iETRiZ8Q6k/quMr5RljEowqD3Ajl372AxS0gxslus5M47Egzx8srtKIwGKgyjSkSzSbbPiSrC/aqGVGMjq0dnif2j+jhaVqXqhfcZG0VhO4ovGpzKANuQuKQ8yXSRen+qsnkZo6qABd11V5Hc93WeS+Zbp5GVFSa08cRt9obj6Qf3IlSFoVVqjcgyMCVOx4nf1Phm3TWaDgmktfKIZjrt6EXI8VVtu4S59aUTMrGbUeGKwJN4rdAiK8Wk6A7T6QGX4Me6IQNzNTZH0W8i5rkjH6NCVnVWDsI7p/vOIdU3/PuYXUKWbtFiFXrDvu3TIEpcxFdBoBMsRiwL1FVHomBXmumjCanEDS2wXj/nS7yZkEo9KSoMQKr6LhYM29WDLOk7LpXhB3yRoFVgd0aBK26tcUVG2t1gs58sm4P2wZGTzC/pYXfgZC+rL2XEe38oy2e1c3EN4N0b8JHGSsl/JAh1iW5imWeAHrh34DzOkee3NbkvcZel8jDl62Jdei+UhfiXg7w06holy1oAsZnq7PAb5LERd168sBhlHw1j.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e0c02a01-202e-9089-b868-328161939df6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3180,
+      "completion_tokens": 246,
+      "total_tokens": 3426,
+      "cost": 0.007644,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007644,
+        "upstream_inference_prompt_cost": 0.006168,
+        "upstream_inference_completions_cost": 0.001476
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 145,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that string labels with early stopping must not error and even sketches encoding y_true before scoring. The FAIL_TO_PASS test only checks that fit succeeds on that reproduction, which matches the stated expected behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that string labels with early stopping must not error and even sketches encoding y_true before scoring. The FAIL_TO_PASS test only checks that fit succeeds on that reproduction, which matches the stated expected behavior.",
+  "prompt_tokens": 3180,
+  "completion_tokens": 246,
+  "total_tokens": 3426,
+  "cost_usd": 0.007836,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-24870",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1927
+  },
+  "response": {
+    "id": "gen-1789187602-xI5wngJZkdEYGFYMWUEq",
+    "object": "chat.completion",
+    "created": 1789187602,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to autodetect boolean inputs to contour and default a single level at 0.5, leaving contourf, tricontour/tricontourf, list-of-bools, and masked arrays unspecified. The FAIL_TO_PASS tests require those extra APIs and exact filled levels [0, 0.5, 1], so a reasonable implementation of the stated request would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about auto-detecting bool arrays for contour() and defaulting levels to [0.5]. The tests also cover contourf with [0, 0.5, 1], tricontour, lists of bools, and masked arrays.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about auto-detecting bool arrays for contour() and defaulting levels to [0.5]. The tests also cover contourf with [0, 0.5, 1], tricontour, lists of bools, and masked arrays.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+c3cSLkGNFuc21bM9kk9GclpGRPlYUZlHCnAz2G2pR8iBLcyZkwKXzdmB0wEyUOyyX8h6EUHvemzI7iHwElfQJJIE492FQPc8xUNOVA+AhhNsBzA684JQ/EaoQIfA1ZgnCZy9+LP/zAnF2tKxW/Yu3vBiA9Sd5mjpfPSs/1cOH6grXsoQqzbk0XVehKKl/aI27kCcNU9M4Bw1JoIoUNzEt290+Wb8HlRDvsVB1rU9TFwtxd4rwLx13RgrGP8VOAd2lLlY/e0z/2XSPlJKChUQOMFvLa6kdKE8vziulyB6SwLT8wJ9MdkSdb2MBgIDVMOqzjk7NMQm+118ploJratRfbIGVtF5+xrbKfp3+Dd1YXGjmxpmy41osLcb/DrtpTpUmfXK1TJ/08K+t112cACWymLHdffgk4tcogBCep4seuly8I81mTm6B9H5+ajwsJLlwTcyBJcAegksb7+/656osuwoPZCk/iN1b9vb7AtKniAsJQfXxBiAteyuUyLIYYdYUAZwLNCXD8CiEhJP87KAxu2vceMLkEA34ZZxFWnHWH1GNwbQOAfTsdzdk6vtoztmAi+nnng6UfF2v8lATfWAN/RFncSNE9ZzExh9cMfr8GYJqvZObANwYmtnMuuiTT41WkX5PqCqMhU2iIYMpN6eC22evyVmN0mBE1VyyZesMaftsTMHEhIPB/OltTwOk6lcaMw5Qh4leL1cJcKEAO65mqJ+MPNYDUhKs8Py31qQnIlE+iPYXU23UOmJmP/tz7T4AdFivUuu3zmZy0CXj/MvOgeFHU3u2B00KB0tWFxtdhq7AVD3726JWTDiWOu80/JlMVbZJKDTE0XdIy1zrrl1XkI+3WJrp66d4azuvASbPpkH/VWjil504MCmnpzEn+6tkh/sJ2WOmCZHuwjx00Xotf9/a7knBfbSvSUq75IOmeYbUITuRUJbYrJyYUelxBQPLeTyWFMYm9mSGdgK6iRJT3o4Kth6Y1k0hwpdxO69XJwo/FPch2bpEKy7UB+IRTDEkw8poWU6xgJReaaW9lwgyVemntl/3lT3aH69FRIKZlUx2MNfA71YvURuBeZ3PrxIcIaLT9QFugHqB7OicwDJHhycu3s6PiCbOpUAbmIawxRN2mvDF/uJYDDJlgnsv2xMK+y81Y9M+3QJNFMNY1JFk/ROkgYPkfITxJ8n5n78d1KNKvLmA/3ojVvQcRUr0Yw2vj+aWfkulLz96ickNVamrrzeCC5bt6dplai9Esq2JtrRM4B6Op5d79iiDdi88/qJfxWFRRiyyaC9X5yhUOPhtlMpWFkSzdHXy2rTgK5Tgdis6sZnPR5FYt0OjQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_334870ed-70cd-9553-96ac-5d76164e37b1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2601,
+      "completion_tokens": 391,
+      "total_tokens": 2992,
+      "cost": 0.007356,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007356,
+        "upstream_inference_prompt_cost": 0.00501,
+        "upstream_inference_completions_cost": 0.002346
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 250,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to autodetect boolean inputs to contour and default a single level at 0.5, leaving contourf, tricontour/tricontourf, list-of-bools, and masked arrays unspecified. The FAIL_TO_PASS tests require those extra APIs and exact filled levels [0, 0.5, 1], so a reasonable implementation of the stated request would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to autodetect boolean inputs to contour and default a single level at 0.5, leaving contourf, tricontour/tricontourf, list-of-bools, and masked arrays unspecified. The FAIL_TO_PASS tests require those extra APIs and exact filled levels [0, 0.5, 1], so a reasonable implementation of the stated request would fail.",
+  "prompt_tokens": 2601,
+  "completion_tokens": 391,
+  "total_tokens": 2992,
+  "cost_usd": 0.007548,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

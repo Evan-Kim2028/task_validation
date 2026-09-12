@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26466",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1569
+  },
+  "response": {
+    "id": "gen-1789192103-65t9RzY5bDYve7v7y9gs",
+    "object": "chat.completion",
+    "created": 1789192103,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks that annotate not keep a live reference to the xy array, which a reasonable fix could address without touching OffsetFrom. The FAIL_TO_PASS image test also mutates OffsetFrom ref_coord and would fail a valid annotate-only copy.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about annotate updating when the xy array is mutated after passing it. The expected behavior is that it should copy the array so mutations don't affect the annotation.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about annotate updating when the xy array is mutated after passing it. The expected behavior is that it should copy the array so mutations don't affect the annotation.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "qsESIV9G/YzkMkkM5t4zpYW6mBbT9ewBI9yskayMhQcXGgmI92z8QQH2kh0vfOZA8VynUSFmnOlL1LoWrwtAOoXIZ6a7qtTus5GefiyYM3GVI666IFqzJrdU3cdcNVNa7uhFG2J6dwfh4M5mteLfspZ3/s2lAUz8pft84FJMlsFuFbBi8KbVKyLNa2OOYuMsTfbHYz60oNAzUpjqeabbTv6zro1IGhAOyIsV2i3xhaTG3KoilnfCCHct8vwlgHK8us1Ex8GagcP4CrFcZzvWkr99WsPl+Yq3w6+FQRNAIRNNL5OP4yGH5xUwjvIj0EhGDKY/+mbJNhtPPNVlRDFfBdDrNLjPOY3rBOwG8aVkybQmZwfXLZ4DfV8IFYPcDEtZZ8cU9YcWbzIsE19cGf96j6+P61I6H2Unmu+gQPaCdbdnCGd0G5klKguNDpFW5zZneGmT17bB3uOKv8owA1tqrCBhnnqPXiiE00g/JfBAkvuDyYbBbwBwKkfu5yB2t5vLPYWVXgwL86r0Zoi/HGaNul10yDt3mBwaEU1pQ1VxuZXp1ScKrHRN543P/rMPixJDJgmaOntV/Q+JtBWIc5rOMKrxNa++vmp05dkc2H0EAwvbPR2gWCwIOgGM0EXszRpdJjFHRJI5uSVSIxe1MdfApgoBO4oVZ2BtWq+4dyGHZJY12beGMmUWXJra2Egog9oj4mHsk4oHpFJtgTnomJAq+FHqdcl3Ir2OH/4FlQUJ1oa0Krkc4jxlhbnpa4e5NctvW2IFIqvxTRop/gH4jizAkmyeoobWVJtqcP58XUB01diOH6lY0LyCC3Z8yOeIGQP/X4SMPH4zDbaU5iZ/4rR2HGVKZ8QIfC0R7h/udXRMB0RDn/DKGvSvIlkJ4zuor4+RWFwJHvSBT3CxgnhkN6/vn3ERotYWO4rqd2maA61I2M+FTCVOHagynkOGRuAuPvA2yNUfhjB/CAtYKP/K8YQsYe0CA8cMP7FkM1geLkq0s72rhIVsUajXQn/6GMjbyWZoiK8//htp6dOX9Jx522qnOvUIATM5OEtMw402ysE75AnXG3xSYW7FhR4aoUUo+5OiLGUSriRLY7XXSOi13yH7XPT1nmVxtEKzaOxMXwtU+q0mZFk5/BNDvuM1OJZqnUG5egZngYWwS3CvyEq1Zehxb1ERSQzdkJc+4SQ3czB+6HvbPlz+ahFKfTJK9LdGhjyWZwW2rHdErSSJNkpVurzC08bmYWIjvW4O8B7b6PvBlCA7X8hSukOT+iFMtEZiyPi68KKAHu7+im0o5GzQW7ya2q3vPrBuYudTmSOxc9QuoypGlNm0nL+X2FJ4h07lFFBIf8ajhX7KigEZi/2yhjtgE/YELQ8f10yJMvql2pOph1dvsJZu7mWqyyLWfc+a3HabQhnYqfHTcPt0hqldnBTgan5og+KvmikC4UXTLM2iQa9sJKLYdhvhaVAC/vOIS/lSP6D2GBeCT2CUThoW2MQK+/VItcD7K2A54BJTRFRt9PeakcI0ZD5rhsOOWiqW/8d0mw0VqNmBE98f89Hn3E7bWg7ZidpWsHDrorEb+h3J+KAM86/XyiJRpNBYU6eBB3N4KK5qAk3Rr4PktExkt7uU9KYhjPB5Rwxfdqt580tgMTmpjh1IKcfaINVdvfKtH0Sgn5oXomkt7zBm7ZYrlxljqlGw53Tz86ra+bBkO/juMfY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c7b79018-0ea2-9477-9f9a-03ba5021e0df",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2147,
+      "completion_tokens": 376,
+      "total_tokens": 2523,
+      "cost": 0.006358,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006358,
+        "upstream_inference_prompt_cost": 0.004102,
+        "upstream_inference_completions_cost": 0.002256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 268,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks that annotate not keep a live reference to the xy array, which a reasonable fix could address without touching OffsetFrom. The FAIL_TO_PASS image test also mutates OffsetFrom ref_coord and would fail a valid annotate-only copy.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks that annotate not keep a live reference to the xy array, which a reasonable fix could address without touching OffsetFrom. The FAIL_TO_PASS image test also mutates OffsetFrom ref_coord and would fail a valid annotate-only copy.",
+  "prompt_tokens": 2147,
+  "completion_tokens": 376,
+  "total_tokens": 2523,
+  "cost_usd": 0.00655,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13392",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4077
+  },
+  "response": {
+    "id": "gen-1789192358-UruGKI5EE1nbNxKCPPul",
+    "object": "chat.completion",
+    "created": 1789192358,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks to add a common multi-output fit/predict check and drop redundant forest/tree tests, without specifying tags, data generation, dtypes, probability/decision_function contracts, or which estimators must opt out. The sole FAIL_TO_PASS case encodes those unstated check details by requiring RequiresPositiveYRegressor to fail on negative multi-target y from the new regressor check.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_91d74dbf-f079-9613-9a9d-731fa176852a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4904,
+      "completion_tokens": 625,
+      "total_tokens": 5529,
+      "cost": 0.013174,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.013174,
+        "upstream_inference_prompt_cost": 0.009424,
+        "upstream_inference_completions_cost": 0.00375
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 488,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks to add a common multi-output fit/predict check and drop redundant forest/tree tests, without specifying tags, data generation, dtypes, probability/decision_function contracts, or which estimators must opt out. The sole FAIL_TO_PASS case encodes those unstated check details by requiring RequiresPositiveYRegressor to fail on negative multi-target y from the new regressor check.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks to add a common multi-output fit/predict check and drop redundant forest/tree tests, without specifying tags, data generation, dtypes, probability/decision_function contracts, or which estimators must opt out. The sole FAIL_TO_PASS case encodes those unstated check details by requiring RequiresPositiveYRegressor to fail on negative multi-target y from the new regressor check.",
+  "prompt_tokens": 4904,
+  "completion_tokens": 625,
+  "total_tokens": 5529,
+  "cost_usd": 0.013557999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

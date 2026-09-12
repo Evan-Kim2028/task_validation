@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12613",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1429
+  },
+  "response": {
+    "id": "gen-1789191068-iYSGXNNfo5BOQpHlGy14",
+    "object": "chat.completion",
+    "created": 1789191068,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly reports a TypeError when XML-serializing JSONField values, so converting those values to XML-safe strings is the expected fix. The new tests also require a specific XML encoding and a deserialize round-trip that the issue never states, which is only a modest extra constraint.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is that XML serializer doesn't handle JSONFields - TypeError because value_to_string returns non-string for JSONField.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that XML serializer doesn't handle JSONFields - TypeError because value_to_string returns non-string for JSONField.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_57c5f787-6c43-9f76-8c78-987b0dd6c693",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1793,
+      "completion_tokens": 499,
+      "total_tokens": 2292,
+      "cost": 0.00658,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00658,
+        "upstream_inference_prompt_cost": 0.003586,
+        "upstream_inference_completions_cost": 0.002994
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 386,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly reports a TypeError when XML-serializing JSONField values, so converting those values to XML-safe strings is the expected fix. The new tests also require a specific XML encoding and a deserialize round-trip that the issue never states, which is only a modest extra constraint.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly reports a TypeError when XML-serializing JSONField values, so converting those values to XML-safe strings is the expected fix. The new tests also require a specific XML encoding and a deserialize round-trip that the issue never states, which is only a modest extra constraint.",
+  "prompt_tokens": 1793,
+  "completion_tokens": 499,
+  "total_tokens": 2292,
+  "cost_usd": 0.00658,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

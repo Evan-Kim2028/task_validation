@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-24562",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1654ed44-44a4-9bda-b50e-93badf56408d",
+    "object": "chat.completion",
+    "created": 1789194865,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that Rational with string arguments like '0.5' and '100' should match the numeric two-argument result 1/200 rather than concatenating digits. The extra mixed-type loop is a natural generalization of that equality but is not spelled out in the report, so tests are only slightly broader than the written spec.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The issue is about Rational('0.5', '100') giving 1/100100 instead of 1/200 like Rational(0.5, 100).\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1621,
+      "completion_tokens": 125,
+      "total_tokens": 2093,
+      "prompt_tokens_details": {
+        "text_tokens": 1621,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 347,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 18040400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that Rational with string arguments like '0.5' and '100' should match the numeric two-argument result 1/200 rather than concatenating digits. The extra mixed-type loop is a natural generalization of that equality but is not spelled out in the report, so tests are only slightly broader than the written spec.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that Rational with string arguments like '0.5' and '100' should match the numeric two-argument result 1/200 rather than concatenating digits. The extra mixed-type loop is a natural generalization of that equality but is not spelled out in the report, so tests are only slightly broader than the written spec.",
+  "prompt_tokens": 1621,
+  "completion_tokens": 472,
+  "total_tokens": 2093,
+  "cost_usd": 0.0060739999999999995,
+  "cost_in_usd_ticks": 18040400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 785
+}

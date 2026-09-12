@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-13983",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1793
+  },
+  "response": {
+    "id": "gen-1789191885-YYHPHt71NSRUbkizYe9X",
+    "object": "chat.completion",
+    "created": 1789191886,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes that after removing a shared axes, remaining axes should still pick up unit-based date formatters, which the first assertion checks. The second assertion about keeping a sibling’s manually set ScalarFormatter is a related edge of the same reset logic and is only slightly beyond the written report.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about removing a shared axes preventing remaining axes from using unit-provided formatters. The test checks two things:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about removing a shared axes preventing remaining axes from using unit-provided formatters. The test checks two things:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "OkwhegfPhNMUGHQg/6OemPtiONqBEJd0JixtVmVEehomdTiIjhEudM+4uVaTfPyk1jKbEs44LDaPmsavHKghHSGaNlZ4b9jpxvOWFgn4cs1vHvEXHlLZD7qJ6R0VhQrDspO/owpW80oKWOBcgEauVwiz0649iDVaYHcKGKcqXWqFlhkw9qu02DpTvT/y4jLEzGyz5GYHaBCTQD0GfGePOo02tOjuV10l5usqDEYA0q8PRBYDM9GjZ3Z9RDxV7ag+RU5pWSWEEPkn7kZhVni0tB78kvA58Jn4LefxVmx/tryPYlp6wN2/cso8TtQTWCuum06ux6qNc1IzkZHz5GZ77+kc9FHrblTtacWJRC1d72ls/ANSfGuMFAT6b3RHw+KiISagwJ6UPon2xGKnNnXllvrcxKv4WbhgXtx+kWvk27esdABDjOB0BLjGM/oD33WXraoamOCtyLTQCD40n96mLrBj1OvbLaeoo90odsnKC214SS2l1l5GK0LrhDk3jxeK/7idHiFM4wz4m4+daEO4wNSQgurRvhPGlf9fwmC5mHCsZAU3wVx6iGZHAirXZ8Z6l0UAEwgxioe1cSCxY4SLuqOz1D3OO8MjLn84JJWhGu+N8TnwJzo4ZkUO05j9aJLIhOrNZZjnP6M3ay3sszW0Hk9A3TaZyFPsuPbMDVwknNJqnCIBWusv0rxV8A+6kUSr5ZTnLKHR9hcgHc6UT/pKKBpOjp8hwRmGY93qM9aiEqhz0MlJPT0d16eR91NgT6Vkz23lqt5N+KG+4K/QkJpHQjZalMWg1cn2mMnB+6vdZA0nsaB66En2mN1rWbxs26qOwC2/150zrShof2ktdr85HNeQQ2Tqy9wDeK9GRKLIYYhY8rfEHNi3VIXRNfr6Hb16yX1VjmPLAputUeIOm+DFmAO0MvoFWc+N8pc6ayM1bLKdHo2WSvd/bLkB+bQEPFm2YW1pU1d2lFxQxUz6qX1OQyI6ylHMxsJGHWeIvV6UpL3AWEWRPlRD/iclmeGx+sM8wLOI4g7bPgmuVZqF8nihtIRJw2Ljo51mU59hjTlhWGXwMlNWTmWiGv0tPavdBMGNFUjTSOhRgwqBQAbDfCnCSnjqb8NbZStvFzi4XZEEZimK5E8YSpxG3EJ/wCdSTePlS7X73xwll3DtC7H342e3B0DqopahwBLc4kxdCyUo8WZrlYGLNk0/Sv9vEdnFxEWGXCB3/CX5hJp4mUrLz3Lnr0szqOmwbTzb3RdKne4tG98xE7YgwQBS3qe3vDbg0oYJTcsXxusQsDDcpyMyozzaiAzSjE7Le5ejqLfojM4XkpRpKDh/jYTbsFOp0zHqmtGMPyekbUPWwejVao2mMUIDAmKoqSN4gBwRHH0Z1lQX3ttestcK6WhlfTiryyVGHAPnYHnR/aJQmqlbck8NqwymbwkF10wCuICRWuQoqdXFbFxAi+RiprgHzePOtwPKZkn500zbpz1VfUyvyvaOLpUpluieabaqL6Vk7MSp2sNIMLQmIG0WobSoUZnd7NTGPDHZonB6/UTEvELxTJj5gBEwzLgM5VXmdSYaK8CIfti7Jwm1EtBJVTCn+wjpVxQvcZTNsWS4IwJOSGYuTZdYqkBYuKNb/+uc2WSqLHYsVrTlKr5NDZ2h41iDSdcTEJlcUC2Mq49dO5nCxcm3FlMtHPS9hBkmWJpxOxatAafD+Splg2Gd5HEVgTZUM174wrfImPbC3/c9e/3YWfDBJVac/vtIqjKvZLsYbMJ4a4GEYlxOoi0TRB7yH58U7p0ymGI6t4mjkL5J0UuIkd95ZsPQ9ZFFHtwaS8f3tayz7qrgStVqi2Ee/zLbDqr1xp1TteBw9QaUfqU0h0WSIf96JmNm8e3r5ygIoKDH4sZ2H7mX/KQY5hwCenyQpWjL6cA3CUe//Yt80+/tZLkcrAtfcIbUrcuYHbNIUtqwsIEQbNC+W4o8vXdxYOCtllXtzJOUAAkQCBlOP5kmqpR/oYanJl4R7SKXuEJK/mZ7rhnm9F+7NJad3vfR3WlDza8W3bszyXwgo8M6imJ5bGFhN/L/Ktuv2b3IqOEi3bqr7nclte7Rs9bMVJV7hqsJWdUVzfPKKn7YhtFV/OdlPOrx/3lWHsiFew.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_49e5385f-8dd1-91ab-9e37-95a8eaf4f4b9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2229,
+      "completion_tokens": 445,
+      "total_tokens": 2674,
+      "cost": 0.006936,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006936,
+        "upstream_inference_prompt_cost": 0.004266,
+        "upstream_inference_completions_cost": 0.00267
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 330,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes that after removing a shared axes, remaining axes should still pick up unit-based date formatters, which the first assertion checks. The second assertion about keeping a sibling’s manually set ScalarFormatter is a related edge of the same reset logic and is only slightly beyond the written report.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes that after removing a shared axes, remaining axes should still pick up unit-based date formatters, which the first assertion checks. The second assertion about keeping a sibling’s manually set ScalarFormatter is a related edge of the same reset logic and is only slightly beyond the written report.",
+  "prompt_tokens": 2229,
+  "completion_tokens": 445,
+  "total_tokens": 2674,
+  "cost_usd": 0.007128000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

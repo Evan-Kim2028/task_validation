@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-8263",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1328
+  },
+  "response": {
+    "id": "gen-1789187450-IbTP5x6AZhiSrsMezHGc",
+    "object": "chat.completion",
+    "created": 1789187450,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly requires that equivalent s/m quantities convert, but it does not specify CompositeUnit base ordering after a negative power. The FAIL_TO_PASS test asserts a particular bases/powers layout that a convertibility-only fix need not produce.\", \"p_invalid\": 0.68}",
+          "refusal": null,
+          "reasoning": "The issue is about units 's / m' and 's / m' not being convertible. The test checks that when raising to a negative power, the order of bases is changed: m2s2 ** (-1/2) should have bases [s, m] and po...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about units 's / m' and 's / m' not being convertible. The test checks that when raising to a negative power, the order of bases is changed: m2s2 ** (-1/2) should have bases [s, m] and po...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_59e92fbb-494b-9a75-8929-e82bc6c99530",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1791,
+      "completion_tokens": 501,
+      "total_tokens": 2292,
+      "cost": 0.006396,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006396,
+        "upstream_inference_prompt_cost": 0.00339,
+        "upstream_inference_completions_cost": 0.003006
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 395,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly requires that equivalent s/m quantities convert, but it does not specify CompositeUnit base ordering after a negative power. The FAIL_TO_PASS test asserts a particular bases/powers layout that a convertibility-only fix need not produce.",
+    "p_invalid": 0.68
+  },
+  "s": 2.0,
+  "p_invalid": 0.68,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly requires that equivalent s/m quantities convert, but it does not specify CompositeUnit base ordering after a negative power. The FAIL_TO_PASS test asserts a particular bases/powers layout that a convertibility-only fix need not produce.",
+  "prompt_tokens": 1791,
+  "completion_tokens": 501,
+  "total_tokens": 2292,
+  "cost_usd": 0.006588,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8120",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "87fc7c29-7823-9b03-985e-301a34fad288",
+    "object": "chat.completion",
+    "created": 1789194215,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly requires user locale catalogs under locale_dirs to override Sphinx’s bundled translations for the same language. The FAIL_TO_PASS test checks that override with a different language, catalog path, and message than the report, so it is slightly narrower but still aligned with the stated bug.\", \"p_invalid\": 0.12}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses default locale_dirs and different message; issue mentions custom locale/ dir and specific strings\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2604,
+      "completion_tokens": 115,
+      "total_tokens": 3130,
+      "prompt_tokens_details": {
+        "text_tokens": 2604,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 411,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25173600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly requires user locale catalogs under locale_dirs to override Sphinx’s bundled translations for the same language. The FAIL_TO_PASS test checks that override with a different language, catalog path, and message than the report, so it is slightly narrower but still aligned with the stated bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly requires user locale catalogs under locale_dirs to override Sphinx’s bundled translations for the same language. The FAIL_TO_PASS test checks that override with a different language, catalog path, and message than the report, so it is slightly narrower but still aligned with the stated bug.",
+  "prompt_tokens": 2604,
+  "completion_tokens": 526,
+  "total_tokens": 3130,
+  "cost_usd": 0.008364,
+  "cost_in_usd_ticks": 25173600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1730
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13579",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2221
+  },
+  "response": {
+    "id": "gen-1789190664-uAXThQcftiDDXB7R3zNh",
+    "object": "chat.completion",
+    "created": 1789190664,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly states that world_to_pixel on a SlicedLowLevelWCS must match the unsliced result for remaining axes when the PC matrix couples spectral and spatial dimensions, so the intended fix is identifiable. The FAIL_TO_PASS test uses that same coupled header and only asserts one pixel coordinate, which is slightly narrower than the reported example but still checks the described bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue describes inconsistent world_to_pixel on SlicedLowLevelWCS when dimensions are coupled. The expected behavior is that slicing and then world_to_pixel should match the unsliced result for rem...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes inconsistent world_to_pixel on SlicedLowLevelWCS when dimensions are coupled. The expected behavior is that slicing and then world_to_pixel should match the unsliced result for rem...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "eCMnxAbM/cYZ6wU9wp/OW6wBeiJLUxT8lsjoA6Z35v30Y5bOsGKkn+OqScLxyGmASenDSf3ykKpKOoGPNtXgqcZwCMNBqR/skWqANBOhKk0qg2yT+PAnn980mVR05Af0bSsRMPoZvzEhCwGchmdfqfo7sEqfI0jkbD+JqqSfBDSb9twI5LXUekowlC1gtwRxnmSbs+USvCuA1iJH2Em5kBgJpi4Ic7eJgOfjpnYtaQg4nMDnxXJLr+fefKMeD3kGjUJlnu74zU6L3pC/Z1/8V2AyVbB4mMrXQGIqkZhMZJvJU7UXrjh5WUBB/CiEDXJnhWUbxSNc4zxHkYJIz/Yn8/jgEHkEtwdfFOxa2+wmTjTGgzdDzHVt4Q5YdPHSulVE7GBso2bpJOPm0GXIJleheGfAbcUyKpZMLptMChbckyfJgHpYD5M7eqlxTuYpQQWWu+YeoDb0WYtVA29E3h8GpEurFQTM7qXUk9fCAk2f0zn0Q24qWzzUtt9df07NP45SMb7EHDCMnPW6pTyLPUxIp7BHgkqis+BN5zewR+C8PIYvisaKt1JzD8Q7QjHTZvlGBmaTXSefzhlODKdm/c7Wl6MmL/kP6n9HPf7xaVLxZJ1ch3dOaIaJI5I1BjZ9472ecOaoOxW5m1Uh2zinUOz/emO6rqxm2SpzxK8LnL1/17VdknCQiUUpWa62zyAhWB3UjD0lMEMYO4/YR3SvsMwyqoxbI/S7oF1bzCcdMaTj6S6azbftgDVQ0UA084G+b2YL/9dgyN1VbnE1SuI1iWLrvJmjNdQydnKfS+bVnrcmTRayg4mp7R5Ax0FS+c7es7Nat02iWYoTnqxEexmbqgrT6nc3cuLgu9I/bt56jjILvpuLE9trVgB0I+y5ZrZMbE2Zq4G0frcpmWRpmlcDdv1BDBxKLtsiclTd4hBzaKDH3AFOD0BB8zRgPIzqAsYUuTtZh3eoo4Qwg2RV7bk6fBhB/Qqp29Qm+b58Y4v4tRRSsl0W4eRhE7RmdccWOH7hZv8SzVV+qZbv4VUKC6nwGJThudgjnio7SFIZWxDyUIGx6yhzpD/myM5XkVpReORg+uAFbQ1qH1XUKCnRxHChflEC+hASKGasUdYzE5oyaF3BvhRuLwrTjuOvAmPK7VKHd6uQ6iy64PdKQ9BQoBn6SuVe/tZ3/d8PdcHEzTEp+hbPPEoSwEaIKlT9Iohhqv9unIqfS/cKY2QQagH3dz3aOYFnLmaQ+fD8DIZefZQA3gmVElj1uAcc6poiGuCDqnkb3QPnfLV/ec2PUVCglDEXTncCBcsNBiUeaCwk8p7RmTM1gf7NGD5ejUv8W7meSn0uMQRm6oS20xarBYbMP/G9jlA+ga+xkVxgQKo8h5qO7cQFpXgzpQhtUvOLSRUOFtBlmoCdXMxQysCKJuu9UVkAv1alVYrjJ+mr/rsmDa5vPZY6f+9roM907ghKaqPvPJtGncRBfLkDJw3hWufazm2izclTDm3G7fgrQ4qiY7bu9ztbMFKOUfHZ8zs2cFw5VRmhQFsu.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ee95d220-5962-90d9-8d0a-290cd754ca2a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3124,
+      "completion_tokens": 417,
+      "total_tokens": 3541,
+      "cost": 0.008558,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008558,
+        "upstream_inference_prompt_cost": 0.006056,
+        "upstream_inference_completions_cost": 0.002502
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 284,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly states that world_to_pixel on a SlicedLowLevelWCS must match the unsliced result for remaining axes when the PC matrix couples spectral and spatial dimensions, so the intended fix is identifiable. The FAIL_TO_PASS test uses that same coupled header and only asserts one pixel coordinate, which is slightly narrower than the reported example but still checks the described bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly states that world_to_pixel on a SlicedLowLevelWCS must match the unsliced result for remaining axes when the PC matrix couples spectral and spatial dimensions, so the intended fix is identifiable. The FAIL_TO_PASS test uses that same coupled header and only asserts one pixel coordinate, which is slightly narrower than the reported example but still checks the described bug.",
+  "prompt_tokens": 3124,
+  "completion_tokens": 417,
+  "total_tokens": 3541,
+  "cost_usd": 0.00875,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

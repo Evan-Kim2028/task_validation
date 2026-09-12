@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-12544",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2163
+  },
+  "response": {
+    "id": "gen-1789190625-sLgftfSuRNBObU2uBpfP",
+    "object": "chat.completion",
+    "created": 1789190625,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only sketches disabling auto-masking on Table.read (suggesting mask=False) for NaNs, without naming mask_invalid, covering empty-string masking, or requiring memmap to force masking off. The FAIL_TO_PASS tests therefore demand that unstated parameter name and extra behaviors, so a reasonable implementation matching the issue could still fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks for a keyword like `Table.read(filename, ..., mask=False)` to disable automatic masking of NaNs.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a keyword like `Table.read(filename, ..., mask=False)` to disable automatic masking of NaNs.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "r4NrcRBQAn6DSFWPlDXwZlAETwjLO5GBb2HvRlpl7wVO+JaC4QPDt0ZRDnUFVARYRuVrTJohTPZUNcIT3Oi13jpo3svz5aZCRjtSQInNlAbXQNCOiWbx67p7fQ8lntg81WY+Vom9AKIxq2lp7YvY/70vdzjvynJKFEy/WfiZ0r1T4tNICgdDlr9WCjOOYGnRTcoO0kcXg+KQL2Z3lNZrvET4oARb+Og/5OkCuXYxoG01Vb+fDrccCbj9ytX+qIbHX+iWIY2JqK7WGPM7pI/Mc4WERyYQLohO3bWt5bxFLs1GKwbKvMzHFLibVYP0T9veYPZ8Do84HFNFCjH/jC7KtSznjMsGNTngZ42WPjHt7seRmEYRIqTnI+EF6UMZ7G3OwHBior65ChiNcXPusfpQ8hjWapo+EkP7zgzuw203gI+bhj1NC03v5wEIKy34Rx+m0irxe+9AwJTPLOOZ3awl916y5BqJPToVOOpRZBng2gZO3S0N2FlaIaQClb0ioSN3qCYSSbWJS6gjHr6SaprfyCjrHKZIhzrQFNTuETh/O5rQlcsZU/gYhjJXP43pBpl3tsmBvc1hGVhARIIYhi5VeN/GxndD/g+W+xIbk/SNXOWD8KO/yX6ge+4lS6Lw5kYs2h2q46+E9UzhIZb0Rmb4gPNYms3zGg8V5oWJva94PNWqwNNTaXIHn8QS2uznNsIwjkWbxkeSnWIgZW5n5W6f+gKAuxTUa0dEl5uuEPcSPqRE6B6esfL+CZkrw3plfgxBWioTSpsN3LY2W/O+40Id1Qd8yoC/O3iRBrgAnrno1nckzelqGbDoLyR4P8LJtMV59+NWT93SMWT4oEX4LykPt9fcOwOuRvmRn68eHqisI7frx4ggPUbHgRyUS45kFzUItJPIxuLOeXaHvWUQDMbCixOX+AMOK6M1oL/kAgI5h+vtNNV0QdIUg3jPs7XUHmuUViDlfiL7w0CBkxdJiSJ2v7YK4ie5uJ7UWpe8yq99R9coeLE49n8XIZqFwEnGOTbxJNzir9xd2FH4b3v7zaaz5TS3u1aBFKBblr9wfKzHSsU7BnqmlR+1+7HFukR3zD6W//tZjYxc+nVhpN24NFE5BH/ZhQucO2WbDE4IEtsWS49GAUwwuxv+8f5Hk0rM62rg2pLf6PkxCjurPSmu3EYifrwSPm0ZKVLAPqmzNDmPssCUe/hOpo8nKxjFTUqmZ7IBRsLkTiRJVlEe8CXfiSHxVZwSFZlE5KXU4s03O0A1R3S05omK+SrgWGdnwg1ZapT4MpaMWsYQAryMuTO3lpbdMBIVRFCq6mduJEEYiAk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_44e77bf6-0ad1-9c14-9f45-31e810677bc2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2652,
+      "completion_tokens": 360,
+      "total_tokens": 3012,
+      "cost": 0.00708,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00708,
+        "upstream_inference_prompt_cost": 0.00492,
+        "upstream_inference_completions_cost": 0.00216
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 232,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only sketches disabling auto-masking on Table.read (suggesting mask=False) for NaNs, without naming mask_invalid, covering empty-string masking, or requiring memmap to force masking off. The FAIL_TO_PASS tests therefore demand that unstated parameter name and extra behaviors, so a reasonable implementation matching the issue could still fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only sketches disabling auto-masking on Table.read (suggesting mask=False) for NaNs, without naming mask_invalid, covering empty-string masking, or requiring memmap to force masking off. The FAIL_TO_PASS tests therefore demand that unstated parameter name and extra behaviors, so a reasonable implementation matching the issue could still fail.",
+  "prompt_tokens": 2652,
+  "completion_tokens": 360,
+  "total_tokens": 3012,
+  "cost_usd": 0.007464,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

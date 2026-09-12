@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15108",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3065
+  },
+  "response": {
+    "id": "gen-1789191541-qoDAn79PeJKz1Vr0G6Vv",
+    "object": "chat.completion",
+    "created": 1789191541,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly asks to accept leading-dash order_by strings on Window, but the FAIL_TO_PASS tests also lock in an OrderByList repr and a rewritten ValueError message that the issue never specified. A competent implementation that only parses '-' strings while keeping the old wrapping and error text would fail those tests.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about Window(order_by) allowing descending string syntax like '-field'. The tests check:\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Window(order_by) allowing descending string syntax like '-field'. The tests check:\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "oZ8zMfP+oSsN9KOUIDS16JdGlbDgq6EXhd8MF43zzetpWnPRxty0gz8qYzkz1CcQXybJ9nOvqz5rx3GcNQm6c/WVvBE8P1klCgjuyx9CLcr8JGW5gXdpqcZtEMfvdI1tk/QhfdSMKjU83Owe56xbyGlAXeM1YiepKvedla/UXT1/Pw/kHCMwgRVq8IFYu0Eq3d6s2opk/DrWjq+VKDETutfSrzTEYAkP6+UBqDGqyvhaCHcI6PrGCSetmXd1mEeCbjfgbMpG4IqAIDcLQnJDp1ddvQndgoh94EHzJ5rDIteNpXhj2GeDPXPwfQeVF3/WpF7HIwxFEY3YeuRSXeSXT8kM/anJINo+K1MIARakf3T3pz6xv0awLnV4nPjnKH48RidcLkaY2BLrNYUYmUAwlW3ErzB6QqZeBh1FzQJM8z4zC4myVtSZz5GvMwBhJoLiMsk1Hk/JanoIEQoKGmRoDJZn9zNsesYrTtWS7cx4NZWD55Op3nUqlsWsvcp+1sXFDFsmW3bG/TwYB309NGdM3kPlNOWzin3cRrm86HsDx2dgpjFqnCduezo/oCjTi+aSW9mhuP8ikCJwLBEQe142JwGe64oHnwZrVhrVtR0VDGp812nlEhLv+cLnk9XRwroltyezlaDaByAdmsw6DEbeIS9EKgua6X58yLkm9hlTXa9sA2zptn6fRcbrX12nKEYHlZI2EekVS5+JZfx3Zbuf7E0jNLlInk4Tc6mkh559s1rUwtlYyOrvYFv+eUMHoGG7AWFJNnJ0r35thvE/pPIsZ1829J2NHxnfnsu3xrar4/KvaTZBtk6O+m+1ftgZMrw5Fz4prWVuuV2rHypkSGpJaOspYX/fRvwB68VOxuqe8bFTKIKEVllywuMLi2/uZJiIZvD3AxZOstjXPBT78otFysC7yFVAHA1XZ/v6ZxVGwHfMPBwzce+dJjB5Kb4WHloUqkQ4aiGy72sCWkjfyOBcbzfIfIzWVCbzZuNL48bBlVR6XJVmH9WNDRD1pfzedbB+ZNYSbfgKnFfC8Uyl8rD9oT5STvoYOEjE5ssSwrB7a0NcbSnk0e+69qU8oGTTYhdfQtIKT4/NCErdwISQzZFaWVzZ/vvRTqKAGsPYSWSxU/9tJeSwUMTOJkPRIeWHG+MCrWGboTzn6bGVsMkyjvXLZqxkSccuHAvealv8qIjhkxAKSaaJdcE1GzNhtdnrqR4QvvXVFg+F1oPG4R9eWNPReGdnfd4zHx7NSnJnG2yBzl5JoXDIGd6IgJJollPYS1fwM5A2CMDL5OFvOTlBYaaxIRMBN5gEwPdpsDr9exp6c+uwFFZ5bdeRPgEF7Ab38YDRN/A0n56EA2G2GNulhNxfTKCUACu9yQyE7F6GTTTmaVAre89Ue/QzYbp5HtAHQq29t4NarM4RSzszeN3sc/nWx/SZ6Df2dCjuKmFsLBEQO6l4mdblWHEzSIWimlkHw/ipgyqUavInmODeqA+3S+BG/4aPPXwoZsofaxHaGsU7FIyrYstx8WSh5drQ0ttl8G1xMFXq9yg2OZP+7W/nywZRXkelebRpD/VYQemL9bSFCUo0GNO32rMwGgrP36WaLZodYcrR7pzJ9FrC/mHrg/ObeUjBiEiNs1YPLrm1gRFDMxNI+GboUVCunzQgLTQX3gediDi3SMCJB7AqIyRvvNT8oeZToeZfnr8nwCKEguNmVackhbD9gBt3TS9llSpbxEOfSPV5717Eg5UlYuiHe2X4hjdJtk2hxxF9icGSi0yQc0SZjpUvWLUqCfdYw7CDpAPvT5toNjSelABNdh/hHOdGTdmT+UkMosT/cojl8a1ehMyisxkL0baevEx7u6QsEcxNVrejeM6iTw1OW6N+/XV9+tHwy9R6T9jINdhcjrY9Xmz6iKtVC9JmcEB1pouJ/b5+VVeUMMIvs/7itM/HVV/PS2MlYgBc.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f3807b94-0d1e-977e-84e2-b278f20ffc3a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3479,
+      "completion_tokens": 453,
+      "total_tokens": 3932,
+      "cost": 0.009292,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009292,
+        "upstream_inference_prompt_cost": 0.006574,
+        "upstream_inference_completions_cost": 0.002718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 333,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly asks to accept leading-dash order_by strings on Window, but the FAIL_TO_PASS tests also lock in an OrderByList repr and a rewritten ValueError message that the issue never specified. A competent implementation that only parses '-' strings while keeping the old wrapping and error text would fail those tests.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly asks to accept leading-dash order_by strings on Window, but the FAIL_TO_PASS tests also lock in an OrderByList repr and a rewritten ValueError message that the issue never specified. A competent implementation that only parses '-' strings while keeping the old wrapping and error text would fail those tests.",
+  "prompt_tokens": 3479,
+  "completion_tokens": 453,
+  "total_tokens": 3932,
+  "cost_usd": 0.009676,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

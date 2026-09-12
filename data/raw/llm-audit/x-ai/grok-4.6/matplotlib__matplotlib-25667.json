@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25667",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1875
+  },
+  "response": {
+    "id": "gen-1789192060-kzL4jSuzgJCd8S7djcwF",
+    "object": "chat.completion",
+    "created": 1789192060,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that bar/barh should inspect units on bottom/left so datetime data get a date converter, which a competent engineer can implement via existing unit processing. The FAIL_TO_PASS test matches that intent but is slightly narrow by asserting AutoDateFormatter specifically rather than any date-aware formatter/locator.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about bar/barh not triggering datetime units for bottom/left parameters. The expected outcome is that the axis should use date converters/formatters.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about bar/barh not triggering datetime units for bottom/left parameters. The expected outcome is that the axis should use date converters/formatters.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8027990b-420d-9929-89ae-2df649321f39",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2454,
+      "completion_tokens": 444,
+      "total_tokens": 2898,
+      "cost": 0.007188,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007188,
+        "upstream_inference_prompt_cost": 0.004524,
+        "upstream_inference_completions_cost": 0.002664
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 324,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that bar/barh should inspect units on bottom/left so datetime data get a date converter, which a competent engineer can implement via existing unit processing. The FAIL_TO_PASS test matches that intent but is slightly narrow by asserting AutoDateFormatter specifically rather than any date-aware formatter/locator.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that bar/barh should inspect units on bottom/left so datetime data get a date converter, which a competent engineer can implement via existing unit processing. The FAIL_TO_PASS test matches that intent but is slightly narrow by asserting AutoDateFormatter specifically rather than any date-aware formatter/locator.",
+  "prompt_tokens": 2454,
+  "completion_tokens": 444,
+  "total_tokens": 2898,
+  "cost_usd": 0.007572000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

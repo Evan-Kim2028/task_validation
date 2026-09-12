@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16092",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 23941
+  },
+  "response": {
+    "id": "gen-1789191724-AHFubJ94ZAxkH7PtKoyE",
+    "object": "chat.completion",
+    "created": 1789191724,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only names Field.db_default and does not specify expression support, system-check IDs/messages, Value wrapping, bulk_create/returning, or migration/autodetector rules. FAIL_TO_PASS therefore encodes a large amount of unstated API and error-text behavior that a reasonable implementation of the title could miss.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about adding Field.db_default for defining database defaults. The GitHub issue is quite sparse - it just says \"Add Field.db_default for defining database defaults\" and links to a PR, plus...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding Field.db_default for defining database defaults. The GitHub issue is quite sparse - it just says \"Add Field.db_default for defining database defaults\" and links to a PR, plus...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bc85651c-949c-931c-849f-29a8c832b235",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 26796,
+      "completion_tokens": 593,
+      "total_tokens": 27389,
+      "cost": 0.056766,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.056766,
+        "upstream_inference_prompt_cost": 0.053208,
+        "upstream_inference_completions_cost": 0.003558
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 467,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only names Field.db_default and does not specify expression support, system-check IDs/messages, Value wrapping, bulk_create/returning, or migration/autodetector rules. FAIL_TO_PASS therefore encodes a large amount of unstated API and error-text behavior that a reasonable implementation of the title could miss.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only names Field.db_default and does not specify expression support, system-check IDs/messages, Value wrapping, bulk_create/returning, or migration/autodetector rules. FAIL_TO_PASS therefore encodes a large amount of unstated API and error-text behavior that a reasonable implementation of the title could miss.",
+  "prompt_tokens": 26796,
+  "completion_tokens": 593,
+  "total_tokens": 27389,
+  "cost_usd": 0.05715,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": true
+  },
+  "cached": false,
+  "error": null
+}

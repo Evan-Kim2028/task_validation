@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-20676",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1424
+  },
+  "response": {
+    "id": "gen-1789191910-nzgCJVHErMf4ZvbtZulo",
+    "object": "chat.completion",
+    "created": 1789191910,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires that interactive SpanSelector must not expand axis limits to include 0, which a competent engineer can implement from the report. The FAIL_TO_PASS tests also assert private _edge_handles.positions equal to axis bounds and later press/release data, which is unstated internal behavior.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about SpanSelector incorrectly forcing axes limits to include 0 when interactive=True. Expected: axes limits remain at (10, 20) + margins.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The test asserts private _edge_handles.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SpanSelector incorrectly forcing axes limits to include 0 when interactive=True. Expected: axes limits remain at (10, 20) + margins.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The test asserts private _edge_handles.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a7d6d775-1b36-91e9-88d3-b2424e4b17f5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1792,
+      "completion_tokens": 577,
+      "total_tokens": 2369,
+      "cost": 0.006662,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006662,
+        "upstream_inference_prompt_cost": 0.0032,
+        "upstream_inference_completions_cost": 0.003462
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 460,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires that interactive SpanSelector must not expand axis limits to include 0, which a competent engineer can implement from the report. The FAIL_TO_PASS tests also assert private _edge_handles.positions equal to axis bounds and later press/release data, which is unstated internal behavior.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires that interactive SpanSelector must not expand axis limits to include 0, which a competent engineer can implement from the report. The FAIL_TO_PASS tests also assert private _edge_handles.positions equal to axis bounds and later press/release data, which is unstated internal behavior.",
+  "prompt_tokens": 1792,
+  "completion_tokens": 577,
+  "total_tokens": 2369,
+  "cost_usd": 0.007046,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

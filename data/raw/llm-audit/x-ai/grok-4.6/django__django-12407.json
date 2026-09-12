@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12407",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1640
+  },
+  "response": {
+    "id": "gen-1789191033-3i5IPjLL6dgjJ42lruiO",
+    "object": "chat.completion",
+    "created": 1789191033,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks include to accept a list of names via select_template like render helpers, which a competent engineer would implement. The None case and the exact TemplateDoesNotExist message are not specified, so a naive select_template change that matches the ticket can still fail those tests.\", \"p_invalid\": 0.75}",
+          "refusal": null,
+          "reasoning": "The issue is about {% include %} using get_template instead of select_template so it can handle a list of template names as fallbacks.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about {% include %} using get_template instead of select_template so it can handle a list of template names as fallbacks.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_595be1f4-9fe9-93ac-b7d4-7530b08a659e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1963,
+      "completion_tokens": 465,
+      "total_tokens": 2428,
+      "cost": 0.006332,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006332,
+        "upstream_inference_prompt_cost": 0.003542,
+        "upstream_inference_completions_cost": 0.00279
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 352,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks include to accept a list of names via select_template like render helpers, which a competent engineer would implement. The None case and the exact TemplateDoesNotExist message are not specified, so a naive select_template change that matches the ticket can still fail those tests.",
+    "p_invalid": 0.75
+  },
+  "s": 2.0,
+  "p_invalid": 0.75,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks include to accept a list of names via select_template like render helpers, which a competent engineer would implement. The None case and the exact TemplateDoesNotExist message are not specified, so a naive select_template change that matches the ticket can still fail those tests.",
+  "prompt_tokens": 1963,
+  "completion_tokens": 465,
+  "total_tokens": 2428,
+  "cost_usd": 0.006716,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

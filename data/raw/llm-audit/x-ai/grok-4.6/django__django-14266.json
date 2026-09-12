@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14266",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1634
+  },
+  "response": {
+    "id": "gen-1789191387-91L6iQ0RyysyhaOI031B",
+    "object": "chat.completion",
+    "created": 1789191387,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue shows a crash on legacy message cookies due to invalid base64 in the new unsign_object path, which already had a JSONDecodeError fallback for the old format. The FAIL_TO_PASS test only checks that pre-3.2 encoded cookies still decode, which is exactly the reported behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about CookieStorage crashing after Django 3.2 upgrade due to invalid base64 when decoding old cookies.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CookieStorage crashing after Django 3.2 upgrade due to invalid base64 when decoding old cookies.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Fqo6pGXjGJw0y2a4m6Asajbd/gWanF0koEs232dy9+HoCgsep43Now82e208CQM3if0k7BkxmJoraH5d9KRVJ9HCizP6jQ32P9zLUxfjg3klTwp0JSr7RqCVyt1gzAYVSLjaHiYJzmcQRE4nkcs6uWanNzG3Jyi7NyqKDAqnJPG2H9otHG+ZrNSJi3Yq75tzZq2iJlsegwrFCndonMZ/32rY5d8Isz++fRQzHpXC5QxVJ1wEsgiOmzGMW4rlj4SXU+YpaIB7nGQAj/9J/iB5N4Uo3xOVJv9NfT19qLpywpSPE/RJeM+AC6UVnKaHQWJNAsYNbcj44dtsiZYP2lKMBvVJqvihF5mVnSq6ZyT2rXmKctCttiagbQ+REglO5XhqSb9uGCXg6VW910xyig/+iHcpsOh6OXoSQydSF6/Z5WaIfIgu9J559hnkkdtmvoCeCO5kl0cQ+t5rixrOvNwfOnYMYcN8FAHWsr/kXW+wge+dIF45FJtyQtkTBbgAIkx8nu5GvB88gXSEz/RaJp4XZrH20Yc6hrCECKy1+L3u1tBB+hEaGYUCmvXWDCaymamBaYA9U0e6j7z1Wzns7XAPf3412eeaMmVTJBE1NbgoR5UqzcAByvvtIvf8L2UwdIVd+ZptTqYAY1aCAL4WvScWpiM8kOhX/HA/JjKrPxCdJw1IFeUPuqz2wRDYPRDSE6uA2VQmMQzbxmDarE3YKRhgFKvuUKfn+IHcmLmnh5O1SXecIP4njAW/jHbcJ7MmGVX3FotQH140TKTqWBRYuZSe82CyzyAqTU75wqKnZXnx6KwN4P/pVp2yJH/s0qXAmIGGHPkF9uKgsE6DHE+lUnawXykJLS88sOohR/5r5DstFmCHCoRV+11MLO2ihez9VjXUMBOsIKMNRiSJaEn6DLRpp5O42VBZiNZc4JZE/PZ2oJnGq8oLtKCkxpYxA5YfSirRZLjTlqgquF1nbOV5hy1JkdbeNbEzC1wc7nKe0tb6KMnkkQq/ubxUns0p5UtvvaBpRkm3Qkl10n12eB5cwaSzGGMOlE6kr7x2yGh9npkSBwYByiJdrjkwus12kNsb8qX1D1byGh2N7NJhmYGA2rcLhYjVcSAmOzrEluWtSkIxYQWl3qDn0x6IsZxDGuLhao2CaT/bPTFXzK/r3tpBDduA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9da5dbde-ee53-9e94-b0b5-302b1d604589",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2151,
+      "completion_tokens": 326,
+      "total_tokens": 2477,
+      "cost": 0.005874,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005874,
+        "upstream_inference_prompt_cost": 0.003918,
+        "upstream_inference_completions_cost": 0.001956
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 208,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue shows a crash on legacy message cookies due to invalid base64 in the new unsign_object path, which already had a JSONDecodeError fallback for the old format. The FAIL_TO_PASS test only checks that pre-3.2 encoded cookies still decode, which is exactly the reported behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue shows a crash on legacy message cookies due to invalid base64 in the new unsign_object path, which already had a JSONDecodeError fallback for the old format. The FAIL_TO_PASS test only checks that pre-3.2 encoded cookies still decode, which is exactly the reported behavior.",
+  "prompt_tokens": 2151,
+  "completion_tokens": 326,
+  "total_tokens": 2477,
+  "cost_usd": 0.006258,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

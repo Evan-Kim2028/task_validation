@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12774",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1709
+  },
+  "response": {
+    "id": "gen-1789191090-DzM2YhdPMj7UXVqKuwZG",
+    "object": "chat.completion",
+    "created": 1789191090,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks that in_bulk accept a field that is unique via a total UniqueConstraint rather than unique=True, matching the FAIL_TO_PASS usage on Season.year. The extra negative cases in the patch are not FAIL_TO_PASS, so the required test only checks the stated behavior.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing QuerySet.in_bulk() for fields with total UniqueConstraints. The tests check that it works for a UniqueConstraint on a single field (year), and that it still fails for parti...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing QuerySet.in_bulk() for fields with total UniqueConstraints. The tests check that it works for a UniqueConstraint on a single field (year), and that it still fails for parti...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "J8uArV5/fatuV9eswo71baWe3JU0laE4atq6+XcphAOkdaO5hGrbtN+hO0C+ppGvfirC6uAlJHzNNfMWfMeQeKpDPxstMCxoUfoTk1QknP3SUb/cDDjeiFS2L+ErhP3krPwe78P6rnqdssuECUEZpqBrgNhi1pnTQXtryVpy1EDBzn+lXITXbInisjxZ1oLLTCkEl6rB9HJu4w+6K+hYD7/12eOkttDmm7AmTeVYuG20O0SmvdszRULicyuQ6o9rCi+wiVmLa+28fBfhBlvsWjZIz2lYENabzEVc0W5OQAAM6VNSi8U84LbfxUTr994wcDhCBVQ2bW6J0TJyQCcNZaDl8bmRIp1d8DKc3HUM7+p2fkr1sP+doY5eLgiWZhnIzhTPLMMfQ9KIkI7FJ43M59PoQ0G2KYgQ7cv66vcwgFKQbk14G5tb+dObtEv7E2Qc8NxlWv8MpMnbBJXIta+jKUxMQi+2jqJYl5geaF60SR3FTVrnH/p7eTHWMm9ZOjRarmhf+G1SQjXprkEJw2osBT8wVMwE1PSvAZiaYmN2f4xh1OU3gD+eOy4d1/6khEuytRmPxH4uZCkWWSNO0RuxANYwAH42BPRnpNjZL9JplaeIiXkqYdpXt0joh7YIk380Le0GN7urSHkMZaCJg8yAlzU/uzZmvwenp14gj2q5VBOaKW9FDZ14o4DZYLGwqQtNQIdspzJNCnxCRBNCO193NOVW/2TwFmHTv2pwn57/tM7nSV5xLMqL1PZtPfbVsPZYAr6CUEAIv5/sS/U+/p0uoWHF88De5W3nkeSpZ4Xb8NcODLqSL0YPnR1NG5BPcL8v0FdSyz1y68lCLG2kcwulv/PTJtFqTJ1+VUKq8b0NEtBYYDqOPB130lb8bK5wimUgPPhE1PzM7dVwUZR5hLfMKB7TXA3+u/HtR7/xHDSYAjH6jR2fprDtdisBXzizybOJ0HuaZFhad2QQdl7VMQQkk9EBEIYXR9DLRXzD8DZNqDlo7Kxz0G36SFgtZ6KXrlDpMYGHYrN8gj9ehqcLVZ+hJxUHKecRAUx0zzI67iqmoLxEhIPWGUCIt4tqyQ01Icf9VaadIEakeZw6s+znBW4T2BIZQQlLbNbpLT+zNshiZ6RlqYkjThAxDx20DUq2Gkz5ngbjAZYFtJOBDZw+EsNtb3Tb/OHf9QvbBM/aiVgSRaSQYKNutEm0F4X13fmXGYLTVtwfmFwaSQGPTHKFiCkku4RP4EM21Bv2rUhpKagtpfV0k1amsdrtXcR1+4F6wsSUc6DSgOm3slU3D6xMORfjXgIguOY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e454dd55-538c-9255-afd8-146d635fbc67",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2136,
+      "completion_tokens": 345,
+      "total_tokens": 2481,
+      "cost": 0.00615,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00615,
+        "upstream_inference_prompt_cost": 0.00408,
+        "upstream_inference_completions_cost": 0.00207
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 227,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks that in_bulk accept a field that is unique via a total UniqueConstraint rather than unique=True, matching the FAIL_TO_PASS usage on Season.year. The extra negative cases in the patch are not FAIL_TO_PASS, so the required test only checks the stated behavior.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks that in_bulk accept a field that is unique via a total UniqueConstraint rather than unique=True, matching the FAIL_TO_PASS usage on Season.year. The extra negative cases in the patch are not FAIL_TO_PASS, so the required test only checks the stated behavior.",
+  "prompt_tokens": 2136,
+  "completion_tokens": 345,
+  "total_tokens": 2481,
+  "cost_usd": 0.006342,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

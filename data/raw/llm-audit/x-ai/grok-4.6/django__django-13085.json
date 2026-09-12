@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13085",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1972
+  },
+  "response": {
+    "id": "gen-1789191138-hS56NaJfUYltPAwlNtMA",
+    "object": "chat.completion",
+    "created": 1789191138,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to skip msgfmt when the .mo mtime is not older than the .po, which a competent engineer could implement. The FAIL_TO_PASS test instead requires a specific undocumented stdout string, so a valid skip without that exact message would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about compilemessages skipping msgfmt when .mo is newer than .po. The test checks for a specific stdout message: `'%s” is already compiled and up to date.' % mo_file_en.with_suffix('.po')...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about compilemessages skipping msgfmt when .mo is newer than .po. The test checks for a specific stdout message: `'%s” is already compiled and up to date.' % mo_file_en.with_suffix('.po')...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "SuwufKV0OkBa7tFnws30/lsEoZHqG8F/j/5uhZ5oEcDTyuTPx6stibkjCLD7K1k45zm16HOmNrUWtiD/S54U70tjx/8OHzsynCoqfj1AUifIlZcRZuKMcQrF4u6MS29pKVmjPnOhZsSBs9X6yMoVw165Jo/8v7jmgXqJbHtMkUcWuJ8O/sriIRCITnWEi83spW+JNTWn/vO8Xgq1hnalq1qbtvr0t0vte476s8aOu+o0cpJj5CRT6qOBqyDYw2SkjjtCDAKKjwXTgqv+cJBJuz1tg4GifkLy1Gk7gctR4NEw89uE8o5YNaJbOV1Q7WeK2Tz4LRLCrUPBewk3Kpy/o4bng0OQsBO+2ckHiABllBI7vYPqrd2hc5cM1ic7V1M/ZBR/KdJ2PW0e2X02gpHXQX3Tkw6Sv2JIEdXp++PBHjvepB2NtzlJ2VU1HWtPfBz57uogmniHqDxPd3oTidSpkvQwqJNIisBy4mV5y+XExaTYWqy4FDGxGpn3HmfLlsGOJCrO4X1VZgbUAK/LhPH7MYGY8EEllePtl+8K+xjyNKNMXzKr99zm3vRWS4AEJd617ILy2UA3kIqkcQZ+CAvBRzBFeDXtWiRdMll426ZdYlFoVkPRmIkRVwY4/OZu1nKpY+4KpvEDQg7ft+eiamR1duihfP7kBq54G+whU95IuCwnqO/2NQ+KT8aQB+QfogYY+jwKCtK+OJRlKdKtNqCShb5VYRgU+D4DzRnUUkbxvO+oUmSnbvyDnQnxO3zH+Ud5GRdRURfLyVWDs1V98dU5etBBfdMnRLk0DFsW491WiiommqQQYP8x+28lOgLjpqAPON8x7MjQVa6Uyk5HqbAFTnNRzL78tPqXyjoqyjnh1p1yNIVvKkt0cBxYnyqi8d6JH3X8VB84rrMkO2Ecuxo946Fc9bYkSxAZF1cuRQUMzyqv31mHyTJ4BxuixNIduCDyOG5LIN6K3H3Q/8SIXhDxKHKDgEetfSNmmZI17s6SXPCDeoPbWNOIL4O5XyU/tjf7NALA5v4R3t/TP+oGdj0rhR8O8zSvU4Sm1SKS3SAQiJqzkbne3QNwmRlmmKVfEeMX7ngtlTEPEYjsxArK6/7jiVLXcyvc3wM6U21QPcCCycz0DtlzfJo9jeOCgrMWY1veLOxvmVdkui567z7jVW1DZHsy8s68GbL8V5EBnQH9PLE0k6wNj13LGu0EvHIpvyDty+HcH+sqVtgotumtK/D0vjqgXrdzuJ9KhcIEJtFjbsV0D2mP4cmjMrqjoitMaWKZuNzQYWxwrBzPe2SfKhQmtUrQiL9NqbCqxjg8stxFaBH3KmhtBsZIhnTI9qr9N0L8Wf3xzj5oVrEazT8wqiZG8Wt1kalnbWjSAg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_869327e2-8fe5-9230-8810-52ef108ed846",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2337,
+      "completion_tokens": 345,
+      "total_tokens": 2682,
+      "cost": 0.006552,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006552,
+        "upstream_inference_prompt_cost": 0.004482,
+        "upstream_inference_completions_cost": 0.00207
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 235,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to skip msgfmt when the .mo mtime is not older than the .po, which a competent engineer could implement. The FAIL_TO_PASS test instead requires a specific undocumented stdout string, so a valid skip without that exact message would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to skip msgfmt when the .mo mtime is not older than the .po, which a competent engineer could implement. The FAIL_TO_PASS test instead requires a specific undocumented stdout string, so a valid skip without that exact message would fail.",
+  "prompt_tokens": 2337,
+  "completion_tokens": 345,
+  "total_tokens": 2682,
+  "cost_usd": 0.006744,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

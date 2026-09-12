@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12325",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2029
+  },
+  "response": {
+    "id": "gen-1789191017-5AA3B4Tm1QOduMP9RQCY",
+    "object": "chat.completion",
+    "created": 1789191017,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes order-dependent parent_link detection for MTI with two OneToOneFields to the parent, so a competent engineer would stop treating a non-parent_link O2O as the parent link. The clash test encodes Django check IDs and reverse-name messages that are only implied as the new outcome, so it is slightly narrower than the written bug report.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about Django MTI (multi-table inheritance) getting confused by multiple OneToOne references. Order of fields matters, and it incorrectly requires parent_link on the wrong field.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect specific error messages and IDs for clashes; gold patch changes behavior but doesn't address order independence or explicit parent_link priority directly.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django MTI (multi-table inheritance) getting confused by multiple OneToOne references. Order of fields matters, and it incorrectly requires parent_link on the wrong field.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect specific error messages and IDs for clashes; gold patch changes behavior but doesn't address order independence or explicit parent_link priority directly.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_25982306-ee8a-92f6-9176-8e09e4b39cad",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2435,
+      "completion_tokens": 608,
+      "total_tokens": 3043,
+      "cost": 0.008518,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008518,
+        "upstream_inference_prompt_cost": 0.00487,
+        "upstream_inference_completions_cost": 0.003648
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 474,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes order-dependent parent_link detection for MTI with two OneToOneFields to the parent, so a competent engineer would stop treating a non-parent_link O2O as the parent link. The clash test encodes Django check IDs and reverse-name messages that are only implied as the new outcome, so it is slightly narrower than the written bug report.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes order-dependent parent_link detection for MTI with two OneToOneFields to the parent, so a competent engineer would stop treating a non-parent_link O2O as the parent link. The clash test encodes Django check IDs and reverse-name messages that are only implied as the new outcome, so it is slightly narrower than the written bug report.",
+  "prompt_tokens": 2435,
+  "completion_tokens": 608,
+  "total_tokens": 3043,
+  "cost_usd": 0.008518000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

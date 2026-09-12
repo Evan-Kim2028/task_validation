@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11829",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1642
+  },
+  "response": {
+    "id": "gen-1789190943-pKcekMbgYeE43p5TFwGy",
+    "object": "chat.completion",
+    "created": 1789190943,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states that no-cache field names must accumulate as a list and that no_cache=True must override named values regardless of order. The added FAIL_TO_PASS cases check exactly that accumulation behavior against existing True-precedence coverage.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1605b879-e061-94a4-ac18-37b2f7d827e4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2000,
+      "completion_tokens": 528,
+      "total_tokens": 2528,
+      "cost": 0.006976,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006976,
+        "upstream_inference_prompt_cost": 0.003808,
+        "upstream_inference_completions_cost": 0.003168
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 424,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states that no-cache field names must accumulate as a list and that no_cache=True must override named values regardless of order. The added FAIL_TO_PASS cases check exactly that accumulation behavior against existing True-precedence coverage.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states that no-cache field names must accumulate as a list and that no_cache=True must override named values regardless of order. The added FAIL_TO_PASS cases check exactly that accumulation behavior against existing True-precedence coverage.",
+  "prompt_tokens": 2000,
+  "completion_tokens": 528,
+  "total_tokens": 2528,
+  "cost_usd": 0.007168000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

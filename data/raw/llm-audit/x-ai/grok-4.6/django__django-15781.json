@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15781",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1186
+  },
+  "response": {
+    "id": "gen-1789191675-7g1ydvCIhvdfSDt06i8n",
+    "object": "chat.completion",
+    "created": 1789191675,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue body asks for preserved newlines in command help, while the title only vaguely mentions customizable formatters, so a reasonable fix is changing DjangoHelpFormatter rather than forwarding argparse kwargs. The FAIL_TO_PASS test requires create_parser to accept and apply formatter_class, which is not stated in the issue.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about customizable management command formatters. The problem is that help text with newlines gets collapsed because of how argparse formats it.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about customizable management command formatters. The problem is that help text with newlines gets collapsed because of how argparse formats it.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_dea847f6-63e4-9ab2-a760-fcfa69af86c6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1512,
+      "completion_tokens": 497,
+      "total_tokens": 2009,
+      "cost": 0.005814,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005814,
+        "upstream_inference_prompt_cost": 0.002832,
+        "upstream_inference_completions_cost": 0.002982
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 378,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue body asks for preserved newlines in command help, while the title only vaguely mentions customizable formatters, so a reasonable fix is changing DjangoHelpFormatter rather than forwarding argparse kwargs. The FAIL_TO_PASS test requires create_parser to accept and apply formatter_class, which is not stated in the issue.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue body asks for preserved newlines in command help, while the title only vaguely mentions customizable formatters, so a reasonable fix is changing DjangoHelpFormatter rather than forwarding argparse kwargs. The FAIL_TO_PASS test requires create_parser to accept and apply formatter_class, which is not stated in the issue.",
+  "prompt_tokens": 1512,
+  "completion_tokens": 497,
+  "total_tokens": 2009,
+  "cost_usd": 0.006006,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

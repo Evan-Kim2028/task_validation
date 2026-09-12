@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13606",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3697
+  },
+  "response": {
+    "id": "gen-1789187853-pg70jy6fpw3TrlSSABFT",
+    "object": "chat.completion",
+    "created": 1789187853,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only asks to switch multi-valued exclude from NOT IN to NOT EXISTS, which a competent engineer could implement from the description. Several FAIL_TO_PASS tests instead require unstated Lookup/Query equality and hashing behavior that is not mentioned in the issue.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about using EXISTS instead of NOT IN for excluding multi-valued relationships. That's clearly specified.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about using EXISTS instead of NOT IN for excluding multi-valued relationships. That's clearly specified.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "u6NXy5o/W+iyrVo1Asm5mR43qUPUOrefW3ARsBcz99yPJojLOEf17eORNdA0mGrOlIgehBZhWMLU/C1v8TElPSq16Vni5tqDk0KNKN1fq9bPmdxYLs+boAO7CA6PBwqGbdalV8O6JAJqgUw6lGiAikq1RDCb1IDLjaJP1dOztz0Ti/jO+I0amDuRTNwlEoz57o/V1kR90t8uvkI+EEFMmsN9gfCVvwjnD/z68RQOwfTVoNHUjwxX6YObJf5RuBq891jCFKW1Sl+utAO+B0+6ArXsO3+dWTx7g+m2v7XcbptzrXNiGF4+bpdOfdsXdQ1oveQ/XHVTxgcbzMPpR6ze4SkIWKkUBU7KH8f9UOZg8/fkrFnBtW3pg64i8JDGWYSb8PUdAPkUWOfk9+yQaWHpTiTIJU0mAY+tR/NbqB+WUa/sLz6tkHUxR2odPePoN6Y69Gr2pOH7TtACwW1Y1GQdjby4rw9VMPStt8Jvy/xVKBUwQ8Bm14EdR8Q2ck4T62fOh/aq+k9/xRLFppEFaDTNrGoKHDTd6WpKXLdV/O9JbOgJ6tm96KCgzsqv/l/CKloS3aglv2hIPM2mCQej/cUh8YsFLuue/pQopfqsjZh82ry8r75Wt4O2sndYPwKy92ygSf+20qdfY1otgTH3T29iynylAJuY82K+ey6Tj8nSrQPXt7EgQdkrRRBQiKhTSXkowdXRwvQqOTgrEQurTE4do5KfmxQoJ9kv9KsogLsMWh+v+mPFJBQsY/v3lZ0/zMnKwst6v2WRri/fDnM9kE4ilHVZm5TT/W8SYH5N/4qjy0tSurPRkIFyN9LC+yCS2YITibCQGsMEFXDmUjnkWATknawTNCgqVOzxEwjZYFTPjJgGHxEr4tc5cdR7ZCGvjokPGmCK7uU77gQhE9aZoPGuiv6so6M33cewhjMFXNavlTPIzt+iASNdDUAKdq7agmKVE6wciaHvSEs+HmMGL+EgUwbi5hhLMUvh9OXg+QXJgFhT3cGrw8LdWZhPN1LQhJd0+6/rYJh3qi5C2kfLW4xW/h1WN882CG57eydBTF9ifxt4RD3vYYj3PV1lPbYcVgxa15+7zyVjGnq6DG1qmOcoq6eXlLdyNw3YdyDt8oYOF4PPd2Cuv/4KSbuucwvJ4bIqD3bJzDo7jQRNV4PtSLFES6HexIT+7kNFnUIGwu8xqbEckt9lBGLt1mN4WXwiRdoWnyh8uhAOM/Xuk/xdxbr3e+3GV7dLXrXQLr75fveVbhLvLV9cEihUDpKVzozeB9ZZQTFgRZZ1o0cQOLj4K/nCIkblHFZtiS8hQiEgpFi9tu0QNe9IJ6ZFple4M+7/vuM58Bjwl2fBiHlpHs9jMueNweIC+MmOYM1ZFwd7B+nyX+2Q2NA/6JrSFWC+d4dwb0p+vWCX0quXZakXoa3ZC60L/gYLcci2jcyWpF8A5o7sQ2oVLYq5wFAKwh00Tf+6+rQxrREKdBrmfwsitCvKVtuF4pn74vCNfhZI04peFIXxiKjR4/pXzIL4ZWgDHQViX4i5+RidDG5QY8sacvJCqMw+KrXJZ7ld8O2xSvjxuapAPBCiT+z16ub88Ddy2DLy+HI1LsfUK016HYnslr1JypNE4HhZlVOW/0Sm5UqOpjldnunEWHsh9YZrIKJ8XR5Ys1GoQdt+oJIi6pWF9YvW+sbyR+mg1fvUcgav+JtKoVqMwzUCXg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1aefae99-e4cd-9cc9-a589-62906c0086aa",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4278,
+      "completion_tokens": 388,
+      "total_tokens": 4666,
+      "cost": 0.0105,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0105,
+        "upstream_inference_prompt_cost": 0.008172,
+        "upstream_inference_completions_cost": 0.002328
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 280,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only asks to switch multi-valued exclude from NOT IN to NOT EXISTS, which a competent engineer could implement from the description. Several FAIL_TO_PASS tests instead require unstated Lookup/Query equality and hashing behavior that is not mentioned in the issue.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only asks to switch multi-valued exclude from NOT IN to NOT EXISTS, which a competent engineer could implement from the description. Several FAIL_TO_PASS tests instead require unstated Lookup/Query equality and hashing behavior that is not mentioned in the issue.",
+  "prompt_tokens": 4278,
+  "completion_tokens": 388,
+  "total_tokens": 4666,
+  "cost_usd": 0.010884,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

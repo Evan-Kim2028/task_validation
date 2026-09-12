@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-10777",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1306
+  },
+  "response": {
+    "id": "gen-1789192336-3xIa5MU132kxgc3hn0UA",
+    "object": "chat.completion",
+    "created": 1789192336,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to error when ngram_range min exceeds max, without naming other vectorizers, the exact message, or that construction must succeed. The FAIL_TO_PASS tests require a specific ValueError text and raise only on fit/fit_transform (and HashingVectorizer.transform), so validating in __init__ or using a different message would fail despite matching the issue.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about CountVectorizer with ngram_range=(2,1) not throwing an error. The user thinks it should throw an error if ngram_range[0] > ngram_range[1].\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CountVectorizer with ngram_range=(2,1) not throwing an error. The user thinks it should throw an error if ngram_range[0] > ngram_range[1].\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_38f6843b-b644-9577-adbd-363e83a94c93",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1673,
+      "completion_tokens": 589,
+      "total_tokens": 2262,
+      "cost": 0.006496,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006496,
+        "upstream_inference_prompt_cost": 0.002962,
+        "upstream_inference_completions_cost": 0.003534
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 455,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to error when ngram_range min exceeds max, without naming other vectorizers, the exact message, or that construction must succeed. The FAIL_TO_PASS tests require a specific ValueError text and raise only on fit/fit_transform (and HashingVectorizer.transform), so validating in __init__ or using a different message would fail despite matching the issue.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to error when ngram_range min exceeds max, without naming other vectorizers, the exact message, or that construction must succeed. The FAIL_TO_PASS tests require a specific ValueError text and raise only on fit/fit_transform (and HashingVectorizer.transform), so validating in __init__ or using a different message would fail despite matching the issue.",
+  "prompt_tokens": 1673,
+  "completion_tokens": 589,
+  "total_tokens": 2262,
+  "cost_usd": 0.006880000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

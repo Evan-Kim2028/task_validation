@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13111",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1697
+  },
+  "response": {
+    "id": "gen-1789191145-NEhFT9gySmXPIfvHt4sQ",
+    "object": "chat.completion",
+    "created": 1789191145,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to accept %V and to error when it is used with %Y rather than %G, which a competent engineer could implement. The FAIL_TO_PASS tests still demand an exact custom ValueError wording (including “instead.”) and a specific Choices listing, so a valid solution that re-raises datetime.strptime’s message would fail.\", \"p_invalid\": 0.76}",
+          "refusal": null,
+          "reasoning": "The issue asks to support %V in WeekArchiveView, add it to accepted week formatters, and either special-case year format to %G or mention the ValueError from strptime about ISO week vs %Y.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect exact error message with 'instead' phrasing and specific date behavior for %V/%G combo\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to support %V in WeekArchiveView, add it to accepted week formatters, and either special-case year format to %G or mention the ValueError from strptime about ISO week vs %Y.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect exact error message with 'instead' phrasing and specific date behavior for %V/%G combo\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0694860c-88d4-9790-912d-a917aaa606b1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2197,
+      "completion_tokens": 645,
+      "total_tokens": 2842,
+      "cost": 0.00788,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00788,
+        "upstream_inference_prompt_cost": 0.00401,
+        "upstream_inference_completions_cost": 0.00387
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 517,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to accept %V and to error when it is used with %Y rather than %G, which a competent engineer could implement. The FAIL_TO_PASS tests still demand an exact custom ValueError wording (including “instead.”) and a specific Choices listing, so a valid solution that re-raises datetime.strptime’s message would fail.",
+    "p_invalid": 0.76
+  },
+  "s": 2.0,
+  "p_invalid": 0.76,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to accept %V and to error when it is used with %Y rather than %G, which a competent engineer could implement. The FAIL_TO_PASS tests still demand an exact custom ValueError wording (including “instead.”) and a specific Choices listing, so a valid solution that re-raises datetime.strptime’s message would fail.",
+  "prompt_tokens": 2197,
+  "completion_tokens": 645,
+  "total_tokens": 2842,
+  "cost_usd": 0.008264,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

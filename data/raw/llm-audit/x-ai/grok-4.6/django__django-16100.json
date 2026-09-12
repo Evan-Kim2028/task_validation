@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16100",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1714
+  },
+  "response": {
+    "id": "gen-1789191725-1BW8oCPIGti410YQe0qd",
+    "object": "chat.completion",
+    "created": 1789191725,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks for transactional atomicity around changelist list_editable updates so errors do not leave partial writes. The FAIL_TO_PASS test checks that multi-row list_editable saves roll back when an error occurs during processing, which matches that request without requiring unstated APIs.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue asks to add transaction handling to changelist list_editable processing because changelist_view may change data and should be wrapped in a transaction.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add transaction handling to changelist list_editable processing because changelist_view may change data and should be wrapped in a transaction.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_111441d7-d6a8-924e-b541-9f7ea894955e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2035,
+      "completion_tokens": 495,
+      "total_tokens": 2530,
+      "cost": 0.006656,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006656,
+        "upstream_inference_prompt_cost": 0.003686,
+        "upstream_inference_completions_cost": 0.00297
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 381,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks for transactional atomicity around changelist list_editable updates so errors do not leave partial writes. The FAIL_TO_PASS test checks that multi-row list_editable saves roll back when an error occurs during processing, which matches that request without requiring unstated APIs.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks for transactional atomicity around changelist list_editable updates so errors do not leave partial writes. The FAIL_TO_PASS test checks that multi-row list_editable saves roll back when an error occurs during processing, which matches that request without requiring unstated APIs.",
+  "prompt_tokens": 2035,
+  "completion_tokens": 495,
+  "total_tokens": 2530,
+  "cost_usd": 0.007039999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

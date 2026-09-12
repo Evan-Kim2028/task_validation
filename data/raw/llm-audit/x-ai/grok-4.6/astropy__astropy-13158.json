@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13158",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 8326
+  },
+  "response": {
+    "id": "gen-1789190645-2q0Dhr35kmLbkXTQsS0O",
+    "object": "chat.completion",
+    "created": 1789190645,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only reports Const1D evaluation failing for MagUnit parameters and points at Quantity wrapping in _param_sets, which a fix with subok=True would address. FAIL_TO_PASS instead requires a new Parameter mag flag, Schechter1D magnitude arithmetic and UnitsError cases, and mag-aware evaluation across many models that the issue never specifies.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about model evaluation failing when a parameter is MagUnit. The tests go far beyond that - they add Schechter1D with mag units, error cases for Schechter1D, mag=True on parameters, specif...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about model evaluation failing when a parameter is MagUnit. The tests go far beyond that - they add Schechter1D with mag units, error cases for Schechter1D, mag=True on parameters, specif...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "hV8bW5AFBGsYkq+S8naCvgDI9875gjN7Tr0DXSlL4jfu1RxGAJgTHsQN7zXwyjREd95XjLi00127Rfc+KVqH23za4Ddenl3F1z1JQ9IxnS/0vWfcWZjXf+RLr5k4ccHzFbYHhGYqECeu6f+EEDUBPMP+BEsNkW8yConrCsD4PJMQPSuzJIOG9ZKIw7cMtCt/hQBnRkw6fZU8nj9PMXanZ/GT/NVT2P7QZJng4R9Amcg+IQiBSCobOwmQrpHlgq9WQcIeVdswCTxhqPGt0n+3VMw86s9aYq8v5Kw24CuX/vx+Nw4T6J+E/6pX9HKhZ8+QijkSxx2iTjwxigqHOroJ9ByOQdaQlO4VIwgs+AOdZILj5QkReHV+61D8zUM5M06K+nCJELa2SJWONY6WdOd/9D52e/otadpsddtBOEo4fNaNw14KKU99jmhXSNt/VbDP5E6Qu66jA0rfonNkFFV9qxVkLW8D9w14lh9/xJcEGzOo0+ZVZUP4Tw5gPN/GK0CkT5Hv1M2O7ysHBJiKm9kKsn2RJZ8gr4y9RLe82jAmiigpqlzcAMGcFRyOOOpNGthRE2QmTKT+XQ8ipalnrt02Oxwh93AJYkmQZ51j5q/lPCv9OOW7zZ7/GKKuLUeb5PEmk7fQ3DdFsIgPfEq95mIsT8qov3RjO+eHUbUx9IGE3cjwOXIrA/266rbNIfRP2PJnwJy4dK6ddwS9+zYAz5wc+49ifmokUHG0DPGJG5/1YyyyOwHuQjKn1Q2ZEeQ10EEXSJzNmAYogHbaQACP42486Qwc6z2Hi84KbM5P8pDLaZoibAF1r0nUEj+2v+I/bcQGTRuA8aUWCTIDvscQdf6a9C9irp4GdEdjzNGjkHzq4SJTMr1cijpj1rF53irZvPpntqwR7h/gfmyy/ePLIM0AzjIAZMdcqQsk+y/Lgom97Naw3A6xyYzOVB0HK4EEhmwcJ1MYVB0s5KBlIhb5Hpl7Jc+ujfV81p61D3+7c4sOPeGPbl658wwLNAoAiOrdSDOTecXZr3zysK8i1Wg6CpAGlyQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5d4dcf15-30be-97cf-aeea-e9fc00321712",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 10381,
+      "completion_tokens": 308,
+      "total_tokens": 10689,
+      "cost": 0.022418,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.022418,
+        "upstream_inference_prompt_cost": 0.02057,
+        "upstream_inference_completions_cost": 0.001848
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 180,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only reports Const1D evaluation failing for MagUnit parameters and points at Quantity wrapping in _param_sets, which a fix with subok=True would address. FAIL_TO_PASS instead requires a new Parameter mag flag, Schechter1D magnitude arithmetic and UnitsError cases, and mag-aware evaluation across many models that the issue never specifies.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only reports Const1D evaluation failing for MagUnit parameters and points at Quantity wrapping in _param_sets, which a fix with subok=True would address. FAIL_TO_PASS instead requires a new Parameter mag flag, Schechter1D magnitude arithmetic and UnitsError cases, and mag-aware evaluation across many models that the issue never specifies.",
+  "prompt_tokens": 10381,
+  "completion_tokens": 308,
+  "total_tokens": 10689,
+  "cost_usd": 0.022609999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

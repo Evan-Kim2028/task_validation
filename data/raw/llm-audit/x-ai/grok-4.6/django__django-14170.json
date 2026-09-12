@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14170",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2262
+  },
+  "response": {
+    "id": "gen-1789187446-oHxFEuAbhq3QzwAbuWVJ",
+    "object": "chat.completion",
+    "created": 1789187446,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that YearLookup BETWEEN optimization is wrongly applied to iso_year and returns incorrect rows, so a competent engineer would restore correct ISO-year filtering. The FAIL_TO_PASS tests only check that iso_year equality and range filters match ISO week-year boundaries, which is the reported bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Query optimization in YearLookup breaking filtering by \"__iso_year\". The YearLookup optimization uses BETWEEN instead of EXTRACT, which is wrong for ISO years because ISO years don'...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Query optimization in YearLookup breaking filtering by \"__iso_year\". The YearLookup optimization uses BETWEEN instead of EXTRACT, which is wrong for ISO years because ISO years don'...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "NODfIZx9yKjUKIIjNpF42uMRiWqtuO0p1Y9op+2UAmDuQLamJKBPwOTN/VJKrYX7fQCdL3Ywd1UHvzHGDQHeqNlPF6BcXmA3ysUDty/SygHiaF2Lh2m9ZG3ZWF1GRLpmHGFmbSjwHWlNLU4FItVUHMnPShQV0qhq1fYwvDZ2jzL5LMN+QDUk6wv99nmlrphNLJzYV2J2MpdbTUKneJbLUQ5lsEzmH1+DpX7rgbkXb31TYifQLRAfYi1wx7aE82KEEqdW22DtZvVSoTf/qQ7s3xBVL33ZiBk5TkDLJ9r0MBGjLLIOysaxVz1OF1lKsPuJO/7PlHBwmRNQ9gcbeUewPOAlHZLK16XbKyyxOcXPP4nuvh4yrjkTtTC5Ura5Nb0bSa3D+V8MyTRXDSFLECDgwGRCYXe/3HBxh2/u7yDbXVmd5/+oltiQJz+YYnCRT9FRZ/cjhya3RYCoHYVsoeTCqGmVM+Zs2EjVRQxG8du6v8pXl8ErcXIa3Jl490onL5A/912QGdu/TRz/wK4XX3GVWbAUejbA3/sIDIRg7eE0a/+IQuSdL48Oao/bCPj1gfXVHie36UM4mdHGi/Yx1XtKkqZhfjXqWyr/QJRDUK3SoxN4cTRc6OCmgF3Riw73Fl/i5FR/LWjOoXyGmwB8obq6aR0Itb+1YdeFbdGzQQOsp6j6dthz9ccQuU8d+wBPA3p/9lRI8TnNdG//bSDpT31BjnI/HSWS8A3WIzRUVx2v09ItbgaqtbSlI0OkzFNdzQt826RYKXpdsxjHyr2OMAWVkGS/9SP0IJr2D6VOwteIHt781w2ZxveCmDKL2C1SIvDUarZW1P5Sy4fzRkgR4PkVt3b7dWHkhYR6NWTaz5aV6+usCXDjlb+G8VOsH82akp35wVpPwCoVcdRuLvddzNCFInvnlZAhRNBK7hqI7LBY0r8lQuZHltqzGdaxpBOo+6He5lPrEYAcNDxfBtlyAhA6EgYKXsoY+tQMf+QFUd3skQ+AHHrd0z4MyDriLYRKKCj9NkVsOuNwbyEX98pNz51/y165349dMotKxVxXyUNqO1t41D/iQNooFozlg4UMYHYrYK0a+CguZGGFR/DzkOa0Ut411PTI6A0JpU516Q7PfeFjErbzCBP7l4zJDeBhgld4u5MEh3siNPgHeGx8LvUajcqGW2s1j9tNmEe+TrvGfsNsCBfOSGCovSNGt/hfHGwUmJagP2yt5Ce889fQUc2DzAdQ9S8zB6vsxYOiCxZXKysXq37XrkaZVRVGtUGaDC1vAJBrHD8FeWB7dBhDXy4Xgcfwu0o3UXPN1ea7Jkaw1L4Q4v3UhwOCa/Jm7tAMahEVsM21LQ6RIrsdMx0/cTKIZQegTnayj3soggEBQrZ/5Op3qAuytKCrygQwslxuer05PlTJ+iF5/UahjqTZUBuWTMvr7vGCvNRSx0rE8UVmPc1nVZNf9+py3fFgohFbwjeLLHM2UeyKzaPDUShz7TeclHJPykZ2Jz8wHcO2hYWtzw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c83d5c2c-f192-94e1-bbe6-0beead6e5199",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2871,
+      "completion_tokens": 347,
+      "total_tokens": 3218,
+      "cost": 0.007632,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007632,
+        "upstream_inference_prompt_cost": 0.00555,
+        "upstream_inference_completions_cost": 0.002082
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 229,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that YearLookup BETWEEN optimization is wrongly applied to iso_year and returns incorrect rows, so a competent engineer would restore correct ISO-year filtering. The FAIL_TO_PASS tests only check that iso_year equality and range filters match ISO week-year boundaries, which is the reported bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that YearLookup BETWEEN optimization is wrongly applied to iso_year and returns incorrect rows, so a competent engineer would restore correct ISO-year filtering. The FAIL_TO_PASS tests only check that iso_year equality and range filters match ISO week-year boundaries, which is the reported bug.",
+  "prompt_tokens": 2871,
+  "completion_tokens": 347,
+  "total_tokens": 3218,
+  "cost_usd": 0.007824,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

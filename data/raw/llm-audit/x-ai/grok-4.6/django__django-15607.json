@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15607",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1084
+  },
+  "response": {
+    "id": "gen-1789191633-JW0vIdYVIvqZ1NNchQdw",
+    "object": "chat.completion",
+    "created": 1789191633,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue states the expected logout behavior when next is unsafe: ignore next and redirect to LOGOUT_REDIRECT_URL without an extra hop. The FAIL_TO_PASS test checks exactly that redirect target under an unsafe next URL.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about unnecessary redirect in LogoutView when next contains unsafe URL. Expected: logged out, next ignored, redirect to LOGOUT_REDIRECT_URL. Actual: extra redirect.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about unnecessary redirect in LogoutView when next contains unsafe URL. Expected: logged out, next ignored, redirect to LOGOUT_REDIRECT_URL. Actual: extra redirect.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "yz6EbKXJ4Z8q2o8FVfTmErJ24NkREm5pdF7jbN/eR4ParJzASku2vQlveoeQYAtn30u/Evg/8cWPWbgzBgw6ynh2EOLwbdjtvSVMuN0YESKmqt810E7nmjShamztbU55LDmwrzReKQCMiwH8A4hE7KdxeGtKTm3B5eYGsIjxmkdxwX2g+MEaK8m8jLU+fHNRQ0tnpHGsJTNQ5W03PuObeYwCX1/DZHYfFgDJmSHvFSHZa/XmCqfai5mfIMR6CWqN0se/PL8vg23Kf0oM609prUABMutNYolRLBo9jIkuYzbPhc0TPFm0ImkEJHJ6lidw0tcKUdulZQOZ7z+rpw23T69XStMWsYWMbwaEAMlTtMq4qKMeGMP57KxnL821Y/i6wqddvFFh6orzEu+9GGu5SfdIeotmhnLEcZ3QdS2kX4xVzlmEC1R3DsKJsJdfOVfwQcxIFoobq6qKUCN4s9yEuj7jKfFppTQJEPPGOjMB6lHSEGI9bdypZif7rgIy2KCPz+75UgHCSHpo/xnK9vDVDHduBqltH09Ntk8WOdRUZFiBVvzP4Ho0w6hrruCaaO2sjiHvPrue8s8lGgnFhaKbd5s0h/mJnNZAl5KWUAqbqF3O0LeY8VvSM4SlPfu4preo2ZjeEjrNCZeDbCdOUx426ylQMJS99WznQAjlYxu0ermb8x9sA1X0fgml/LaT8JpN0Cx3SZ3LQ7tXukOXjKniaFMb41Yar/x5VuJNOMDASL7js/iEBJC60Fb0I703RSVNJvVUoq1zHQ5LdLeYB4UfBgYjpx3DLHJeqOpcbqRgl+7JLf9TlRc/m/PgWpzRy4AUO3Lv++fcbjbJov2X6Wp9VVJsDqXDAHa3kITARpYUFQw5U82Q8ckG1fCYOcLTiv7SbwcK5C4qlFcbxdKKGa02qEIJRZLxaYm2slAie0NEZGSugyyGEsEy9Co1DcTtR1XZEmIwMIhrgD/kx0Q+cZlkVMX4pkHXR0eumCqv2ORf2zO/TUe6EeiJDSiLH1pjIEJ4Kch1tdkM87/fT6dXEPWY+bQib3XScuyTb2DF5Ez9pROxCJMfFiWiJT2EoIfBOetoGCynRMxuKq0+oQbPNEeBFNRLgG/P+s2wW6AjnxxDL0gJ/MGJqkHaMOql97NzQ/l2WFVhU5WDS2YBsbuKbcAhQODNrCnBcI33MQtWUYKAKrNsBLS4H7whqXdXUmXaWPEeylWjFQj758yLwW+I3elOgwE9nOVSNSnGG/3BJMWp5nFkxKiA3fxr27yelNPoqTrOWizYivtTAN8lFXlAbpH4VXJALpOYHBzMYyugAcUK5xNyURumz1LEkruHncrMUcW7.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1a7ef126-1e28-9cfc-a16a-8f062fd12650",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1451,
+      "completion_tokens": 334,
+      "total_tokens": 1785,
+      "cost": 0.004522,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004522,
+        "upstream_inference_prompt_cost": 0.002518,
+        "upstream_inference_completions_cost": 0.002004
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 232,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue states the expected logout behavior when next is unsafe: ignore next and redirect to LOGOUT_REDIRECT_URL without an extra hop. The FAIL_TO_PASS test checks exactly that redirect target under an unsafe next URL.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue states the expected logout behavior when next is unsafe: ignore next and redirect to LOGOUT_REDIRECT_URL without an extra hop. The FAIL_TO_PASS test checks exactly that redirect target under an unsafe next URL.",
+  "prompt_tokens": 1451,
+  "completion_tokens": 334,
+  "total_tokens": 1785,
+  "cost_usd": 0.004906000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

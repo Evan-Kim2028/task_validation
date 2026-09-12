@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15902",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 851
+  },
+  "response": {
+    "id": "gen-1789191689-bTs0Z7hwPkar8u5wawnE",
+    "object": "chat.completion",
+    "created": 1789191689,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly asks to stop the default.html deprecation warning for formset management forms, which only emit hidden inputs. The FAIL_TO_PASS test only checks that rendering management_form does not warn, which matches that request.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about a deprecation warning for \"default.html\" being raised for ManagementForm even when the user never renders forms with {{ form }}. They want to special-case this to avoid the warning ...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about a deprecation warning for \"default.html\" being raised for ManagementForm even when the user never renders forms with {{ form }}. They want to special-case this to avoid the warning ...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkvemRyIn0",
+              "format": "xai-responses-v1",
+              "id": "rs_a170cb9f-2338-98e9-825b-56cc4b9723a4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1122,
+      "completion_tokens": 470,
+      "total_tokens": 1592,
+      "cost": 0.00468,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00468,
+        "upstream_inference_prompt_cost": 0.00186,
+        "upstream_inference_completions_cost": 0.00282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 368,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly asks to stop the default.html deprecation warning for formset management forms, which only emit hidden inputs. The FAIL_TO_PASS test only checks that rendering management_form does not warn, which matches that request.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly asks to stop the default.html deprecation warning for formset management forms, which only emit hidden inputs. The FAIL_TO_PASS test only checks that rendering management_form does not warn, which matches that request.",
+  "prompt_tokens": 1122,
+  "completion_tokens": 470,
+  "total_tokens": 1592,
+  "cost_usd": 0.005064,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14608",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1490
+  },
+  "response": {
+    "id": "gen-1789187749-P6EMNmXXXdoAfGbtwdOH",
+    "object": "chat.completion",
+    "created": 1789187749,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue explicitly names the nonform CSS class and asks that FormSet non-form errors use it analogously to Forms nonfield errors, which is enough to implement ErrorList(error_class='nonform'). The FAIL_TO_PASS checks only that rendered non_form_errors include that class, matching the requested behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue asks to add a `nonform` CSS class for non form errors in FormSets, similar to `nonfield` for forms. The tests check that the HTML rendering includes `class=\"errorlist nonform\"` and that Erro...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add a `nonform` CSS class for non form errors in FormSets, similar to `nonfield` for forms. The tests check that the HTML rendering includes `class=\"errorlist nonform\"` and that Erro...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "KufrU/6mVHTgEx+FupJ1Rk7vVRLEcp+tKf94F8muIaAWR0XYkRd8QVJs1QHLkDNnFxFRFDQnJHFQPN5dl+nOQzEBqr6cFJ/87alE5vSgvwvmXJTSaDCNrIKIHbqGRS2Ky/S9JTWk73qCc+oDg0yv4FurNlvpNjMx6GzoyowYJkpIDdjeB8eqLO1Fc3eD9ZLwJBqedtqhdgrHHi/DctE8AucUIQ6iVUFQXhOuzsNuKvhLBrsFoxOJNMvETltfQs6ebL/AR8yCASb7FKvlNavpq09+9VvNqXnCZAxT9d3a8taGyPPvjLq7pah8mRcbHf23oKmoKufP3E4nDVaxDQWDRHqW6JA3n1NlWgwycI8/+mC+g7YSwV29FhGu7b9NNLm0pys8LfjQ97uoM8QJO91TMf2sL4/jxhRPw8tmSYz6Pc46bT3tzF45hGwNj4shsFTCjfGRySH567kwYtVPdPP0MxVH6Dq/ZpyxwJfmsLWYeBHgI9nLSuVSh1G7rciMmfX/6N7CrAWJgR2w73+gaGkpu3xBkxb57NrJJC5MDiHcrmyQIpmIU+w7e7x6B07oO9j3aPKvkHsIvRQG/uiRPLzgQNMjkKmBjxR/wJvZ5st4QGjE1hDFvje3Sl5BUSCeAQit8atNYMcaqtnF+hLOUi+x2UoQUoeBUUe9oDWRaoJfFnqjXIG8gOFfWIxnUb84nDR3IuFF2a6NvWyvil5FmzlCXSOLgnobW0QOvFy/cvM64rpAEYx5XhN7mawk+aguSA5GFpBTLyencVgx3PxJ1rbK/DWs2RN9o/0FANrS67skOSWS+9X23Tf9cFUmKG4bzX8JLopUO3IGgZotcUG4hBPmZokFxdLe4G5kz7f2InuXeJRxZD/F.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1d4f0b6c-4bd8-9eeb-b41f-138b81deeb3d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1903,
+      "completion_tokens": 274,
+      "total_tokens": 2177,
+      "cost": 0.005258,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005258,
+        "upstream_inference_prompt_cost": 0.003614,
+        "upstream_inference_completions_cost": 0.001644
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 152,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue explicitly names the nonform CSS class and asks that FormSet non-form errors use it analogously to Forms nonfield errors, which is enough to implement ErrorList(error_class='nonform'). The FAIL_TO_PASS checks only that rendered non_form_errors include that class, matching the requested behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue explicitly names the nonform CSS class and asks that FormSet non-form errors use it analogously to Forms nonfield errors, which is enough to implement ErrorList(error_class='nonform'). The FAIL_TO_PASS checks only that rendered non_form_errors include that class, matching the requested behavior.",
+  "prompt_tokens": 1903,
+  "completion_tokens": 274,
+  "total_tokens": 2177,
+  "cost_usd": 0.00545,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

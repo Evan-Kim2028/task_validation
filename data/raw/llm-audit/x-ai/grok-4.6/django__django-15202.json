@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15202",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1241
+  },
+  "response": {
+    "id": "gen-1789191557-mW1hJSKkqFmDiaXzeUJ3",
+    "object": "chat.completion",
+    "created": 1789191557,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that URLField.clean raise ValidationError instead of leaking urlsplit ValueError for invalid URLs. The FAIL_TO_PASS cases also require treating empty hostname as invalid, which is not described in the issue and would fail a ValueError-only fix.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is that URLField.clean throws ValueError instead of ValidationError for certain invalid URLs like '////]@N.AN'.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that URLField.clean throws ValueError instead of ValidationError for certain invalid URLs like '////]@N.AN'.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LDft7DY/oYO8rDYymq06Cruk+urc7lFzEEbj/Kn5NMR87TShaOoZ8DQ4sWOTFCToYF9QpH0/5iB+kRvkiIh3JxW5I5BJPH2Q0J38oB+0a+hGWqadxWXCFQqFA4geSktGbjQduTdgQVyEX6twPf1vIRKbNerZaqzwxHyRO3IKvLOmzBT97zNoPNlFh3KG6YOC4rO2+PfRvOrCyA16lSbBBwTTGbjvJjEOl/YoY/bw3aLwehiQwSrhKtP84g88IXlBi3n9K7M3E0/63pp4KKRp1DSbZfiA9nzuet2nBmO+TmSNJoxNqUr+yxmGZua71BC/Hyak7w97Pn79rH8wFo3geN/JTLinOr0kp7rWOQax5vbYdj82k1jt/qI+gwqSKrd6ZgCF0vRZ0pPtdpKDwRlEKHwZfb7z68dYq5VEiFZFDU/4FPP+P1w9Ana+zb/7x15j6gnnhwTQw1qfUnP9gqkh10RrCSx7xVT6A0gbxVuWvSgdoepEIJBH3NAlvgqkbJbJgI1BMWCqCRoVQNHY/j8boLmPQUnUylZ1p2wff4UiXXYYHPB045DhMzRyUX3yQWRskPwG2+luv5IIG20tRCsSS/miUy5AB5Rv4Sl+BwTgN1tG3N3WHwjrA0meNhirKMP8BTDCIF2jhxvZ9wzc5XoroOgWzlKnFDFG1Iay9QKiX1pPFJ6ktN0qlJzjYEJf2s3JfuqMXsIYmgQYYdejdrqDPNDyRmsMcpn/GrLM7DMpXTTUwjq7PebwhHZSBt+kuqbDeZ1WOy+D5jV0wOgq+jN3jTedE8oc2B6mPZ9pHzhjclqZxv+r+m9F2wEi1hfP4cSPuzz9ZWORhCJVkabeQkltL7MFZVW91tVB4JN7MBucSunrOE2JhmVnQdH1fiF0GXZR9qBOaTejalO8bdScsKTLlYq84WnSTnSS2NeYSTrWIUGXcFaPdzcp+C2me0boU02L0e6z70M9CM1imAlHoHFYlebCK6/mN71QdoDm+a+AsOnY6RTNBxoOZBuJIHpjj+nVvRGHBk+IBdi3W7B8w7b3qpeJUkYVfT7V/Uo71HwSbvT0k6FVnVfM3WOiEjo4fva769euhjmgE1jA32g2PAascGNIzxBfBK4vdrXBZ1BSOky12u1dVIVccaggow2dWZj5A7xiB8YuKO55ZHxxbdiuWcFCFWu6JbYXwzVAuF739sKoxyTB6xmLCG6ZwTd6Gm1BJIuMtvtXd8Z0xkazBMYOJySlwcgpuHrbqsORXjneCcTg0I0+9L0uA946EMzl+GjGajpSuRbLIB+DhSHsJGEWnTdMnKFZtidrGer5alplsB3GD9IGwb1CpJaV/Oi6Bq4MpqgUKnOH54qFkfyuvTs9nU6p25BxLMjGH/eq0q+xJ3Ew1M1tPbeT9QHT8A1o7OzhI1WNBuUla4dKYy1d86ELWtBq3CwInvzvRY1cMb9gDi3VTDECZcVb6VceNf1+QjMuzoFQowwlTvGse3k0RpwBoyxzGgWpEXdKMSYMrrhKlh3gM4Av0YkJ1mJ2h5dhY5CAeExP0PF0+NMPKCLPLWGMU0a3x6tYIjnw1NYUQjZjbotqsHBYGFvEq18d6pUPLfRMw1iJCCWTX4WD7MceYDPA6J5t69Qd0hFoAmuI8WTWZjhL2rVZur+4kHgOefFM2T08+NZjK3UDF+PGAA43s7Z0RYbNMzQjagiD549hcXVUgcjHqM5BfexdBSh4X029qeb1LZTGrJeJ+e+KQxq17nThVeUB0yjpIrAtiGk3MJ8BxYq/snX/tkACe9mqbqu8B6Z/sUyAJCXY9OXQ4ZJLUySytBI+uJ1x1Fc4lDfP4nt63hBDkTspACu2vzQfBazgsyR3+bdJsgGdWVxQJKmtpROFcV9UbypRHciCDif3ZrEMDg0oEVyFGcoNisiL2NhIg4QqH2EUWtwe.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_70b74e85-4c66-91e6-9aab-36e7f423428c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1590,
+      "completion_tokens": 450,
+      "total_tokens": 2040,
+      "cost": 0.005496,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005496,
+        "upstream_inference_prompt_cost": 0.002796,
+        "upstream_inference_completions_cost": 0.0027
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 339,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that URLField.clean raise ValidationError instead of leaking urlsplit ValueError for invalid URLs. The FAIL_TO_PASS cases also require treating empty hostname as invalid, which is not described in the issue and would fail a ValueError-only fix.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that URLField.clean raise ValidationError instead of leaking urlsplit ValueError for invalid URLs. The FAIL_TO_PASS cases also require treating empty hostname as invalid, which is not described in the issue and would fail a ValueError-only fix.",
+  "prompt_tokens": 1590,
+  "completion_tokens": 450,
+  "total_tokens": 2040,
+  "cost_usd": 0.00588,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

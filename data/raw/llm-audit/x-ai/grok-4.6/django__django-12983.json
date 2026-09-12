@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12983",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1065
+  },
+  "response": {
+    "id": "gen-1789191121-1gx4wg8ZXF45pYUFh0K9",
+    "object": "chat.completion",
+    "created": 1789191121,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue and example make clear that slugify should drop leading and trailing dashes and underscores while keeping a normal slug in the middle. The FAIL_TO_PASS cases follow that example, including already-existing dash collapsing, without requiring unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about making slugify strip dashes and underscores. The example shows stripping leading/trailing dashes and underscores, and also collapsing multiple dashes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making slugify strip dashes and underscores. The example shows stripping leading/trailing dashes and underscores, and also collapsing multiple dashes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_22903f9d-8e39-9cce-b454-35c248dce29e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1438,
+      "completion_tokens": 470,
+      "total_tokens": 1908,
+      "cost": 0.005312,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005312,
+        "upstream_inference_prompt_cost": 0.002492,
+        "upstream_inference_completions_cost": 0.00282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 362,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue and example make clear that slugify should drop leading and trailing dashes and underscores while keeping a normal slug in the middle. The FAIL_TO_PASS cases follow that example, including already-existing dash collapsing, without requiring unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue and example make clear that slugify should drop leading and trailing dashes and underscores while keeping a normal slug in the middle. The FAIL_TO_PASS cases follow that example, including already-existing dash collapsing, without requiring unstated APIs or messages.",
+  "prompt_tokens": 1438,
+  "completion_tokens": 470,
+  "total_tokens": 1908,
+  "cost_usd": 0.005696,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

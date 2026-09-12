@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11239",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1765
+  },
+  "response": {
+    "id": "gen-1789190829-GOVBZUBbFmq52YTqXkA8",
+    "object": "chat.completion",
+    "created": 1789190829,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue names the OPTIONS ssl fields to support and matches existing dbshell/libpq practice of forwarding them via PG* environment variables. The FAIL_TO_PASS test is slightly narrower by requiring those exact env names and omitting other possible ssl options, but a competent engineer following the current PGPASSWORD pattern would implement that.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue asks to add support for postgresql client certificates and key to dbshell, similar to existing SSL support. The tests check that sslmode, sslrootcert, sslcert, sslkey are passed as PGSSLMODE...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add support for postgresql client certificates and key to dbshell, similar to existing SSL support. The tests check that sslmode, sslrootcert, sslcert, sslkey are passed as PGSSLMODE...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "DAKZF/2pBQwXSoCKUYAQOK/tZYrzPicdaozDxpihunvpFrwB+90diem/rlZFDdNFBBdGMuBKkBN9xWOsrgyT7VhMGzTbwb3Li1mjb2lKwwHEgyvnIW1qXnvfaxHmpA2n8NAq4Sz7EHVZmcJXuB1wauNCRNtgHN1hbsaOPJEbuI9uEv1CaNV0inBqg1I3pLrJ9SE7G9YJbC7DN8YhRxVNtAAn82fPW8fgAoUnCjr0fSjH1wBWPE9flKtf2t3TqMBCGaH2zH08lLpWaS27wgHkzCxw+7ZWytIf6oLuMh7REIUcpYC0mloswXCE16dp1jc9DYkGV/E0UVJUh3Ckt6t5ZCflsPRmBzshzWF2US+WrMD0bRWFyJdeQzG8L210vW9kSUuOvt8QJ5InLmKwlQZn5JfhSrhAoC9NodqD3/ncZDutaALU9yx4sNtie3NOoDtoXxGXWjXNW7vjoAnaNH1qJcYF5JrHGcTr9MbZv/WSxkXX0zNTeDloeU2bJooPSl3JGsMjZ1X0KXpS94Woq2iwEqv3EzUvNFuQSIqtlyNzxaw3/UT5lQhysmiYLZ3oTqs+38CCCZDFs8TdeHDgNSTRWHdJ4ZZelpYuZm0YnJNHqfhHW6ujfxHgHeeUJ7MLEcXilDJLRLjyEnASB/nMOUUYQqsCfKD4stG0phseTWZ6L+Wqj8so9BxhAiB3SBzD02QOLTjoE0WMdIfP2ckroiJuUnyrD6TNNybywjHBItwMBl/LODJk4Fb9MXscXHwwEJ9pcoJCA2BGjoqIasIFXFAniXk3jjgdJvJv+gfM7VaA3V3mcBZeoJ2EJFea9rCp2WmMbjFcB/UmeNL2gZnfc4xZUUptfHBm4WPurtEG7GcW6Xc+F2L0yllgRgVc9b3mRVQIjtqc6KcmUzuRPy8VRDkpMMuCLWPhxDw4bPNVmk1+NoLdimxp2ffyYEJjvxyIiTtRQpBC+gnXFYe6DkGklDtBSaCEu1ENxkukIAI5JnIpq9NLo2QydRg1rFueWh7QEf2juN5rtjuj+PPlZl6jaaNwA16iWG5fy76ynPp3+hi2Q8Jq/VLfuAy2y+buBO1Yd2Oipaxht0gzWHGuu49+ZxdjFB5sdg5JxSAQ++Qd+yELUbmt5fdaedcWGZiQpbPa2uUsm+No8xa678ZDUse9NtitqgaEvyPuGRrFd/HrfLqbQjH3bLCfeGbKe8NMHhI3aMkzilvx1X69PCBIW81cZXNSYezgU5EV740sBd+SOtWrnqFdeOOXXdVift2OJcdv4/iMfjiN5uif171FrHQ18+LuNGJCyggR6LgtwS2/1SERyFDtgtai8XdjQvJrfWpD1jQzt+BZZPBl3BtPS/QGe6edcm5Cv72pcgT8uHh1xwujG1bdPo7aT3oAxwegUcUT4NhVIJfn2EoRX2XPHWBk/L3DwbyIZtjtFIjCcZAfxe4gqwFEcgDvqHcxgWxaJpsWsZH7GzciLIH1vHvGHn+TmAXW0qA4FXeut+ANMZ5bx0t4UZ3iiL0NS+76rSmC6WI3t7LEvVTCo0/2IWSngxGNljTFiPyhRowgT2rVQ+nqqlG6dv7F1W6IjgWG/GNgUEjBTd7BSGr+sFBYKogG8PthOf9h8Ws++iwdJw5OgQJO+6iD3+q78op/infKK8Kf1L1Q/KNvhRH1ZuwWGtyTlQQKtUxkCehuUbsoMCxOL16hqMqepHiWaZrq4UubhQlN6fpeLiaAxyc0sTZ3uNln9JYRZRTTLBBJ0LL6NJMX7B1U4w.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_efd92423-c22b-940c-880d-63d0246995ee",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2171,
+      "completion_tokens": 441,
+      "total_tokens": 2612,
+      "cost": 0.006988,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006988,
+        "upstream_inference_prompt_cost": 0.004342,
+        "upstream_inference_completions_cost": 0.002646
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 319,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue names the OPTIONS ssl fields to support and matches existing dbshell/libpq practice of forwarding them via PG* environment variables. The FAIL_TO_PASS test is slightly narrower by requiring those exact env names and omitting other possible ssl options, but a competent engineer following the current PGPASSWORD pattern would implement that.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue names the OPTIONS ssl fields to support and matches existing dbshell/libpq practice of forwarding them via PG* environment variables. The FAIL_TO_PASS test is slightly narrower by requiring those exact env names and omitting other possible ssl options, but a competent engineer following the current PGPASSWORD pattern would implement that.",
+  "prompt_tokens": 2171,
+  "completion_tokens": 441,
+  "total_tokens": 2612,
+  "cost_usd": 0.006987999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

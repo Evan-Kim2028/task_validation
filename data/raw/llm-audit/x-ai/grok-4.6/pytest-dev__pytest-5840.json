@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5840",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "6ea33ea5-b926-9acb-816b-d2cf8e31d534",
+    "object": "chat.completion",
+    "created": 1789193801,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes a Windows path-casing regression that lowercases conftest paths and breaks imports, which a competent engineer could fix without extra product requirements. The FAIL_TO_PASS cases only assert that internal _conftestpath2mod keys are pathlib.Path.resolve() objects for test/tests subdirs, which is unstated implementation detail and would reject other valid casing fixes.\", \"p_invalid\": 0.78}",
+          "reasoning_content": "The issue is about Windows import folder casing issues after pytest 5.1.2 - paths converted to lowercase causing ImportError when loading conftest.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3329,
+      "completion_tokens": 134,
+      "total_tokens": 3973,
+      "prompt_tokens_details": {
+        "text_tokens": 3329,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 510,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 33163600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes a Windows path-casing regression that lowercases conftest paths and breaks imports, which a competent engineer could fix without extra product requirements. The FAIL_TO_PASS cases only assert that internal _conftestpath2mod keys are pathlib.Path.resolve() objects for test/tests subdirs, which is unstated implementation detail and would reject other valid casing fixes.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes a Windows path-casing regression that lowercases conftest paths and breaks imports, which a competent engineer could fix without extra product requirements. The FAIL_TO_PASS cases only assert that internal _conftestpath2mod keys are pathlib.Path.resolve() objects for test/tests subdirs, which is unstated implementation detail and would reject other valid casing fixes.",
+  "prompt_tokens": 3329,
+  "completion_tokens": 644,
+  "total_tokens": 3973,
+  "cost_usd": 0.010522,
+  "cost_in_usd_ticks": 33163600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2289
+}

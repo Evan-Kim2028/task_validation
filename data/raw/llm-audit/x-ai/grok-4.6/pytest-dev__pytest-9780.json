@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-9780",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "a7b3e390-b2e9-95a8-bf4f-bac2da37bdfd",
+    "object": "chat.completion",
+    "created": 1789193885,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The report is a 7.1.0 regression that conftest is not loaded in SciPy’s installed-package CI, which is enough for a senior engineer to target --pyargs/site-packages discovery even though mark registration is a red herring. The FAIL_TO_PASS case checks exactly that installed-package conftest pickup and does not demand unstated names or messages.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1979,
+      "completion_tokens": 135,
+      "total_tokens": 2547,
+      "prompt_tokens_details": {
+        "text_tokens": 1979,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 433,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 22433200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The report is a 7.1.0 regression that conftest is not loaded in SciPy’s installed-package CI, which is enough for a senior engineer to target --pyargs/site-packages discovery even though mark registration is a red herring. The FAIL_TO_PASS case checks exactly that installed-package conftest pickup and does not demand unstated names or messages.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The report is a 7.1.0 regression that conftest is not loaded in SciPy’s installed-package CI, which is enough for a senior engineer to target --pyargs/site-packages discovery even though mark registration is a red herring. The FAIL_TO_PASS case checks exactly that installed-package conftest pickup and does not demand unstated names or messages.",
+  "prompt_tokens": 1979,
+  "completion_tokens": 568,
+  "total_tokens": 2547,
+  "cost_usd": 0.007365999999999999,
+  "cost_in_usd_ticks": 22433200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1143
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16502",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2279
+  },
+  "response": {
+    "id": "gen-1789191783-IB3sAEZnHxqWOrVrPLIl",
+    "object": "chat.completion",
+    "created": 1789191783,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly requires runserver not to send a HEAD response body, which a competent engineer could implement. The FAIL_TO_PASS test also forbids a Content-Length header and Connection: close, which the ticket never states and which is not required by the cited RFC.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about runserver returning response body for HTTP HEAD requests. It should not return bodies for HEAD requests per RFC.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about runserver returning response body for HTTP HEAD requests. It should not return bodies for HEAD requests per RFC.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_217cfc5e-9114-94b4-9f22-06ddec1e32a1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 453,
+      "total_tokens": 3277,
+      "cost": 0.008174,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008174,
+        "upstream_inference_prompt_cost": 0.005456,
+        "upstream_inference_completions_cost": 0.002718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 342,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly requires runserver not to send a HEAD response body, which a competent engineer could implement. The FAIL_TO_PASS test also forbids a Content-Length header and Connection: close, which the ticket never states and which is not required by the cited RFC.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly requires runserver not to send a HEAD response body, which a competent engineer could implement. The FAIL_TO_PASS test also forbids a Content-Length header and Connection: close, which the ticket never states and which is not required by the cited RFC.",
+  "prompt_tokens": 2824,
+  "completion_tokens": 453,
+  "total_tokens": 3277,
+  "cost_usd": 0.008365999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

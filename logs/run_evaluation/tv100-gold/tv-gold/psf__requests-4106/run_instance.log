@@ -1,0 +1,47 @@
+2026-09-12 00:10:43,320 - INFO - Image not found locally, attempting to pull...
+2026-09-12 00:10:50,871 - INFO - Creating container for psf__requests-4106...
+2026-09-12 00:10:51,145 - INFO - Container for psf__requests-4106 created: 53a981cca28fa16834a590777a8e19faca8762963b8a286e0d9b7378260b36c9
+2026-09-12 00:10:51,424 - INFO - Container for psf__requests-4106 started: 53a981cca28fa16834a590777a8e19faca8762963b8a286e0d9b7378260b36c9
+2026-09-12 00:10:51,425 - INFO - Intermediate patch for psf__requests-4106 written to logs/run_evaluation/tv100-gold/tv-gold/psf__requests-4106/patch.diff, now applying to container...
+2026-09-12 00:10:51,555 - INFO - >>>>> Applied Patch:
+Checking patch requests/packages.py...
+Applied patch requests/packages.py cleanly.
+
+2026-09-12 00:10:51,657 - INFO - Git diff before:
+diff --git a/requests/packages.py b/requests/packages.py
+index 1fc3a742..7232fe0f 100644
+--- a/requests/packages.py
++++ b/requests/packages.py
+@@ -4,7 +4,7 @@ import sys
+ # I don't like it either. Just look the other way. :)
+ 
+ for package in ('urllib3', 'idna', 'chardet'):
+-    __import__(package)
++    locals()[package] = __import__(package)
+     # This traversal is apparently necessary such that the identities are
+     # preserved (requests.packages.urllib3.* is urllib3.*)
+     for mod in list(sys.modules):
+2026-09-12 00:10:51,658 - INFO - Eval script for psf__requests-4106 written to logs/run_evaluation/tv100-gold/tv-gold/psf__requests-4106/eval.sh; copying to container...
+2026-09-12 00:11:00,160 - INFO - Test runtime: 8.43 seconds
+2026-09-12 00:11:00,160 - INFO - Test output for psf__requests-4106 written to logs/run_evaluation/tv100-gold/tv-gold/psf__requests-4106/test_output.txt
+2026-09-12 00:11:00,209 - INFO - Git diff after:
+diff --git a/requests/packages.py b/requests/packages.py
+index 1fc3a742..7232fe0f 100644
+--- a/requests/packages.py
++++ b/requests/packages.py
+@@ -4,7 +4,7 @@ import sys
+ # I don't like it either. Just look the other way. :)
+ 
+ for package in ('urllib3', 'idna', 'chardet'):
+-    __import__(package)
++    locals()[package] = __import__(package)
+     # This traversal is apparently necessary such that the identities are
+     # preserved (requests.packages.urllib3.* is urllib3.*)
+     for mod in list(sys.modules):
+2026-09-12 00:11:00,209 - INFO - Grading answer for psf__requests-4106...
+2026-09-12 00:11:00,211 - INFO - report: {'psf__requests-4106': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['tests/test_packages.py::test_can_access_urllib3_attribute', 'tests/test_packages.py::test_can_access_idna_attribute', 'tests/test_packages.py::test_can_access_chardet_attribute'], 'failure': []}, 'PASS_TO_PASS': {'success': [], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for psf__requests-4106: resolved: True
+2026-09-12 00:11:00,212 - INFO - Attempting to stop container sweb.eval.psf__requests-4106.tv100-gold...
+2026-09-12 00:11:15,557 - INFO - Container sweb.eval.psf__requests-4106.tv100-gold stopped successfully.
+2026-09-12 00:11:15,557 - INFO - Attempting to remove container sweb.eval.psf__requests-4106.tv100-gold...
+2026-09-12 00:11:15,635 - INFO - Container sweb.eval.psf__requests-4106.tv100-gold removed successfully.

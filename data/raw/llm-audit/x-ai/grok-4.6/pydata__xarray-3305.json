@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3305",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1959
+  },
+  "response": {
+    "id": "gen-1789192222-rRrWp9PwAEkOGjio8wQ1",
+    "object": "chat.completion",
+    "created": 1789192222,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that DataArray.quantile should copy attrs when keep_attrs=True, with a concrete MCVE and expected attrs. The FAIL_TO_PASS test only adds that keep_attrs=True path and an attrs equality check, which matches the reported contract.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is that DataArray.quantile does not honor keep_attrs. The expected behavior is clear: when keep_attrs=True, attrs should be preserved.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses DataArray(self.va) instead of self.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that DataArray.quantile does not honor keep_attrs. The expected behavior is clear: when keep_attrs=True, attrs should be preserved.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses DataArray(self.va) instead of self.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c166c029-88ed-9870-8d68-b1acff394476",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2337,
+      "completion_tokens": 485,
+      "total_tokens": 2822,
+      "cost": 0.0072,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0072,
+        "upstream_inference_prompt_cost": 0.00429,
+        "upstream_inference_completions_cost": 0.00291
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 374,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that DataArray.quantile should copy attrs when keep_attrs=True, with a concrete MCVE and expected attrs. The FAIL_TO_PASS test only adds that keep_attrs=True path and an attrs equality check, which matches the reported contract.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that DataArray.quantile should copy attrs when keep_attrs=True, with a concrete MCVE and expected attrs. The FAIL_TO_PASS test only adds that keep_attrs=True path and an attrs equality check, which matches the reported contract.",
+  "prompt_tokens": 2337,
+  "completion_tokens": 485,
+  "total_tokens": 2822,
+  "cost_usd": 0.0075840000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

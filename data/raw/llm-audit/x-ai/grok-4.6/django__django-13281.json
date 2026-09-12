@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13281",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1258
+  },
+  "response": {
+    "id": "gen-1789191184-qsUqdcSEM9hXAarRkBUT",
+    "object": "chat.completion",
+    "created": 1789191184,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue describes the copy/FK cache sharing bug with a concrete expected-behavior example and a suggested fix direction, so a competent engineer would know to isolate fields_cache on copy. The FAIL_TO_PASS test checks exactly that isolation and does not require unstated APIs or messages.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about FK field caching when copying model instances. The user wants copy() to not share the fields cache so changing the copy doesn't affect the original.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FK field caching when copying model instances. The user wants copy() to not share the fields cache so changing the copy doesn't affect the original.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "priqDIZPhQtqEVWgfUmYfsTwCgvoeg4FR1OEeCXSl6NA+nBMjLLp2IF+9mJhYQqoC31GPGVASgEt92a68nsBY7xh2OUeaBaazi0rUQui6uOFszkjABoVXloSaoc/kumBwqC8hvxhsr1nvFppcJPzvi/d5cQYgYRXO+5RRGWSKjedLdZ05wkUEpJddiv5UahjRqRa3WIvxa6zIIeaZ2DGyPsw3lLjr2NxlcLDREiwajTbfOlO82gvy5vItqzXvX8pSxtmtOZr/n+gz6g5S2yd6kiBJXLulLGjHiLuxHyDSwvsxfrpp6gfXr7fBu/KhAdWuwIH5k+BpiNzgksOcMtorWUfowcTOPTXDoAVXB7hoFHBIYSvbJ67bEE1pkosdw7MW1jAlHmTFaltsM1dsTz+2y7ZLDCCjzbAsNTsfcIA+mk0m3EEONPLcrjajfcknN13DhZyPL3uopJ3xTdqQDGun1lmBhhxgb+RVGYtrTIvePK+i7OnzOObaDyONwpE9ag9EkZVtp/764NkUrfoB2hWFg4euJ2LDqi53bxrsPsjiZrRtCNHmoIaVu71TtZm5ErGIk0cxyOETuUMyHyU8bO8220BnApnmqkLanhW56crPbot7cL78BtyOLulw4ne1Db3qRAMmlEw7BPCOOq8NGUk+Zg2soiyc0FNT4bYWId+rI4D7Im6oPdBfIrbRb2bW9fLVn1ehWYYr84rrUddEdjYiJbOJnGfxh9EWyVskBEYdY3We5mJOB/D0GQfd9Ol+C9KiVbEvUMsPdI5Uy1BbBFo8lEw08AYlqKlLIBAv+F54RGCsFhm4qGnsG9qJpV/wrivmtkgnz28gmd2cU/z85KfBvoAaXrxUf7Sdh5gkE/Dzjn/j97n6O8bEtkTRMWtZ2UhJ6mdr7O5WuAgzusVsRNKs9MQ+R+uEiTl56J8IW1lCenFsJLeHA4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0561bad4-3fd7-9d64-908e-c2bbfdcdbe47",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1669,
+      "completion_tokens": 275,
+      "total_tokens": 1944,
+      "cost": 0.004796,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004796,
+        "upstream_inference_prompt_cost": 0.003146,
+        "upstream_inference_completions_cost": 0.00165
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 161,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue describes the copy/FK cache sharing bug with a concrete expected-behavior example and a suggested fix direction, so a competent engineer would know to isolate fields_cache on copy. The FAIL_TO_PASS test checks exactly that isolation and does not require unstated APIs or messages.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue describes the copy/FK cache sharing bug with a concrete expected-behavior example and a suggested fix direction, so a competent engineer would know to isolate fields_cache on copy. The FAIL_TO_PASS test checks exactly that isolation and does not require unstated APIs or messages.",
+  "prompt_tokens": 1669,
+  "completion_tokens": 275,
+  "total_tokens": 1944,
+  "cost_usd": 0.004987999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

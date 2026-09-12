@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11951",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1063
+  },
+  "response": {
+    "id": "gen-1789190967-FDM4QOm6LuaA17GFwcxz",
+    "object": "chat.completion",
+    "created": 1789190967,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states the bug and the exact min(batch_size, max_batch_size) behavior already used by bulk_update. The FAIL_TO_PASS test only checks that an explicit oversized batch_size still respects the backend max, which is what the issue describes.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about bulk_create's batch_size overriding the compatible batch size calculation. They want it to use min(batch_size, max_batch_size) like bulk_update.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about bulk_create's batch_size overriding the compatible batch size calculation. They want it to use min(batch_size, max_batch_size) like bulk_update.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "e1ILGu0WiTwcS3u/BtIA0wHq/nFkDZL9NO97tj26rFrAJQKAx181fqnqevcgZJgkuQIcEogd8y1JjZhVpyH8nYDfG/UgQW2tiIOBJ3Jq3rgsBBIv2uOaOTfNSb/RLR1bisjjTChuFiNad58OgQai0zCu2ZO88cxOi1d7hZ2wfhyj7hLff3BEF4oDYRsBqzW/V1K62tlN9P8oiIDEueaxt9wClqQEF/ba9DBBztiM/RaRlWN4OA6MZtebxVVm7MtynayR+gcVpaCHrf6rb3tGQlQW9BizW4jeORiYX0mWXAM1LcHeBftggd77aro2UcCpEOwnN3P9ZPURSSz5VvEE7p1XdOAwo5vbA4/v8wSOEQzxx4ScSZfT8tFsmV9tw1SXqU0P+/jluceXibz3KVivF0knoDNN563rUTnXOQOl1bUknhJ9Qao4hJJlXcKnfC8r+FltEKGOun+QHreq7JOukeqJoADbRrTMxAxDWDIjFQuygRLWtXVE6SK/fiNoYYZPKvd+cDWi+8QSL27n7NwYlmgq/3gREFfHTApCSTf6kZpyNqZ9UlFluHnTgDjDW/0YomsqKAaS4sRP/N43qos1+Nlnc0TTClq6k4m2.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_433ee157-7fda-95b4-b444-27d1907f3aed",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1453,
+      "completion_tokens": 214,
+      "total_tokens": 1667,
+      "cost": 0.003806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.003806,
+        "upstream_inference_prompt_cost": 0.002522,
+        "upstream_inference_completions_cost": 0.001284
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 102,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states the bug and the exact min(batch_size, max_batch_size) behavior already used by bulk_update. The FAIL_TO_PASS test only checks that an explicit oversized batch_size still respects the backend max, which is what the issue describes.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states the bug and the exact min(batch_size, max_batch_size) behavior already used by bulk_update. The FAIL_TO_PASS test only checks that an explicit oversized batch_size still respects the backend max, which is what the issue describes.",
+  "prompt_tokens": 1453,
+  "completion_tokens": 214,
+  "total_tokens": 1667,
+  "cost_usd": 0.004189999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

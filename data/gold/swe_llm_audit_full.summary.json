@@ -1,0 +1,1489 @@
+{
+  "schema": "swe_llm_audit_full.summary.v1",
+  "model": {
+    "id": "x-ai/grok-4.6",
+    "name": "SpaceXAI: Grok 4.6",
+    "context_length": 500000,
+    "prompt_price": 2e-06,
+    "completion_price": 6e-06,
+    "pricing": {
+      "prompt": "0.000002",
+      "completion": "0.000006",
+      "web_search": "0.005",
+      "input_cache_read": "0.0000005",
+      "overrides": [
+        {
+          "min_prompt_tokens": 200000,
+          "prompt": "0.000004",
+          "completion": "0.000012",
+          "input_cache_read": "0.000001"
+        }
+      ]
+    },
+    "reasoning": {
+      "mandatory": true,
+      "default_enabled": true,
+      "supported_efforts": [
+        "xhigh",
+        "high",
+        "medium",
+        "low"
+      ],
+      "default_effort": "high"
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "logprobs",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "population": {
+    "design": "census of the 1,699 labeled SWE-bench 2024 items",
+    "N": 1699,
+    "ids_sorted": true
+  },
+  "prompt": {
+    "system": "You audit whether a SWE-bench coding task is specification-valid. You see a GitHub issue, the FAIL_TO_PASS tests (names and patch), and the gold patch. Judge only specification fairness: whether a competent engineer could know what to implement from the issue, and whether those tests fairly check the issue. Do not judge difficulty. Do not treat the gold patch as proof that the tests are fair; use it only to see what the tests require. Reply with one JSON object and no markdown.",
+    "token_budget": 24000,
+    "temperature": 0.0,
+    "labels_in_prompt": false,
+    "reasoning": {
+      "effort": "low"
+    },
+    "fields": [
+      "issue",
+      "test_patch",
+      "FAIL_TO_PASS names",
+      "gold patch",
+      "repo",
+      "base_commit"
+    ]
+  },
+  "combination_rule": "retain lowest z(s) + z(1-p_i): low auditor severity and high solve rate",
+  "projection": {
+    "n_population": 1699,
+    "n_cached": 1177,
+    "n_pending": 522,
+    "mean_prompt_tokens_cached": 2860.4409515717925,
+    "mean_completion_tokens_cached": 446.8538657604078,
+    "est_pending_usd": 4.385846661002549,
+    "est_total_usd": 14.275006661002553,
+    "method": "cached-token-means times pending count"
+  },
+  "cost": {
+    "total_usd": 15.37107,
+    "new_usd": 5.481909999999998,
+    "cached_usd": 9.889160000000006,
+    "usd_per_item": 0.009047127722189524,
+    "prompt_tokens": 5278443,
+    "completion_tokens": 802364,
+    "n_cached": 1177,
+    "n_fetched": 522,
+    "n_error": 0,
+    "wall_clock_s": 1183.746168906997,
+    "projected_pending_usd": 4.385846661002549,
+    "cap_usd": 20.0,
+    "concurrency": 4,
+    "openrouter_then_xai": true
+  },
+  "n": 1699,
+  "n_scored": 1699,
+  "by_y": {
+    "conservative": {
+      "n": 1699,
+      "n_invalid": 1160,
+      "base_rate": 0.6827545615067687,
+      "auroc_s": {
+        "value": 0.7662497600921246,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.7420374434059727,
+          0.7884170907399367
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.791902309513147,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7693812193135342,
+          0.8141542554788141
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 23,
+            "residual_invalid": 0.27058823529411763
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 50,
+            "residual_invalid": 0.29411764705882354
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 114,
+            "residual_invalid": 0.3352941176470588
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 22,
+            "residual_invalid": 0.25882352941176473
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 59,
+            "residual_invalid": 0.34705882352941175
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 134,
+            "residual_invalid": 0.3941176470588235
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 29,
+            "residual_invalid": 0.3411764705882353
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 62,
+            "residual_invalid": 0.36470588235294116
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 146,
+            "residual_invalid": 0.4294117647058823
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 19,
+            "residual_invalid": 0.2235294117647059
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 49,
+            "residual_invalid": 0.28823529411764703
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 114,
+            "residual_invalid": 0.3352941176470588
+          }
+        ]
+      }
+    },
+    "majority": {
+      "n": 1699,
+      "n_invalid": 764,
+      "base_rate": 0.4496762801648028,
+      "auroc_s": {
+        "value": 0.7773609205700367,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.7558278067890646,
+          0.796909412012552
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.8070827617101101,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7861172743125527,
+          0.8276551540031563
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 6,
+            "residual_invalid": 0.07058823529411765
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 14,
+            "residual_invalid": 0.08235294117647059
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 32,
+            "residual_invalid": 0.09411764705882353
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 6,
+            "residual_invalid": 0.07058823529411765
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 19,
+            "residual_invalid": 0.11176470588235295
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 51,
+            "residual_invalid": 0.15
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 12,
+            "residual_invalid": 0.1411764705882353
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 27,
+            "residual_invalid": 0.1588235294117647
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 81,
+            "residual_invalid": 0.23823529411764705
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 4,
+            "residual_invalid": 0.047058823529411764
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 12,
+            "residual_invalid": 0.07058823529411765
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 35,
+            "residual_invalid": 0.10294117647058823
+          }
+        ]
+      }
+    },
+    "unanimous": {
+      "n": 1699,
+      "n_invalid": 390,
+      "base_rate": 0.22954679223072397,
+      "auroc_s": {
+        "value": 0.7675021057373999,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260912,
+        "ci95": [
+          0.7471824179234055,
+          0.7888768198709623
+        ]
+      },
+      "auroc_p_invalid": {
+        "value": 0.7958835282364695,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260913,
+        "ci95": [
+          0.7740901245957419,
+          0.8179643278676862
+        ]
+      },
+      "retain": {
+        "s": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 2,
+            "residual_invalid": 0.011764705882352941
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 3,
+            "residual_invalid": 0.008823529411764706
+          }
+        ],
+        "one_minus_p_i": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 1,
+            "residual_invalid": 0.011764705882352941
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 5,
+            "residual_invalid": 0.029411764705882353
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 15,
+            "residual_invalid": 0.04411764705882353
+          }
+        ],
+        "p_logistic": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 5,
+            "residual_invalid": 0.058823529411764705
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 11,
+            "residual_invalid": 0.06470588235294118
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 33,
+            "residual_invalid": 0.09705882352941177
+          }
+        ],
+        "combination": [
+          {
+            "retain_frac": 0.05,
+            "n_retained": 85,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.1,
+            "n_retained": 170,
+            "n_invalid": 0,
+            "residual_invalid": 0.0
+          },
+          {
+            "retain_frac": 0.2,
+            "n_retained": 340,
+            "n_invalid": 5,
+            "residual_invalid": 0.014705882352941176
+          }
+        ]
+      }
+    }
+  },
+  "axes": {
+    "underspecified_ge2": {
+      "n": 650,
+      "base_rate": 0.3825779870512066,
+      "auroc_model_underspecified": {
+        "value": 0.6621646989807143,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260914,
+        "ci95": [
+          0.6369059368858574,
+          0.6867335231989677
+        ]
+      }
+    },
+    "false_negative_ge2": {
+      "n": 1039,
+      "base_rate": 0.6115361977633902,
+      "auroc_model_false_negative": {
+        "value": 0.7579884504331088,
+        "n_bootstrap": 1000,
+        "n_defined": 1000,
+        "seed": 20260915,
+        "ci95": [
+          0.7373853674345654,
+          0.778930117004803
+        ]
+      }
+    }
+  },
+  "agreement": {
+    "model_vs_human_pairwise": {
+      "agreement": 0.696291936433196,
+      "n_pairs": 5097,
+      "per_rater_slot": [
+        0.7033549146556798,
+        0.7015891701000588,
+        0.6839317245438493
+      ]
+    },
+    "model_vs_majority_agreement": 0.735138316656857,
+    "model_vs_majority_kappa": 0.4701824753784363,
+    "model_material_rate": 0.4991171277221895,
+    "majority_rate": 0.4496762801648028
+  },
+  "frozen_predicates": {
+    "F1": {
+      "text": "AUROC(s, conservative) >= 0.75 with 1,000-rep bootstrap CI lower bound > 0.70",
+      "pass": true,
+      "auroc": 0.7662497600921246,
+      "ci95_lo": 0.7420374434059727,
+      "ci95_hi": 0.7884170907399367
+    },
+    "F2": {
+      "text": "Cohen's kappa of the model material bit vs majority_invalid >= 0.39 (human Fleiss kappa on the material bit)",
+      "pass": true,
+      "kappa": 0.4701824753784363,
+      "threshold": 0.39
+    },
+    "F3": {
+      "text": "retain-20% residual under z(s)+z(1-p_i) <= 0.20 on conservative Y (versus 0.43 for metadata / OOF logistic alone on the full 1,699)",
+      "pass": false,
+      "retain20_combo": 0.3352941176470588,
+      "threshold": 0.2,
+      "metadata_alone_full1699": 0.43
+    },
+    "all_pass": false,
+    "combination_rule": "retain lowest z(s) + z(1-p_i): low auditor severity and high solve rate"
+  },
+  "by_repository": {
+    "astropy": {
+      "n": 72,
+      "conservative": {
+        "n_invalid": 50,
+        "base_rate": 0.6944444444444444,
+        "auroc_s": {
+          "value": 0.7695454545454545,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6562287538850039,
+            0.865546218487395
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.775,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6543301299233462,
+            0.888952643557423
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 39,
+        "base_rate": 0.5416666666666666,
+        "auroc_s": {
+          "value": 0.7777777777777778,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6795125482625483,
+            0.8626224688478354
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7902097902097902,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6888302719967129,
+            0.8905375372750143
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 17,
+        "base_rate": 0.2361111111111111,
+        "auroc_s": {
+          "value": 0.8310160427807487,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7444683377751361,
+            0.9125169334975369
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8657754010695187,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7710513281318488,
+            0.9463079443118843
+          ]
+        }
+      }
+    },
+    "django": {
+      "n": 652,
+      "conservative": {
+        "n_invalid": 403,
+        "base_rate": 0.6180981595092024,
+        "auroc_s": {
+          "value": 0.7721705681285937,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7357292478735621,
+            0.8056341651103787
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7923555263236569,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.758954955573185,
+            0.8242691560205112
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 253,
+        "base_rate": 0.3880368098159509,
+        "auroc_s": {
+          "value": 0.8073791197360991,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7724947894113042,
+            0.8406179196779783
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8325259789790682,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.8022282231375593,
+            0.8626917519273786
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 113,
+        "base_rate": 0.17331288343558282,
+        "auroc_s": {
+          "value": 0.7782274615397246,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.739671192932999,
+            0.8126487183415033
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7995468501157502,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7627392444520454,
+            0.8332194503788332
+          ]
+        }
+      }
+    },
+    "matplotlib": {
+      "n": 125,
+      "conservative": {
+        "n_invalid": 87,
+        "base_rate": 0.696,
+        "auroc_s": {
+          "value": 0.6920750151240169,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6006908954408955,
+            0.7817601533955371
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.720356926799758,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6162294007490636,
+            0.8144268297836377
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 48,
+        "base_rate": 0.384,
+        "auroc_s": {
+          "value": 0.7061688311688312,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6229346826773298,
+            0.7951732073643409
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7401244588744589,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6463293694056006,
+            0.8262581833060556
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 26,
+        "base_rate": 0.208,
+        "auroc_s": {
+          "value": 0.785936285936286,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7030151158610322,
+            0.8650839598997494
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8263403263403264,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7437101459740492,
+            0.8968718181818182
+          ]
+        }
+      }
+    },
+    "mwaskom": {
+      "n": 9,
+      "conservative": {
+        "n_invalid": 7,
+        "base_rate": 0.7777777777777778,
+        "auroc_s": {
+          "value": 0.4642857142857143,
+          "n_bootstrap": 1000,
+          "n_defined": 903,
+          "seed": 20260922,
+          "ci95": [
+            0.125,
+            0.8125
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.39285714285714285,
+          "n_bootstrap": 1000,
+          "n_defined": 922,
+          "seed": 20260923,
+          "ci95": [
+            0.0012500000000001067,
+            0.8326388888888896
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 4,
+        "base_rate": 0.4444444444444444,
+        "auroc_s": {
+          "value": 0.525,
+          "n_bootstrap": 1000,
+          "n_defined": 991,
+          "seed": 20260922,
+          "ci95": [
+            0.05555555555555555,
+            0.975
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.5,
+          "n_bootstrap": 1000,
+          "n_defined": 995,
+          "seed": 20260923,
+          "ci95": [
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 1,
+        "base_rate": 0.1111111111111111,
+        "auroc_s": {
+          "value": 0.75,
+          "n_bootstrap": 1000,
+          "n_defined": 633,
+          "seed": 20260922,
+          "ci95": [
+            0.5,
+            1.0
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8125,
+          "n_bootstrap": 1000,
+          "n_defined": 646,
+          "seed": 20260923,
+          "ci95": [
+            0.5625,
+            1.0
+          ]
+        }
+      }
+    },
+    "pallets": {
+      "n": 1,
+      "conservative": {
+        "n_invalid": 0,
+        "base_rate": 0.0,
+        "auroc_s": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260922,
+          "ci95": null
+        },
+        "auroc_p_invalid": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260923,
+          "ci95": null
+        }
+      },
+      "majority": {
+        "n_invalid": 0,
+        "base_rate": 0.0,
+        "auroc_s": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260922,
+          "ci95": null
+        },
+        "auroc_p_invalid": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260923,
+          "ci95": null
+        }
+      },
+      "unanimous": {
+        "n_invalid": 0,
+        "base_rate": 0.0,
+        "auroc_s": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260922,
+          "ci95": null
+        },
+        "auroc_p_invalid": {
+          "value": null,
+          "n_bootstrap": 1000,
+          "n_defined": 0,
+          "seed": 20260923,
+          "ci95": null
+        }
+      }
+    },
+    "psf": {
+      "n": 33,
+      "conservative": {
+        "n_invalid": 24,
+        "base_rate": 0.7272727272727273,
+        "auroc_s": {
+          "value": 0.7291666666666666,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.5049521604938272,
+            0.9121252204585537
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.75,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.5485532407407407,
+            0.9093406593406594
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 16,
+        "base_rate": 0.48484848484848486,
+        "auroc_s": {
+          "value": 0.6544117647058824,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.45553884711779447,
+            0.8235753676470587
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.6617647058823529,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.47417279411764707,
+            0.8388441230486685
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 5,
+        "base_rate": 0.15151515151515152,
+        "auroc_s": {
+          "value": 0.7214285714285714,
+          "n_bootstrap": 1000,
+          "n_defined": 993,
+          "seed": 20260922,
+          "ci95": [
+            0.4260931899641577,
+            0.9791446208112873
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7142857142857143,
+          "n_bootstrap": 1000,
+          "n_defined": 999,
+          "seed": 20260923,
+          "ci95": [
+            0.36666666666666664,
+            0.96875
+          ]
+        }
+      }
+    },
+    "pydata": {
+      "n": 79,
+      "conservative": {
+        "n_invalid": 55,
+        "base_rate": 0.6962025316455697,
+        "auroc_s": {
+          "value": 0.7920454545454545,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.686493105950653,
+            0.8838947255574614
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8181818181818182,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7072967177125723,
+            0.9033726701883167
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 35,
+        "base_rate": 0.4430379746835443,
+        "auroc_s": {
+          "value": 0.8779220779220779,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.8019248608534323,
+            0.9358974358974359
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.887012987012987,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.8088793782859608,
+            0.9437910396716825
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 25,
+        "base_rate": 0.31645569620253167,
+        "auroc_s": {
+          "value": 0.8137037037037037,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7251470871707004,
+            0.8900584097275274
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8188888888888889,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7186823796504248,
+            0.9058566719791364
+          ]
+        }
+      }
+    },
+    "pylint-dev": {
+      "n": 37,
+      "conservative": {
+        "n_invalid": 27,
+        "base_rate": 0.7297297297297297,
+        "auroc_s": {
+          "value": 0.7425925925925926,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.5666369047619048,
+            0.9020998023715415
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6475,
+            0.9250320512820513
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 24,
+        "base_rate": 0.6486486486486487,
+        "auroc_s": {
+          "value": 0.7628205128205128,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6023039936798519,
+            0.8942307692307693
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7868589743589743,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6351785714285714,
+            0.9192797574427071
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 13,
+        "base_rate": 0.35135135135135137,
+        "auroc_s": {
+          "value": 0.7532051282051282,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6136287878787878,
+            0.888216011042098
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7708333333333334,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.5936789772727272,
+            0.91
+          ]
+        }
+      }
+    },
+    "pytest-dev": {
+      "n": 89,
+      "conservative": {
+        "n_invalid": 67,
+        "base_rate": 0.7528089887640449,
+        "auroc_s": {
+          "value": 0.7947761194029851,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6800888710747457,
+            0.8916964285714286
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.850067842605156,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7583088235294116,
+            0.9233559135287336
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 43,
+        "base_rate": 0.48314606741573035,
+        "auroc_s": {
+          "value": 0.7747724974721941,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6840209247005817,
+            0.8645878096562184
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8351870576339737,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7504797209903917,
+            0.9106012306323671
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 30,
+        "base_rate": 0.33707865168539325,
+        "auroc_s": {
+          "value": 0.7627118644067796,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6709518905175083,
+            0.8465930291723202
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8025423728813559,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7098440465822559,
+            0.8877227887550883
+          ]
+        }
+      }
+    },
+    "scikit-learn": {
+      "n": 165,
+      "conservative": {
+        "n_invalid": 130,
+        "base_rate": 0.7878787878787878,
+        "auroc_s": {
+          "value": 0.8263736263736263,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7472423603271314,
+            0.8997115608102968
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.869010989010989,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.800983905075188,
+            0.9223481976798868
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 102,
+        "base_rate": 0.6181818181818182,
+        "auroc_s": {
+          "value": 0.7405851229380641,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6665314157378076,
+            0.8141013133762538
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7848583877995643,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7159515518265519,
+            0.854691407201653
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 56,
+        "base_rate": 0.3393939393939394,
+        "auroc_s": {
+          "value": 0.7528669724770642,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.686350945740864,
+            0.8122924312511687
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7706422018348624,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6955795159194282,
+            0.8372710392333034
+          ]
+        }
+      }
+    },
+    "sphinx-doc": {
+      "n": 139,
+      "conservative": {
+        "n_invalid": 93,
+        "base_rate": 0.6690647482014388,
+        "auroc_s": {
+          "value": 0.7477793361383824,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6688089542036909,
+            0.8236145687237026
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7857643758765779,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7112976538880954,
+            0.8549505842131461
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 55,
+        "base_rate": 0.39568345323741005,
+        "auroc_s": {
+          "value": 0.7991341991341991,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.7333555817509877,
+            0.858292167155694
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.8284632034632035,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7528900926816079,
+            0.8900904847858007
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 27,
+        "base_rate": 0.19424460431654678,
+        "auroc_s": {
+          "value": 0.7309854497354498,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6317530987795575,
+            0.8197463572584998
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7524801587301587,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.6317864480152616,
+            0.8529548037088668
+          ]
+        }
+      }
+    },
+    "sympy": {
+      "n": 298,
+      "conservative": {
+        "n_invalid": 217,
+        "base_rate": 0.7281879194630873,
+        "auroc_s": {
+          "value": 0.7262900381179951,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6608061274385287,
+            0.787611548732469
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7555612448085567,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.697375945133298,
+            0.8152623443456495
+          ]
+        }
+      },
+      "majority": {
+        "n_invalid": 145,
+        "base_rate": 0.4865771812080537,
+        "auroc_s": {
+          "value": 0.7339418526031102,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6823279978375287,
+            0.7830354327161327
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7750732476898805,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7243886803437607,
+            0.8274736864538369
+          ]
+        }
+      },
+      "unanimous": {
+        "n_invalid": 77,
+        "base_rate": 0.25838926174496646,
+        "auroc_s": {
+          "value": 0.7230710466004584,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260922,
+          "ci95": [
+            0.6642024224285253,
+            0.7813328322303251
+          ]
+        },
+        "auroc_p_invalid": {
+          "value": 0.7768701886348945,
+          "n_bootstrap": 1000,
+          "n_defined": 1000,
+          "seed": 20260923,
+          "ci95": [
+            0.7208425709513441,
+            0.8339324740823761
+          ]
+        }
+      }
+    }
+  },
+  "calibration_p_invalid_deciles": [
+    {
+      "decile": 1,
+      "n": 169,
+      "p_invalid_min": 0.05,
+      "p_invalid_max": 0.05,
+      "p_invalid_mean": 0.05000000000000001,
+      "majority_invalid_rate": 0.05325443786982249,
+      "n_majority_invalid": 9
+    },
+    {
+      "decile": 2,
+      "n": 170,
+      "p_invalid_min": 0.05,
+      "p_invalid_max": 0.08,
+      "p_invalid_mean": 0.07494117647058823,
+      "majority_invalid_rate": 0.11764705882352941,
+      "n_majority_invalid": 20
+    },
+    {
+      "decile": 3,
+      "n": 170,
+      "p_invalid_min": 0.08,
+      "p_invalid_max": 0.12,
+      "p_invalid_mean": 0.11541176470588235,
+      "majority_invalid_rate": 0.20588235294117646,
+      "n_majority_invalid": 35
+    },
+    {
+      "decile": 4,
+      "n": 170,
+      "p_invalid_min": 0.12,
+      "p_invalid_max": 0.18,
+      "p_invalid_mean": 0.1494705882352941,
+      "majority_invalid_rate": 0.2823529411764706,
+      "n_majority_invalid": 48
+    },
+    {
+      "decile": 5,
+      "n": 170,
+      "p_invalid_min": 0.18,
+      "p_invalid_max": 0.35,
+      "p_invalid_mean": 0.23629411764705882,
+      "majority_invalid_rate": 0.40588235294117647,
+      "n_majority_invalid": 69
+    },
+    {
+      "decile": 6,
+      "n": 170,
+      "p_invalid_min": 0.35,
+      "p_invalid_max": 0.85,
+      "p_invalid_mean": 0.7681764705882353,
+      "majority_invalid_rate": 0.5882352941176471,
+      "n_majority_invalid": 100
+    },
+    {
+      "decile": 7,
+      "n": 170,
+      "p_invalid_min": 0.85,
+      "p_invalid_max": 0.86,
+      "p_invalid_mean": 0.8511764705882352,
+      "majority_invalid_rate": 0.5588235294117647,
+      "n_majority_invalid": 95
+    },
+    {
+      "decile": 8,
+      "n": 170,
+      "p_invalid_min": 0.86,
+      "p_invalid_max": 0.9,
+      "p_invalid_mean": 0.8728235294117647,
+      "majority_invalid_rate": 0.6470588235294118,
+      "n_majority_invalid": 110
+    },
+    {
+      "decile": 9,
+      "n": 170,
+      "p_invalid_min": 0.9,
+      "p_invalid_max": 0.92,
+      "p_invalid_mean": 0.908,
+      "majority_invalid_rate": 0.7823529411764706,
+      "n_majority_invalid": 133
+    },
+    {
+      "decile": 10,
+      "n": 170,
+      "p_invalid_min": 0.92,
+      "p_invalid_max": 1.0,
+      "p_invalid_mean": 0.9368823529411765,
+      "majority_invalid_rate": 0.8529411764705882,
+      "n_majority_invalid": 145
+    }
+  ],
+  "artifacts": {
+    "jsonl": "/home/evan/Documents/task_validation/data/gold/swe_llm_audit_full.jsonl",
+    "summary": "/home/evan/Documents/task_validation/data/gold/swe_llm_audit_full.summary.json",
+    "cache_root": "/home/evan/Documents/task_validation/data/raw/llm-audit/x-ai/grok-4.6"
+  },
+  "constraints": {
+    "stdlib_runtime": true,
+    "labels_never_in_prompt": true,
+    "one_pass_no_retune": true,
+    "reused_n200_cache": true,
+    "did_not_rewrite_n200_gold": true
+  },
+  "providers": {
+    "openrouter_or_cached": 1177,
+    "xai_api": 522,
+    "note": "522 remaining items used api.x.ai grok-4.6 after OpenRouter HTTP 402 (in-flight then empty credits). Same model, temperature 0, reasoning effort low. cost_usd uses OpenRouter unit prices for the cap.",
+    "n_with_xai_ticks": 522
+  }
+}

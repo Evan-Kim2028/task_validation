@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-5087",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1910
+  },
+  "response": {
+    "id": "gen-1789192200-LGPwc3YonYPBnHCQnLyI",
+    "object": "chat.completion",
+    "created": 1789192200,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue states that a failed first access to response.content should raise again on a later access rather than returning empty content, and it includes a reproduction plus the exact test later used as FAIL_TO_PASS. That test only checks ChunkedEncodingError on incomplete chunked data, which is the scenario described, so it fairly implements the requested behavior.\", \"p_invalid\": 0.06}",
+          "refusal": null,
+          "reasoning": "The issue is about accessing response.content twice after a read error. First access raises, second should also raise, not return empty string.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about accessing response.content twice after a read error. First access raises, second should also raise, not return empty string.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rcRptItAg5GkkmL8m3frRJV5tp4JWpB2qsT9qglz2d38eq1gjeLZJKGjI3Yrrq4wuo0Jyp7d0UC2/zjSUXeH2PbH+amnPg8esD/pLdEtgvCJefZv3Qo/fTpLWJrjnzhWI+0E6nvbJylu1AztkwRwJbvTX645p0GfQzztcI7JDSbQkaAPukXXC2zrOlCfbCcFHOTj7FJN74eJiiU6lRQ/PDMAnuO5r8cG1vxVAeivMlgdIej16HyyOqYTlCUadbkFTVnQvzAoLx5PQebEOUDAaAia6F9Txr3cHw4HohmKlVw09SrQaB4/hcimwuiMT/seqbNPRk9Pjs4ir/S6kivAu5RV5KmnKzBsZgqXtDbPaQyy7lrhAg2yBH09Se9xJTawEpJWfnQmWs/Om4jOh9qppy6/zMleyLWfib7xs4AlU7Ogoy1sXqRpHjQraXAxjsdfxliYZuSqPKuMpIuQr8Oyy9xFD7ws1VlS1JP1CdItdUeoamPIjBWQgVQgOw8CNWEVxaERDizDla1u0ybBCs1SuaHpe8zC4gxBOHgDeWb87rARNEwoeeYek79XtHjDa5FAZt55vKBpfTSCGfMJJy/zF58cOKbW3W6fDqGPniHccPLLMIcbPQyuengirnaB4vjFdlyPSu56z5sjSTNaCz4zQCAq+L63pZNDZP7Y7t2DTbQpNxURExp+Sthsl3Voin8XyIbOUTCJ7igqJuG4FufCbSGFgvSSjuX5OJGKEikt2+D5C0ew1lzZU6mtkq0o1DpASWMB2hl7DmXBHPpVMo9udwGM4Luk8eycdlKGpbc9JTWusTPyG/4G6aOBHX9sVXUN86BNv0HliJ1AYM+l6u17iTt1K7Loyj+aQ8gsNc6/7vNwtET67QgoVz3tz8uOAtSgMAjjoXXT0CBTUi2n6EwEmKrY0EcBGvKlFEEh2KW87SeMzs0ySmWZoRdReHdNql86o9BnWL7y0MC2dGI/g7PLFwKPXwquXhz39twMo7nzqzzjlHgISgiTY7WpAn4aw7Ndxy3lwroJrYGZYgZV76yTj/wcXmt9cl2TmbCzwguZN53vL2RUZJXaPAnEqtVAr+eUnfwkpmKccCbdI9KA2LU4FPZ4/No0g5yRUXAx0qfKBQSe2nrPvNgdcayihpSXGuTgC28JcIK/IIiWSbZM3pPsqvbPJYCV/sq5uTMLe5LDWRE24JlR4hILPgxjp/v7+RH7fc7N/HyFtaroHIbzG42U+ZOxW5QmetONmLdnVFPTffVC+cOPbumjNdPNssD5U7ZadUZIm/H+gRJfAp/KQUguN5za5NvFncS8TiRX+M6NvmjDkYtsdGKZNOVHbNldOWDslxx+iOyHDf6SFO2AXZlGjAAPF6w1cp3SMDb3fEsphpD6pQRtn/jDTjk2BmGtU4i7ACCPQWYxjY0lcMUOhN7JEeGMIVmQfWiPc3PG4txEBdAT5TIo1N6xRm0CUjNx6ILc/F2Ngf1WIZWMR/zfSMzwHQwyIhFKBe7iIiMMTksK2qyI1PizKPQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b82c5cd0-8a5c-9363-ba81-5a906900e948",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2250,
+      "completion_tokens": 390,
+      "total_tokens": 2640,
+      "cost": 0.006456,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006456,
+        "upstream_inference_prompt_cost": 0.004116,
+        "upstream_inference_completions_cost": 0.00234
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue states that a failed first access to response.content should raise again on a later access rather than returning empty content, and it includes a reproduction plus the exact test later used as FAIL_TO_PASS. That test only checks ChunkedEncodingError on incomplete chunked data, which is the scenario described, so it fairly implements the requested behavior.",
+    "p_invalid": 0.06
+  },
+  "s": 0.0,
+  "p_invalid": 0.06,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue states that a failed first access to response.content should raise again on a later access rather than returning empty content, and it includes a reproduction plus the exact test later used as FAIL_TO_PASS. That test only checks ChunkedEncodingError on incomplete chunked data, which is the scenario described, so it fairly implements the requested behavior.",
+  "prompt_tokens": 2250,
+  "completion_tokens": 390,
+  "total_tokens": 2640,
+  "cost_usd": 0.00684,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

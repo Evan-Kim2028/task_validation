@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14155",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1242
+  },
+  "response": {
+    "id": "gen-1789187678-pEn1HOIyxOzDNlWyk8L2",
+    "object": "chat.completion",
+    "created": 1789187678,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks to handle functools.partial more helpfully and even suggests unwrapping in __init__, but the tests require keeping the partial and embedding its full repr plus switching other ResolverMatch fields to %r quoting. A competent fix following the issue text would therefore fail FAIL_TO_PASS.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about ResolverMatch.__repr__() not handling functools.partial() nicely. It suggests unwrapping functools.partial objects in ResolverMatch.__init__().\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The gold patch correctly implements repr handling for partials by using repr(self.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ResolverMatch.__repr__() not handling functools.partial() nicely. It suggests unwrapping functools.partial objects in ResolverMatch.__init__().\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The gold patch correctly implements repr handling for partials by using repr(self.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e0bd3c3f-6609-92df-9c2b-b5d646deff1e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1572,
+      "completion_tokens": 538,
+      "total_tokens": 2110,
+      "cost": 0.005988,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005988,
+        "upstream_inference_prompt_cost": 0.00276,
+        "upstream_inference_completions_cost": 0.003228
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 423,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks to handle functools.partial more helpfully and even suggests unwrapping in __init__, but the tests require keeping the partial and embedding its full repr plus switching other ResolverMatch fields to %r quoting. A competent fix following the issue text would therefore fail FAIL_TO_PASS.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks to handle functools.partial more helpfully and even suggests unwrapping in __init__, but the tests require keeping the partial and embedding its full repr plus switching other ResolverMatch fields to %r quoting. A competent fix following the issue text would therefore fail FAIL_TO_PASS.",
+  "prompt_tokens": 1572,
+  "completion_tokens": 538,
+  "total_tokens": 2110,
+  "cost_usd": 0.006371999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

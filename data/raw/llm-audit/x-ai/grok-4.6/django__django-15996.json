@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15996",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1086
+  },
+  "response": {
+    "id": "gen-1789187754-StPliwqpMRGeub40q40q",
+    "object": "chat.completion",
+    "created": 1789187754,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue states the bug and the intended approach of decomposing Flag values and joining members with OR, which a competent engineer could implement. The FAIL_TO_PASS assertion requires a specific member order and exact serialization string that the issue does not pin down.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about supporting serialization of combination of Enum flags. Currently, combinations like re.UNICODE | re.IGNORECASE become default=re.RegexFlag[None] because there's no single name.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about supporting serialization of combination of Enum flags. Currently, combinations like re.UNICODE | re.IGNORECASE become default=re.RegexFlag[None] because there's no single name.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2650469c-2904-9cfd-805f-3cfcc1ea3f0d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1360,
+      "completion_tokens": 494,
+      "total_tokens": 1854,
+      "cost": 0.0053,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0053,
+        "upstream_inference_prompt_cost": 0.002336,
+        "upstream_inference_completions_cost": 0.002964
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue states the bug and the intended approach of decomposing Flag values and joining members with OR, which a competent engineer could implement. The FAIL_TO_PASS assertion requires a specific member order and exact serialization string that the issue does not pin down.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue states the bug and the intended approach of decomposing Flag values and joining members with OR, which a competent engineer could implement. The FAIL_TO_PASS assertion requires a specific member order and exact serialization string that the issue does not pin down.",
+  "prompt_tokens": 1360,
+  "completion_tokens": 494,
+  "total_tokens": 1854,
+  "cost_usd": 0.005684,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

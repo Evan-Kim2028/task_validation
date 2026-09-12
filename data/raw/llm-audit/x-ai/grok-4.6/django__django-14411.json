@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14411",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 937
+  },
+  "response": {
+    "id": "gen-1789191419-YyHnuyotEv9IW58R0b7t",
+    "object": "chat.completion",
+    "created": 1789191419,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly requires labels without a for attribute for this text-only widget, which a Django engineer would typically implement via id_for_label returning None. The FAIL_TO_PASS checks that exact API plus a precise label_tag HTML string, which is slightly more specific than the issue text.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about ReadOnlyPasswordHashWidget having a label with a 'for' attribute pointing to a non-labelable element. The label shouldn't have a 'for' attribute.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ReadOnlyPasswordHashWidget having a label with a 'for' attribute pointing to a non-labelable element. The label shouldn't have a 'for' attribute.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+iaxoXkIyk7/aa4qWS96S75DIEjZucIOzhkNA4rFaps/oOVaskF7I1LAvFzbIzjxAJKhUolTbtvTT0JJyBhRKs2qcheVLC9Z2pFcHZ0fgp8G89dyUhcGmIupbm/BQY+kJMkSnKcjgU6vtgeDnIWP83l5VP8U7VCvM+ulkNW0MD78/1S6ON1W+Gf9FHd6engtNpT+GwFQQhnpAJupc8BiWV+/Wtpimr2RdJRORMhTJS43dBNp+1PznLOZix49sMXN6anddpzlFVVRwIbUXXtwmmbec2TB1lFha2tfuPcC3MqY13bauDKZJTuj7pgAnF+QveTwZu/Ta+m0DjSHzPcHP3P2RQcJm28b1FOV9nDdWH3uUp4o3RA++jq/c5IShlIDjB3xaDy0+TmLqt7dFpQ8n+ykPFgMqW/TM2vKwKTj8DItea5kmMzX2EROj9ytgVj4vSR2NVxkEXoLNYMKcK8DqLhG3BQBMxJZp4kbNHQ05QSjxrAYd8Lg8iQI4afoSuXEdICvXbDmEZzM0L6hwXtYS1f5yehj02LDS6LLrHrsB4Dr5kXjP3GI5FggpvYJ+FIe26jNGENjNH1fQmlnh4TbOt8IIQiLIrwvq5UoWxInwI+W7xSb9nOAR3GfwfhLRIiPiN7Nj1Hi6EWUT+vLVih1cAIs14osu2WM6Eq/DlLQCph3sy8VB3rh+BYJs6Qa9SktGNCZhI1tWGPsfcVGzN0CCo13Nl/4LuaYDnGJ5Q3ntTJ57i6sookhGFqgMF9Cwp8en6dw0CHmIFBq48VA3iH9oYm9vvY6a93FLpYST5VlRFQb7R+Dvy+kZ3tdc21+2SiAOtZUsPwJO8bwS980VwfW5fhu+OlNy+CJUqAN3LekdPC97OHufP/5TrwHLubPK28ADCmklLGohqbJ+GU7086VvHwM2W1nbzfMSie3vgo4rtxzmNx/eNhyhyDavNI/IpPN6MlyhjJCh8aLdTWOAsMM5yCKzb/myLqDQrDVmpw6+LdcbHn6dcRvm37zzPDDHJWyy2pEX5YplM9I2G1a6/d28zphcnL9KPa0kpy2djzRxlPxrRb96fgGJr/mYmriGKx6vAX8tYCqRu8xSYbO6SEn6SRkk/Hw+qXmww01pshZHvnyQEhclXul3UEBrGNXQBpi7OQfrvIIQRnvoPb/sN+ZqhFQjc2LDu9mMUoGp/gmg6Vh8CLEF83NU5cx0GbPvYtwTZ6brbtiAgf4Z8s8803I4ksgvKd3TsbkWgNri2g6w9HbbTlhb+ctShtp8zwDNozqBciIbNGD+Q5JClFAzv0Nsm79inl0yNK81dvfTV9jyQM3Fe6ZaMXVUnw8GvnyZZGnt938uTSefCAZEEPIlcD43Afel+uhraTRSr6J1tUL98yHr1RSNF1aqSgIGRBNCLs1Eh+HV17jTIHPofjCiMqGAU4NEVOMraXvRtY4p7ubHhuJk/EvapOFep1WxdXJMYl63SmB4xLKfbQOUrN+u4NFJuYKc4wGu7f6wjjuESxdz8P3+iayFTkvSrZSCvHgDeAASUbExgPUIH9fX77gkRCw6q9mgfCFv/OZ9FX/IUcdg0ddPDMlPTHZjOE+14Ah9TM3al6QP2UUK2BCZreDr9XZ6sKOBZozfAjzNMueCAAxaN/uESzP0LxsuHg1GnmTleg60bqHj24yRy3bow/sycBoX/9YW80oX7VJx6/ncvwinzvQpozRWTHkRV6Ww5RWFFX+38df4lFP+vTg+z1sYo8yig49OE7dAjXlhw2y2Z9r9k4IPnqGAlOOqOKZBkZ5xXaDIququHrL3pojbXSzHG6W04kulxBFq8+lKjab15v/X28aIZIKtdpo1qdLAo3aWyrFSJz6yR7uoE0reCC6kZspqKLFT+50lID1YF9ilnfGt1XkOHMkh6LtFeFY9KY6pqV6fQX5ZxzGlbVaLuqfbrUlbr4j5i3aycB0zvQR2DZw0NpDTTMJgDOplEyZLQyKWOnp9IyC9mnQeS8yoGa55xamVxZ0l6bGhoXfKF2mJTzsIJHYIM44Mazneir5h5aYUHbkxZOlW06/QP2Wn5l1f4Mc/R8efIbN7P1NGeR3+XG6vDrNYPZCwnS5QoYJ5F2waiRX.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_89f04fbc-3b04-9292-a7cb-6b35c9b1d16c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1228,
+      "completion_tokens": 496,
+      "total_tokens": 1724,
+      "cost": 0.005048,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005048,
+        "upstream_inference_prompt_cost": 0.002072,
+        "upstream_inference_completions_cost": 0.002976
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 380,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly requires labels without a for attribute for this text-only widget, which a Django engineer would typically implement via id_for_label returning None. The FAIL_TO_PASS checks that exact API plus a precise label_tag HTML string, which is slightly more specific than the issue text.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly requires labels without a for attribute for this text-only widget, which a Django engineer would typically implement via id_for_label returning None. The FAIL_TO_PASS checks that exact API plus a precise label_tag HTML string, which is slightly more specific than the issue text.",
+  "prompt_tokens": 1228,
+  "completion_tokens": 496,
+  "total_tokens": 1724,
+  "cost_usd": 0.005431999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

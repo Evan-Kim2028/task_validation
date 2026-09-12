@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15563",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1758
+  },
+  "response": {
+    "id": "gen-1789191624-NGdFznzDbGIlvuKML20e",
+    "object": "chat.completion",
+    "created": 1789191624,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly describes that QuerySet.update on multi-table inheritance must update the intended ancestor using that ancestor’s primary keys rather than another parent’s. The FAIL_TO_PASS tests check exactly that parent and grandparent fields are updated through the child, which is a fair reading of the reported bug.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about queryset update with multiple inheritance in Django. The tests check updating parent through child and grandparent through child using Politician/Congressman/Senator models.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about queryset update with multiple inheritance in Django. The tests check updating parent through child and grandparent through child using Politician/Congressman/Senator models.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_78fa4b62-30f0-959e-954d-822ec88d2637",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2185,
+      "completion_tokens": 474,
+      "total_tokens": 2659,
+      "cost": 0.00683,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00683,
+        "upstream_inference_prompt_cost": 0.003986,
+        "upstream_inference_completions_cost": 0.002844
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 358,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly describes that QuerySet.update on multi-table inheritance must update the intended ancestor using that ancestor’s primary keys rather than another parent’s. The FAIL_TO_PASS tests check exactly that parent and grandparent fields are updated through the child, which is a fair reading of the reported bug.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly describes that QuerySet.update on multi-table inheritance must update the intended ancestor using that ancestor’s primary keys rather than another parent’s. The FAIL_TO_PASS tests check exactly that parent and grandparent fields are updated through the child, which is a fair reading of the reported bug.",
+  "prompt_tokens": 2185,
+  "completion_tokens": 474,
+  "total_tokens": 2659,
+  "cost_usd": 0.007214,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

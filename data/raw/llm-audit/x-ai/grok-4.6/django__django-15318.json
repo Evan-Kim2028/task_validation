@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15318",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2832
+  },
+  "response": {
+    "id": "gen-1789191577-1flKxQ3qSHsvejA91RYf",
+    "object": "chat.completion",
+    "created": 1789191577,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly lists the three intended consistency changes for unsaved and null reverse relations, so a competent engineer would know the behavioral direction. The FAIL_TO_PASS tests still require exact ValueError wording that is not stated in the issue, so many valid implementations of those behaviors would fail.\", \"p_invalid\": 0.76}",
+          "refusal": null,
+          "reasoning": "The issue describes unifying reverse FK and M2M unsaved model querying. It lists specific behavior changes:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes unifying reverse FK and M2M unsaved model querying. It lists specific behavior changes:\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5fe697a1-b876-92dd-b937-e62b079a568d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 528,
+      "total_tokens": 3828,
+      "cost": 0.009576,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009576,
+        "upstream_inference_prompt_cost": 0.006408,
+        "upstream_inference_completions_cost": 0.003168
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 415,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly lists the three intended consistency changes for unsaved and null reverse relations, so a competent engineer would know the behavioral direction. The FAIL_TO_PASS tests still require exact ValueError wording that is not stated in the issue, so many valid implementations of those behaviors would fail.",
+    "p_invalid": 0.76
+  },
+  "s": 2.0,
+  "p_invalid": 0.76,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly lists the three intended consistency changes for unsaved and null reverse relations, so a competent engineer would know the behavioral direction. The FAIL_TO_PASS tests still require exact ValueError wording that is not stated in the issue, so many valid implementations of those behaviors would fail.",
+  "prompt_tokens": 3300,
+  "completion_tokens": 528,
+  "total_tokens": 3828,
+  "cost_usd": 0.009768,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

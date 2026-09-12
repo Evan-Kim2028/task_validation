@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12304",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 906
+  },
+  "response": {
+    "id": "gen-1789191011-uJ7xDHPrIZHoeqLDAAtV",
+    "object": "chat.completion",
+    "created": 1789191011,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that Choices enums are unusable in templates because they are callable and proposes setting do_not_call_in_templates. The FAIL_TO_PASS test only checks that enum members can be resolved in templates, which is the behavior described.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about enumeration types not being usable in templates because they're callable. The solution suggested is to set `do_not_call_in_templates = True` on Choices classes.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about enumeration types not being usable in templates because they're callable. The solution suggested is to set `do_not_call_in_templates = True` on Choices classes.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "BdhoW7JFhK2fVf/qfohbY/ksBcZ/rs/yY6BxGY6DVlO/1xvyyayNYQFsW/1Bqavbl/HwlDcwpF8ShUS8a6itQorL1ZMKkTnHJ8SWrBk5qqSgYBysswtD+pb8+lU3l8MRMmnyyAU8j3+shhbHw5zg7vl+1h18Dyvf7u63x8taIFR8PqJ8Z9MA9tYxBUeFzQzIkkSJ5jWcppFmjrsaEkZGfzi0m7UaA9WriMbosiAf81QHp4zkNVikMcsw4oiCMYfXlUkWDhuUhLrwBsF3mCeK79nwSU6b1YCongOY2SnkYzKEWA45xVazaIB8Ug8fvWS7ZqIW/d9ENSvcKlz3eYqCrRiBrAmxI8PWh+9mku3UcYem9iH3Q3HV46psKRJIVbjPeDYCcmaZlbjiFsTmJVSDCRRxcYUv9eoCm1fRfRc0vyrXRlE+56cZWQdKAbjDd2kJdUJ/9pgFreenTWFOQqimF0xYWXZRRHtEUjq8AJ7WU3ja1holZ6qtNJNc/Zu87nIFmUmM6s7mMuO14tYK9ZzbHkS2grDila+0X0y1S8uirUE+Su86rPitw7Pk8txRwCeu4YTRHGknlpoZlS4pzyQLfGQykH3Hdk3NFchF9tLA1yWecDqkom015TsuLbOe46GwjE0Omx+lvO+MYiwhXsxxbFIYsRTd0/maAuoneHOpiR4YMnsB8eR5KaeSJa8PIhXIR4Ib7emnvPiAOS5+6XSyFQzhYw9AUZPCMfFnsSjLcxIzcKBHW+SVG+ZA5v5LmvMAD9JbE87OQJ/bmufZ5GyqcefWH00g7BzxT2ep9Fw9OIVShpGthyAbMAxF9NjIXlFdEO1+eTnDdz6Gjwj8H2xVHDzD6uovfb6egGBLkRLCYo4PaVMwOFGyZV++gN0+4F91EXHwSEG2xTtihNahx1+A05CzqT2w3NNqCDDo3NF5Sczcp2PV4rgUc+TXr6qIvyz5L6ArVAhsQjEm3X0KzdQ9Qpjc/RfOGy4HiOanmeuzsfaqq7oo4DZ3E2gW0DpZFN9/jyCiCimYnVe/546w4nPUlqRItXk2WaRmrwleNDU1tjvxn3W6NFxx8yaBrwXcLogQgfKM93htCNtLNUhGsAhXgGe6DJo0HODcfXOC7GDut5uaJTd9++q6ybgxCV46CTcsLNvyWlLZcQrav2ZeQIJcCuBQepBl7q9ZZXqyw3GWPfxus6B6EWOnkP+oL/fh4VCi0Qtf8Px9rRttYbB+NDcrORvKSh3/nsoVlUlFsyhkekBPpt8UpM2Rt4qDj6KWkDyYIugINyVXE1aVA3Boz6pseuZKE99wG8ONq3LQfLb6mUVTsRE1mR5W7B/iC71EHQnqHO8yiuHQogpNDgVkn/ev1RoaULwy2SikZCRo2eegaQkm1V93K+LChuIDMqr67R7RkbPMHCq1cvsRrdqOC5geV8+x1QJKOpWlhlatTKA77G6fmp1vGYgDf+iZ0aEJPZCx3hF+5KRwAE/3rKKGj9Wm32iJroCbA/fHQXT6eg8FoQZPBpu+Zw/gPLjFQOAu48Cpk051tWQmyhwhDU/nFdmpLziFz6NjW/Pepxmi6ME+ewVhtGKMYNhLobGtUHV8nyigLEIafuFFMeWFDTA7BlRBQ6/HpUZOSTe0BsznbJYsjQOd697coSAY+ewZ43M6QkkAIMEvFxShvzVBvI42CPMqLgTclyc7RyplFSH8olCJD17og7YYLcx/NNe8r2HwtzUw4TFBrjpZjVr0SKL420mV/QGKstkpkUQb2uSc+21BwY6bI3PXhtiGBNwKqYfVev7fi39S5PSRaxWG2FYPtKh+hU+6dOSzkpymGH4UN8saWEUIXCBj5v9tC8mUAYj1GhUAYG6uRvMdq1oY2pS5OvhdOoiJ4g12bbnOJwxBAgtf7jDOkTDGBAQLuhbT.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_88fc32fd-3c19-97e1-afe4-f6521dac564d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1204,
+      "completion_tokens": 457,
+      "total_tokens": 1661,
+      "cost": 0.004766,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004766,
+        "upstream_inference_prompt_cost": 0.002024,
+        "upstream_inference_completions_cost": 0.002742
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 349,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that Choices enums are unusable in templates because they are callable and proposes setting do_not_call_in_templates. The FAIL_TO_PASS test only checks that enum members can be resolved in templates, which is the behavior described.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that Choices enums are unusable in templates because they are callable and proposes setting do_not_call_in_templates. The FAIL_TO_PASS test only checks that enum members can be resolved in templates, which is the behavior described.",
+  "prompt_tokens": 1204,
+  "completion_tokens": 457,
+  "total_tokens": 1661,
+  "cost_usd": 0.00515,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

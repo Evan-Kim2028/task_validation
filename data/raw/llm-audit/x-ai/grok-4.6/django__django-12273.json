@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12273",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1412
+  },
+  "response": {
+    "id": "gen-1789191007-CBjc4XUP4lbdBWqvGzCR",
+    "object": "chat.completion",
+    "created": 1789191007,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that setting a child instance primary key to None should insert a new row instead of overwriting the parent/child rows. The FAIL_TO_PASS tests encode that intent on existing MTI models and also clear parent-link ids, which a senior engineer would infer but is slightly more specific than the write-up.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about resetting primary key for a child model not working. Setting pk to None should create a new object instead of overwriting.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about resetting primary key for a child model not working. Setting pk to None should create a new object instead of overwriting.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9c03c761-74ab-9de2-881a-16cc691ada0a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1866,
+      "completion_tokens": 591,
+      "total_tokens": 2457,
+      "cost": 0.006894,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006894,
+        "upstream_inference_prompt_cost": 0.003348,
+        "upstream_inference_completions_cost": 0.003546
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 468,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that setting a child instance primary key to None should insert a new row instead of overwriting the parent/child rows. The FAIL_TO_PASS tests encode that intent on existing MTI models and also clear parent-link ids, which a senior engineer would infer but is slightly more specific than the write-up.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that setting a child instance primary key to None should insert a new row instead of overwriting the parent/child rows. The FAIL_TO_PASS tests encode that intent on existing MTI models and also clear parent-link ids, which a senior engineer would infer but is slightly more specific than the write-up.",
+  "prompt_tokens": 1866,
+  "completion_tokens": 591,
+  "total_tokens": 2457,
+  "cost_usd": 0.007278,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

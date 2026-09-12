@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-12825",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 5320
+  },
+  "response": {
+    "id": "gen-1789187633-IqoINF90elmtrEBnX4Wp",
+    "object": "chat.completion",
+    "created": 1789187633,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that group aggregate not crash on SkyCoord and skip columns where the operation does not make sense, but it does not require Quantity aggregation or a particular warning string. FAIL_TO_PASS still checks QTable quantity sums and a specific AstropyUserWarning match, so a reasonable skip-only SkyCoord fix could fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about SkyCoord in Table breaking aggregate on group_by. Expected: aggregation works, only fails to aggregate columns where operation does not make sense.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SkyCoord in Table breaking aggregate on group_by. Expected: aggregation works, only fails to aggregate columns where operation does not make sense.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a8174360-e079-97cf-bca4-80bbf433826f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6917,
+      "completion_tokens": 525,
+      "total_tokens": 7442,
+      "cost": 0.016792,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.016792,
+        "upstream_inference_prompt_cost": 0.013642,
+        "upstream_inference_completions_cost": 0.00315
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 402,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that group aggregate not crash on SkyCoord and skip columns where the operation does not make sense, but it does not require Quantity aggregation or a particular warning string. FAIL_TO_PASS still checks QTable quantity sums and a specific AstropyUserWarning match, so a reasonable skip-only SkyCoord fix could fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that group aggregate not crash on SkyCoord and skip columns where the operation does not make sense, but it does not require Quantity aggregation or a particular warning string. FAIL_TO_PASS still checks QTable quantity sums and a specific AstropyUserWarning match, so a reasonable skip-only SkyCoord fix could fail.",
+  "prompt_tokens": 6917,
+  "completion_tokens": 525,
+  "total_tokens": 7442,
+  "cost_usd": 0.016984,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

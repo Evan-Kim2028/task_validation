@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13406",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1779
+  },
+  "response": {
+    "id": "gen-1789191217-r0TtCDcKdvnmHaBYlAEg",
+    "object": "chat.completion",
+    "created": 1789191217,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes the pickle-and-reassign crash for values()/annotate and that results should stay dicts, which a competent engineer could implement. The FAIL_TO_PASS suite additionally requires pickled values_list queries to evaluate as values() dicts, which is not stated in the issue and would reject a valid restoration of ValuesListIterable.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about pickling queryset.query with values()/values_list() and then assigning it back causing crashes or wrong types.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pickling queryset.query with values()/values_list() and then assigning it back causing crashes or wrong types.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9ec9c111-c03e-98e1-ae3d-0509bf2b42d4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2247,
+      "completion_tokens": 662,
+      "total_tokens": 2909,
+      "cost": 0.008082,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008082,
+        "upstream_inference_prompt_cost": 0.00411,
+        "upstream_inference_completions_cost": 0.003972
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 536,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes the pickle-and-reassign crash for values()/annotate and that results should stay dicts, which a competent engineer could implement. The FAIL_TO_PASS suite additionally requires pickled values_list queries to evaluate as values() dicts, which is not stated in the issue and would reject a valid restoration of ValuesListIterable.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes the pickle-and-reassign crash for values()/annotate and that results should stay dicts, which a competent engineer could implement. The FAIL_TO_PASS suite additionally requires pickled values_list queries to evaluate as values() dicts, which is not stated in the issue and would reject a valid restoration of ValuesListIterable.",
+  "prompt_tokens": 2247,
+  "completion_tokens": 662,
+  "total_tokens": 2909,
+  "cost_usd": 0.008466,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

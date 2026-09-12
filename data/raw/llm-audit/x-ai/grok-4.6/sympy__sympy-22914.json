@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-22914",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "e77e4728-cb01-9fc0-a8a3-f5cb907081d2",
+    "object": "chat.completion",
+    "created": 1789194832,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states the desired Python output and even sketches the printer methods. The FAIL_TO_PASS assertions check exactly that Min/Max print as min/max with two arguments.\", \"p_invalid\": 0.05}",
+          "reasoning_content": "The issue is about PythonCodePrinter not supporting Min and Max. The user even provides the exact methods to add.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1685,
+      "completion_tokens": 91,
+      "total_tokens": 1970,
+      "prompt_tokens_details": {
+        "text_tokens": 1685,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 194,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 14008000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states the desired Python output and even sketches the printer methods. The FAIL_TO_PASS assertions check exactly that Min/Max print as min/max with two arguments.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states the desired Python output and even sketches the printer methods. The FAIL_TO_PASS assertions check exactly that Min/Max print as min/max with two arguments.",
+  "prompt_tokens": 1685,
+  "completion_tokens": 285,
+  "total_tokens": 1970,
+  "cost_usd": 0.0050799999999999994,
+  "cost_in_usd_ticks": 14008000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 875
+}

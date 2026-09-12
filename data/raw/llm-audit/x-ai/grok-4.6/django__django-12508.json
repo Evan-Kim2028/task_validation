@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12508",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4953
+  },
+  "response": {
+    "id": "gen-1789191055-ZV5Oq2AZdVEPovdlENMG",
+    "object": "chat.completion",
+    "created": 1789191055,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Tests require extra client args and CommandError returncodes, not the requested -c SQL flag.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for a dbshell -c SQL option like shell, but the FAIL_TO_PASS suite checks forwarding arbitrary extra parameters to each backend client plus unrelated CommandError returncode behavior. A reasonable implementation of -c would not match those tests.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue asks for `./manage.py dbshell -c SQL` support, similar to shell command. But the tests and gold patch implement passing extra parameters to the database client (positional parameters), not s...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for `./manage.py dbshell -c SQL` support, similar to shell command. But the tests and gold patch implement passing extra parameters to the database client (positional parameters), not s...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8832dec7-8efc-984f-bdf0-b288ffa48dee",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5619,
+      "completion_tokens": 470,
+      "total_tokens": 6089,
+      "cost": 0.014058,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014058,
+        "upstream_inference_prompt_cost": 0.011238,
+        "upstream_inference_completions_cost": 0.00282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 343,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Tests require extra client args and CommandError returncodes, not the requested -c SQL flag.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for a dbshell -c SQL option like shell, but the FAIL_TO_PASS suite checks forwarding arbitrary extra parameters to each backend client plus unrelated CommandError returncode behavior. A reasonable implementation of -c would not match those tests.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Tests require extra client args and CommandError returncodes, not the requested -c SQL flag.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for a dbshell -c SQL option like shell, but the FAIL_TO_PASS suite checks forwarding arbitrary extra parameters to each backend client plus unrelated CommandError returncode behavior. A reasonable implementation of -c would not match those tests.",
+  "prompt_tokens": 5619,
+  "completion_tokens": 470,
+  "total_tokens": 6089,
+  "cost_usd": 0.014058,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

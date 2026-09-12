@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-16766",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "a6e93662-c98c-9f44-adaa-08635345af3d",
+    "object": "chat.completion",
+    "created": 1789194583,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states that Indexed should print as Python indexing and even supplies the exact _print_Indexed implementation. The FAIL_TO_PASS assertion only checks that multi-index Indexed prints as p[0, 1], which matches that specification.\", \"p_invalid\": 0.05}",
+          "reasoning_content": "The issue is about PythonCodePrinter not supporting Indexed. They even provide the exact method to add.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1711,
+      "completion_tokens": 104,
+      "total_tokens": 1923,
+      "prompt_tokens_details": {
+        "text_tokens": 1711,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 108,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 12695600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states that Indexed should print as Python indexing and even supplies the exact _print_Indexed implementation. The FAIL_TO_PASS assertion only checks that multi-index Indexed prints as p[0, 1], which matches that specification.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states that Indexed should print as Python indexing and even supplies the exact _print_Indexed implementation. The FAIL_TO_PASS assertion only checks that multi-index Indexed prints as p[0, 1], which matches that specification.",
+  "prompt_tokens": 1711,
+  "completion_tokens": 212,
+  "total_tokens": 1923,
+  "cost_usd": 0.004694,
+  "cost_in_usd_ticks": 12695600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 919
+}

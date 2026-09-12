@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12276",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1575
+  },
+  "response": {
+    "id": "gen-1789191007-ZDzCsIyJkMCqKJh4OVHM",
+    "object": "chat.completion",
+    "created": 1789191007,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly asks to apply ClearableFileInput.use_required_attribute behavior on FileInput so required is omitted when initial data exists. The FAIL_TO_PASS tests check exactly that widget method and HTML rendering for FileField with FileInput.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: FileInput shouldn't display required attribute when initial data exists. Move use_required_attribute from ClearableFileInput to FileInput.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: FileInput shouldn't display required attribute when initial data exists. Move use_required_attribute from ClearableFileInput to FileInput.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "j1nISNkOtWgYpjj3IoVMnn+5Zx7x0UGE4E8X39YgJQhaAvyiakRHEi6IpWDXXu1m8gTwt9NQnh/iJq17SmoPQQuKqq2we5aT3iVuUnssiByrq4jItP9OMogh/lXJmG8BVAw7ne1zWuJc5XNsYKMwm+YbIPBOONM4PGnei+AOZxJpI2m4MSrxzjWkhy+nKM5OcRwL7ylMq4fxLNCJdyuPYXUjDZ14JDr+vPA7I9B4ElBo7kkcOCCgALhcfdJPkYjr4vKfBLj3H8AAK7OH1Rjdfv3ixqa6ZRogXKuSBL9DLS9Mp7IO/fAMb1SpUqmi7IqJ2gnjF0lu5hWiZXiRhNjjmXODGGZmLVvCu6XOcVQcAxBBXtiZDv/X+McKKuc8l9atAT4YYhdkn05cv1qyM4uA3gYMZWMdYT1jNf+wa8/roaPmNlUIc8A5TyjkfuV/b2LWX8sh6CscuceaMJ7PozW32FhtHVCvGFZvTopPPw1JklAa+Q+KxEdgDk5PpdACeZt7/tepEYPHF8jKNQ++8IVGy7WZ10w5wHCIsMyWECZ02hrHsgtPrO2g1Kukm5w/+TMYdJ5g3sWg4AUkyeNI4aoKg490kJHHlauqLXkn6kT0g6HP3RhfibZsMksWjlJexQjbHQVucQML0/d7e8XG47OorySReHBN1nk9D4+pbt+uVX79Pq1+tuO6U9FpvFMpumYPRqcTbbiNbTSSl+qcz+KfMSrdzl8RYph/1+WWazDI.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_82d27248-0a9a-908a-8c84-2717b68f6eb7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1980,
+      "completion_tokens": 226,
+      "total_tokens": 2206,
+      "cost": 0.005316,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005316,
+        "upstream_inference_prompt_cost": 0.00396,
+        "upstream_inference_completions_cost": 0.001356
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly asks to apply ClearableFileInput.use_required_attribute behavior on FileInput so required is omitted when initial data exists. The FAIL_TO_PASS tests check exactly that widget method and HTML rendering for FileField with FileInput.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly asks to apply ClearableFileInput.use_required_attribute behavior on FileInput so required is omitted when initial data exists. The FAIL_TO_PASS tests check exactly that widget method and HTML rendering for FileField with FileInput.",
+  "prompt_tokens": 1980,
+  "completion_tokens": 226,
+  "total_tokens": 2206,
+  "cost_usd": 0.0053159999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

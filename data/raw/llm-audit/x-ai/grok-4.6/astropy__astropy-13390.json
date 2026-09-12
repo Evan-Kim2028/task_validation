@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13390",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4427
+  },
+  "response": {
+    "id": "gen-1789190650-5MUGMCExh0YmjV59X6lI",
+    "object": "chat.completion",
+    "created": 1789190650,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only documents unicode/bytes Column comparison failures under numpy 1.23, which a competent engineer could address from the traces. FAIL_TO_PASS also requires MaskedColumn quantity comparison behavior that is never mentioned in the issue.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about Table test failures with numpy 1.23.0rc3 related to unicode/bytes comparisons.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Table test failures with numpy 1.23.0rc3 related to unicode/bytes comparisons.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "GjfTzWPaXHkbSMd5oYx4FPNIqoemYr9M8h+DYTaiY8elVEPecFXZdXNJzJyBW9lRrZz64FVDNBwqJLy2eOi7hVavKrhxpfyldnQyDZq0/FekWHRK0vd5rLsGgghVnrcmK9S27TgojoYAVCitKu2Sau8cpdwEAxdKeTfLS952DtnukqTb4UAfuZWLOeF3VGmyZWRei5HZ8Dbx5kwOX5/ZPJAuiLaN4A4fNTXeIamIbApJ4WHD5b0u78ouC+vnrWkddwSA/yenLCmYMngFuRR2GlNbDAvLymN/ozTKRJxdLF7j9kl2BURXh2R/Ag68i+UqVdZOetQ8m09AmCaCGqD5Dc8OQLtfqpPs1W1TQSJPUsJyEBQ9fM9XCSXmCJeyeUf6t/y5pFF9VMuLyt98m5Upwq+CTHyioqvNnDnhywajb/MzZvZdPLs/ETUqOuEyLPYB2fHsvqCPFM/I0dT1MOrSbvybzULa7RFRCJeTn946C9qV3Xeo/YxYxc5lGGUdtQJdUG2zo99kc+nlHPRD/B6wPTfd1j1qymejnVPVvqmijO5CePjW3wdrE9HDIfjqCjN0f9YRJn3g52X4DrI4Wt/LU60vByhxvMjMsb22HA87OkjcfZWaVnAezWk4PNDvhDZ8a/lEH0PfWjPYdfhhlOoQW5vi0paPLhgE0aXRi3ZXJrB3/d1QxVJN2PKzD6awTPi29W0x2iJIaZejpl9DV1Lp8YeCX8LH0qFKBaT20piu91g9umiwGBwV3z++v8pGNwc9fJKDdy4XboiRnXVZUzeK99za/YIc755dvMXEm328YiSPxfwBBM2vYxZCpqXMSL/GC3Q855RX/e+lyUD2eTocNe3SWyb2AeCi6zg0zqMwU6mkYYfz5ZVAWRMQ8a2HVWcRc3XdCdWlPl9mHsC+vkDTi0Br5I3N9gNJmENfmq34z+nP+k/STXStTmFn3ZLFU67ZOOk7AvbYnsjHjP84Sj50Pnbl/yof8/cmBY9ZwTZluTfNdKdJ0s8b8/xs3YnaEw8nyNxKeJMNhOASGusJjj1J3xGGMwPALdQrhwz93kmonxv5mcVYS0Di8COw1bfp3ChxQu6JzrMsh0gslgt1uW7CJ6zzPPSVzw1geO1ppCoXqZ+EG6OvUv3b+gF66yQooBnAIzxsGr/ywYSzXi2NYEbmW7aSxoQH/RkI6V0O9BdHVhbq3TcVbKqhy4p+IN/pWzmLsw27Ph03C9sAy/wXATHM7I9ophdy68eT3WD0ZlvH0QC0b8qHhjiIkMYEJ6YIr3NEZOAcBSidnPbasJu4+seMUYbbcTje3QozrxPxtdLEWKQXfR2JvqJ6mBSDHh6JhjLQ0ZtP3Bm4Z6CB4Pj3AOAlSH5xeVAu1hPjxarGhKDNcyUW2PvilcI6W/xLD/xtRR1fCQngYSxAXHq5jb4uVAZUCCoLTRwBhEFqoPzLarWgAjWVW5K9wgQLdwQAAsjCt0cbVsJd5+YS51wffUf73yV9Wz4h9092x9kFQR6l4CjujLg+QcC6DA+U5Uuls09lPe+7UIbQYhYkFueGSQbKpWI6MaIMGnGwpIqea8kXzq5AhvVBpjVqn9nTb7tBnbDCB8vq0V+fP4FHbH+AMKzuQUDV3EJZisxRRHK9tOCV7UkH89Y+6/DNuEGRDl63jF1zB1xPVmaM3RMY80nHFkZE/u3lem0GneUnU6PcZxM5ekJN817zS4dZBPw/gVTIMPEn2EIzh5RxVT6CFAKfFI4p33jYK75azwPCN7aA2Sn04hgOGmJvEsD+fS6sMn+oj0LMWIwZoSiwYSl5ai/JIhmF54ufHRitQCePRdIMzrCcGerBfJC5dj7q2PTVYJszTXywnnMuO/9THwWzwVCOzkbILkDsIYz3Q3Z/l2F69JybOApr3fyhtdAaHUbIn8IX1Fbxikw8B/Rtn24Yi/nk.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fe7607b8-f30b-9a6a-ab17-391653bc96ea",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4951,
+      "completion_tokens": 405,
+      "total_tokens": 5356,
+      "cost": 0.01214,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.01214,
+        "upstream_inference_prompt_cost": 0.00971,
+        "upstream_inference_completions_cost": 0.00243
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 302,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only documents unicode/bytes Column comparison failures under numpy 1.23, which a competent engineer could address from the traces. FAIL_TO_PASS also requires MaskedColumn quantity comparison behavior that is never mentioned in the issue.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only documents unicode/bytes Column comparison failures under numpy 1.23, which a competent engineer could address from the traces. FAIL_TO_PASS also requires MaskedColumn quantity comparison behavior that is never mentioned in the issue.",
+  "prompt_tokens": 4951,
+  "completion_tokens": 405,
+  "total_tokens": 5356,
+  "cost_usd": 0.012332,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

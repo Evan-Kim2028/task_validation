@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12209",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1246
+  },
+  "response": {
+    "id": "gen-1789190997-aJmlyxWhOXxIb4iVqNUw",
+    "object": "chat.completion",
+    "created": 1789190997,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes a regression for explicit-pk saves when the PK has a default and calls out loaddata as a related case, so a competent engineer would restore UPDATE/insert-or-update behavior for existing PKs. The FAIL_TO_PASS coverage is only the serializer/loaddata UUID-default path, which is slightly narrower than the save() example in the ticket but still aligned with the stated side effect.\", \"p_invalid\": 0.35}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch only protects raw=True (loaddata) but issue requires UPDATE for explicit-pk save() in general; tests only cover serializers/loaddata\",\n \"confidence\": 0.75,\n  \"rationale\": \"Issue describes two distinct behaviors (general save() and loaddata side-effect) but gold patch addresses only raw path; tests are narrower than full issue scope.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Gold patch only protects raw=True (loaddata) but issue requires UPDATE for explicit-pk save() in general; tests only cover serializers/loaddata\",\n \"confidence\": 0.75,\n  \"rationale\": \"Issue describes two distinct behaviors (general save() and loaddata side-effect) but gold patch addresses only raw path; tests are narrower than full issue scope.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e16f13c2-2f8e-9c89-aac6-c006a61181c9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1622,
+      "completion_tokens": 953,
+      "total_tokens": 2575,
+      "cost": 0.00877,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00877,
+        "upstream_inference_prompt_cost": 0.003052,
+        "upstream_inference_completions_cost": 0.005718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 809,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes a regression for explicit-pk saves when the PK has a default and calls out loaddata as a related case, so a competent engineer would restore UPDATE/insert-or-update behavior for existing PKs. The FAIL_TO_PASS coverage is only the serializer/loaddata UUID-default path, which is slightly narrower than the save() example in the ticket but still aligned with the stated side effect.",
+    "p_invalid": 0.35
+  },
+  "s": 1.0,
+  "p_invalid": 0.35,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes a regression for explicit-pk saves when the PK has a default and calls out loaddata as a related case, so a competent engineer would restore UPDATE/insert-or-update behavior for existing PKs. The FAIL_TO_PASS coverage is only the serializer/loaddata UUID-default path, which is slightly narrower than the save() example in the ticket but still aligned with the stated side effect.",
+  "prompt_tokens": 1622,
+  "completion_tokens": 953,
+  "total_tokens": 2575,
+  "cost_usd": 0.008962,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

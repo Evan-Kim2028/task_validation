@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13828",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1428
+  },
+  "response": {
+    "id": "gen-1789192367-KY6tVa8bCdYMhoX9M2ia",
+    "object": "chat.completion",
+    "created": 1789192367,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS expects TypeError, opposite of the issue's requested sparse support\", \"confidence\": 0.9, \"rationale\": \"The issue clearly asks for precomputed sparse affinity matrices to work without error, matching dense behavior. The FAIL_TO_PASS test instead requires raising TypeError on a sparse matrix, so a correct sparse-support implementation would fail.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is that AffinityPropagation doesn't support sparse affinity matrices. The expected result is \"no error raised since it works for dense matrix.\"\n{\n  \"underspecified\": 0,\n  \"false_negative\": 3,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect TypeError for sparse precomputed affinity, but issue requests support (no error) for sparse matrices\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that AffinityPropagation doesn't support sparse affinity matrices. The expected result is \"no error raised since it works for dense matrix.\"\n{\n  \"underspecified\": 0,\n  \"false_negative\": 3,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect TypeError for sparse precomputed affinity, but issue requests support (no error) for sparse matrices\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0a1316e8-cb6d-9505-9547-a3993b69cd1b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1860,
+      "completion_tokens": 509,
+      "total_tokens": 2369,
+      "cost": 0.006582,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006582,
+        "upstream_inference_prompt_cost": 0.003528,
+        "upstream_inference_completions_cost": 0.003054
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 390,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS expects TypeError, opposite of the issue's requested sparse support",
+    "confidence": 0.9,
+    "rationale": "The issue clearly asks for precomputed sparse affinity matrices to work without error, matching dense behavior. The FAIL_TO_PASS test instead requires raising TypeError on a sparse matrix, so a correct sparse-support implementation would fail.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS expects TypeError, opposite of the issue's requested sparse support",
+  "confidence": 0.9,
+  "rationale": "The issue clearly asks for precomputed sparse affinity matrices to work without error, matching dense behavior. The FAIL_TO_PASS test instead requires raising TypeError on a sparse matrix, so a correct sparse-support implementation would fail.",
+  "prompt_tokens": 1860,
+  "completion_tokens": 509,
+  "total_tokens": 2369,
+  "cost_usd": 0.0067740000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

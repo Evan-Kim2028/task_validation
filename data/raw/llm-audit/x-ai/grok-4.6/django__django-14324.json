@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14324",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1959
+  },
+  "response": {
+    "id": "gen-1789187846-7rToDen9bHt6ec1nujFa",
+    "object": "chat.completion",
+    "created": 1789187846,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly states that autodetection should not rewrite an implicit self-referential ManyToMany related_name, which a competent engineer would fix in deconstruct. The FAIL_TO_PASS test also requires omitting related_query_name and limit_choices_to unless they were passed at init, which is only loosely implied by the ticket.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about migration autodetector changing related_name for self-referential ManyToManyField. It should use related_name='_mymodel2_field_3_+' instead of 'field_3_rel_+'.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about migration autodetector changing related_name for self-referential ManyToManyField. It should use related_name='_mymodel2_field_3_+' instead of 'field_3_rel_+'.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f0514da1-6efc-9c0e-a15c-9a0f87f312b8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2455,
+      "completion_tokens": 529,
+      "total_tokens": 2984,
+      "cost": 0.007892,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007892,
+        "upstream_inference_prompt_cost": 0.004718,
+        "upstream_inference_completions_cost": 0.003174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 404,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly states that autodetection should not rewrite an implicit self-referential ManyToMany related_name, which a competent engineer would fix in deconstruct. The FAIL_TO_PASS test also requires omitting related_query_name and limit_choices_to unless they were passed at init, which is only loosely implied by the ticket.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly states that autodetection should not rewrite an implicit self-referential ManyToMany related_name, which a competent engineer would fix in deconstruct. The FAIL_TO_PASS test also requires omitting related_query_name and limit_choices_to unless they were passed at init, which is only loosely implied by the ticket.",
+  "prompt_tokens": 2455,
+  "completion_tokens": 529,
+  "total_tokens": 2984,
+  "cost_usd": 0.008084,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

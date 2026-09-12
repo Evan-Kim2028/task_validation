@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13068",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1250
+  },
+  "response": {
+    "id": "gen-1789190639-oX0hpFaxa5cVl0ow2npa",
+    "object": "chat.completion",
+    "created": 1789190639,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS checks 0-9 precision validation, unrelated to the reported JD/ISOT round-trip inaccuracy.\", \"confidence\": 0.95, \"rationale\": \"The issue asks for accurate Time format round-trips, not clamping or validating the precision attribute. The only FAIL_TO_PASS test asserts a ValueError for precision outside 0-9 with a specific message, which a competent engineer would not infer from the report.\", \"p_invalid\": 0.97}",
+          "refusal": null,
+          "reasoning": "The issue is about Time from astropy.time not being precise. The user wants accurate conversion between formats.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Time from astropy.time not being precise. The user wants accurate conversion between formats.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "MD3um0yC38Z9ukJbpGoReWbbeMSB+Gdnt5Tb+lzoDpkGzsafqrH3JlYeWP/kc9y6Cmn1Dyc7SVQWb8W4XaEAPZ07Vhw8bZg/8ELkbLR6JrT5mZJnQd5wIKl3mRwdx2roVh9QC58ZAUpbxDbWn9iXx/mVM16V7FEQDmpPffDDVQPRmgja7VXmJAKTMWGZXv/9f7p9g7ykh1j1AoaI4pQYSqD382xnjA8N8NWVXpfkcwtnSaouyYoSpWRBkOttzKhXlIl51IWwmwVwngO5Ac5Ogr7i1o7PeAOBsNo7mK9VQhr9O+GQQ+JAcgoCkf8a3FUa/BrDrT3jhngWPuWFfRyTmzXMFfQCckXaSCNqiFl2WIe+W5+JVFfxlx0rSJoPiUZ8OB/DBYDqxZtSzhti7eCdKQpE7SqpOM/8nmelQeeQ6vx1egJv2XqGnrRkNpyF4hOjYxLnYu+3KmTiwfSoXNvzR3zThThw6O9w+O2aY8QhWYPfbdVXgUIdN9XBIa89qMjf/+0oDHRXBlatz7Wd2ElHhQfIAbwBMuTzUTTZVeaC1G0rCAs6vTN5QjJh41LRP6weKGLZLRfYmGcy7TmVGxnxn46iRJAWQVJfaLEM3L5zWvr+8SvmN4hVqdO+596Z98zAAzavBkNTo/f3/vYUHJmjsysD+TI7xr1T9QFuMtN6aw0XNQXTQSvSi0bUW3Ys/Ehhl1v+MzRywQzwejXOC7h1w717fqWlHqS0QhRYXz7I/iNHnnEciKLtE3KAj/7zD2XdGqqZZb7Lvp95ECs3uzJpcHdGpNiM5slEXek01btm0cqMogT51qKVTgeS8avrkEpH4kX2qH05NbYrr5DdZSafb2GEM8sdIygIEJCMbKHcQu0Shi3CO/djUSRJ0I37DQiEBmJjJmVODIZo54EL57aqMbgf4NNBcbvF3BEVVViKTKbbJIiXmG706rT+PogTQKevPA/fGXYJZZZTzXS98mEuF7SIAktggaOsNpqOyQdTA+g2dbCET8jp/aZBfkhcXbhdfshdfTyEugysmytvmqXNStZLyToWMoBDljyn1IqIHF37ljiBWGImXP19FioRBLA++YaBnB35HWDsMXAGoIoSIqiLWvJf+EIq3fIsOEf+8hfrwgpLLbcY3xKkakdLB1rrllik0PjhVBjD/0LRW3ClM6DTN3AXE1MbbWwUl3HfrGLEtDX7vq7HrVyMqT7Qa2uvpqwGomYqYYxUBwjhZekTTez8py1r8pb8b58oThwHAUGhX8xfZQcoBmIHP1vKbO3PCXLxeqTmdWGZrzafKOgP+xB6KoyoG1uPfMs8/Sv/RURoZW3OHAUmCdw6kRjhjS4yZFVO85S+wlPlpjTxMdMqiHaQI385hMO7UsBFW+CHhDexSUj4LCA9xQg5TqzAsfOz+GqDEiwI8ym9/vK3COde7wg1jI/nF+onTXdzcd9MDw6rKSHTmQMUjVwv57I7s0zD84kBTznwlffS0v9VIC4q4svQYkNYr/3Nub+lMDAjoFTj8M6CWBDsVjDLrHWhkZfm9Fz35P6e2f3Wj9KMHHUFGmbf3piov/zKLsTB76b1wFxhQgMzg+5DAAxqRGfCM2C4SWJo7Wy1jdSjtMfM2MdVrUSsVFU20GfcXvfPt37pKKtcLIS+LLZgiCyILqZ/ppB1+B8UTnuRxvUXOpNbSOPYxCp6E6N1Nhwuo7hhKQa8LObCr4F1a4rqI13w7uHoxDmwQOvYRUbLhO7QNZL1oIKeuBMiY9BZt3SVWyLY7i6GI4FaplCgAmB2cJYgJsYiOvrYevjVSfJzBdZSz1ZoDqFseD1FnSQqvT7OecSuC8gJxtgS8D6OygDw/s8Ih2pn24JtuinjtrrXEC7gfXD2EHatywA0cwJz4VIwSULRgVnLgP0JZz238ta3Wy/bKYA9+TYbseCKHMdHWQIp/w0RDvnlJ9vp/Z/OoIMoAhyeJ0u/terVrz2XDKkqM+CfPq4+bJLOyob94uGmgvZMiGuHtaIoqj0Q5yAL3IMDVksGWDfE+I1nWEUJmY6owoy1v4+TCU2XBi8ceGy3mAISOfd5XF0xMyczSz1K6czR9H8DD8YpfdAKdzCPiasICsHBeaEwP0Sltwy2dSr4WkSHhMKrZDwVTmbkvPO7D+u32cwEAIhD3tB7AkMeLuvy0iRdyFvVC3DEL9VVUSJAyt0+7Q+dMFvoyINOv/CA6YQbIh1zLQRawhr2oAHl5XtxrNXZycACRQawLMuXNXe6gHV+42qb6i6D5gm9QIlT5Tj63TzIpKOSg1C1jEyBM0HLpCfeM+nVKa9Dq7gmlFDfk38UW1gazjxmVtfDNwxt8FgaPfCXBLeKkEC14fG83IyHCVx+W6ploGZrGukddmJlDIglxSWtnIncKFgWRtwCG6gkNzaeqQqIgkuXKMeJhSszwuMfps2kcXRkvGrInIFSNG+jNVy1f2fRcRRdSrHB90GWnoJvi7Tzg5o+2SekPIorzPCbFkAv9yANtGImwyNCWJQrXht5sxtZuPctffULZhm6oGv7smVGd+uRuqeL1VbFANwVYLi196p4TPYRfGd+qsj8L5TJaYiKANy3nj/doDUmTOw+jP3qfVNZg1OKnvhPq7rYaj60bnDur68jmgHxfaSQ0z0Z9HAaVgDO8aHj6SiTA/sCwBbMH2MYQXiP9W155UQNyPsPJU4SFbATd+VwVUpGCwkvSg+iIYhIudNXhMUSeRkpUi2D6njG7obJVCQc6TjHCztV1LspfVF6litrRsPFlDyGFMYhtRt4fGj8lQdl/hCa1//NCggKnsagwhTEhW9nFySkIcjJ1T7/Lu7tglGRTQwfedUTqjH+WWNbI4ep2GCOnoMm3aCsVoJof3kfwZ6oKdZTN7zjMzTAAxQgGCsDbYVVYzZqy5vZ4BafpCQaZyyExgw2.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_74342d0c-1bb1-9e59-8cf8-1daebe8a007e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1677,
+      "completion_tokens": 621,
+      "total_tokens": 2298,
+      "cost": 0.006888,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006888,
+        "upstream_inference_prompt_cost": 0.003162,
+        "upstream_inference_completions_cost": 0.003726
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 485,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS checks 0-9 precision validation, unrelated to the reported JD/ISOT round-trip inaccuracy.",
+    "confidence": 0.95,
+    "rationale": "The issue asks for accurate Time format round-trips, not clamping or validating the precision attribute. The only FAIL_TO_PASS test asserts a ValueError for precision outside 0-9 with a specific message, which a competent engineer would not infer from the report.",
+    "p_invalid": 0.97
+  },
+  "s": 3.25,
+  "p_invalid": 0.97,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS checks 0-9 precision validation, unrelated to the reported JD/ISOT round-trip inaccuracy.",
+  "confidence": 0.95,
+  "rationale": "The issue asks for accurate Time format round-trips, not clamping or validating the precision attribute. The only FAIL_TO_PASS test asserts a ValueError for precision outside 0-9 with a specific message, which a competent engineer would not infer from the report.",
+  "prompt_tokens": 1677,
+  "completion_tokens": 621,
+  "total_tokens": 2298,
+  "cost_usd": 0.0070799999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

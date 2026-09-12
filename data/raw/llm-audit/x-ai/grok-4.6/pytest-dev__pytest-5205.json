@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5205",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1762e0d2-eae4-989a-85f5-b84cbc8aa55e",
+    "object": "chat.completion",
+    "created": 1789193778,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS tests a new fixture API, not the reported invalid <properties> placement under <testcase>.\", \"confidence\": 0.92, \"rationale\": \"The issue only describes schema-invalid <properties> under <testcase> from record-property and does not specify a new record_testsuite_property fixture, type checks, or error text. The tests would fail any fix that only relocates or removes properties without that unstated API.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The issue is about invalid XML schema for properties tags in JUnit reports - record-property puts properties inside testcase instead of testsuite.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3324,
+      "completion_tokens": 137,
+      "total_tokens": 3672,
+      "prompt_tokens_details": {
+        "text_tokens": 3324,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 211,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 27091200
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS tests a new fixture API, not the reported invalid <properties> placement under <testcase>.",
+    "confidence": 0.92,
+    "rationale": "The issue only describes schema-invalid <properties> under <testcase> from record-property and does not specify a new record_testsuite_property fixture, type checks, or error text. The tests would fail any fix that only relocates or removes properties without that unstated API.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS tests a new fixture API, not the reported invalid <properties> placement under <testcase>.",
+  "confidence": 0.92,
+  "rationale": "The issue only describes schema-invalid <properties> under <testcase> from record-property and does not specify a new record_testsuite_property fixture, type checks, or error text. The tests would fail any fix that only relocates or removes properties without that unstated API.",
+  "prompt_tokens": 3324,
+  "completion_tokens": 348,
+  "total_tokens": 3672,
+  "cost_usd": 0.008735999999999999,
+  "cost_in_usd_ticks": 27091200,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2270
+}

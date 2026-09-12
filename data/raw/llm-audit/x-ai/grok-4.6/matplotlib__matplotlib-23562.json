@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23562",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1242
+  },
+  "response": {
+    "id": "gen-1789191970-8TWXfO0KtqBruFGl9Phi",
+    "object": "chat.completion",
+    "created": 1789191970,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly reports that get_facecolors on an undrawn Poly3DCollection from plot_surface raises because _facecolors2d is missing, which is enough to implement a lazy init or similar fix. The extra FAIL_TO_PASS for get_edgecolor is a closely analogous unstated case a senior engineer would often cover, so tests are only slightly broader than the written report.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Poly3DCollection missing _facecolors2d when calling get_facecolors before drawing. The tests also check get_edgecolor which wasn't in the original issue but is analogous.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Poly3DCollection missing _facecolors2d when calling get_facecolors before drawing. The tests also check get_edgecolor which wasn't in the original issue but is analogous.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "7Sll0BI9p2Pm4yspFxJSHF6khqAc4gGvKgHyXzEgHK1D3s/TAvcC9K2hTkaLxG+FjET2wYg5jM+YPU8rK82BwieXRdC/cYuKtLSVVstLwmcZCnWy8gXwhbPS+5drRkFaz5wR+eBnkyxcvTWJ+xe9MtSUn1b4YMKpIdOW+7HSawCd9S73xszoH+Wmo8x+k+sN6y828HLO0WzUc/F1Jbb1GlAQHU6hxs/dyFmEDe6XkZRWwVAJIMZp62buLQE4kAPBHOMJCXFDgEEdspWnTyiwf9jk5lNkflyquYbUAkfxPmTUG3siR+b2URFO3QRkkk8r0bX+K3g6UdcrifjcI88EaxFp4y3/kdAUpYtRUGxB20aXRSYj42Oij2lqk2xZjt127xvvCbs2iDHCsJV0DunvRZI51vLAJJgaRSf95JtsbvMbdjkzadORo4mQGIV7z/BXy063Z2Jo6LaQaIxeKmFQjiNo8ML6WMvmC7qwKxp8xFZlpIS14h/le86cJcIXQJw1euzLGsh79RgS+VJboK112awMc9+9L9tjtUC85jWaqKEJRtspqKfbrlJ39grVxuRkWcRPmQABq2w4WIS6csHMSpAwqW4vbdmSCUeGSCAXIR/pPAz9WyiIfljQNCNAQqeZDNritFPf69AYNu/fDaAKwSzs+THhAjs1aVHSbxuitOkllMpq3GIDufmuhegPRqsrJdZwZ+2bEiwFRFQoUfulfy4+1+saBU+yPYklp2GY+y3Ngx4RXQWuEHFSVoxAg+6tcWcvxzjxlxlqnHQsIzn5jIid1ECTbogjehelXcQjbQNhDVue4f/t/iqqAkSCn8srHGoCxJA0NAC7UwK2qORc88H8k5eD2JRZxUPS20fc9nlfVmtIrTF1swbnmvWO95gTgXLI3mlRppWtlsJAEgwHdXXkQfFQaR4yBZ4HcNeD8tNYv9CXULzR2MV0aSDVEhkTSaB45dgMnCdD2rUgNhvj9kjrKkGg/mxrrrq77S8GOR0Qhs+AUUtaAaAhRimWKBSj3kOA9adslelUcQj1ob3qpNapzW4hFe70hKdVsBmw0XBCxZuKWAcpa0yXjMEG5BTOSulBDk47nNSbiDvEIqnkbwqRn4v89pkFB5ZPykn9iuwB4xBr1rKvhlWx.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cd65dadb-299d-968d-802c-6c531062f19b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1847,
+      "completion_tokens": 350,
+      "total_tokens": 2197,
+      "cost": 0.00541,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00541,
+        "upstream_inference_prompt_cost": 0.00331,
+        "upstream_inference_completions_cost": 0.0021
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 212,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly reports that get_facecolors on an undrawn Poly3DCollection from plot_surface raises because _facecolors2d is missing, which is enough to implement a lazy init or similar fix. The extra FAIL_TO_PASS for get_edgecolor is a closely analogous unstated case a senior engineer would often cover, so tests are only slightly broader than the written report.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly reports that get_facecolors on an undrawn Poly3DCollection from plot_surface raises because _facecolors2d is missing, which is enough to implement a lazy init or similar fix. The extra FAIL_TO_PASS for get_edgecolor is a closely analogous unstated case a senior engineer would often cover, so tests are only slightly broader than the written report.",
+  "prompt_tokens": 1847,
+  "completion_tokens": 350,
+  "total_tokens": 2197,
+  "cost_usd": 0.005794,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

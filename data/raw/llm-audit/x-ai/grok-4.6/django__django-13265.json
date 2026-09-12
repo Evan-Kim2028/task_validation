@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13265",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2816
+  },
+  "response": {
+    "id": "gen-1789191177-j0FUw3Qx6LtHev770j38",
+    "object": "chat.completion",
+    "created": 1789191177,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that AlterOrderWithRespectTo run before indexes that reference the implicit _order field so autodetection does not emit an invalid operation order. The FAIL_TO_PASS suite fairly checks that ordering and a few closely related Meta options, with only modest extra cases beyond the reported Index example.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is about AlterOrderWithRespectTo happening after AddIndex for _order, causing a crash because _order isn't created yet. The user wants AlterOrderWithRespectTo to proceed before AddIndex of _...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about AlterOrderWithRespectTo happening after AddIndex for _order, causing a crash because _order isn't created yet. The user wants AlterOrderWithRespectTo to proceed before AddIndex of _...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_add1f219-edda-9eb1-81c5-225dfab370ae",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3153,
+      "completion_tokens": 533,
+      "total_tokens": 3686,
+      "cost": 0.00912,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00912,
+        "upstream_inference_prompt_cost": 0.005922,
+        "upstream_inference_completions_cost": 0.003198
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 417,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that AlterOrderWithRespectTo run before indexes that reference the implicit _order field so autodetection does not emit an invalid operation order. The FAIL_TO_PASS suite fairly checks that ordering and a few closely related Meta options, with only modest extra cases beyond the reported Index example.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that AlterOrderWithRespectTo run before indexes that reference the implicit _order field so autodetection does not emit an invalid operation order. The FAIL_TO_PASS suite fairly checks that ordering and a few closely related Meta options, with only modest extra cases beyond the reported Index example.",
+  "prompt_tokens": 3153,
+  "completion_tokens": 533,
+  "total_tokens": 3686,
+  "cost_usd": 0.009504,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

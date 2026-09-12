@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-7906",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "d477b9ba-9cb1-9575-ba08-6b68d1eceeaf",
+    "object": "chat.completion",
+    "created": 1789194191,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue asks to keep IDs/permalinks for :noindex:; tests/gold add a different :noindexentry: option.\", \"confidence\": 0.95, \"rationale\": \"The GitHub issue specifies that :noindex: should still emit ids, permalinks, and cross-references, only omitting the index entry. The FAIL_TO_PASS tests instead require a new :noindexentry: flag and would fail a solution that only changes :noindex: as described.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4517,
+      "completion_tokens": 144,
+      "total_tokens": 5048,
+      "prompt_tokens_details": {
+        "text_tokens": 4517,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 387,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 38936800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue asks to keep IDs/permalinks for :noindex:; tests/gold add a different :noindexentry: option.",
+    "confidence": 0.95,
+    "rationale": "The GitHub issue specifies that :noindex: should still emit ids, permalinks, and cross-references, only omitting the index entry. The FAIL_TO_PASS tests instead require a new :noindexentry: flag and would fail a solution that only changes :noindex: as described.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue asks to keep IDs/permalinks for :noindex:; tests/gold add a different :noindexentry: option.",
+  "confidence": 0.95,
+  "rationale": "The GitHub issue specifies that :noindex: should still emit ids, permalinks, and cross-references, only omitting the index entry. The FAIL_TO_PASS tests instead require a new :noindexentry: flag and would fail a solution that only changes :noindex: as described.",
+  "prompt_tokens": 4517,
+  "completion_tokens": 531,
+  "total_tokens": 5048,
+  "cost_usd": 0.01222,
+  "cost_in_usd_ticks": 38936800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3237
+}

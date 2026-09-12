@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12496",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1234
+  },
+  "response": {
+    "id": "gen-1789191049-fGSukib7acuEzRBnYFwu",
+    "object": "chat.completion",
+    "created": 1789191049,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly describes an extra UPDATE on child save/create when a parent PK has a default, and the FAIL_TO_PASS test only asserts that inheritance save uses two queries instead of three. That matches the reported behavior without requiring unstated APIs or messages.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about extra UPDATE queries when creating child models with custom PK on parent in multi-table inheritance.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about extra UPDATE queries when creating child models with custom PK on parent in multi-table inheritance.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "sRpyaTeyQlpAqfwEpB5J1XFLZCNJK4wNjuzUmyTPN8gJToQ0UjxgmJRgmEdHKXVonCj8t729Txd6TgpgdzmQyeJSIyF7vKPSuVKGQB6NU1x1FSIokY0c77AYgkLi/TQVfqVjdN4U3kUWqskVxR6W/dVXBorWj6I4cQ/C26HQwxPGr+bQRC5lb2fC/NBKdc66oR/5O18LL4rvIzgtqSDJNeH2Ey6eiru5EJDh79xE5msH64QghEFzxyfdKtGFxglb0lI4k8NbxyYQeOVbo//jGtRmKyMFAxq3R1YhBkuBjSIHm8ud1q/yVv3JbHEytgbxQ38w8WgAcjMf91RoOw/s2qApW6Fi6rsmFPiqRHgoh6V1VCxodDd809TDsHgIOxHKp9A/El8ODq0c3/q+UUzxci3yHXSI5zasbiJV3D9lA98Qrr8+FMpeQERO76gcqV+h1CTTplHSnVQc6Z0KI94YgGX++rqj29noBoFIBcytR9XCoaydD22IXoKrQMXc2rG+22tFHjAJ7camdXju+IEbhq9SfDbaG1CFPfwTltQdoL1Arl+lXyMaMOcdBZVFlwdYWEwQ3Ztn1wZj/7jtubehKPOuq6qmU1slPyP2jbHG4OQ04Hrabz8Aar/4ssXGOGgFwzGG+3dvjSAVCNKDZFP/otViSugYTCc/aT9LRpdhT3akHaN7rrU4z3CyS9X+0aiOj8kqBtp9a35pOWsfjfkGaKWd/KxkPAHlwQ3vwxXXZP4hgkFiQa8bwjJ2pR8lPZiqsgEALSyPMM9dpDdcKDFF+Z5cly3tuWvMLHeUj3aJ3nBY8QfCpSqKEathMrMuG+hmyEC5r1mPzZ8c89zHg1PV1iQvkMTCSa9ktfsO/ip/N6I/cOPwGZZSpbfsROdHL8Khafw9l/oEw84URO5ars9P8L08cDA+HU9q8xZeabIIKZ/Fa+mFf/v+Nj5wp4gxXcb+z6c8SfiLR987QfK2NoLjpOOp2XvkCWMVmUoDai8lQTm5Pu8m6QKo1uNIyM2V2J7cXNBGHaodRGDsjuXA2jHWuislSSx0whi4BChWuCoWQEncN0pANKSCHTkIsqksrwJgOVo4pAJA1lAjDfTpgjdXtG7udw9DkjfFzo5Hx5hRicVJvBqrX5BQb3hWuw3wKzPS9h/YPmIE8LBKyftsEdBhG8SQpYRoflyWDOgJNQ5/8x1BiVTY8uxg/1op0ihMPFfxXi4RuLApOGghLWJuCh2p2xpPaeeF+65SwtKzL9qOUzxz4tPmXQ9Wp33nqO+3aehLYhO24oa7q0nNAA+Fkz/QJNNZQfZIXMfCZqmBS2U4XCA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d9c6415d-b833-91fe-9449-8ae4990deab2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1653,
+      "completion_tokens": 334,
+      "total_tokens": 1987,
+      "cost": 0.005118,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005118,
+        "upstream_inference_prompt_cost": 0.003114,
+        "upstream_inference_completions_cost": 0.002004
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 225,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly describes an extra UPDATE on child save/create when a parent PK has a default, and the FAIL_TO_PASS test only asserts that inheritance save uses two queries instead of three. That matches the reported behavior without requiring unstated APIs or messages.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly describes an extra UPDATE on child save/create when a parent PK has a default, and the FAIL_TO_PASS test only asserts that inheritance save uses two queries instead of three. That matches the reported behavior without requiring unstated APIs or messages.",
+  "prompt_tokens": 1653,
+  "completion_tokens": 334,
+  "total_tokens": 1987,
+  "cost_usd": 0.0053100000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

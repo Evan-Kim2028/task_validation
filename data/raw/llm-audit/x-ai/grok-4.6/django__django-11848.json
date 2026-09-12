@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11848",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1376
+  },
+  "response": {
+    "id": "gen-1789190947-Yc76tbd8Cv8aLIma3zwd",
+    "object": "chat.completion",
+    "created": 1789190947,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue quotes RFC 7231 and clearly requires two-digit rfc850 years to be resolved against the current year with a 50-year-future cutoff rather than a hardcoded 70/69 split. The FAIL_TO_PASS cases exercise that cutoff around century boundaries and match the stated rule.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about django.utils.http.parse_http_date having an incorrect two-digit year check. It should follow RFC 7231: interpret a timestamp more than 50 years in the future as the most recent year...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about django.utils.http.parse_http_date having an incorrect two-digit year check. It should follow RFC 7231: interpret a timestamp more than 50 years in the future as the most recent year...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8617a3f1-6262-9d50-ad1a-88732555dd03",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1951,
+      "completion_tokens": 614,
+      "total_tokens": 2565,
+      "cost": 0.007394,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007394,
+        "upstream_inference_prompt_cost": 0.00371,
+        "upstream_inference_completions_cost": 0.003684
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 498,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue quotes RFC 7231 and clearly requires two-digit rfc850 years to be resolved against the current year with a 50-year-future cutoff rather than a hardcoded 70/69 split. The FAIL_TO_PASS cases exercise that cutoff around century boundaries and match the stated rule.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue quotes RFC 7231 and clearly requires two-digit rfc850 years to be resolved against the current year with a 50-year-future cutoff rather than a hardcoded 70/69 split. The FAIL_TO_PASS cases exercise that cutoff around century boundaries and match the stated rule.",
+  "prompt_tokens": 1951,
+  "completion_tokens": 614,
+  "total_tokens": 2565,
+  "cost_usd": 0.007586,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25232",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1618
+  },
+  "response": {
+    "id": "gen-1789193001-9R4VzSlkeqpLEQRFza8A",
+    "object": "chat.completion",
+    "created": 1789193001,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to add SimpleImputer-style fill_value on IterativeImputer for initial_strategy='constant', which a competent engineer would implement by forwarding the parameter. The FAIL_TO_PASS test only checks that fill_value is stored on the initial SimpleImputer, which is a fair check of that request.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about adding fill_value to IterativeImputer. The test checks that fill_value is propagated to initial_imputer_.statistics_ with max_iter=0.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding fill_value to IterativeImputer. The test checks that fill_value is propagated to initial_imputer_.statistics_ with max_iter=0.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "t83NBH5ulkmhaEiPy+cX4i7FZVVlczjwpLlsxs5bng/i13g78ycj7jpWi1LZp3yZgt7C9ZXljnMRrC6ZEko4IzUZ0Y885dvyPEMA6uni65NilIG2jPvfRGqWfeQpTAJLDmAWenVj3VEfLhqnd0+r13jvJ1mFRjzzZgMh8mDCsZS3pfBBRQMoJrOtRier2dt6wP4J5ZT/ctl5bIRew0YEbUjS5mujl0llb5Tk/HZGCzM9jxJga3SrbAQN4oCPU2dQpgFVc0+Q6rAU/47A31O/4OKM0hCepz9W4DWKULq4M+GMTSv7Sp0Qu7XhOJ4bSIkL7qXohdM9Yn5ayaypJCTZivvAB4Kkt9sXy8ZNw7MiZ0IHiVwB0+tlwZN6dNq19DhRD3R+w/AlEa/SNrNDCnW+BGNSVQUgsNA0m/Sif6+v9LU30aji3RHsRvd6sM6vpQGy1nEhOazyWw0asefBQJbe4r4GUwxh8sZVCzoirMtVjL2y3HLFyr1nH7VHwD9yu8BGF9+461i1sOfPGXTyDJzcQhNwz+QZCZjBvlm+FUg6s+7ki3XMFmVEWlm0yoVxPqSXCvWmgSiljXiuXkJ1aRzeKynKP8fSjmjBErT1xzHpACDrFE/rTTVub7+gYQOhg7Qp8PTkGV/XB6GW04U6CpoGVed7tRvrVswkmyIxisZeoE/FG6l4b9y+0OoiMusi7Yea7d+XSumf1tjeIrREIxMWYA+/w/FU5yXGTuHxBEZUH4S3x/e0QEipFgOHsOYJ8ghiPceHD4BRggVDLnDxio70i/Nih+xjBHODV0M9fBH373R17/MiFggLCEB3E7PZmXzwKOqzaTAuSDCZ+cl2da5B47LRGV5gXqJd0BUSeK5stp/pUyAlNdtP9F+FACocyBC1gv9Iv7kgMtCT1qMnx27Q8KMNdcyoKUhLCoE97PW/tIk9cNzDydqkxTXB2iVu66mtCYAzimR1McqNnvjc7kOqwOnAWciesVzS20+iijC7eHLV4OpV1aJNptoLDmV5VVHJT6COgq6psT7/cRgoedtKsduzbLbdOb3AA9sS9vv/6AfwvD3XraMqC55RLdUYCTZbpS2Bh3ehMEym2fW8+UTxcECkZ5qYNhzxIh1dqGVbfWY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_18452b8a-3988-9f7e-a5c0-2183038fd914",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2013,
+      "completion_tokens": 325,
+      "total_tokens": 2338,
+      "cost": 0.005592,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005592,
+        "upstream_inference_prompt_cost": 0.003642,
+        "upstream_inference_completions_cost": 0.00195
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 202,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to add SimpleImputer-style fill_value on IterativeImputer for initial_strategy='constant', which a competent engineer would implement by forwarding the parameter. The FAIL_TO_PASS test only checks that fill_value is stored on the initial SimpleImputer, which is a fair check of that request.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to add SimpleImputer-style fill_value on IterativeImputer for initial_strategy='constant', which a competent engineer would implement by forwarding the parameter. The FAIL_TO_PASS test only checks that fill_value is stored on the initial SimpleImputer, which is a fair check of that request.",
+  "prompt_tokens": 2013,
+  "completion_tokens": 325,
+  "total_tokens": 2338,
+  "cost_usd": 0.005976,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

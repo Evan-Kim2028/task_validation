@@ -1,0 +1,83 @@
+{
+  "task_id": "pylint-dev__pylint-8929",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "58f2bb69-cfdc-998b-ad59-ca570ca0ec14",
+    "object": "chat.completion",
+    "created": 1789193743,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS includes a large unrelated suite that only fails because tests were rewritten onto a new json2 reporter.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to include the score in existing JSON output when --score=y, not a new json2 schema, camelCase fields, or statistics object. The tests would fail a faithful fix of the reported JSON format and instead require unstated JSON2Reporter behavior.\", \"p_invalid\": 0.95}",
+          "reasoning_content": "The issue is about JSON export not honoring the score option. Expected: score added to JSON when --score=y.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11371,
+      "completion_tokens": 134,
+      "total_tokens": 11776,
+      "prompt_tokens_details": {
+        "text_tokens": 11371,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 271,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 82973600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS includes a large unrelated suite that only fails because tests were rewritten onto a new json2 reporter.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to include the score in existing JSON output when --score=y, not a new json2 schema, camelCase fields, or statistics object. The tests would fail a faithful fix of the reported JSON format and instead require unstated JSON2Reporter behavior.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS includes a large unrelated suite that only fails because tests were rewritten onto a new json2 reporter.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to include the score in existing JSON output when --score=y, not a new json2 schema, camelCase fields, or statistics object. The tests would fail a faithful fix of the reported JSON format and instead require unstated JSON2Reporter behavior.",
+  "prompt_tokens": 11371,
+  "completion_tokens": 405,
+  "total_tokens": 11776,
+  "cost_usd": 0.025172,
+  "cost_in_usd_ticks": 82973600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 8876
+}

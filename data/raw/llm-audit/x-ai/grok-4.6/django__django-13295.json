@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13295",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1539
+  },
+  "response": {
+    "id": "gen-1789191189-IpCOtdbrtXmpAfJBCKRA",
+    "object": "chat.completion",
+    "created": 1789191189,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to reject non-concrete names in update_fields rather than silently ignoring them, which a competent engineer could implement from the description. The FAIL_TO_PASS suite also requires a specific rewritten ValueError string used by existing tests, which the issue never states.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about silent failure when saving non-concrete fields with update_fields. The user wants either a way for non-concrete fields to specify underlying concrete fields, or simpler: error about...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about silent failure when saving non-concrete fields with update_fields. The user wants either a way for non-concrete fields to specify underlying concrete fields, or simpler: error about...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "B/rki5BKEjlPYjbkzJ46vpOHp7RTfWFbUW6oxMVr2+4oITyDgm6BZk4xoV6VTe47rZKxC6mqQNWwMk/4jIv6pbInVnSVz57qtylr30n3MFp/6f+v8+6YLyjQXanHbiczmJVDA+RE5sDVjwOK20S/vquiw4tlUQrZQcaGI+Fu8YtwZpboOCvUXD1+Q+HV/ozHMoZgoFFglPZ1vAUmY3J6DrF8iukHujDi19eCFjN2HzuAmwasB5jLOuwEzjFg5VdkmqpigsW/fxPF0XksCx+KFjT570r24FAezr7OQbcm1MgsPHrpE9AIPX0e1HbJq2Y+UAN3LsdZj8WXRSAwyyz1UtNDK76r3F/gE+1y2nu9p9Lned6B2yji9jPZ2bOzOKkVnAf6NDGbmVGn4ocimi7hBXsD3whiq+VOc+PduHS/UWmLnRVaTvz6ugaKUi7qrki5cSJ1DH5XVpc4MXce/LFzI1tmWUMFBWS9Ty/FpyVT6WDn4m8vmRMN99VlQmRMKQzOinLmbEx8xsaIPIR9odFm2YrHJqozM+AdPcpin7EQYyPhgrd2o/mS3CQ+cb+XXCDVTewXEfxkdu4NoPOAMSA5WwyUELWy/y3jIRq3AtMDSR5Hpm6FdpxMA9Bib+7RbOZhm9AvrSN7CII6OAbAAzj5MxOpmlfypY3JZbvcIwfX7MvRDgxICz9Qrro91/tmtzD/QvHB7dwf+On3Dxa5Xcu7DtTy4hZ3GuowOE6yYd3SOQ6JYMI07vNC5Rxqq82Aco54W8SGKpHFDFTbUyOehLcDmmqziiuLCbehQTyu9hbn90UjJsn4qW2JAW7kdxRZ1Pg6B7AkN1azR+ZLDwa6dbGuSY/m7680yy+i3vAFkShZWHtc9crncdXclPfxYWV3lmawghmbfFeoXuGCBM0mDAxmnhm/ooT20F58JGCphrCLPbkUHVyFcR58pFJqUHMRmT9E4P7XW0L4IeKX2uRysexxm4S0Y07Sm29As2XRROqMHaBv/HkG8ru2zN9bz+ZpJ3gpkXyc22S8z6hbJx1AIpYoIcGFH3Jh/+HsY38ygz8wwzEOrJCEg2RSuDhB395hvQQWGVtnNRXRs06mck5aKMfZXqAk2T8kcToZv9H0Wx01wBNAYwXrZ7GCjI12piab/upU3zNW7GpUvAvTlJZAyOKjY2KQl3z026TmmbhOxun3rya/YARdnawSKpZLB8HfnvI2pzst5cdI1AOBp+7aFO8UNck29Pt9LzSHFI52tlAKHFyiDuFqvqQ1MgkohHoi0GFeQWW+mVm+oJkIQJa0WuckwpQRl4ns+GjxmN6BwgT1ZozrjHTUX4+7flrJA8hUTUXBodOENVktIl8NGpJnWMgDym56i0a9ti8w50ehmU5Tf/1OkTCqMCA3PRa9bFrjWSP3tkV1QRNhzEW9BOBnBqvv6Rr9mCW3jJer3D9jAc0NrrQZeG22cMHQ/NKvErwGjyiv48yM4Puzq8Bh+LdtDHmZAZ+lWRvQFTDAfBz5tVGDnMMMHeuJLAMg4JM9CrvnuuiRaq6zRJ4yGRYNIm4n5C8K3CN1gAvhjDCzRqr231jZ9zUP3j9O5Qql8ienly4cquK2ra8yGVOJh0GtR84mBP89LDtZcJDO2pHb3cZK1KS6q5mJX+n6L6RSy964qxDm4oKZymgzFcpOiE+P3xpP7QQMxrBJBjC8Ox781Uf473waTYsNi1VdqaHZdasc0P+2WnyKgVOfqidDZxizjV4bVAD6PnUNuzj/V8w1QrgLRLhAJw0GfBgRH7jB0xUW0i2lyi+TL9idFzoa7brkmsFCWfg2aDCHXNyWXeQxJ+s7mtZ2rs1r5kHoaaf8sonDo3v9eZnecx63b+HrffXcajWTRsm4UuK3R9SsxkHSoK23myg2TvoKmQokkWcl48xlIwQ6G5sIMtMWpxtqmUY6136nZsldg1N2MTrn.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1af2a77a-6eba-9f4c-aac5-5e7bdd4f0428",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1899,
+      "completion_tokens": 446,
+      "total_tokens": 2345,
+      "cost": 0.006282,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006282,
+        "upstream_inference_prompt_cost": 0.003606,
+        "upstream_inference_completions_cost": 0.002676
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 335,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to reject non-concrete names in update_fields rather than silently ignoring them, which a competent engineer could implement from the description. The FAIL_TO_PASS suite also requires a specific rewritten ValueError string used by existing tests, which the issue never states.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to reject non-concrete names in update_fields rather than silently ignoring them, which a competent engineer could implement from the description. The FAIL_TO_PASS suite also requires a specific rewritten ValueError string used by existing tests, which the issue never states.",
+  "prompt_tokens": 1899,
+  "completion_tokens": 446,
+  "total_tokens": 2345,
+  "cost_usd": 0.006474,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

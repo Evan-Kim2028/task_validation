@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13708",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2841
+  },
+  "response": {
+    "id": "gen-1789191296-JiW4da8D313UVE5t4eRJ",
+    "object": "chat.completion",
+    "created": 1789191296,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks for a durable atomic() flag that errors when already inside an atomic block, but it does not specify exception type, exact wording, or TestCase disabling the check. Several FAIL_TO_PASS tests require that unstated RuntimeError message and the TestCase/_ensure_durability behavior, so they would fail otherwise valid implementations of the issue.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue asks to add a durable flag to transaction.atomic() that raises if already in an atomic block. Tests require a specific RuntimeError message, TestCase disabling durability via Atomic._ensure_...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add a durable flag to transaction.atomic() that raises if already in an atomic block. Tests require a specific RuntimeError message, TestCase disabling durability via Atomic._ensure_...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7b29b6d5-fd3b-9744-ae0e-ee622d628a41",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3067,
+      "completion_tokens": 517,
+      "total_tokens": 3584,
+      "cost": 0.009044,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009044,
+        "upstream_inference_prompt_cost": 0.005942,
+        "upstream_inference_completions_cost": 0.003102
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 389,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks for a durable atomic() flag that errors when already inside an atomic block, but it does not specify exception type, exact wording, or TestCase disabling the check. Several FAIL_TO_PASS tests require that unstated RuntimeError message and the TestCase/_ensure_durability behavior, so they would fail otherwise valid implementations of the issue.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks for a durable atomic() flag that errors when already inside an atomic block, but it does not specify exception type, exact wording, or TestCase disabling the check. Several FAIL_TO_PASS tests require that unstated RuntimeError message and the TestCase/_ensure_durability behavior, so they would fail otherwise valid implementations of the issue.",
+  "prompt_tokens": 3067,
+  "completion_tokens": 517,
+  "total_tokens": 3584,
+  "cost_usd": 0.009236,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

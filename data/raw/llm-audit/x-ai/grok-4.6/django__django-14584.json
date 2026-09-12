@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14584",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 993
+  },
+  "response": {
+    "id": "gen-1789191459-WHeRYj8EDITgNETY605B",
+    "object": "chat.completion",
+    "created": 1789191459,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that backend SQL logging include the database alias, without specifying log format, argument order, or extra dict keys. The FAIL_TO_PASS test requires a particular debug format string, positional args, and extra fields that are not stated in the issue.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is: django.db.backends logging output should include the database alias. That's essential when working with database routing.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: django.db.backends logging output should include the database alias. That's essential when working with database routing.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "TBkmFHE70c6mT13SJeAj32jGC7GjupJlD4iqDcS281bt50z9qI1Ymr9+NiyZDGqgq1y79cCr2LQ8MEKD0bOnTLZMUQOqpRjD39+KG6Dg7IGcc9iL+wIBBuuMTLm2x61TaP+wCCjvPxYFDXo/pl6XBdmEuDrZym6yFrZKDyEqWff08HqAWSe9xPgF1Pi1+2B8U89IB6QELKaYRREExhWZKXc2qzDQp6egfA2sAYeXCYybIBKZEOVm/TjXY9cxJ4ZFM2A/OMlo38HR6NOyLiKrHj+Fy6BgVc35t+oL3M25LPZ7M4O1bRla5RNDNmOWq3ZaNlSXxyd3mIAnqHkKkz53iUfcs9RzY7Xp5f1fejgLiHNbV3QuLSl3t9cp203vALUV6z89zQ2fGMikNvc8q9bf9Inv9uQzV6vKrj/Ybz3nUPfC2qm2dUhVVB80mB7bWDCm1MVaoDTgRCS9lsc01YO6B3ZehOOglsDVbTtD0xUeBWyViXOhdoNN9pf7Xx2ALTOTYi9cQXB3Xi/NQypS6KLHIPf9CchUTAURw8DaHWN6ExewwxJObBFf2KRJ4fl/8kqvM7oqdggFbmkG1taXSgXrFvbrhVMn0y4VbapFzOrPXK6G1GqEQqafFgAzT9W+Xc6zMY3QowL3NitkKHxHdrkyS/IGeCnGfuFavK9Y5npXgTburC+FoAR0zAV+TWcTOLCvzcTIlPZSU0WS/51+InMALCEbuAa6z4jART4/2HGLu9hUt95hYPYLfoiVe9Zs8kjhKQr2OI8wwxfCnXv6jBy9f9JGT2UQxOKy0L5PtzIUDbtTC7sL5sPbYhICAA7+4wuqQ195W+ZgSzr0vtPyvTdcFjJDizVrDPTFx7b+Ypq4tlnw7YVaYUaBjf/wEhWEwB56ELpPVkyx9074XgHDRKQfNU11FM2y/tmy515aVGv6AUC+7XvtFcpjIjsx+H8wv1ZmoEubKSj/54cpJJzaPYnah18FlO3zMUs6ZfEeYXINMajI3okWyVlGMF8UFrnqH92/MbyuFenA2ADp44j0LiglxWXL3UwvGOFIG6UjaC7j+IWRYzH/RdIAsJZPNyYtYsiFLnTrbKhIdG4T7CP+VwSI0ZYEWIL8+nH/ovUeYasO+CVT02ENKUv+htwSAeZmCzzsGU7b1XXl/qlNBmhGtMQFo6O2DQ60f4kWt1PTwVRJ6OXhwqEz1XlAbK1/Wjnw3iqE7hGxlfwKd2ha3iD5scH7kVai3iJdmhF53OH03hBwfxrqX6VZyVq5kwULsE89qiCs6uh9g5Dbdv/egl7h4N8nyglMbs2e8CzNtEA6FqhNj4U+zRCoksluWN7xMwdY5OunskDxVySBdhWPHj1ux8igD+2D5OMdKTGzuLHa/YOtWkKSBJCknavTXRxZH5XPr2IYTOaTbtUlbuqBIVjqAb49xQoaHFOZjdHk2YozGJcjv2fUDeoOmWpy7onRH2syFxytiB2j1RUx3b+ziyJ1n9HQKzSnbv1lAcLl8PB0laL4hl99W1dNU5YBNcs9MGXTcLQgYd/GEWMUgcGjpV6Vi+k0YWwL//hXmlC/mjP7YI89oWB8njR4CxOU4NUHV9DMUUjBRGUb907aTeRESWjHuwwPzU24zvfYffN68jOMQbl5hU4Q48IwatsorQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_86f64acc-91dd-98a0-bbbc-0bd96e28da02",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1305,
+      "completion_tokens": 417,
+      "total_tokens": 1722,
+      "cost": 0.004728,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004728,
+        "upstream_inference_prompt_cost": 0.002226,
+        "upstream_inference_completions_cost": 0.002502
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 308,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that backend SQL logging include the database alias, without specifying log format, argument order, or extra dict keys. The FAIL_TO_PASS test requires a particular debug format string, positional args, and extra fields that are not stated in the issue.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that backend SQL logging include the database alias, without specifying log format, argument order, or extra dict keys. The FAIL_TO_PASS test requires a particular debug format string, positional args, and extra fields that are not stated in the issue.",
+  "prompt_tokens": 1305,
+  "completion_tokens": 417,
+  "total_tokens": 1722,
+  "cost_usd": 0.005112,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

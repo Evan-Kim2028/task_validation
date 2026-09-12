@@ -1,0 +1,104 @@
+{
+  "task_id": "mwaskom__seaborn-3190",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1156
+  },
+  "response": {
+    "id": "gen-1789192119-cYgFn4MTUImn7Qlju3MO",
+    "object": "chat.completion",
+    "created": 1789192119,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly shows boolean data breaking Continuous scale setup via numpy boolean subtraction, so converting bounds to numeric is the obvious fix. The FAIL_TO_PASS test is slightly narrower than the reported Plot/color case and pins True/False to 1/0, which a valid fix would still satisfy.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about color mapping failing with boolean data. The traceback shows a TypeError with numpy boolean subtract.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about color mapping failing with boolean data. The traceback shows a TypeError with numpy boolean subtract.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ASl8020uWKl8sIamu+IbLL/3H9+boCdCvzzA1wrU3v1a2Wz8hOekTN9b1GJ1uOH00NTgzEd6KJG35xh9Z3JXX4Li8crNeo+KFqIJm6uOL5rT6VbmSrSPyPxQCz7VWoCXZJJs0qmVlg+/rlhRRPgcVXKKFVxXN95WSNopXCjvPnkQVA8XDvA3jCzFfyg69mOht1lGv75x3le7EkoFbWaKvM/0NQOwfKt0bEH6Iud+bMlgOBCmwijeNgMqbxhsBQsRWUyxVEK/0qysv4UdoFvDEQmeooVhuk/l5/xvwdtAyUNn4/zUQjykXgldTpAlyaVCqfj21AKUcp2/kb0XJX8ybggIaReid027RaQObl9Y3qNwuyRle2NNOdqc5/folhSAK82oYEMtCaxgTIT+BAKkztbKrt6xx1Peo6ubkdhWlwWUf5aJVz4R3zueXleYOTCzEjQOYqcLVgXd70AVt+nQNfCeKCTcWJmRANcV9eqPLI4puzWgDJaq24UJ234d/JU9a73m/BrjQT2qgms77okQT0iRoI1Vqb2aXtp6i2yWzQBa2uK464JPX02gKfUaSEjQ3ruAH2zzitX3JJfMwRuIO4tc3Ws1tVjJIUDBcA0XefEc+BCGttI0SAkMWFbK+0j3PT1HyUT+lNQ0ICEX5GvDaVV4eLC14oN85QW/jzzIziebyVVQe26xjGY04oBdikDedbw531Um9udrXK+zpklPEZzR1Ssc4BdFap8gRY+s5QQcD9e1Oyj0V1WLWDI9EkUQQl/V+lnMfccK2KkbiIeK+IVrW36FZTWsmoQvctemjX1M1CKfBuzMyVmt6VaYlGmhRnh3ctHYu45oQfLb38VKOfPZy4wcn7NBT/DOASkg68Riiuksivr5i0Om0XDYopKG8YajB+snjn0k90/HXSlP9YHyM5rNUPel4EyP1sUpEkcAByFAZRP3OBMXGQQS/cT32pjC+JpIs/mbPdBH8zuTGVVGcbmkyZCyLVPZvlnQ4VrygQOHRDbOOdfmSTTWcL2sA0AFUVgX+XLFJAkLW2MSdUstRuSh7s94I9Sa+q8kngNzxTcTKcJVgw8bfuSqaWJ2VCJ3AeJcX8UuxMqqyME46j3L8+tUFwMUCXi1HEwN48jhKzIZzIwOJw6xQuKLhz6XgwdwBZJOkmuKXvuSde1vB/+Ju7IcpBO/HT5taFo4RX40HihSfGReTCqyHMzy5Ylw1gBrUICSgLZC0DgvPQ7KHzNgB8a8xdiUefm3usso3EieDU05U7BTIrfXajSz/Pp0CMkyNG35DWxv6SrUrfsnQM/OIkHMEtBrD9FEf6uZN+cRy4wswOwImgUyvSfnX53qAqPurSBn0XSKaxxQG5sYRBpzdc48vGorwvG/qEZqRJLO2PXoTRqN/05Ii79Vo5TTaCeIOvtGiXq3eC8vJN8pj8cIkWjr0mppRfyQXJiNS6ZlU+PvQABgE//Py7qTAaaerjQaSFnona5prpYsQkvL8m0cBl1x3svWxYN0XKj+AUaMO2gZ8WFQu7DPRu5t8j9CfqZaS7lYuaWvBd/J8cbDnT+MKph65+S42qJTFOsDsBCtFejpR+mA5dSeV9w09RNa5hKC+J4m8tCGjtNpMrGEBy0kAhIkM9iJqSg6ny+G81iBI0+JYKdOAtVr3/hRp3GvFL5lA9EQ/GTSsoBaEfNfKM+TMD0pR438QYj45OppXMdpNTOpKhAG7qpg4erhIF/m/DA1Q9ueo8cWv1iGHujdP03i6d0CAtCC2ugH78uIgaVCSEYHawqbPc/3HyJK+EbC5nbJjKrWwI9tQ6hFOSKZRP399G8EA1y9j+lCkS3mnv5XnqaxYdsfruXR3pkV0NS5sGTCooMHyJatQQWkazzGwelFZ1qHWZAnScaFEa++GplDmP8w2+mh/QMdw1ltV91USvOS1oZa8cH2ImiYSZeW2dd84+O1Tr3swg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_581f56d3-3c69-9680-b8c2-0ebbd0a92854",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1529,
+      "completion_tokens": 453,
+      "total_tokens": 1982,
+      "cost": 0.005392,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005392,
+        "upstream_inference_prompt_cost": 0.002674,
+        "upstream_inference_completions_cost": 0.002718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 337,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly shows boolean data breaking Continuous scale setup via numpy boolean subtraction, so converting bounds to numeric is the obvious fix. The FAIL_TO_PASS test is slightly narrower than the reported Plot/color case and pins True/False to 1/0, which a valid fix would still satisfy.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly shows boolean data breaking Continuous scale setup via numpy boolean subtraction, so converting bounds to numeric is the obvious fix. The FAIL_TO_PASS test is slightly narrower than the reported Plot/color case and pins True/False to 1/0, which a valid fix would still satisfy.",
+  "prompt_tokens": 1529,
+  "completion_tokens": 453,
+  "total_tokens": 1982,
+  "cost_usd": 0.005776,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

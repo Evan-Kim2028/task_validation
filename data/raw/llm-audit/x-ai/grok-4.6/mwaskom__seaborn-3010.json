@@ -1,0 +1,104 @@
+{
+  "task_id": "mwaskom__seaborn-3010",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1761
+  },
+  "response": {
+    "id": "gen-1789192113-HAPwLKQKP0ZMMrYAC00V",
+    "object": "chat.completion",
+    "created": 1789192113,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly reports a crash on missing values in PolyFit and implies the fit should succeed by ignoring incomplete points, which a competent engineer would implement by dropping NaNs on x/y. The FAIL_TO_PASS test checks exactly that equivalence to dropna and does not demand unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is that PolyFit isn't robust to missing data, causing a LinAlgError. The expected behavior is to handle missing data, likely by dropping NaNs.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is that PolyFit isn't robust to missing data, causing a LinAlgError. The expected behavior is to handle missing data, likely by dropping NaNs.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "dvkPnZaq0A4go9+PFI5iRnXlAs415U38Qo6xNWTcR26XNCLPcX+2iKxXLvy4WRse5wSTI6lqCZK2lRAIDuNttx8bEixs4Zlh4xMha8Yf2Iyb9vTaw5GPl4fr3kYweM3h4jtnPFi6u7D67/QVaFBfF/fC74ySxLlVET2kOy+1vqIc3zc/kqXBZPvoQT78pOw3d1gs32/94PM2WQq2eRLXfgKDOpOkcbeVv8tKjOeP8RysOsMUy23zJI1gHc6RjP0mpxeYPa4rfWWPWWHJCHdtNJy3k/PuHZqzJzmpfS2F+mK247+e6EpeEkhTytkvj1bVexRogGdzL3lXNfDUtJecUYr9faEQ8IQmuqfJJKRbuN+tkVwlA3wYZVWRh2fsDfKn+bMXg4HUIxvgbO4FD+KCTOdALA8M+ygY2uYbkmxcKbAIB3fTYQyc4e410WVGT1J9/MH0Mf/CCY7KSPDCVpJfTpD5E76mTdSd22YK1IHxy5gPhkD4MgUr+ZQwgnmSMHDepa+m5k4Ph1+cBsyxFxt0dcI5kL5NgMMvOkJMRLERf5d1PvW/GvwbmY+dYJa8eZFQZ0MIi73b4AHgZyc63+EJw67XxcayZDAf7y7iT4CipPzqo+B79PoDTmrEkgmqxC8oJBOnXdK+lsc/o7rO562NcIeV76qOctop/e6VkXO43upJms82KEayVaJaa1VQ/PXeqa7aTEXSL4AYEije0Y6Svtnoz7Nfz4yxn9HrygiHMkKhmsuQtHdSO+dUIyOWPzyDq1NMo8SjjVfNBCZz5EXmuIIIRsHmDt0Sc1TqGZ5RWi5ACl89qc0+BavJU0PC7Ep7ZR07j3M68TAVTJqlmvdHffRTYC8CLbfQPm31e3PwN6OVwM6KZ0TFSPRmCKg9kWyHh2Z4ojDToRF86N3B/rojwJfXbU3AUGnZK8pMW0kp4pZT9pCB4ASYjemt9d37PrSVdFZRBe+0flO8jq7wcPU7PNud0f24eKU6A7ksLFVesgHKVaTpNRqv/wVyMdkHXvYzmQ7+b2wyEm05GJNu+FiAt1wJvEhjqpd5O8dALnoJyizSaz1Uq3lTOtYObDpNhRIw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a94f334f-2064-989c-b62b-27a897e58787",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2368,
+      "completion_tokens": 309,
+      "total_tokens": 2677,
+      "cost": 0.006206,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006206,
+        "upstream_inference_prompt_cost": 0.004352,
+        "upstream_inference_completions_cost": 0.001854
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 191,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly reports a crash on missing values in PolyFit and implies the fit should succeed by ignoring incomplete points, which a competent engineer would implement by dropping NaNs on x/y. The FAIL_TO_PASS test checks exactly that equivalence to dropna and does not demand unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly reports a crash on missing values in PolyFit and implies the fit should succeed by ignoring incomplete points, which a competent engineer would implement by dropping NaNs on x/y. The FAIL_TO_PASS test checks exactly that equivalence to dropna and does not demand unstated APIs or messages.",
+  "prompt_tokens": 2368,
+  "completion_tokens": 309,
+  "total_tokens": 2677,
+  "cost_usd": 0.0065899999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

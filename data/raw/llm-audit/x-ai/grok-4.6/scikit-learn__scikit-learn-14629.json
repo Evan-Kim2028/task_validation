@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-14629",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "f131dca5-f8f0-9f9c-96d5-a778ac6392f6",
+    "object": "chat.completion",
+    "created": 1789194049,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly identifies that MultiOutputClassifier needs a classes_ attribute built from each sub-estimator so predict_proba/cross_val_predict can work, which a competent engineer would implement. The FAIL_TO_PASS checks that attribute shape and contents (and extra estimators) rather than the reported cross_val_predict path, so it is only slightly narrower than the issue.\", \"p_invalid\": 0.15}",
+          "reasoning_content": "The issue is about AttributeError with cross_val_predict(method='predict_proba') when using MultiOutputClassifier because it lacks classes_.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test covers ClassifierChain which may already have classes_ attribute, but issue focuses only on MultiOutputClassifier\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2373,
+      "completion_tokens": 132,
+      "total_tokens": 2986,
+      "prompt_tokens_details": {
+        "text_tokens": 2373,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 481,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25377600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly identifies that MultiOutputClassifier needs a classes_ attribute built from each sub-estimator so predict_proba/cross_val_predict can work, which a competent engineer would implement. The FAIL_TO_PASS checks that attribute shape and contents (and extra estimators) rather than the reported cross_val_predict path, so it is only slightly narrower than the issue.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly identifies that MultiOutputClassifier needs a classes_ attribute built from each sub-estimator so predict_proba/cross_val_predict can work, which a competent engineer would implement. The FAIL_TO_PASS checks that attribute shape and contents (and extra estimators) rather than the reported cross_val_predict path, so it is only slightly narrower than the issue.",
+  "prompt_tokens": 2373,
+  "completion_tokens": 613,
+  "total_tokens": 2986,
+  "cost_usd": 0.008424000000000001,
+  "cost_in_usd_ticks": 25377600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1571
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pylint-dev__pylint-5595",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1452
+  },
+  "response": {
+    "id": "gen-1789192300-CsfdGXJqrUqtIrfEDAY0",
+    "object": "chat.completion",
+    "created": 1789192300,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly wants scores not to go below zero for a more beginner-friendly rating, which a competent engineer would implement by flooring the default evaluation at 0. The FAIL_TO_PASS test only checks that the reported rating is 0.00/10 instead of a negative value, which fairly matches that intent.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about making pylint scores not go negative for beginners. The gold patch wraps the evaluation formula with max(0, ...).\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making pylint scores not go negative for beginners. The gold patch wraps the evaluation formula with max(0, ...).\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "MkaAcA5/WDCKUdKBkzA30fgoHOPo2y+5muS0JJyhZam4QKdNdKpTKeeB1+oSoI+SUxrOoa4NK7xaIRKj/mnRc7fo7kiugU97jxW+VoNOjyuGG2eaDk126XFNh2/NZcxazs0TjOATMwAzf7M5TNvU7YUuOS6wtl4CgH2GfYqK5MFO+YDOod9wdz2WSi1n2RTR7CzyokMonc7cAKTozwTGnWKcyWZgruUyuAkMu7zmP1VJI/63pDXCYxI3C75eyFKbUB7RqPEjMZP3Bdu0TGqq88yTeTnA20j/6rj3TUUZmXmWU5UZnq+Fpv46/mh+SG1uodb/WVlZ8uR6o4HFroSjHAmaFC953qhECk/a2S9vLJAqONXn+AMSnRc0eJR2eTlLX5z6eF2u7a1gjjuHceddnuQeQQ4xPiRR60lN5+us7DYz3WKvXnL1b8n5mOQIF+P4dKw3E2KkDig3mlJ3++OTTxTF37XD60bhjmoaCh1GgHjl7t1F2Dqu7BXoLGEoD2sSq0ftnzmRzkXDfVaa5zFcURvWwv6NHyOGHHWRfsFKT31Z/vkhwy12M03xV2wwN9pRfEofDosS3PCusgxJhxe8VT8oWrhu8liPe22hOFgjE/FXhU+HMT+sMftv6B92c8CaOtvVcAy/NP27gMsP7cVkZGZ1dY2fm0mNoG4/vppMG+trkq5LntLoS79VMHD1ta1nHZdkwaaczvtRt26w19P3i4Cti3NPaNqfPJhfZG2Y76eGWp9fE7gb5qx92TPqUuQV47rTVxaYD39+6E6ookay9FCioBU/sVaVyU1/LMe3E/K1Wo53mxBhPxKTxbDte8bbjhvCP8kDhbmhYP0CIF/9KJNgMGdppv5+iVLZk1Jpcim/GXeihHCBEvYrosZSKGJWFJ6rJLVCc/texGBF1B+ikcUZbfPPj1c1s/DIpl498uaX+39aZVm/zr6DKF8+OFnCbxP4rD+jT8kVeGSdSoNeMwiMyyZX9avEJoTTJwjPKRFVGHKriRaMwVLFuMNPghFL6KG76LExc2tSki/BIYG2XGcesxLHhy4g6MaqWwSuFtjAjYggVfhKelnrNtYA4WwTP5t0zf50MXyREsoUfc/UP39faT8tdic6etMnX4t4JqMgflv4Ruh8l/Ib+0nnT8IdkoJHbOePgkBfgR+yJ8ZkhQFspwWq6SA0ta4ZPkxXYgCfdgAEDsCaQr6CvsRPuP42gOKjAp0yEZaBOZ3FbY2c0jO5bOd1GqmvlZZfzKHjrrV+0NHhmckn/0c/IdxMP/09Vr/l5CZkFAieSzNL77JzZDZ50ebUFXuSkiPa5t59bu8HL/w73jUV2LgrMel8mvAHFa2i/yB8EfQ1kR0pMzS43CrNuEuMSJ+gFGHQytmt+55RihYMWA3mT67OrEd6L4Gi.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c8ed1a44-fd80-95fa-94f0-4399ab8a7f07",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1762,
+      "completion_tokens": 377,
+      "total_tokens": 2139,
+      "cost": 0.005594,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005594,
+        "upstream_inference_prompt_cost": 0.003332,
+        "upstream_inference_completions_cost": 0.002262
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 257,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly wants scores not to go below zero for a more beginner-friendly rating, which a competent engineer would implement by flooring the default evaluation at 0. The FAIL_TO_PASS test only checks that the reported rating is 0.00/10 instead of a negative value, which fairly matches that intent.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly wants scores not to go below zero for a more beginner-friendly rating, which a competent engineer would implement by flooring the default evaluation at 0. The FAIL_TO_PASS test only checks that the reported rating is 0.00/10 instead of a negative value, which fairly matches that intent.",
+  "prompt_tokens": 1762,
+  "completion_tokens": 377,
+  "total_tokens": 2139,
+  "cost_usd": 0.0057859999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

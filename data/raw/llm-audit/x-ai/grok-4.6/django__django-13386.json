@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13386",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 918
+  },
+  "response": {
+    "id": "gen-1789191214-Ab3hkLUcojguf8kzEMGo",
+    "object": "chat.completion",
+    "created": 1789191214,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue explicitly leaves open whether to truncate, round, or only convert whole floats, so a competent engineer could reasonably round 10.6 to 11. The FAIL_TO_PASS test requires int() truncation of 10.6 to 10, which is unstated in the ticket.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about converting max_age to an int in set_cookie(). The issue raises questions: convert only floats with decimal 0? round or truncate? throw exception or pass original?\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about converting max_age to an int in set_cookie(). The issue raises questions: convert only floats with decimal 0? round or truncate? throw exception or pass original?\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Nc0DOIGG9VeOB7gvaTYRr1S2xeB6ksEw737gPlomFjzvOkvqaUbQz6GonHH13we6HqrHZwgmJ//p2jmDpAYagGI+d/769iDzpuDwP3m8eHoM9J/+CwSJVTtom1Uz/h+k6IwltPQyRVtp45C/YQwbhXsVAo0he+nkyfCE6vtts7tv81jK0WucU0sGsEUs0A/t9JxEJWQK6MlJNskG+3t1WiRV/018KmIIaIM7ru1xUYoe8w5gPKJYLuLjzT70U8DbV+AZLuBrtPU6UT2yHI8kVEvjLnzPwUceV6pzimN1dtCRsJ+4s4kWW269oxhrpT5/P+qwef/OAptVmr68SgnCI1LbZ78l263+BbYC6o2au/g7jMFjHhupL8deQgU3Xex/pZ+5DTe7ppyC315CmbDqKLWVJjVdl62jFVRPi5QYk7TNBDCHUT+vZfI/bZkwYciNw776pDc6b+lKcWxUpyaxmlALm7KB7pP79YqhjHB4Jr6RM99NmqAgrhnhDsNtmI38ZTtMvBJqyH8+cGVBGSkbXYEIOIGxkFgqDaoQCyuAj15CNfUuh7iFsraBa5HEe+XxzkxAILxiiUgwDuEsC5FjgoN7NZ49ptiQhgyb5c28GUn9RXoNeMy04tdYlxUucF0xR3QJmfBeC0CRvUekSg8KSEXbLWIv4k4uH1PM5doP+0U72xvbDZ64YbpS+P19S2UfEEGNf62mUGO0QSSPhWWZTzLJcsoIXxDl4k7IGjoIHM7T+/2B27wGFEzufG3bVPUHkIoQADfF8y3P0ADn8YLWU73M1G7/DxkXQ8CRCNwiywhpGyYvuXiNYHmMkoy/42/fYui/yOYOc61UIgs2wpIBmqg0vkBWj75zllSZAMfhEKHWNVTkwI9uyXErKneWNnN+Lw5lL4K5c4HXybMhH8r75gfugiQPltssKy9hDIatJOAJKEU46Qu1t6g2nq6D1zafKOaS+0SN7HjZaYsSYUEdfVq5K6ThGtzx4KpL4xe/ECNxzQLc91uGJQ9jgmPOmgJzObNgALruPG+0d4e50soTgS0qjogVGrLWFwN+bkvPCatGqjvcgbjzMnSCrPbrlNIwukC5F7LLc6oQ7gSAyeyb61YKgp3nbwoVKeJNhCivqXANSsFlYe4fVqQbaFDuO9/TOArhd9BCMJF3RWqAIQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_19c9649d-da3e-9c00-bbdf-2805591745ce",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1227,
+      "completion_tokens": 322,
+      "total_tokens": 1549,
+      "cost": 0.004194,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004194,
+        "upstream_inference_prompt_cost": 0.002262,
+        "upstream_inference_completions_cost": 0.001932
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 207,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue explicitly leaves open whether to truncate, round, or only convert whole floats, so a competent engineer could reasonably round 10.6 to 11. The FAIL_TO_PASS test requires int() truncation of 10.6 to 10, which is unstated in the ticket.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue explicitly leaves open whether to truncate, round, or only convert whole floats, so a competent engineer could reasonably round 10.6 to 11. The FAIL_TO_PASS test requires int() truncation of 10.6 to 10, which is unstated in the ticket.",
+  "prompt_tokens": 1227,
+  "completion_tokens": 322,
+  "total_tokens": 1549,
+  "cost_usd": 0.004386,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

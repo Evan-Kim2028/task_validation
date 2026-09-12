@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12747",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1409
+  },
+  "response": {
+    "id": "gen-1789191083-U1Ojk4hiyY7KqEfqyFDy",
+    "object": "chat.completion",
+    "created": 1789191083,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue explicitly allows either always omitting zero counts or always including model keys with zeros, so a competent engineer could implement the latter. The FAIL_TO_PASS tests lock in omitting zeros and empty dicts, which is one of the two allowed behaviors and would reject the other valid fix.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.Delete returning inconsistent results when zero objects are deleted. For models with FKs it's (0, {}), for simple models it's (0, {'model': 0}). The user wants consistency:...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.Delete returning inconsistent results when zero objects are deleted. For models with FKs it's (0, {}), for simple models it's (0, {'model': 0}). The user wants consistency:...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "/2HJi5XOa6mSt87hmOpJHkWh5XLPJPvIS7I1R1ggRZziMrVjn7wWL9n8DlKoQLNFg8KM3B18EuW3w+FLre8vt5CKsQgfSOHTAmBuAezd895Ha76EXFe5CBsIlVmUzJ5JHZcaR0f4Kt+4Tek5Rey/8HFSkpvGzkYBwmlLRz4rundrk1RIgRpGteo9z4XLPqXE7qwCHvMz8GW/9dIEfJJ8Vs+kkZHM9++oALOhB4TUiry8JlaIc/GoJ6t9WHoYJkxW/ZWg9TS0wb0HUaPrKx5PTq8HKjl2JamZthW64cI31svGw/Yn2BxqHDHvOsdiG0hxrGlUVZkBsw/fA2DkEYxwg8Lf7OBsCsk5uJQ+BnmU03BIm2rUc0tknMpWsyYQVGJ+yml/mhARw7Au6qExCQtymZPMBzTgiBCWk7rtnlgNQYk1f6SYgXprnsL07h5uViONyc+sDY3R1I+IHHfvyw+6iLQbXIAJRzR4zNV4S4VAeL7uFZTKpQejfpJ73h4ldSFPjCb25mNnyjjz4XYpAmcKp3V1t02pkzPYUeaJRCvB6kqiptcrfxoaFcYrDJARBm1ggS/yVZQBpP7O6iAvNHr26ts2mWvBIn8irBYKG6VE1t3T2zP4FKrh4591BFZP3kTkG1n+uQafYmKGtjFrY4f1Gz+87CZ8brj3Qshjjvt1k6B1cKi4cdODOG67kWkGWJ4IpTzt/zmJi3BM8LstSZed6FoDxwHCzJdcsp3AGkULyeXJhfqDkUSsUdzc/llVrsh+5weeu3rP0MKmGNDy0n3UPSbQ0DLNm4zKiRMXbhpj/NXiwGp48q7BSt7robJTmISl3jvpeM/aihqm+/lJZvosHGcF0eoY4YsPcUSHIMYEt2KKcjFfahmVzqDoaWLHFbbHrLBb5MAUf2gJOW7j3VfAgdMc8HyUxqdwUacVR4sj8gmTe+7wwIwPOFwRw0rt41lQ1QsJWfKYNt4BLSBr12IHi5S2B8pC+0mFX7nrdCYAMqrIK0rCnv7OkNb7VjqotsfHEFwduhPi4mxb+h/GpaqXY1a8BoJSIaheTly7tq3u2cdxXsqdLJWUIYWMysaGqb+bl6g+2QgxqVTQusxo7o9er2kKkeygV0c+k4IkizUSRng+FyUbmX54OwFp47L6VSf3yxbT7shs1EArW9d8m2fhzAwcL9DdBGeadItQJDWyHatN6fVgK5fpZKdw+yUnTvcSfpEP2VyP5SjOwuZ/szTVY9/5JDPpYMl8ZgYHUEXWeBP+5LUYJWI4IkLNk/hv8WN0WQqhDm90iwzXGDG7hqOatDOBcNtZLOY722RtXVMI4FEt27snXKcg6N5Dd8jCmJ4ZuzYxfJu9e4SaKE3q/aZd1d3fCkyKL23snZjEZWrP38Rwz7bDc0KHyPgVgqY1YMGySzyjFlmSTeU++HhRP5yeY6c16Se7x8+2YXSyU936fMVE0lKlPhDzGWxs5+m+BH+VpILJzFXMLyPCRNdH/xnyKYnVMIM1mP4mdXGP+hvYiUf1k8RzeKVyBoHJOW0521FcPkOLUO6PUt6PTPMOcbhv+ZyDP5l/Vzl5nmUahuO717DDJ4KZKXqZcnOpTgNj16cWA8yNJ3offlXjBnqIwbq4uf62B3T8CSUNIL7N34zzN1qqT852hB0huWoxdUv3gPls3PBoYSBwdkJO2VzbLOwkXYXEBGwyOQpSrklE4COCiu64oXWrxFUvYo/NVCN1uuMRTTxABfLs5PcxxBx208GgFjV4A9WB1oJ0mRxPkH0/SsBjaiIpPofdni8siglIjx6tG5A8xQGIXa4IVTYVhexDkoL1tCQhnHE0FrmMuIqZAL0/LMDMT21OZujPhYqwSJsunAR1vqh4Yw40sLIFCzdkWe9cSoO6uoT/Gia+Og.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9665809c-3946-9469-a51d-2a6b4fb94878",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1705,
+      "completion_tokens": 446,
+      "total_tokens": 2151,
+      "cost": 0.005894,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005894,
+        "upstream_inference_prompt_cost": 0.003218,
+        "upstream_inference_completions_cost": 0.002676
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 333,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue explicitly allows either always omitting zero counts or always including model keys with zeros, so a competent engineer could implement the latter. The FAIL_TO_PASS tests lock in omitting zeros and empty dicts, which is one of the two allowed behaviors and would reject the other valid fix.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue explicitly allows either always omitting zero counts or always including model keys with zeros, so a competent engineer could implement the latter. The FAIL_TO_PASS tests lock in omitting zeros and empty dicts, which is one of the two allowed behaviors and would reject the other valid fix.",
+  "prompt_tokens": 1705,
+  "completion_tokens": 446,
+  "total_tokens": 2151,
+  "cost_usd": 0.006085999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

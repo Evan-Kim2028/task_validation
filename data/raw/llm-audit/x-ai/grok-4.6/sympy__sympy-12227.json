@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-12227",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "39a96210-3a95-9404-ac92-3fbcf4e4baaf",
+    "object": "chat.completion",
+    "created": 1789194367,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue proposes binary precision as keyword prec and does not specify precision, repr output, empty-string handling, or deprecation of prec. FAIL_TO_PASS tests require those unstated names and behaviors, so a faithful reading of the issue could still fail.\", \"p_invalid\": 0.86}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4830,
+      "completion_tokens": 108,
+      "total_tokens": 5362,
+      "prompt_tokens_details": {
+        "text_tokens": 4830,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 424,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 40432800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue proposes binary precision as keyword prec and does not specify precision, repr output, empty-string handling, or deprecation of prec. FAIL_TO_PASS tests require those unstated names and behaviors, so a faithful reading of the issue could still fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue proposes binary precision as keyword prec and does not specify precision, repr output, empty-string handling, or deprecation of prec. FAIL_TO_PASS tests require those unstated names and behaviors, so a faithful reading of the issue could still fail.",
+  "prompt_tokens": 4830,
+  "completion_tokens": 532,
+  "total_tokens": 5362,
+  "cost_usd": 0.012852,
+  "cost_in_usd_ticks": 40432800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3408
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15414",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1348
+  },
+  "response": {
+    "id": "gen-1789191599-Knpj3Ugwz4RWFNEqrJQR",
+    "object": "chat.completion",
+    "created": 1789191599,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that bulk_update must treat the operation as a write so self.db and the wrapping transaction.atomic use db_for_write rather than db_for_read. The FAIL_TO_PASS test checks exactly that routing plus atomic rollback across batches on the write database.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about QuerySet.bulk_update() needing to perform atomic writes against routed db_for_write. It doesn't set self._for_write = True before accessing self.db, so it uses db_for_read including...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about QuerySet.bulk_update() needing to perform atomic writes against routed db_for_write. It doesn't set self._for_write = True before accessing self.db, so it uses db_for_read including...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_82ab6e32-4971-91d2-bcf9-d95a547c3b8f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1733,
+      "completion_tokens": 669,
+      "total_tokens": 2402,
+      "cost": 0.007096,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007096,
+        "upstream_inference_prompt_cost": 0.003082,
+        "upstream_inference_completions_cost": 0.004014
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 554,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that bulk_update must treat the operation as a write so self.db and the wrapping transaction.atomic use db_for_write rather than db_for_read. The FAIL_TO_PASS test checks exactly that routing plus atomic rollback across batches on the write database.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that bulk_update must treat the operation as a write so self.db and the wrapping transaction.atomic use db_for_write rather than db_for_read. The FAIL_TO_PASS test checks exactly that routing plus atomic rollback across batches on the write database.",
+  "prompt_tokens": 1733,
+  "completion_tokens": 669,
+  "total_tokens": 2402,
+  "cost_usd": 0.0074800000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

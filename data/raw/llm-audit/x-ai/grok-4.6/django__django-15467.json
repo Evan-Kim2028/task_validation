@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15467",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1042
+  },
+  "response": {
+    "id": "gen-1789187758-TaGlbUFv6pQv4DOK3ncE",
+    "object": "chat.completion",
+    "created": 1789187758,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that a custom empty_label not be overwritten when radio_fields is used, including a concrete kwargs-based fix. The FAIL_TO_PASS test checks formfield_overrides rather than the issue’s formfield_for_foreignkey example, which is a slightly narrower path but still exercises the same overwrite.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0d3e14fb-d26b-9b08-870c-9904a10083ad",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1381,
+      "completion_tokens": 610,
+      "total_tokens": 1991,
+      "cost": 0.006038,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006038,
+        "upstream_inference_prompt_cost": 0.002378,
+        "upstream_inference_completions_cost": 0.00366
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 488,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that a custom empty_label not be overwritten when radio_fields is used, including a concrete kwargs-based fix. The FAIL_TO_PASS test checks formfield_overrides rather than the issue’s formfield_for_foreignkey example, which is a slightly narrower path but still exercises the same overwrite.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that a custom empty_label not be overwritten when radio_fields is used, including a concrete kwargs-based fix. The FAIL_TO_PASS test checks formfield_overrides rather than the issue’s formfield_for_foreignkey example, which is a slightly narrower path but still exercises the same overwrite.",
+  "prompt_tokens": 1381,
+  "completion_tokens": 610,
+  "total_tokens": 1991,
+  "cost_usd": 0.006422,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7324",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 971
+  },
+  "response": {
+    "id": "gen-1789192857-JEGuLnf1tjEFoCT8BDPL",
+    "object": "chat.completion",
+    "created": 1789192857,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly reports that compiling mark expressions named False (and by implication True/None) aborts on debug CPython, so a competent engineer would keep those as legal identifiers without hitting compiler_nameop. The FAIL_TO_PASS cases only check that True/False/None remain valid idents, which matches that intended behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about pytest crashing on debug builds for Python 3.8+ when compiling expressions with \"False\" (and similarly True/None).\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pytest crashing on debug builds for Python 3.8+ when compiling expressions with \"False\" (and similarly True/None).\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_44f5c9d5-0bff-9c83-85e5-d6589775060f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1327,
+      "completion_tokens": 636,
+      "total_tokens": 1963,
+      "cost": 0.006086,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006086,
+        "upstream_inference_prompt_cost": 0.00227,
+        "upstream_inference_completions_cost": 0.003816
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 513,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly reports that compiling mark expressions named False (and by implication True/None) aborts on debug CPython, so a competent engineer would keep those as legal identifiers without hitting compiler_nameop. The FAIL_TO_PASS cases only check that True/False/None remain valid idents, which matches that intended behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly reports that compiling mark expressions named False (and by implication True/None) aborts on debug CPython, so a competent engineer would keep those as legal identifiers without hitting compiler_nameop. The FAIL_TO_PASS cases only check that True/False/None remain valid idents, which matches that intended behavior.",
+  "prompt_tokens": 1327,
+  "completion_tokens": 636,
+  "total_tokens": 1963,
+  "cost_usd": 0.00647,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

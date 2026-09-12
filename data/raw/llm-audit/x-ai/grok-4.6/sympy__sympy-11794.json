@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-11794",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "2665feae-199e-90cb-84b5-d39773393585",
+    "object": "chat.completion",
+    "created": 1789194340,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for ASCII printing of Singularity Functions and does not define brackets, exponent placement, spacing, or how the shift is written. The FAIL_TO_PASS checks lock in exact pretty-print strings (including term order like <-a + x>) that a valid implementation could miss.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The issue is very brief: \"ASCII printing for Singularity Function. Implementation of ASCII printing for Singularity Functions is needed.\"\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1596,
+      "completion_tokens": 115,
+      "total_tokens": 1960,
+      "prompt_tokens_details": {
+        "text_tokens": 1596,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 249,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 15014400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for ASCII printing of Singularity Functions and does not define brackets, exponent placement, spacing, or how the shift is written. The FAIL_TO_PASS checks lock in exact pretty-print strings (including term order like <-a + x>) that a valid implementation could miss.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for ASCII printing of Singularity Functions and does not define brackets, exponent placement, spacing, or how the shift is written. The FAIL_TO_PASS checks lock in exact pretty-print strings (including term order like <-a + x>) that a valid implementation could miss.",
+  "prompt_tokens": 1596,
+  "completion_tokens": 364,
+  "total_tokens": 1960,
+  "cost_usd": 0.005376000000000001,
+  "cost_in_usd_ticks": 15014400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 795
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-7147",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1710
+  },
+  "response": {
+    "id": "gen-1789192755-yhuG4Rp0l1xgM6xB29hf",
+    "object": "chat.completion",
+    "created": 1789192755,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that decode errors name the offending variable, but it does not prescribe wrapping, exception type preservation, or exact wording. The FAIL_TO_PASS test requires a specific substring Failed to decode variable 'invalid', so many reasonable implementations that still include the name would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about including the variable name in the time decoding error message. The test checks for a specific message: \"Failed to decode variable 'invalid'\".\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about including the variable name in the time decoding error message. The test checks for a specific message: \"Failed to decode variable 'invalid'\".\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "0veNO94axRGTvNdWjlRmziVCmL5R3Ko561OADzwT9Im49Q9qbdpHXq05Vximj/a+0IxXvBr3RDnFoO1vwNugPB7z5MaeFWVCXRZl12WR426b/lNvBjsheHhbGsSYPp9IUpoaIww/Ak3d1pqKpviOM/s5r+6l0bsJv90PgU7m9OUWe9ASRZOUyQ8An6AyVTFYype/9g+oRlhMlI5Ew3lcx3wbNAYVC/E1558VYFq73lGxTFnqfcemZ1fqpEG8sjCsVp4zE9mMPiDOyhu9ZYLM4LhI/fke72/qDeks+gZlGdY+ogRwNKbfScNxiwMNGKFKdht4VnbFPPivCJ3HvyaN5C2DaoMZaMuQO9P+PrMie0mQp6dKeW7xnHIlCmDBiyOcshk6KXat9CUs+BFn25jXQSFfTiPzY82QfwbvfBCfrnHBCNuKjapJPNjVERjxQ5PP4VBvtDbFaJR6dPQevEFg/BIC8GT0QdTnApuDZzEjdg0PERNg5kbhIYjT6qqbvRBiWhuLlb3MNEmCPpk67/1a7jY2ChsmNpWnLYBujYow2yyL7/TGrtgEydH3+Y/stlFSLumcpzC+kfQUasW5fZtQGbBBGOOLuLlDvt+YuGWYETo+XZ79lxl7Tnb1m49e+38ValWjnS0bKHGxmo6bUxMXThDybFUggBSN4kegfyyPDe31ckf1yl3yybiwzVTUUHRc52FD5bUmqvTl+FUmR5W+IzkXDozlAKRkiQhb1Eb4Fcz8IBr1znhNlja530jXlThXwIfLJ6eP+AT28zat2MC4IQk1MiJoiSh9IS6e+VcShbD3yZIsH2VjyTRHVtdkV6g5NRnnloksiJbz8ehw67CFfMoOCjKtNWI8BSrOrMUPRGMC6vQOGqnOfRM7crDEF9xEU2momQ4B3YPMKNcrmfzUCjEaS3SjppCzGOIMoFsALywPG1Zaj4SmYP+VtG39LjhXkQbfVGJnSd1cLnbsDUTih1gwBGUhQFsckkUwe+e/ULlIC7XnMAQxycOguliCvSsPqfjYAgyFSDyiZob4JIgRmgHGV7LioI5jk3HmkR71HbubJbIXBvwNeuzzMKXQBosvdVbe1CpHaGCwX/4uO8XFrR1isuigdcGaMN6aGNS/9iDuyZH2PvxcWBvNSAycDPO/EwA1nbm2X5dP4niE.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4e1eec79-f741-9c6d-821f-a5eef18eef62",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2179,
+      "completion_tokens": 305,
+      "total_tokens": 2484,
+      "cost": 0.005804,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005804,
+        "upstream_inference_prompt_cost": 0.003974,
+        "upstream_inference_completions_cost": 0.00183
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 193,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that decode errors name the offending variable, but it does not prescribe wrapping, exception type preservation, or exact wording. The FAIL_TO_PASS test requires a specific substring Failed to decode variable 'invalid', so many reasonable implementations that still include the name would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that decode errors name the offending variable, but it does not prescribe wrapping, exception type preservation, or exact wording. The FAIL_TO_PASS test requires a specific substring Failed to decode variable 'invalid', so many reasonable implementations that still include the name would fail.",
+  "prompt_tokens": 2179,
+  "completion_tokens": 305,
+  "total_tokens": 2484,
+  "cost_usd": 0.006188,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

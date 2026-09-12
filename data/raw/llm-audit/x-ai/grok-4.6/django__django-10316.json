@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10316",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1279
+  },
+  "response": {
+    "id": "gen-1789190747-raZNfyRjOEb8hKfSvvAr",
+    "object": "chat.completion",
+    "created": 1789190747,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue states that diffsettings should skip settings._setup() when settings are already configured via settings.configure(), and even sketches the guard. The FAIL_TO_PASS test only checks that manage.py using configure(DEBUG=True) runs without error and prints DEBUG, which matches that request.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: diffsettings should check if settings.configured before calling _setup(). The test uses a manage.py that calls settings.configure(DEBUG=True) and expects DEBUG = True in output wit...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: diffsettings should check if settings.configured before calling _setup(). The test uses a manage.py that calls settings.configure(DEBUG=True) and expects DEBUG = True in output wit...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "dpTTuu0RoMv7ihPFSBaJKu2QWEHeEMZEhJ9tVEZKpl7/1Hq/rI+1F9xekXbWi07DPKvetZMejbAbkOpyrr9x91eOjk0OIvp+nSO9KVjc4Prq/mD6JrRMfybjYTcMLN2znR2gwCmHJQxh8zTpOFK8tnpIT4Iqib4qaaVV4AfQrH5hb9l0+E+j97+f/I7Up/yr6cygPYF4MFB0X1n/omJxKNz/p7azhyTmbMIzR3bhrLEBDy3lyIFUUExkUqopnEIhbOOHalvIxxqaTziCW1hi0KuuOvLd5OtsYb7tnGNf4t78GKC4vi38OJ1CVLjuwtz+1mYraUV+CVNdLJrR3gzwbu1hPC5/RXSB/CRKlIGXA3CXgxXfjul4s571PoCIuC7C+oBYV+nLL6TUeqnflQSCqZ8q0b0d4gwlaMhGmPxnNgoIqnGptKt/+hjD8W3ikNaCC3C0mvTyHknTmajdEUiMXNv4fJ7acnHkFoDPf8YOdFBxrSDbOuCUMDAkYz8JQQUQndlD/IiOYE3yG63YXox4/9DVSVyadadCEkYo+PBTCGvfWJd2nQdz/DETtgOhq18.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_38135165-b8ad-9e90-a371-a9c53f9bc39a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1598,
+      "completion_tokens": 212,
+      "total_tokens": 1810,
+      "cost": 0.004276,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004276,
+        "upstream_inference_prompt_cost": 0.003004,
+        "upstream_inference_completions_cost": 0.001272
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 98,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue states that diffsettings should skip settings._setup() when settings are already configured via settings.configure(), and even sketches the guard. The FAIL_TO_PASS test only checks that manage.py using configure(DEBUG=True) runs without error and prints DEBUG, which matches that request.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue states that diffsettings should skip settings._setup() when settings are already configured via settings.configure(), and even sketches the guard. The FAIL_TO_PASS test only checks that manage.py using configure(DEBUG=True) runs without error and prints DEBUG, which matches that request.",
+  "prompt_tokens": 1598,
+  "completion_tokens": 212,
+  "total_tokens": 1810,
+  "cost_usd": 0.004468,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

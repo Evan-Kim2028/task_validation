@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15993",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1422
+  },
+  "response": {
+    "id": "gen-1789191708-oqVUWxYFNEb2pZCXYeHk",
+    "object": "chat.completion",
+    "created": 1789191708,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Issue demands RenameModel+db_table be a noop; tests/gold require related M2M handling instead.\", \"confidence\": 0.86, \"rationale\": \"The issue states RenameModel with db_table must be a no-op, but the FAIL_TO_PASS test only checks that renaming a model with an explicit db_table still updates M2M relations. An engineer implementing the stated no-op would fail that test, so the spec and checks are misaligned.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0e854d69-700b-918f-88bb-97b79e5943bf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1750,
+      "completion_tokens": 549,
+      "total_tokens": 2299,
+      "cost": 0.006602,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006602,
+        "upstream_inference_prompt_cost": 0.003308,
+        "upstream_inference_completions_cost": 0.003294
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 406,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Issue demands RenameModel+db_table be a noop; tests/gold require related M2M handling instead.",
+    "confidence": 0.86,
+    "rationale": "The issue states RenameModel with db_table must be a no-op, but the FAIL_TO_PASS test only checks that renaming a model with an explicit db_table still updates M2M relations. An engineer implementing the stated no-op would fail that test, so the spec and checks are misaligned.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Issue demands RenameModel+db_table be a noop; tests/gold require related M2M handling instead.",
+  "confidence": 0.86,
+  "rationale": "The issue states RenameModel with db_table must be a no-op, but the FAIL_TO_PASS test only checks that renaming a model with an explicit db_table still updates M2M relations. An engineer implementing the stated no-op would fail that test, so the spec and checks are misaligned.",
+  "prompt_tokens": 1750,
+  "completion_tokens": 549,
+  "total_tokens": 2299,
+  "cost_usd": 0.006794,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

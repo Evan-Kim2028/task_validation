@@ -1,0 +1,104 @@
+{
+  "task_id": "pytest-dev__pytest-7352",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2531
+  },
+  "response": {
+    "id": "gen-1789192323-MDc60EcecScBHAPHomfC",
+    "object": "chat.completion",
+    "created": 1789192323,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to stop crashing when a numbered-dir lock disappears during concurrent cleanup, which points at swallowing unlink failures in ensure_deletable. The FAIL_TO_PASS test is slightly stricter than the report by requiring OSError (not only FileNotFoundError) to be suppressed and to yield False while leaving the lock.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about FileNotFoundError when unlinking a lock file during concurrent pytest processes. The user wants this handled correctly.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about FileNotFoundError when unlinking a lock file during concurrent pytest processes. The user wants this handled correctly.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ac43e900-379d-9b19-826f-af5a6510f4f0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3325,
+      "completion_tokens": 688,
+      "total_tokens": 4013,
+      "cost": 0.010778,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010778,
+        "upstream_inference_prompt_cost": 0.00665,
+        "upstream_inference_completions_cost": 0.004128
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 565,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to stop crashing when a numbered-dir lock disappears during concurrent cleanup, which points at swallowing unlink failures in ensure_deletable. The FAIL_TO_PASS test is slightly stricter than the report by requiring OSError (not only FileNotFoundError) to be suppressed and to yield False while leaving the lock.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to stop crashing when a numbered-dir lock disappears during concurrent cleanup, which points at swallowing unlink failures in ensure_deletable. The FAIL_TO_PASS test is slightly stricter than the report by requiring OSError (not only FileNotFoundError) to be suppressed and to yield False while leaving the lock.",
+  "prompt_tokens": 3325,
+  "completion_tokens": 688,
+  "total_tokens": 4013,
+  "cost_usd": 0.010778,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

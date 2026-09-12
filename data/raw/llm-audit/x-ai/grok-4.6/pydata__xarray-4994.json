@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-4994",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1581
+  },
+  "response": {
+    "id": "gen-1789192283-F9IOfRAd3cYjRKYVjKDl",
+    "object": "chat.completion",
+    "created": 1789192283,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to add a datetime accessor date field analogous to time, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a CFTime-specific AttributeError with an exact suggested-floor message that the issue never states.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue only requests date accessor like time; tests add cftime-specific error message and require time in field tests\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue only requests date accessor like time; tests add cftime-specific error message and require time in field tests\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "DyHwhaXTQMid6dAzHrm42BpMTK0ZDU/J6Es/ZpSY6SmRQeomA58hIkBGM1rrFa/MhjmsNju2spjz1+DwDpg7U/AqHjSihvGTOUG39FjDKez+3W8nxn9XR9n1J5Jgqg882XFkjzDqt71QLA+p7YZLeV26BTz0bhZe18AzcQ9vz7rBG/jmqN+SPsm30e9wTWFGG83UXe6xmPI9SHsWS8OpcND73x/9uw0Zl6SMyKnSKDc1t7zhqPhj5dVPYsC8cp66BFw8b3umUhZQ1lGC6Leo/lXWhmS6wCBV5APDFIKKH3nOkKFdRsE2KndYVgev4JmDlOfu7eyPwU5PB2LCOZEcVr/GPIyWElOzrKxQPYDh058/f6d6IGMYifDIC7KSR8dpmdf6lVUGWQM+z3l3aD0KOZ7KI1X3T2BJVTd8n2wboAbpNGOfk9pLmAZYozDtOwtZp39lGLR1bW9/HTAUUiaHeoveJ0T0RUIA/nIEOjAO9jUgA5t6P4wm11EjRjXlKOE8IiS5MitH+lxEvnk0plEWYBXu1sPkyyZ6W/TVkK84QspSEygH3KqiIEq2qzOuyaoYrxNz5vZgR+7wmb3nGxrWMzmeyvkZpelCmGcRK8RsNBbZDhXAKQnhb8FfW3EI4nJOmJdkgLxYiB2b3GNqGfCVZTGpHLxNQu0khyKNFNw8Uh0CMvGiORVg/jchwfIt5jdXyIXqFNpIic4/i1UMW9VtTeMP1ywvUykkUmFuvXtx4f6laURfrLzDTUInMNJXOkygPXhnrXW3TmG/rRJSDkeKV7f1jGta5Txg2njTor6xD9Vbhz7SdM2SZMwAlB/LzFZNrszNQq7LuEcw6NUy2MkTjyzqF/9FnK5oDuhf8PnaL3ZGg3qYqLIHocTn7yQV5Tjiuoc0M8KVrVwo7vq3PTPEk0Kh69dn15HF5eXIUdvsyBoitAV3tKksLXDyoPURblf0uTH6MUpZagUbkQOtqRwahJ5rTFaZI7nZBjrD4BwQB3qojTDz6wRRNGkMulEFfeWscyBqcuabkFgyLJbSe+1UHSMJ89WgJqPPl1XPNY3GhmLuBxqUqNCR1fc8x/LErDLfS6vM2uRH7jI3olx99R5duayjVYsUm6f/qaKo3VVfS15YM9j22j40lN+y6kgOvasQJpzFN0MVLsjeD9BVbcpR68oeb4vDTnyhRaJX5gOwi6FoAb+UoOHXPel2REIHihunhgn1VOxbedFkmVCrT0zw+QowuwdFaEcyOkTirl+6X37LbzvEMGYd38LzIb4Utw6c1i8EFNBaGqqV6uWvJVfitSp81/NwL2M6KMs8nf5juwQrz4bntJXyVg6BN8UYL3OgmPrQZsypNx3J7ZoJk+bU7SXJdyQbiHdmjFZxjwBp7vGgwVmKH/oHHVT4sbc3feP8j97ubR3gHZI1tFYFTKJfWTM5GOFUx/p0V3usZBLJWKbNQ2I3yEm7nS9s50nOVwPWNhO4wgfh55+ZwrwyGbZUT/71+RBzvX/zPt9/Ycn3j/XwROKGBHObpwddhS77DddWS+ts8nZVcgtOTWpPCRRzcnLWfBiTmnzzP2Hkph2/1vpF2ynARxz4u1HSI9xtyPHeybkKu0Ec7Ar0g7BVuJomS7+FcWQ+YI7vZCMRCY4k3qIaeCfI2+ZQNAdsci5WyMMS6JohWU4R+zdjXW8Jqf5jcm3MecMpjGsbSIN39dag3yqeSmGVG8ejIZQbeblK4LYeGst6DjuzjzgeV2EFjU41r+cEAWK9SMQBqRc2Rcds0IkOb9pUPPEynAMVsUJH6uRSWOrR7PF50PWTxm+4D6hlGtAGJLTvBJxE+puotXPd+LmEpJJkEDbwRGde6ARwnWfzNMzBhZMvVB6AIEdphTfhXA6FP+wBJJYvc1Dvp3vElOEo2y780B/2+hbb2cJjjolUFpT23jgVRjNSHmEK8eqyR2ygLxwIABljbgnPgCBvlhjC4pmzYBTeisSZeG+0tRkmHmT0s2ddThz3Gr6tRfFFUpb3sQC0xUxy92LczcQfyfTDCGJPnDddCiOm7lXRExqe5rTCRXCZ1e5Gv8rDcG9QWCz+EJCZLzsrorzPBI80k7goOhqYUL1CCAeUY4wG/asGXzq53JQFZd103ekHVauDh4vIhGQfoQ2tZIMy4Ibt/wQKdEdy+u7WQyP/pPrPtyFewTMSobDGBIJIA4AccS7e4bnp0lDEXgNlImSm2Fn4mJAF3hz+JTYA3SKGJySfFa7NfNgOQb6rNUsvZGroB7016PHBUceJkUTZUveCiaTi+bHcQHRSDiw6ThSMpJfJblGZnZ6d3S72PteG6OSs1n9/ufGZWylQwOZIlOy3ZnqNsUea5dPNkZNULvS1VGALL8jISYIzDUsbAzXtzSwqtF1gXAorrUXtjqF4NdXgPow.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_03029188-b49e-9d60-aefb-9528f4b01536",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2215,
+      "completion_tokens": 529,
+      "total_tokens": 2744,
+      "cost": 0.007412,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007412,
+        "upstream_inference_prompt_cost": 0.004238,
+        "upstream_inference_completions_cost": 0.003174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 423,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to add a datetime accessor date field analogous to time, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a CFTime-specific AttributeError with an exact suggested-floor message that the issue never states.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to add a datetime accessor date field analogous to time, which a competent engineer could implement. The FAIL_TO_PASS suite also requires a CFTime-specific AttributeError with an exact suggested-floor message that the issue never states.",
+  "prompt_tokens": 2215,
+  "completion_tokens": 529,
+  "total_tokens": 2744,
+  "cost_usd": 0.007604,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

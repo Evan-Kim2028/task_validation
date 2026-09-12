@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-8771",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "579abc04-e7d7-94e5-9c91-d09ac6cbd7a8",
+    "object": "chat.completion",
+    "created": 1789194273,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for some way to keep unevaluated default expressions in autodoc signatures and does not specify a config flag name, default-off behavior, or how call expressions and annotations should be rendered. The FAIL_TO_PASS test requires autodoc_preserve_defaults and exact signature text including CONSTANT, SENTINEL, and datetime.now(), which a valid alternative API or formatting would fail.\", \"p_invalid\": 0.88}",
+          "reasoning_content": "The issue asks for a way to keep original signatures with constant names instead of evaluated defaults. The tests require a specific config `autodoc_preserve_defaults` and specific formatting includin...",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3147,
+      "completion_tokens": 137,
+      "total_tokens": 3453,
+      "prompt_tokens_details": {
+        "text_tokens": 3147,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 169,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 25030800
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for some way to keep unevaluated default expressions in autodoc signatures and does not specify a config flag name, default-off behavior, or how call expressions and annotations should be rendered. The FAIL_TO_PASS test requires autodoc_preserve_defaults and exact signature text including CONSTANT, SENTINEL, and datetime.now(), which a valid alternative API or formatting would fail.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for some way to keep unevaluated default expressions in autodoc signatures and does not specify a config flag name, default-off behavior, or how call expressions and annotations should be rendered. The FAIL_TO_PASS test requires autodoc_preserve_defaults and exact signature text including CONSTANT, SENTINEL, and datetime.now(), which a valid alternative API or formatting would fail.",
+  "prompt_tokens": 3147,
+  "completion_tokens": 306,
+  "total_tokens": 3453,
+  "cost_usd": 0.00813,
+  "cost_in_usd_ticks": 25030800,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2155
+}

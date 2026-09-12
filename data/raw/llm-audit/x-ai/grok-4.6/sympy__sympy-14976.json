@@ -1,0 +1,104 @@
+{
+  "task_id": "sympy__sympy-14976",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1124
+  },
+  "response": {
+    "id": "gen-1789192508-XY3SSLwXlSZdFsJgoTNV",
+    "object": "chat.completion",
+    "created": 1789192508,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that mpmath lambdify wrap rationals so they are evaluated at working precision, which a competent engineer would implement in MpmathPrinter. The FAIL_TO_PASS printer assertion requires one unstated exact string form, so other valid wrappings would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue is about lambdify with mpmath not wrapping rationals, causing precision issues with nsolve.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about lambdify with mpmath not wrapping rationals, causing precision issues with nsolve.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "XZiazNli/IL4plJLPDd671T4EvsO/jkeWaXTo8w9DFLyhS3rZdXvq6OACd6y71XXhqh4F0LQKsrCl1NDmnsU2OShpb6wIAMqcGuZ5mGZYH0g9+oiRLiv8QNyp7iD/EFl5mj8EQj/IaA1n3dKVwmD5g1tIFuts7Z0O675KdJQl++1lW6ekhZ21GZPUvffneEYMl6BRAJR9eGZsvZGFZJGg0kgRIGXYPJPneI4lG5nYZpTK+STZYIPhtkNu4LJUNmMGbuudxBxXrWzdEp6SZY+VBngDGfe755Y9zeRkK9zIThrBC51FOaijdgjMYNdadTqzyOYaeyedQWPSBWrBqIV4bgdsIB0mbObNcWbVZt16+B7PGTFjEjt3my3JRB4I48Wpjgxo6xFXGEnweszZ5Mc3bQ1GfB2rSLlxQGEd+md0m3fJ/Ffra9i0KvaBYvzTIV9cFH7nEBRUxLNzJML+EkK2HeiLhDE8Bxk8T5yRH+XSAp6t8J0CBIuTd8N++GLiRHxwV5ME8ju28Ba51D7IZlE7t5dAqkV8kmZ8YQ32Gz6tFmfsBb6zdfm4uCOl/oYTW1EBYNRju/tTHdtzS/xvpeS/tjr6/qCTcdA9NIa37URhluzvdiy1/0eGVcUpwtb+TYdLN5xhd7xwFNH/dEgHbPUF/02lQBgrLlDvxkZIToXIWkq0TxxTdJt/PYMnW72j4dzBNtcs+gSubn3ExyBE14+xLSEbIBKN3gN6yiZdi+t0KVaDfDIruHxWt/HeR9F1T2gpzjQG5KeFetTOTvskKof1BlA/Vq4IOLWJ6OejYVNa9tMmgGmBrrVvaIPKI3QDVbWaTJyZ6g74HHq4DJYE6/O6d8ts+feYkJAezOKBEp1Bwz+2gGD20d2qwxBxtVdPKZsfVDGcOcntFlHFg/fFb75yhymI/kylrnt9LI8EUGqVuYIbcObPN5WC9tfiPNeubpG2nGN3ekLAAshu9JON35nUv5vE0Ti5qT4rKiJEApsJTKTO+ZhNK4XKevRmYcb6+hBJXSbsyFCq56VQQYBqBzt4bn2gvwhGjnqh+dtk4xWBXKxM1yuT3H/btEzFiw7n5ngkVzZCiJt9iPDnLMsBXE/M1G4DhqpXnLbunAUeS7kAVmvMEkwH0W4JAUbyIRTmZb6Xjxxlm8VtFhrHuTmtqeVfNqkLotXLsBi19FmZJaycJAjx+VEX60PZYcoHcE7HKCMo/hqgccQoPO4ePxPpUASTADLbFyOlLRWwoik/oQkswfIu2hRReFN8N1Wn2p1mc7kCSBcOpISZbaMFO0eGRQZbJgzZgF0FdhMvAey1JJH0OwZuMsRAbjg6yUSEocjdLJHMPqI+BDIViYAr1Ul0iuXrOjxFhqlNEo0ZfpmnDr9nex9rE0O0rf8i2iXYblDL5PSbczPD8meI9hDCC08X6OI+gXpVaHpwEZnWLXGjX9A4fmbKzJANFgFiHzC0qoPiZcp4D9simlU7zwaS689s/DRmgpBfUdCnOzjzZUisgibCeQ6XaK+TOIn+3aok2KkLX6yzR9foLEAIVLWQCQqoBVaknWISO5/9236mzFJkb9i3Iz/Imwpjpc974mz9UUk/E8UephfBG4TqmT8gDJa+kUxBoD6zdFbBfIPxa48zvR8/G7tclZszmLTv3MpYKUj7slXKY6zP0Jx8sXuy5r4lNIpOTVhsHKQ35TNS7p8YTbU2NMeBW9SAshWb40LZx3LkaHOKXrzNHRFnjHozlx1O5Tuj7noxjqBxHFoyOHaz+QNUDiWps5rbUpPmHfQRXkG+fSGTkeTrdlitaO7WVc8/L8rzLbzFQFcse3MZGXX7JWTAcGlv00DXwWR8TqPRCy9reeEty6SwOkzLSQjVQXAWk6tGR2ln1uJkKM/FCSgKSvtuP/sFYvf3OD0eILlUx9Yl+Yo9+hoWPlLBDNT7g0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_668e4877-aa0a-96f4-a4d3-2f49eb78c76d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1674,
+      "completion_tokens": 499,
+      "total_tokens": 2173,
+      "cost": 0.005958,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005958,
+        "upstream_inference_prompt_cost": 0.002964,
+        "upstream_inference_completions_cost": 0.002994
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that mpmath lambdify wrap rationals so they are evaluated at working precision, which a competent engineer would implement in MpmathPrinter. The FAIL_TO_PASS printer assertion requires one unstated exact string form, so other valid wrappings would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that mpmath lambdify wrap rationals so they are evaluated at working precision, which a competent engineer would implement in MpmathPrinter. The FAIL_TO_PASS printer assertion requires one unstated exact string form, so other valid wrappings would fail.",
+  "prompt_tokens": 1674,
+  "completion_tokens": 499,
+  "total_tokens": 2173,
+  "cost_usd": 0.006342,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-7606",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1085
+  },
+  "response": {
+    "id": "gen-1789190724-203Xdizp9viKGMapyJcc",
+    "object": "chat.completion",
+    "created": 1789190724,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires UnrecognizedUnit equality with None to return False instead of raising TypeError, which a competent engineer can implement. The FAIL_TO_PASS checks also include a few extra basic (in)equalities that follow from the same comparison path but are not stated in the issue.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about UnrecognizedUnit equality comparison with None raising TypeError, should be False.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about UnrecognizedUnit equality comparison with None raising TypeError, should be False.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "AThXF2QYK+8+NTww5B2V49gOEilo5dTl61t6QUT2Zh4nsSMV/8nAu4JRgcvuo+7B5bVxmpewBKIeaSmOSWN/Qbwq6dmldigbldUY8k2q6rhwQdr2ZBBJP/1e9Uig95EFocHkM6shHmCkqRu11dZwqUDmDUTr2RPOFXbp/jm+jtLV8CbC50iKviNgIOHDfEsTRbsPsOB3iC97SsFd8MOynzecoRhJk2uZDrgdUaLwYXjtfLeQewxoTl3sV9+6wpoexC0/KmDZ/cQp7h38Uo214b3ZbGAZmaOk8k6JAVrYetVZWygPQN0yORuOzObO113VMl7umNZtT1UgZyDlZve/7jDDhvw0unHJKATNC8UGZ9ttpGF4YysmouFqTpLE3nSNvMFFxyOVMHGghXfd3HCUx8851ODSFEZsENEk9xd8MZWCqBjVNoyxe8+bcDaZKsN2sk5grs2h0s3mIAjjqCus+3y2618qA5SlqcViUYwgXYOYaKfmh4CVTWebOMNyd6v5CVoBvNVuVqTW4SHRNu5bMtzO4Da8vVVIo6adBNaUAWAPmy1BOxN9LSdFniiU6neATNEylMKxmUP2SDpS4AYUglglbx8RA1WIhUKizwJHKyoZlZ7V7nGOCxyTirDjNOhEXBUayrYvl9rcYNBKeJhde2M5GHBhvzaFYOEXpe0OggGpqhPOe1hSZvaz0ShJS/TNGDAEx8+rkqW2nII4q8HudsPEsKefQgxkOrJlVJ1OoVUJlgWbLVr89Mu6HlVyjWoMCkM6H9AxutdKmUQx9Alq5q3jJUqvSneUmt0w5rneUDAkQ3/3xvXIGk/wNUv2UL/49II8PN0FO7eIpqfpxYUqe/6cyOs1bnCg+ltOgs51QzvMUVjPQsNKIkUYI4BbSujpcCYX0kbfj4BQtBW75XckUGGTeqXkSLeFxJ7b22LKgQEGxnQqIAMW3GtgSLwtjql2hMjQ7mJueQublCg+hsuKRJ9M+IcBM1zHFbyRMDgXUpj/+kRbVGzuRlb4whAiTncP8aAykYWu4O09SruBvCESk3eldLnZIicGiQNhtL4Zwwra8jW7xu9LqG0VA3Zd07SS765IhyeX+NLlJBbLhhpCWtCXgw2eqTaGox/ED2UOlz7uRX1sXhEnmvd5FvZ23XLnb9sk3wfLi+LNrx6uKTFvpnYqjd6v9+cg0oBZ3YusqCKbTLgabOXMHFasQqVAwSJBJRtVPU3+it1dUPE6mtOF1fAN8dAs/gYwDIYSWOXMk97h6IDECKh8sesqkJQ5lEYh58YkahkFvbvtmzudkXSlILBl9GoaDtIxtPutYo08wz9Ex1lC/UtmD0ABmYTXsKWmuJ3dKnRKoSAiDQU7eX4jtdZPNVDwMUywJoeq+C3qxdq6O8T2gUb/fdqpIdbrfjbfEMdwGM/CnXeCX+apwDsSXw3lzt1qjwVV8IeP+ne1fAUJmvHV8+JeKPtVa8bNSM2NkKGAPX+sGMqvWLgT+LzYEX5iVjHLK2dskbgmtX6inID13gpN6QmjULaWLdyQKQgNylCGxhh0U/KBaGpgtTSsKnWxwV+IT7MCwh6p3G+xz95m6QfpfBHhuY6Bb978fLGyAytH0J1m3+dYCmjs3/abAdKJ65fxUNyXCONXUL5YD5oZawSdu4HDPWzUOv2C3YqvS/wjILNp0u8STawMhb/RplQ4aw3Q6vucM3TZHcoHRM57B6s2Ugyn4HIXbqgkku1J0w.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_16315c7d-04ab-9dc5-bd9d-d37933d81b56",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1454,
+      "completion_tokens": 413,
+      "total_tokens": 1867,
+      "cost": 0.005194,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005194,
+        "upstream_inference_prompt_cost": 0.002716,
+        "upstream_inference_completions_cost": 0.002478
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 300,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires UnrecognizedUnit equality with None to return False instead of raising TypeError, which a competent engineer can implement. The FAIL_TO_PASS checks also include a few extra basic (in)equalities that follow from the same comparison path but are not stated in the issue.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires UnrecognizedUnit equality with None to return False instead of raising TypeError, which a competent engineer can implement. The FAIL_TO_PASS checks also include a few extra basic (in)equalities that follow from the same comparison path but are not stated in the issue.",
+  "prompt_tokens": 1454,
+  "completion_tokens": 413,
+  "total_tokens": 1867,
+  "cost_usd": 0.005386,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-5550",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1b00467b-31a2-9a65-8128-d79a8d49d646",
+    "object": "chat.completion",
+    "created": 1789193790,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks for a root testsuites element under junit_family=xunit2, which a competent engineer could implement. The FAIL_TO_PASS test never sets that option and always asserts wrapping, so it requires default-format behavior the issue does not state.\", \"p_invalid\": 0.85}",
+          "reasoning_content": "The issue is about junit_family=xunit2 not wrapping with a root <testsuites> tag. The sample output shows a root <testsuite> without <testsuites>.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4689,
+      "completion_tokens": 111,
+      "total_tokens": 5130,
+      "prompt_tokens_details": {
+        "text_tokens": 4689,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 330,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 38270400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks for a root testsuites element under junit_family=xunit2, which a competent engineer could implement. The FAIL_TO_PASS test never sets that option and always asserts wrapping, so it requires default-format behavior the issue does not state.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks for a root testsuites element under junit_family=xunit2, which a competent engineer could implement. The FAIL_TO_PASS test never sets that option and always asserts wrapping, so it requires default-format behavior the issue does not state.",
+  "prompt_tokens": 4689,
+  "completion_tokens": 441,
+  "total_tokens": 5130,
+  "cost_usd": 0.012024,
+  "cost_in_usd_ticks": 38270400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 4039
+}

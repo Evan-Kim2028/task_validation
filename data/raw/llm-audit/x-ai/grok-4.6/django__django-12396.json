@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12396",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 8034
+  },
+  "response": {
+    "id": "gen-1789191029-zskejItZhqzewjQrT1dC",
+    "object": "chat.completion",
+    "created": 1789191029,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes connecting to unset-up aliases during test checks, but does not specify a databases argument on the check framework, check command, or Model.check. FAIL_TO_PASS coverage largely asserts that new API and kwargs behavior rather than the reported test-runner failure.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about Django test runner omitting test_ prefix from database name when running a subset of tests. The problem is that when only some databases are set up, the check command still tries to...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django test runner omitting test_ prefix from database name when running a subset of tests. The problem is that when only some databases are set up, the check command still tries to...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_769ddeaf-51b5-967b-8158-8824826dc319",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 9132,
+      "completion_tokens": 442,
+      "total_tokens": 9574,
+      "cost": 0.020724,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.020724,
+        "upstream_inference_prompt_cost": 0.018072,
+        "upstream_inference_completions_cost": 0.002652
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 331,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes connecting to unset-up aliases during test checks, but does not specify a databases argument on the check framework, check command, or Model.check. FAIL_TO_PASS coverage largely asserts that new API and kwargs behavior rather than the reported test-runner failure.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes connecting to unset-up aliases during test checks, but does not specify a databases argument on the check framework, check command, or Model.check. FAIL_TO_PASS coverage largely asserts that new API and kwargs behavior rather than the reported test-runner failure.",
+  "prompt_tokens": 9132,
+  "completion_tokens": 442,
+  "total_tokens": 9574,
+  "cost_usd": 0.020916,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

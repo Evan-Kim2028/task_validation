@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14508",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3349
+  },
+  "response": {
+    "id": "gen-1789191446-KhR13xCdRYGHQsVpNbBW",
+    "object": "chat.completion",
+    "created": 1789191446,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS also require unrelated MI field-resolution and check-framework behavior.\", \"confidence\": 0.86, \"rationale\": \"The issue only describes a property-vs-field clash and asks for a clearer warning, not a specific descriptor or inheritance algorithm. The tests demand always installing field descriptors, diamond-inheritance resolution, defer behavior, and extra checks that a valid warning-only fix would fail.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about overwriting a property with a field during model inheritance, causing AttributeError. The user wants a warning during model init.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about overwriting a property with a field during model inheritance, causing AttributeError. The user wants a warning during model init.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_122009bf-5ec5-9000-b2d5-b9d20f9f3b0a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3803,
+      "completion_tokens": 457,
+      "total_tokens": 4260,
+      "cost": 0.010156,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010156,
+        "upstream_inference_prompt_cost": 0.007414,
+        "upstream_inference_completions_cost": 0.002742
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 329,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS also require unrelated MI field-resolution and check-framework behavior.",
+    "confidence": 0.86,
+    "rationale": "The issue only describes a property-vs-field clash and asks for a clearer warning, not a specific descriptor or inheritance algorithm. The tests demand always installing field descriptors, diamond-inheritance resolution, defer behavior, and extra checks that a valid warning-only fix would fail.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS also require unrelated MI field-resolution and check-framework behavior.",
+  "confidence": 0.86,
+  "rationale": "The issue only describes a property-vs-field clash and asks for a clearer warning, not a specific descriptor or inheritance algorithm. The tests demand always installing field descriptors, diamond-inheritance resolution, defer behavior, and extra checks that a valid warning-only fix would fail.",
+  "prompt_tokens": 3803,
+  "completion_tokens": 457,
+  "total_tokens": 4260,
+  "cost_usd": 0.010348,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

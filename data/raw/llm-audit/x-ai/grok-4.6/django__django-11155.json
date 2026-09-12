@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11155",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1273
+  },
+  "response": {
+    "id": "gen-1789190811-NoUWuEovVEpfIOk9YCOj",
+    "object": "chat.completion",
+    "created": 1789190811,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue names the three settings, their defaults, and that they should apply to the language cookie while preserving current behavior. The FAIL_TO_PASS checks exactly those defaults and that the configured values are set on the cookie.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: add LANGUAGE_COOKIE_SECURE, LANGUAGE_COOKIE_HTTPONLY, LANGUAGE_COOKIE_SAMESITE with specified defaults, and use them when setting the language cookie.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: add LANGUAGE_COOKIE_SECURE, LANGUAGE_COOKIE_HTTPONLY, LANGUAGE_COOKIE_SAMESITE with specified defaults, and use them when setting the language cookie.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "0fPoLj6etRGn6uaFaBisqPR4kFR0yqzKRpb/xRGdFhCPYlWPbWQQbNjdAlRZGQG7P+OAiiJDpaDqdHAxZOi+uhy1Oeh+7DKpMJoi10YREaOw7hdqkpjEoPzTc6zW5IOXtmMV0yf5UAwHDsUr9FveUlJ4HakY8d+RvGTAsTAijCmmOYgXgNpf/uq+W8oxNrcBDM2NGCHycKxsusBrG+akECwVPPheF+1HZcfG9jNuz0DFcluvwRWN7gHbitUCJA+DanVmTbf6GI9YbLMDaIQIIeWbtGwskkT23D1eBOFPAlxUEuWDdNVlXBZHM7es7cMhvrHTM8Lt+zGctHwl0QQkJo10h/er32NSYTV3CFTw5etDoEN3paFPEKYBRuUgiCynZlK7hl1on/GKWNeRTC9IAnJ3ulCZjCnNGrUajsOVImvTvIdCtn7xic52kV87DXCTjUmGKV97b8JaZBVs8qXZOxU7yQkXZq3LZERwd83TPyc8WDgNYAACymuF0sk9MliNJW2qEmjNdeyahcigZ0A3aPWdGawtijRHU01qptuNUBPI0J8WZmGRDmIZLoWBqIWraGHZCl2XX5nk5nbUU529N6et6MXkiuBQxRn/52JOwd468iHvrRxIatX2Uq4zUC9mNdUz7ucYqscAswVSqs+LG7FABHHiMzPBJ7HMbVQXNJrMLGGEUqzn5WBYBzuj4JYK/BeXTkjFmRCd8DPKWO227N/eLVe5wm1gTLbGrx58KRcFOvyAiKR8B2MQKgwEIEZ2luxuNc9ZwkJdr3x8kcz1vThpS5Smvv9QsKhjqvtQM9buSENwrtRIkQahrWdF5+HjASAAe2kU/UU/nJJLc4yf45mJZwpzcPa1/nsCHOMgDOM1nRaScZqKP+DpeVPVZ7GAjXjuWzDh8Fws0nIo9Mq8E2VqYg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9040d686-b9e4-93d2-b78f-253a3df7b46b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1627,
+      "completion_tokens": 255,
+      "total_tokens": 1882,
+      "cost": 0.004592,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004592,
+        "upstream_inference_prompt_cost": 0.003062,
+        "upstream_inference_completions_cost": 0.00153
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 155,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue names the three settings, their defaults, and that they should apply to the language cookie while preserving current behavior. The FAIL_TO_PASS checks exactly those defaults and that the configured values are set on the cookie.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue names the three settings, their defaults, and that they should apply to the language cookie while preserving current behavior. The FAIL_TO_PASS checks exactly those defaults and that the configured values are set on the cookie.",
+  "prompt_tokens": 1627,
+  "completion_tokens": 255,
+  "total_tokens": 1882,
+  "cost_usd": 0.004784,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

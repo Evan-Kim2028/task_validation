@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-10973",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2237
+  },
+  "response": {
+    "id": "gen-1789190774-a3pxFBFSvJQLJKTLiQr7",
+    "object": "chat.completion",
+    "created": 1789190774,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue explicitly asks to switch the postgres dbshell client to subprocess.run with a custom env that sets PGPASSWORD, which is exactly what the tests assert. SIGINT handling and command-line construction are existing behavior the tests already covered and remain fair checks of the requested change.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about using subprocess.run and PGPASSWORD for the postgres client instead of PGPASSFILE.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about using subprocess.run and PGPASSWORD for the postgres client instead of PGPASSFILE.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "HoJBRcs9jN5CVpI4VotEIYuGmPSe5Gka9eJJX3SWWIDEKeT8Ds4igot6aTdo/nqxyIalI6AdiNGSXw1IrymHvy34jpFK9quJdX1Wz3ZIFxCbO3lCPQSkIwpmlGHniIGTHwa4VaeIDaWDp2SUKjzIEHeh8TUQ4Vu1CYS+iKxvArijGR69auHnbnDfIrib9vDY0gegvGNrseuQ3wCqjE9514GGsiYIwSwecSpc8ZvxrpEO2VSuOOqxO2hz6Mc63tnu+1zmmgT/1nuP8ZnTgghP1dZjbt55JX67e0HZVQmDP/71LisjKRuxeI2Kiknrrwe9p1RsWDSKQ5dLYADWWRFnDr/nfUe5fAd5svaLD5DCc4h9+KuMpPc3/p12WrAGyAdtVVEQgZis5MjhwrRkoH49D4c7rZ9ysrkZpZtEqU78LSpsj5yocJ35iFiHiHd4wB/ZB4Y9TJYmNb3W7xfyAjok1NCBNketyA8+wSZjtKlKZa82lO18MfVVvi+VwxpHMPxRBK++gedmmjZJbrxDQxDVNaBOskvOsHdbqgdA1S6s82p0sZxXMAEqBmgiv4iQKLJ/eUyRPQ5LTLnpRnv6qKy0dCZlaOceL7e6x2HE06l6xslalLS0f6GEA5fGRkff8nLFuVZvQ+9UZQYZi6ymX9uQ6B75RUNl3t74Lltx1v4fkv/VtaowOhZ0UchZ0+g4E77694jmGsPamfxFj2qdWO7JWY4j+q0lM9N7mzw9pYmQEnVo1FxCfjhLAPC5s4lFzgjWpNQgRHBWWxLun1UI6qOJShxlXzXL4e7Yl0cFWgyeasp8Knuy6TNThYjVczjn9mmh9N9OFmHDWp/GnxPASEO9WxT0xM6rWaqVg7W1V/uYiCKLbIApzu4pKPzYD6trzoY0E0059SSrTRehROpo74J+X5gtwtu5z1crQ6pmcjHNMzbNXg9tIbY5CH+5d2np2f472wjwR4Mj+UR2dnt6WGmnmOyFpbN6kHVizDqmcAGO8Bw4YUdnq3fKX8eLYZnTtQ7cczQJqXB14azg4OTsmfgnzg47tCDHkF4ogeurYE1xBMd5me4+NIH5/Q6lsOrcKTOKnSHRIl6yKExjK0pKntqQh3DiVXT5K8MENRnG4GKImTDYzy7MqPbroqLNU4uOdR0O9QOYcN2pTFpDdzUS1u4bCVajAEOtwa9WN00jAnBdwGvJ/BZY1UKYoyC0Skx4iL53wUay08cYPZNIixwqhGn+qJDPb2eHvpwYrwRDTImIqH3SjyLrA8FDanarpXYWcpp+sYboxkpnpuNK1C3JfDEqDKu/W0dcx8ts9YUfHFqBGABTPiuc8a02Yn8grtF5fJr/EhoEP10wmlCA/WgtaUuRRyYrXku98Bv/lh254YJ9Rwfs3jpjF06e4zqpLjPynU1RG9KfN/bO8NGFPzkz99A7akDI0cUX5U2h/tWsKXgn9TRALTsOmegPPxVKuMpgJF9+3UzhIsH/dauQ7dRT.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_40b3de22-5891-9894-b989-9495fcf1eeea",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2563,
+      "completion_tokens": 357,
+      "total_tokens": 2920,
+      "cost": 0.007076,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007076,
+        "upstream_inference_prompt_cost": 0.004934,
+        "upstream_inference_completions_cost": 0.002142
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 244,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue explicitly asks to switch the postgres dbshell client to subprocess.run with a custom env that sets PGPASSWORD, which is exactly what the tests assert. SIGINT handling and command-line construction are existing behavior the tests already covered and remain fair checks of the requested change.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue explicitly asks to switch the postgres dbshell client to subprocess.run with a custom env that sets PGPASSWORD, which is exactly what the tests assert. SIGINT handling and command-line construction are existing behavior the tests already covered and remain fair checks of the requested change.",
+  "prompt_tokens": 2563,
+  "completion_tokens": 357,
+  "total_tokens": 2920,
+  "cost_usd": 0.007268,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

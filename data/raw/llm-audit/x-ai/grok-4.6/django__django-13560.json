@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13560",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2273
+  },
+  "response": {
+    "id": "gen-1789191263-ct52ccPIo6le9zJbMrJt",
+    "object": "chat.completion",
+    "created": 1789191263,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only asks that ProtectedError/RestrictedError not wrap itertools.chain so repr is useful, without specifying a set or exact protected_objects/restricted_objects contents. The FAIL_TO_PASS checks require those attributes to equal specific sets, so a list or other concrete collection that still fixes the reported repr would fail.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue is about ProtectedError/RestrictedError containing iterators instead of something more informative for repr in Sentry.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about ProtectedError/RestrictedError containing iterators instead of something more informative for repr in Sentry.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e57bdb8b-092b-9fe3-8b58-127422f3ca6a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2571,
+      "completion_tokens": 448,
+      "total_tokens": 3019,
+      "cost": 0.007446,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007446,
+        "upstream_inference_prompt_cost": 0.004758,
+        "upstream_inference_completions_cost": 0.002688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 327,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only asks that ProtectedError/RestrictedError not wrap itertools.chain so repr is useful, without specifying a set or exact protected_objects/restricted_objects contents. The FAIL_TO_PASS checks require those attributes to equal specific sets, so a list or other concrete collection that still fixes the reported repr would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only asks that ProtectedError/RestrictedError not wrap itertools.chain so repr is useful, without specifying a set or exact protected_objects/restricted_objects contents. The FAIL_TO_PASS checks require those attributes to equal specific sets, so a list or other concrete collection that still fixes the reported repr would fail.",
+  "prompt_tokens": 2571,
+  "completion_tokens": 448,
+  "total_tokens": 3019,
+  "cost_usd": 0.00783,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

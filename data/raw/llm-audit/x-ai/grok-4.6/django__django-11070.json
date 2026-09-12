@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11070",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2831
+  },
+  "response": {
+    "id": "gen-1789190794-12PRYu9K3kYRkpJl45uP",
+    "object": "chat.completion",
+    "created": 1789190794,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue states the intended autocomplete tokens and points at contrib.auth builtin forms, so a competent engineer can map username, email, current-password, and new-password onto the standard auth fields. The dedicated autocomplete tests check exactly those attributes rather than unstated names or extra behavior.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue asks to add autocomplete attributes to contrib.auth builtin forms: username/email/current-password/new-password. The tests check specific forms and field mappings.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add autocomplete attributes to contrib.auth builtin forms: username/email/current-password/new-password. The tests check specific forms and field mappings.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2a7acc84-e77a-9d2d-8984-d3eb5b9b12e5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 453,
+      "total_tokens": 3703,
+      "cost": 0.009218,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009218,
+        "upstream_inference_prompt_cost": 0.0065,
+        "upstream_inference_completions_cost": 0.002718
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 341,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue states the intended autocomplete tokens and points at contrib.auth builtin forms, so a competent engineer can map username, email, current-password, and new-password onto the standard auth fields. The dedicated autocomplete tests check exactly those attributes rather than unstated names or extra behavior.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue states the intended autocomplete tokens and points at contrib.auth builtin forms, so a competent engineer can map username, email, current-password, and new-password onto the standard auth fields. The dedicated autocomplete tests check exactly those attributes rather than unstated names or extra behavior.",
+  "prompt_tokens": 3250,
+  "completion_tokens": 453,
+  "total_tokens": 3703,
+  "cost_usd": 0.009218,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

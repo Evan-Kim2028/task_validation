@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11525",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1425
+  },
+  "response": {
+    "id": "gen-1789190879-eHFZN0PXOTUJCjJMQvRd",
+    "object": "chat.completion",
+    "created": 1789190879,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to fail early when ADMINS/MANAGERS are not name-email 2-tuples, which a competent engineer would implement. The FAIL_TO_PASS tests still require a specific ValueError message that the ticket never states, so many valid solutions would fail.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue asks to raise exceptions in mail_admins()/mail_managers() when settings are not in expected formats. The tests require a specific ValueError message: 'The ADMINS setting must be a list of 2-...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to raise exceptions in mail_admins()/mail_managers() when settings are not in expected formats. The tests require a specific ValueError message: 'The ADMINS setting must be a list of 2-...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6b64e8ce-74c7-903c-a6de-bba336e55e08",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1826,
+      "completion_tokens": 653,
+      "total_tokens": 2479,
+      "cost": 0.00757,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00757,
+        "upstream_inference_prompt_cost": 0.003652,
+        "upstream_inference_completions_cost": 0.003918
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 540,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to fail early when ADMINS/MANAGERS are not name-email 2-tuples, which a competent engineer would implement. The FAIL_TO_PASS tests still require a specific ValueError message that the ticket never states, so many valid solutions would fail.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to fail early when ADMINS/MANAGERS are not name-email 2-tuples, which a competent engineer would implement. The FAIL_TO_PASS tests still require a specific ValueError message that the ticket never states, so many valid solutions would fail.",
+  "prompt_tokens": 1826,
+  "completion_tokens": 653,
+  "total_tokens": 2479,
+  "cost_usd": 0.00757,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

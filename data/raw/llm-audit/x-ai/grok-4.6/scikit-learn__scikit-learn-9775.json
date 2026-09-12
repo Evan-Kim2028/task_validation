@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-9775",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1734
+  },
+  "response": {
+    "id": "gen-1789192437-pOQFkWjm1L5olqOLQ5V0",
+    "object": "chat.completion",
+    "created": 1789192437,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to support a custom metric and replace the precomputed flag with metric='precomputed', which a competent engineer could implement. The FAIL_TO_PASS tests additionally lock in unstated deprecation interactions, warning type, and exact error cases when both parameters are passed.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is: sklearn.manifold.t_sne.trustworthiness should allow custom metric. `precomputed` boolean parameter should be replaced by more standard `metric='precomputed'`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is: sklearn.manifold.t_sne.trustworthiness should allow custom metric. `precomputed` boolean parameter should be replaced by more standard `metric='precomputed'`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "mrHc7C98i+Zj8oN9sW4zUQkOpIkAsNK4/bY8TSCr5Xccp6NIleqjONGA2KriBjYEeVHdAcysK6IYpHLubOA97hVklesYx7/vZhdAZDQGtPUWV+xhk7kp6x2rMYXGh9lor+R/2ZCE2flmFj5of5xSxPxIczzbj+kKhAhakqEQNTPasxOQwJE6URhfrDxp8LF6o+0B9qUUnSK+3qEPp464D7C44I4sgSr27r2HOKaXV4Me4shZHmN4/SbhDouyNn7UwD4C2SNF1A4CvirpuYvt3YLl/0EVTE8SJdr0JOu6IT5rCePUgRZbjLPNhmPI9I6MFKC8J+5VryME2p6qrO5SLFr/UvTADWHOvMOVVcf1lCPTqp1qLiZ58dGDPOKKY89RoMj3qePYNXH3Lx2DEYXJAo8oX1li/rPfLEn5AfPY2ucUDkV46rNsROgBZwP6vcz9tzU1zMjsFPAxf2gnRSAfZFp3zURfM3iruIVkglJG21Knj8jVt5A4K8f9H8dqBFXt9ZX8rwJsMvZylzvnyQGks2HNQ+J9+c/Edt+yCSxT2ccXDWdEXflL8jyAsrXZW74RcpmUrk8T6ocyntUsQetUwHRO4dhJzcCtDvaa+dWEbYCIhabGR/IPt9PUWIKJIWaXM3C6YR17UuZ/uS2V3F5fMSF6zvJLIpFJmuNzqXQ1D/+hbApQ2UpHwwojH5VLVn0R/2dZrJzi+aiFhksvGmx6cl2QFVSaVVVjq4KmV+E7BEBn7eOgWZKzy3NwmvEU7s2djd3kNwd8fQoxY3p1I9njy3ni0khtsXAy/0SQseLyNTrl7RnzYav6R3L8S4ZUIEJSpnuj7KMOHw80lWqGQSSsFNUzNMwrqc1iZUhPJLe/o57neE8jSBQLTyK+oytIKpEPBB5Cg00r0l7OQM+Kc93GDYcvnoYbV4OODNY6x6hBRmQW/l/f13ytgr/gM8NpvtWwTsmovBvp3qYOIB4KU52H0zkoc9OFdHFVAReBNEWA39kEV91JmQKh0UxYf4lIUoq8V+o2BP28uaS94kupJo7HKistWffs4vy5PmYQ1Y1ZRgb9oEUpfx0kTTG7gUp13qvf/afcGVKsg4TuDYObIZNYpD9J1CA47BpH0+fGVzQy3gqGLw0iqwQsnMlxuO81Ga/1hbG6sbVn0iTwHught3OYEhgN9WF2Gg08R9XoC8C5MpKepx9eJ7d01iYuRRIyx/iIDzu0iwuBmEwl9eB9J5damxzKWiCrJ/vKf+cYuqaxzKkXADxekAJT9D2fAg4tX7OmisWUClveXPw8Bqr+UFqC+ikFfrOaFewyJPmp3Z5YxQw9vW+fUcfFmoJv3xnRHlwpTJcjE/iAcdBn2ZoEQjcXXXGats0+MRlS2dPWeSMqTCtsamFZIFpVoTfUTH+n2/dfdI5PNQRUBNOBaXxbyExsCevv4V8TTWRtOc6w6XtLYyB4cKwZcbIfvDY5iaTPiV6jikaA2SYonEQQIzkEKljSQKJLm7M2hpsDT3yxMd5bK5jPIZD8aElym+c3CXvJ3lT1izAj/gAhrP6/gyrnCD6fcKs0xggOPJcIeoNQmXaYN34fvPsbR+SdAVyjtbBikx50FbZ46sCrSQVxaqHAiXc4cLQmDUiR5SMIHGVhlijP2hblahPljtW30QIwqEdikn5VwQVe9GLjBMpb0rRyPedtgpADJCsgTsrQWrxx5dReYk7Z9g2rGlBp0RJWnEJ6UVBO9ETZdshvRO6WArwSmepRAvalv7sQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4e56711b-4b77-9e39-a0b1-a0c66e85ab48",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2097,
+      "completion_tokens": 389,
+      "total_tokens": 2486,
+      "cost": 0.006144,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006144,
+        "upstream_inference_prompt_cost": 0.00381,
+        "upstream_inference_completions_cost": 0.002334
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 277,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to support a custom metric and replace the precomputed flag with metric='precomputed', which a competent engineer could implement. The FAIL_TO_PASS tests additionally lock in unstated deprecation interactions, warning type, and exact error cases when both parameters are passed.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to support a custom metric and replace the precomputed flag with metric='precomputed', which a competent engineer could implement. The FAIL_TO_PASS tests additionally lock in unstated deprecation interactions, warning type, and exact error cases when both parameters are passed.",
+  "prompt_tokens": 2097,
+  "completion_tokens": 389,
+  "total_tokens": 2486,
+  "cost_usd": 0.006528,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

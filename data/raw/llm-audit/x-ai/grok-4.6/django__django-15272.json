@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15272",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4376
+  },
+  "response": {
+    "id": "gen-1789191565-sYNGQjpAhHeKCdP8tdu9",
+    "object": "chat.completion",
+    "created": 1789191565,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for a command that optimizes one migration and rewrites it, without specifying --check, error strings, verbosity, or the _optimized/replaces/manual-porting path. FAIL_TO_PASS tests lock those unstated CLI messages and edge cases, so a reasonable implementation of the issue could fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue describes adding an `optimizemigration` management command that reads a single migration, runs it through the optimizer, and rewrites to disk. Unlike squashmigrations, it ignores squashed-ne...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes adding an `optimizemigration` management command that reads a single migration, runs it through the optimizer, and rewrites to disk. Unlike squashmigrations, it ignores squashed-ne...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RQPUe/lfEEGDEjVUPsRYAidxH1jnAasSRHs1OPWoCbulvmDOB9bKXCh5h//qaDvm+u5abuWaHkZSe2X6EVvgIjYVmuHf8//4ClrLis5Pj+iCsx5z2MHBFjqz7qE00+ZjSUOxHyrhW2791lryxPyZNeiJsQe0FisHNfI4ZNXGtnrQX+G5sXudAX2MbmA8vXCgf2KcTVVUj90thlk/urAUIHuS25dhbh26yDwDtaIQpts1XPXdfZRUQ11GxCllld13M9DTGZ4YRJ+RqZuwFFs5Dt4sNKa6AP49koPPqkDvVkSjrXQOIDDiQbENupTghOgDZnyHLBslrQ7wLJsVzsHdYz+SkrZQoMZ+XWlM0pGi+Bk/p9aY414/l9CpcKPsg6XCbe13hhue+7ZdWKmBqIx3bRAoIJK92672Zrsd7nXm72EXyfRYVn9MPQnE+lINm0HHyk60SJr5RNvkVUqdilCNpZiUqOJpCHDCYSkw6JcuTAOsqKhEp8HtlDJNxf0+Au2wwtxeNFzTWO/hRPJFBrGuW9gdOCv3ltOkTYfcH7jXi3LjkRj67/G6cigGepu7tUHqSDvbNM+nAfChOZZaSlNvvkmKjTVDl76vs/2IHuCmU78YuEJ7HJHNTUaP4mVRtY2Qlz2T8s5gJOrz82qTf5EM/GZnCKZxp4MMxy5ptHJY8yz49V2uw4aJliw4Ek7YxP96dNpa4EPAPiosoxIt98Lwd42x+JHgKxbvpsDNZJIlU7+lFdELJxh786psMRuXdVadHQWZXlF+iTXii8HotaEyDtOKruCT9pSLAwY1ANizKbp/o0Is88A2FRkLcWnX5XY+liWNJ9UpoBqe/Mc0qYHl1NmwM/GmI7cxOBJIHAeCGQ8Y1XtqzHsBcgHZwah3M8MfoJvJxG8ympt9wEE0iSyq8pdRG2Qdb4o2fgwv76wmaszWC15G7MfW6yaiiFG9ujrfOfCySmbfMQX6bVrbPHvaKsYo6MfbFTvHfraVlZ+7gtkCV78+zgPw1XGy5zZiZLDWLjMWv74IdIpyviq3Ntcvqt+Iy/mr9xNCFAdFa7I8AyyhoaBiBd51kAQwsv64jDyS2DZHdETv8igqFkZgZCQWyOg9N8asqA2+dj2spBfvdkdj6wtjdfbrdflxJg6LDHOfA7UgNyKPUHZYVwizaMoUYrPxo12colhFEm0i4jsUgfolIAP4tuG+ivf8f+s5cSiut4uaO3+If4lKeV+kRxeVnuV5iKPGPRMj4iOHF48TZ+yNpnaIlqtKDrVLG+hMfW74UAyr5iKdufGUTU6+w2hUIDc+QUKtt+YYUjbmlElKVfJ6VD7hfjt+SeRdAvUFL5HY2RDJJEt0tB69nFaqmFcIO17xyGMMM6od9W5qZMj/TBis8BYVLR3w7iVoj5mLUa7eIkyH7UGTaqz9do2v7Xs/CdCRuLt0c5q60us/Aavcwm2oGF1BqsZu9NrDb3qL2w.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cb5ae02a-e49a-9ebe-9d37-9342027cafcb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4646,
+      "completion_tokens": 368,
+      "total_tokens": 5014,
+      "cost": 0.011116,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011116,
+        "upstream_inference_prompt_cost": 0.008908,
+        "upstream_inference_completions_cost": 0.002208
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 246,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for a command that optimizes one migration and rewrites it, without specifying --check, error strings, verbosity, or the _optimized/replaces/manual-porting path. FAIL_TO_PASS tests lock those unstated CLI messages and edge cases, so a reasonable implementation of the issue could fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for a command that optimizes one migration and rewrites it, without specifying --check, error strings, verbosity, or the _optimized/replaces/manual-porting path. FAIL_TO_PASS tests lock those unstated CLI messages and edge cases, so a reasonable implementation of the issue could fail.",
+  "prompt_tokens": 4646,
+  "completion_tokens": 368,
+  "total_tokens": 5014,
+  "cost_usd": 0.0115,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14376",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1855
+  },
+  "response": {
+    "id": "gen-1789191407-PNiM1zwl8NYzArWw517p",
+    "object": "chat.completion",
+    "created": 1789191407,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only describes replacing deprecated mysqlclient connection kwargs in the MySQL backend, but the FAIL_TO_PASS tests exclusively cover dbshell option mapping, dual-key support, and preference for database/password over db/passwd. An engineer who only updated get_connection_params as described would fail those tests.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about MySQL backend using deprecated \"db\" and \"passwd\" kwargs, wanting to use \"database\" and \"password\" instead.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about MySQL backend using deprecated \"db\" and \"passwd\" kwargs, wanting to use \"database\" and \"password\" instead.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fQjVJJvhAoDVtix2XTYBaF28dGxTG8ky7nozp5ByZxMqfnf4mxTdOLWTsBRkJvaX7GfnyoRVaHEeTejrz/ba1dipvT4j2GYqaQvc6su963S/gbi2p4OiUILfOY8ivawriuXLxy505tzvB/fQFDOTYJpERtxfoJ5N88RFAVOgTTG+U8s35KK8r9++FR+FdnGuEFfAQlG19sUQE8e8wBpxfRUWD3isWp7ypwrtIVUYLGF3bM+Kl0wVIBrvm3LpERqKVyXqaFan3DepJUU125hODfM+O+0tX9uKhf1lifxzLaCFOkvdoPulfSyfZmIA+cEfCAxeLahR7qurIT2RH6Io4MFLt6G0HQLtXILn3lyo7annVM4EkEdvuxm2zNB5BsghLEIKuIJRX1L1GI2g17CseRYMDFQG/YnjIKz1QK+OCwKyZx58RjKwNuJYCGR4tQW273xKa44+TKr2vGmp4i+ojK7PKmhMlBtJnXyvLTDgJND0okoIJiB7i+B7XdHNq7UgFN0YAaywtYGnf756Ws3F1RpHvBkFMIuyu+zoxLWaxysCltry2RSZ/aU9kNa7p89eIKdADCqowfjA2+7/cWxncvXDK5hlSlmdcInh6iVSrcLq9PDpnjaUKaUc8Uay0TOXbtezSM4kRUxyweaPhHNpzIQPfmP4/LUj6YBVCXItE2bxsAQ8udHkB0TM2GAjyl6NRbVSYi3jlSorIyH1Lu6OKyixSncK8xChxbN2LuA1W3Y2Z1+KQlQkoITaa0mvc5m4hXknqWaFyj9awYXVb9KFVzRShj66DXqPaQXJhSkClfHWHMz3JhMUz2ZDIGSB4B96tVVzMCVAi6SBgjaPW0QiQKeHZLJRhVsRoSURAUkgE8xBuwJUGODuMu+IRqS0K+DrMG3TpTPn749DZ6T76ahtBuovjtkuSyCg9NokcRJ/KOVyzOUXXCMp/UZ7l2qJiJ0s4c9l3j/iKJTR1sz+2rPxlkFGpunf2mt4oKkUNcjbJHGrEOBX3jyudEicqDuX/AWaGPQY8xJxz8WJYceLuzedfyotYm2m5H98s7/vaCjlayoNPLVaktO0pu2rlTkbRS+pZlfL+iP5TmWAvPQLMoqbX9hC7kgCZuwFFblFFp/Pcwx22btFIKLq9FAYxC1UIBW/OsMbPerVnkEEGT9pEtSoYbfA33iFNXPy2Zh7tlWQlXqdAUyIq0sAUA0a6XW1ZU5QWEcjRxvhgdqKezJUqm7zF072kpOmQPFPpIif4APoWoNg+g7HViNZTYC9rX4S70KjGQeXr3CL1mA2WXfc9ngFfn+dP6LLKQfjAvqij0dJOxppwuOwB17XO8n+v+Ob4icjPJVi2dCDbHkn+Cg6z4ZFgG9cFJ4/WZ/IYz6FXyzWbSKxNJ4aIRlWcWk0FZ50Srqu5nksPDreCFhg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2a371bb8-f5cd-91d7-80b3-728f1ee206ea",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2189,
+      "completion_tokens": 367,
+      "total_tokens": 2556,
+      "cost": 0.006196,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006196,
+        "upstream_inference_prompt_cost": 0.003994,
+        "upstream_inference_completions_cost": 0.002202
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 247,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only describes replacing deprecated mysqlclient connection kwargs in the MySQL backend, but the FAIL_TO_PASS tests exclusively cover dbshell option mapping, dual-key support, and preference for database/password over db/passwd. An engineer who only updated get_connection_params as described would fail those tests.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only describes replacing deprecated mysqlclient connection kwargs in the MySQL backend, but the FAIL_TO_PASS tests exclusively cover dbshell option mapping, dual-key support, and preference for database/password over db/passwd. An engineer who only updated get_connection_params as described would fail those tests.",
+  "prompt_tokens": 2189,
+  "completion_tokens": 367,
+  "total_tokens": 2556,
+  "cost_usd": 0.00658,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-11693",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4686
+  },
+  "response": {
+    "id": "gen-1789187816-iLDdbcRZp7XiSn0uvDta",
+    "object": "chat.completion",
+    "created": 1789187816,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks that plotting not raise NoConvergence and even suggests quiet=True, without requiring a UserWarning or matching a particular low-accuracy result. The FAIL_TO_PASS test would reject that suggested fix and other reasonable non-raising implementations because it demands a UserWarning and assert_allclose to a specific all_world2pix(tolerance=1e-3) output.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about WCS.all_world2pix failing to converge when plotting with non-linear distortions. The user wants a way to get the plot without hacking, suggesting quiet=True.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about WCS.all_world2pix failing to converge when plotting with non-linear distortions. The user wants a way to get the plot without hacking, suggesting quiet=True.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "sBKPHiqTQG5/B8cShHVU+p8hDxmUX3Qkvfj+rzg6dU5rvW1TqNiRyXuDOHWvbRm2JnsavrcUOurErFU8yZ80yOMHQ0GA/aGBMskY3xDUajGa//ds2SkouuURvEtB1NUy7ssK6VKst/pObOYyHM+R/qXPdp+yJP7Fz8KXRYPye1IDDslYGYhjmOIfjeNVjLsgrdd+s9kAXEYD3p6ImUvc84U/XTPCW1dicWDXSjB5KsvZmlUQcTKts4zKI874gQjRIIA4u2jbuEMA9SlZkMP/OnnGZAmBB1S35lwiZ4EJm3d05MYYY+MQi82cF+RmuHCrMSciVxyiPr5LV5kGszqSLH+KYgu8FSEvc1gWKfEimYB7MvCW4FBmftbws4rybFrS8EEBV/M8v7p+lGAYfZrCKpSbm9y6sFIJIwyOSlAfK3t9yApoXC1glrxhjh65G28yOpUpPvf47BwKBBop7zrSRUjR+7Lo3KTL6Glqzs0JJYKcqIMVjpOzIH5j42lZGzqlxHIfviUwiT+aACPYjRQV76irWj9FaPEe8r09QE0NLgIfo32nFu+fNVm6CTKuKEN6VaByLOj3MGNuRC0HrNzU2FaL7hh0dapWmtbEeIRGpxWKCvDQ23PAb/t6mjiwXYyc6IjMoIQBlkTF2nZIEQV4O5T5rp4hTtaaRx9HcElZWMMhXyUuzWJ3QZDTfQu1SJ1M/a2u+VuHFevv6pCT23TQomHm3f3FdSid/I7Zd1kqG4HF4w0CNrafzBDvfOtETNafwrht5YZ8aU6qIWn6NBS+ar2iKpKAYqmpMU5foK0qsyxhnU23K5XU2BwIHes7hZTSB4FOssx1AfdDZVUyoTZDtCumtYIIhdqwY9mErUYK4i8zqHlpOJ0ud7kjdzYx5r5wiDbBco7ZHyyP1bX+rNEzRLGsxDVFTySnWfOIpRSuayXg1Ent3Q4+J6XqnQHKmK71KF62j9Q7dCoNfi961+Ov01FQWzXTOKON9aKCW3c9MkD1V8unUmJBXNHt4hdiIeMXde54okpK5wI45S2boHi/D61dmpZaCMf3mnK37BYVShsjbU52xBLHQ5KV/SMT5VM/9h5AlsxzBbO7Q+zJQg0EMHW+SF02X0QggUw/zDGr8AgCm46a4PLE5Ha2cwlpjfh8ggjgrbC8JzNMzuMIA/ulNgsPs4uOzKTPkp/ZG3tpVuHqV9efCjFNknr491AsiB+C9eiahzrost8LMDT1BWRX5UB4xQMIf5mU1YxM1ccxnJBkxVmv1bahROeIgTGoThy52iKI6Z6QLJkit+5+pWY+zmXx3tYd3WVlwp3WaVDK2A5CW/5ylUZXbGLVP1K6RwDo8ThmI6C4lvGYeReiU18X1B0ZVmTVtI5gHGmCX7P9DP6e7O2p0kg64cbTmwF8PcLyEkjgrTq25RRz17YzyYSHpZfWKjLCThmTNMpCi9G/6DI0u1AAqc+aifJSEIYNqwKJQRhINQQAF8rr0bMfyI5/sQ4YiY3Qm6U6SLmwvjpXvFSNiRlUfCqVQCo9apCKgofz70fS7eIlCCZ6JngKT9ru4qk/d7hiG6pMm9q/F17SGlGl5HNT0RQlM6WRV8Q5Oq6WsCmtQAY6Kc0UvyLpUAkeLad4FI1gg3Jd/8eX3LU8hl5VauklGLQrefwcnjzNRgpNiIVnMczYLG7pxHXubGy8dIIP1RXMPhUIn4AYrE11FDpiTq+6CmFjMhbCz9T4MMrXR5BWm9Z9dBcsi63u+BDAsp1iWMFbxl1Ow2g/oGLYbhkeZmGY7/ZtgaZyXduWP4m0VgTOcC95PXiEtKNvc7H8Mo/ST0494mK2hIhM0BBok9YqYXnUXy6MGk2BnCsah8yjjrUcD5XCX2ZJegmixEEAhV2vHIjKl/uwW7LcWqMVRBKxCZmVW1uetcc4qhIJKw0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a67c6d30-0a23-9cc0-b9a7-1fbb8f142f65",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5970,
+      "completion_tokens": 446,
+      "total_tokens": 6416,
+      "cost": 0.014232,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014232,
+        "upstream_inference_prompt_cost": 0.011556,
+        "upstream_inference_completions_cost": 0.002676
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 313,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks that plotting not raise NoConvergence and even suggests quiet=True, without requiring a UserWarning or matching a particular low-accuracy result. The FAIL_TO_PASS test would reject that suggested fix and other reasonable non-raising implementations because it demands a UserWarning and assert_allclose to a specific all_world2pix(tolerance=1e-3) output.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks that plotting not raise NoConvergence and even suggests quiet=True, without requiring a UserWarning or matching a particular low-accuracy result. The FAIL_TO_PASS test would reject that suggested fix and other reasonable non-raising implementations because it demands a UserWarning and assert_allclose to a specific all_world2pix(tolerance=1e-3) output.",
+  "prompt_tokens": 5970,
+  "completion_tokens": 446,
+  "total_tokens": 6416,
+  "cost_usd": 0.014615999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

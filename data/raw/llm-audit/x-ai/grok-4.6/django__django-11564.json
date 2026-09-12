@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11564",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1942
+  },
+  "response": {
+    "id": "gen-1789190891-RHHTZG1Ef6UlYs3aACxT",
+    "object": "chat.completion",
+    "created": 1789190891,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks to honor SCRIPT_NAME for static/media URLs in tags and storage, but does not require MEDIA_URL/STATIC_URL settings accessors themselves to rewrite values. The FAIL_TO_PASS tests only check that getattr(settings, ...) is prefixed for relative/invalid/blank paths and left unchanged otherwise, so a valid tag/storage-only fix would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about adding SCRIPT_NAME support to STATIC_URL and MEDIA_URL. The tests check that settings.MEDIA_URL and settings.STATIC_URL get prefixed with script name for relative paths, but not for...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding SCRIPT_NAME support to STATIC_URL and MEDIA_URL. The tests check that settings.MEDIA_URL and settings.STATIC_URL get prefixed with script name for relative paths, but not for...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "zVMC5WcWhVI+X3YLz9G04W5Cb8NBxonVtFRBAdCZactffyEh2CYr79cL3a3rLClqEDZPLT/5DyuQ2XGfgeSZsNCPp++VO7JXCPgTJRTObR2IhvAYdccD0H9gHQt3LkYwIvINRdzOo4zeCh2zZZbiLfZS6bnYVscUCZj61DtG1IjJ0G7Wp5lm06GgJevVB400at52Yj2NoC6wSBWHT/+wRkb3m8/Szwuc8ZrqEOrVbOa5GFQVbup11SIa9eBseJ0f6zefANqe0Uyi8VZHHXtl7JwmaJ2FEypXs2C9mxdfHy9DnaflhIhDoGajwZ27K1Eg3HNbAIxOHDh89h2vdMERhzdtKUXzw11S0DFdI9+rdcSOdAFjikhVjvUnQN2p54GxBimlpcmkabZyhImLL2z1M8y9kDR9NprjXm+3TMzwTSGDQZ5bxhOX8oZSVCoXUU2sc3sfYPQF85S8+1Jlj3lktXH3bYtLTWhSEdgt6VCFH6xb1dwb1GTtYsqyQzveVDry4qKaRg8GixmE716lgn3A849vJQWb9O6KiS1LN5PCbAWuCezgN3v6o+RjAMKefPWtR++T3G2vHbrRD/JyiBGdZCnAgVK76Rjo5Li3OsksXzgkUBezaqt/SQGAu80Y6kfoXfX+kEfsL7Ofq01wvzEnx3u4h/1yVbnwEepBJYCpnrrIGeKFFxsd6MzKrMlseM5FxJa/13RQS12DSYqdNff+JWwtZBiYTzF70Ber4OLgl5x4bb+cgK1/PVE8VKlzj3ZZgaACADbQhkvKXGs6jwvc51RoZoim1goceqAlgvq7Kx6/YFokKn9FHiNV2O/dO6dqEBZgYejRqH8sKIYqojGhnBeRa/nty9avR4IjIAKU3K2qNdqLoeW/koGfMZsG/84DXARbm/FpNWTFzHoj4+woUCHEuJkPFSfwyYFpeXfPfj18O4bUlBQjOmT3QEYbwkah7wlkYVOzA4C+8hVO1mgOpgPzcKeQemqeDRNqTiGkE1ydm1n59jkT1RvJBOrAoV7NtU9Dm0AiO3uvdCqHZ53BWanz3V2j0AcIm4z4LU/gqAzOA6tYpPe2HgNpM/9i7aGAZTpApFt2KS0XzEn33j2N7N1MZQs2/i0k1BBHIT90SjRkcMONKhM8zh/RdkGygDe9lxf56riWPeuBEhicu1JxgXpS/TYa/EGf6ErJd+5s9n+QyAjfzl5OaSksYEhdqH0EJfyBMmyflnI4wsgUIfwVgiKiEKCzZZJ7o98AvI+HIbYx8zsaHtpT10IeD8eyn4aF8sixNqQv2UA53sthDgBlsTZyXIM/I8n/J0gQGNpSFgNnA8bVJzGeJOAdLs1B7QEW3oSO7WyrG3n5KK64UqEFlCYxWhG66V1Wxm/3sEy0E44j4SAtgu+teZGPwDHnr0uo.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9759a525-036b-9e7d-b439-2974b5f418d7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2277,
+      "completion_tokens": 356,
+      "total_tokens": 2633,
+      "cost": 0.006498,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006498,
+        "upstream_inference_prompt_cost": 0.004362,
+        "upstream_inference_completions_cost": 0.002136
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 223,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks to honor SCRIPT_NAME for static/media URLs in tags and storage, but does not require MEDIA_URL/STATIC_URL settings accessors themselves to rewrite values. The FAIL_TO_PASS tests only check that getattr(settings, ...) is prefixed for relative/invalid/blank paths and left unchanged otherwise, so a valid tag/storage-only fix would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks to honor SCRIPT_NAME for static/media URLs in tags and storage, but does not require MEDIA_URL/STATIC_URL settings accessors themselves to rewrite values. The FAIL_TO_PASS tests only check that getattr(settings, ...) is prefixed for relative/invalid/blank paths and left unchanged otherwise, so a valid tag/storage-only fix would fail.",
+  "prompt_tokens": 2277,
+  "completion_tokens": 356,
+  "total_tokens": 2633,
+  "cost_usd": 0.00669,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

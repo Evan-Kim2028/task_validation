@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23267",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2803
+  },
+  "response": {
+    "id": "gen-1789187707-8ZhZPkqccwftP4v9SRKb",
+    "object": "chat.completion",
+    "created": 1789187707,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks for a Colorbar location kwarg that sets orientation and ticklocation and is mutually exclusive with them, which a competent engineer could implement. The FAIL_TO_PASS tests fairly check that behavior, though they pin a specific TypeError message that is only loosely implied.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue asks for a `location` kwarg on Colorbar that sets orientation and ticklocation, mutually exclusive with them.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for a `location` kwarg on Colorbar that sets orientation and ticklocation, mutually exclusive with them.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_56110893-214a-9d77-b642-a2c615d8d706",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3412,
+      "completion_tokens": 560,
+      "total_tokens": 3972,
+      "cost": 0.009992,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009992,
+        "upstream_inference_prompt_cost": 0.006632,
+        "upstream_inference_completions_cost": 0.00336
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 448,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks for a Colorbar location kwarg that sets orientation and ticklocation and is mutually exclusive with them, which a competent engineer could implement. The FAIL_TO_PASS tests fairly check that behavior, though they pin a specific TypeError message that is only loosely implied.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks for a Colorbar location kwarg that sets orientation and ticklocation and is mutually exclusive with them, which a competent engineer could implement. The FAIL_TO_PASS tests fairly check that behavior, though they pin a specific TypeError message that is only loosely implied.",
+  "prompt_tokens": 3412,
+  "completion_tokens": 560,
+  "total_tokens": 3972,
+  "cost_usd": 0.010183999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

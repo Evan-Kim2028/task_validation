@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15127",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1468
+  },
+  "response": {
+    "id": "gen-1789191543-CPKke2BKkyn00hRtDh6j",
+    "object": "chat.completion",
+    "created": 1789191543,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only requires that Message.level_tag reflect MESSAGE_TAGS under override_settings, which could be done by reading settings at use time. The FAIL_TO_PASS test instead asserts the module-level LEVEL_TAGS constant equals the override, so a valid property-based fix would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about LEVEL_TAGS not being updated when using @override_settings. The test checks that base.LEVEL_TAGS equals the MESSAGE_TAGS after override_settings.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LEVEL_TAGS not being updated when using @override_settings. The test checks that base.LEVEL_TAGS equals the MESSAGE_TAGS after override_settings.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e5cbb31d-ced4-988b-864b-8a908c7fbef1",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1841,
+      "completion_tokens": 437,
+      "total_tokens": 2278,
+      "cost": 0.006112,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006112,
+        "upstream_inference_prompt_cost": 0.00349,
+        "upstream_inference_completions_cost": 0.002622
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 321,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only requires that Message.level_tag reflect MESSAGE_TAGS under override_settings, which could be done by reading settings at use time. The FAIL_TO_PASS test instead asserts the module-level LEVEL_TAGS constant equals the override, so a valid property-based fix would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only requires that Message.level_tag reflect MESSAGE_TAGS under override_settings, which could be done by reading settings at use time. The FAIL_TO_PASS test instead asserts the module-level LEVEL_TAGS constant equals the override, so a valid property-based fix would fail.",
+  "prompt_tokens": 1841,
+  "completion_tokens": 437,
+  "total_tokens": 2278,
+  "cost_usd": 0.006304000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

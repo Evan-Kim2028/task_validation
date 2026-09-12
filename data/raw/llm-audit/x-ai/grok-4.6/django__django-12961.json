@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12961",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1981
+  },
+  "response": {
+    "id": "gen-1789191113-2tBwn7Og6gCsTFEK76r9",
+    "object": "chat.completion",
+    "created": 1789191113,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that union querysets should accept order_by() with F expressions (including desc(nulls_last=True)) on selected aliases, matching simple column ordering. The FAIL_TO_PASS test exercises exactly that behavior on combinator querysets without requiring unstated APIs or messages.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about order_by() with expressions crashing on union() querysets, specifically F(\"dt\").desc(nulls_last=True) causing DatabaseError.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about order_by() with expressions crashing on union() querysets, specifically F(\"dt\").desc(nulls_last=True) causing DatabaseError.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "fHjUA8YYZAmbu47USh/jqIKb6x09pn59e4uy7ke/IcdKGJ+vCHw7eU/+sWYeo38u/YXwbA9SJNZv/giULghB+ddDon6m144nbjNyk0gSulE+5N5AAgPjWOXMZzh7XnEQiP9e1cYtcBzHcJwwJk4ZFHkmdMXCXb6JC88j/KKm7fGnUVruxhp+c7HJGgsvIkkvxUU0HDd4jD4w3H7CLKqxq4FaxBB3qljV65fmML8o10aUoIunAOjzYCntTcX7YiqOYyu9SK31e/Lb8pZ8w6LygR9uH0BcOZg1qoJTwbDHD6yELUUFOG+ay8RgMy4rJk4Sa4y7ywVjzDqcuS13g9JJSGYF9ZHuSu8swc+ntAs1PGpvQDJa7HrEmS/yYuQOdo6JBAJtOSqvV0H4Z731pG0/WBrwHYjh3CZgrpZpbQ2sjDBfb5BfcCKJ+C0ynOv+rtv0lBuhq2TcCR8zG+xLhE+C45QVoYXTKn+O5O7icg50rp/QDlFgTTgbk0c9Eq2VaACni0fdYu2VxPfOHLLVVDICeFA6Dg0jsUEVNaZEE9MxDyAhCyv9BPezUN01c8oQtOLns5Js5GPBBQfPE49ck3IyqEvnDcUW+LfRSO2CjFEAJpKZhEJ/xPZpACJwZriCcl7xXRE1+d8x8+13uM55x3c75G2pVdYkAPPpziJlXvI4au3a0pN9PRSyVKV14R+1q7qpIQj5hQZdO0qQHDCZueXyn20sR+Z8UO3yCzrAts3Xr4b6GaTu6YpsMWdXlu9Jqd89Rfy/ReFQmbOx24giWz8Z3TVSOSbifI7+teHizOqnqSISFmqhfBHCVqgUVFX/sIWdzQxdo3V7aQham9GAGumCioM5PvQPEyiY+jqe6lqgfOAn1A2EuPgsfa95Aaw6KiwzNv+6u9cNzHsrDo8bXy91gu6YhPRJpMjS6YRn21LbZNzd0il4Vjha6DC/dBGGkP/B/iaB03BD+evdqOOtkmX4UQ3BNM7CeMYKj6c84JHGJN7CmsbfwqWVN7YVxqDunMRkNtjlErVXQO3qOA73yCdZ8nUchCtJgDHryQGhgRRC8Dtw6VcpdbWjZWj+ltfTq/QzwMiso14UCIJ6cokkDSaxrXOOdN8poqfV2WEn7NODifc2y0XC1g3nePepaIT6uHtLWreCFXYyQUurSd1ambWS6yC1sI3NRUeW5o84Bpn9CMpmr2UQfbukx+IuydKSRULUeRRNDjmLrLsDOCjUJsAN5DdJ0MebyNOntkkNZV9XpKw5mT3iWT/fQ0q72JYpzOXcKEHa3lyugM8d8rwyFbsqrQScgHqnGecmrxE7moE2+a1qyVAX++q9P6fx/kcGWJ+Lh4q9O3ziaxiUCNyKj3sk29g6K5MebHjV3tJVrhhwtgqRdWpm30fPhydYtDBi+298YZZGpcri6MNxTg+V2sc4nBdp79cCDMrqzQB8dssUUxubmBit1KbR2lS7BkQH1N3r2gIzyE5EBRFWvvbcfEFIMHN4z06E9yJIjWnVcDPyYajj0wM8n1m4WIkXji3ARAql6/lCBK9F8TOpvSoKFQwcas5TI5HE8ps.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_57b47ddf-2f98-9195-9f82-703d56402f9b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2529,
+      "completion_tokens": 410,
+      "total_tokens": 2939,
+      "cost": 0.007134,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007134,
+        "upstream_inference_prompt_cost": 0.004674,
+        "upstream_inference_completions_cost": 0.00246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 293,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that union querysets should accept order_by() with F expressions (including desc(nulls_last=True)) on selected aliases, matching simple column ordering. The FAIL_TO_PASS test exercises exactly that behavior on combinator querysets without requiring unstated APIs or messages.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that union querysets should accept order_by() with F expressions (including desc(nulls_last=True)) on selected aliases, matching simple column ordering. The FAIL_TO_PASS test exercises exactly that behavior on combinator querysets without requiring unstated APIs or messages.",
+  "prompt_tokens": 2529,
+  "completion_tokens": 410,
+  "total_tokens": 2939,
+  "cost_usd": 0.007518,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

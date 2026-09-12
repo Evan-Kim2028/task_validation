@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-11040",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1f4ae552-e979-9bea-8f23-0b21a32d8abf",
+    "object": "chat.completion",
+    "created": 1789193919,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue asks for earlier, clearer validation of float n_neighbors but does not fix error types, wording, or extra checks such as negative values. The FAIL_TO_PASS test requires a specific TypeError regex and an unstated ValueError for n_neighbors=-3, so many reasonable implementations would fail.\", \"p_invalid\": 0.9}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2018,
+      "completion_tokens": 118,
+      "total_tokens": 2468,
+      "prompt_tokens_details": {
+        "text_tokens": 2018,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 332,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 19638400
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue asks for earlier, clearer validation of float n_neighbors but does not fix error types, wording, or extra checks such as negative values. The FAIL_TO_PASS test requires a specific TypeError regex and an unstated ValueError for n_neighbors=-3, so many reasonable implementations would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue asks for earlier, clearer validation of float n_neighbors but does not fix error types, wording, or extra checks such as negative values. The FAIL_TO_PASS test requires a specific TypeError regex and an unstated ValueError for n_neighbors=-3, so many reasonable implementations would fail.",
+  "prompt_tokens": 2018,
+  "completion_tokens": 450,
+  "total_tokens": 2468,
+  "cost_usd": 0.006736,
+  "cost_in_usd_ticks": 19638400,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1298
+}

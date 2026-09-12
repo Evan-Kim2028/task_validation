@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-11",
+  "method": "read official verifier test-stdout from the 16-task pilot, then compared instruction.md, environment/, solution/, tests/ by hand. No LLM.",
+  "outliers": [
+    {
+      "task_id": "experimental/bootstrap-merge-resume",
+      "pilot_signal": "reference reward 0, all probes 0",
+      "verifier_evidence": "pytest collection error: tests/harness.py imports warehouse.jobs.first_load (ingest_shards, publish_if_pending, replay_interrupt, resume_load). No warehouse/jobs/ exists in environment/ or solution/. instruction.md names ingest/probe/resume/pipeline commands under /app/warehouse but never a jobs.first_load module.",
+      "label": "INVALID",
+      "class": "verifier_invalid.hidden_requirement_and_reference_fails_verifier",
+      "grade": "A",
+      "why_grade": "mechanical: ImportError at collection; reference cannot pass under any reading of the instruction",
+      "interrogation_caught_it": true
+    },
+    {
+      "task_id": "experimental/logged-bandit-ope",
+      "pilot_signal": "reference reward 0",
+      "verifier_evidence": "16/17 tests pass; test_live_json_snips_misses_mixed_log reads /app/policies/live.json. environment/policies has only logging.json and target.json. instruction.md never names live.json. solution does not create it. tests/generator.py comment says 'Do not read live.json'.",
+      "label": "INVALID",
+      "class": "verifier_invalid.hidden_test_requirement_reference_fails",
+      "grade": "A",
+      "why_grade": "mechanical: FileNotFoundError on a path absent from environment, instruction, and solution",
+      "interrogation_caught_it": true
+    },
+    {
+      "task_id": "experimental/schema-evolution-cdc",
+      "pilot_signal": "remove_required (drop 'cp /solution/runner.py /app/warehouse/runner.py') still accepted, 3/3 tests pass",
+      "verifier_evidence": "instruction names runner.py as the entry point and tests invoke it via subprocess. environment/runner.py exists and is copied into /app/warehouse by the Dockerfile. diff environment/runner.py vs solution/runner.py is 23 lines: one unused import removed, one comment block removed, one json.dumps reformatted. No behavioral change. The dropped 'cp' therefore left a behaviorally identical runner in place.",
+      "label": "VALID",
+      "class": "treatment_mislabeled.remove_required_dropped_a_no_op_file",
+      "grade": "C",
+      "why_grade": "the heuristic 'drop last apply' removed a cosmetic file; the verifier was right to accept it",
+      "interrogation_caught_it": false,
+      "lesson": "grade-C probes must not be counted as negatives; this is the concrete case ADR-0018 predicted"
+    }
+  ],
+  "summary": "3/16 pilot tasks flagged. 2 confirmed materially invalid from artifacts alone (reference cannot pass its own verifier because tests require unstated paths). 1 was a treatment-label error (grade C probe dropped a no-op file); verifier correct. 14/16 clean. A/B-only false_accept stays 0."
+}

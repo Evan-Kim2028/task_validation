@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13556",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 828
+  },
+  "response": {
+    "id": "gen-1789191262-Q7AC3uuBUb2iobdZobWm",
+    "object": "chat.completion",
+    "created": 1789191262,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to reject None or fail more gracefully and does not require checking all non-callables or a specific TypeError text. The FAIL_TO_PASS test hard-codes that exact message, so many reasonable implementations of the request would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing null values when registering functions on transaction.on_commit. They want to either not allow registering None beforehand or exit gracefully.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing null values when registering functions on transaction.on_commit. They want to either not allow registering None beforehand or exit gracefully.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "B3CeyHOaF7c+Zd1I/TKxox2gOoHDWP38caQ0U4GYXY1kFDazruL5EuJx4nXjlFNmx2tzH0ujn7KXgRIHDaSJHk3W4p0X/6xijxL4ii8xUN+UXQOKDlZvBgHZ4QW7vMvAbnpoYscAoN0eMI/vTs0Px+J7VBLc/k49kpMPKrv0mBc8/ohMMxX74lBinWbFqh7vwnGtZ2UGRgbBs/iODcvDlb5AsEwfJBNkdBazYDOqno6T2inCLIN5k3/m/jpdJW7WMRB2M4EYQX3FRSqgfx7SCA1ZA8XNFuUc3cG++kRdH+NmuwN1ZrbqFDeLefiKQbQYeJD6WZBjW98Wrwb7GdZd46AEejhonruNZ6a9DGBed+juPxWpZeWvbsV3i5DPqOLiDMugZiG+QfwHvLXba8CD7ApFB6FrlLiR/5DY12BDDp1k7w/31jk6Lpx6RUz6UcuMPsS2AqgyWGawkMVuSNZ7wkq0TD25gOWmn5PI1Vsm1SBWuhI5Gucxnatw3sHtIKkwUi5y5VmaUTILJAnd8MJ7X/IpHzsGTPJKT7HtD73cgPKGWFyGDnFAlJxDK5+GYTSasymijRoa3sy2QUm0jF63rQKqiIrqUdzdUNjE95OIgK7EbbVpUtp0wMRFGgEZVkBx2OQb5XDEwg+KMl4lSHUrJU2UQVXKk9+1l8l4RicpCCnU19Gl7XW5WFj8O3MP/WnARnknKftuB/WEkOiiCqY1RTxltquf/F7+IFOjzdIlHcFYB7C2Iii+hHJfTrGdkvdzrXKsUfC8YP/9R1LedXTjro4h2Z2z5g/5Lz2PCAZQzXM7ihEpLcToaNt/h/v5MsHT6rCYCmVW/OB3U8Jkj11vzs7/cTrTp6FCyTfVa8/OXNgCZ6CCoCuj/toj2WzoOgW/1IGwo1OomgJGfUjtqqFp1qb2C1YpqXStIuPIedM+spUz0hbqAoHShJ2Q5RtG/iPvZDLUoJwYV8lbzYpfoN2qIZXtSQw//UuxDWFlnhYFeVzhp53F6LHwq8PGH216ChvPJgoXnZar3jOXBXvtPbwuQjeOf7Oa5Yeyv40jAfeb97fh30Mj/dpqKx6F0+doC68Eba2eSyT/JqFewhIW7XEkJMsKLCQMEVSdWoQJSDfRF10uFRrpL4D232awBoU/IhXtC6hZOw2qciRPllxQH7qDHLjXB388YbcmKM+6DtJc+gAyMYxExEkL1fUUvC7clvh1lMFKhqhq8Cbpj1NzQfzxdrwM3HKuLbunHWmBt5QauejqcKJKjqG1KjCApV/stOe4EQRsKtEirWTJ/NjF3itnWXtYtor9PEQivt5vGzYS3rnP2s6XR04euxDyQFdDLcDdC2GAtJX0WOZJY0wdlXgwsHwh4z1PiZUMEJsMaqX9FqpfWkJxnd94TPhpAJNgdrFS9Yy3NyvZEbcu0VEXq1XHHon1ikSdevZCRWFfN7vzE9jhp+icEooGCNqI/nsYcACTnYwkCj7N3f4IvUwze6uE86bmBrkzOO59DFoQsUm7xMc8I1P0nxSymGnp3lxzuRTReQWYcGw8qHyOsBJk4/2XiHdFUpEni3UUn4pgsBw2ACsLJekCCLD7Vh5BRqmU0ktzjKEpokdFxjXSi8et1+NGp8q4ZEYdEkrXOSN0wxCfLj4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9c333ef3-3909-9d79-b0ed-3d8d86020f1f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1102,
+      "completion_tokens": 376,
+      "total_tokens": 1478,
+      "cost": 0.004076,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004076,
+        "upstream_inference_prompt_cost": 0.00182,
+        "upstream_inference_completions_cost": 0.002256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 269,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to reject None or fail more gracefully and does not require checking all non-callables or a specific TypeError text. The FAIL_TO_PASS test hard-codes that exact message, so many reasonable implementations of the request would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to reject None or fail more gracefully and does not require checking all non-callables or a specific TypeError text. The FAIL_TO_PASS test hard-codes that exact message, so many reasonable implementations of the request would fail.",
+  "prompt_tokens": 1102,
+  "completion_tokens": 376,
+  "total_tokens": 1478,
+  "cost_usd": 0.00446,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

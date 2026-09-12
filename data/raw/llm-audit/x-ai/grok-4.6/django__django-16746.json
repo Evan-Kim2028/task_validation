@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16746",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1366
+  },
+  "response": {
+    "id": "gen-1789191812-hmZVTqHQUMYWILepH3Z7",
+    "object": "chat.completion",
+    "created": 1789191812,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for a way to customize Paginator.validate_number errors and does not define constructor API, dict keys, or merge-with-defaults behavior. The FAIL_TO_PASS test hard-codes those unstated names and partial-override semantics, so many reasonable implementations would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about customizing error messages in Paginator.validate_number. The tests require a specific API: error_messages dict with keys \"invalid_page\", \"min_page\", \"no_results\", passed to Paginato...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about customizing error messages in Paginator.validate_number. The tests require a specific API: error_messages dict with keys \"invalid_page\", \"min_page\", \"no_results\", passed to Paginato...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Nlh2q4wEwH5W7fNGZJHPJZ88tG0l0EbxPmRte52JnDSI93DeMLx0RnmN6OikToB05rBAD4j5/V019LeXTJu5Itscyp1DZjxYev7y7sLJBuPQF2xRS8kSLxa4/zy0YkDx3Q/+SiQlsmcerWSwiM4qsevPVqnP5pswqwviDJ4vlkMv3JoFxqg/+PUHYQShtRO4SGdSBYTEDBSzrg9x/jJaPWlKb+yZCE7iw76rnp3dl4NFLR8tlXDBW4TTQx270GIaykA3zzda3Ezw+xljISPYdWn/lu6gqpT79OIMYqgpzGqRtBxfyIeMUKSYW9TZjCpbqMzNDuuJmuyJrPKLm68QOV0kRlfyIxrJPJ1fJtPC/dXsmpv6qjvpvvV+Gf9ZPtXRKPoii7A2aJkITaDiKvLVuNdXlENfyC8RNrfujKtK/y7g8bIrH4GLioIv3SUZVnk2Zw2N8u6H/v29xuv3FL/3KjU9ZUlJENXNHMO2bFESINL9p4Q2PTwr0JRLJjQL0Zz94vsqn76/fOilnw6tT460926/8kf6HEIKex5HtfjNzxwdYjUl0yi3qb5oquPhZGZ04dz5f1yo7UlnSYymbkk4NmfpOcYXhMytBuj0dxCidkD+YPZPbw1pUF4hkNg/iO4rJmNmImkAS5wnTGfDSVuO9EF5Cm0qoGo3qDILlwh88kvKbGPjgBWxhVPRLNJZLkSFhPVanzBj6YAWPHZoGcljM0oWFe6IYXKG2heyQ+jIvVW+8NRhLvTIlxsd0FxNku4Q+LAJkAE1njzfQlbUhVa/wiQ7ZbqRwnW9/G+LxK2sgcvMvZE1SBrTcuMXIPWMsKinkGpmuVvzAnWZfHWnMBWBxobtfvBPiWJeIoZ6IvU.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0ef52a03-72fe-90aa-b2b7-e88aae4e7c76",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1731,
+      "completion_tokens": 260,
+      "total_tokens": 1991,
+      "cost": 0.004638,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004638,
+        "upstream_inference_prompt_cost": 0.003078,
+        "upstream_inference_completions_cost": 0.00156
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 145,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for a way to customize Paginator.validate_number errors and does not define constructor API, dict keys, or merge-with-defaults behavior. The FAIL_TO_PASS test hard-codes those unstated names and partial-override semantics, so many reasonable implementations would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for a way to customize Paginator.validate_number errors and does not define constructor API, dict keys, or merge-with-defaults behavior. The FAIL_TO_PASS test hard-codes those unstated names and partial-override semantics, so many reasonable implementations would fail.",
+  "prompt_tokens": 1731,
+  "completion_tokens": 260,
+  "total_tokens": 1991,
+  "cost_usd": 0.0050219999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

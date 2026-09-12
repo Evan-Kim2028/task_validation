@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15044",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1630
+  },
+  "response": {
+    "id": "gen-1789191526-kt0E1XVJZQ8IabBy6At1",
+    "object": "chat.completion",
+    "created": 1789191526,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly identifies persisting caches[alias] on middleware instances as the thread-safety bug, so looking up the cache per use is the expected fix. The FAIL_TO_PASS test only checks that middleware.cache differs across threads, which is slightly narrower than any thread-safe design but matches Django’s caches thread-locals and the reported failure mode.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about CacheMiddleware and FetchFromCacheMiddleware not being thread safe because they persist self.cache = caches[cache_alias] on startup.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue is clearly specified: CacheMiddleware and FetchFromCacheMiddleware persist self.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CacheMiddleware and FetchFromCacheMiddleware not being thread safe because they persist self.cache = caches[cache_alias] on startup.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue is clearly specified: CacheMiddleware and FetchFromCacheMiddleware persist self.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3696f876-6245-9566-a2fb-87491961daec",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2063,
+      "completion_tokens": 586,
+      "total_tokens": 2649,
+      "cost": 0.00745,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00745,
+        "upstream_inference_prompt_cost": 0.003934,
+        "upstream_inference_completions_cost": 0.003516
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 458,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly identifies persisting caches[alias] on middleware instances as the thread-safety bug, so looking up the cache per use is the expected fix. The FAIL_TO_PASS test only checks that middleware.cache differs across threads, which is slightly narrower than any thread-safe design but matches Django’s caches thread-locals and the reported failure mode.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly identifies persisting caches[alias] on middleware instances as the thread-safety bug, so looking up the cache per use is the expected fix. The FAIL_TO_PASS test only checks that middleware.cache differs across threads, which is slightly narrower than any thread-safe design but matches Django’s caches thread-locals and the reported failure mode.",
+  "prompt_tokens": 2063,
+  "completion_tokens": 586,
+  "total_tokens": 2649,
+  "cost_usd": 0.0076419999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11605",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1675
+  },
+  "response": {
+    "id": "gen-1789190899-xTMF64UiIse1nalkiXOJ",
+    "object": "chat.completion",
+    "created": 1789190899,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to reject window expressions in filters on both sides and in combined expressions with the existing NotSupportedError, which a competent engineer could implement by recursive source checks. The FAIL_TO_PASS cases add Func wrapping and Sum(..., filter=Q) beyond the issue examples, so they are slightly extra rather than a full mismatch.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about making filter by window expressions raise a descriptive error, covering right side and combined expressions.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making filter by window expressions raise a descriptive error, covering right side and combined expressions.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "omYBZKhpZ+llfO2uDjcXSnIZ1Jr1JeotIghfC0MT4Mp6kjmtr4xrUWPWXmUsKUPaGuUlNHjG8Z6g8lLgdOSlE8TclbQAq/bHQsggVZ6P05MGezw3kzXkcvmx1+UosYT12wC9eYaahWzPUNFSIlZ/f8TWLUKONQxUChcZWl95CT3wDRPuZy8JrZ7oQfiraZBPoGuVQBfzGuWoe4zy7c7PfF1pz9IEGnYMPRlyX5J9o8x4LXWSlnX+avhx2JC6A7fgDiS387ht2ix/EWPlMy4KxeBQTpc1q6ua7SHY6PW16fJG92pzi1fqyrbyiDywDEytmLsje08/x1hgVnRAn5hBn8myOchKNHej0K57enaMVpO43soLcji2ypCu19wmDRAPWCVC1s1NxRkeRZK6cPaO+XtFRvK8jMW4F8hUevT3sbEtYADgl4DqlMW89lRXC7OvO0TBnGCaK/PSd1279LdNHuJBXRjCkh/qcHpgkvvF97zpHrlv0L4UEGmxlO63esJsLv2TDli7HXp1j7VSghg2CrG9WVAjvvrdj7+/3ldsfAJmyUTEfEGlGUU3dyY7rmL0Nx549q2LKdBSyXrmEYKRaugeUymIUh0DAPCCKpfBvnyFvtp20ZdDyYDA/nNg/LSMtMwCPfuit4dI/z3IZOzo5zQr/XI1ux1AqG4EOgPqxLX5ftvI9BYZMxi348edM6oiY5w3Mraqv9n24Z3ePpoceC87uJabZUyxu+yWvd4z/wKtX50boXOrrlin5kLWiDB+P1EX4sOT9uuXVmpBFH0GHWMBf7392/RVOSy1eWM9c0DdXQ6iXmD0gidflsSfMzevLTNG4ZdaAt0c4vwahyrWci6E+qzyvJERtotXsPNDybOz1WY0KyTCyHJHFQiDhu0wT5+ASVbDAVtIyIPr4LabDOLrvdEfxy6vex1fA5cIFXyCKAjUIWBkXDmxtd7AXgc49VeP0jZqpe32+QgPuhyNuIIfD9fSNXhaeaEoHM0HTKEns7BedvA8DYnkjv2zaPds/pV98VvfeaxVVTBKjCpv6qXqF4om1H6FtaHbvQWx5BzJDapUXXeRFqHoE5RfS/oLOhSEqwqs6r6CBirOIQwenVBTLi9Bq41l8HINawMA8RlIYhjbRoqH0QtyT+Z2JMZC49t5M8xfQ7D7JWu0CNPNcPij3fLfu+C+0n99MCMAt7xFXMUA9TCjvGacCZ5IAgaxIUMyhAvAuczB/JwrvjfXKoJZtw219l8EWS1jIRcX2eWlBwy1Sx0W6FGg3az8xMKTHPXpav3G7l2nE9R+p6HfznlpRPa2fIYWhCPgIe9YRTboSg6WsNqkBzhVUZ5A4Ghmk6OY9kUyatD1PZK79/pYpd433rx7f1TS3Krg8QwuWeLGZVOGtsEVENWzPCnnUmjgHJlWP4n4uGGPBtadh3IQJwWrkW1c+aY1ud0rPfrj/k0ssiPOoEIVCxzF3sUXVfuHOB+VPEYtn7yKzRaBvvSYUpIi/vwXWInO5CuWFncSJXWrkngl93ZFyg3dCBh9bdr0SlLS8gpHnbA1eB+O68HENae5qn8qIuhriS8CN8c8pGIPCQg3oHRuS2BLOTZz4K4TSKqdatf2kZJ03wPKVFjcwgTXVji9xhj7uUuNEflFfduE7alVaLFb3Ka6u0kB1z+I+fpMi9R+G/4p7bFE1o/6ygQmHMRvv4SUR3c4+sxdOJMgOTcUlbykzV2pOM6adnTnAv1n4z2RRzZD6SApybW91m0cJGRTA7cFzOkM7zazvJY6ZAVEeaomv0d/j3ec403bfqAo6ulJarR80zPYaKRRklpL+MBtq5F+nhYQWdjceJLnJ/jdRLlFXSB3gzj7x4ZfmskTgXDa0osyxbOjJORQRCsOukY+cLnBq8BTCOBGlLNfeE+wWLY.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ed775517-636c-9002-81e2-a51877844381",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2048,
+      "completion_tokens": 476,
+      "total_tokens": 2524,
+      "cost": 0.00676,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00676,
+        "upstream_inference_prompt_cost": 0.003904,
+        "upstream_inference_completions_cost": 0.002856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 353,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to reject window expressions in filters on both sides and in combined expressions with the existing NotSupportedError, which a competent engineer could implement by recursive source checks. The FAIL_TO_PASS cases add Func wrapping and Sum(..., filter=Q) beyond the issue examples, so they are slightly extra rather than a full mismatch.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to reject window expressions in filters on both sides and in combined expressions with the existing NotSupportedError, which a competent engineer could implement by recursive source checks. The FAIL_TO_PASS cases add Func wrapping and Sum(..., filter=Q) beyond the issue examples, so they are slightly extra rather than a full mismatch.",
+  "prompt_tokens": 2048,
+  "completion_tokens": 476,
+  "total_tokens": 2524,
+  "cost_usd": 0.006952,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

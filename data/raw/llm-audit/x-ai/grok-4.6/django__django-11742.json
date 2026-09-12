@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11742",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1381
+  },
+  "response": {
+    "id": "gen-1789190922-eEP80qzugidY0yk2rLOI",
+    "object": "chat.completion",
+    "created": 1789190922,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks for a system check that max_length is at least the longest choices value, which a Django engineer would implement in Field.check with an Error, but it does not specify nested/named groups, string-only lengths, or the exact wording and id. The FAIL_TO_PASS tests lock in fields.E009 and a precise message plus grouped-choice length 6, so many reasonable implementations would fail.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The issue is about adding a check that max_length fits the longest choice for Django fields.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about adding a check that max_length fits the longest choice for Django fields.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e10fb052-ad3c-9553-b657-4a808d3def69",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1638,
+      "completion_tokens": 531,
+      "total_tokens": 2169,
+      "cost": 0.00627,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00627,
+        "upstream_inference_prompt_cost": 0.003084,
+        "upstream_inference_completions_cost": 0.003186
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 389,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks for a system check that max_length is at least the longest choices value, which a Django engineer would implement in Field.check with an Error, but it does not specify nested/named groups, string-only lengths, or the exact wording and id. The FAIL_TO_PASS tests lock in fields.E009 and a precise message plus grouped-choice length 6, so many reasonable implementations would fail.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks for a system check that max_length is at least the longest choices value, which a Django engineer would implement in Field.check with an Error, but it does not specify nested/named groups, string-only lengths, or the exact wording and id. The FAIL_TO_PASS tests lock in fields.E009 and a precise message plus grouped-choice length 6, so many reasonable implementations would fail.",
+  "prompt_tokens": 1638,
+  "completion_tokens": 531,
+  "total_tokens": 2169,
+  "cost_usd": 0.006462,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

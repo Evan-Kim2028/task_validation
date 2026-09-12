@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12313",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4845
+  },
+  "response": {
+    "id": "gen-1789191017-jSMGHPEua4mvsTEyX6S4",
+    "object": "chat.completion",
+    "created": 1789191017,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS expects no ops for case-only renames and lowercased FK to=, opposite of the issue's requested RenameModel detection.\", \"confidence\": 0.86, \"rationale\": \"The issue asks makemigrations to detect capitalization-only model renames and emit RenameModel instead of looping AlterField, which a competent engineer would implement. The tests instead require zero operations for case-only renames and a global lowercase deconstruct of related to= that the issue never specifies, so they would fail that natural fix.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about makemigrations not detecting model name case changes. The tests include field deconstruction tests that expect lowercase model names in ForeignKey deconstruct, plus autodetector tes...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests explicitly require case-insensitive rename detection (0 migrations) while issue wants RenameModel for case changes\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about makemigrations not detecting model name case changes. The tests include field deconstruction tests that expect lowercase model names in ForeignKey deconstruct, plus autodetector tes...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests explicitly require case-insensitive rename detection (0 migrations) while issue wants RenameModel for case changes\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3d0a9655-bb29-96ae-9971-8b708449d6d7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5641,
+      "completion_tokens": 653,
+      "total_tokens": 6294,
+      "cost": 0.0152,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0152,
+        "upstream_inference_prompt_cost": 0.011282,
+        "upstream_inference_completions_cost": 0.003918
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 500,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS expects no ops for case-only renames and lowercased FK to=, opposite of the issue's requested RenameModel detection.",
+    "confidence": 0.86,
+    "rationale": "The issue asks makemigrations to detect capitalization-only model renames and emit RenameModel instead of looping AlterField, which a competent engineer would implement. The tests instead require zero operations for case-only renames and a global lowercase deconstruct of related to= that the issue never specifies, so they would fail that natural fix.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS expects no ops for case-only renames and lowercased FK to=, opposite of the issue's requested RenameModel detection.",
+  "confidence": 0.86,
+  "rationale": "The issue asks makemigrations to detect capitalization-only model renames and emit RenameModel instead of looping AlterField, which a competent engineer would implement. The tests instead require zero operations for case-only renames and a global lowercase deconstruct of related to= that the issue never specifies, so they would fail that natural fix.",
+  "prompt_tokens": 5641,
+  "completion_tokens": 653,
+  "total_tokens": 6294,
+  "cost_usd": 0.015199999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

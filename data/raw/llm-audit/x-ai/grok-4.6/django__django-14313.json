@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14313",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6059
+  },
+  "response": {
+    "id": "gen-1789191391-cXXfMkOL0UPjeL9IwLPs",
+    "object": "chat.completion",
+    "created": 1789191391,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only reports that admin delete after an M2M-related search fails because distinct() is applied, without requiring Exists(), select_related preservation, compiler self-reference handling, or a get_search_results API rename. The FAIL_TO_PASS tests assert those unstated implementation details and would reject other valid ways of making the queryset deletable without duplicates.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity. Let me analyze.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "kgCnoZy/q4Lem7FQnxoY2+LR+zM5CGXiH287qmJwaUPVjiHdlo8F0A9gGUahiBwsMLvFq03SCx5M7tuILXt+csRlk1SyCsEscusBaoi1Nst3KgpEeffFneNUZw8ll4QmJef6rNX3K9WeUx7UtV3xyb15l+CGFV0lFn4Y34ES8qoNjbbblVVWnJ4KYNbYdBXtz71Wdh/40NTsaAQPyCwDNIE84bzDee61Vpm3tI+m2ehBOhfAkjKayshes3bTNNmmifUy0d9r+VWkGFuq/8oNCJyZUWhhxsDKAfD78IzmaUdO4ty4XzagPbRsFHbgXyAZo6vAnX3KCSHOtZ0SnSt/P5vEcWvulZ1qe7rUmOt4G1HWLpRc02ShpLC2cylO9aWmTj9wozcsE4sS0pCP5xzSwuYvhLsDJafCaWmVlLPDp5cEP36U2Rjy7elIqG2sh3cLs1YmAwyU19iaEQo1AaoCm6P4wY84X/7M/7AtZgbmuQsn/Uwf3avrd2ucflrOPx4jAb33W/rlxf6ig7eCqDtB2wGtt2hdPiJP8MJfz+oIR6hi/z8nmj1KcmHhgo9SR7YxglUMlyAi7TIxuc+0Sn6FSK534FS2YX9DBlbGSVhMYt7kMx4I+dXZU8QUdujLNGpX/SvqkTVOIIIsLNsj6SmtjYpvwjgHIf4uUDyMU1rZxMigUebQOHUw0Zkpm8Gvc2+8vSO7nd7Z/gMYZ8tmBV88pK4FkOzjGicgFW8IXNWvTbzahHCotzgPpsQxfj6ieFGA2D3eT6c29WXMZWgNRh9QTVyDiRUMVfNdb/16sWmdG9GaXn5Nwpq1wO7xtu7ZMwrxMeCYRreQ233Nl8s0Hm39sdNiZ8bGXm/l18QL/w4+1jRcQS1EdMr+8qiAlG2trCQ+58lE9pU/VOgZNoQVFvXPWECxwUeNQVOOYgNkfrwwSh3nhHmYRcS+btfRb/Hl0tFWqSfbGcGwRE4KQfQdVcYGlgAC4xWfIPzOHJFfDdEPVB5nmlZWLFV0dDHkst6di6GXK4uI8sO4EQ5/RbvHjwgrA2rEO1Z2TBZgrDjXzr5y9RxQjDMKm2jewe6Swu/mTaVIxENk/heoYNTi0Rd+fy1UDrxFXIzHk7SbI6GQTEdhymaLkW1GjSCd0nqhBeUwj74xzyHFaArfIT+bwv4wVGjGTLTv7chw0UtoZgEuzH7S5j1CmI81wOCc9ikLoXYS/9PkguaCPgy7uMfNU8aXcVlJwd4cUQZrrAkwRFBeHFMFCjPBlBviboRPNC2FtPI5z1EkadEGjWqoSWPzSkp1auWrBe5T0YN72z+HH2id4AJP7XQ7/4NDqdIXqvfGKC2L0hPFJh/ag2Eo1IKhvqo+Ovbf9RO6PF7DdV3TFG+R5dSUaLw+pwjMc7aremx1hhcQQZCnDqdk1SfYTebPDuLISP5upr7vWRHaDyysKa/vdzePOVm6sRBCa9pVTRTW0Mq29YN2Q/L3K9MEe6Z0fP6ewf60M69PEaHYtr78YBNcENRqB3N2m8tHyRU/rJ/yNNF1f1CWFk7mOeZUOW5Fy9S/4J6qX136YD9CNKkmGJR2FQ6fBJqv5jwohS7wey6YSmjpD/9ujBOTeVXDs6GC7bGs1zuD22cPbBxik3ObivBRksYOzUg94gZBjf0W01sAyNo8LsPRLvQf2NHt6JfV5MW0oxYSo4EpRI2ZqBveTqQ+5wbw/Uv4gDWMuiIbTGoTAsddCEQqGaGSsnE0vQjjRYqs7SBp4DcnA02AnjtFB9GIXDkfRpubIVoR9gdk87+GmonCnoI/xfBoB45eTyo0lPMOeGpZX2xyRld4u3A34utWQ3+njL5JScqjiIWMHakHU2I0lfIHsdOYrJpZjmKhQzgvup3FKR82i0jwbwLMDLs72iLE4jpDOBaESh2iHtu3kjimRIp/gbb1pw4SOS2DUstZfz92jDsN4Fp96RObiN8eZ9Tx7Lec6UIKMwm40nMKe1Wn7DGRwakVHSwvSMe0visAP3Y3HUI3aB0RYCaGMenCbIDk+6NB34kB6O0RgtrCxs1SS+rsWxeA6Epe5Ffq7yUE8rMkmvfm7Hbxhr2hOW0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7371689a-70c3-978b-af95-62fac6d73ecb",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6991,
+      "completion_tokens": 478,
+      "total_tokens": 7469,
+      "cost": 0.016466,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.016466,
+        "upstream_inference_prompt_cost": 0.013598,
+        "upstream_inference_completions_cost": 0.002868
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 348,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only reports that admin delete after an M2M-related search fails because distinct() is applied, without requiring Exists(), select_related preservation, compiler self-reference handling, or a get_search_results API rename. The FAIL_TO_PASS tests assert those unstated implementation details and would reject other valid ways of making the queryset deletable without duplicates.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only reports that admin delete after an M2M-related search fails because distinct() is applied, without requiring Exists(), select_related preservation, compiler self-reference handling, or a get_search_results API rename. The FAIL_TO_PASS tests assert those unstated implementation details and would reject other valid ways of making the queryset deletable without duplicates.",
+  "prompt_tokens": 6991,
+  "completion_tokens": 478,
+  "total_tokens": 7469,
+  "cost_usd": 0.01685,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

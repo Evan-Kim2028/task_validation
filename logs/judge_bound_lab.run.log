@@ -1,0 +1,228 @@
+[judge-lab] 1/6 full-majority N=1699 p=0.4497 auroc=0.8070827617101101
+[judge-lab] 2/6 thin-p05-majority N=984 p=0.0498 auroc=0.8025755756848194
+[judge-lab] 3/6 thin-p02-majority N=954 p=0.0199 auroc=0.7889389248522376
+[judge-lab] 4/6 full-conservative N=1699 p=0.6828 auroc=0.791902309513147
+[judge-lab] 5/6 thin-p05-conservative N=567 p=0.0494 auroc=0.8170553935860059
+[judge-lab] 6/6 thin-p02-conservative N=550 p=0.0200 auroc=0.8365660313712262
+judge-lab seed=judge-bound-lab-v0 reps=2000 joined=1699 auroc_majority=0.8070827617101101
+populations
+pop_id                |    N | true_p |  auroc
+----------------------+------+--------+-------
+full-majority         | 1699 | 0.4497 | 0.8071
+thin-p05-majority     |  984 | 0.0498 | 0.8026
+thin-p02-majority     |  954 | 0.0199 | 0.7889
+full-conservative     | 1699 | 0.6828 | 0.7919
+thin-p05-conservative |  567 | 0.0494 | 0.8171
+thin-p02-conservative |  550 | 0.0200 | 0.8366
+coverage (usable iff coverage >= 0.95)
+pop                   |   n |                      est |  cover | mean_ucb | usable
+----------------------+-----+--------------------------+--------+----------+-------
+full-majority         |  30 |       srs-hypergeometric | 0.9670 |   0.6088 |   True
+full-majority         |  30 |        rogan-gladen-boot | 0.9595 |   0.7971 |   True
+full-majority         |  30 |       calibrated-fnr-fpr | 1.0000 |   0.9669 |   True
+full-majority         |  30 | strat-judge-proportional | 0.9990 |   0.6875 |   True
+full-majority         |  30 |   strat-judge-flag-heavy | 1.0000 |   0.7212 |   True
+full-majority         |  30 |              ppi++-judge | 0.9365 |   0.5760 |  False
+full-majority         |  50 |       srs-hypergeometric | 0.9670 |   0.5740 |   True
+full-majority         |  50 |        rogan-gladen-boot | 0.9490 |   0.7141 |  False
+full-majority         |  50 |       calibrated-fnr-fpr | 1.0000 |   0.8984 |   True
+full-majority         |  50 | strat-judge-proportional | 0.9980 |   0.6327 |   True
+full-majority         |  50 |   strat-judge-flag-heavy | 1.0000 |   0.6599 |   True
+full-majority         |  50 |              ppi++-judge | 0.9480 |   0.5492 |  False
+full-majority         | 100 |       srs-hypergeometric | 0.9600 |   0.5354 |   True
+full-majority         | 100 |        rogan-gladen-boot | 0.9500 |   0.6213 |   True
+full-majority         | 100 |       calibrated-fnr-fpr | 0.9990 |   0.7654 |   True
+full-majority         | 100 | strat-judge-proportional | 0.9985 |   0.5801 |   True
+full-majority         | 100 |   strat-judge-flag-heavy | 0.9990 |   0.5932 |   True
+full-majority         | 100 |              ppi++-judge | 0.9540 |   0.5219 |   True
+full-majority         | 200 |       srs-hypergeometric | 0.9630 |   0.5067 |   True
+full-majority         | 200 |        rogan-gladen-boot | 0.9565 |   0.5622 |   True
+full-majority         | 200 |       calibrated-fnr-fpr | 1.0000 |   0.6611 |   True
+full-majority         | 200 | strat-judge-proportional | 0.9995 |   0.5404 |   True
+full-majority         | 200 |   strat-judge-flag-heavy | 0.9980 |   0.5500 |   True
+full-majority         | 200 |              ppi++-judge | 0.9590 |   0.4999 |   True
+thin-p05-majority     |  30 |       srs-hypergeometric | 1.0000 |   0.1685 |   True
+thin-p05-majority     |  30 |        rogan-gladen-boot | 0.9675 |   0.6384 |   True
+thin-p05-majority     |  30 |       calibrated-fnr-fpr | 1.0000 |   0.9994 |   True
+thin-p05-majority     |  30 | strat-judge-proportional | 1.0000 |   0.2815 |   True
+thin-p05-majority     |  30 |   strat-judge-flag-heavy | 1.0000 |   0.3509 |   True
+thin-p05-majority     |  30 |              ppi++-judge | 0.7965 |   0.1032 |  False
+thin-p05-majority     |  50 |       srs-hypergeometric | 1.0000 |   0.1304 |   True
+thin-p05-majority     |  50 |        rogan-gladen-boot | 0.9755 |   0.5835 |   True
+thin-p05-majority     |  50 |       calibrated-fnr-fpr | 1.0000 |   0.9910 |   True
+thin-p05-majority     |  50 | strat-judge-proportional | 1.0000 |   0.2091 |   True
+thin-p05-majority     |  50 |   strat-judge-flag-heavy | 1.0000 |   0.2554 |   True
+thin-p05-majority     |  50 |              ppi++-judge | 0.8965 |   0.0939 |  False
+thin-p05-majority     | 100 |       srs-hypergeometric | 0.9725 |   0.0998 |   True
+thin-p05-majority     | 100 |        rogan-gladen-boot | 0.9785 |   0.5425 |   True
+thin-p05-majority     | 100 |       calibrated-fnr-fpr | 1.0000 |   0.9163 |   True
+thin-p05-majority     | 100 | strat-judge-proportional | 1.0000 |   0.1451 |   True
+thin-p05-majority     | 100 |   strat-judge-flag-heavy | 1.0000 |   0.1693 |   True
+thin-p05-majority     | 100 |              ppi++-judge | 0.9010 |   0.0838 |  False
+thin-p05-majority     | 200 |       srs-hypergeometric | 0.9890 |   0.0800 |   True
+thin-p05-majority     | 200 |        rogan-gladen-boot | 0.9805 |   0.3499 |   True
+thin-p05-majority     | 200 |       calibrated-fnr-fpr | 1.0000 |   0.7036 |   True
+thin-p05-majority     | 200 | strat-judge-proportional | 1.0000 |   0.1099 |   True
+thin-p05-majority     | 200 |   strat-judge-flag-heavy | 1.0000 |   0.1203 |   True
+thin-p05-majority     | 200 |              ppi++-judge | 0.9445 |   0.0744 |  False
+thin-p02-majority     |  30 |       srs-hypergeometric | 1.0000 |   0.1248 |   True
+thin-p02-majority     |  30 |        rogan-gladen-boot | 0.9885 |   0.7609 |   True
+thin-p02-majority     |  30 |       calibrated-fnr-fpr | 1.0000 |   1.0000 |   True
+thin-p02-majority     |  30 | strat-judge-proportional | 1.0000 |   0.2416 |   True
+thin-p02-majority     |  30 |   strat-judge-flag-heavy | 1.0000 |   0.3137 |   True
+thin-p02-majority     |  30 |              ppi++-judge | 0.4560 |   0.0458 |  False
+thin-p02-majority     |  50 |       srs-hypergeometric | 1.0000 |   0.0885 |   True
+thin-p02-majority     |  50 |        rogan-gladen-boot | 0.9775 |   0.6750 |   True
+thin-p02-majority     |  50 |       calibrated-fnr-fpr | 1.0000 |   0.9997 |   True
+thin-p02-majority     |  50 | strat-judge-proportional | 1.0000 |   0.1653 |   True
+thin-p02-majority     |  50 |   strat-judge-flag-heavy | 1.0000 |   0.2138 |   True
+thin-p02-majority     |  50 |              ppi++-judge | 0.6410 |   0.0443 |  False
+thin-p02-majority     | 100 |       srs-hypergeometric | 1.0000 |   0.0592 |   True
+thin-p02-majority     | 100 |        rogan-gladen-boot | 0.9810 |   0.6059 |   True
+thin-p02-majority     | 100 |       calibrated-fnr-fpr | 1.0000 |   0.9918 |   True
+thin-p02-majority     | 100 | strat-judge-proportional | 1.0000 |   0.1035 |   True
+thin-p02-majority     | 100 |   strat-judge-flag-heavy | 1.0000 |   0.1283 |   True
+thin-p02-majority     | 100 |              ppi++-judge | 0.8820 |   0.0408 |  False
+thin-p02-majority     | 200 |       srs-hypergeometric | 0.9900 |   0.0428 |   True
+thin-p02-majority     | 200 |        rogan-gladen-boot | 0.9895 |   0.5770 |   True
+thin-p02-majority     | 200 |       calibrated-fnr-fpr | 1.0000 |   0.9448 |   True
+thin-p02-majority     | 200 | strat-judge-proportional | 1.0000 |   0.0684 |   True
+thin-p02-majority     | 200 |   strat-judge-flag-heavy | 1.0000 |   0.0807 |   True
+thin-p02-majority     | 200 |              ppi++-judge | 0.9380 |   0.0358 |  False
+full-conservative     |  30 |       srs-hypergeometric | 0.9695 |   0.8172 |   True
+full-conservative     |  30 |        rogan-gladen-boot | 0.9605 |   0.9430 |   True
+full-conservative     |  30 |       calibrated-fnr-fpr | 0.9990 |   0.9928 |   True
+full-conservative     |  30 | strat-judge-proportional | 0.9975 |   0.8625 |   True
+full-conservative     |  30 |   strat-judge-flag-heavy | 0.9960 |   0.8897 |   True
+full-conservative     |  30 |              ppi++-judge | 0.9430 |   0.8064 |  False
+full-conservative     |  50 |       srs-hypergeometric | 0.9520 |   0.7860 |   True
+full-conservative     |  50 |        rogan-gladen-boot | 0.9485 |   0.9159 |  False
+full-conservative     |  50 |       calibrated-fnr-fpr | 0.9985 |   0.9792 |   True
+full-conservative     |  50 | strat-judge-proportional | 0.9985 |   0.8306 |   True
+full-conservative     |  50 |   strat-judge-flag-heavy | 0.9965 |   0.8534 |   True
+full-conservative     |  50 |              ppi++-judge | 0.9485 |   0.7774 |  False
+full-conservative     | 100 |       srs-hypergeometric | 0.9540 |   0.7571 |   True
+full-conservative     | 100 |        rogan-gladen-boot | 0.9565 |   0.8714 |   True
+full-conservative     | 100 |       calibrated-fnr-fpr | 0.9990 |   0.9421 |   True
+full-conservative     | 100 | strat-judge-proportional | 0.9985 |   0.7932 |   True
+full-conservative     | 100 |   strat-judge-flag-heavy | 0.9985 |   0.8109 |   True
+full-conservative     | 100 |              ppi++-judge | 0.9625 |   0.7519 |   True
+full-conservative     | 200 |       srs-hypergeometric | 0.9595 |   0.7343 |   True
+full-conservative     | 200 |        rogan-gladen-boot | 0.9585 |   0.8188 |   True
+full-conservative     | 200 |       calibrated-fnr-fpr | 0.9995 |   0.8863 |   True
+full-conservative     | 200 | strat-judge-proportional | 0.9985 |   0.7619 |   True
+full-conservative     | 200 |   strat-judge-flag-heavy | 0.9980 |   0.7747 |   True
+full-conservative     | 200 |              ppi++-judge | 0.9605 |   0.7319 |   True
+thin-p05-conservative |  30 |       srs-hypergeometric | 1.0000 |   0.1680 |   True
+thin-p05-conservative |  30 |        rogan-gladen-boot | 0.9880 |   0.6283 |   True
+thin-p05-conservative |  30 |       calibrated-fnr-fpr | 1.0000 |   0.9967 |   True
+thin-p05-conservative |  30 | strat-judge-proportional | 1.0000 |   0.2676 |   True
+thin-p05-conservative |  30 |   strat-judge-flag-heavy | 1.0000 |   0.3631 |   True
+thin-p05-conservative |  30 |              ppi++-judge | 0.7915 |   0.1011 |  False
+thin-p05-conservative |  50 |       srs-hypergeometric | 1.0000 |   0.1287 |   True
+thin-p05-conservative |  50 |        rogan-gladen-boot | 0.9805 |   0.5890 |   True
+thin-p05-conservative |  50 |       calibrated-fnr-fpr | 1.0000 |   0.9793 |   True
+thin-p05-conservative |  50 | strat-judge-proportional | 1.0000 |   0.2017 |   True
+thin-p05-conservative |  50 |   strat-judge-flag-heavy | 1.0000 |   0.2614 |   True
+thin-p05-conservative |  50 |              ppi++-judge | 0.8890 |   0.0922 |  False
+thin-p05-conservative | 100 |       srs-hypergeometric | 0.9715 |   0.0972 |   True
+thin-p05-conservative | 100 |        rogan-gladen-boot | 0.9850 |   0.5022 |   True
+thin-p05-conservative | 100 |       calibrated-fnr-fpr | 1.0000 |   0.8776 |   True
+thin-p05-conservative | 100 | strat-judge-proportional | 1.0000 |   0.1429 |   True
+thin-p05-conservative | 100 |   strat-judge-flag-heavy | 1.0000 |   0.1730 |   True
+thin-p05-conservative | 100 |              ppi++-judge | 0.9020 |   0.0823 |  False
+thin-p05-conservative | 200 |       srs-hypergeometric | 0.9680 |   0.0774 |   True
+thin-p05-conservative | 200 |        rogan-gladen-boot | 0.9865 |   0.2656 |   True
+thin-p05-conservative | 200 |       calibrated-fnr-fpr | 1.0000 |   0.5834 |   True
+thin-p05-conservative | 200 | strat-judge-proportional | 1.0000 |   0.1079 |   True
+thin-p05-conservative | 200 |   strat-judge-flag-heavy | 1.0000 |   0.1148 |   True
+thin-p05-conservative | 200 |              ppi++-judge | 0.9540 |   0.0739 |   True
+thin-p02-conservative |  30 |       srs-hypergeometric | 1.0000 |   0.1242 |   True
+thin-p02-conservative |  30 |        rogan-gladen-boot | 0.9890 |   0.7803 |   True
+thin-p02-conservative |  30 |       calibrated-fnr-fpr | 1.0000 |   0.9999 |   True
+thin-p02-conservative |  30 | strat-judge-proportional | 1.0000 |   0.2351 |   True
+thin-p02-conservative |  30 |   strat-judge-flag-heavy | 1.0000 |   0.3277 |   True
+thin-p02-conservative |  30 |              ppi++-judge | 0.4580 |   0.0455 |  False
+thin-p02-conservative |  50 |       srs-hypergeometric | 1.0000 |   0.0870 |   True
+thin-p02-conservative |  50 |        rogan-gladen-boot | 0.9855 |   0.6790 |   True
+thin-p02-conservative |  50 |       calibrated-fnr-fpr | 1.0000 |   0.9994 |   True
+thin-p02-conservative |  50 | strat-judge-proportional | 1.0000 |   0.1605 |   True
+thin-p02-conservative |  50 |   strat-judge-flag-heavy | 1.0000 |   0.2236 |   True
+thin-p02-conservative |  50 |              ppi++-judge | 0.6555 |   0.0435 |  False
+thin-p02-conservative | 100 |       srs-hypergeometric | 1.0000 |   0.0573 |   True
+thin-p02-conservative | 100 |        rogan-gladen-boot | 0.9875 |   0.6003 |   True
+thin-p02-conservative | 100 |       calibrated-fnr-fpr | 1.0000 |   0.9858 |   True
+thin-p02-conservative | 100 | strat-judge-proportional | 1.0000 |   0.1026 |   True
+thin-p02-conservative | 100 |   strat-judge-flag-heavy | 1.0000 |   0.1333 |   True
+thin-p02-conservative | 100 |              ppi++-judge | 0.8965 |   0.0401 |  False
+thin-p02-conservative | 200 |       srs-hypergeometric | 0.9925 |   0.0411 |   True
+thin-p02-conservative | 200 |        rogan-gladen-boot | 0.9925 |   0.5414 |   True
+thin-p02-conservative | 200 |       calibrated-fnr-fpr | 1.0000 |   0.9147 |   True
+thin-p02-conservative | 200 | strat-judge-proportional | 1.0000 |   0.0684 |   True
+thin-p02-conservative | 200 |   strat-judge-flag-heavy | 1.0000 |   0.0721 |   True
+thin-p02-conservative | 200 |              ppi++-judge | 0.9460 |   0.0357 |  False
+smallest n with mean UCB < eps AND coverage >= 0.95
+pop                   |    eps | n_srs | n_rg | n_cal | n_ppi | n_prop | n_heavy
+----------------------+--------+-------+------+-------+-------+--------+--------
+full-conservative     | 0.0500 |       |      |       |       |        |        
+full-conservative     | 0.1000 |       |      |       |       |        |        
+full-conservative     | 0.2000 |       |      |       |       |        |        
+full-majority         | 0.0500 |       |      |       |       |        |        
+full-majority         | 0.1000 |       |      |       |       |        |        
+full-majority         | 0.2000 |       |      |       |       |        |        
+thin-p02-conservative | 0.0500 |   200 |      |       |       |        |        
+thin-p02-conservative | 0.1000 |    50 |      |       |       |    200 |     200
+thin-p02-conservative | 0.2000 |    30 |      |       |       |     50 |     100
+thin-p02-majority     | 0.0500 |   200 |      |       |       |        |        
+thin-p02-majority     | 0.1000 |    50 |      |       |       |    200 |     200
+thin-p02-majority     | 0.2000 |    30 |      |       |       |     50 |     100
+thin-p05-conservative | 0.0500 |       |      |       |       |        |        
+thin-p05-conservative | 0.1000 |   100 |      |       |   200 |        |        
+thin-p05-conservative | 0.2000 |    30 |      |       |   200 |    100 |     100
+thin-p05-majority     | 0.0500 |       |      |       |       |        |        
+thin-p05-majority     | 0.1000 |   100 |      |       |       |        |        
+thin-p05-majority     | 0.2000 |    30 |      |       |       |    100 |     100
+P(certify at eps=0.05) on p=0.02 populations
+pop                   |   n |                      est | true_p |  cover | mean_ucb | P_cert
+----------------------+-----+--------------------------+--------+--------+----------+-------
+thin-p02-majority     |  50 |       srs-hypergeometric | 0.0199 | 1.0000 |   0.0885 | 0.0000
+thin-p02-majority     |  50 |        rogan-gladen-boot | 0.0199 | 0.9775 |   0.6750 | 0.0415
+thin-p02-majority     |  50 |       calibrated-fnr-fpr | 0.0199 | 1.0000 |   0.9997 | 0.0000
+thin-p02-majority     |  50 | strat-judge-proportional | 0.0199 | 1.0000 |   0.1653 | 0.0000
+thin-p02-majority     |  50 |   strat-judge-flag-heavy | 0.0199 | 1.0000 |   0.2138 | 0.0000
+thin-p02-majority     |  50 |              ppi++-judge | 0.0199 | 0.6410 |   0.0443 | 0.4400
+thin-p02-majority     | 100 |       srs-hypergeometric | 0.0199 | 1.0000 |   0.0592 | 0.3745
+thin-p02-majority     | 100 |        rogan-gladen-boot | 0.0199 | 0.9810 |   0.6059 | 0.0490
+thin-p02-majority     | 100 |       calibrated-fnr-fpr | 0.0199 | 1.0000 |   0.9918 | 0.0000
+thin-p02-majority     | 100 | strat-judge-proportional | 0.0199 | 1.0000 |   0.1035 | 0.0000
+thin-p02-majority     | 100 |   strat-judge-flag-heavy | 0.0199 | 1.0000 |   0.1283 | 0.0000
+thin-p02-majority     | 100 |              ppi++-judge | 0.0199 | 0.8820 |   0.0408 | 0.6735
+thin-p02-majority     | 200 |       srs-hypergeometric | 0.0199 | 0.9900 |   0.0428 | 0.8075
+thin-p02-majority     | 200 |        rogan-gladen-boot | 0.0199 | 0.9895 |   0.5770 | 0.0515
+thin-p02-majority     | 200 |       calibrated-fnr-fpr | 0.0199 | 1.0000 |   0.9448 | 0.0000
+thin-p02-majority     | 200 | strat-judge-proportional | 0.0199 | 1.0000 |   0.0684 | 0.0615
+thin-p02-majority     | 200 |   strat-judge-flag-heavy | 0.0199 | 1.0000 |   0.0807 | 0.0000
+thin-p02-majority     | 200 |              ppi++-judge | 0.0199 | 0.9380 |   0.0358 | 0.8825
+thin-p02-conservative |  50 |       srs-hypergeometric | 0.0200 | 1.0000 |   0.0870 | 0.0000
+thin-p02-conservative |  50 |        rogan-gladen-boot | 0.0200 | 0.9855 |   0.6790 | 0.0325
+thin-p02-conservative |  50 |       calibrated-fnr-fpr | 0.0200 | 1.0000 |   0.9994 | 0.0000
+thin-p02-conservative |  50 | strat-judge-proportional | 0.0200 | 1.0000 |   0.1605 | 0.0000
+thin-p02-conservative |  50 |   strat-judge-flag-heavy | 0.0200 | 1.0000 |   0.2236 | 0.0000
+thin-p02-conservative |  50 |              ppi++-judge | 0.0200 | 0.6555 |   0.0435 | 0.4510
+thin-p02-conservative | 100 |       srs-hypergeometric | 0.0200 | 1.0000 |   0.0573 | 0.3735
+thin-p02-conservative | 100 |        rogan-gladen-boot | 0.0200 | 0.9875 |   0.6003 | 0.0605
+thin-p02-conservative | 100 |       calibrated-fnr-fpr | 0.0200 | 1.0000 |   0.9858 | 0.0000
+thin-p02-conservative | 100 | strat-judge-proportional | 0.0200 | 1.0000 |   0.1026 | 0.0000
+thin-p02-conservative | 100 |   strat-judge-flag-heavy | 0.0200 | 1.0000 |   0.1333 | 0.0000
+thin-p02-conservative | 100 |              ppi++-judge | 0.0200 | 0.8965 |   0.0401 | 0.6970
+thin-p02-conservative | 200 |       srs-hypergeometric | 0.0200 | 0.9925 |   0.0411 | 0.8380
+thin-p02-conservative | 200 |        rogan-gladen-boot | 0.0200 | 0.9925 |   0.5414 | 0.0630
+thin-p02-conservative | 200 |       calibrated-fnr-fpr | 0.0200 | 1.0000 |   0.9147 | 0.0000
+thin-p02-conservative | 200 | strat-judge-proportional | 0.0200 | 1.0000 |   0.0684 | 0.0430
+thin-p02-conservative | 200 |   strat-judge-flag-heavy | 0.0200 | 1.0000 |   0.0721 | 0.0000
+thin-p02-conservative | 200 |              ppi++-judge | 0.0200 | 0.9460 |   0.0357 | 0.9110
+Frozen predicates
+  J1 PASS: judge AUROC vs majority on the full 1,699 >= 0.80
+  J2 FAIL: at p=0.02 and m=100 at least one calibrated/stratified estimator covers >= 0.95 AND has mean UCB below SRS-CP
+  J3 FAIL: the human labels needed for UCB < 0.05 at p=0.02 drop by at least 2x versus SRS-CP for some valid estimator
+all_pass=False

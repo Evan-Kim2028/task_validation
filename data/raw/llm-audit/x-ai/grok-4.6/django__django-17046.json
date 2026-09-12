@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-17046",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4105
+  },
+  "response": {
+    "id": "gen-1789191851-ryL80qspt9MyFHGJaAj3",
+    "object": "chat.completion",
+    "created": 1789191851,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only reports an admin 500 when deleting after an M2M search due to delete-after-distinct, so a valid fix could keep Exists-based de-duplication or otherwise make the changelist queryset deletable without changing QuerySet.delete semantics. FAIL_TO_PASS instead requires allowing distinct().delete(), a specific TypeError message for distinct(*fields), and admin using distinct rather than Exists.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0371da88-9eca-9fb3-879d-0f4eac60baaf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4806,
+      "completion_tokens": 620,
+      "total_tokens": 5426,
+      "cost": 0.012948,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.012948,
+        "upstream_inference_prompt_cost": 0.009228,
+        "upstream_inference_completions_cost": 0.00372
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 482,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only reports an admin 500 when deleting after an M2M search due to delete-after-distinct, so a valid fix could keep Exists-based de-duplication or otherwise make the changelist queryset deletable without changing QuerySet.delete semantics. FAIL_TO_PASS instead requires allowing distinct().delete(), a specific TypeError message for distinct(*fields), and admin using distinct rather than Exists.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only reports an admin 500 when deleting after an M2M search due to delete-after-distinct, so a valid fix could keep Exists-based de-duplication or otherwise make the changelist queryset deletable without changing QuerySet.delete semantics. FAIL_TO_PASS instead requires allowing distinct().delete(), a specific TypeError message for distinct(*fields), and admin using distinct rather than Exists.",
+  "prompt_tokens": 4806,
+  "completion_tokens": 620,
+  "total_tokens": 5426,
+  "cost_usd": 0.013332,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

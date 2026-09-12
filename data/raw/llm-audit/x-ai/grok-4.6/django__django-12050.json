@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12050",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1018
+  },
+  "response": {
+    "id": "gen-1789187575-kpBAkMMsGV6l8Fje0xCb",
+    "object": "chat.completion",
+    "created": 1789187575,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly requires that resolve_lookup_value keep the input iterable type (list vs tuple) instead of always coercing to tuple. The FAIL_TO_PASS test checks that a list lookup value remains a list through Exact, which is a fair observable of that requirement.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about Query.resolve_lookup_value coercing list to tuple, breaking exact value queries for types like PickledField. Expected iterable return type should match input iterable type.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Query.resolve_lookup_value coercing list to tuple, breaking exact value queries for types like PickledField. Expected iterable return type should match input iterable type.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ccf8cb1a-316e-9441-b798-c2d1e833e883",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1279,
+      "completion_tokens": 552,
+      "total_tokens": 1831,
+      "cost": 0.00587,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00587,
+        "upstream_inference_prompt_cost": 0.002558,
+        "upstream_inference_completions_cost": 0.003312
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 441,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly requires that resolve_lookup_value keep the input iterable type (list vs tuple) instead of always coercing to tuple. The FAIL_TO_PASS test checks that a list lookup value remains a list through Exact, which is a fair observable of that requirement.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly requires that resolve_lookup_value keep the input iterable type (list vs tuple) instead of always coercing to tuple. The FAIL_TO_PASS test checks that a list lookup value remains a list through Exact, which is a fair observable of that requirement.",
+  "prompt_tokens": 1279,
+  "completion_tokens": 552,
+  "total_tokens": 1831,
+  "cost_usd": 0.00587,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13212",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3931
+  },
+  "response": {
+    "id": "gen-1789191163-tNUQLLI4QeejYkTsANnj",
+    "object": "chat.completion",
+    "created": 1789191163,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that built-in validators pass the input as ValidationError params so %(value)s works, which a competent engineer would implement across validators. The FAIL_TO_PASS suite still requires unstated coverage of many specific validators and form-field paths (DecimalField NaN/digit errors, FileField filename, null-character handling), so a reasonable validator-only fix can fail.\", \"p_invalid\": 0.68}",
+          "refusal": null,
+          "reasoning": "The issue is about making validators include the provided value in ValidationError so custom error messages can use %(value)s.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making validators include the provided value in ValidationError so custom error messages can use %(value)s.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c0feee54-26a4-9940-bbb2-4b7e882dece4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4308,
+      "completion_tokens": 541,
+      "total_tokens": 4849,
+      "cost": 0.011478,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011478,
+        "upstream_inference_prompt_cost": 0.008232,
+        "upstream_inference_completions_cost": 0.003246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 405,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that built-in validators pass the input as ValidationError params so %(value)s works, which a competent engineer would implement across validators. The FAIL_TO_PASS suite still requires unstated coverage of many specific validators and form-field paths (DecimalField NaN/digit errors, FileField filename, null-character handling), so a reasonable validator-only fix can fail.",
+    "p_invalid": 0.68
+  },
+  "s": 2.0,
+  "p_invalid": 0.68,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that built-in validators pass the input as ValidationError params so %(value)s works, which a competent engineer would implement across validators. The FAIL_TO_PASS suite still requires unstated coverage of many specific validators and form-field paths (DecimalField NaN/digit errors, FileField filename, null-character handling), so a reasonable validator-only fix can fail.",
+  "prompt_tokens": 4308,
+  "completion_tokens": 541,
+  "total_tokens": 4849,
+  "cost_usd": 0.011862000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

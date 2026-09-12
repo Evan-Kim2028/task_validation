@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-10457",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1295
+  },
+  "response": {
+    "id": "gen-1789187478-UqxgPlF6MPTBDG5bR7Ah",
+    "object": "chat.completion",
+    "created": 1789187478,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that all meta-fields must be stripped from field lists, not only the first, and describes the expected absence of any meta traces. The FAIL_TO_PASS test only adds extra :meta: fields to an existing field-list case, which is a fair check of that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: filter_meta_fields fails to remove more than one meta-field. Expected: no traces of meta-fields.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: filter_meta_fields fails to remove more than one meta-field. Expected: no traces of meta-fields.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+8wm+n4WITlC3jVNZGkYXqpZmut0d/4m5QYd5PjACkXI6cS/MQKNu2ZJW391q5sk9JquNv1R2zhH5I28RPyE2n9WG2lMy1uu6W1uBoyse2USYBnqkuy+KFSO0kthkppkbViYk9psV6q9K+6M+ZTI3Yfm8tE7OleYTCLGfnC87A+llP5mPcC3s3t/I88mc/Bn2cWsyLaC8npYSud1v7QEB5sjmh6kgRrGn9U+yv4LjjF9LLDf5t9ZhDaYbh7L/NihWu1Oo42wA/LZDNvchAimy8JQ171l3U7/L2hmhP2Z2tL8REE9jNuKcfG9+1TI3v8/xrGtbHLu+MhTFegvD9u1O9P9DJZ4O+523uGe+trCoCZcnasCWmwAuSuz/cetiprjEQ+SQsPWGCQeK+7QC14lqumCA66qIeYA2QFZMbJp3H7sgRwFYZ7CC3QwECLnBNDANnfS2g72V64gQqIqiZcApqcroOVOq7U+5rcSNeEmaeRo6HHX0NcFhzxvcyYREWSLOalpdJMFe/73cSnNPJAig2MlOrpNexnm7GkhTqYdNzo1b+1c+dgRpDKNVACAmzHgoQm8ZEbSfZZfxRJ8yDxepMv5X6uWiRJWKcOuJNZqGFyxur5tJyGwwORxESV4ArrImvvzALdpetjD5Go/SbM6bE5E4EuR5dPNZyYFTTnKdoW/ee9989OsZlRObP2Pqbd21I+2DSjiPuMJLPY3pekJjvxMkW5edrR9pOpCRMMj2Nw5eO9DXJ8PVtKFEE9ixqm1PQ0W3h20p+QPT5hoJxtGoDVZwH75/hujbmMammn+hYhY8rsAjVWHyOpwDS1gIIfTHxSACh9R+iC1HHiWY64qW5Y2cHigTzGiXzs10rXmMZVpObCd6D3eXjuzxBAAEZLVS+EOIi9jBleG29c1eyOVqYW12G1a5BW1jn2Xlr/OE67c3UMZbvtL0LUw30fNPOeBeN+oXqkrC1vljohMpvhw3taMtbn49Ga0MQ2WSB3bZzAfrlwirVUumWgyCOY5kJWs666fIRpXe7RzpPOS72xU9t5CZ91AhknORUsvUS70wZ5UraBrgLjnClFJvgGpd/OTEzBVJBdy13HaNiQocMO5fACV8Jr/VMbw8EHj01T2KyWfzdbAT9Fe1MMRGiqVRTX5tfIoy6q1KetOQHoG2/C41hMLvBkm4//c7X+nJo21Uo/QvBKA+XH4nC9jMrf1Cw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_01e5dc94-0895-97ed-b0d6-ec46e66cff0b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1605,
+      "completion_tokens": 325,
+      "total_tokens": 1930,
+      "cost": 0.00516,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00516,
+        "upstream_inference_prompt_cost": 0.00321,
+        "upstream_inference_completions_cost": 0.00195
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 208,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that all meta-fields must be stripped from field lists, not only the first, and describes the expected absence of any meta traces. The FAIL_TO_PASS test only adds extra :meta: fields to an existing field-list case, which is a fair check of that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that all meta-fields must be stripped from field lists, not only the first, and describes the expected absence of any meta traces. The FAIL_TO_PASS test only adds extra :meta: fields to an existing field-list case, which is a fair check of that requirement.",
+  "prompt_tokens": 1605,
+  "completion_tokens": 325,
+  "total_tokens": 1930,
+  "cost_usd": 0.00516,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

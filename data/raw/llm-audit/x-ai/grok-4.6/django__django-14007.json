@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14007",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1894
+  },
+  "response": {
+    "id": "gen-1789191356-fqrvXTtEUWLQKMzaqJze",
+    "object": "chat.completion",
+    "created": 1789191356,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly states that from_db_value converters are skipped for insert returning fields on create and bulk_create, with a concrete AutoField subclass example. The FAIL_TO_PASS test checks exactly that create path behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: from_db_value converters aren't applied to returning_fields on insert. The tests check create and bulk_create with a custom AutoField subclass.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: from_db_value converters aren't applied to returning_fields on insert. The tests check create and bulk_create with a custom AutoField subclass.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "+eILpZ0gNEdYu4w0V4e+16EX4CQw6qHsugD2of9XqaA2iYp+ju+Z6ys+jX2CRkWsYiEOXAXWE6jfSOsAJmm/8606UZLIDCGPqojwZ0ABanefhB1qdJb3VlE+58SlJTYHku93bUzufeGxj+/UXBLdvixR+ETG/HwQJDb29SfmzdJZP8Rmyr2kGIE6XTqzvfaThJ3FVdpmlwzwQ/tuDfoTdZQtFfD64GMdpQ7YBqF09hDGgxcKBHFWtKjmzErRqgAigfkP3qhjzhepPVh3qJ0XThPlupHXVVP6OCnsSfKg440kRZQJ7B5cciCb/4uqFUjXw4ntm/ON7xT8+jJZr7s/fIPYc514S1UlUQCAjapAOdXHuVLbOAEczI9KfOhEFolmzzezW/GL+TLm3WoIhW5BZ411v/kz+7ACjsVproszB/X5mh277DnY1YwzoKM3oVk7eEYy2AZkQoZbD8st8rx07L3cm2o9jF5EuXOOCObFXOTrfGBR3e2KDdovMTvop1gJzfUvweQkLctWe3beoWY0knka8v3t3JW1t2jX9LOXPy3aih+tWfOfJCrzMzHjrhhiduSoOBE5di462ijae3yDjHBJ79zJJ1XPKRhSdiR+Niug7Ad/14tlQUiPayXFvzb50JNlqxQRUWTQK/izoBXRIETnbIYjpEvvSkpZyzCkFwNL4BBnTLc24Mxu1YgHjFhDemEenCQhdnZNnsxjVNTl6diNjX2+FWBgy2M45D3QsLzoOjA2UHzLcOjEfJtRwWyw7QjuLk2qM/0W7tIoG5KWlB3UYWgmh0sjMCfh0COsO0XJ4Zsqj7Ag8cTiV9NFKjBCyawp9h5xQMxCxGuata5o9dvg7UNAImYceM9+ojcJcShdBiP4eUT4C+qv9kvFWwrWKAQg8sbxyEOwEhPaTRTWkQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_1cade96e-b2ed-9b31-8453-0e625afd20db",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2335,
+      "completion_tokens": 265,
+      "total_tokens": 2600,
+      "cost": 0.005876,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005876,
+        "upstream_inference_prompt_cost": 0.004286,
+        "upstream_inference_completions_cost": 0.00159
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly states that from_db_value converters are skipped for insert returning fields on create and bulk_create, with a concrete AutoField subclass example. The FAIL_TO_PASS test checks exactly that create path behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly states that from_db_value converters are skipped for insert returning fields on create and bulk_create, with a concrete AutoField subclass example. The FAIL_TO_PASS test checks exactly that create path behavior.",
+  "prompt_tokens": 2335,
+  "completion_tokens": 265,
+  "total_tokens": 2600,
+  "cost_usd": 0.00626,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

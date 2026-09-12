@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-2617",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1745
+  },
+  "response": {
+    "id": "gen-1789192178-xrvZqNevtU1O1gYoIbPC",
+    "object": "chat.completion",
+    "created": 1789192178,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue is unicode_literals/binary prepared files; tests/gold require method None error and native-string method handling.\", \"confidence\": 0.92, \"rationale\": \"The GitHub issue describes a UnicodeDecodeError when sending prepared multipart bodies under unicode_literals, which a developer could implement without touching Request.prepare_method. The FAIL_TO_PASS list instead exercises auth, schemes, cookies, and related method-string behavior that is not stated in the issue.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is about prepared requests with binary files failing when unicode_literals is imported. The gold patch is about Request method cannot be None and to_native_string on method.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about prepared requests with binary files failing when unicode_literals is imported. The gold patch is about Request method cannot be None and to_native_string on method.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "n3Ej61gvTIpm12Le3trHBxxzNI1pcfNcEtzOL4dzrJgxx3jGHTrXNNMbYak+Y4mJ6VRLzCY+QknKsVL0G5DZZ2+S1NuwEVZTbXvkwOUyI+Ogf+r4zi4oWK9Er/+h1h44UT2CMkZD14OOrQQe0KYCXPqSGV7ZjL8m9sVW+xzXijlHgll1emq3O/PZ00jJLpky4aBmwegGCDt0A/QZtORnfKBm7FtkTPd4XOrnev/LFVJYSP/nGjrejDbfeWJ9QsqAlwsX4rHafXFbbdBKEk2YJuChM2nxDUkRjyphfEqjkBRuJzeGQppMhTFDO+HVmx+SgZRVSoFvVxEnkC5N1h6WO0f7ikL2dMncPQyEaI0uOsjjXUvMCw5yrA3IbH1I4dB6oETrHvVWvjALgcDbtodoDTY3ymd0yFtLAC0Hnjn36X0WrvSUfoCzQvcsSQzkHcOcBX6l1WaXMB1rseuUdRswTiGKu+w8vknoZCrPOKbdOfYv8TTXZIxfgQO51LxXIolRyS3UcjJsSZmdbHyh7337BE4cnxIRwcJqDU5+bxB/cDIc++znnBnGiEWBmez9f1istwzJLm/yFfERMLtrzpF4Mr8WX7dPS2c04ZvosWCDYQP9VSVKBznIJtecOqkEFrSSMtXyTIOUCrmzUxc5qrAHEEPhO9NNg25qWtdQe6QbfOeDFW1BvRqVtI1RaM9pG93J+63ZjGd3WHvIGxgSIwNM59fvi8u7Mlz1Eag5KArgvNghkbQBVBor+VL506nNeZ4h/JY7X5KpAg63voE4vjrJ6bIdE6+e99YOLasW9nBiJzVWwSrvamRo6QyHn5madtejaEEseQadW+YCiGfiW1FSo01GtEYZi1npHb0GygNMBuNFYWMsgz3+ouor9/tFZtHhQyol6OXZl0xuT4ke/tcXRfn8xuDmXdVvx4Yv3FcRo/cQmtuMzzpuTwaVUoNujSGNOLRVgU7Zr4ZZuIHhtvl9sGa0zaRslqCBcaUb0uZvS4AMADzc0QRxCf1bxLFGCVg8LHyZ7eD2CWk2U5CJ5FJaLoONbMR4qIkJ+NmT/BJnN3I7zPv2y5HE36/sZw/nQ64WMHahUzvvyRtCrazg5k9kcfz5s/5tkPgZ4irCNPQwCLpMf/hyv+WOvjj8RIJsbvbT10Ch24gkF+22HZRdxghQb9lZfj7JtULyW5tdO4fdq6uHKjqCnobec/FccRKaYcPbLM3+SuE6CJ6D1jE0b0MCbV30i49mS+YsKnHWeH3NgdUspwRQGnWT+VWM72+khGtrgLwJXH0ursxNVHeUy8h70Gtl6jeh4ER9zgp/dXEeu8g1UZcEW4q0YVpxI2EdfWdKaRiXN9JlqR3eIg7zBxndxsDXIMZvt8qABqrfzgH+gW5HFWCtLvWQgnEDWVfKRbHLYN5rqmoQc3iWqFcgiFi0IVT12Raq0jCHl+ED8J8+MpL7ne3OXpfZj5RTpOngRw6zS5uzsFRlVcFvJjC4B00.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e9cd6815-f772-9370-ac50-c8fc13ec90b9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2268,
+      "completion_tokens": 394,
+      "total_tokens": 2662,
+      "cost": 0.006516,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006516,
+        "upstream_inference_prompt_cost": 0.004152,
+        "upstream_inference_completions_cost": 0.002364
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 254,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue is unicode_literals/binary prepared files; tests/gold require method None error and native-string method handling.",
+    "confidence": 0.92,
+    "rationale": "The GitHub issue describes a UnicodeDecodeError when sending prepared multipart bodies under unicode_literals, which a developer could implement without touching Request.prepare_method. The FAIL_TO_PASS list instead exercises auth, schemes, cookies, and related method-string behavior that is not stated in the issue.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue is unicode_literals/binary prepared files; tests/gold require method None error and native-string method handling.",
+  "confidence": 0.92,
+  "rationale": "The GitHub issue describes a UnicodeDecodeError when sending prepared multipart bodies under unicode_literals, which a developer could implement without touching Request.prepare_method. The FAIL_TO_PASS list instead exercises auth, schemes, cookies, and related method-string behavior that is not stated in the issue.",
+  "prompt_tokens": 2268,
+  "completion_tokens": 394,
+  "total_tokens": 2662,
+  "cost_usd": 0.0069,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

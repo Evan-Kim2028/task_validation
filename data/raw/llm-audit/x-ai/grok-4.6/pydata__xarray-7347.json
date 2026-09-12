@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-7347",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1316
+  },
+  "response": {
+    "id": "gen-1789192781-OJ2Eax1bb4zCpfnw17WN",
+    "object": "chat.completion",
+    "created": 1789192781,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue states that assign_coords should keep indexes on coordinates that are not updated, which is enough for a competent engineer to implement the intended preservation. The FAIL_TO_PASS test checks exactly that side effect with a custom index and does not demand unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about assign_coords resetting all dimension coords to default pandas index. Expected: assign_coords should preserve the index of coordinates that are not updated or not part of a dropped ...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about assign_coords resetting all dimension coords to default pandas index. Expected: assign_coords should preserve the index of coordinates that are not updated or not part of a dropped ...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "j3ijMQ/p8jP6nfIqD7TIi0pJvqLBJrdGQPJE1E/e80aU2trPRjdhHDKJC5eLRHpVMpOY/Twc6jWJUfi6eGwZZ4ffTnl0qV8F0VSzFkYazYGPw3GD9sFGO8NfwtjeyGBkN4jrFooxwrtP0g4I70RCgJ2nKc8GnmBdFT7UAPuYGdoOS0hAPZdUZlWRLvNzKGZ8IBmgS2zM6FrzUkDrxiQALNFZawirLskpmRa/BLjPMEutRNBE/aKdTwwThIzahrxG9kunqOa6+0e/F7l2hu6UYtCZLfENPGqBewL6HbgwwFTms/sWVrJGdG2oFre/vrF2h5gDLk1PXjEQ5IbNu2DVDhwTck0bwbOMPGxCo7yAm5MMTUyNUXveK9z1aPtgnEJLIg9q86qQ3j9pAPACYaC5mzQGYIbqzK8jeB/PpkhxxjKO/9o4X0U4Y3/dB0Ta3HAL0xsV690JCuUFxa1lSmmqFllixbHWiQ0Fe4B9fwWLcHPd/uQmCNJ8e5eRN/Ed3fsf5lNqqLwGBtyRMVgTlx/TWWYuwppfwjMavjPgNws8GlDDueFzPbzl+FisIgsaGbFOhVSODAz6V/etnn810VDiBOU+/nCHySqCPIc3CaFmHEARG19a/TMB4PIWYEB/XX3CTdwW1TWjuojiqMIlEjSUQo0Nu2Hmyd57FdVBzRbYNsCPIiQyC1J9mr8p4A5cCl5GOQxwxS9Q0u1Exn5Ysrdnht8+wqnOfmJsKl1/TISU9Jif236opuKI7EiJgGCkcu6FWB6o8cw5VP98vtu6TcSqiXQtHC+xpVBpGt+D8sB5iofrQeuTIVSZHFWWQ0CEUEK/0mD/o55TUGheIVFhgdyIhcZs2yvJdPTBO+gPYInKvqY85Ic2GzM/n55KNAmHrR1sZLIWvZSqLEFFDGGlLastGqf7fpV3JzXJtoNKZMHiWGwmMP0Q+mR5rPvIfC+9Daw4PrG933onNCBC4b5kHlewk0IEUTjBwcZ9cH+VXGDyyeCgq76r6F8/gULiXsi2mFBd3UXK98tmEsjPoekyfdKqrph1ikVOudwoa2dxCQtu4ljFy16rbv2DjJck/zmE9z/6Y4+OH8cQiMtLMWtAjLgQvWxQA+pzCzLlrXfwNXwuN1R4yxjQA2i2+dppH8CsuuQ3aE4p+Nf5rRqMTOdy1AHbPc7k7NKfvJzqCBMlLM48NMNe63rjTw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8c333e9c-2d6e-9b01-b007-1b219f6556c4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1623,
+      "completion_tokens": 292,
+      "total_tokens": 1915,
+      "cost": 0.004614,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004614,
+        "upstream_inference_prompt_cost": 0.002862,
+        "upstream_inference_completions_cost": 0.001752
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 180,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue states that assign_coords should keep indexes on coordinates that are not updated, which is enough for a competent engineer to implement the intended preservation. The FAIL_TO_PASS test checks exactly that side effect with a custom index and does not demand unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue states that assign_coords should keep indexes on coordinates that are not updated, which is enough for a competent engineer to implement the intended preservation. The FAIL_TO_PASS test checks exactly that side effect with a custom index and does not demand unstated APIs or messages.",
+  "prompt_tokens": 1623,
+  "completion_tokens": 292,
+  "total_tokens": 1915,
+  "cost_usd": 0.004998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

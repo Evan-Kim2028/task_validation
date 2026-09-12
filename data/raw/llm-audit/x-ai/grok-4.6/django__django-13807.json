@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13807",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1681
+  },
+  "response": {
+    "id": "gen-1789191324-hUzCQq76znTYXejNDVD0",
+    "object": "chat.completion",
+    "created": 1789191324,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.8, \"rationale\": \"The issue clearly asks to quote SQL-keyword table names in SQLite PRAGMA foreign_key_check/list used by check_constraints. The FAIL_TO_PASS model also uses keyword column names, so a fix that only quotes table names as described would still fail when the subsequent SELECT runs.\", \"p_invalid\": 0.75}",
+          "refusal": null,
+          "reasoning": "The issue is about loaddata crashing on SQLite when table names are SQL keywords. The root cause is missing quotes around table names in PRAGMA foreign_key_check and foreign_key_list.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about loaddata crashing on SQLite when table names are SQL keywords. The root cause is missing quotes around table names in PRAGMA foreign_key_check and foreign_key_list.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_0523ddd0-f1db-98c3-b306-c5effd28757c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1998,
+      "completion_tokens": 563,
+      "total_tokens": 2561,
+      "cost": 0.007182,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007182,
+        "upstream_inference_prompt_cost": 0.003804,
+        "upstream_inference_completions_cost": 0.003378
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 447,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.8,
+    "rationale": "The issue clearly asks to quote SQL-keyword table names in SQLite PRAGMA foreign_key_check/list used by check_constraints. The FAIL_TO_PASS model also uses keyword column names, so a fix that only quotes table names as described would still fail when the subsequent SELECT runs.",
+    "p_invalid": 0.75
+  },
+  "s": 2.0,
+  "p_invalid": 0.75,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.8,
+  "rationale": "The issue clearly asks to quote SQL-keyword table names in SQLite PRAGMA foreign_key_check/list used by check_constraints. The FAIL_TO_PASS model also uses keyword column names, so a fix that only quotes table names as described would still fail when the subsequent SELECT runs.",
+  "prompt_tokens": 1998,
+  "completion_tokens": 563,
+  "total_tokens": 2561,
+  "cost_usd": 0.0073739999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14122",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1129
+  },
+  "response": {
+    "id": "gen-1789191375-6lkHbXXKC6UZp7mPdUJi",
+    "object": "chat.completion",
+    "created": 1789191375,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that Meta.ordering must not add fields to GROUP BY for aggregations, which a competent engineer can implement from the description and prior ticket. The FAIL_TO_PASS test is a direct aggregation check of that behavior and does not demand unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Meta.ordering fields not being included in GROUP BY clause. The test checks that default ordering doesn't affect group by when annotating with Count on values('author').\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Meta.ordering fields not being included in GROUP BY clause. The test checks that default ordering doesn't affect group by when annotating with Count on values('author').\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rIDgec7RFUs1AbhPchjxKGU8zCP4yAtvw/OOHPmAFzqLKm2Fp+ZgI7sLAp3GQL6bMZC4eyxMs7FkMlvEq6j/FAuUddgrIcqZWj6aUz2fkINgXgOQISZ4GK6PSmtzOiQKfQFsja+ZpA9n9u3Z4gScdnsEejL8wJNo6b5VUiemC70CU/YvjKBF4ldUgCqOQ28wWg1nmh5N8KqW+NgEW+kNUXIuvGaUDyWDCjaTvcx/J6cBDf0Oh5QxyQ2CniMUERmBf8nUqhhNcB4OmclS4OeUJUgLyFnnd5Fhi1RkmNXgIyM8h0sGzKxeal7AAKj1WLhTUCJF9YdGqaAbI2FRsoBrmWsw+ArEbKxEbxHx6MRs9Fmk54HhkUhYnlQ3abfouT/CTXWokVcJ1461GC+4qlxT0mcOxM4AXccNwFm3GW4BERalKVHl/gD8THn6mmZgul5qTFuTWjy34gZVGxWAKIoxpI+URmjmU8cLMLNwd7S075vgKd6jSnpSVZj+CeVDGHWJ19viV6PbSlkvhXSa+hcGXYH2KXC3BaRRevZsUwwIgv38Yo9X10t6YiCwlYiws5DS09gmoFkCQrgDXY2BZpL/+qgmpUQ8tV4J8mipBCqptY7I309zpXhVm1Y8tnfHvVndkkl0w7ibl5bE3lxw3rI9+aqXzNjVh7aCbA2N8WuQzINP/NYgN+agXBFnDAHOoTgoZxN/ktyW4yVnoix/B70OMruEJyGZOu2/O5dcLnS+WpD+xuHdq/uvCIiYfhjIUvI3Mq8rDAinhH+FV46OLL1Is5QZ1SjMktRGOwHdL2edOQT0OqWsWAN03sGnmZ4InBKgKKmeGg9cW923uf+bUg7IMYRw4+sLwFqshimqclsHWVv8F568Q4PhS9rq1iURXrttCBdGzvSdEH/dZnO0wV/ni3Hr7f+wIoqmU99okxxoBfrLyBVtjkidOrQD9PpIICIDSoxuJ43eORKJpwhC3fuQ6YYyCTG3EYvRoTFnGTQhl7SORudAJNTGX0LQCUdhDACEIaq9WAg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_06d1add9-60e3-918a-8902-ca01faa351f5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1481,
+      "completion_tokens": 283,
+      "total_tokens": 1764,
+      "cost": 0.00466,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00466,
+        "upstream_inference_prompt_cost": 0.002962,
+        "upstream_inference_completions_cost": 0.001698
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 170,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that Meta.ordering must not add fields to GROUP BY for aggregations, which a competent engineer can implement from the description and prior ticket. The FAIL_TO_PASS test is a direct aggregation check of that behavior and does not demand unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that Meta.ordering must not add fields to GROUP BY for aggregations, which a competent engineer can implement from the description and prior ticket. The FAIL_TO_PASS test is a direct aggregation check of that behavior and does not demand unstated APIs or messages.",
+  "prompt_tokens": 1481,
+  "completion_tokens": 283,
+  "total_tokens": 1764,
+  "cost_usd": 0.00466,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

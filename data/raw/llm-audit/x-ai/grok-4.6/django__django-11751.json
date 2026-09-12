@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11751",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1976
+  },
+  "response": {
+    "id": "gen-1789190927-yJ8n7LkD4tINPMS4VAfQ",
+    "object": "chat.completion",
+    "created": 1789190927,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue proposes enabling several security headers in startproject and possibly changing global defaults after a deprecation period, without requiring an immediate X_FRAME_OPTIONS=DENY fallback when the setting is unset. The FAIL_TO_PASS tests demand that immediate global/middleware default and only that header, so a reasonable reading of the issue could fail them.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue proposes making security headers default: SECURE_CONTENT_TYPE_NOSNIFF, SECURE_BROWSER_XSS_FILTER, and X_FRAME_OPTIONS. It mentions startproject settings and even changing global defaults thr...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue proposes making security headers default: SECURE_CONTENT_TYPE_NOSNIFF, SECURE_BROWSER_XSS_FILTER, and X_FRAME_OPTIONS. It mentions startproject settings and even changing global defaults thr...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_37b68175-3983-9288-b6b1-122f7db240bd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2318,
+      "completion_tokens": 600,
+      "total_tokens": 2918,
+      "cost": 0.008236,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008236,
+        "upstream_inference_prompt_cost": 0.004636,
+        "upstream_inference_completions_cost": 0.0036
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 475,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue proposes enabling several security headers in startproject and possibly changing global defaults after a deprecation period, without requiring an immediate X_FRAME_OPTIONS=DENY fallback when the setting is unset. The FAIL_TO_PASS tests demand that immediate global/middleware default and only that header, so a reasonable reading of the issue could fail them.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue proposes enabling several security headers in startproject and possibly changing global defaults after a deprecation period, without requiring an immediate X_FRAME_OPTIONS=DENY fallback when the setting is unset. The FAIL_TO_PASS tests demand that immediate global/middleware default and only that header, so a reasonable reading of the issue could fail them.",
+  "prompt_tokens": 2318,
+  "completion_tokens": 600,
+  "total_tokens": 2918,
+  "cost_usd": 0.008236,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

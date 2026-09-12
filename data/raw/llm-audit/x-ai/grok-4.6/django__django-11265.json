@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11265",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1961
+  },
+  "response": {
+    "id": "gen-1789190833-MeF1XEFxFPHRvXzaAc0U",
+    "object": "chat.completion",
+    "created": 1789190833,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly reports that exclude on a FilteredRelation annotation raises FieldError because split_exclude drops extra query state, so a competent engineer would make that lookup resolve. The FAIL_TO_PASS test is the same exclude case with the correct queryset result rather than the issue's mistaken empty list.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about exclude on annotated FilteredRelation not working, giving FieldError. The test they suggest in the issue would expect [] but the actual FAIL_TO_PASS test expects [self.author2].\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about exclude on annotated FilteredRelation not working, giving FieldError. The test they suggest in the issue would expect [] but the actual FAIL_TO_PASS test expects [self.author2].\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "D0HI4m/1O3XqWYqUYnWz6UMCxYlyNbhC5d1SfQ+bZHUwpgYEPdSnYhBZky4Nj7N6CcLD5NccJGQIi0fxw5HV/RK/mmjSKw9XZcvfUInao3G74T0wWFXO4LQYFH6x04pufrUhLBIonNLh6Hy9B1bW0zrYdqmkjcjZYQgjCd7bkI4v334lXz0R9yRoskx0GHhh9Huu7zCFJsnpkLdGnXf79oKiBkAZH6C4YjM9Rxyz4B101tNQ9ujfFpApFMWeMsD8zpPsN6Cx50wapJNnkdRTTNn7+M2oT+3vjeNiEuvTvlj59ZYC6AGS6TXW7fSLn1IRfVTZ7wO0sBVORd8RdeTvHITrMJGDKrXK2N6j8fr8mIn5DM7NI/hd36K1cNe3NGP3GeGXS76Bjp9cHjJ3WFK+IYkpY4NSwXAxYIAf87Qf4ypHLGfMfNscoAAkO8fJGEDjP/REarN44QmLFUUsS/1A9kcyb/4kwClOImtNg/V3BNu58HgDnYEEu4LnEYqBC+lviDLtBCI2zehCHB22gKTkGegoU72WgOKiMt7RgpABJlgZTCJJpTA6gzNieHAlbz6gW8fkg4Xk86dRHOqqgexHAVI5RLv1e8cJhB7pCFjGkskesLTh8cAaNnnLtg8/D6/RRhV1R4s7fOJqsAQVxT6l9aIH4VyyIFfu4XNn9VtrpBHLs5tDwQqycNaTDiW15B3Fay8/aO5pISC8rOHDmoojXI5FvpoMTtCT8FOnSBmkXdvV3DIt8T5oAdcTphHzSbKgrCl4o9ZblQc965+2+mAb+XZV1f9Kx5EETIMqLspStIBSj9gJHK81t1jHblgfgIgMjfT3XKgbWGafMjEjqjsMgJhPhTCxSahu14ip7XoD43+/ZuNmF0SFhtk/jIO+FNV9xK0fynEGuy1Kg6b/UC3Cxr8Jq7WFUkL3jYjpx7VOQNtbC/+6Ma6NUIfF3/nynaC5dhj0MGRTDiywKhvvYN9x9nGr1vwQQ7+Fg4RAni3IRAOaSCEAkq7VOEl2quBGNlWICINvVFVlEgZaz+K//ZZoFvkV5SGLzeMzgnkZS4iL9beUsZYy3qICz4vaHhtLFdwoolJTBXy3cxxGDYFUDDRBEEcQL+yq732/YvyvszgmzOHuXe9h5UtCjqhyVW6ZH5kAGVHd1JtrPiIj5aH0cbDyNLbcDRBfcVxHXIJElYbhcUnuxUOHSgb93ddNQg5qoX9vwFcr0DrPFm0JSk7vsmMGMcdo6UikZ3/QLX1bOBJcYOlTRpOLp8T8VAbE3ofFBFiCt72CjQLwf3mifwtj9cSetd82ThRLzkWkvE6zZ6xhLMZ7RsnQeZ1yf+YECpjymkhSeilvmUqF2yccyj5PuOUPqzimiMK20eXzEHEqoLtzIx2z87/luaujEwgrJ5wxfhUqRaIkVnKoZ1eXCyKVl0Ls0N/dQJn0cNTntI4wj7QMtdPE+/WJV3nNrXNDm7cy1v9kUL/owlkwvfP0Q6ELtwEeM714rWWve5Pw3mQp6RJX3iGKAndriLK8pX2nbYSr5V1Dsmh+AA+0uvPZyhzZ3fo7pQpH6oqx930s81uXk5YUWIhQSvp56ok2kXf1xyheeG7yATv+efT4Akewxc5yRHZeCneoMbg5tm/Q6ellgmV0yIV8Q0gGSO/emaTicD6UWdUOwjCqc6WH5xcx6Votzrw05Gc+OBCEBtpJFmydGwVSlMVz1iXU0jPmvus0r6sYYGnc4yB9RwiyJNzEDpucUQI0pAbZbTDBbsNah93qAsT7jtO6fyjR.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f8f2169d-9d67-9e24-bf1c-393a11c657ac",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2612,
+      "completion_tokens": 396,
+      "total_tokens": 3008,
+      "cost": 0.007408,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007408,
+        "upstream_inference_prompt_cost": 0.005032,
+        "upstream_inference_completions_cost": 0.002376
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 282,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly reports that exclude on a FilteredRelation annotation raises FieldError because split_exclude drops extra query state, so a competent engineer would make that lookup resolve. The FAIL_TO_PASS test is the same exclude case with the correct queryset result rather than the issue's mistaken empty list.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly reports that exclude on a FilteredRelation annotation raises FieldError because split_exclude drops extra query state, so a competent engineer would make that lookup resolve. The FAIL_TO_PASS test is the same exclude case with the correct queryset result rather than the issue's mistaken empty list.",
+  "prompt_tokens": 2612,
+  "completion_tokens": 396,
+  "total_tokens": 3008,
+  "cost_usd": 0.007599999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14751",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2078
+  },
+  "response": {
+    "id": "gen-1789191484-3NridRAjKnDSaDSbQTxW",
+    "object": "chat.completion",
+    "created": 1789191484,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to send progress to stderr and created migration paths to stdout, which a senior engineer could implement, but it does not name the option or require prompts on stderr. The FAIL_TO_PASS tests lock in scriptable=True and exact stdout/stderr strings, which is slightly narrower than the written request but still aligned with it.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue asks for makemigrations to be scriptable: write progress to stderr, and write paths of created files to stdout.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for makemigrations to be scriptable: write progress to stderr, and write paths of created files to stdout.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a26d8a53-f264-95e0-9c46-d0f369c57160",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2290,
+      "completion_tokens": 568,
+      "total_tokens": 2858,
+      "cost": 0.007796,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007796,
+        "upstream_inference_prompt_cost": 0.004388,
+        "upstream_inference_completions_cost": 0.003408
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 443,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to send progress to stderr and created migration paths to stdout, which a senior engineer could implement, but it does not name the option or require prompts on stderr. The FAIL_TO_PASS tests lock in scriptable=True and exact stdout/stderr strings, which is slightly narrower than the written request but still aligned with it.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to send progress to stderr and created migration paths to stdout, which a senior engineer could implement, but it does not name the option or require prompts on stderr. The FAIL_TO_PASS tests lock in scriptable=True and exact stdout/stderr strings, which is slightly narrower than the written request but still aligned with it.",
+  "prompt_tokens": 2290,
+  "completion_tokens": 568,
+  "total_tokens": 2858,
+  "cost_usd": 0.007988,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

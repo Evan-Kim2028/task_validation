@@ -1,0 +1,127 @@
+2026-09-11 23:25:48,852 - INFO - Image not found locally, attempting to pull...
+2026-09-11 23:26:28,447 - INFO - Creating container for django__django-10939...
+2026-09-11 23:26:29,122 - INFO - Container for django__django-10939 created: 2aa74a976b5162f3d837f845fc68fa42827a3c8f7bc9eadf2ac7a758d44931bd
+2026-09-11 23:26:29,326 - INFO - Container for django__django-10939 started: 2aa74a976b5162f3d837f845fc68fa42827a3c8f7bc9eadf2ac7a758d44931bd
+2026-09-11 23:26:29,326 - INFO - Intermediate patch for django__django-10939 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-10939/patch.diff, now applying to container...
+2026-09-11 23:26:29,440 - INFO - >>>>> Applied Patch:
+Checking patch django/forms/widgets.py...
+Applied patch django/forms/widgets.py cleanly.
+
+2026-09-11 23:26:30,171 - INFO - Git diff before:
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index eed1fa5c3b..02aa32b207 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -48,8 +48,8 @@ class Media:
+                 css = {}
+             if js is None:
+                 js = []
+-        self._css = css
+-        self._js = js
++        self._css_lists = [css]
++        self._js_lists = [js]
+ 
+     def __repr__(self):
+         return 'Media(css=%r, js=%r)' % (self._css, self._js)
+@@ -57,6 +57,25 @@ class Media:
+     def __str__(self):
+         return self.render()
+ 
++    @property
++    def _css(self):
++        css = self._css_lists[0]
++        # filter(None, ...) avoids calling merge with empty dicts.
++        for obj in filter(None, self._css_lists[1:]):
++            css = {
++                medium: self.merge(css.get(medium, []), obj.get(medium, []))
++                for medium in css.keys() | obj.keys()
++            }
++        return css
++
++    @property
++    def _js(self):
++        js = self._js_lists[0]
++        # filter(None, ...) avoids calling merge() with empty lists.
++        for obj in filter(None, self._js_lists[1:]):
++            js = self.merge(js, obj)
++        return js
++
+     def render(self):
+         return mark_safe('\n'.join(chain.from_iterable(getattr(self, 'render_' + name)() for name in MEDIA_TYPES)))
+ 
+@@ -132,11 +151,8 @@ class Media:
+ 
+     def __add__(self, other):
+         combined = Media()
+-        combined._js = self.merge(self._js, other._js)
+-        combined._css = {
+-            medium: self.merge(self._css.get(medium, []), other._css.get(medium, []))
+-            for medium in self._css.keys() | other._css.keys()
+-        }
++        combined._css_lists = self._css_lists + other._css_lists
++        combined._js_lists = self._js_lists + other._js_lists
+         return combined
+2026-09-11 23:26:30,171 - INFO - Eval script for django__django-10939 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-10939/eval.sh; copying to container...
+2026-09-11 23:26:42,792 - INFO - Test runtime: 12.57 seconds
+2026-09-11 23:26:42,792 - INFO - Test output for django__django-10939 written to logs/run_evaluation/tv100-gold/tv-gold/django__django-10939/test_output.txt
+2026-09-11 23:26:42,866 - INFO - Git diff after:
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index eed1fa5c3b..02aa32b207 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -48,8 +48,8 @@ class Media:
+                 css = {}
+             if js is None:
+                 js = []
+-        self._css = css
+-        self._js = js
++        self._css_lists = [css]
++        self._js_lists = [js]
+ 
+     def __repr__(self):
+         return 'Media(css=%r, js=%r)' % (self._css, self._js)
+@@ -57,6 +57,25 @@ class Media:
+     def __str__(self):
+         return self.render()
+ 
++    @property
++    def _css(self):
++        css = self._css_lists[0]
++        # filter(None, ...) avoids calling merge with empty dicts.
++        for obj in filter(None, self._css_lists[1:]):
++            css = {
++                medium: self.merge(css.get(medium, []), obj.get(medium, []))
++                for medium in css.keys() | obj.keys()
++            }
++        return css
++
++    @property
++    def _js(self):
++        js = self._js_lists[0]
++        # filter(None, ...) avoids calling merge() with empty lists.
++        for obj in filter(None, self._js_lists[1:]):
++            js = self.merge(js, obj)
++        return js
++
+     def render(self):
+         return mark_safe('\n'.join(chain.from_iterable(getattr(self, 'render_' + name)() for name in MEDIA_TYPES)))
+ 
+@@ -132,11 +151,8 @@ class Media:
+ 
+     def __add__(self, other):
+         combined = Media()
+-        combined._js = self.merge(self._js, other._js)
+-        combined._css = {
+-            medium: self.merge(self._css.get(medium, []), other._css.get(medium, []))
+-            for medium in self._css.keys() | other._css.keys()
+-        }
++        combined._css_lists = self._css_lists + other._css_lists
++        combined._js_lists = self._js_lists + other._js_lists
+         return combined
+2026-09-11 23:26:42,866 - INFO - Grading answer for django__django-10939...
+2026-09-11 23:26:42,867 - INFO - report: {'django__django-10939': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_merge_css_three_way (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_merge_js_three_way (forms_tests.tests.test_media.FormsMediaTestCase)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_combine_media (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_construction (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_form_media (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_html_safe (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_dsl (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_inheritance (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_inheritance_extends (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_inheritance_from_property (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_inheritance_single_type (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_property (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_media_property_parent_references (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_merge (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_merge_warning (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_multi_media (forms_tests.tests.test_media.FormsMediaTestCase)', 'test_multi_widget (forms_tests.tests.test_media.FormsMediaTestCase)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-10939: resolved: True
+2026-09-11 23:26:42,867 - INFO - Attempting to stop container sweb.eval.django__django-10939.tv100-gold...
+2026-09-11 23:26:59,052 - INFO - Container sweb.eval.django__django-10939.tv100-gold stopped successfully.
+2026-09-11 23:26:59,052 - INFO - Attempting to remove container sweb.eval.django__django-10939.tv100-gold...
+2026-09-11 23:26:59,139 - INFO - Container sweb.eval.django__django-10939.tv100-gold removed successfully.

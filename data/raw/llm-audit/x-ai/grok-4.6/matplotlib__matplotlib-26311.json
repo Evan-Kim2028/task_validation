@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26311",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1526
+  },
+  "response": {
+    "id": "gen-1789192101-7epaSQhYCqrraczaezII",
+    "object": "chat.completion",
+    "created": 1789192101,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes a crash when automatic contour labeling chooses the path start and expects that placement to succeed as in v3.7.1. The FAIL_TO_PASS test additionally inspects a private helper’s idx argument, which is a bit narrower than a pure no-crash/visual fix but still matches the stated start-of-contour behavior.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about labels not being placeable at the start of contours, causing an IndexError. The expected outcome is that it should work like v3.7.1.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about labels not being placeable at the start of contours, causing an IndexError. The expected outcome is that it should work like v3.7.1.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_827f0df7-e715-9bca-857a-91886538a796",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2035,
+      "completion_tokens": 541,
+      "total_tokens": 2576,
+      "cost": 0.006932,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006932,
+        "upstream_inference_prompt_cost": 0.003686,
+        "upstream_inference_completions_cost": 0.003246
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 414,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes a crash when automatic contour labeling chooses the path start and expects that placement to succeed as in v3.7.1. The FAIL_TO_PASS test additionally inspects a private helper’s idx argument, which is a bit narrower than a pure no-crash/visual fix but still matches the stated start-of-contour behavior.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes a crash when automatic contour labeling chooses the path start and expects that placement to succeed as in v3.7.1. The FAIL_TO_PASS test additionally inspects a private helper’s idx argument, which is a bit narrower than a pure no-crash/visual fix but still matches the stated start-of-contour behavior.",
+  "prompt_tokens": 2035,
+  "completion_tokens": 541,
+  "total_tokens": 2576,
+  "cost_usd": 0.007316,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13704",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "0a78c34f-3832-9047-9340-b4a776b0fb39",
+    "object": "chat.completion",
+    "created": 1789194023,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that constant columns be treated as zero-variance despite floating-point noise, which a competent engineer can implement. The FAIL_TO_PASS test is slightly narrower and extra (all-constant raise, exact message, multiple sparse formats) versus the two-column transform example, but still checks the same bug.\", \"p_invalid\": 0.28}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test covers sparse formats and exact error message; issue showed transform behavior on mixed columns\",\n  \"confidence\": 0.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 121,
+      "total_tokens": 3328,
+      "prompt_tokens_details": {
+        "text_tokens": 2804,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 403,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 27145600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that constant columns be treated as zero-variance despite floating-point noise, which a competent engineer can implement. The FAIL_TO_PASS test is slightly narrower and extra (all-constant raise, exact message, multiple sparse formats) versus the two-column transform example, but still checks the same bug.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that constant columns be treated as zero-variance despite floating-point noise, which a competent engineer can implement. The FAIL_TO_PASS test is slightly narrower and extra (all-constant raise, exact message, multiple sparse formats) versus the two-column transform example, but still checks the same bug.",
+  "prompt_tokens": 2804,
+  "completion_tokens": 524,
+  "total_tokens": 3328,
+  "cost_usd": 0.008752,
+  "cost_in_usd_ticks": 27145600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1801
+}

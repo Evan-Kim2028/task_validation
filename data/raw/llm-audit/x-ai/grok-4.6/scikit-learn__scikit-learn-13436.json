@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-13436",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2908
+  },
+  "response": {
+    "id": "gen-1789187594-q06BkzCyk7ijF7P9SMNP",
+    "object": "chat.completion",
+    "created": 1789187594,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue only sketches a nested-Pipeline pretty-print problem and a high-level idea of trimming outer steps, without specifying bruteforce ellipsis, N_CHAR_MAX, or line-aware cuts. The FAIL_TO_PASS test instead asserts exact LogisticRegression ellipsis strings and N_CHAR_MAX edge cases that are not described in the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about confusing pretty print repr for nested Pipeline. The user wants that if the full repr is too long, trim it step per step of the outer pipeline so the structure is still visible.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about confusing pretty print repr for nested Pipeline. The user wants that if the full repr is too long, trim it step per step of the outer pipeline so the structure is still visible.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "lbD9dxy73TxA1HpsNO9ulChfYDG3dA96aLcM+4bJTG8XILuR4XL7CaqbnTJU6zpUaM5d7wGZQHw/JZZDPVi+ug6jdSVLwVC+sZFKMP90/ASjpmuAiaGcZ9q1L3ElnGwhS2hMD2vfhQJ0BO74csX60vLX7+EhqOz8hiTTN8V4uKu74qpDtwD0i08ckfxysAyHBgQ+WTsilcYpveo7VqiMnIhGk87x1lXqKwBRMovAou49sWFtNXFatxmSCt2GI25k4bzPrGiQFOd4AJ9qkEcSPue6sNXRINsA6qG6oXhNVN+lxlpjyTab/poFAK436FTpcpy+Nt6tewXdTRl3E190spbMd+2hgXVNBF54OGo05eo5ZzC3APDkz+Kfh5Qqc1s6tQ1kZlA/ZzwaYIqzIs5XHvyJVdeUGnaoHvy0hlGckjbh2qX1bqNf8XLsrNvqg/SZkAK84vqtuz8dl+vsaxMEcgsFBV/2WCY7gJRPvLTiNNQFPI4EHw5VpqklHUYuy7EcsjB5LhHQsvM18oDMq39EqdYXczEpun10/ZRjJBIZFiixZw2W3fF4U5oYEitOuee/EfBUrmW5fxqfelXZOpWI0oXY1Dutzhxvw+ILPCzWLjS0AEOq5ULHCgbpyrETbxixEPAIcxu6vrthWqpZb4+wVVUCth+0vr6qN6IWHH7uGyoZbZry3XOi7xP3yw5Jc85iY+9MxUviXoUUH4HE/DUsFM9XrPuwWgG/1admeRxvADfOHdxJgLpoifm9j5VbVMc4YX2ENrzYTU1rkZxIXAzOuz61zHn4sr2hpdkP2iJo6er96+nFg9+s3T2MstwuejTN8tePGia2B6fDm1cIrRJXlp/SKRqVCQnWrBbgdSrcnt7DLu236h1FkLe86itVmg/LrM+SvsgV5EMu7JTe0/aTv8TUfZgr7nhoPojBmwp230KwQxJjklF/UD06o1qNhx05WJUsjBTyLXaTsKNMdi7sleeP6MsO1yOA/1o0OhkatRPcKdWnm9vz4ec4+uu8j+QGGqGr7t6MRzGjYTupU9AMHDtv2yBwALXLbUzDpyQC2wmDKqWVafcMHUImSgetmqCLlK6DmZTT/f8+Xz/qM0oa8gzWjiugVCidXhw0WDbsZmLOaEcwEOG7FEsSBjZPjKbbN1931S7nzF641mqHDId2SXbhhfH/UtKPNpzRGiA4qW62wr5VIXcYMpPSfFNaFsyHZWH/cVey33exMzmGXyL4VwI64D+4EmWRqOFLi4erPaKmHwde43DBLj9WQkZnDMWjkgGqoRSLX/IsIDJaF5WMobDBgD8oonBM3ofyo2ly7po67d5Iu/Ab2MjIQHnzTDxPQIrBZOPncV4aWQ29+XC78pjHTdJTZVvWdlr/kmdPU9UYUyN8ayxHeI3N7GGoerQpvleEkerYrolzs2FmuLOuq37/ymEs52VY6t2ChGFFFAFN8VHv4/1mny0I4qS55PPnE6BuVGw4xB4ZTzZvRbJoJBhG0vtkDKJ/7Ug/ihaDgxXwrz+ozWjGI06m2zux7RyCetdPtPTP/RJdRywWYPK+a4cR2zuxtnJA4wLwLTQHaOnesDbX/4xsodRqR3z1rDgUtvDxiiQwnJkrmiyxZcquhU/BB0PvwoiDOyb0HT6bTvZjji3/Xh1b004J1UCHdWVp/60dm55EzRrfFn8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_56272d37-2a32-971a-a499-0ae747bcef66",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3381,
+      "completion_tokens": 400,
+      "total_tokens": 3781,
+      "cost": 0.00897,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00897,
+        "upstream_inference_prompt_cost": 0.00657,
+        "upstream_inference_completions_cost": 0.0024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 271,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue only sketches a nested-Pipeline pretty-print problem and a high-level idea of trimming outer steps, without specifying bruteforce ellipsis, N_CHAR_MAX, or line-aware cuts. The FAIL_TO_PASS test instead asserts exact LogisticRegression ellipsis strings and N_CHAR_MAX edge cases that are not described in the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue only sketches a nested-Pipeline pretty-print problem and a high-level idea of trimming outer steps, without specifying bruteforce ellipsis, N_CHAR_MAX, or line-aware cuts. The FAIL_TO_PASS test instead asserts exact LogisticRegression ellipsis strings and N_CHAR_MAX edge cases that are not described in the issue.",
+  "prompt_tokens": 3381,
+  "completion_tokens": 400,
+  "total_tokens": 3781,
+  "cost_usd": 0.009162,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

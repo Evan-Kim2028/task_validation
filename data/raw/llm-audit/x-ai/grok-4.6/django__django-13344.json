@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13344",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4016
+  },
+  "response": {
+    "id": "gen-1789191203-TFsQN6fQFof7MSSda8gz",
+    "object": "chat.completion",
+    "created": 1789191203,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly describes ASGI first-middleware receiving a coroutine instead of HttpResponse, which a competent engineer can trace to MiddlewareMixin async wrapping not running when subclasses skip super().__init__. The FAIL_TO_PASS suite fairly targets that wrapping via iscoroutinefunction, but also expands deprecation coverage across many middlewares that the issue never mentioned.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about coroutine being passed to the first middleware's process_response() instead of HttpResponse when using ASGI.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about coroutine being passed to the first middleware's process_response() instead of HttpResponse when using ASGI.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "q0etRYjbWQUszcjKW+QRM4VMx+KfaUZTuIcuFBbqJ7Uqde9puSjsW8zAvMEjWguH4BOmd2KS1emmRzI39GGLWr8PPnzQ8Wa2DhSOctKo7Hbhr5WXoG9M7ZJ37LjpKagiQO/asuP+XCYDgqw2JF0VQEmt6vU8eD2jVpDt3QjRBpNuj18cMWbec0OTRFgXeCCxwh94TplBemxF22/WiqZI3WJ8gj2b7bZU9xDizbVacfm8qEA9U+Z+f8BONMoaYPMy7EWUM//9aKE6v2glCoILJbCWh5OweUjI7lSWVKpZKt1HhDpV9nqgF3Yu9zUUpTrU9bEBhUyKpo4fvsX/yAaEWcRiS/w2bugbTDOepkbWGPPzo76DxTC/5Y51ntgnJZDdp9t8S+vzppw3jNvpWagzgQGLR74VsimStYaXNXKElfKzIQPOcGx/0QQKHfaE8gRFzVyozJaH9hPCs1ThXIyvJ0109KRBKR6V1zlixVBozwKC5Z/ehTd3RREh0op8GXRHHOhBaJbK2ING6pwkJ5E1XiR57lKhVf++L4GwnldBPx3dL0cn3XCuFUvFffj9v/TWGvVCnFbPhVbFqh7+ShukizTk+X9GRi8dhkgOzgwaex5vySyM6Ufv7rxvIu9L6SYM0bfdD9bO4zo7x/u12XMa4ebNDCuVX3Bv3R30TGtgOW7jXj8pedV6vS6Yc3Exo0VT8jf/1XeYMFMI0EkU+CwUBG89mqWrl7HDllBzzT2Xj+qflWG/Ew6tlxWS+ieadFKBvXb3bHzicHw4aw5keuQimHMwVsNnaJbePfnU2djSSwJgiAfIptCbSYkhlK8n74tWJxfoyVKtn6AECkbhdUQWtvSklkN2rwSX/Di0uUrzxEM0L7Lu9uokUgJDYaiRVobthJ9j4SQ23TFs+firBvMqMC2BqAQ3OyrLgBZPUL56bZoivZnc6vfIBRWnA+cERz2f7NIFHOhTeh20w+pdATRbjTmq/4qlabGFT+kn3XosT+Yz08kx7YxvNjloC67AJ9iObJeEEVxEr5vL6zMiewVA7Bvlbd/37L8a96aViJFd5BkvJhwpMSvtvmThNxzYGP3geJAnTrVLjmfHFwYr7O6M2EfTbaeHuqnJAv01kcLoyH5sAo36ZpgodW8cmQs8IBPXmatE5sij88bqRa9qt54LIFNXkgjxWFvfJS5XCqYpVJ9sGnXZXciEVLYcU3lr7HBQJIPT+On+dsb5fntmZJVIhQZiJ383wQYPHxK8iNZ87JBNY/0FdgmvQ+yu3qDNwdZpyV1azkvnw82yzyXl2aGYUijplYcYhaxWybtsNl6y718W2eoNMcu03AC/GZ16IIeqmcseG6RF6I/xB53oKMzuIuu2BoEmTc5NMcveqwf3hX6mkvqKRiQ/J9nMxb+2C0T1JSVUHU0eDRZxp1p1IJjQp6MS5B/jHocO29t1wb6PZeeJynynnXwHvFGO0xTe6VwgE7CaSyhl/isrD/B3nO+GLAvpeZ9fLibuuAQScRAluKvISB9IKpX87sbRpN901YoJ6gHDg4VBY7znxoOiW9D8w5jphdz2rUmlQB2Zrd2sTTkCiBSGnZ7PYNecwVQe+NUlD19M+rG7Pz7VDHQGkBlIIo/dP3JgblEx9z8Xo9joiELnpk9ugoKNQgO2LSISo+/Y1jTcGAHxdEBV5YXDdUv48xOrb4fC/t0Vf8Muvgc1TsnJR2NvzdXQxLTb+R/XmUoGusXq6SmIhlMwfzjkGfUPRdLU3PCkzCcocrHusbjrzmM3J5gvT/TN/3tLkAHn8sjT/dGociWAaFDobYrJFAvEQ0pdTGnt4ig7TXLf4ZbVpcftIK7hpoFPf0w4MU3E2QG61B0ohbxOqyw022xtCKIxhj3bU5bh0fAC+ESkqRBPQ1QRVxs0MY24Kpf6YJP/gdmQdUHEv+7AU2WaDS3jP3wRIW+F/LJK0uUc85qPcmeBmaE+YB+imOTbfYvcxJQymKOr7h9U4MWp118Gj5rQ5O8gwXpjK6fFToR0XGovTVztkYWse9XYV4ZkLfXkl9wi9gHcR1zxU1JbxqpQarcyhSR2iYw9Vg567mfW6/4C9K+mgp8TarsqFEKSCggRx+KUx7JyZHrZ4w5GC7K807xJjRBvvxV+ebUfu93VgZzogsU7TCvV00967MyMwZQ8tpfeJAZPStFmwp2nvTTRD8MmSz2cXtTAvvEH5M2smVWJxIP4ZfRR2s2YseitSMmIZA++6dFBSb+U791kzrymQsx9P8i4ziyY7bhZfvFS42cs7A2DkmfHOLP4BrNxE2q5qJ1IH8mZku+KEzeaCGmx4zRUcGwE5rYJHlT76sJ9wypDehFZXOlRcsRSeGTdVm8iv4uKIetvF5ayCBLpvyTlnPy+JFJJlt5+epWWm5XF8S6aI2kmSHot5lBYf4s1VbH0aXC6VCNkx0j3xiD9Kjnr3mnvxCJ6RKLfXm27p/MEjgIxazpoJjuP6bG9by/MJngdjD9XXUUYKWghdYNVOHL5pXZpXCYZcJ1IGbFnpAiDvHMiT4J76tWZb7gM4ABR+1Lj8uQRW4ZORAApW5IOMtdfqxjO5MoJPOcYpDpHy1saDqyclgoYSlqvUZhHbhVPQ0ijKlKPF4SrGpeD7PRTN8GOO7JksMfnDY5Q/Dby/5eQn5hbDrWG/0MokFm4d+f1S0+wq67JCryG2Eu99bDFlvMfXlJYhco.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3612c75c-e766-93e2-b3f6-dcf31ea564c7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4317,
+      "completion_tokens": 545,
+      "total_tokens": 4862,
+      "cost": 0.011712,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.011712,
+        "upstream_inference_prompt_cost": 0.008442,
+        "upstream_inference_completions_cost": 0.00327
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 421,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly describes ASGI first-middleware receiving a coroutine instead of HttpResponse, which a competent engineer can trace to MiddlewareMixin async wrapping not running when subclasses skip super().__init__. The FAIL_TO_PASS suite fairly targets that wrapping via iscoroutinefunction, but also expands deprecation coverage across many middlewares that the issue never mentioned.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly describes ASGI first-middleware receiving a coroutine instead of HttpResponse, which a competent engineer can trace to MiddlewareMixin async wrapping not running when subclasses skip super().__init__. The FAIL_TO_PASS suite fairly targets that wrapping via iscoroutinefunction, but also expands deprecation coverage across many middlewares that the issue never mentioned.",
+  "prompt_tokens": 4317,
+  "completion_tokens": 545,
+  "total_tokens": 4862,
+  "cost_usd": 0.011904,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

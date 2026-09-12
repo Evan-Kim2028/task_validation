@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-3302",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6457
+  },
+  "response": {
+    "id": "gen-1789187867-2phDBCZHB1I5HrGo0Q2A",
+    "object": "chat.completion",
+    "created": 1789187867,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue only asks for some extra interpolate_na option to skip large NaN blocks and does not define the API name, gap-length metric, datetime/timedelta handling, or error cases. The tests encode max_gap semantics, specific exception types/messages, and index-validation wording that a competent engineer would not infer from the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit specification validity of a SWE-bench task.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests don't match patch (wrong names, missing new tests); error messages changed without spec\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit specification validity of a SWE-bench task.\n{\n  \"underspecified\": 2,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"Tests don't match patch (wrong names, missing new tests); error messages changed without spec\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_beda1db7-0167-9c13-9443-9b96d9f22e70",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 7862,
+      "completion_tokens": 535,
+      "total_tokens": 8397,
+      "cost": 0.018742,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.018742,
+        "upstream_inference_prompt_cost": 0.015532,
+        "upstream_inference_completions_cost": 0.00321
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 411,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue only asks for some extra interpolate_na option to skip large NaN blocks and does not define the API name, gap-length metric, datetime/timedelta handling, or error cases. The tests encode max_gap semantics, specific exception types/messages, and index-validation wording that a competent engineer would not infer from the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue only asks for some extra interpolate_na option to skip large NaN blocks and does not define the API name, gap-length metric, datetime/timedelta handling, or error cases. The tests encode max_gap semantics, specific exception types/messages, and index-validation wording that a competent engineer would not infer from the issue.",
+  "prompt_tokens": 7862,
+  "completion_tokens": 535,
+  "total_tokens": 8397,
+  "cost_usd": 0.018934,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15061",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1727
+  },
+  "response": {
+    "id": "gen-1789191528-04zvugKeFLAystMVAPVY",
+    "object": "chat.completion",
+    "created": 1789191528,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue title and description clearly ask to drop the MultiWidget label for attribute that pointed at a synthetic first-subwidget id. Tests only assert that rendered labels have no for=, which matches that intent even though deleting id_for_label entirely would not produce the same HTML.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about removing \"for = ...\" from MultiWidget's <label>. The user wants to remove id_for_label from MultiWidget class because it generates id_for_label like f'{id_}0' which doesn't make sen...{\n  \"underspecified\": 2,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Gold patch returns '' to eliminate for= attribute; removing method would inherit Widget.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about removing \"for = ...\" from MultiWidget's <label>. The user wants to remove id_for_label from MultiWidget class because it generates id_for_label like f'{id_}0' which doesn't make sen...{\n  \"underspecified\": 2,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Gold patch returns '' to eliminate for= attribute; removing method would inherit Widget.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7037775b-b757-99db-a447-c1a8efd36c8e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2290,
+      "completion_tokens": 531,
+      "total_tokens": 2821,
+      "cost": 0.007382,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007382,
+        "upstream_inference_prompt_cost": 0.004196,
+        "upstream_inference_completions_cost": 0.003186
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 420,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue title and description clearly ask to drop the MultiWidget label for attribute that pointed at a synthetic first-subwidget id. Tests only assert that rendered labels have no for=, which matches that intent even though deleting id_for_label entirely would not produce the same HTML.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue title and description clearly ask to drop the MultiWidget label for attribute that pointed at a synthetic first-subwidget id. Tests only assert that rendered labels have no for=, which matches that intent even though deleting id_for_label entirely would not produce the same HTML.",
+  "prompt_tokens": 2290,
+  "completion_tokens": 531,
+  "total_tokens": 2821,
+  "cost_usd": 0.007766,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9464",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1d6ac5ea-a540-9978-abb3-1b0d04d5c8fe",
+    "object": "chat.completion",
+    "created": 1789194308,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that PEP 585 generics such as list[str] must stringify as list[str] rather than the bare origin, and even points at checking __args__ and using repr. The FAIL_TO_PASS cases are the same stringify contract on other PEP 585 forms, which a competent fix of that behavior would satisfy.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1937,
+      "completion_tokens": 124,
+      "total_tokens": 2388,
+      "prompt_tokens_details": {
+        "text_tokens": 1937,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 327,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 19108000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that PEP 585 generics such as list[str] must stringify as list[str] rather than the bare origin, and even points at checking __args__ and using repr. The FAIL_TO_PASS cases are the same stringify contract on other PEP 585 forms, which a competent fix of that behavior would satisfy.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that PEP 585 generics such as list[str] must stringify as list[str] rather than the bare origin, and even points at checking __args__ and using repr. The FAIL_TO_PASS cases are the same stringify contract on other PEP 585 forms, which a competent fix of that behavior would satisfy.",
+  "prompt_tokens": 1937,
+  "completion_tokens": 451,
+  "total_tokens": 2388,
+  "cost_usd": 0.00658,
+  "cost_in_usd_ticks": 19108000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1116
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-863",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1149
+  },
+  "response": {
+    "id": "gen-1789192207-OydMqRaNdKMAawOdd798",
+    "object": "chat.completion",
+    "created": 1789192207,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS names are unrelated to hooks; they do not match the added test.\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks to accept a list of callables per hook in Request construction and registration, which a competent engineer could implement. The named FAIL_TO_PASS tests do not check that behavior at all, so the evaluation does not fairly match the issue even though the patch adds a relevant test.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests listed are unrelated to the hooks issue and don't test the proposed change\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description is clear about accepting lists in hooks dict values and the gold patch correctly extends register_hook for lists. Underspecified is 0 since the requirement is well specified. False_negative is 3 because the FAIL_TO_PASS tests don't match the issue or the added test.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 3,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests listed are unrelated to the hooks issue and don't test the proposed change\",\n  \"confidence\": 0.9,\n  \"rationale\": \"The issue description is clear about accepting lists in hooks dict values and the gold patch correctly extends register_hook for lists. Underspecified is 0 since the requirement is well specified. False_negative is 3 because the FAIL_TO_PASS tests don't match the issue or the added test.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d4941c7d-19ff-9b69-bdcf-4be0e59542ff",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1458,
+      "completion_tokens": 972,
+      "total_tokens": 2430,
+      "cost": 0.008364,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008364,
+        "upstream_inference_prompt_cost": 0.002532,
+        "upstream_inference_completions_cost": 0.005832
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 837,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS names are unrelated to hooks; they do not match the added test.",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks to accept a list of callables per hook in Request construction and registration, which a competent engineer could implement. The named FAIL_TO_PASS tests do not check that behavior at all, so the evaluation does not fairly match the issue even though the patch adds a relevant test.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS names are unrelated to hooks; they do not match the added test.",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks to accept a list of callables per hook in Request construction and registration, which a competent engineer could implement. The named FAIL_TO_PASS tests do not check that behavior at all, so the evaluation does not fairly match the issue even though the patch adds a relevant test.",
+  "prompt_tokens": 1458,
+  "completion_tokens": 972,
+  "total_tokens": 2430,
+  "cost_usd": 0.008748,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

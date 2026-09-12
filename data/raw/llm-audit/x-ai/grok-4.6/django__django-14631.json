@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14631",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2697
+  },
+  "response": {
+    "id": "gen-1789191461-k8fAvA9aaRlf2PR3KXS3",
+    "object": "chat.completion",
+    "created": 1789191461,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue states the consistency requirement that disabled-field cleaning should use BoundField values so cleaned_data matches BoundField.initial, including the datetime/callable case. Suggested method names and the exact BoundField refactor are optional, so a senior engineer could still implement the required behavior and pass these tests.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about making BaseForm's _clean_fields() and changed_data access values via BoundField for consistency. It mentions a specific consequence about form._clean_fields() vs form[name].initial,...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about making BaseForm's _clean_fields() and changed_data access values via BoundField for consistency. It mentions a specific consequence about form._clean_fields() vs form[name].initial,...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ec1b17b7-2fe3-9e99-9601-b5d36d2e5593",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3099,
+      "completion_tokens": 442,
+      "total_tokens": 3541,
+      "cost": 0.008658,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008658,
+        "upstream_inference_prompt_cost": 0.006006,
+        "upstream_inference_completions_cost": 0.002652
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 327,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue states the consistency requirement that disabled-field cleaning should use BoundField values so cleaned_data matches BoundField.initial, including the datetime/callable case. Suggested method names and the exact BoundField refactor are optional, so a senior engineer could still implement the required behavior and pass these tests.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue states the consistency requirement that disabled-field cleaning should use BoundField values so cleaned_data matches BoundField.initial, including the datetime/callable case. Suggested method names and the exact BoundField refactor are optional, so a senior engineer could still implement the required behavior and pass these tests.",
+  "prompt_tokens": 3099,
+  "completion_tokens": 442,
+  "total_tokens": 3541,
+  "cost_usd": 0.00885,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

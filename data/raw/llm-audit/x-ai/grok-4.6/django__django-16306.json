@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16306",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1021
+  },
+  "response": {
+    "id": "gen-1789191756-pnFiHRxvSTLsg5siVbDi",
+    "object": "chat.completion",
+    "created": 1789191756,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"Issue asks cache-first; tests require fields-first after deletion.\", \"confidence\": 0.86, \"rationale\": \"The issue only describes skipping extra work by returning the bound-field cache first, with no mention of deleted fields. The FAIL_TO_PASS tests require KeyError after del self.fields, which rejects the cache-first approach the issue itself proposes.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about optimizing BaseForm.__getitem__() to avoid unneeded work in the happy path. It suggests returning from cache first and handling KeyError.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect KeyError after deleting field post-cache, but gold patch's fields-first logic would raise different error or succeed incorrectly\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about optimizing BaseForm.__getitem__() to avoid unneeded work in the happy path. It suggests returning from cache first and handling KeyError.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests expect KeyError after deleting field post-cache, but gold patch's fields-first logic would raise different error or succeed incorrectly\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_05ce44fd-b548-9254-9514-da8b349ef773",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1372,
+      "completion_tokens": 635,
+      "total_tokens": 2007,
+      "cost": 0.00617,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00617,
+        "upstream_inference_prompt_cost": 0.00236,
+        "upstream_inference_completions_cost": 0.00381
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 515,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "Issue asks cache-first; tests require fields-first after deletion.",
+    "confidence": 0.86,
+    "rationale": "The issue only describes skipping extra work by returning the bound-field cache first, with no mention of deleted fields. The FAIL_TO_PASS tests require KeyError after del self.fields, which rejects the cache-first approach the issue itself proposes.",
+    "p_invalid": 0.92
+  },
+  "s": 2.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "Issue asks cache-first; tests require fields-first after deletion.",
+  "confidence": 0.86,
+  "rationale": "The issue only describes skipping extra work by returning the bound-field cache first, with no mention of deleted fields. The FAIL_TO_PASS tests require KeyError after del self.fields, which rejects the cache-first approach the issue itself proposes.",
+  "prompt_tokens": 1372,
+  "completion_tokens": 635,
+  "total_tokens": 2007,
+  "cost_usd": 0.006554,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

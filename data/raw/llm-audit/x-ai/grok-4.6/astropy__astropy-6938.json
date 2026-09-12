@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-6938",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1142
+  },
+  "response": {
+    "id": "gen-1789190715-FBMbs0d97Il4Ieafb7p1",
+    "object": "chat.completion",
+    "created": 1789190715,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that chararray.replace is not in-place so ASCII D-format exponents are never written, which is enough to implement the assignment. The new table test and checksum updates fairly check that D is emitted, though they pin a specific scaled literal and checksums that are slightly more concrete than the write-up.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8b18bc92-a90b-91ea-a60e-0f3f0663cd79",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1582,
+      "completion_tokens": 565,
+      "total_tokens": 2147,
+      "cost": 0.006362,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006362,
+        "upstream_inference_prompt_cost": 0.002972,
+        "upstream_inference_completions_cost": 0.00339
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 444,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that chararray.replace is not in-place so ASCII D-format exponents are never written, which is enough to implement the assignment. The new table test and checksum updates fairly check that D is emitted, though they pin a specific scaled literal and checksums that are slightly more concrete than the write-up.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that chararray.replace is not in-place so ASCII D-format exponents are never written, which is enough to implement the assignment. The new table test and checksum updates fairly check that D is emitted, though they pin a specific scaled literal and checksums that are slightly more concrete than the write-up.",
+  "prompt_tokens": 1582,
+  "completion_tokens": 565,
+  "total_tokens": 2147,
+  "cost_usd": 0.006554,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

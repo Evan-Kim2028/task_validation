@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13162",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2009
+  },
+  "response": {
+    "id": "gen-1789187614-Tcg2jAIIRMU5uT8Z8c2n",
+    "object": "chat.completion",
+    "created": 1789187614,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue gives a concrete default filename example and prefers combining leaf names, so a competent engineer can implement that scheme. The FAIL_TO_PASS test still pins an exact join order, prefixes, and stdout path string that are only implied by the example rather than fully specified.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue asks for merge migration filenames to combine the files being merged instead of using a timestamp. Example: `0003_merge_0002_conflicting_second_0002_second.py`. It also mentions alternatives...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for merge migration filenames to combine the files being merged instead of using a timestamp. Example: `0003_merge_0002_conflicting_second_0002_second.py`. It also mentions alternatives...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_d0936e8f-98c2-9706-8e1c-92fdd9730c31",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2347,
+      "completion_tokens": 457,
+      "total_tokens": 2804,
+      "cost": 0.007244,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007244,
+        "upstream_inference_prompt_cost": 0.004502,
+        "upstream_inference_completions_cost": 0.002742
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 347,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue gives a concrete default filename example and prefers combining leaf names, so a competent engineer can implement that scheme. The FAIL_TO_PASS test still pins an exact join order, prefixes, and stdout path string that are only implied by the example rather than fully specified.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue gives a concrete default filename example and prefers combining leaf names, so a competent engineer can implement that scheme. The FAIL_TO_PASS test still pins an exact join order, prefixes, and stdout path string that are only implied by the example rather than fully specified.",
+  "prompt_tokens": 2347,
+  "completion_tokens": 457,
+  "total_tokens": 2804,
+  "cost_usd": 0.007436,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

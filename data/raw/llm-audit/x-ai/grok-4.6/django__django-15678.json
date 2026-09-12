@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15678",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1396
+  },
+  "response": {
+    "id": "gen-1789191646-pFGDmOHjrkr5B22tGcLx",
+    "object": "chat.completion",
+    "created": 1789191646,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to deprecate CryptPasswordHasher for Django 4.1, which a Django contributor would implement with RemovedInDjango50Warning on hasher construction. The FAIL_TO_PASS test still requires an unstated exact warning text and that get_hasher(\\\"crypt\\\") is the trigger, so many reasonable deprecations would fail.\", \"p_invalid\": 0.76}",
+          "refusal": null,
+          "reasoning": "The issue is to deprecate CryptPasswordHasher in Django 4.1 and remove in 5.0.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is to deprecate CryptPasswordHasher in Django 4.1 and remove in 5.0.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "NFolPPME9YzrkXcmU0f//+4WXOIxIwokyKD7WvX2w+YsrVcnGxN815TVBNiqg0rtjOv5ZWup4ZAOJt+WH3L/1wPfyNEll8abVpK06WLOcZ/t8qLN8kqvcyRWfaHokwn5mFH807Ge8wOn1agXoeUebOTIOLV7FdcQkxT8XarWWRn7pATS+iRTgZhAKIP1w7ZTlNx7nRKyi275DcrgStRB9XLh6zipDd7Jgjh9qDcTB09xST8DjwbiWrOlvdK0HSEeSxW0veHfTW/SLPZwzUHMnLsdlKxTz8niG0dIakO/1P91TFkrZVVFtmoNVycaP2fDcR8Q6plN/B5cp4/mN4EaPRREr2VS/HreBZ9fJ0+FFEO1M/dq39BZ7IIjLUGc+ihkxe0ss5IfsG28ZTo2Klzlt3n8zSQORLHrTqQZnytnjCupyqeIiK8nbR+c3vxg5F9moOdRc3W8JKGaNAucRmsuY7nnjdGvsJXuuDPD7QEoRwEcQBnpsgiHoCt9Dwxb19nf4be5AXGD5I7jDHHx903v5f5PcjBNlfFugtuHqTCLsV7IEemY5DdQibOzEflMgz4EIc0xyC1LlA4cb4SHQFm7d106OwkzpxWQZCug9avk8MP4T10hXCCho/M6VpGdNUMxFyUuzsbFdCh6Tu8nA9VVECc5kU2+Tmd5MXL7d1AE+KCuM/+dplr7vTJj+FE+GiMjTOKLVCkHLfN21/OJPbz7J8Jy9FRKt+aeTP5FkvuvS/qjStkzx1C+z2uBcQPnMaa0C1reZ7foiSdceaNUOiULr/5A/7l7Ni1eNovNSZQghRArG8fS0caUmwwEU/Jr6GKwsmPeOAbOrdZufsbP5G0hCvAtFx3fZZ8wZ73hSg/yYEdYZu0klCR2gD+32aHisI0ODZ0FJy0cpiLaFnw+5p7MKPVvaL9YdiTYyjQdeOqR91VJJ62h1hZg41V2yCAoWCT4Oar080mQtEAG0yTqtUaEtuw3Q26EdFRgHfYhDmQfu+sElIo0LjoFj3XhYEpZkyaIw32/0X50vDy4fcd5pr/xbZezbi91tY82uMIn6Sf/L6HrEwLnsA2y8KcXFv06k8GNoo88pnVYlWidbZu2DAnjXXnZocdrKiV5o+SDGPIKnqJvn/CUOpYyhRpUs+MIuvb11A1rWMuIfLUzqwtebH5YVyLacGxuyg8UpgFxRASztoF+pOBH9at0HGW3DivaPTsXcE+94AVSPGApmup/i6Q3XBivpvKfMXGI9PGPjGtELtt7n9fcirR3R4bDDZ/lxGWdyEzKGA2DOG3rVpAKCPRsnz4eQU9LWGI6Q95XpNijfnvRx64yTEhwH1BLcqqAFS1DJrObwhm1vvcRwL09Pgonn0p9Z9amGemAu+OwUFJfhTnym1BJnGg6AmIvJFxeRDLVj3CSreczV9BzS2qjOfjBEQc0V2nWhetpYJAQZfrWdAR5ezH9e+FsRqopZemb+kbc3A1Qcffs/UEiIJLslsDLoFWqKEajeCuAi/MzOQWWGMDpj4NlSrSeczUDJ2k0zNrkrokL9mHaUCCMlOdTMm7p8hOc1FpW4wVjb3vy4eAW7oBSg1dFVHLdycVQqhgxKklOoUqlwNwaKcDx9sPqtJQq2yAiuwzHXEOdob4cCaX67DLWa+vWlSGSYCqbjS6YThhAm1UtQKFKnOlz28PBde1drgnsQ3Xl2EAJmiuVnCc8ggT9h8lP3y7M797B4Uua+2Ecbh884UWjajwRdxbSkJHuKhoAYlfdaze9+PCzFDP7WuCF3c4.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3d7f147b-c1fd-9ffb-a276-5a82ae68fd17",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1752,
+      "completion_tokens": 433,
+      "total_tokens": 2185,
+      "cost": 0.005718,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005718,
+        "upstream_inference_prompt_cost": 0.00312,
+        "upstream_inference_completions_cost": 0.002598
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 310,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to deprecate CryptPasswordHasher for Django 4.1, which a Django contributor would implement with RemovedInDjango50Warning on hasher construction. The FAIL_TO_PASS test still requires an unstated exact warning text and that get_hasher(\"crypt\") is the trigger, so many reasonable deprecations would fail.",
+    "p_invalid": 0.76
+  },
+  "s": 2.0,
+  "p_invalid": 0.76,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to deprecate CryptPasswordHasher for Django 4.1, which a Django contributor would implement with RemovedInDjango50Warning on hasher construction. The FAIL_TO_PASS test still requires an unstated exact warning text and that get_hasher(\"crypt\") is the trigger, so many reasonable deprecations would fail.",
+  "prompt_tokens": 1752,
+  "completion_tokens": 433,
+  "total_tokens": 2185,
+  "cost_usd": 0.006102,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

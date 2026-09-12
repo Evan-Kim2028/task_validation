@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-11489",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2157
+  },
+  "response": {
+    "id": "gen-1789192448-ftHL8hioWhzw9jgum7D9",
+    "object": "chat.completion",
+    "created": 1789192448,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue proposes a config named linkcheck_anchors_disabled and only sketches regex-based skipping of anchors, while the tests require a different option name, list/tuple typing, matching on the URL without the fragment, and exact broken-link messages. A solution that followed the issue text would reasonably fail those checks.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue asks for `linkcheck_anchors_disabled` with regex of entire URL. The gold patch and tests use `linkcheck_anchors_ignore_for_url` instead.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for `linkcheck_anchors_disabled` with regex of entire URL. The gold patch and tests use `linkcheck_anchors_ignore_for_url` instead.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ksGWEJzs00RlKqQlr0CTjEBjzL5dKa4cdk86tOx15Ph+f+9j1Iyd7FK29sKO9H10UUR4nkv1zNGHUDynQuckF2B7UByQHqPHyNElIRGLmoqVVT7ARQb9PGp7Aqxaa2zTTG77OxFkYAsyFd8uRgfvgLt70/2OE0FMoTnyRjyHXwlpVyRKxUgnwvEvBnIt3c8YgW9NScZxcIhY1IT5SBqZU5PN6Ad+OxJi8OBGFJXlbtF10xn3m+TTJ78xHYKfmA39hdOzccTr31VUSEpHSGCl6e2fg+oGkLXAfuU3unEFkUzxEh4jK7GOtOwAi52felcFVosjp/YJ8s/niYbbla/DqPYoaEyVmvfvNpYcOcPQoqwC3dGRu79E29V0rygAeDqoWnOyNXENWqNdCDpv/Wc9fegECi6jimtC/NBkC7gW692n+rV0Zrx0RYuHs9EmvvgDcQwHDeOWwubjSy8jQy+rqI8/hIFkmnLnZaqPVqWGxJlzYVSZMUnFGiCn+iCG0SNLGBSupHLsFKN+dGvPUqJZXCnu0zjm3GuQZKkQwyb7SAaTAriLDdXGw9LUzRWJbKOxlMz855ApOrvSSJ3bfZlqPjU6wAQ5hZG33Yj+0plwtOJCsAVcF+794y6ZgdNy3XWgGAtthi1YPIbq56pkSELzm90hhTs4pJbwP2X9NSdeVy0CPZtQubqSkM1LB0OiuFh6uwHrEWBAzfkmdoNGpjv2BSKc8hLaw45H7ReUEQqgI+1NJgtbtHthAY62Ln4Lw8CZtWx0KskRXtt7XWxjCYm66qPXduuDLcYP86RT98rpcP9oBMAebo19/snFPIx9doOKXBq1x8BnuhDT8iJLXRF0EEc8ow64buyg/CGaxgM2Z2bYEBB4AXFvMsj4gTKgtFxIvRNFu6qkXvEzqNjIIYhJ2KwgoTLgWJ6hyGdasPUwL1CxQdBg9yc58JASztb49hpJs9GrCdvMaphdHE3zqbLigMCNgUuzFYBjkzU+AnA+V4VtfuWLuiuZVBO4ugwNszAL0tqcmJqb5UutSoBPPigSzjouROn5lV29yCs3zBBCQsvfiTL5YoVWoHQl7YxYuVPXHSzXdTO59+4HHbf9stz/oLeci/pQpsX27h7zhmI9gepD85T+NveBnMOVF4OvGKbcGGHE+LKIVISRuj0cOTDX1rvSfZmxtpr06ZgRJ9boU4ZicGqhaXJ8o+ybjCQ7Q7lkpLa2eANiFD8BNzSgXkyIVH4A5nJn0QSrj2KPpIwGrUuquF/G7HdNLVOqPS4Mm6S6w41Ke5CxwrZB2Ep1/s+rIKhR9BR2SlPLQE68yWGUQTHTICwXPhOu+viyPzlduwpDBGk6ILOAWrhOWlyMoV39QD0liKHiR8gpkrRiPN6KKkfQwKwP0MpM9EnVgrGwM9OE1SVZ5gnb6/l1fe1r3isrgT1m/hhivQEWcjbF/EfV1Pnra39/GnCPY9GIYSuNtpYYwv66OJYIrD3NW3Neg/o41yWrBl5d2WFQdNB2tgPvO38LWqLRJ7lnGRKA3CcE0qYgpkg5slztQ/jVMxLGIqyli2HTBhe423C20oVGD9uL2+K4b2PWBxm9WC8ekdZAjMcKYk23svY5yc8fNIqkImH9YDrBDGOFoDz6dg8Y5C5JbGGes0+Jg2H4JVqvum0bp6TLKmD/Xa+wEV+CO16O7gvRuDPrIFrT/lXLgjJzy4DWCvVFvRCecaGc2CZIrJDPCRa/FIgoeIZb/wmkKduQaQtUVEBYl1kQc2mfRwcYh0Tscfz8E5e99NBBXsbP0pokpV8fTZCaPeqy2lEAkhMZmieybBzo5uozgbAeZCyBT+lO9/rx1suRfYnpES5ekgP82U7eeb8adEISdry1dxr9asu2LaXY6UUdyjMM6ejLAHzvqfD+uwEwzTzZ33UIUgIIqKX5zkUtQou13tK0z7kcqXfaumzvRFmTErj+tZ2J+8re/6uD.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6a2b5187-ce7d-90d3-a7ab-93148fda5eaf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2737,
+      "completion_tokens": 459,
+      "total_tokens": 3196,
+      "cost": 0.007844,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007844,
+        "upstream_inference_prompt_cost": 0.00509,
+        "upstream_inference_completions_cost": 0.002754
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 340,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue proposes a config named linkcheck_anchors_disabled and only sketches regex-based skipping of anchors, while the tests require a different option name, list/tuple typing, matching on the URL without the fragment, and exact broken-link messages. A solution that followed the issue text would reasonably fail those checks.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue proposes a config named linkcheck_anchors_disabled and only sketches regex-based skipping of anchors, while the tests require a different option name, list/tuple typing, matching on the URL without the fragment, and exact broken-link messages. A solution that followed the issue text would reasonably fail those checks.",
+  "prompt_tokens": 2737,
+  "completion_tokens": 459,
+  "total_tokens": 3196,
+  "cost_usd": 0.008228,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

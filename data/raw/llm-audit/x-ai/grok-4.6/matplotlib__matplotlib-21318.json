@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-21318",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1642
+  },
+  "response": {
+    "id": "gen-1789191926-sp8bxnilMZ96hbuZNfrp",
+    "object": "chat.completion",
+    "created": 1789191926,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"Issue asks for no error; tests/gold only change the RuntimeError message.\", \"confidence\": 0.9, \"rationale\": \"The report clearly expects axis('equal') with both axes shared to draw without raising, matching older Matplotlib. The FAIL_TO_PASS test instead requires a specific RuntimeError message, so a correct issue fix would fail and an error-message-only change would pass.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "BUmxwH9NYS+rVwJLcwGRbJqGjDvGh7LNv7OGYJioCxIz9r48wgivoT2Mp/r/V39lM0RB1lu5XakVAGvy+BPWpKgZFuoO1811eAJfqz7OkNMjwCup9ugvcyDggbogO+D2YOmdquHO7O9//WXN4vCbj+Reyg2e0ziLb7Kb6LwUK/i/bZPiCkjomyAb9C3RN9hioBo/ZT4cloP4T3d/K3UNzfOwRcsLcBhKDs8VEHUH99pADinpKz3TSSxWKNZ6EFZJrYLCHqOz4xbswxXX9cMmOb8O8qXOEyYRj/8IzZ1JYi79WiLKs8dV1tWCzZ9jmOCCpT5zRvSs5JH7xM9qeMvlUnjnXmJWKmmMaRDRPK9dMWiTPoqLoWMSF1j3Mn2dRJgLkSBm8dyUuXSVrdIoiODR3KKVTa+HKgr13wWvOZFPj+JiKSSSCoab3hpHNX82EWUofQV1f0tXHkj3n8sTLPt6vuAMKJUQXZlkThMte29oX3IS3uYIcBfov9WHn7dsiNcdOx5i4e4BeYIQup0tOZaAZ/G1VbUxR32ig/DQGFjeaFYSjVwBBZ6xSP0qFvwv0xflWvyzpYQR6fyqlDhTdBBzh8+PkUmFnJu0SIYuEKcpPtl7XfWa3CaQhw90gbE3D1DqN4aIiyNRAoonQO83/vxKiw5Rhg20Ek9H5vFmFHEzaXOF9HbUlPQwuA+yMEwt+E52MUYAfkhNAmg3hcHKIZRwXPS5ukBIwkhrDdpIIbqF5w8vKrSFom31Y6LJmIsXiVx1GPd2MXoTUSHZcvAvNqJF/DHdg6ou31KCDbQ8/G7Nh08AjoBTX7pebcqSZKng3Z7SHnS/Qb0ltx/EluPJ09HSFsSXNzoPbOOBNiOH/yMEHIVGrIdL7FGiFfpC5Ux5FnLjY2bzgoLAjABkOt4m9BACe5ZVF5vcMoY7+xBDEOmf3f4X1HAwLXnuxyeKaL4G1KA4nx9ZeMpGQGFs/nfhPZW3461C1lvqeELcTGNHp5ZMDfnkTWIQXiZPJeo4etqtK6aGfMSAUW2vtqczKFMKA3c46aqAqCR6sVfJVrbQRJvPyZqIU4kOkh7wfgHXaPiWFvLPLnK2sTwsKd+s2WwGLdlrwo+a5MSJPvAPfy2/1y3Kei5OzGSVJ36YpBw7txXxZ/JewWfg+MFaIQKILqymwa7iEAqV8v3Nv9P+faSYQOqVWhMUuwCLKPChfKqpA7q/rKrF9Qy0yD8aVZ/KpGSaBP0lXfgAOuGbDUlf2jY6xuyeIayOQPD/oI34khqHjJiM03/7CG9GWEqMGVTwSu+Z1pc5iSRFOMyB1PSAWGmPUkY6izz3t3auvkTdiEKdsgAVdGfvKYiEnf1I2oEVxo+vIyaVaOwsDt4CLsYhQwa/Cc+8pEQFCQ/XwvnqJ0iXeelKa2uNeF+tM7VFfX/pP3W2n6OD0XkHn4Qe4GbNy0JRBbd9dc910Q3Dsmaqkv3rP4br/GDSb5FR5Encsl2CvMGFS7aCeNdeLoMJzGF043Ny/ehdlxWo1Pg5rJfbY3XgJ6SYvjNqsIUWfWkuyTb3fQNTZUbLyoXNeQtKP5GIZDJqSHWqe2tktMcvXlqGQ6GzdbaxGCujedbiDQF3rjE9CZDvBdgM1yydTsynzqIm9nnVuu5GE135FZ9slE0c+HPUYTk+RRhsnQ2pPEqxZfxJKXsEqqNrRFnca1cALDWtZlghqwnJCkmnYyV9Rw0+uu4ScVfchBgMx9Ta79ymleCpnFOrhrDjUkdQcryWfwfhOHbe4HjJVfickYCm6QOKpa+jIJBT4F12ON1iKz7x4+AmjYakHHR39BzxBxe5B+mVH69AnrTQo1BEVzN4vvDwscpxTolMKWpLbig3g9CunHp8epU9ISQ/muu+yfp6AVtKmz6nAkgTUg1cNkqXPbm+dGHG1tCkRYpfknuoXg4lxsS7naW1otOBZMEvCkKWmmmrDws+A/7OlUpgbsvHg31GXMb69yv+uayBf71wdfnb6CPSeOj6nlMQBse/AEIKuZBlw/gZuwoNXY1P45TJdv7c447XasMmRvFeEm3qAozG90SP45D6Q5RtwOgZieWGczfOMvl+906IFafOUBmxCCXUeI7zWa3ru/pjgtw+uiAOduXH2eMzJ5DjihhNlYRrSzARvyHGcXkkF6vRg/RjOX+sI70Iosma/4Fm8hljzSOTXLgGZH8vBa9ajHpPFcUPZU7Tp13PrEJxElXTqVr8V9D4gMxAEVjfG1i28Jv8dNLClYIyv8pqR9X/bYvoancZpXeX/JqgmgMIzG47eJ5GB2DCLWp9RddCv8cFbIa3bgHosaIIJ6+64vbCRzJyZelq9TNMIBsCdkQuHCXhkHLleUTAR8KE4iPqZGxYCE8LDNXNNFpUFRVBqpb3Ejp5DBFb70GwmFXaB28UnbclzGKOkhso+3KbWlOCmUHQiMrsThF0IB6AzlHZYBqivrNWE8fqLbYEdHyXo30uUhwg6Ja6KadlwAa98txSlBUDQKCi60uEUf/eGWG20Ow.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9775826b-de77-9b45-bd18-0821dd5ae02c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2071,
+      "completion_tokens": 548,
+      "total_tokens": 2619,
+      "cost": 0.007238,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007238,
+        "upstream_inference_prompt_cost": 0.00395,
+        "upstream_inference_completions_cost": 0.003288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 423,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "Issue asks for no error; tests/gold only change the RuntimeError message.",
+    "confidence": 0.9,
+    "rationale": "The report clearly expects axis('equal') with both axes shared to draw without raising, matching older Matplotlib. The FAIL_TO_PASS test instead requires a specific RuntimeError message, so a correct issue fix would fail and an error-message-only change would pass.",
+    "p_invalid": 0.95
+  },
+  "s": 3.25,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "Issue asks for no error; tests/gold only change the RuntimeError message.",
+  "confidence": 0.9,
+  "rationale": "The report clearly expects axis('equal') with both axes shared to draw without raising, matching older Matplotlib. The FAIL_TO_PASS test instead requires a specific RuntimeError message, so a correct issue fix would fail and an error-message-only change would pass.",
+  "prompt_tokens": 2071,
+  "completion_tokens": 548,
+  "total_tokens": 2619,
+  "cost_usd": 0.00743,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

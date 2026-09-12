@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1944",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2248
+  },
+  "response": {
+    "id": "gen-1789192161-lGSJkS72wKTkph9KXo0g",
+    "object": "chat.completion",
+    "created": 1789192161,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue asks not to fail decoding a redirect body with a bogus gzip header, but it points at resolve_redirects while the traceback is adapter content consumption, so a reasonable fix could miss the required session/adapter split. FAIL_TO_PASS includes several pre-existing tests that only fail if that unstated refactor is incomplete, while the gzip test itself is on-issue.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue description clearly identifies the gzip decode failure on redirect bodies as the root cause, 1 is minor because the suggested fix in resolve_redirects is incomplete given the traceback path in adapters.send. false_negative is 2 because the FAIL_TO_PASS tests include non-gzip tests like BASICAUTH and DIGESTAUTH that would be broken by moving content consumption to session.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue description clearly identifies the gzip decode failure on redirect bodies as the root cause, 1 is minor because the suggested fix in resolve_redirects is incomplete given the traceback path in adapters.send. false_negative is 2 because the FAIL_TO_PASS tests include non-gzip tests like BASICAUTH and DIGESTAUTH that would be broken by moving content consumption to session.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_c6f3bc42-cd14-9a84-82a3-4077633599c6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2680,
+      "completion_tokens": 938,
+      "total_tokens": 3618,
+      "cost": 0.010604,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.010604,
+        "upstream_inference_prompt_cost": 0.004976,
+        "upstream_inference_completions_cost": 0.005628
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 806,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue asks not to fail decoding a redirect body with a bogus gzip header, but it points at resolve_redirects while the traceback is adapter content consumption, so a reasonable fix could miss the required session/adapter split. FAIL_TO_PASS includes several pre-existing tests that only fail if that unstated refactor is incomplete, while the gzip test itself is on-issue.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue asks not to fail decoding a redirect body with a bogus gzip header, but it points at resolve_redirects while the traceback is adapter content consumption, so a reasonable fix could miss the required session/adapter split. FAIL_TO_PASS includes several pre-existing tests that only fail if that unstated refactor is incomplete, while the gzip test itself is on-issue.",
+  "prompt_tokens": 2680,
+  "completion_tokens": 938,
+  "total_tokens": 3618,
+  "cost_usd": 0.010988000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

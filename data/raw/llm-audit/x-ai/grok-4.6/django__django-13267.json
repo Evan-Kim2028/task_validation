@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13267",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1625
+  },
+  "response": {
+    "id": "gen-1789191180-vbsZ9S8xv8g4U8A9AY0O",
+    "object": "chat.completion",
+    "created": 1789191180,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue reports a TypeError when instantiating an abstract model that has a string ForeignKey and only alludes to a code comment that abstract models cannot be instantiated, so a reasonable fix could handle unresolved remote models in get_default instead of banning all abstract instantiation. The FAIL_TO_PASS test requires a specific TypeError message on any abstract model construction, which is unstated and would reject other valid bugfixes.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about instantiating an abstract model with a string ForeignKey failing with TypeError. The user notes that abstract models shouldn't be instantiated according to a comment in the code, bu...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about instantiating an abstract model with a string ForeignKey failing with TypeError. The user notes that abstract models shouldn't be instantiated according to a comment in the code, bu...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_aabd6292-9694-90f4-9b3c-d7805613f0b5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2036,
+      "completion_tokens": 519,
+      "total_tokens": 2555,
+      "cost": 0.006802,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006802,
+        "upstream_inference_prompt_cost": 0.003688,
+        "upstream_inference_completions_cost": 0.003114
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 379,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue reports a TypeError when instantiating an abstract model that has a string ForeignKey and only alludes to a code comment that abstract models cannot be instantiated, so a reasonable fix could handle unresolved remote models in get_default instead of banning all abstract instantiation. The FAIL_TO_PASS test requires a specific TypeError message on any abstract model construction, which is unstated and would reject other valid bugfixes.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue reports a TypeError when instantiating an abstract model that has a string ForeignKey and only alludes to a code comment that abstract models cannot be instantiated, so a reasonable fix could handle unresolved remote models in get_default instead of banning all abstract instantiation. The FAIL_TO_PASS test requires a specific TypeError message on any abstract model construction, which is unstated and would reject other valid bugfixes.",
+  "prompt_tokens": 2036,
+  "completion_tokens": 519,
+  "total_tokens": 2555,
+  "cost_usd": 0.007186,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16120",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1560
+  },
+  "response": {
+    "id": "gen-1789191734-CjUDwGRvZ7R8vcTLV6WC",
+    "object": "chat.completion",
+    "created": 1789191734,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that migrate --check not emit pre/post_migrate signals and not print a fake migrate run when the database is already up to date. The FAIL_TO_PASS test only asserts empty stdout for that case, which is a slightly stricter reading of the log complaint but still aligned with the described behavior.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about `migrate --check` still emitting signals if the database is up to date, and also logging looking like a real run.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about `migrate --check` still emitting signals if the database is up to date, and also logging looking like a real run.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "IpOF4pWbqKGcjjyScNNRZbq/LdG1bsA2c9e7i2i9O/8l4xx2338jKgcPRuhm/IAcBhj6mGO4QqeHGE/B2u7MPpTeS5tsgYh/FLGHbM+8S9P5+zhwp7olpMxNIkfDFbs7JaXlxIAHdQJEx6GRLda/dMvOVo+nlep2jvGda+ntJEVN6UnXl+yLj9G+Z6uF9TLXzifUT3XpSpYLyojP57ls58sDGKA1k5c7mR9XEd6fOfXLu+zfXb90y+oPrXp3I6ZrW6eNTdi1ScxDYRxAUZp03kgvG2kZCWac6s1vEGmt9t+p8s0iJIVBLczrIMcd6TB5g6ArgZH/3fo0JagWDh9pnxW/oi5LQY8dZAyTHZcetbKVN6HHm+q+gYTwBZ9YCHl2y56dRkjq78FF3vMRXkcJf4EuZR7/J1xBsm8OqtT60tHB/vb1L8e8znsCptTRTbKFu6oZPCqSS8laEywOk4kHKp5YFqiBb4e4fnf6CUTwd/40LizPNTbwVScDXhl4fnF9zTomc75SOO609Fb/yNBlVFmason/qazdSJECxI/iIA7PWvVoLla9Ci/eUGxC7X0rlx+v/7Mogu1pMWH+6H514JrvKBWEGXbntPg5N3OWqjvWT2UGww5guYkWQVXxGXm8JVAy/qcsk0XynAGqJ2RzVdMBYUWeNFt0rRtzgwqQU6AndHHttEoTS1Nsm1TKtJtk3ziRgT4nGm+63Yf9N1t/duWCh+AgH3EUDk6FptEskInLBIYnLE4rovZKNuEkvhe/I1fmflNefI9pzQezEvBHSFEaEuqMcrWGGukiBdz3QzdbPtl3u+6Y0qaaAy8tiEwWcNjNB4cjORq0pWUX7gsT3gL8vYXhazws73NFMj0oqelaRSp7+4uZbbXcHIWCUnJJ08++Ou5Y8BzEn8a4bUm8qGGpllYGfK7Uvqx5ohrYjX4Y/AQca7ioHHQ7Bz2KUDAWFbrpSS1iPhcRAvN9EbTUJuwkKmRfW4fbMfmhkcZbhi235cghvkEHtABethxlQXLNtpIJI7owqjWH3fvkd5zypFVQ9VFwA95avaLxaXVWm2jJRj8wNzSpZwL4aoT/v9ipHBBC5vIJ9rD1WjNzI4S2Pw2CUATpkvdMFJv7wb+W4Osp3Q52Ztw/pjOXyx+8GKDDl8HWNDbckkxb9OQrKFAtZlkk1xMT6oHN38aLejsJBIR8nbwwMayQYZG1BjBI4uFPZWPNiF0SRcRtZSM+AoVxYKIs1m0eZyYZsf5A94rRNERaw0iy2yRfcg7s0jzDSJ/E3DmNmTwZNnuuLj5yaZepoWWshrW7aCfKXR/zZ2v1Bn+ubREM+FzVexS3kmWauUEkM9KOOwHMAwRhHMO8EQ8GYFMOGS43zQ+Q2dIlc0RvJKfAdzi1i70QRrqnpkvyHEDxBHaRMe35pvszBT8rY7RQ1KwipYW0cv/38ThvJmV/s9M9KqOmLRRh8Kum7MeEylY/wsd6GbTDKI/tnw9yFYwfO9dFdhzBwZPs1rOD6FIpSxX8Zsfxe12QNnzbOomtwhK7PldCMQpou8P224taKJfSOxxHODWLom0yCOYj67uuNya8H509W//LWZUKMdREXdKQ4+3AgZBlZYS7i8jshRAPsEl9AS1FG5nZ9LSl5+vWQKbFDJaOunHPhH8fR6b808XTld5aXE3HLMEnfx0S/dPCVsamkhek/WdpnHp/6s6ldjxqDZOWIx2XpCjjcX3FekAexOcL7XSOjOKxXG39SnXSUzb71FF6QVUyaAnkL8qpLbAPHtzwiVw7h1uIfhDR/Q1EWKIgLImKCDCGmq0+5tUSaQApbqEfnxr5EmtQKZv0VafTHtztqleGvki/auBKRVKdvVb8cNmbozwuuF8c4DVN9v3OEZ02gBZw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_94dddb52-2731-9192-a7b3-90d70a729803",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1770,
+      "completion_tokens": 451,
+      "total_tokens": 2221,
+      "cost": 0.005862,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005862,
+        "upstream_inference_prompt_cost": 0.003156,
+        "upstream_inference_completions_cost": 0.002706
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 331,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that migrate --check not emit pre/post_migrate signals and not print a fake migrate run when the database is already up to date. The FAIL_TO_PASS test only asserts empty stdout for that case, which is a slightly stricter reading of the log complaint but still aligned with the described behavior.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that migrate --check not emit pre/post_migrate signals and not print a fake migrate run when the database is already up to date. The FAIL_TO_PASS test only asserts empty stdout for that case, which is a slightly stricter reading of the log complaint but still aligned with the described behavior.",
+  "prompt_tokens": 1770,
+  "completion_tokens": 451,
+  "total_tokens": 2221,
+  "cost_usd": 0.006246,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13454",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1325
+  },
+  "response": {
+    "id": "gen-1789191231-B27qUWgLhCdcISsH5fiB",
+    "object": "chat.completion",
+    "created": 1789191231,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes a crash of EmptyFieldListFilter on generic relations due to missing empty_strings_allowed, so a competent engineer would add that field flag and make empty/non-empty filtering work. The FAIL_TO_PASS tests only cover GenericRelation (not the GenericForeignKey named in the issue) and also require empty vs non-empty queryset behavior that is only implied.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is about EmptyFieldListFilter crashing with GenericForeignKey and GenericRelation because GenericForeignKey has no empty_strings_allowed attribute.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about EmptyFieldListFilter crashing with GenericForeignKey and GenericRelation because GenericForeignKey has no empty_strings_allowed attribute.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_71017bed-847e-9b3c-87a0-5235ad2e73c5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1606,
+      "completion_tokens": 674,
+      "total_tokens": 2280,
+      "cost": 0.007064,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007064,
+        "upstream_inference_prompt_cost": 0.00302,
+        "upstream_inference_completions_cost": 0.004044
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 540,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes a crash of EmptyFieldListFilter on generic relations due to missing empty_strings_allowed, so a competent engineer would add that field flag and make empty/non-empty filtering work. The FAIL_TO_PASS tests only cover GenericRelation (not the GenericForeignKey named in the issue) and also require empty vs non-empty queryset behavior that is only implied.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes a crash of EmptyFieldListFilter on generic relations due to missing empty_strings_allowed, so a competent engineer would add that field flag and make empty/non-empty filtering work. The FAIL_TO_PASS tests only cover GenericRelation (not the GenericForeignKey named in the issue) and also require empty vs non-empty queryset behavior that is only implied.",
+  "prompt_tokens": 1606,
+  "completion_tokens": 674,
+  "total_tokens": 2280,
+  "cost_usd": 0.007256,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

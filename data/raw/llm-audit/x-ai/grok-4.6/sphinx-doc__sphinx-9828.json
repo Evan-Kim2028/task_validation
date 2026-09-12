@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9828",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "1eb973c0-c4ee-99c1-a923-d07a68075f0b",
+    "object": "chat.completion",
+    "created": 1789194325,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue names the setting use_fuzzy_translations and only sketches passing it into write_mo, so a competent engineer could implement that name and still fail. The FAIL_TO_PASS tests require the unstated config id gettext_allow_fuzzy_translations and its True/False HTML behavior.\", \"p_invalid\": 0.92}",
+          "reasoning_content": "The issue proposes `use_fuzzy_translations` but the tests use `gettext_allow_fuzzy_translations`. That's a naming mismatch - the issue says one name, tests require another.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2639,
+      "completion_tokens": 116,
+      "total_tokens": 2955,
+      "prompt_tokens_details": {
+        "text_tokens": 2639,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 200,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 21127600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue names the setting use_fuzzy_translations and only sketches passing it into write_mo, so a competent engineer could implement that name and still fail. The FAIL_TO_PASS tests require the unstated config id gettext_allow_fuzzy_translations and its True/False HTML behavior.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue names the setting use_fuzzy_translations and only sketches passing it into write_mo, so a competent engineer could implement that name and still fail. The FAIL_TO_PASS tests require the unstated config id gettext_allow_fuzzy_translations and its True/False HTML behavior.",
+  "prompt_tokens": 2639,
+  "completion_tokens": 316,
+  "total_tokens": 2955,
+  "cost_usd": 0.007174,
+  "cost_in_usd_ticks": 21127600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1804
+}

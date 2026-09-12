@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14919",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2899
+  },
+  "response": {
+    "id": "gen-1789191504-9ejcq9RGYRbWZ4GIgk6A",
+    "object": "chat.completion",
+    "created": 1789191504,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly states that TestCase should still surface nested durable atomic errors while allowing a durable block that is only nested in the TestCase wrapper transaction, including a concrete approach. The FAIL_TO_PASS cases exercise that intended distinction rather than unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about not ignoring transaction durability errors within TestCase. Currently TestCase disables durability checks entirely. The proposal is to mark TestCase transactions and only skip the c...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about not ignoring transaction durability errors within TestCase. Currently TestCase disables durability checks entirely. The proposal is to mark TestCase transactions and only skip the c...{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_b48bd582-a137-9334-b778-797abb523051",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3142,
+      "completion_tokens": 646,
+      "total_tokens": 3788,
+      "cost": 0.009968,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009968,
+        "upstream_inference_prompt_cost": 0.006092,
+        "upstream_inference_completions_cost": 0.003876
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 536,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly states that TestCase should still surface nested durable atomic errors while allowing a durable block that is only nested in the TestCase wrapper transaction, including a concrete approach. The FAIL_TO_PASS cases exercise that intended distinction rather than unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly states that TestCase should still surface nested durable atomic errors while allowing a durable block that is only nested in the TestCase wrapper transaction, including a concrete approach. The FAIL_TO_PASS cases exercise that intended distinction rather than unstated APIs or messages.",
+  "prompt_tokens": 3142,
+  "completion_tokens": 646,
+  "total_tokens": 3788,
+  "cost_usd": 0.010159999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

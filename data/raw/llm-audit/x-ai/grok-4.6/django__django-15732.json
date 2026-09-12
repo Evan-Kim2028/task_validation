@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15732",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2123
+  },
+  "response": {
+    "id": "gen-1789191656-HP2fca366XlYsV6D5T9q",
+    "object": "chat.completion",
+    "created": 1789191656,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to drop only the extra unique_together constraint when a PK or unique=True constraint already exists on the same column. The FAIL_TO_PASS tests match that intent but also pin Django-generated constraint names and cover both PK and unique-field cases, which is slightly more specific than the write-up.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about not being able to drop unique_together on a single field that also has unique=True or is a PK.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about not being able to drop unique_together on a single field that also has unique=True or is a PK.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "SfkDbubQ9aZEjXP42z4+mHgRlxeKwHxPIISvDiLcpLVdurdih6YFFj2bq+w+CNgyiF0oOTBjy0zIiOSWGJuTriPT5CX5qntD6GLFkd+j5hOls/eRdm6lMLe68g1nz4E5P1hQIv3tgqES+y3th/qADoNW7xnmrhdZaXc/y4w+v9df+HIEsCHGRBMtvkAFTqGJoHd8H3D1sXyRzKkA84fiuRS1GwghZjWjCJlIBOukDWjeWNkut26Umz5yJ8g3xCcld9+hy+m+dBqKkwLCOWWW9dKPhlmk4omtIYg/n4XhfpSp0n5JLvuz2Mrb/0JkLrDI+wvYICI4iNfgiVetR4qT2lvjvQMHH0DnxmmAtr15Y4thsmrpodphJ2gDD0FsguaCdrB0A2zarySbJvy3zO/TXOJ/GuTnRoOnZNearxzZ6koUz5MKTpvvVmAsgVS+lO5EoHHEQ1Yiyg+5Cld3WqREdABBqtBMU4/+B6rgFYvX26N+3Lb2j9k+928wI/aWpSSSc7XqjuPyp4IGZzuYxjqGg92Tp3LudbNyaIN1hy6xfkb0ku174Vg+p3tB3IfP8CkTy2f2Tw+FOaSmhSBPw0jrR0yBBx5Fv+C4ZF3Gg3ZYOtGdVORNkAYHSrGy5KyljIfOmfJhqF4rZmJ+BUfq48YMsgk5KadQxNTkvcczgRJ0aMw+OJsQRrb5hCuEkGzMx7bj+PrPTr15/BIJKIiFT0VhpsvY+NK2G/adSWQByQMg/YRu8R5YnRXToyO3y/hTaNaHvtQv1l8MC/1Yo61GVeMLbMXJvA6tMdzmb8NJXvTWkOcxlYw5FeNbb26G8TpwalX+MKKnYmCJJK9LVeq61iG4xrXWE1mN2XQs2sdugqPMGMSWZ58OdyWLb/vwIqrDSEnrrxPJRSeAJlAJgEriU7sfuBjrV0NJgBCJmQPBEdyQY2P5766MgXRPn5nuRgI1HPQ7nRoASlQjlGhkcZ4sQ1U4vjJUxJjT5B1vnBfNOMBp4t8Aoq3M8YLRJQtkBtdPC+4feGvwdmnf/mYcLBNF767L+ZNshB0VT3SsCAYtx9jdCKVGC7bQ0meLF3yvPzUbv3tXahyz8si3cZX4VKFXFL0uEFEE4IXcrb/+0IMI1Nu63yioeLUq1SN9+rV04Z7gm3Ixosbx/yjqA5CyBMMSNhwi9DDp9YYMFSUpNQZjPRylkWkRnTMhSFsRpZVTnV9k5kO2YN35zWHK2C/w9+NDD/DV3d3lfAOSScy+UlEXjjY6RfXGMm1ts983a7lnxWN7nRsbbMXyS8mP5jLN8b1au7DUmg+RcJiPd5q+IP9ggG5LymgHBPz2mmCcTBtxr0jN9SUWxNsmLFQDQrKIOOmtFYbASSdZ+/G8xeQWn2uBKr5RnWvjdtBLh5bQuLmkxan0Vpb1t8JcuMc0G1bvF+z4nh87Qrt8J+1W/PR6dSdFk1bhk+4Lbko6A3K9Cnz9sFB3ZOSoh7jQh9emu/qm7WTzNd6oqMBBIokSBRyzT/wipXtAmlXSi0j2eGtLsMdTYvGE2crA3t+xqG66tb9U0OTNM32jijXwoIqEXL73lgGKtUG6MyrQt+NR+pVoen044LR/6UUcRQOIsxQ6CQVcZul4w7AZ8z20BmcHfgbk9iHaWV69nGj3AdHJT7a2bTGmWNiDXl2UQM4sUluQXy3A4kPNCDu/H0kVmDob8IAZbL0dksHIU1/86zL6/37ODiEAimBNTrPd8HYwNJTeiK7GMcjREtveEmJ33RJd+idp2ywCjx6AOP2odwVfFhKTtA00+GT2CQ+xWmGCAByCCn19nu3bEFNVE2gOlq8vYTcnGANQ6/15Pbc6H+4/e/+PKiQPcAFMD5fK2in8Rdb1Zs4mB2O3tCvd2Y8.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_ab8b1186-20a9-9e6c-991d-894cb524ec12",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2452,
+      "completion_tokens": 419,
+      "total_tokens": 2871,
+      "cost": 0.007034,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007034,
+        "upstream_inference_prompt_cost": 0.00452,
+        "upstream_inference_completions_cost": 0.002514
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 297,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to drop only the extra unique_together constraint when a PK or unique=True constraint already exists on the same column. The FAIL_TO_PASS tests match that intent but also pin Django-generated constraint names and cover both PK and unique-field cases, which is slightly more specific than the write-up.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to drop only the extra unique_together constraint when a PK or unique=True constraint already exists on the same column. The FAIL_TO_PASS tests match that intent but also pin Django-generated constraint names and cover both PK and unique-field cases, which is slightly more specific than the write-up.",
+  "prompt_tokens": 2452,
+  "completion_tokens": 419,
+  "total_tokens": 2871,
+  "cost_usd": 0.007417999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-18869",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1947
+  },
+  "response": {
+    "id": "gen-1789191894-hBr21gEMJB0w9i6js8ss",
+    "object": "chat.completion",
+    "created": 1789191894,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 3, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS only asserts a private parser with unstated 5-tuple semantics, not the public version API.\", \"confidence\": 0.86, \"rationale\": \"The issue only asks to expose comparable version info and leaves the API shape open, so the exact 5-tuple fields, releaselevel strings, and post-version bump are not specified. The tests require a private _parse_to_version_info helper and those exact mappings, so many valid public solutions would fail.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue asks for either version_info tuple or LooseVersion. Tests require a private function `_parse_to_version_info` with very specific tuple formats including releaselevel strings like 'final', 'c...",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks for either version_info tuple or LooseVersion. Tests require a private function `_parse_to_version_info` with very specific tuple formats including releaselevel strings like 'final', 'c...",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "UyTSfsnrO0CnoUkAgvQG5V0giCT9lofr75kGHxb04jhbFUhiTfnKIamDs578SuDJibRtjvq5/GhbC0WRFyVo9edl4d3O1TL+m/A8udAA/87ZWJhV0q1G0MomNezpD9/As8SsXpG4N79+P/5udVZ9yNEtJUFH/iV0qkEPOWTzHRuZ3xGz4l0kK5MvgvzSkwRNxSyJhSSTJLRuJBfJgfVyBAKe6YM3RmiJUSw3/3nTwWTX1wEDjwY2LEDYs/5RPd9XC+XtwxloyLHfPrlI2bMx0VxxZKNQZohsEAL2gsaE+sKINqWwj0zIC660soWLaWTo4A7NyWfIwv6IW9PuMNimJHqamVu8zHwpj8d8N/16z+HwILNGo7zVQAwNKW2G6D5iObqI+Z01rrJt3tykfEydiXch5PkMoT2Ec7yt3ru1jSiY8Xmo9fMk6StC5muLtdLHx/e+hBqBrqwsaq6sEF14C8AVB4PuZMV+bSjiTYjarmm3z2rN3Kn5Gwls51XRjjg3YNIv9tdkAoiukfTsk5dFMdlfPzb8TWNoVCHRn/kkRFnj0YE5pBFjhfaGgFP4DPMXde1FsEyAHbx2ulDnBZV+0x1wnS5XQaRjXK/Yjd+bv2OyxAygFNg4bOB6VaCzCoNaJi+Gb8gDV94bAcXFs1cZdLCqpLrM1n9iWNcIGqq14c8LqxRX2wh9pI1i8DpDhEiM5iwqxiGX8hPYkj8mwiQrTSS7fHb8P25AlO8wYOCQc2/lXazIZy/eYkJcNn8nm+H9E2N4Ih8tJfzyXXNVmcCAAkOAqfPfrJJOlVzb5GcHTu5vsaGAKL7CAo0Z7LdAzHUT+c87muTLTwKbnLPM6YWyXip9yYAlUXTyvLdwEFdn5/QxuveSdXYSKFlvAfGXNj9kiNeU03Ytax4uiY9ym6H1byCxJDzT.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7544e360-b049-91e3-b373-3b08337ec592",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2429,
+      "completion_tokens": 293,
+      "total_tokens": 2722,
+      "cost": 0.006232,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006232,
+        "upstream_inference_prompt_cost": 0.004474,
+        "upstream_inference_completions_cost": 0.001758
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 148,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 3,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS only asserts a private parser with unstated 5-tuple semantics, not the public version API.",
+    "confidence": 0.86,
+    "rationale": "The issue only asks to expose comparable version info and leaves the API shape open, so the exact 5-tuple fields, releaselevel strings, and post-version bump are not specified. The tests require a private _parse_to_version_info helper and those exact mappings, so many valid public solutions would fail.",
+    "p_invalid": 0.92
+  },
+  "s": 3.25,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 3,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS only asserts a private parser with unstated 5-tuple semantics, not the public version API.",
+  "confidence": 0.86,
+  "rationale": "The issue only asks to expose comparable version info and leaves the API shape open, so the exact 5-tuple fields, releaselevel strings, and post-version bump are not specified. The tests require a private _parse_to_version_info helper and those exact mappings, so many valid public solutions would fail.",
+  "prompt_tokens": 2429,
+  "completion_tokens": 293,
+  "total_tokens": 2722,
+  "cost_usd": 0.0066159999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

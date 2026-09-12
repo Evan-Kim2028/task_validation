@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-7158",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "bb8787c1-808c-9c93-b131-1532acca8cc1",
+    "object": "chat.completion",
+    "created": 1789193832,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks for skip reports to show a cwd-relative path including a parent-directory prefix, which a competent engineer could implement. The FAIL_TO_PASS case instead uses --rootdir on a nested tests/ tree and asserts tests/test_1.py plus the default unconditional skip wording, which is not described in the issue and would reject a fix that only handled the ../ example.\", \"p_invalid\": 0.72}",
+          "reasoning_content": "The issue is about wrong relative path in skip report when the tested file is upper than the invocation directory. They want `../my_tests/test1.py` instead of `my_tests/test1.py`.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test uses --rootdir=tests while running tests/test_1.py from parent dir, but expects 'tests/test_1.py' which is relative to cwd - issue is about ../ prefix when file is parent of cwd\",\n  \"confidence\": 0.75,\n  \"rationale\": \"Test is narrower than issue as it tests rootdir subdirectory case expecting cwd-relative path, not the ../ case. Gold patch change to reportinfo() would likely make this test pass since 2 cases share same root cause.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1773,
+      "completion_tokens": 135,
+      "total_tokens": 2886,
+      "prompt_tokens_details": {
+        "text_tokens": 1773,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 978,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 34761600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks for skip reports to show a cwd-relative path including a parent-directory prefix, which a competent engineer could implement. The FAIL_TO_PASS case instead uses --rootdir on a nested tests/ tree and asserts tests/test_1.py plus the default unconditional skip wording, which is not described in the issue and would reject a fix that only handled the ../ example.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks for skip reports to show a cwd-relative path including a parent-directory prefix, which a competent engineer could implement. The FAIL_TO_PASS case instead uses --rootdir on a nested tests/ tree and asserts tests/test_1.py plus the default unconditional skip wording, which is not described in the issue and would reject a fix that only handled the ../ example.",
+  "prompt_tokens": 1773,
+  "completion_tokens": 1113,
+  "total_tokens": 2886,
+  "cost_usd": 0.010224,
+  "cost_in_usd_ticks": 34761600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1084
+}

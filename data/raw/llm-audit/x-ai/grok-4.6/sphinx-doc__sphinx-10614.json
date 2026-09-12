@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-10614",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "480a232d-0fb8-961d-9014-1e5eeddc6f4f",
+    "object": "chat.completion",
+    "created": 1789194135,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes SVG click targets being page-relative instead of relative to the embedded SVG, which a competent engineer could fix. The FAIL_TO_PASS test also requires working intersphinx hrefs and inventory wiring that the issue never mentions, so a valid nested-SVG path fix can still fail.\", \"p_invalid\": 0.72}",
+          "reasoning_content": "The issue is about SVG inheritance diagrams having wrong relative links when not in the root directory. The tests also check intersphinx links and PNG maps, and require that relative URLs resolve from...{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test adds intersphinx setup and asserts absolute URLs start with https://example.org/ and relative URLs resolve from imagedir; gold patch also changes refname logic for external refs.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4852,
+      "completion_tokens": 117,
+      "total_tokens": 5615,
+      "prompt_tokens_details": {
+        "text_tokens": 4852,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 646,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 45947600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes SVG click targets being page-relative instead of relative to the embedded SVG, which a competent engineer could fix. The FAIL_TO_PASS test also requires working intersphinx hrefs and inventory wiring that the issue never mentions, so a valid nested-SVG path fix can still fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes SVG click targets being page-relative instead of relative to the embedded SVG, which a competent engineer could fix. The FAIL_TO_PASS test also requires working intersphinx hrefs and inventory wiring that the issue never mentions, so a valid nested-SVG path fix can still fail.",
+  "prompt_tokens": 4852,
+  "completion_tokens": 763,
+  "total_tokens": 5615,
+  "cost_usd": 0.014282,
+  "cost_in_usd_ticks": 45947600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 3546
+}

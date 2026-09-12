@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25479",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2500
+  },
+  "response": {
+    "id": "gen-1789192046-V5BmociQxdvUsFIjGPTa",
+    "object": "chat.completion",
+    "created": 1789192046,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly asks that a colormap registered under a name different from cmap.name be usable via that registered name, but it does not require renaming the stored object or ignoring names in Colormap.__eq__. The FAIL_TO_PASS tests demand both of those unstated behaviors, so a lookup-only fix that still leaves .name unchanged would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue is about colormap name handling: when you register a colormap with a different name than its internal `.name`, lookups fail because the internal name is used.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests modify colormap equality and require returned object name to match registered name, but issue only needs lookup by registered name to succeed\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about colormap name handling: when you register a colormap with a different name than its internal `.name`, lookups fail because the internal name is used.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests modify colormap equality and require returned object name to match registered name, but issue only needs lookup by registered name to succeed\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9e18b7e2-3083-9e6b-b5dc-2b64cd500fa4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3299,
+      "completion_tokens": 556,
+      "total_tokens": 3855,
+      "cost": 0.00955,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00955,
+        "upstream_inference_prompt_cost": 0.006214,
+        "upstream_inference_completions_cost": 0.003336
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 431,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly asks that a colormap registered under a name different from cmap.name be usable via that registered name, but it does not require renaming the stored object or ignoring names in Colormap.__eq__. The FAIL_TO_PASS tests demand both of those unstated behaviors, so a lookup-only fix that still leaves .name unchanged would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly asks that a colormap registered under a name different from cmap.name be usable via that registered name, but it does not require renaming the stored object or ignoring names in Colormap.__eq__. The FAIL_TO_PASS tests demand both of those unstated behaviors, so a lookup-only fix that still leaves .name unchanged would fail.",
+  "prompt_tokens": 3299,
+  "completion_tokens": 556,
+  "total_tokens": 3855,
+  "cost_usd": 0.009934,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

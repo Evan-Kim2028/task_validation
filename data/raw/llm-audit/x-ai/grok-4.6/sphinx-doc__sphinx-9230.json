@@ -1,0 +1,83 @@
+{
+  "task_id": "sphinx-doc__sphinx-9230",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "478f3e21-a9d2-975e-9751-b103a9ef6bd4",
+    "object": "chat.completion",
+    "created": 1789194291,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes param types that contain a space being split incorrectly, so a competent engineer would change how type versus name is parsed. The FAIL_TO_PASS case uses Dict[str, str] rather than the reported dict(str, str) form, so it is slightly narrower than the write-up but still checks the same space-in-type behavior.\", \"p_invalid\": 0.18}",
+          "reasoning_content": "The issue is about Sphinx incorrectly rendering `:param dict(str, str) opc_meta:` because it splits on the first space, treating `dict(str,` as type and `str) opc_meta` as name.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2430,
+      "completion_tokens": 130,
+      "total_tokens": 2902,
+      "prompt_tokens_details": {
+        "text_tokens": 2430,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 512
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 342,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 23541600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes param types that contain a space being split incorrectly, so a competent engineer would change how type versus name is parsed. The FAIL_TO_PASS case uses Dict[str, str] rather than the reported dict(str, str) form, so it is slightly narrower than the write-up but still checks the same space-in-type behavior.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes param types that contain a space being split incorrectly, so a competent engineer would change how type versus name is parsed. The FAIL_TO_PASS case uses Dict[str, str] rather than the reported dict(str, str) form, so it is slightly narrower than the write-up but still checks the same space-in-type behavior.",
+  "prompt_tokens": 2430,
+  "completion_tokens": 472,
+  "total_tokens": 2902,
+  "cost_usd": 0.007691999999999999,
+  "cost_in_usd_ticks": 23541600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 1491
+}

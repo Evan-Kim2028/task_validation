@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15087",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2838
+  },
+  "response": {
+    "id": "gen-1789191533-ElGg04Tes4X6RyCNvteT",
+    "object": "chat.completion",
+    "created": 1789191533,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks to replace SQLite DDL regex parsing in get_relations with PRAGMA foreign_key_list, matching existing FK constraint introspection. The listed FAIL_TO_PASS cases are schema m2m tests rather than direct PRAGMA coverage, so they only indirectly check the requested change and omit some gold-patch extras.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about SQLite schema introspection using PRAGMA instead of parsing for foreign keys. The FAIL_TO_PASS tests are all m2m schema tests, not introspection tests.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SQLite schema introspection using PRAGMA instead of parsing for foreign keys. The FAIL_TO_PASS tests are all m2m schema tests, not introspection tests.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_f449f580-9783-917b-a42f-89bf4d3e3141",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3239,
+      "completion_tokens": 578,
+      "total_tokens": 3817,
+      "cost": 0.009946,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009946,
+        "upstream_inference_prompt_cost": 0.006478,
+        "upstream_inference_completions_cost": 0.003468
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 456,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks to replace SQLite DDL regex parsing in get_relations with PRAGMA foreign_key_list, matching existing FK constraint introspection. The listed FAIL_TO_PASS cases are schema m2m tests rather than direct PRAGMA coverage, so they only indirectly check the requested change and omit some gold-patch extras.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks to replace SQLite DDL regex parsing in get_relations with PRAGMA foreign_key_list, matching existing FK constraint introspection. The listed FAIL_TO_PASS cases are schema m2m tests rather than direct PRAGMA coverage, so they only indirectly check the requested change and omit some gold-patch extras.",
+  "prompt_tokens": 3239,
+  "completion_tokens": 578,
+  "total_tokens": 3817,
+  "cost_usd": 0.009946,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

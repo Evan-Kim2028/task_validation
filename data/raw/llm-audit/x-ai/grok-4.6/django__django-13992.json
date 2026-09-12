@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13992",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1436
+  },
+  "response": {
+    "id": "gen-1789191353-Sk26Ky5SykYPehMqlrhL",
+    "object": "chat.completion",
+    "created": 1789191353,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue allows either raising an error or generating correct DELETE SQL, so an engineer could reasonably implement the latter and still fail. The FAIL_TO_PASS tests also require a specific TypeError message that is not stated in the issue.\", \"p_invalid\": 0.88}",
+          "refusal": null,
+          "reasoning": "The issue is about delete() after distinct() producing unexpected SQL that deletes everything. The user wants either an error or the correct SQL.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about delete() after distinct() producing unexpected SQL that deletes everything. The user wants either an error or the correct SQL.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "AZwT3VJri8uc5ZIAErPF0dpaJqgM8bGMK2bPBZn0jFXMzESIs0G3BMHPx9W3sUoYJpma+yxdSDyTO/s7wrO4EqzzxZCLRq6UFCF8LrqOEIRnFglkdmpJ3fsQieqLDjmo9LSQNS7Hvt5XBZ4ve+cGlj0WmbdyWM0bfAEYRLjAbXgJagKTsccUpYG5gHshHgVXb3iUdBPZ912q6SboiNmtXm0MhkmMTZE5juUT79nwvcsvsfPQR6KSauaHmd73lXySIpF0DhafjhayLYbQSXo/A/qyKbq40N8povd8z7RXP80ip3OH21vbMbgkCkobxyE3aU7ZznU0WkxjqEk90HWLX+rV114nQEZUwRWHiKP/1EDJnKQVQ6GpDopUdJGTDViPIuO1bYT6JqpVfk7/piJUz79i7erG85952pI57XzNzrl7wPfMSvZ1egy9ZFOZonsIuPapF3Mn7/H1Hyu6bjhm+2b4Obw6cxkCl+TQNhnStxfZHXDzWwdW5qwPNzCspfeyyCOjXjWdvcnDUHaQJfloTBAmgDpxOi7mWxJo45o8x/L+9/wbjbztHR793TWltapLU2RTBp2Gdu0/yws4LcVBKhe/vI8CINTLVJY14w+ti4qeWAthh1RNNQCk8+GTfG+iEDaFvCu4AzGQCdDYCQ7SLbqPNsUYRjmEZgNypQN9EceVho39aPIWGA5venC9LO6MmbBtes9CN2DZDNkyIRh4HrBAV+Ye4Bb7/BhfIiNnvLb3p6fqjJen2b2wNpz7zogq7pxYQ5Z+YVebBn0xmr8PA8JCvjbEdOsr+CBYU/oRoGxk/FbXATbNZotUgs9gf3xInBZzhFYaNj8S51H0yuGrNdKorXINsm7ADmCc3dYlXAk5WJAnDQJK9zjhbYMXoGFrJ1GCXv++vFbkfUY+pCA1eagtUPq6J5c43jpIxJ3M2OWDjcL2SXvZ3WJLXnrGMEqN08w771HLQPyiY6LxmxwRIJGr+vbNoj6/cFASbPUY3kDYs687sE/OyQqgpZG3AYkuXi5sFTFJsbdEBT9u2LHOFgEQjHap/dKE2qxueRJ2QodTcuLXZT12M4Tl/KiOp7Dczc0t/gAYel7+dw5jrNqSoga9Qjz3R/PSk32V/Cof3qLIXiKQPTYsX+OuGn8y2IA0RJdepCxWq6ryhrU3LH2g4vXBIHUKz05duJsVmotQPq66T00VmPLmI3hZb7L0/CCM5yqjc5m9KYhwEV9h27aDV7xbYa8b2gorhq6Eha8K54unL7yP7keNCu4km/8/Sy7CnAr5AtJu9SZ1bRPHxfKz8ypFLxS2yPwUJw/yy6s7v/IGJWQtrggbkNG/TtkS148kpVRFTpDVoHRnADPoaxiLpZBa1uwLCk4CbjWSJJd4ITlAC0GUyDWbMz4DPGluOwxJutlXsnALChBoNzPA6Asy+FyMlyVZQpwSviasJGkVQou5Kh3Oi2dBy0JRqks2rWHn6h/ZbTTVP36Pw94.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_576c0d70-5b58-9427-8082-77b77ffd44f4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1732,
+      "completion_tokens": 338,
+      "total_tokens": 2070,
+      "cost": 0.005108,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005108,
+        "upstream_inference_prompt_cost": 0.00308,
+        "upstream_inference_completions_cost": 0.002028
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 236,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue allows either raising an error or generating correct DELETE SQL, so an engineer could reasonably implement the latter and still fail. The FAIL_TO_PASS tests also require a specific TypeError message that is not stated in the issue.",
+    "p_invalid": 0.88
+  },
+  "s": 2.0,
+  "p_invalid": 0.88,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue allows either raising an error or generating correct DELETE SQL, so an engineer could reasonably implement the latter and still fail. The FAIL_TO_PASS tests also require a specific TypeError message that is not stated in the issue.",
+  "prompt_tokens": 1732,
+  "completion_tokens": 338,
+  "total_tokens": 2070,
+  "cost_usd": 0.0054919999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

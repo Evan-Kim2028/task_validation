@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25425",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1068
+  },
+  "response": {
+    "id": "gen-1789192036-FcHJ14sWjayxLuWMRxy3",
+    "object": "chat.completion",
+    "created": 1789192036,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue offers two incompatible designs (get_shape as an alias of get_size versus returning full ndarray shape including channels, and optionally changing __str__), so a reasonable implementation of either could differ from what the tests assume. The FAIL_TO_PASS checks only a 2D case plus an existing RuntimeError path, which is slightly narrower than the issue but does not invent a wholly unstated API.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue proposes two alternatives:{\n  \"underspecified\": 2,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue proposes two alternatives:{\n  \"underspecified\": 2,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3d4563f9-13ea-96c1-81d6-c422c47853b3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1473,
+      "completion_tokens": 547,
+      "total_tokens": 2020,
+      "cost": 0.005844,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005844,
+        "upstream_inference_prompt_cost": 0.002562,
+        "upstream_inference_completions_cost": 0.003282
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 410,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue offers two incompatible designs (get_shape as an alias of get_size versus returning full ndarray shape including channels, and optionally changing __str__), so a reasonable implementation of either could differ from what the tests assume. The FAIL_TO_PASS checks only a 2D case plus an existing RuntimeError path, which is slightly narrower than the issue but does not invent a wholly unstated API.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue offers two incompatible designs (get_shape as an alias of get_size versus returning full ndarray shape including channels, and optionally changing __str__), so a reasonable implementation of either could differ from what the tests assume. The FAIL_TO_PASS checks only a 2D case plus an existing RuntimeError path, which is slightly narrower than the issue but does not invent a wholly unstated API.",
+  "prompt_tokens": 1473,
+  "completion_tokens": 547,
+  "total_tokens": 2020,
+  "cost_usd": 0.006228,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

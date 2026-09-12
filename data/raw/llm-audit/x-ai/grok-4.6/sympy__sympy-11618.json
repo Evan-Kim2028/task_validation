@@ -1,0 +1,83 @@
+{
+  "task_id": "sympy__sympy-11618",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "d5b856b0-97f8-9a8a-bb90-6a5f797c7147",
+    "object": "chat.completion",
+    "created": 1789194333,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly states mixed-dimension Point distance should include the extra coordinate (sqrt(5) rather than ignoring z), which implies treating missing axes as zero. The FAIL_TO_PASS check matches that expected value but only for Point3D.distance(Point2D), not the reverse call shown in the issue.\", \"p_invalid\": 0.12}",
+          "reasoning_content": "The issue is about distance calculation being wrong when mixing Point with different dimensions. Point(2,0).distance(Point(1,0,2)) returns 1 instead of sqrt(5).\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1629,
+      "completion_tokens": 120,
+      "total_tokens": 2081,
+      "prompt_tokens_details": {
+        "text_tokens": 1629,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 332,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 17034000
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly states mixed-dimension Point distance should include the extra coordinate (sqrt(5) rather than ignoring z), which implies treating missing axes as zero. The FAIL_TO_PASS check matches that expected value but only for Point3D.distance(Point2D), not the reverse call shown in the issue.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly states mixed-dimension Point distance should include the extra coordinate (sqrt(5) rather than ignoring z), which implies treating missing axes as zero. The FAIL_TO_PASS check matches that expected value but only for Point3D.distance(Point2D), not the reverse call shown in the issue.",
+  "prompt_tokens": 1629,
+  "completion_tokens": 452,
+  "total_tokens": 2081,
+  "cost_usd": 0.00597,
+  "cost_in_usd_ticks": 17034000,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 812
+}

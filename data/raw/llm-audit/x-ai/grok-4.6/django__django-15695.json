@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15695",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1150
+  },
+  "response": {
+    "id": "gen-1789191649-fc8CRYHkcDgItI3XDZQA",
+    "object": "chat.completion",
+    "created": 1789191649,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.7, \"rationale\": \"The issue clearly describes a crash when re-applying RenameIndex after a no-op backwards on an unnamed unique_together index, so a senior engineer would know to avoid a second rename when names already match. The FAIL_TO_PASS case uses swapped from/to states and a no-op-when-names-match comment that is slightly narrower than the issue snippet, but still targets the same crash.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about RenameIndex() crashing when an unnamed index is moving backward and forward. It should restore the old auto-generated name when moving backward, and re-applying crashes.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The gold patch correctly implements the no-op logic for unchanged index names in RenameIndex.database for forwards, matching the test's intent to verify idempotency after backwards. The test swap of states and assertion after backwards aligns with restoring auto-generated names, though the issue description's crash scenario is slightly different from the test's noop path.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about RenameIndex() crashing when an unnamed index is moving backward and forward. It should restore the old auto-generated name when moving backward, and re-applying crashes.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The gold patch correctly implements the no-op logic for unchanged index names in RenameIndex.database for forwards, matching the test's intent to verify idempotency after backwards. The test swap of states and assertion after backwards aligns with restoring auto-generated names, though the issue description's crash scenario is slightly different from the test's noop path.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a1c4912a-f329-9caa-8096-2d59242b551c",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1493,
+      "completion_tokens": 1055,
+      "total_tokens": 2548,
+      "cost": 0.009316,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009316,
+        "upstream_inference_prompt_cost": 0.002986,
+        "upstream_inference_completions_cost": 0.00633
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 916,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.7,
+    "rationale": "The issue clearly describes a crash when re-applying RenameIndex after a no-op backwards on an unnamed unique_together index, so a senior engineer would know to avoid a second rename when names already match. The FAIL_TO_PASS case uses swapped from/to states and a no-op-when-names-match comment that is slightly narrower than the issue snippet, but still targets the same crash.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.7,
+  "rationale": "The issue clearly describes a crash when re-applying RenameIndex after a no-op backwards on an unnamed unique_together index, so a senior engineer would know to avoid a second rename when names already match. The FAIL_TO_PASS case uses swapped from/to states and a no-op-when-names-match comment that is slightly narrower than the issue snippet, but still targets the same crash.",
+  "prompt_tokens": 1493,
+  "completion_tokens": 1055,
+  "total_tokens": 2548,
+  "cost_usd": 0.009316000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

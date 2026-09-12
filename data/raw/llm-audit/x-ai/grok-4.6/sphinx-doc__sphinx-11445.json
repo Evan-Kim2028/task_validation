@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-11445",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2075
+  },
+  "response": {
+    "id": "gen-1789193045-6ODj6PRzYyokKDCNunTb",
+    "object": "chat.completion",
+    "created": 1789193045,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly describes rst_prolog breaking a first-line domain-role section title, which points to not treating that line as docinfo when inserting the prolog. The FAIL_TO_PASS tests only check prepend_prolog StringList insertion details rather than the reported heading/toctree rendering, so they are slightly narrower than the issue but still target the real root cause.\", \"p_invalid\": 0.25}",
+          "refusal": null,
+          "reasoning": "The issue is about rst_prolog removing top level headings containing a domain directive. The tests check prepend_prolog behavior with roles in sections.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about rst_prolog removing top level headings containing a domain directive. The tests check prepend_prolog behavior with roles in sections.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_870c4eb7-228f-9d14-b001-7c49e7653b9a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2547,
+      "completion_tokens": 692,
+      "total_tokens": 3239,
+      "cost": 0.008862,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008862,
+        "upstream_inference_prompt_cost": 0.00471,
+        "upstream_inference_completions_cost": 0.004152
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 560,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly describes rst_prolog breaking a first-line domain-role section title, which points to not treating that line as docinfo when inserting the prolog. The FAIL_TO_PASS tests only check prepend_prolog StringList insertion details rather than the reported heading/toctree rendering, so they are slightly narrower than the issue but still target the real root cause.",
+    "p_invalid": 0.25
+  },
+  "s": 1.0,
+  "p_invalid": 0.25,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly describes rst_prolog breaking a first-line domain-role section title, which points to not treating that line as docinfo when inserting the prolog. The FAIL_TO_PASS tests only check prepend_prolog StringList insertion details rather than the reported heading/toctree rendering, so they are slightly narrower than the issue but still target the real root cause.",
+  "prompt_tokens": 2547,
+  "completion_tokens": 692,
+  "total_tokens": 3239,
+  "cost_usd": 0.009246,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

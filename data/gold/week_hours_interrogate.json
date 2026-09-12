@@ -1,0 +1,88 @@
+{
+  "task_id": "week-hours",
+  "path": "/home/evan/Documents/eval_tasks/tasks/week-hours",
+  "kind": "harbor",
+  "executed": true,
+  "metadata_inferred": false,
+  "trials": [
+    {
+      "probe_id": "reference",
+      "family": "reference",
+      "intended": "accept",
+      "agent": "oracle",
+      "kind": "none",
+      "note": "unmodified official solution",
+      "reward": 1.0,
+      "accepted": true,
+      "elapsed_sec": 34.1516164579989,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "probe_id": "preserve_comments",
+      "family": "preserve",
+      "intended": "accept",
+      "agent": "oracle",
+      "kind": "comments",
+      "note": "comment-only change to solve.sh",
+      "reward": 1.0,
+      "accepted": true,
+      "elapsed_sec": 33.23436739200042,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "probe_id": "nop",
+      "family": "nop",
+      "intended": "reject",
+      "agent": "nop",
+      "kind": "none",
+      "note": "empty agent",
+      "reward": 0.0,
+      "accepted": false,
+      "elapsed_sec": 32.0933090360013,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "probe_id": "remove_required",
+      "family": "remove_required",
+      "intended": "reject",
+      "agent": "oracle",
+      "kind": "drop_last_cp",
+      "note": "omit a required solution copy, or write nothing",
+      "reward": 0.0,
+      "accepted": false,
+      "elapsed_sec": 32.26717926099809,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "probe_id": "revert_gold",
+      "family": "revert_gold",
+      "intended": "reject",
+      "agent": "oracle",
+      "kind": "revert_env",
+      "note": "replace solution files with environment copies",
+      "reward": 0.0,
+      "accepted": false,
+      "elapsed_sec": 32.68930277000254,
+      "returncode": 0,
+      "stderr_tail": ""
+    }
+  ],
+  "rates": {
+    "correct_accept_rate": 1.0,
+    "legitimate_variant_accept_rate": 1.0,
+    "incorrect_reject_rate": 1.0,
+    "false_accept_rate": 0.0,
+    "false_reject_rate": 0.0,
+    "n_reference": 1,
+    "n_preserve": 1,
+    "n_positive": 2,
+    "n_negative": 3,
+    "n_executed": 5,
+    "n_failed_to_execute": 0,
+    "interrogable": true
+  }
+}

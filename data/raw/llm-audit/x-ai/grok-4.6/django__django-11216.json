@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11216",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1331
+  },
+  "response": {
+    "id": "gen-1789190824-EVDTHBE4D2USjHTP4ffE",
+    "object": "chat.completion",
+    "created": 1789190824,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to stop ManifestStaticFilesStorage from writing extra hashed intermediates, so a competent engineer would omit those saves even if the suggested True/False flags are swapped. The FAIL_TO_PASS check only counts a specific fixture prefix and exact file count, which is slightly narrower than the stated problem but still aligned with not leaving intermediates.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about preventing ManifestStaticFilesStorage from leaving behind intermediate files. It suggests adding a keep_intermediate_files property to HashedFilesMixin, False for Manifest, True for...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue description has backwards keep_intermediate_files values for Cached vs Manifest\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about preventing ManifestStaticFilesStorage from leaving behind intermediate files. It suggests adding a keep_intermediate_files property to HashedFilesMixin, False for Manifest, True for...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Issue description has backwards keep_intermediate_files values for Cached vs Manifest\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_e556b555-f657-940d-a6ed-7e63f486b1b6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1575,
+      "completion_tokens": 655,
+      "total_tokens": 2230,
+      "cost": 0.006696,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006696,
+        "upstream_inference_prompt_cost": 0.002766,
+        "upstream_inference_completions_cost": 0.00393
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 531,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to stop ManifestStaticFilesStorage from writing extra hashed intermediates, so a competent engineer would omit those saves even if the suggested True/False flags are swapped. The FAIL_TO_PASS check only counts a specific fixture prefix and exact file count, which is slightly narrower than the stated problem but still aligned with not leaving intermediates.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to stop ManifestStaticFilesStorage from writing extra hashed intermediates, so a competent engineer would omit those saves even if the suggested True/False flags are swapped. The FAIL_TO_PASS check only counts a specific fixture prefix and exact file count, which is slightly narrower than the stated problem but still aligned with not leaving intermediates.",
+  "prompt_tokens": 1575,
+  "completion_tokens": 655,
+  "total_tokens": 2230,
+  "cost_usd": 0.00708,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

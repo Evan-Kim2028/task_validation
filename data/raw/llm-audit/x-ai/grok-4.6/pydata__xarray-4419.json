@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-4419",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2205
+  },
+  "response": {
+    "id": "gen-1789192253-OpZpDuwZnJnT4ruV3EVx",
+    "object": "chat.completion",
+    "created": 1789192253,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly requires xr.concat to keep the original dimension and coordinate order rather than sorting or inverting them, with examples of current vs expected .dims/.coords. The FAIL_TO_PASS test concatenates along an existing dim and asserts that dim and coord iteration order match the first dataset, which is exactly that requirement.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_4ce45b7a-7189-9a2e-bf5e-64897217e1cf",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3256,
+      "completion_tokens": 589,
+      "total_tokens": 3845,
+      "cost": 0.009854,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009854,
+        "upstream_inference_prompt_cost": 0.00632,
+        "upstream_inference_completions_cost": 0.003534
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 469,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly requires xr.concat to keep the original dimension and coordinate order rather than sorting or inverting them, with examples of current vs expected .dims/.coords. The FAIL_TO_PASS test concatenates along an existing dim and asserts that dim and coord iteration order match the first dataset, which is exactly that requirement.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly requires xr.concat to keep the original dimension and coordinate order rather than sorting or inverting them, with examples of current vs expected .dims/.coords. The FAIL_TO_PASS test concatenates along an existing dim and asserts that dim and coord iteration order match the first dataset, which is exactly that requirement.",
+  "prompt_tokens": 3256,
+  "completion_tokens": 589,
+  "total_tokens": 3845,
+  "cost_usd": 0.010046,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

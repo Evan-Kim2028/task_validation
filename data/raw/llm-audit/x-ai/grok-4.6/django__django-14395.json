@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14395",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1434
+  },
+  "response": {
+    "id": "gen-1789191413-ylvHJctOaAdbTT6aNxBr",
+    "object": "chat.completion",
+    "created": 1789191413,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue describes unwanted initialization in CacheHandler.all and close, but does not specify keeping default all() initializing every alias or adding an initialized_only flag. The FAIL_TO_PASS tests require that exact public API and default behavior, so other reasonable fixes would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about CacheHandler initializing unused caches. The `all()` method now creates all caches from settings instead of only returning already created ones.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about CacheHandler initializing unused caches. The `all()` method now creates all caches from settings instead of only returning already created ones.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "gX3J+8IQV4/sVDTPDcp0y1WCIcbiELcEm/Z3l9ZMhrLWNtOUtHCLdaKJbGpk3edcomVNiF9LiucWW8q6Mh4Q9CE2qSGHmI2Ji7bRfzTKOauz7Q2okg2AJXxdhG+p4A6/HVJCusIm0k3n6Bl1bQ2Tqchdi7JYeXLXZHw5UMfkF9menK4sKQDAgULGgk7kgZ+3e61jNRCyx7BjS0Da52rXj1eVMwcId+Q6RtxE4Doamqgw6jGGcjHMSDske0m3jOJgk6EE7KGxn4vSMD8nSUnt8WqhhDrPyhfbYBej44EcXAWqHvB4cCUjZJntv96/n3QKXDw23LFtTr0LfiQZKoZNW8E0SVvwDnmyokIsEENEg5G11JeBwsmW50z/hz1KzDt7m0LWnItLRHdeK67weGokQ/Q+46bbQfG1sTpHiWSx+UKq42aR8FvWxmL7NSwO+UIxAixofUjNwUgfpUO0ZLGJuPDFYs3EzjOJbhEc9RNGRd+zn4ifsf4tm5L2cjx2Oi3Z4Wvr/qNRL83d4GktSvtDr46oNdeabA6cR1k9rlJuWpYRq6mLvQc+fFQRmfG/4OyA3E9T0LdBhKwrSuc6Y/KRkX0wHKmQc1pwdJK8AQXGHVHuIaYCUMsRcLqBU9nt6yvfgpN38o7BCFiX1XFN2eJ1lPMAhKNQvhnDCCFrm8azl/hER9MTJsC3DwFBaqEiCqnXZt44GEC4W8KoViOf81zjEtg1r28sFfjRxZpekkJu6fWJuL83dkDDyhoq3VvemHR4EKJtwopRLnDK9er92pXRGpYbfDmTf9C7IfcAtNROwhWIdgCA6aOGwFZX02ChlC2NKoQtSIOvQhFj48tos32JQJccGK0GSuzEKdQM27JAE8l3yU9zdR/zhMMtOpRSyVA58Q3HgnbAm2s91V0vihfNIGuQVubdXW++AlC16zA61MhjUxibvUGY9YWoSYCHc2STP3+qjr4VP6Dm1y7QMcg1V4hcPHGr/AAqyPdgogmeoOsKUXSLzgqbcrRbd9Rw+vyCW+KBilcxLygzcRhfJjVc3TeG2st88FlXHIIh7ADsOhbrKSsY8k9wc346e830hnq9uAeo2DsOxrgVzArrXGL7v/KnYlWzequtoJVWD+LU8rsVNWgACC0t1+VzWhydpaw5R2EmaQbepZS/KkHILk4Dk4VFYshhWnH1d47M06MLJzSuSzoMpcrdqtLb2tcBdTxJ9Rcna4yUBlm8Gt88tUbHaeVMpb9h821o24cts2aZger3bXb9jK+fBOUezEx6covWdxEr04YVlwXW3SP5HJx1ktlNCpsCbDVjuAljgcv4objvcJHOaxN8Ui1Y0taXxS1wAPUEPXIPMWVZ9svSLaQxZ/qZCEMJTWpJ/T93Ymeut5ATKtLZAcP/hPf73pmYnlWfaEQV9nFoNd6Y2eEUa5eFJdHr4p0Hnr2OTAxzgMWiQG3VWsamAWUGumXtSIf5gCBzyWsFEhFcenIzHCvmugMeuDYlyhYyIdpsQEHknelozg8wOkpN2n8YP3KdsvgrDFOV9WaGAn9HtOXD+mI7lYJvggSXh3mbYf3J1nlqhHCZkamoNga7c0+9jCGON8XBlf7RAerVPvCS3zKN2QPSM6ebH50UkoRe5icycKvFptNupgzp0t0IalfbKBu8O44F36htHM2v2l5Wtacrg3TL70YLbxaTa6nEI87Y5tZ4SdNftX8ZlHPxM1JD7aVY+ZHVs/0u58HOQC7Oynj6SvUnZ3ukFFcUZu0RaUdCdwCO9diBQEpNyDheW1PQfeYHBksoUmvuUgqw68nRGPDtwOHDuq6wkJx1SDipXc+eoiqPI6pzTNNCZWb/SWhCxP6SK7ZcEUVqh9A2VHG3reatn42lbCM/X/4hBJ0k3zVWxpawjv16OnOJEHdITfrsQr9ykmUbNa4IH/neUt6gZg/5yDI90+4Z.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3911c1f2-b9a3-9812-bbbd-f7257fc73aa2",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1802,
+      "completion_tokens": 440,
+      "total_tokens": 2242,
+      "cost": 0.006052,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006052,
+        "upstream_inference_prompt_cost": 0.003412,
+        "upstream_inference_completions_cost": 0.00264
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 331,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue describes unwanted initialization in CacheHandler.all and close, but does not specify keeping default all() initializing every alias or adding an initialized_only flag. The FAIL_TO_PASS tests require that exact public API and default behavior, so other reasonable fixes would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue describes unwanted initialization in CacheHandler.all and close, but does not specify keeping default all() initializing every alias or adding an initialized_only flag. The FAIL_TO_PASS tests require that exact public API and default behavior, so other reasonable fixes would fail.",
+  "prompt_tokens": 1802,
+  "completion_tokens": 440,
+  "total_tokens": 2242,
+  "cost_usd": 0.0062439999999999996,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

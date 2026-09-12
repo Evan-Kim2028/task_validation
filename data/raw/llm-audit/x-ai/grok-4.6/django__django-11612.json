@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11612",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2388
+  },
+  "response": {
+    "id": "gen-1789190901-8g1Nn1F9EzoQSf4bdCEI",
+    "object": "chat.completion",
+    "created": 1789190901,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes SQLite remake-table SQL breaking when Meta.db_table is already quoted, so stripping quotes before the new__ prefix is the intended fix. The FAIL_TO_PASS test exercises that remake path via altering a primary key on a quoted table rather than the FK add_field example, which is a minor scenario difference but still checks the stated bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about SQLite3 migrations failing with quoted db_table. The FAIL_TO_PASS test is test_alter_primary_key_quoted_db_table.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SQLite3 migrations failing with quoted db_table. The FAIL_TO_PASS test is test_alter_primary_key_quoted_db_table.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "JQhOLmb0M7xHdDwDIGcbpXvj1Cm4mccrTRQ1JCmlJeqgFLlYb1MyqHWSkXPDm77FGYJ2i28gqMY3V3gIqtlEXAcnHmH7/MeXSn64jtr+LjIISDppBP5GA43QQUfY2Kzbyc1BBypYTMGaABd+aVIfITZ3SB4v1wAgn9AlXKBzBS55LkXKxvVaqq7i4Z9ssmIO2OXzalAIBNC4/kulpLYm4cwRjgV3Kr4AZ64EDsxFMMYotsjQqlAVv09UUAgVR3SR8uponLdftse2sktwTdx5mnbhUcJfoZu9ui4crAX71VMAnJr4jwT7jbTzlLBUkg7765WwOCoZW6JD+X5ro9IJVoUMM/FYwRzcCm4dlYccAADXu5AJDRM/6LikBczudTLGQEPHOH3uaYO+Wadlgg59DZZjCWEBbiwvg1g/W1+TZvM8AA0NA8DI4fCg7VDJCxKf3Un4Ha9348FVQeZjdITCA+DXbrb3JDDxPfQLNhBTUydwNPgrLpclW3vx69XySveM7a+kxYOxjDaI4Wev15VUSsMd3+ROtN0n58UuNRij3UU76cAP539HEGvNzvbNrk7rryzwllh8EEkw8WFtOoYS+uP4Kq/1l9r5woY1auQr7M+zi56F9o/RMyTZh0JA2cSUgwubqL2B1uzkT5/imVN6IsMGSQAopVYEl0isfSy7Eu+sdTMkXht3LWlxHSHBqZxG1M0McsdbB4h39zghw8oZjybzMsdOWASt7v+WafU7a0RN0L0afRroTfQCrzWdZ/BySrrs3XkYmsaKAQVZGIvMf36S7lMIZH7JpdFzYyfzjakk+rzgn00SBD4DVt51E65cb2HadNU6vSQihUyp8NrQL37hyXKUY1Ho3sk7BiO8ZCHNtMSOVVhnwID/an6WKNrzTweVRFXeKWfQg6abboNKksmkK3OLEFuLrpLUaOSXCkNlBDAaVQCffvXd08kFrNpHy1RezotKEINkFlL4qTnhGgVtUjHQ6Qsgd0bV/APZ25QaF3FZ1fAiS1Av8N0BnAGCF7Bh7ATeeRnJZjDpGeIHCzzDXCFEaol8gid3pfZB3EliE82nTcaLxA2Q/0HImNaMopCCQ90gHDTziRyf/oUSehwmHJ5Uv15H3p11ITDSm3pF1r+lAlWpmGM3hH9triV6TXI/Ay0KEPProk1rQ6HU5JH+LNbcUW76H+XnI4gbp4ioO/YH35KZI713ngN2OqmO/AMiH3DtnvdCnE5SIP7+wXJuQD2MZn4rX0R6fuUwx4pAl62yC2FW3cgO5FpxL8tTzQRHrtwquasM6hIMqtlqyl96FwIgh1Kew0eYIIC2x5119/+mxCxKOv/0v7bN9Cl1pAo3aszNH02AIJgNZr/qph6fVjz8iG9uDMVv+WwEmAiov7kpx8YB6f2nsKjYL6IaWQQT8Z8iA7VdQXFE7cvvFeDvo4E8qn6Ea3yXvncibtDW/5TXVZF45yynhqCacAIMVT29NNmSLHlPgqSLt2cHXtyI12aX8JHD4lBjXQEgwVzEwhZ9eTrwagsu+MkI4Zpmk33A5PU/RePkrPIKornRzlCPJPM78R1MgsHuV9Ot2actTcD6l9bPxsBuyr9xCsjauHbu6xirxaYPP/6n+NymqTF/8A7dWA7Ue7uFu4QT6/Qzf7QfjU2gY2RY731Rf+LV0t4OuEV8wYskTaowCkt0d+jDADiVuk4c2cSPvZMwVvOy0TNXSb0IdXAddyGEnvwbYIPfnn7pb24+hnFuag.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_190f9d28-d20f-957f-8926-c82a3e812a79",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2984,
+      "completion_tokens": 449,
+      "total_tokens": 3433,
+      "cost": 0.00847,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00847,
+        "upstream_inference_prompt_cost": 0.005776,
+        "upstream_inference_completions_cost": 0.002694
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 316,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes SQLite remake-table SQL breaking when Meta.db_table is already quoted, so stripping quotes before the new__ prefix is the intended fix. The FAIL_TO_PASS test exercises that remake path via altering a primary key on a quoted table rather than the FK add_field example, which is a minor scenario difference but still checks the stated bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes SQLite remake-table SQL breaking when Meta.db_table is already quoted, so stripping quotes before the new__ prefix is the intended fix. The FAIL_TO_PASS test exercises that remake path via altering a primary key on a quoted table rather than the FK add_field example, which is a minor scenario difference but still checks the stated bug.",
+  "prompt_tokens": 2984,
+  "completion_tokens": 449,
+  "total_tokens": 3433,
+  "cost_usd": 0.008662,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

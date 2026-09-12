@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25931",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1797
+  },
+  "response": {
+    "id": "gen-1789192409-LYIxuHiVloIs2r67hcC3",
+    "object": "chat.completion",
+    "created": 1789192409,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that IsolationForest.fit on a DataFrame with contamination not equal to auto should not emit the feature-names UserWarning. The FAIL_TO_PASS test only asserts that this fit path does not raise that warning, which matches the reported expected behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: IsolationForest with contamination != \"auto\" fitted on a DataFrame raises a warning about feature names because it calls score_samples which re-validates and strips names.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: IsolationForest with contamination != \"auto\" fitted on a DataFrame raises a warning about feature names because it calls score_samples which re-validates and strips names.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "YxjMqAHCMvZ7xNhCrLbNf74wk7YnjfpR6dTpz2FRIl8NXxzow3cym5RZf02IpC1272dvIZOW1fzMVVebkqUNIsMbhieUD03clkobUpTjM8dWTCyaPZMG41fTtZR8VYyZs2lVKMjRPGH6rbj34VTnJjSgBFKppIYMxEO1MRP+qyYmsZ/joux4vmHDQbfMj+IrrvdVp8XeYu8caQzHvy6ID51bsNhGyrA4Q/1W5P9eHoIyLnmMn0Y7MGwUStFPAWnQU0MvRUoWaszJFUiEijjjUoSA878XlZncKkvpki4+LegWQJGEN9Mwx1/EawkPQh0iPcJPkLgeqIMdXNQ4kdJWZc3gGIyvzp7MvJmMdPkVpNCE2LIQr2PvzBvHK+8502nQwRWOEuc1IJIFTBYUF6q/TxQVsiPRIUIwYo50LiHBzd8T9XsfX8Rx5PA6gvViInRjgHFqH/C/8NVdv/9FuB8iKnQoV0phFriNT8fwmXwCHM9aXEhV0TDmqFPqK9cik4HmZg5/XqOkl6SoAF1V2UL1UgiiIk7G+QymTUEkvPiinH6GpxNglAhTZZS+pm//+lhZ9IM79Dayo6YUXRk4ILSVFXrXFZoTeQ2IIzC+fd9TTBBcXXilZEvUjx9MNaEjkLlxBE8/l8PJHzMYc+m+pWKLxnEQgpMqMy7H5OYHF8kfbcHo0agpTX1//Yc3ddl2ffR+ftXiIx0eCVB3GzhZQS6LPdVCp5PvQ7sZi86qOUGThEaREzmo7dPK9qiETIWGJZJyGb15lGIhwvcxci+uY3n7rMKXYlot0Rjj6L7BIJNb.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fa1c2e2f-561d-940c-824d-e99c705417b4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2278,
+      "completion_tokens": 235,
+      "total_tokens": 2513,
+      "cost": 0.005966,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005966,
+        "upstream_inference_prompt_cost": 0.004556,
+        "upstream_inference_completions_cost": 0.00141
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 125,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that IsolationForest.fit on a DataFrame with contamination not equal to auto should not emit the feature-names UserWarning. The FAIL_TO_PASS test only asserts that this fit path does not raise that warning, which matches the reported expected behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that IsolationForest.fit on a DataFrame with contamination not equal to auto should not emit the feature-names UserWarning. The FAIL_TO_PASS test only asserts that this fit path does not raise that warning, which matches the reported expected behavior.",
+  "prompt_tokens": 2278,
+  "completion_tokens": 235,
+  "total_tokens": 2513,
+  "cost_usd": 0.005966,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

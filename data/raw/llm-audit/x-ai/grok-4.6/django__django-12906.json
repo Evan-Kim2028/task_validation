@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12906",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2240
+  },
+  "response": {
+    "id": "gen-1789191103-87TFU3UUfXckHLcu0KLI",
+    "object": "chat.completion",
+    "created": 1789191103,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue asks for docs plus a system-check warning about the request context processor, but does not specify check id, wording, or that the warning applies only when the nav sidebar is enabled. The FAIL_TO_PASS assertion requires exactly admin.W411 and that sidebar-specific message, so many reasonable implementations of the issue would fail.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification fairness.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification fairness.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "LLhqXnd2CieVr/3WLdJZ8CLNXMaYOtliUeAKXA/WgC+Lk/0y/wz/5AVFfLyI6zujcLJwduk52Y/fruOIuQawt9gvXxRi9ceQ3C9nEYbi8w8GSXGaFJ48msWK3ESc76h+DVKnGe+uNXio8ygR5BcI8Y1r1Rgt7an2YzX7ddNhw9KCfziokvwKDQTLdkr0PW4eYwFrGXfCgS1Ua8/5T0kOS93jfr4edJiEnlZAOQ+2AW759c4UqlnYHz0EfvFCflfVOnXm6Ue5Vb6OkixXS95GfEuwHaSsEVka2eUdvsncn+bhuPpEoD9etuEjGNGSnAlzzbq50Hr8phTCgwhM7Qu4s9O/92nijykBotlNciwddkQs22VKdNN6wIZuMKWtO+BT9yHAuo/N7iCSbdSIonOc0EA8xpPNVyGhtTR47Sft/jcpvj7cqA52C3ErJTTkpUwLKn6Em9bT8wU3Dm2bQXFK+SbJ52kRymVck0FtC0GiaFG3ByIvmGm+BjQ2Ld85ktCEVEHNZjMJ9wZbMeZex0OKP9Uln16CKLkBNj4xnxYcPMquDnYaRkFLn6VJwQh2X69sHO/aFgiEa+ELwOR24n+3YAUl5+nOzU6zo0F+9O6kwSd60P1bLY+pdCqOXmtTpcgS3s8ffPvDx0fFJIaISqblSKXTBjdR/hWNAuBGZe6YAhIofwMc6+YKLvdl4nqncvtOoi95qKTj4zcheeoqM9mIaJyBlWT1LC0ygRj464fZzoZxz2NQft4K2/Nj8n+6QoHaRT7ZuPqF6+/KT1ccBUdUwxpfNMxTCFjvdvLTpjda6K5hkujrdcD4jixumc00eZXjVsJN2pD/e2/nFB6P7eNYI3iAFRuL1EENu5XuLCPN5piPTRIXXbXHVUa/zg+vMqoddP1aaHRr8nYYh0voNJkzSCKL1m87uVnS9o7mb7p71MnTzbY3EpMApM4izs9AwPeM6l7SfvCvPf0ZgRAuCDAFprNy1UzzwnhxjOxE9VsXNzyZKmZj09aWxXgwR6f1RHLTybAsqyJg/X3edDn5xm8JGBztZ+/syL0T0eosds+kkFoIfa8UqgkSW7BW16ZCLjJgX6Xq98YO6lyY4zPG1wOUBsnINqsnu4y/ruy5qdS/AwKX0VN3rOPw11LqhT+uhhsWV0oanE82AwskLOZ2z+ZGYGx5AhFFAm6YafkLVWGot3xbi7NpUWLxeB38mU39F/irnw9astwEZpXXRe1NSj4iqALNRPQf34VnzsyIQwXY0vs1j9tQ8Yyou+eUFvEEFs1K1+q4cDCdn7L6lLjfz9ZAiyRd8G4LQYf2ukaHrTLEbNOX9IpysRvUggQKGUogweXPvClzIHIKrCA/AYi/RJZIvmAkDdIkLSv0V8r/GZX8g5LbftSRAUJ9FWADGCvAPPmQhcHuePPj9vgiLxDpoikOLARZV6G2EFQhHdxwIPA/p0t9pvSzjJmZa0/1SAqFncSYQlqVwZxSeOz5dy9Zvbgy0A2bD8+LQh3R9ktjqwzNmSmH9murMMOmzW7/KBoP7pv90heKznv02pDF99wFmv7ksubr01qfHaqxqHd3GgcJFknjGPPpJKV+nbjeQ6ws2InkXNB3LYyP+jzPs4I3yYCQjWscqsMcaujWRtuHoh0rMU0PMwnwPxTG6KsqWKnmuzIgrwZUVysh7TOKk5iC7L4xDnJ0YgklGvF2oyrIAGp2DsuxCwoLuu1o1XWoXiUBUoRJeb679xaJw/733zP9sy9+rSJLxZWar04eO1pmSqAyduinlImx0LJUcxEsAMDvMGCBtStC73VrjwdoMejteazbrShe/1R63uMXIse5TEu4SQWK98DQK9m0iCYoPc7VeaKaZBJbPw017IdHrvoAjuDIB8VifolstAJ6QNu8RbHFzA2HdmMN5X2v9YNpAsZRdTRSOne8k9uHQ6dRu+PAQtddueUxnDgkBPECLcngl584TM0xb+9KusZKWoDsM43MMnnBHZ3Dv/XXda8j3c3OLIKY5OXEx0inK0Q9FDXwZa5w0pkK7eHepDltiAXmB88GjxyABmaVW9O6mYbRsUfkLljclFkrC8QK5tmA62ymm8YTalARG0ad6QoBjKqnKG3OoQ21NpICd2ELYBFKnFQZTKfU9uf5kyjVjv1CJkE0Iha/J0RB78j/TBhUwnVX24Nelg2Y6H5NbHdyxAH3iIgb9Kp2pkxo8tb33VixBi1KW3BkTqHh16AyrkurVaFovtuUiUKP8C5hQo2qbixVdoY1ttnYAN3uf+uUYK4/m4HimHYDXcly1HKvv4mXjEm0inWAI7FdqGDW0/7OmvAbsk9nu9NfignLVF3nRvKgKHDB7ba4twFOlMTKRARyDI9tFuleHsQyTWSGViDi8LTObqCLGf+r7fjdhNMvvDrKlTBXozh2TZ+sv8kFFZylBOOhuD71OuE5T5zde8xkkp22oZ/G7cP0KGU4kzMXAa+WowTGtEoEBpkTRhftnzHX0ahHcmKvQgeoPDBvMtw/wy3DNZ+xbvOUQbOAorrgK6gXfGKJmpJEhD89ensuaiastEw4ErIp8P4ZO0ATWeXxeOO9pIBHzjRrlgA3udDOgb2Jy4cEGgQkLd3UWMWa.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_892ba7f4-7066-99b6-9a44-ac9bb3e9383a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2508,
+      "completion_tokens": 539,
+      "total_tokens": 3047,
+      "cost": 0.007866,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007866,
+        "upstream_inference_prompt_cost": 0.004632,
+        "upstream_inference_completions_cost": 0.003234
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 415,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue asks for docs plus a system-check warning about the request context processor, but does not specify check id, wording, or that the warning applies only when the nav sidebar is enabled. The FAIL_TO_PASS assertion requires exactly admin.W411 and that sidebar-specific message, so many reasonable implementations of the issue would fail.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue asks for docs plus a system-check warning about the request context processor, but does not specify check id, wording, or that the warning applies only when the nav sidebar is enabled. The FAIL_TO_PASS assertion requires exactly admin.W411 and that sidebar-specific message, so many reasonable implementations of the issue would fail.",
+  "prompt_tokens": 2508,
+  "completion_tokens": 539,
+  "total_tokens": 3047,
+  "cost_usd": 0.00825,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

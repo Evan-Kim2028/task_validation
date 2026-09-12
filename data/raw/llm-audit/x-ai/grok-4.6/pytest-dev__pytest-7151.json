@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-7151",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "6ecadf45-2dea-94ac-9c64-4f1c618f996a",
+    "object": "chat.completion",
+    "created": 1789193826,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly requires stdlib unittest addCleanup to run after both passing and failing tests, matching unittest semantics. The FAIL_TO_PASS test only checks that those cleanups ran for a pass and a fail, which is a fair check of the reported bug.\", \"p_invalid\": 0.08}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification fairness.\n",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4844,
+      "completion_tokens": 108,
+      "total_tokens": 5260,
+      "prompt_tokens_details": {
+        "text_tokens": 4844,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 308,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 41425600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly requires stdlib unittest addCleanup to run after both passing and failing tests, matching unittest semantics. The FAIL_TO_PASS test only checks that those cleanups ran for a pass and a fail, which is a fair check of the reported bug.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly requires stdlib unittest addCleanup to run after both passing and failing tests, matching unittest semantics. The FAIL_TO_PASS test only checks that those cleanups ran for a pass and a fail, which is a fair check of the reported bug.",
+  "prompt_tokens": 4844,
+  "completion_tokens": 416,
+  "total_tokens": 5260,
+  "cost_usd": 0.012183999999999999,
+  "cost_in_usd_ticks": 41425600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 4610
+}

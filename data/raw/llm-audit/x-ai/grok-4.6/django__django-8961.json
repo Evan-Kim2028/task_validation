@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-8961",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1002
+  },
+  "response": {
+    "id": "gen-1789191868-YQzZbRxnonvp6MteDNL8",
+    "object": "chat.completion",
+    "created": 1789191868,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly calls out replacing __main__.py in help text when invoked as python -m django, which a competent engineer would implement, while manage.py and docs questions remain open. The FAIL_TO_PASS test only checks that exact help string, which is slightly narrower than the issue’s allowed alternative of using the interpreter basename.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about improving the program name for Django's command-line utility. Specifically, when running `python -m django help`, it shows `__main__.py` instead of `python -m django`.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about improving the program name for Django's command-line utility. Specifically, when running `python -m django help`, it shows `__main__.py` instead of `python -m django`.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_7766e5fd-f15c-9de7-93f5-a5d73c3210f0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1309,
+      "completion_tokens": 493,
+      "total_tokens": 1802,
+      "cost": 0.005384,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005384,
+        "upstream_inference_prompt_cost": 0.002426,
+        "upstream_inference_completions_cost": 0.002958
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 371,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly calls out replacing __main__.py in help text when invoked as python -m django, which a competent engineer would implement, while manage.py and docs questions remain open. The FAIL_TO_PASS test only checks that exact help string, which is slightly narrower than the issue’s allowed alternative of using the interpreter basename.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly calls out replacing __main__.py in help text when invoked as python -m django, which a competent engineer would implement, while manage.py and docs questions remain open. The FAIL_TO_PASS test only checks that exact help string, which is slightly narrower than the issue’s allowed alternative of using the interpreter basename.",
+  "prompt_tokens": 1309,
+  "completion_tokens": 493,
+  "total_tokens": 1802,
+  "cost_usd": 0.005575999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

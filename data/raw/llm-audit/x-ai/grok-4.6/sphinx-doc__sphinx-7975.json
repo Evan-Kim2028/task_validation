@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-7975",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1263
+  },
+  "response": {
+    "id": "gen-1789187704-afQL46K4X5k6iA7NVdTJ",
+    "object": "chat.completion",
+    "created": 1789187704,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to stop splitting non-letter index keys into two Symbols groups with colliding anchors, which a competent engineer can implement as a single symbol bucket. The FAIL_TO_PASS case only adds £ and asserts it joins the existing leading Symbols group, which is slightly narrower than the reported @/£/← split but still aligned with the bug.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about two \"Symbols\" sections in the index when using characters like @, £, and ←.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about two \"Symbols\" sections in the index when using characters like @, £, and ←.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "dQL/dED3jx5tRuDaU6wPUw0P1+CoBXvBdb7+825P/3UeFH9u9eQGM+vAyjTzMi4K0qXUUmvUv04y3YrsUqBQ3lDbv5zlb+rORbr7KUOX1Pxmt4wx2tvsOSo8vK+3oqqQ+/HhQiXalABs0nxg+R5YUI8YP71yIGhX/8Yn0K5XeC1ygoiIKj6eII2oHUtye/cs5BOzL5FkuWDCAajlrQfdLnrOvNtt22Vb3JTeyJfLbADsHuQRi6YhsxlRlNiwoy3ngV8jI9n4GJcvJJ5KtJz4z33Nnok2ewCcIwuLG6NcdEyrJOmcJ3jTRYJT6e/um4aGdUg9Y8LhptUCoZFh7Zpxjt43RZKRQKXmsaIqGsVTLWbNIPCmQyj/ISnJQUX+AS/KogoGxgGhbHSA+xdpzpeeJTdmxsas7gdnMW5uXNmv+VMvLGtSvJdoZBd5nQPc8qo3vW57zyCZAJgPoQecu5dBR8w+UPc1OdcSZiAqqorDOeY7kpwn6hKfQ2Lyw7yNQREQMSKvvX2+S3srUvwYMP0bjYtLETXQkdOCsr2+zv/sEeqw7/GUTu3f05E3dvZOzvdrgvk4STOZqVVB0klLIJSGLlk9M6lETULPacqFt/PdcwIGhokIXsaCMu5FJ7JWPLf8TX8y73K8u2o6YDL7M9rW7qVU5SQTvA5DXxw61SUA2kDpGWoe3YBFtRBlmmK+SGaEAoJwvrcMPIZpH6ytbG5hLck+58PSTNM+Pa5ypNvp/t9LIKv+DAeU1Td8J/2huByrstMxFx3BQWuXy2cW4HZD6hy7jqf4yHlBBXzPKfE7xd9edTmWFuG5v9bhkbah+nWq6uwAzRtFcF/Id6REB0DrgvF/8bB+W5SAU5oYpYZNfPEMrK3w8aGGf7sTpgpY12MztlAPIAqICnOTyiQrjSFeExKlnAZch3y7ZCgK+41UXNay4Ax8LQZkCa3Q09RGBF44z09rTm3TR748U2HP5FVpkA0QqBP6QVGoIJR8en/7NgFwqQnIZVgkuNxjXMmAghmUIBA/MgWJylOPMJJeJUYQPizYvBagF2QI5w0R4Ky+sEHXKhfZcOkBCWivHEPIxZ0tX5sQXitozutRiKy+l61TBNma/Wdlice6YKPp5dHMLWNyel1JpJNiL4G73BgJsc/MPqsO98mCIfms86749mQfBJEgCoglPtzxRwgcodtGJg6nU5l7c50+SkAavPFWO/iAsuEHb71b8zN6eYxwNEc4Eb0CkMTQgkMvTmcCkaiqUHjdpU/glBgYd8U7ilsE8TkV5+snYFHWyKawOx0eOrHPqYybuJGHqjIftbPV4TXGW0f8iaHv5+VbAlndcpUVI78KmFy05WfhjMperj8UeuxmgQEEkYI5EN8mt8QpSCX/zlFi9rXiBNctVx7bSAAHyxHs/P0FXIQB+U+kbvGlCuauxYKi676ZVWY6irohTvhZXsqQuXJ9gpERcI3UmcUogxT+jeLvNbHZoR3twHCdqSGvyd/CCNn6Q4Mge0/cjiGELDnCQoAAX5WNxxXSCypHEAuILa0EgPMIC+3XSK+DPVvrySJaxm2FXrB/zFy19dEy4WLKvKV8x5Jp+CEtfAPI3L1KtCr4jFMDQLXfit2gQ+vKA9YLv9dNka6usDYaddFTU/eQCRM7EVWhzZ23u7p94htz0BC5yPuIy01c+tRca3n4uQLyIj1fFs3NKvGzj7i2wopNrTNqiYdRklRSpCC3qbxk0WosZ/ZnawRaVvyI//jE1BS0+279EAKQR3KdKg50esI3unxnvH8/pB6ktWLMrHedQtq7Ag3DjP9AZ1xhmUHrmLBEA48MJy27ufnMhaEQDKdjM8OydJ4I2gcIBL2ogAzlfy0pteRYyu7bJI24VJ0.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_da7f0f4c-8a05-9fd1-a385-d01e527b5811",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1599,
+      "completion_tokens": 450,
+      "total_tokens": 2049,
+      "cost": 0.005706,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005706,
+        "upstream_inference_prompt_cost": 0.003006,
+        "upstream_inference_completions_cost": 0.0027
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 323,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to stop splitting non-letter index keys into two Symbols groups with colliding anchors, which a competent engineer can implement as a single symbol bucket. The FAIL_TO_PASS case only adds £ and asserts it joins the existing leading Symbols group, which is slightly narrower than the reported @/£/← split but still aligned with the bug.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to stop splitting non-letter index keys into two Symbols groups with colliding anchors, which a competent engineer can implement as a single symbol bucket. The FAIL_TO_PASS case only adds £ and asserts it joins the existing leading Symbols group, which is slightly narrower than the reported @/£/← split but still aligned with the bug.",
+  "prompt_tokens": 1599,
+  "completion_tokens": 450,
+  "total_tokens": 2049,
+  "cost_usd": 0.0058980000000000005,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

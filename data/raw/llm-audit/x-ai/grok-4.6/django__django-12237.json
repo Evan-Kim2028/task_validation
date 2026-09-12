@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12237",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2278
+  },
+  "response": {
+    "id": "gen-1789190999-0oOjuwou37SxrNMYlcw5",
+    "object": "chat.completion",
+    "created": 1789190999,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.9, \"rationale\": \"The issue clearly describes that unicode slugify of Turkish İ must remain a valid slug and proposes lowering before stripping non-word characters, which implies İstanbul becoming istanbul. The listed FAIL_TO_PASS case checks exactly that mapping and does not demand unstated APIs or messages.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about slugify() not returning a valid slug for \"İ\" with allow_unicode=True. The proposed solution is to lower() before the re.sub.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about slugify() not returning a valid slug for \"İ\" with allow_unicode=True. The proposed solution is to lower() before the re.sub.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rdYtxIL93D0cX2X9WCmo8RbIbG/cZUm8UwBP3KO4uJc4uuoT5kMxjRq+wUae/6WsplJBZmTPrqxtzV9utDiejwP/NOKcefIvMqMwQ30Uk8d1JaoY9BqgB5Uud6M2J/L2tSCVXnZkyoeKvKWc/DuqtJjNvqSiTIrtiuxw2yIZsPT/lwTe6ykTeNULpydWExYYIo6QEvUaEDkoDWHco60Z7fy0LSX+YsA1S9Vpn0koyR5bESwsTaw/VMCnuLoafCkU0tf+FpJFocRgMp93u/DbwBgz/v5D1drH/pxJHfrptsvVplUdBTumXB3TI9dhI1dE20644RbK35FGIDQG24UxKGWyEey032q7y5XDN8ECqhYvAvw319LYpOzG+1VhLMINgxvv9D9d8Wj4OX8OZQ6DIp2c7UzQEH0KYwuPT8h8UDwqou8DHDX6mSyJxvHR1WbLHAtG3xry5VGPmmXttidpIhaKZwy/gefDKs5CRPQY8rlns2YOVVIAu4TfLjCckGfN6ageT/wWKp5s4CBiG9lqBx0EahCyQiHn8u3sQIfM5bKbhEyiyTOSto8hJHRFJD1OOdzpWmd1GLilfDdQNaxheqEeOqzEJqFAZmPbIbh1eXmh42FstW7jTQLmu3stPTX3xYV9cQM1mo2FASzGG88AMCEUv94wuw5EnA0eywKfJgGqvQQDg1c+zo8dDmHG6AgKGhKDKA+0chVnVvQRKIV771hs4Duz+1BoYfUrgcDwfEgXeyRMhnu+ZisJThV+x8SCZn8zp9uZakZlKqztpNA3FptJbVNPkv1n0/mTsKtr2az6jJ3iSDcjgohuHFU/pVIYe2xodAnIAvwsVxRwa7RdKW1Wjk5qF3JvVTEgTuRX0+HBkg2flXRB8NCl8uRiA6EvO0AFarXem4YW1TcCAaJUn1AswIkAeejoHEiAgKoIk9taRHmKwIdd/MteaT6zvCsjpxr3kb7FZDmiRmTvy6OoDPRU3nMPffJvOq68W5g4bwQdoFtkUa5bHaDZ0RFZwy7vLztbnu7rSf3zcCNzeSACt1DwvebkjmQShZ6T6vGz9G6BrHypftmz387LExFQnWW2innL6in/sdNNnixEH/CuyX0Op3bjWaDq3VOFCe3PG+H7JUwZpZ1/7TMX4zNFRJmRSldX5A5PnNjcBUrKSTm6bkal89DS58qnNclE4ZRrV1o5VYKujcIzY6r93HdDGOcSD28yjq1h3dP+VzZwO9FUJEgiHZRw+WJzFgbWlFUQnWPTniqZfw+/GBxvpzYSCwMQEC5mvTlH4Rj51R15AHDdgAorW8KGQk1YuZkrXIewFuHnKrgPfG2Sl3vSvOTASXPNfYaRO6I/t8B6FBPnHaTwnXAo249DTeAhEkbkvzrV/GgNVTXEkl1srLWk4PIoWAYm4PBofu8GeytgkzW3VkXxUAvi9ysymcoMMnO3BwPai002QpfvqDh06qlDZrISAUF2H5KETgRuHymsCcQeh5Y8JeO1HBtmtOhrYroMgziEoE9rgSemXJJj/lJJwnIUV5Se5xLEMrfngxTtU1KU213umStpZOAHVMJMFjoQwiHbBG7qkL4jUucNDD7C7ETUysMJfyHvs+xdKMtid51grITtOwV76TnTnLaEZELUVj6yHBo6LWH0KXRdpXeIKr+copvT3v2koSdqD5ukpdXKdkcoqjERe+6Yx/UT+bFGrEBw43Y6NLI4vce/z2shCpXqdhp8KehPIC1rxvwOAYv3oTWdqHKTFZHUDX7q4XBd0v7Tc0woRsSzWQiWvW8VpT9fwyNrzTC98NCZjA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_856a003f-647e-9700-a809-8cbcd5f3a916",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2880,
+      "completion_tokens": 414,
+      "total_tokens": 3294,
+      "cost": 0.008052,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008052,
+        "upstream_inference_prompt_cost": 0.005568,
+        "upstream_inference_completions_cost": 0.002484
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 304,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.9,
+    "rationale": "The issue clearly describes that unicode slugify of Turkish İ must remain a valid slug and proposes lowering before stripping non-word characters, which implies İstanbul becoming istanbul. The listed FAIL_TO_PASS case checks exactly that mapping and does not demand unstated APIs or messages.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.9,
+  "rationale": "The issue clearly describes that unicode slugify of Turkish İ must remain a valid slug and proposes lowering before stripping non-word characters, which implies İstanbul becoming istanbul. The listed FAIL_TO_PASS case checks exactly that mapping and does not demand unstated APIs or messages.",
+  "prompt_tokens": 2880,
+  "completion_tokens": 414,
+  "total_tokens": 3294,
+  "cost_usd": 0.008244,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

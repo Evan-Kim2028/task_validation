@@ -1,0 +1,104 @@
+{
+  "task_id": "sphinx-doc__sphinx-8707",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2171
+  },
+  "response": {
+    "id": "gen-1789187783-xlFdAYc7qyTvD8hii1Y3",
+    "object": "chat.completion",
+    "created": 1789187783,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue describes viewcode missing after mixed HTML builds and states it should stay on for HTML except singlehtml and epub, which a senior engineer can implement without extra product choices. The sole FAIL_TO_PASS case only tightens the existing epub-default check for missing source hrefs rather than covering the reported singlehtml-then-html path, so it is slightly narrower than the ticket.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue is about viewcode not working when `make singlehtml html`. The expected behavior is \"Always enabled for HTML builds (except singlehtml and epub)\".\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test only covers epub default case; issue requires singlehtml+html sequential build to expose doctree contamination\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about viewcode not working when `make singlehtml html`. The expected behavior is \"Always enabled for HTML builds (except singlehtml and epub)\".\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Test only covers epub default case; issue requires singlehtml+html sequential build to expose doctree contamination\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_57402364-8b0b-94e1-be37-5cf69fcffe70",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2696,
+      "completion_tokens": 745,
+      "total_tokens": 3441,
+      "cost": 0.009478,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009478,
+        "upstream_inference_prompt_cost": 0.005008,
+        "upstream_inference_completions_cost": 0.00447
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 609,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue describes viewcode missing after mixed HTML builds and states it should stay on for HTML except singlehtml and epub, which a senior engineer can implement without extra product choices. The sole FAIL_TO_PASS case only tightens the existing epub-default check for missing source hrefs rather than covering the reported singlehtml-then-html path, so it is slightly narrower than the ticket.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue describes viewcode missing after mixed HTML builds and states it should stay on for HTML except singlehtml and epub, which a senior engineer can implement without extra product choices. The sole FAIL_TO_PASS case only tightens the existing epub-default check for missing source hrefs rather than covering the reported singlehtml-then-html path, so it is slightly narrower than the ticket.",
+  "prompt_tokens": 2696,
+  "completion_tokens": 745,
+  "total_tokens": 3441,
+  "cost_usd": 0.009862,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

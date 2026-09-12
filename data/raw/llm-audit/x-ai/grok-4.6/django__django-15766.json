@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15766",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3037
+  },
+  "response": {
+    "id": "gen-1789191674-P2j3Iok6iJxuq9c6xsex",
+    "object": "chat.completion",
+    "created": 1789191674,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks for a robust on_commit flag that swallows exceptions so later handlers still run, and does not specify logging, logger names, or message wording. FAIL_TO_PASS tests require exact loggers, __qualname__-based messages, and captureOnCommitCallbacks behavior that a valid swallow-exceptions implementation could miss.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue proposes adding a `robust` kwarg to `on_commit` that defaults to False. When True, exceptions in handlers should be swallowed so other handlers still run, similar to send_robust.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue proposes adding a `robust` kwarg to `on_commit` that defaults to False. When True, exceptions in handlers should be swallowed so other handlers still run, similar to send_robust.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "CekeJtCDxh6VguUlll2W+RVtBx7nXqCbTUcZU7FmDkRsuy60XgiV/xpGNx9BewkV6sX7bhvkq457s/jPKP0hijCnDKbYVhNDQRWZ/uNVLoxYwDaed1RDYMmFahLh3OqLU0NyOigME1Nv/y+6wsRtSOyouTZ3Eq1U8Htn1k+IcWcv5ySuBO0+lDj5k0HgEzF/T3B8/Br9IWPo6ZijJ7at79Dpi4AsZ4DeciHl/0VMItzK70MLppat/B0KliAkhU1L0/365soVZxJ6qxhyOATeTAydhqnZPD2+IBlVZLpEfE+3NP3YSmfSQZeoM8qguot+rgmZGR0KwTCFhwDirCa8QYCltSZfNEx07HIEUBlqtJlhWSHo8aMXYlSoJfBhxhu0f614P4TVuFRRvspLXyyE29kpgWPaGyqSDzUulpIrWGeunNmIH4RrDt2ay4KUpvUyWdEAJNs0uJEXQQSxGgdvE4tYlpyII8WeG9KAKC+VM8aHw1uK6aMqdpEhtdcJNmHibkuzGBuU0bw3GHf81W6XTposmFcMhAzAnMJ6OiESgUXkobkPrU2zFzTCuD9ZEEYxOEFehpbFpOJQYZJwM2EwhoWdd/3WxT97vKe4W8+IMT95ED46sfeuzKo6JHyYH7vJEFMB7FXLg8rrtw1fHuaemny4v/Aq3YRw3C9bk+gGEtKy37jw1B0c6xUpIQmp1pOQ+murmplnYgUNvwVYtS8u3JGHkndio/VWq1JENF74wDFAjR8TI+JWUFK/tOPiDCALrTePgZl372NnsJZYlFHPUavHkqo9cmBh7Y3sYpmcy50eno0F6Zf9m+Qy5LoeLp80JFVmiM0DxRgNs6oubgWamxljDoDtSwNgv78NSCKFsJnxfn7r+mGaw8ZGhM20i+r3rVmIxr6Z5fWqYv5wFBAiuZkm9z94Zxlnr0SGCyuCZ0oDGTZwwC7SONKU4qZGgXsDXvBHG4qVX0WoCaFTdS7ObtvKJvYJCb8xYFp3CRG6baXithGutzIwdGxSpy42WjhIQwxrvds6Cy3Uj80aSSn+6ZdArOALlof+4NVQmkeSw/PgDu55Gu5RkB5WTPcslsinbXBqbPeDSyvZzSsNeoBX6OFu7wAbODV9eUzZbdni5M/SfuwuThHJ37DSenMhGSd3STxMkHlBvmlOhfzUY2NWgVwcQYem3usfmTmKN6++5JmApU5ZMZPwm09zKX+c+TB+O4tVBSqO+etc4zDLryazsgM1CL+l8UyAtQqiUJo0QAvjC+/WE5PO/DAd8fc6g9evT4uQ+WnVta9LnVY25oH9FScAp9XwngcH7qYjfb211xBThOQ+vwZ6TzDacgXb1AbQGgequ9amQrY6r1ToFW9MqhRkJ5Y5UcoF3b28tf3Gn89kRAKIiqkWk91Wen0e4GGhvh1Bg59uN2TT1lauvXl0ar9aSRv2LSp2Qqjz+FkxzFrWy71ZIE9EAGj/+WibimxnNAHaPfypMiFx4ERoHedSAoSRs5yUewlFfRRBtTqifh5FKqpcEHRqdBBwCbkLbwCN0Tmd9QEb53kv5Si+K2GTZp5luk/owSCNs4gxeIen0XewQjkM3z35++Zo+08rVAtE8bQru8oVlv9KUr3K/gP/td+kWinp5jYfBsPVVyRQkwwenKeeRAyjWeCetiMCPqV5pG1of99ektvwpFh2cetad95xTrg4DF3Ew2mo6Z5YiKzB0BngCXb6wvXU0zTBa5xCCGzlUoG2XTwTvb/MJe9fuSjx3A33lqo.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_94f13040-a18f-9c4b-87db-51c95236060d",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3355,
+      "completion_tokens": 402,
+      "total_tokens": 3757,
+      "cost": 0.008738,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008738,
+        "upstream_inference_prompt_cost": 0.006326,
+        "upstream_inference_completions_cost": 0.002412
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 278,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks for a robust on_commit flag that swallows exceptions so later handlers still run, and does not specify logging, logger names, or message wording. FAIL_TO_PASS tests require exact loggers, __qualname__-based messages, and captureOnCommitCallbacks behavior that a valid swallow-exceptions implementation could miss.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks for a robust on_commit flag that swallows exceptions so later handlers still run, and does not specify logging, logger names, or message wording. FAIL_TO_PASS tests require exact loggers, __qualname__-based messages, and captureOnCommitCallbacks behavior that a valid swallow-exceptions implementation could miss.",
+  "prompt_tokens": 3355,
+  "completion_tokens": 402,
+  "total_tokens": 3757,
+  "cost_usd": 0.009122,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

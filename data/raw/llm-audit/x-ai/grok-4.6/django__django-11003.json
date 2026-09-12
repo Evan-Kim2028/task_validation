@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11003",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1440
+  },
+  "response": {
+    "id": "gen-1789190782-p5hGsoD3oDSXmohwlEGw",
+    "object": "chat.completion",
+    "created": 1789190782,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that a disabled ModelChoiceField with a valid initial choice should validate, which a competent engineer could implement only on the disabled/form path. The FAIL_TO_PASS suite also requires ModelChoiceField.clean to accept model instances in general and with to_field_name, which the issue does not specify.\", \"p_invalid\": 0.82}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests require to_python to accept model instances generally, but issue only mentions disabled case; gold patch fixes broader issue\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests require to_python to accept model instances generally, but issue only mentions disabled case; gold patch fixes broader issue\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fc981231-85f4-91e5-93b3-f36b609910c7",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1731,
+      "completion_tokens": 688,
+      "total_tokens": 2419,
+      "cost": 0.007398,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007398,
+        "upstream_inference_prompt_cost": 0.00327,
+        "upstream_inference_completions_cost": 0.004128
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 566,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that a disabled ModelChoiceField with a valid initial choice should validate, which a competent engineer could implement only on the disabled/form path. The FAIL_TO_PASS suite also requires ModelChoiceField.clean to accept model instances in general and with to_field_name, which the issue does not specify.",
+    "p_invalid": 0.82
+  },
+  "s": 2.0,
+  "p_invalid": 0.82,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that a disabled ModelChoiceField with a valid initial choice should validate, which a competent engineer could implement only on the disabled/form path. The FAIL_TO_PASS suite also requires ModelChoiceField.clean to accept model instances in general and with to_field_name, which the issue does not specify.",
+  "prompt_tokens": 1731,
+  "completion_tokens": 688,
+  "total_tokens": 2419,
+  "cost_usd": 0.0075899999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-25430",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2231
+  },
+  "response": {
+    "id": "gen-1789192042-QK0Xrmag7tMPJtYt35k1",
+    "object": "chat.completion",
+    "created": 1789192042,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue explicitly allows adding metadata, ignoring it, or a better error, so a valid fix could pass jpg without raising. The FAIL_TO_PASS tests require a ValueError whose message matches a specific substring for several formats never named in the issue.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about savefig with jpg and metadata failing with an inscrutable TypeError. Expected: either add metadata, ignore the argument, or a more informative error.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about savefig with jpg and metadata failing with an inscrutable TypeError. Expected: either add metadata, ignore the argument, or a more informative error.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "U0IiufcruRIxSlbNak156CSqp7JmRARuAd8JBTTMot3Ml+7/xHvFLuU9Vml1GCcmBC5VByctPLIRXK4x6FopQ9j+ZQbEAjBd2R4XIWl/pK87NjcZIkRgCMZIolbFcv43J4h7Tz7ERS6hOx8oiAuEByqjKNjTygJgAmwZW9rhfwipyiHc1jAZUwSgFtiMRJhMlW6dEo6S9qQvz+UBm6dESkiveLWp+m9kXgcfCUcYMthOFBtmj4q9gSbHigtADI+JHMBXScRYk5Z0HEGWP0ZJZorb9RaFNYoDZPjpdLEyig1QLaVr9XvKcs48bA9PukpMUzi7+E4WmGLB7sZfrFQAyEi9FzRUwSdTcBcL/hMMZI7StjnUFxvciIu9Ra2kDBgz8m6Ca5DuwUvQOQL9FJY+vFwsMBSZsCbMRdof77ErrHvhZeA+Up76Wc8ugF9VTGrFBMgeO8xZVRmvHoBkCRVOdHL9E3qZIBqd1YhNC2v3C6D/07VazDLVkLUH35BDyhSZBcVImkseAIQaQhkGhWAKIhwMuVvCQHMnomaaf1s0unAQ9rBSgRMniT64lSt7kqcIKlQMEpYJ0TeM9kiIFgieOF7WoRvuajm4voA/vOBYk5AMOJrxrKMAt6GSaDJJ8ZrOeTyZ/5WxGD7yEL9hZgCiVwF4bHBRMHyThdbmBLvmqeF48GiPEucPb0YvgwmZhWPSCo50sh1GZ7cw8dMbL7XYnv/lW7JhuD4nnhtLYCGN2N5a6ZuS9E7523cDF/1/L93hYTORaLw7qYM2PBBBWhrtl3NfOVk1tUqbZdW+VXNiSun7qtchiqEgCtss3KjjDM0CF3pQRIOusUsu2Lez51VEcTXr6F1nPA7NFQzrzVg4+ixp4dHXnIk/zMDkiFH9FPtFp9HbJvuEWRkHU2aPIEI4v/7WBroyckCNYMV1e7HB5KT/vhKjE6IirS0XTPzUuUhp3s84GHPa8MR8znimRzX9H0/UZYcvJ2GAD9DDW0zS0P5RS84GLSbCgZpbtpuJN4cnyBS0YR8WF38cSoddo8y1HwgZXJN5v/6LOgkS2+Jw8JumoTiyyJQRP3HYpdAo+GD0d2LjkaN2yXi7+4FnPNGM7GnnWTryTDezXI61hoNsdVKcseUOfWOKFoGsvm9hdoxHmIsH09weqEW0fOzF4V4qpa1qqIoEn7j0OaZwbDzaIejuyqYyTNetotrZmLV5MCYGf/eFchCzIWJ2y+cNuk3cOLzl3IezP0gQqhuGNowQsWg4rLuEHTyoajL60twjIRQysKYhsz/aGw5aO7MM2o/fKVKj6GAT5TcCze8No14YRp3gIifA0OLzEavnICODw7ppmI6QmzDRjjEXXDdjG5bzXH5nE2g5BnzbYXDcLKR4risQHEbQkwvxm1NV7oNdgSQCgQ6kOyKMkN6u+6XwInwmaQiEt4kjxiqdV85IZ+2r2ldyWTvSPn7ZUWeEfEqFZnNZwUVv468OUw3wWXTd9LAIDTFAY9GgbC51jHXt+op/zI66Refc2zVSwGW4aleW8o2ZLAL9yiDrKvENxDXzv0oQma/JNzDZc67Sxrezcul58IOjhjk0XUo/rC0G5a7+d3QXL/7DNQ+FBe0aLsEgoJe/NXOwTKSJS9QAZHhH4TPMOi3C+KBohw.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6b1dce61-e5e9-9fe7-a996-ddaf059bcd8a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2799,
+      "completion_tokens": 374,
+      "total_tokens": 3173,
+      "cost": 0.007458,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007458,
+        "upstream_inference_prompt_cost": 0.005214,
+        "upstream_inference_completions_cost": 0.002244
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 268,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue explicitly allows adding metadata, ignoring it, or a better error, so a valid fix could pass jpg without raising. The FAIL_TO_PASS tests require a ValueError whose message matches a specific substring for several formats never named in the issue.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue explicitly allows adding metadata, ignoring it, or a better error, so a valid fix could pass jpg without raising. The FAIL_TO_PASS tests require a ValueError whose message matches a specific substring for several formats never named in the issue.",
+  "prompt_tokens": 2799,
+  "completion_tokens": 374,
+  "total_tokens": 3173,
+  "cost_usd": 0.007842,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

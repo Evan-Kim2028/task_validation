@@ -406,6 +406,210 @@ def _cmd_ablate_causal(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_interrogate_verifier(args: argparse.Namespace) -> int:
+    from task_validation.evidence.interrogate import (
+        append_jsonl,
+        complete_packages,
+        interrogate_verifier,
+        load_done_ids,
+        matrix_row,
+        summarize_records,
+    )
+
+    if args.tasks_root:
+        root = Path(args.tasks_root).resolve()
+        skip = {s.strip() for s in (args.exclude or "").split(",") if s.strip()}
+        tasks = []
+        for d in complete_packages(root):
+            rel = str(d.relative_to(root)).replace("\\", "/")
+            if rel in skip or d.name in skip:
+                continue
+            tasks.append(d)
+        if args.limit:
+            tasks = tasks[: args.limit]
+        out = Path(args.out)
+        work = Path(args.work)
+        done = load_done_ids(out) if args.resume else set()
+        rows: list[dict] = []
+        if args.resume and out.is_file():
+            with out.open(encoding="utf-8") as fh:
+                rows = [json.loads(line) for line in fh if line.strip()]
+        elif out.is_file() and not args.resume:
+            out.unlink()
+        for d in tasks:
+            rel = str(d.relative_to(root)).replace("\\", "/")
+            if rel in done:
+                continue
+            rec = interrogate_verifier(d, work, timeout=args.timeout, source_root=root)
+            append_jsonl(out, rec)
+            rows.append(rec)
+            print(
+                json.dumps(
+                    {
+                        "task_id": rec["task_id"],
+                        "interrogable": rec["rates"]["interrogable"],
+                        "elapsed_sec_total": rec["elapsed_sec_total"],
+                        "rates": {
+                            k: rec["rates"][k]
+                            for k in (
+                                "correct_accept",
+                                "variant_accept",
+                                "incorrect_reject",
+                                "false_accept",
+                                "false_reject",
+                            )
+                        },
+                    }
+                ),
+                flush=True,
+            )
+        summary = summarize_records(rows)
+        summary_path = out.with_name(out.stem + ".summary.json")
+        summary_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+        matrix_path = out.with_name(out.stem + ".matrix.jsonl")
+        with matrix_path.open("w", encoding="utf-8") as fh:
+            for rec in rows:
+                fh.write(json.dumps(matrix_row(rec)) + "\n")
+        print(json.dumps(summary, indent=2))
+        return 0
+
+    if not args.task:
+        print("interrogate-verifier requires --task or --tasks-root", file=sys.stderr)
+        return 2
+    report = interrogate_verifier(Path(args.task), Path(args.work), timeout=args.timeout)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    slim = {
+        "task_id": report["task_id"],
+        "kind": report["kind"],
+        "executed": report["executed"],
+        "metadata_inferred": report["metadata_inferred"],
+        "coverage": report.get("coverage"),
+        "rates": report["rates"],
+        "trials": [
+            {
+                "probe_id": t["probe_id"],
+                "family": t["family"],
+                "intended": t["intended"],
+                "availability": t.get("availability"),
+                "reward": t["reward"],
+                "accepted": t["accepted"],
+                "elapsed_sec": t["elapsed_sec"],
+            }
+            for t in report["trials"]
+        ],
+    }
+    print(json.dumps(slim, indent=2))
+    return 0 if report["rates"]["interrogable"] else 1
+
+
+def _cmd_link_human_labels(args: argparse.Namespace) -> int:
+    from task_validation.ingest.human_labels import write_linkage
+
+    summary = write_linkage(
+        swe_targets=Path(args.swe_targets),
+        harbor_gold=Path(args.harbor_gold) if args.harbor_gold else None,
+        out=Path(args.out),
+    )
+    print(json.dumps(summary, indent=2))
+    return 0
+
+
+def _cmd_analyze_treatments(args: argparse.Namespace) -> int:
+    from task_validation.evidence.treatment_grade import analyze_pilot
+
+    rows = []
+    with Path(args.records).open(encoding="utf-8") as fh:
+        for line in fh:
+            if line.strip():
+                rows.append(json.loads(line))
+    report = analyze_pilot(rows)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report) + "\n", encoding="utf-8")
+    slim = {k: v for k, v in report.items() if k != "tasks"}
+    Path(args.out).with_name(Path(args.out).stem + ".summary.json").write_text(
+        json.dumps(slim, indent=2) + "\n", encoding="utf-8"
+    )
+    print(json.dumps(slim, indent=2))
+    return 0
+
+
+def _cmd_sample_swe_2x2(args: argparse.Namespace) -> int:
+    from task_validation.model.sample_2x2 import sample_2x2
+
+    report = sample_2x2(Path(args.oof), n_per_cell=args.n_per_cell, salt=args.salt)
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({k: v for k, v in report.items() if k != "cells"}, indent=2))
+    return 0
+
+
+def _cmd_ingest_tb_maintenance(args: argparse.Namespace) -> int:
+    from task_validation.ingest.tb_maintenance import write_jsonl
+
+    summary = write_jsonl(Path(args.out))
+    print(json.dumps(summary, indent=2))
+    return 0
+
+
+def _cmd_rater_noise(args: argparse.Namespace) -> int:
+    from task_validation.ingest.rater_noise import rater_noise
+
+    report = rater_noise(Path(args.targets))
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, indent=2)[:8000])
+    return 0
+
+
+def _cmd_validity_corpus(args: argparse.Namespace) -> int:
+    from task_validation.ingest.corpus import write_catalog
+
+    root = Path(args.root).resolve()
+    report = write_catalog(root, Path(args.out))
+    print(json.dumps(report, indent=2)[:8000])
+    return 0
+
+
+def _cmd_ppi_lab(args: argparse.Namespace) -> int:
+    from task_validation.sampling.ppi import format_key_tables, run_ppi_lab, write_ppi_lab
+
+    report = run_ppi_lab(
+        Path(args.gold),
+        Path(args.targets),
+        Path(args.oof),
+        replicates=args.replicates,
+        seed=args.seed,
+    )
+    write_ppi_lab(report, Path(args.out))
+    tables = format_key_tables(report)
+    print(tables)
+    return 0
+
+
+def _cmd_coverage_lab(args: argparse.Namespace) -> int:
+    from task_validation.sampling.coverage_lab import run_lab
+
+    report = run_lab(
+        Path(args.gold),
+        Path(args.oof) if args.oof else None,
+        n=args.n,
+        replicates=args.replicates,
+        seed=args.seed,
+    )
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(report) + "\n", encoding="utf-8")
+    slim = {k: v for k, v in report.items() if k != "rows"}
+    slim["n_rows"] = len(report["rows"])
+    Path(args.out).with_name(Path(args.out).stem + ".summary.json").write_text(
+        json.dumps({"meta": slim, "rows": report["rows"], "sequential": report["sequential"]}, indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(slim, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -508,6 +712,76 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--n", type=int, default=150)
     p.add_argument("--out", required=True)
     p.set_defaults(func=_cmd_ablate_causal)
+
+    p = sub.add_parser(
+        "interrogate-verifier",
+        help="Run controlled implementations through the official Harbor verifier",
+    )
+    p.add_argument("--task", default="")
+    p.add_argument("--tasks-root", default="")
+    p.add_argument("--work", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--timeout", type=int, default=600)
+    p.add_argument("--exclude", default="experimental/lakehouse-stack-incident,lakehouse-stack-incident")
+    p.add_argument("--limit", type=int, default=0)
+    p.add_argument("--resume", action="store_true")
+    p.set_defaults(func=_cmd_interrogate_verifier)
+
+    p = sub.add_parser(
+        "link-human-labels",
+        help="Mine existing public labels; do not merge provenances",
+    )
+    p.add_argument("--swe-targets", required=True)
+    p.add_argument("--harbor-gold", default="")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_link_human_labels)
+
+    p = sub.add_parser("analyze-treatments", help="Grade interrogation treatments A/B/C/D")
+    p.add_argument("--records", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_analyze_treatments)
+
+    p = sub.add_parser("sample-swe-2x2", help="List a 20-task 2x2 SWE sample; do not run Docker")
+    p.add_argument("--oof", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--n-per-cell", type=int, default=5)
+    p.add_argument("--salt", default="swe-2x2-v0")
+    p.set_defaults(func=_cmd_sample_swe_2x2)
+
+    p = sub.add_parser("ingest-tb-maintenance", help="Public TB 2.1 changed-task list")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_ingest_tb_maintenance)
+
+    p = sub.add_parser("rater-noise", help="Single-rater vs 3-rater consensus error")
+    p.add_argument("--targets", required=True)
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_rater_noise)
+
+    p = sub.add_parser("validity-corpus", help="Index gold sources; do not merge Y")
+    p.add_argument("--root", default=".")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_validity_corpus)
+
+    p = sub.add_parser("coverage-lab", help="Estimator coverage grid; stratified-normal is not release")
+    p.add_argument("--gold", required=True)
+    p.add_argument("--oof", default="")
+    p.add_argument("--n", type=int, default=100)
+    p.add_argument("--replicates", type=int, default=500)
+    p.add_argument("--seed", default="coverage-lab-v0")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=_cmd_coverage_lab)
+
+    p = sub.add_parser(
+        "ppi-lab",
+        help="PPI++ / difference / poststrat vs SRS-CP label-savings coverage lab",
+    )
+    p.add_argument("--gold", default="data/gold/swe_verified_compact.jsonl")
+    p.add_argument("--targets", default="data/gold/swe_rater_targets.jsonl")
+    p.add_argument("--oof", default="data/gold/oof_openai_2024_conservative.oof.jsonl")
+    p.add_argument("--replicates", type=int, default=2000)
+    p.add_argument("--seed", default="ppi-lab-v0")
+    p.add_argument("--out", default="data/gold/ppi_lab.json")
+    p.set_defaults(func=_cmd_ppi_lab)
 
     args = parser.parse_args(argv)
     return args.func(args)

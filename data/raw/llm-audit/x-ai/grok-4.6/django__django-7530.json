@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-7530",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1188
+  },
+  "response": {
+    "id": "gen-1789191863-PLRro9H0FxEUpk2yeM6T",
+    "object": "chat.completion",
+    "created": 1789191863,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 1, \"other_reason\": \"Listed FAIL_TO_PASS is squashmigrations, not the patched consistency-check test\", \"confidence\": 0.78, \"rationale\": \"The issue clearly states that allow_migrate consistency checks must use each app's own models rather than every model in the project. The actual test patch fairly checks that, but the named FAIL_TO_PASS test is unrelated and would not validate the fix.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS test name mismatch with actual test being patched\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue description is clear 100% and the gold patch correctly fixes the root cause. The FAIL_TO_PASS test name is completely wrong and doesn't match the test being modified in the patch, making this a dataset error rather than a valid SWE-bench instance.\",\n  \"p_invalid\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS test name mismatch with actual test being patched\",\n  \"confidence\": 0.85,\n  \"rationale\": \"The issue description is clear 100% and the gold patch correctly fixes the root cause. The FAIL_TO_PASS test name is completely wrong and doesn't match the test being modified in the patch, making this a dataset error rather than a valid SWE-bench instance.\",\n  \"p_invalid\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fe3bb7ce-88e3-92a6-8b53-76c7ae295c11",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1438,
+      "completion_tokens": 819,
+      "total_tokens": 2257,
+      "cost": 0.007406,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007406,
+        "upstream_inference_prompt_cost": 0.002492,
+        "upstream_inference_completions_cost": 0.004914
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 695,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 1,
+    "other_reason": "Listed FAIL_TO_PASS is squashmigrations, not the patched consistency-check test",
+    "confidence": 0.78,
+    "rationale": "The issue clearly states that allow_migrate consistency checks must use each app's own models rather than every model in the project. The actual test patch fairly checks that, but the named FAIL_TO_PASS test is unrelated and would not validate the fix.",
+    "p_invalid": 0.72
+  },
+  "s": 0.25,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 1,
+  "other_reason": "Listed FAIL_TO_PASS is squashmigrations, not the patched consistency-check test",
+  "confidence": 0.78,
+  "rationale": "The issue clearly states that allow_migrate consistency checks must use each app's own models rather than every model in the project. The actual test patch fairly checks that, but the named FAIL_TO_PASS test is unrelated and would not validate the fix.",
+  "prompt_tokens": 1438,
+  "completion_tokens": 819,
+  "total_tokens": 2257,
+  "cost_usd": 0.00779,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-5180",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2607
+  },
+  "response": {
+    "id": "gen-1789192286-P59og8ZhvAtCHQAr0fRb",
+    "object": "chat.completion",
+    "created": 1789192286,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly requires treating mixed-case Gregorian as a standard calendar so times decode to datetime64, matching the documented CF case-insensitivity. The FAIL_TO_PASS tests also demand a full encode/decode roundtrip that preserves the original calendar string, which is a reasonable but unstated extra constraint.\", \"p_invalid\": 0.18}",
+          "refusal": null,
+          "reasoning": "The issue is about xarray treating \"Gregorian\" (capital G) as a non-standard calendar instead of using datetime64. The suggested fix is to use calendar.lower() when checking against _STANDARD_CALENDAR...{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about xarray treating \"Gregorian\" (capital G) as a non-standard calendar instead of using datetime64. The suggested fix is to use calendar.lower() when checking against _STANDARD_CALENDAR...{\n  \"underspecified\": 0,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a794b759-d980-9338-aa2c-99d4fbe4ef75",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3242,
+      "completion_tokens": 489,
+      "total_tokens": 3731,
+      "cost": 0.009226,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009226,
+        "upstream_inference_prompt_cost": 0.006292,
+        "upstream_inference_completions_cost": 0.002934
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 371,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly requires treating mixed-case Gregorian as a standard calendar so times decode to datetime64, matching the documented CF case-insensitivity. The FAIL_TO_PASS tests also demand a full encode/decode roundtrip that preserves the original calendar string, which is a reasonable but unstated extra constraint.",
+    "p_invalid": 0.18
+  },
+  "s": 1.0,
+  "p_invalid": 0.18,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly requires treating mixed-case Gregorian as a standard calendar so times decode to datetime64, matching the documented CF case-insensitivity. The FAIL_TO_PASS tests also demand a full encode/decode roundtrip that preserves the original calendar string, which is a reasonable but unstated extra constraint.",
+  "prompt_tokens": 3242,
+  "completion_tokens": 489,
+  "total_tokens": 3731,
+  "cost_usd": 0.009418,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

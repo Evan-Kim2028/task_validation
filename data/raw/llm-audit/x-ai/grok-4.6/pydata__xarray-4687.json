@@ -1,0 +1,104 @@
+{
+  "task_id": "pydata__xarray-4687",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2137
+  },
+  "response": {
+    "id": "gen-1789192263-gt1lSTuJWZqylCZIFsfU",
+    "object": "chat.completion",
+    "created": 1789192263,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issues only ask that attributes not be dropped or that keep_attrs be exposable, and the two MCVEs even disagree on which argument’s attrs should survive. The FAIL_TO_PASS test requires a keep_attrs=True API and specifically the attrs of x, which is unstated in the issue text.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The issue is about xr.where not preserving attributes. Users expected attributes to be preserved or a choice via keep_attrs.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about xr.where not preserving attributes. Users expected attributes to be preserved or a choice via keep_attrs.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8d7151f3-4ca5-90ba-ae9c-e4979c4383cc",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2916,
+      "completion_tokens": 580,
+      "total_tokens": 3496,
+      "cost": 0.00912,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00912,
+        "upstream_inference_prompt_cost": 0.00564,
+        "upstream_inference_completions_cost": 0.00348
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 460,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issues only ask that attributes not be dropped or that keep_attrs be exposable, and the two MCVEs even disagree on which argument’s attrs should survive. The FAIL_TO_PASS test requires a keep_attrs=True API and specifically the attrs of x, which is unstated in the issue text.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issues only ask that attributes not be dropped or that keep_attrs be exposable, and the two MCVEs even disagree on which argument’s attrs should survive. The FAIL_TO_PASS test requires a keep_attrs=True API and specifically the attrs of x, which is unstated in the issue text.",
+  "prompt_tokens": 2916,
+  "completion_tokens": 580,
+  "total_tokens": 3496,
+  "cost_usd": 0.009311999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

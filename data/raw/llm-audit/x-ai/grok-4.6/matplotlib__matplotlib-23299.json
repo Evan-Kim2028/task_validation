@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23299",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1210
+  },
+  "response": {
+    "id": "gen-1789191967-wXOJ35Yw8g2uIV2kGpB2",
+    "object": "chat.completion",
+    "created": 1789191967,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue asks that get_backend not drop figures created under rc_context, but the FAIL_TO_PASS test only asserts that a backend change inside rc_context is kept after exit. That is an unstated API change, so a reasonable figure/Gcf/get_backend fix would fail the test.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about get_backend() clearing figures from Gcf if they were created under rc_context. The expected behavior is that figures shouldn't be missing from Gcf.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about get_backend() clearing figures from Gcf if they were created under rc_context. The expected behavior is that figures shouldn't be missing from Gcf.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5066f015-8d55-94d7-9ecd-4d322911c6ab",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1600,
+      "completion_tokens": 474,
+      "total_tokens": 2074,
+      "cost": 0.00566,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00566,
+        "upstream_inference_prompt_cost": 0.002816,
+        "upstream_inference_completions_cost": 0.002844
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 355,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue asks that get_backend not drop figures created under rc_context, but the FAIL_TO_PASS test only asserts that a backend change inside rc_context is kept after exit. That is an unstated API change, so a reasonable figure/Gcf/get_backend fix would fail the test.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue asks that get_backend not drop figures created under rc_context, but the FAIL_TO_PASS test only asserts that a backend change inside rc_context is kept after exit. That is an unstated API change, so a reasonable figure/Gcf/get_backend fix would fail the test.",
+  "prompt_tokens": 1600,
+  "completion_tokens": 474,
+  "total_tokens": 2074,
+  "cost_usd": 0.006044,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

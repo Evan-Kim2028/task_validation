@@ -1,0 +1,104 @@
+{
+  "task_id": "scikit-learn__scikit-learn-25969",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 9756
+  },
+  "response": {
+    "id": "gen-1789192409-J2A3pE1SMT0yiNTUdGpI",
+    "object": "chat.completion",
+    "created": 1789192409,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 3, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The GitHub text is an internal refactoring PR plan (mixin, _get_response, later scorer use) and does not specify public error cases or wording. The FAIL_TO_PASS tests demand exact ValueError messages and classifier/target combinations that a competent engineer could not infer from the issue.\", \"p_invalid\": 0.95}",
+          "refusal": null,
+          "reasoning": "The issue is a maintenance PR about adding CurveDisplayMixin and _get_response_values. It's a refactoring PR, not a user-facing bug with a clear specification.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is a maintenance PR about adding CurveDisplayMixin and _get_response_values. It's a refactoring PR, not a user-facing bug with a clear specification.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9be7db97-a2cb-95ed-b4f3-15ff298f4732",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 11469,
+      "completion_tokens": 492,
+      "total_tokens": 11961,
+      "cost": 0.025506,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.025506,
+        "upstream_inference_prompt_cost": 0.022554,
+        "upstream_inference_completions_cost": 0.002952
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 375,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 3,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The GitHub text is an internal refactoring PR plan (mixin, _get_response, later scorer use) and does not specify public error cases or wording. The FAIL_TO_PASS tests demand exact ValueError messages and classifier/target combinations that a competent engineer could not infer from the issue.",
+    "p_invalid": 0.95
+  },
+  "s": 3.0,
+  "p_invalid": 0.95,
+  "model_material": 1,
+  "underspecified": 3,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The GitHub text is an internal refactoring PR plan (mixin, _get_response, later scorer use) and does not specify public error cases or wording. The FAIL_TO_PASS tests demand exact ValueError messages and classifier/target combinations that a competent engineer could not infer from the issue.",
+  "prompt_tokens": 11469,
+  "completion_tokens": 492,
+  "total_tokens": 11961,
+  "cost_usd": 0.02589,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

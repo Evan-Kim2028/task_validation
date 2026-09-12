@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12469",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2251
+  },
+  "response": {
+    "id": "gen-1789191042-HmZvppv1JUvndlxw563u",
+    "object": "chat.completion",
+    "created": 1789191042,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes date_hierarchy showing an extra day at a non-UTC timezone boundary, which a competent engineer would fix by using local dates for DateTimeFields. The FAIL_TO_PASS test checks that the changelist links use the local calendar day rather than UTC, which matches that bug.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 0,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_5ff1ddf6-1cb0-9d43-a5a1-b129c314ed32",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2739,
+      "completion_tokens": 575,
+      "total_tokens": 3314,
+      "cost": 0.008736,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008736,
+        "upstream_inference_prompt_cost": 0.005286,
+        "upstream_inference_completions_cost": 0.00345
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 459,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes date_hierarchy showing an extra day at a non-UTC timezone boundary, which a competent engineer would fix by using local dates for DateTimeFields. The FAIL_TO_PASS test checks that the changelist links use the local calendar day rather than UTC, which matches that bug.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes date_hierarchy showing an extra day at a non-UTC timezone boundary, which a competent engineer would fix by using local dates for DateTimeFields. The FAIL_TO_PASS test checks that the changelist links use the local calendar day rather than UTC, which matches that bug.",
+  "prompt_tokens": 2739,
+  "completion_tokens": 575,
+  "total_tokens": 3314,
+  "cost_usd": 0.008927999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

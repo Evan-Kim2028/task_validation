@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13449",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 3018
+  },
+  "response": {
+    "id": "gen-1789191228-PLFYYMiUO6HqAfDCyKGQ",
+    "object": "chat.completion",
+    "created": 1789191228,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.82, \"rationale\": \"The issue clearly describes a SQLite syntax error from CAST wrapping only LAG rather than the full window expression for DecimalField, so a competent engineer can implement the intended SQL-shape fix. The FAIL_TO_PASS test is a direct Lag-on-DecimalField window query and does not demand unstated APIs or messages.\", \"p_invalid\": 0.12}",
+          "refusal": null,
+          "reasoning": "The issue is about Lag() with DecimalField crashing on SQLite due to CAST being in the wrong place. The user even identifies the SQL problem.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Lag() with DecimalField crashing on SQLite due to CAST being in the wrong place. The user even identifies the SQL problem.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "ntS65ffh4pGPUPYk/hyHIwCtVvlTVc4cPNeCIxIaYd60L0JAhhwswui69VKZpSSEqjjMysujyHGH6CdPxim3bsHDp2p/Bal7MjY2RNqYALG+RBbAoIqOcCPmg4ZozwEapSpHCvThz1ItNaY0PD4Mimp3j9R6o29jwyo+EaTwlnmyLUo2X2iMJvRwyu0a1QinydzfN/Zu0v3PPzNHivgKMhHmi15Or47SMjbtM6HP+cnTGTF36ChToNNhkCy90N25t2oDUSjy+aid9IevhV1l+Dwzi2uMWEzTxZ0/PATStiIQUYkfp/0908ZHqBJAqiuOSW9nwnnd74xAabX5/BxrBZPGBYKYyDJBYE1qUnK5qyUFtU7dY3LSqCepEriOx0Z5A2MwfR0wa4qaJkajSVtJ+YN/FVecIMTL8CO8itscZWCYXX1/Vo9VaamZICda2R8lVw8zPFJWqiCRGnPzgPbGV3fQ0PGB2ILfGSlhFIH2WUspBXDlWIydj1mt5IleB9QJaC7qu+JR8Pj743ibgnrysUVybfsTVGCLrGaiQxM6T9HBHQEiZT9VvJLKm3Y0rIz3kCEsxCdawmCWh35NsnetGvyAHhtrdgwG2EjsITOScHfs0nBcEyL6wa3buHNtyghU10hctTqY/esiq4m+41fdW1+f/KIVmqJbY9VBpK44HRqEvfOH6gqAXute+KqQV4R1oU9DI5CnD3wo8DtVR8neZ8HoBq72UQRmFjKYvOtxg5y+y3QlBqcnaVDZTbdk4XeAStVkAmBJQg9m2BO1NqEJbslRfvgZ+7dZhHSX7e7JzB77myJafWgiURMIvW4pBrqaxv9s2TN2JvvC9gt5yIU+zv+fqvH5xEse0LLN4crFD6pfPa5hgT871HRjd8stQnjrmeMV1XKEMm3gagFnqyNR4Oz2RUmmOFSerWJAItgL4rlB2lMaZJwAYClU7RiheoO7kYc/2uKpKjN+nUyeK9qHP0y9kGTuXgfRhOzd7PVdHOluo9ohLlEjLoo5ibFTNXJSG8Ev0Wak+WOVCJjP9ElWHbPFb/yQK7DOnyriY5Ageumvy5uegSs6m/kasEUQ1qEQdwLVQLbHuYbbehESNVL/adfb2eiqeCeiVWDLPg74xIHyD231O/YmxItRyHzbksyoQLAYW8uNsmtmQRYOLzvMufpsJVLDFNufviX1y/vgpjWWa6vKHzXG28JJS+4xdQVkgaWyPeHbEYC2H9RAYn6zPhCFfLImbiXy9RVgUWQwd303k6waE3Ne3q1/d81NPxFl5HTXJoxnB0Nwu4u8q7aHamo3ySjadHtQvjywxAPnalL1ApwPRNME0ekt9ZkZEeVk4EUxwwIr2IoPEp1KsmAwfmpeS/1ao41KzfkepJdHkRuef2D5ud7KprfRKmMxQkK2994QgZKIibodhtYghGvItxXcQqHHAeZEZWj3drs4eGYvP/fDscdjzAdI6tOiBNYZJ9XWmVvTsIAc/Xg1Jk9oADRcT5wbG8JMZMexp+NR7g5t2nIS7Rf6q8iEiFkoKhq+8ZQAwYf+8jWgbMxKzayb2PL59uBR0HQxJ7JVC6lDGuQJgSEfcEOQZmK5zRBEu99klCpqlY73S+4dnhfsiJ6pCX4jzepEQLN03yMLV/tjHoxfIgTY2S4creeWOh7yEgXqSHVENmIgRaXl7LsVrN2AImqA/Ub07dqRRAwoUQ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_86f34b31-1196-903d-8ab0-6369fb3f0eb0",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3830,
+      "completion_tokens": 387,
+      "total_tokens": 4217,
+      "cost": 0.00979,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00979,
+        "upstream_inference_prompt_cost": 0.007468,
+        "upstream_inference_completions_cost": 0.002322
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 266,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.82,
+    "rationale": "The issue clearly describes a SQLite syntax error from CAST wrapping only LAG rather than the full window expression for DecimalField, so a competent engineer can implement the intended SQL-shape fix. The FAIL_TO_PASS test is a direct Lag-on-DecimalField window query and does not demand unstated APIs or messages.",
+    "p_invalid": 0.12
+  },
+  "s": 1.0,
+  "p_invalid": 0.12,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.82,
+  "rationale": "The issue clearly describes a SQLite syntax error from CAST wrapping only LAG rather than the full window expression for DecimalField, so a competent engineer can implement the intended SQL-shape fix. The FAIL_TO_PASS test is a direct Lag-on-DecimalField window query and does not demand unstated APIs or messages.",
+  "prompt_tokens": 3830,
+  "completion_tokens": 387,
+  "total_tokens": 4217,
+  "cost_usd": 0.009982,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

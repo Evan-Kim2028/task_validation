@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15037",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1259
+  },
+  "response": {
+    "id": "gen-1789191523-7Vk1k5VgC0e4pfjmE79n",
+    "object": "chat.completion",
+    "created": 1789191523,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks inspectdb to emit a ForeignKey with to_field when the referenced column is not the primary key, which a competent engineer would implement. The FAIL_TO_PASS check is a single exact output substring (related model name, DO_NOTHING, and column-based to_field), which is slightly narrower than the written bug report but matches existing inspectdb conventions.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about inspectdb not handling foreign keys to a specific field (not the primary key). The generated model should use to_field.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about inspectdb not handling foreign keys to a specific field (not the primary key). The generated model should use to_field.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_8460053e-6f01-9a61-b65a-f55623ad74b3",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1576,
+      "completion_tokens": 529,
+      "total_tokens": 2105,
+      "cost": 0.006134,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006134,
+        "upstream_inference_prompt_cost": 0.00296,
+        "upstream_inference_completions_cost": 0.003174
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 395,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks inspectdb to emit a ForeignKey with to_field when the referenced column is not the primary key, which a competent engineer would implement. The FAIL_TO_PASS check is a single exact output substring (related model name, DO_NOTHING, and column-based to_field), which is slightly narrower than the written bug report but matches existing inspectdb conventions.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks inspectdb to emit a ForeignKey with to_field when the referenced column is not the primary key, which a competent engineer would implement. The FAIL_TO_PASS check is a single exact output substring (related model name, DO_NOTHING, and column-based to_field), which is slightly narrower than the written bug report but matches existing inspectdb conventions.",
+  "prompt_tokens": 1576,
+  "completion_tokens": 529,
+  "total_tokens": 2105,
+  "cost_usd": 0.006326,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

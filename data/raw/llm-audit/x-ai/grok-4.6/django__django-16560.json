@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16560",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 6279
+  },
+  "response": {
+    "id": "gen-1789191791-d85HNE8MBkxQ4tNtLl9X",
+    "object": "chat.completion",
+    "created": 1789191791,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks to customize ValidationError.code via a BaseConstraint constructor argument analogous to violation_error_message, so the core API is knowable despite a naming slip. FAIL_TO_PASS also locks in repr/eq/deconstruct, UniqueConstraint ignoring custom codes for field uniqueness, and ExclusionConstraint, which the issue never stated.\", \"p_invalid\": 0.22}",
+          "refusal": null,
+          "reasoning": "The issue asks to add a `violation_error_code` parameter (though it says \"violation_error_message parameter\" by mistake - it means code) to BaseConstraint so ValidationError can have a custom code.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests require repr/eq/deconstruct support and postgres ExclusionConstraint which aren't explicitly in the issue description\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add a `violation_error_code` parameter (though it says \"violation_error_message parameter\" by mistake - it means code) to BaseConstraint so ValidationError can have a custom code.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"Tests require repr/eq/deconstruct support and postgres ExclusionConstraint which aren't explicitly in the issue description\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_868bf705-0970-9529-a8a6-00c13c8ff944",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6564,
+      "completion_tokens": 515,
+      "total_tokens": 7079,
+      "cost": 0.015834,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.015834,
+        "upstream_inference_prompt_cost": 0.012744,
+        "upstream_inference_completions_cost": 0.00309
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 391,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks to customize ValidationError.code via a BaseConstraint constructor argument analogous to violation_error_message, so the core API is knowable despite a naming slip. FAIL_TO_PASS also locks in repr/eq/deconstruct, UniqueConstraint ignoring custom codes for field uniqueness, and ExclusionConstraint, which the issue never stated.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks to customize ValidationError.code via a BaseConstraint constructor argument analogous to violation_error_message, so the core API is knowable despite a naming slip. FAIL_TO_PASS also locks in repr/eq/deconstruct, UniqueConstraint ignoring custom codes for field uniqueness, and ExclusionConstraint, which the issue never stated.",
+  "prompt_tokens": 6564,
+  "completion_tokens": 515,
+  "total_tokens": 7079,
+  "cost_usd": 0.016218,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14725",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2010
+  },
+  "response": {
+    "id": "gen-1789191476-pBPfeNQ4omE5nJXVJmla",
+    "object": "chat.completion",
+    "created": 1789191476,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue asks for a way to block new objects in model formsets but does not name an API, factory argument, or the extra queryset-id edge case. The FAIL_TO_PASS tests require a specific edit_only=True factory flag and that unstated save behavior, so many reasonable implementations would fail.\", \"p_invalid\": 0.9}",
+          "refusal": null,
+          "reasoning": "The issue is about providing a way for model formsets to disallow new object creation. Users try extra=0 but that's not reliable.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about providing a way for model formsets to disallow new object creation. Users try extra=0 but that's not reliable.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rzyJSES2klU+8SMMCEFEf9sJEAQU/6xwpcb99XxhvG5vDx9pGLhB6+G0UAWTYpQ60dv6lti1n1VDQH9N8mW1OW4UGBDXaKb8MPTPtIgPMSJkTEP6iAlPV2hewDlCPoguAfHhir75xRdvEungyYYxdwBPRP8SOkmtkuYdYRjc8cddNjzKhpxoSoPFDDyMqO/kOYV+3zBsVG70Bu+GjnGYbz2cr4+4vdvxoCVftiGT7+uJPcJZlvBBo5bRohh4G50matfp1w/WDiOHPWEUTaCwdWSj7Q1I5ZQ00a1sYuAQpykaCl6braHi2pyuO5Y6QDNRvN4a+JO7KmF9ksUdaddzjJ7mOrHbOcUhrDNXnfIvEPz+FKGfSM3hVLi/Balwo43ti4B1QTpStyI5tOHyJodSXUg9I0nl9RpJaZs00b+thyBLhdSEkUhXwRrMGeLT2gqH0AVDdSuq/E/m/DLFFYXOJT7fO0lKwBauTfhbqLeaGtHA5ssr8fJRiwjmoIoW6Lvx5zNFAJsoqZYwyS1/s1jpEA0KTYloklStqytQNMgoMLOWTTnWX2i96/X5yD5Vnco0Qnf2Lm5qfsTT8OsPSnuKeOvM++DisotfMhDwsoomUU9Z2l5ZiqsCUYQZkygp8v7UkTL9kAuBKTI/mM9oFZHx6n12d5UKRiPVehuHlcUlmxOlk15ZC/t0+q7WWd3VNUBJXZCgIjpOUe5U9Hmda5/KUTwrS4CJZkGpmHpIu64GvVVg5pbv6DxJ1b0O/DBe9O/5OLxR5BvoTEWu4a8T1JAE7citBKNQrNBD9cijjkCXLT4y+HimO717W/rNU7bTO3LYubJSMhV/YxeSGvUXMxzOdD5sVtJFWsKC1+NptkF07LaAzKrTTBiWJ0jQbKukJcJsr1QAfia1MHxIeMwMtsWCMl2ZQBFISWlxdV34cfWMoLxcyZ7TdIt7uLj6LDpLGWsXbIAvYUlIL8jVvYRUYyAJETVtlMuUFmWsUsprJh/1l/TsO7hS9c/YGRPH8isTQWAEPKR/HglrHF6A3Bk3pIwLjbksWPaZ1eqUgoDN0BWSIsHO8aslE6sjGdS2rLEtTqyLPE6vjjV+sosnaWvDxT7tZeLw/8WsnVsiuvv+PDR25GbpggXpsWbP+6iw7EJR1e+VlfszLJxU29q3eeZJRC4SrzynY1Y56Jgga10J22vweHze/HcmGuD3syq0UnW+csbhdsfVBQd4AmCHxCQd2/VYkhMld9OqbA5fNrwEZPIbmRmuK5jRnWDaJ7PP93zIJnbEPjTIwIBXvshdFHpfxnX9c+RLrVUDQK+5FRght6urOwy+DsxW4Dmoas4A8X5b+V2luu1Klv4n0B39iMz4g/5uC2cu9RbCLJmPGZ68lycW6KvmukA5v5MsPLuHQP9679bal6CLM4VaxjtY7lppJacbUtJ+YbXLpqooxbnZgzuV0QnNI8UxTaTwOXpSLlhdM3vfQpJUgTuDajiTpD8oWQiIEXkh9PkGTR1s2UMSzYr266SHd8ELKQqX5Ug06Akna3jAYPDPuyaAzUpZNGcj3+ZJGsHV3KoWLL4HDjua3fMTTSwtcpUc02ia9NtSJMK2AGTOvRygAuS/B26VK0qfrJBfvZBL2d9FUTD+AXdKfoG0KtlyYNRAqiwMt9XMn5YVbWdTg93yTsx16gPze+W0sllBGJSTzlfnQSTVEqG6Ah7GzJWvrf76nEDtynLNUCsYiBA3flufwcorgSIguYkDlf80R85cWi8o.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_fd2bb4f1-84bd-9225-a974-524788237a90",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2491,
+      "completion_tokens": 419,
+      "total_tokens": 2910,
+      "cost": 0.007112,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007112,
+        "upstream_inference_prompt_cost": 0.004598,
+        "upstream_inference_completions_cost": 0.002514
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 300,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue asks for a way to block new objects in model formsets but does not name an API, factory argument, or the extra queryset-id edge case. The FAIL_TO_PASS tests require a specific edit_only=True factory flag and that unstated save behavior, so many reasonable implementations would fail.",
+    "p_invalid": 0.9
+  },
+  "s": 2.0,
+  "p_invalid": 0.9,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue asks for a way to block new objects in model formsets but does not name an API, factory argument, or the extra queryset-id edge case. The FAIL_TO_PASS tests require a specific edit_only=True factory flag and that unstated save behavior, so many reasonable implementations would fail.",
+  "prompt_tokens": 2491,
+  "completion_tokens": 419,
+  "total_tokens": 2910,
+  "cost_usd": 0.007495999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

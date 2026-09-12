@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-16493",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1432
+  },
+  "response": {
+    "id": "gen-1789191781-TH6fAhLOOEy4OjmFyTXz",
+    "object": "chat.completion",
+    "created": 1789191781,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.95, \"rationale\": \"The issue clearly states that a FileField storage callable returning default_storage must be preserved in deconstruct rather than omitted. The FAIL_TO_PASS test checks exactly that behavior on a model field.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: when FileField storage is a callable that returns default_storage, deconstruct omits it instead of including the callable. The test checks exactly that.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: when FileField storage is a callable that returns default_storage, deconstruct omits it instead of including the callable. The test checks exactly that.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "pCZTfrd4U6UGMO9Jpu62F55Qv0rgDYX4j5+DoTZz4KPf8gTfG4BKkOLzU51b+l8+9s/ajOBlNl4CrvI8+MAeyKRDLgEouAcSThCTS8f0nkYW2OkkMx8+QTpfaJ/dW8f9WhFoSKi3hx/LlR0MM+jlMifUPSfkNyBUU0oIPk9PlQewSRT3xDcbyW+dNh3ynaB9ekZnmEq4zcOBEY59P97JS/iZbxPXFmRgkJA7unxz9BgJgLKll77K5TyNcdCPAc8eUiGQxUrJso8RUcr845bzbnKutvZk6ZgTeXI1pV9pYQctMcvdUoEMMzV820K0iRNZoCzPUTSBnWwyFuFTF5JgVNTZUrQqx8K/tHF3PZfChCaKj9sGazXIiV/NTPzRkc8MqLqhjEiBVjhPoHyQZo+PR84iG8R/jzS/F8Z11lHesSqj/tnowg1/c8dUX9uzLG3Sy9RTVUoW.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_62b87d9b-2535-96cb-acae-6014afa356c6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1735,
+      "completion_tokens": 169,
+      "total_tokens": 1904,
+      "cost": 0.0041,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0041,
+        "upstream_inference_prompt_cost": 0.003086,
+        "upstream_inference_completions_cost": 0.001014
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 74,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.95,
+    "rationale": "The issue clearly states that a FileField storage callable returning default_storage must be preserved in deconstruct rather than omitted. The FAIL_TO_PASS test checks exactly that behavior on a model field.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.95,
+  "rationale": "The issue clearly states that a FileField storage callable returning default_storage must be preserved in deconstruct rather than omitted. The FAIL_TO_PASS test checks exactly that behavior on a model field.",
+  "prompt_tokens": 1735,
+  "completion_tokens": 169,
+  "total_tokens": 1904,
+  "cost_usd": 0.004484,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

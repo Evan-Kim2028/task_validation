@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13589",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2943
+  },
+  "response": {
+    "id": "gen-1789191269-ZAtAFdDu3x9cSsmNqZYx",
+    "object": "chat.completion",
+    "created": 1789191269,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly asks that related PKs assigned after FK assignment be copied onto children so bulk_create does not insert null FKs, which a senior engineer could implement. The FAIL_TO_PASS suite also requires a specific ValueError wording for unsaved parents, which the issue never states.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The issue describes a bug where setting a parent on a child then saving the parent doesn't update the child's FK, causing data loss/integrity errors in bulk_create. The user wants bulk_create to set F...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue describes a bug where setting a parent on a child then saving the parent doesn't update the child's FK, causing data loss/integrity errors in bulk_create. The user wants bulk_create to set F...{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_2044b8f5-58b3-9522-8c93-8dae59b08ab8",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3175,
+      "completion_tokens": 567,
+      "total_tokens": 3742,
+      "cost": 0.00956,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00956,
+        "upstream_inference_prompt_cost": 0.006158,
+        "upstream_inference_completions_cost": 0.003402
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 451,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly asks that related PKs assigned after FK assignment be copied onto children so bulk_create does not insert null FKs, which a senior engineer could implement. The FAIL_TO_PASS suite also requires a specific ValueError wording for unsaved parents, which the issue never states.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly asks that related PKs assigned after FK assignment be copied onto children so bulk_create does not insert null FKs, which a senior engineer could implement. The FAIL_TO_PASS suite also requires a specific ValueError wording for unsaved parents, which the issue never states.",
+  "prompt_tokens": 3175,
+  "completion_tokens": 567,
+  "total_tokens": 3742,
+  "cost_usd": 0.009752,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

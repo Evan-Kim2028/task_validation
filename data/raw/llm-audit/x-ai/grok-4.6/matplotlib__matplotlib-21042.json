@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-21042",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1433
+  },
+  "response": {
+    "id": "gen-1789191925-1NrLlv6DRVgVBM19x1Zj",
+    "object": "chat.completion",
+    "created": 1789191925,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks that updating rcParams from a snapshot of current params should not emit deprecation warnings, which a competent engineer can implement in more than one place. The FAIL_TO_PASS check only asserts that rcParams.update(rcParams.copy()) is silent, which is slightly narrower than the reported dict(rc_params()) reproduction and could miss other valid fixes.\", \"p_invalid\": 0.28}",
+          "refusal": null,
+          "reasoning": "The issue is about MatplotlibDeprecationWarning when updating rcparams. The user copies rc_params and updates with them, getting deprecation warnings for deprecated params.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about MatplotlibDeprecationWarning when updating rcparams. The user copies rc_params and updates with them, getting deprecation warnings for deprecated params.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3a2d31b7-0be2-94a1-9bc4-6a9ce307329f",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1803,
+      "completion_tokens": 616,
+      "total_tokens": 2419,
+      "cost": 0.00711,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00711,
+        "upstream_inference_prompt_cost": 0.003414,
+        "upstream_inference_completions_cost": 0.003696
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 486,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks that updating rcParams from a snapshot of current params should not emit deprecation warnings, which a competent engineer can implement in more than one place. The FAIL_TO_PASS check only asserts that rcParams.update(rcParams.copy()) is silent, which is slightly narrower than the reported dict(rc_params()) reproduction and could miss other valid fixes.",
+    "p_invalid": 0.28
+  },
+  "s": 1.0,
+  "p_invalid": 0.28,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks that updating rcParams from a snapshot of current params should not emit deprecation warnings, which a competent engineer can implement in more than one place. The FAIL_TO_PASS check only asserts that rcParams.update(rcParams.copy()) is silent, which is slightly narrower than the reported dict(rc_params()) reproduction and could miss other valid fixes.",
+  "prompt_tokens": 1803,
+  "completion_tokens": 616,
+  "total_tokens": 2419,
+  "cost_usd": 0.0073019999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

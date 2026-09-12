@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13512",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1203
+  },
+  "response": {
+    "id": "gen-1789191244-uHJythn6vhKeiml6rtIq",
+    "object": "chat.completion",
+    "created": 1789191244,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue clearly states that JSONField values with non-ASCII characters are shown as ASCII escapes because json.dumps defaults to ASCII, and that admin editing should show the real characters. The FAIL_TO_PASS tests only check that prepare_value and admin JSON display keep Unicode unescaped, which is the behavior the issue describes.\", \"p_invalid\": 0.08}",
+          "refusal": null,
+          "reasoning": "The issue is about Django admin not displaying unicode chars properly in JSONFields because json.dumps uses ASCII encoding by default.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django admin not displaying unicode chars properly in JSONFields because json.dumps uses ASCII encoding by default.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9a93506a-f42c-9d13-be35-f3a5afe5d64e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1633,
+      "completion_tokens": 574,
+      "total_tokens": 2207,
+      "cost": 0.00671,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00671,
+        "upstream_inference_prompt_cost": 0.003266,
+        "upstream_inference_completions_cost": 0.003444
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 453,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue clearly states that JSONField values with non-ASCII characters are shown as ASCII escapes because json.dumps defaults to ASCII, and that admin editing should show the real characters. The FAIL_TO_PASS tests only check that prepare_value and admin JSON display keep Unicode unescaped, which is the behavior the issue describes.",
+    "p_invalid": 0.08
+  },
+  "s": 0.0,
+  "p_invalid": 0.08,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue clearly states that JSONField values with non-ASCII characters are shown as ASCII escapes because json.dumps defaults to ASCII, and that admin editing should show the real characters. The FAIL_TO_PASS tests only check that prepare_value and admin JSON display keep Unicode unescaped, which is the behavior the issue describes.",
+  "prompt_tokens": 1633,
+  "completion_tokens": 574,
+  "total_tokens": 2207,
+  "cost_usd": 0.00671,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

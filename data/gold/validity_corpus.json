@@ -1,0 +1,72 @@
+{
+  "merged_into_one_y": false,
+  "sources": [
+    {
+      "name": "swe-bench-2024-conservative",
+      "path": "data/gold/swe_rater_targets.jsonl",
+      "n": 1699,
+      "provenance": "EXPERT_VERIFIED",
+      "estimand": "issue_statement_vs_fail_to_pass_fairness",
+      "protocols": [
+        "openai_2024_conservative",
+        "majority_invalid",
+        "unanimous_invalid"
+      ],
+      "use": "A3 + B1 + 2x2 sample Y"
+    },
+    {
+      "name": "swe-bench-pro-public",
+      "path": "data/gold/swe_pro_features.jsonl",
+      "n": 731,
+      "provenance": "PENDING_HUMAN",
+      "estimand": "none_as_gt",
+      "eval_only": [
+        "openai_published_example",
+        "june_kim_prefix"
+      ],
+      "use": "Track D reconstruction; do not fit 30%"
+    },
+    {
+      "name": "june-kim-determinacy",
+      "path": "data/raw/swe-bench-pro/CLAIMS.md",
+      "n": 109,
+      "provenance": "EXTERNAL_EXPERT_AUDIT",
+      "estimand": "hidden_determinacy_floor",
+      "use": "Track D eval-only"
+    },
+    {
+      "name": "tb-2.1-maintenance",
+      "path": "data/gold/tb21_maintenance.jsonl",
+      "n": 28,
+      "provenance": "HISTORICAL_MAINTENANCE",
+      "estimand": "author_acknowledged_pre_post_defect",
+      "use": "A3 natural counterfactual; only query-optimize typed misspec in public post"
+    },
+    {
+      "name": "harbor-eval-tasks-packets",
+      "path": "data/gold/eval_tasks.jsonl",
+      "n": 82,
+      "provenance": "PENDING_HUMAN",
+      "estimand": "material_invalidity",
+      "use": "human packets deferred"
+    },
+    {
+      "name": "harbor-interrogation-16",
+      "path": "data/gold/harbor_interrogate.jsonl",
+      "n": 16,
+      "provenance": "execution_not_human",
+      "estimand": "evaluator_behavior",
+      "use": "Track A machinery; not 2024 Y"
+    },
+    {
+      "name": "task-verification-bench",
+      "path": null,
+      "n": 0,
+      "provenance": null,
+      "status": "not_loaded",
+      "use": "do not ingest until public dump exists"
+    }
+  ],
+  "gate": "A3",
+  "note": "Cross-benchmark transfer uses provenance as a split, not extra N."
+}

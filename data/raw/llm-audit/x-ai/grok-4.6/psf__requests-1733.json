@@ -1,0 +1,104 @@
+{
+  "task_id": "psf__requests-1733",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1997
+  },
+  "response": {
+    "id": "gen-1789192143-h4edD65MTCk6m8jwiSFJ",
+    "object": "chat.completion",
+    "created": 1789192143,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 1, \"other_reason\": \"FAIL_TO_PASS lists several unchanged tests unrelated to pickling.\", \"confidence\": 0.72, \"rationale\": \"The issue clearly asks for Response pickling, but does not mention Request pickling or which fields must round-trip. Several FAIL_TO_PASS tests are not in the test patch and do not check the stated pickle behavior.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests include unrelated cookie and scheme tests that likely fail independently of the pickle fix\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 1,\n  \"other_reason\": \"FAIL_TO_PASS tests include unrelated cookie and scheme tests that likely fail independently of the pickle fix\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_bcfaedb5-16e7-974c-bf4a-25b60a8197f5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2712,
+      "completion_tokens": 665,
+      "total_tokens": 3377,
+      "cost": 0.009222,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009222,
+        "upstream_inference_prompt_cost": 0.005232,
+        "upstream_inference_completions_cost": 0.00399
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 550,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 1,
+    "other_reason": "FAIL_TO_PASS lists several unchanged tests unrelated to pickling.",
+    "confidence": 0.72,
+    "rationale": "The issue clearly asks for Response pickling, but does not mention Request pickling or which fields must round-trip. Several FAIL_TO_PASS tests are not in the test patch and do not check the stated pickle behavior.",
+    "p_invalid": 0.85
+  },
+  "s": 2.25,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 1,
+  "other_reason": "FAIL_TO_PASS lists several unchanged tests unrelated to pickling.",
+  "confidence": 0.72,
+  "rationale": "The issue clearly asks for Response pickling, but does not mention Request pickling or which fields must round-trip. Several FAIL_TO_PASS tests are not in the test patch and do not check the stated pickle behavior.",
+  "prompt_tokens": 2712,
+  "completion_tokens": 665,
+  "total_tokens": 3377,
+  "cost_usd": 0.009414,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

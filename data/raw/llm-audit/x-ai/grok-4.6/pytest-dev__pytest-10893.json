@@ -1,0 +1,83 @@
+{
+  "task_id": "pytest-dev__pytest-10893",
+  "model": "x-ai/grok-4.6",
+  "api": "xai",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "backend": "api.x.ai"
+  },
+  "response": {
+    "id": "3a48027d-4761-9841-a1a9-21517343d42a",
+    "object": "chat.completion",
+    "created": 1789193766,
+    "model": "grok-4.6",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.76, \"rationale\": \"The issue clearly asks to stop using shutil.rmtree's deprecated onerror on 3.12 and to support the onexc callback shape, which a competent engineer can implement. The FAIL_TO_PASS test only exercises on_rm_rf_error's dual tuple/exception handling and warning text, which is a slightly narrower check than the full issue (including addDuration) but still aligned with the rmtree change.\", \"p_invalid\": 0.22}",
+          "reasoning_content": "The user wants me to audit a SWE-bench task for specification validity and return JSON.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 1,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.75,\n  \"rationale\": \"The issue clearly identifies the rmtree onerror deprecation and the need for onexc 3.",
+          "refusal": null
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2913,
+      "completion_tokens": 142,
+      "total_tokens": 3696,
+      "prompt_tokens_details": {
+        "text_tokens": 2913,
+        "audio_tokens": 0,
+        "image_tokens": 0,
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 641,
+        "audio_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "num_sources_used": 0,
+      "cost_in_usd_ticks": 35781600
+    },
+    "system_fingerprint": "fp_e41c6060b2628547",
+    "service_tier": "default"
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.76,
+    "rationale": "The issue clearly asks to stop using shutil.rmtree's deprecated onerror on 3.12 and to support the onexc callback shape, which a competent engineer can implement. The FAIL_TO_PASS test only exercises on_rm_rf_error's dual tuple/exception handling and warning text, which is a slightly narrower check than the full issue (including addDuration) but still aligned with the rmtree change.",
+    "p_invalid": 0.22
+  },
+  "s": 1.0,
+  "p_invalid": 0.22,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.76,
+  "rationale": "The issue clearly asks to stop using shutil.rmtree's deprecated onerror on 3.12 and to support the onexc callback shape, which a competent engineer can implement. The FAIL_TO_PASS test only exercises on_rm_rf_error's dual tuple/exception handling and warning text, which is a slightly narrower check than the full issue (including addDuration) but still aligned with the rmtree change.",
+  "prompt_tokens": 2913,
+  "completion_tokens": 783,
+  "total_tokens": 3696,
+  "cost_usd": 0.010523999999999999,
+  "cost_in_usd_ticks": 35781600,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null,
+  "est_prompt_tokens": 2001
+}

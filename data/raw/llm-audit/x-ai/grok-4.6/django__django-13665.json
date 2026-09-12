@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13665",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1368
+  },
+  "response": {
+    "id": "gen-1789191279-oZXno7yVRL2lYWNInbF1",
+    "object": "chat.completion",
+    "created": 1789191279,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that serialize_db_to_string should use _base_manager so custom default managers that filter rows do not omit data, and it even points at the intended change. The FAIL_TO_PASS test only checks that a record excluded by the default manager still appears in the serialized output, which matches that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about Django's database creation backend using `_default_manager` instead of `_base_manager` when serializing the database. This causes problems when a custom manager filters out records....",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about Django's database creation backend using `_default_manager` instead of `_base_manager` when serializing the database. This causes problems when a custom manager filters out records....",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "rB9l0Gu+Q4Z223tuUOsrf/zDI+/OfVvEdniQ9rfulyTm4GFBnNv6tKTaB7yViv4WORmUXsehWKH/lom1IhqsOyuzyEri89zDgdtVmtt/UCbCrIdxTSLYYVOjybGjhER51c+IQlORZVUux9P0VumY9KvNNvhRcD4HwIer+infHUlzuokgA9AFMvI8pvJv5gfEU+z8uRDcByTVE8Aa/q0gliMNbVAVT9X8i5C0Rntdwvs9TRuMooAPOz04IUnfzqiNOfwqcRAjeHljCcRupIWKFoVjwohhfTCTSqCPs3WCbqx3YBr200gt5ZLnUhATnxIUknIIY6vsn5uxQr0jIsxcq7B3yy+fpC8azesjOvgMf5m21jJ7S4OrR2p0dTNEKCYv5hL9RKfmat7NaLz+WWaiEcq7QJU6JFgaDd8A+LNjnLn029iZQHajLbeL49tFYhjPFug5egoLoTFbGmweaF77et+5VJ8sy8eOFAIeXCsQ3oXuBEmEzu2FDsCu3nFHURFDhDoovEGksTG50ozXjmGK31Y2Y1MHySATvPQ5Y2GoxG73eWIkoZaN6mFKKPlZlV5MIH3bnt7hBRcHlzWI4usqXN3vAsc8O8IOfTq+JahOmMGp/7sgDX5sAm3Irqpy9Hakv5HBvuBjAVVe+Ka2H6Siihay/6NfBQGeUSgSklS377ei+cEP6aSKDYC1PzgIEdDleCKnvkgrgbOea9uvaiZ3me1FAHatu2REPY7GpXme68lf5iPUmnSMVYnPrJD/hErQWwKoh+LokKeJSOwGLGCy616FCCASUU7zb7ru/igW86Zcrt1vcnfWfmAPiN4y4pe7+/LL5SoyGxa8OdY2vh7CwLu1J5n0j9ThYDRE2ruWHUQ139Qt2T9jIj2aJ6oKvn8rZEAJ61oKvCqqRrzUvxONefb9irwzbg.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_a9740ee3-2e4f-9b27-859a-86e631cac790",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1704,
+      "completion_tokens": 275,
+      "total_tokens": 1979,
+      "cost": 0.004674,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004674,
+        "upstream_inference_prompt_cost": 0.003024,
+        "upstream_inference_completions_cost": 0.00165
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 152,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that serialize_db_to_string should use _base_manager so custom default managers that filter rows do not omit data, and it even points at the intended change. The FAIL_TO_PASS test only checks that a record excluded by the default manager still appears in the serialized output, which matches that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that serialize_db_to_string should use _base_manager so custom default managers that filter rows do not omit data, and it even points at the intended change. The FAIL_TO_PASS test only checks that a record excluded by the default manager still appears in the serialized output, which matches that requirement.",
+  "prompt_tokens": 1704,
+  "completion_tokens": 275,
+  "total_tokens": 1979,
+  "cost_usd": 0.005058,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

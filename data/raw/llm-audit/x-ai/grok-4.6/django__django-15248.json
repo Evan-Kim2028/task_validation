@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15248",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2899
+  },
+  "response": {
+    "id": "gen-1789191558-2R1dzjn4wx08WLNb4Oxz",
+    "object": "chat.completion",
+    "created": 1789191558,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue describes passing the initiating instance or queryset into pre/post_delete so cascade vs direct deletes can be distinguished, but it never names the signal argument or the exact origin objects. The FAIL_TO_PASS tests require a required kwarg named origin whose value is the original Model instance or QuerySet, so otherwise valid APIs would fail.\", \"p_invalid\": 0.86}",
+          "refusal": null,
+          "reasoning": "The issue asks to add origin information to pre/post delete signals so listeners know if deletion came from model.delete() or queryset.delete(), and for related objects.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue asks to add origin information to pre/post delete signals so listeners know if deletion came from model.delete() or queryset.delete(), and for related objects.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 0,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "vm4eTMU/iEQCGrsBo5oe+D0th2NvgCueCTzewapid+CrLQ99vLOUo69VMjIqruD6pKggxBSMg1kli0vlHvzZqm/9kSv16EzD/7rNBc0eIiERq2t5x6tCzGZtdoevtVFR98xkpQ5zgMR5kGHiSIz7UntnBZP85q6Vk5BlVu0PObjaloUAHzfGbR41dIxveHyMJjmBOLyBeePsGZM3Uc8K20YsWOTxL/UtvdYuDspjh+TcGZVtQKxREhdF76pGr0Z41iF2ZO7Utx18CidEakBYR3FMHJ7ZqsERBX+VaE3GkeTBbXG2goB5dRldP1TICFdB7/E4nQ1dLrsXCTr09A8CaKruLJmld0AdoA2VQ4LWE8e9JZ0RsXYIqYlxFb9x4e6JNPxB8u/URrgpovSfK8sdlWJhl6NnB3ZNYgS4mnQvd9oaQ3p/TDCu6Tq5V+ZmoDSLMCTuu/ExfgZZqhD63/SnCd/VlcM2ynSbANNJ3er+agUGxN3VBXtFdsI1RJO9JrmC2PCEjtwYcJiL350nb7E3PgLJu++oYiy0MAhTTSPUbAOSBwokFPotH3acKIz6yXItaH3ZeK2eEIciGELeSF70nM2A6Nb93mG7IUiei4dqAObCBuRcGRHPLNYIxq7YxqRQrWy1GhYhnJg5CRcV6TVAp4voUUO+jcr3Ph7CKwRLfV89POQEQadRiVe0B31rJg04R9A0Znnd5REiTv1fkOfTrIDYUj42PtZmE1HO2wkk4wa6O7NrkyBPUkfcXsnu2S53RowLYG9XG2wsS/mxNJXNu4tEoTXd8BVciYqFBYIX11Trz6meLcjxTfS8AtpFm+1WgbURvlYNmS46hiNWpPLPyaf2yMLFDwZo9qu8Ny15xPaPuYTluOlGpN5gFtcIaW43C5oabTaVdMJxvdHP/OjIbhp4OIozo0FmtrvNEu6R2x2CyDMAZq8AyUPOtTIw496nduzRXLjStaYIxa9HvpDyXVlIoz5C3IBfUFx0yY/Yxft7Qa/d38mTZ1I9g30blwVM6JfKhpnsaODHrr+0sFqk97BQXTgaUrN/FWJZSgLY7BnNcV7NHqIFEwSVNZfgjCOHt6u2He84Z6K//bjM6E2W19WFvY6WP65e8ISuZeswv69w8ttg+cd+Fi3HaAml0X6Iv8YTEcL3AcL/8UFU90Za8hZ0ixulfdHLoP2ODVuTCsA1UAIr7sp6axaOnE9Y6w/6yCIEei9EMp/QZknPXgIJczQXginNJueGn14yXfNJH7hA7nprs/7O/iXJMNC0bxluPJ5UlS4izNgcRMYcBA0MA9w1omxYkNrsbvg2oWZe0bGc4a9HdRegI+Li2qCzQ+Qo2BasSROCAedpIpmdO5/RByKF5dXyJu2XoyX0xMuD6+jAErsMWVzzeM5SLZ6mODSLDOyV3xTMyTBpRSdFFrVCax0zmrEU2DbYNBcjHiqpx6UTS4u7vtvJ4PZpJ8eLOAmn7qECHr6zGGBFL2eAyaMB9gHLPgZlBbdSDYNDP7RCXXDNZWS21NdWIdqKMR/DV0vVj+RDW8q9Hnqz+pNmhIMBXg73t2vPQCCncdH1QY3TYqzp+VYzlNMmfjnDv7pDmk+8gbZoSxQ6t/u3bTrxw6maKwkGJo4mPBdruqa5Kz9jMHZZ4ztjU4On2gq030yhE40Px4lbAsOGqOy039mNMTDIut9ltJ2GtqV+mEiJMbf6+p5bRo7cOFDwo1c3OfKxBJI1P3tSWoSd4zTk8bBw0KbwFh5APwlF0ynFUZbPSTL8yHrJWu4Bw+xVRHJaCLz0P6H3c/zfhPtpxxOeFtwLuu/aMfLz1u2/PUmMQERQ8dmOd/M20bJpUDxpwP0Ate4EBRn0DK4OgRk0uDMVxDyEdATohb2S8YMqxDxoUvKBXdBXGlDXvXK6MnVnOx4pYIbjorDcD0QhO8ZE28rm4JcperMgN3LVfrS8WgCPTI8SpCnBNrgL8RdQqi63n5oK//BhdMjt7abYz1wbrIi0OrRRzz9NcuMa8RXr8w6OIE9x2w8bUbCHN9rYlNc1ghyZlVser/bo37xWGlVfBp8dOxqDIw/OzrpVzpLLCEkdh3kGE/CpYLQgzKqQYh951D0rrW29OJAsjth6/Izmgx+0jtGYfDyo+04rdzWreRkLJXWQj3yYl9FT6bTfwBTws81kMHu5fuYK8MoVsLiRMi0XsJuMEDnePny6LEUj6k8QiPWdbuwAFhkYWf7hWUz+YduYTE6JvvT+hs1VF8cqEdXhD4aRwstdljzzvV80v3AxzGNDXWrIaMdRucH3DRl1vuodBVj1t8sqfLnhVJj09NGMgqk1jmbzhSV4j0fw4u96EYmWFTxgjAfwWtfuPJBbYy+5L0Zotu+rGCyEZrvfnV6CPFZubSTCc+jLegjlvNcGWF4fp7bAtZA1A9pgc68bIQdLoIjpZck6sHr9YGqJX0070YhVVKbaWhuFMav3F89wwswZiFeWdVa8APQFN1mZyalx3BCjdOWGjOMXpGb6Xdr8ciNFm66oRbmMHOwBgPfZfwkFfZs+lK77AsIjCD9Ebt8KK8QuCGMZsTIoqVZT1N1gMlB8GB4WNu3c1QvT4b/aZ2jMID+p2KPIzhaHEaUZyPc5YZUXtLUI3A580kKylewai+6Yz0Wm+YLjhOFdyyXWhgQ9UPPjiCIcV6KTsgOf4+A85t+RmXzBosiVmkMgWjityVl8qu3xe7rUzkTpjg2F4FBYYacKTLhLTEO8OXIhDPodWA.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9b86788d-4647-90c5-b57d-31e0a4b1ce6e",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3310,
+      "completion_tokens": 563,
+      "total_tokens": 3873,
+      "cost": 0.009806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.009806,
+        "upstream_inference_prompt_cost": 0.006428,
+        "upstream_inference_completions_cost": 0.003378
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 438,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue describes passing the initiating instance or queryset into pre/post_delete so cascade vs direct deletes can be distinguished, but it never names the signal argument or the exact origin objects. The FAIL_TO_PASS tests require a required kwarg named origin whose value is the original Model instance or QuerySet, so otherwise valid APIs would fail.",
+    "p_invalid": 0.86
+  },
+  "s": 2.0,
+  "p_invalid": 0.86,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue describes passing the initiating instance or queryset into pre/post_delete so cascade vs direct deletes can be distinguished, but it never names the signal argument or the exact origin objects. The FAIL_TO_PASS tests require a required kwarg named origin whose value is the original Model instance or QuerySet, so otherwise valid APIs would fail.",
+  "prompt_tokens": 3310,
+  "completion_tokens": 563,
+  "total_tokens": 3873,
+  "cost_usd": 0.009998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

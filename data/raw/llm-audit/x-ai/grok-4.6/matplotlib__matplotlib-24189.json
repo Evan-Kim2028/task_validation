@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-24189",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2070
+  },
+  "response": {
+    "id": "gen-1789191990-cJ2UBZWv7JpFhk8JNH2p",
+    "object": "chat.completion",
+    "created": 1789191990,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.85, \"rationale\": \"The issue clearly asks that width_ratios and height_ratios work with nested mosaics by applying to the outer layout rather than being forwarded recursively. The FAIL_TO_PASS tests check exactly that outer vs inner gridspec ratios, which matches the stated expected behavior.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about subplot_mosaic failing with width_ratios/height_ratios on nested mosaics. The expected outcome is that it should work, applying ratios to the outer layout.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about subplot_mosaic failing with width_ratios/height_ratios on nested mosaics. The expected outcome is that it should work, applying ratios to the outer layout.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "AtPyLSb5AA1ttLACCSzWPGKl3wLw7gNDZX/k23RymBlCe8o3VUQxSefuWQB/Bs3OBui0XxqmK2j9Fpa4k4gtEWo2tUB6sxbww4c+FKTP2Ixyc9rCUmO3SV6v13IQ8n7wfUkjzVH8kMGQlMti5eI26AYzF44NUa4s00R+tviCjiLW+erABWT6PiCwW1ap6eFHfkb8+jro2yXMEuaz/1GWGLUpncBDsdqGUk14mH7BKzeUHG1eMWQhFMi56iMzZnHdMKgfDKmY2DfOCvpK4ArAadYZt+P87uSPlXHqnSnblj/cejDlgjK4oUEkeekPOAIRoAyvf3Hl+hYcZXluUrWny9xjM18MRxTI8YnmTqrzdMwe+3phYZl2C10s0XWmF9T2vrcD6bTf7k864HAzndEcvOT0UsK0mClVEZ58dzkS4nv0fwezgMFMWQRm1i+MHe5dUT/7dsEprqpx9ZhUlptRIUDOicKtqSgDa4l3xJ9Y+SCOfU+7uzL2dQKJqRG3BuRmTiL0u7XgRz7rKaGy6aSMh22KTAgPldOODFeganSdOhl/xirT0mL6gYGQ6e2ZJcZsmTsXCMA2RiT5rmRTvkQ0QzrNHtUL22rV3Lma4rdot7X2E76Uf7+GU0Rdjty7Fx+kmOjNIVyk6BIjDDWeFVppaCpjtYU53V+wgwlg+mRr7aLB0BgFrPxWuPNLG7Tyc/ytTLuhHgOG1W2enOAhfHDgtpOzKZxJF7WfV20rI4AUP2YqQouOaqckPcKkaKf9HkKKBz/rfqVMBxMsGKmG9JTe2lHz2OeNgZxu7VeZxhLh91m01eLZ02hmNp6Ry9J3ecNUSMn8rMqINYufWknt3eLFvbHBRb7R6GTSsteYpWsT/pC1Krrc8L8GMKu2fzn1oGilZTFcFildiTaPSIqDTfcloqy0b3HjI77I+l6O8VSHiDk50iurdEsr1mriB3D7ZIWtSK/cCfSJ2XwgAog.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_91be0aff-5d6e-9f29-bf53-a04e300137a9",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2529,
+      "completion_tokens": 277,
+      "total_tokens": 2806,
+      "cost": 0.006336,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.006336,
+        "upstream_inference_prompt_cost": 0.004674,
+        "upstream_inference_completions_cost": 0.001662
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 169,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.85,
+    "rationale": "The issue clearly asks that width_ratios and height_ratios work with nested mosaics by applying to the outer layout rather than being forwarded recursively. The FAIL_TO_PASS tests check exactly that outer vs inner gridspec ratios, which matches the stated expected behavior.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.85,
+  "rationale": "The issue clearly asks that width_ratios and height_ratios work with nested mosaics by applying to the outer layout rather than being forwarded recursively. The FAIL_TO_PASS tests check exactly that outer vs inner gridspec ratios, which matches the stated expected behavior.",
+  "prompt_tokens": 2529,
+  "completion_tokens": 277,
+  "total_tokens": 2806,
+  "cost_usd": 0.00672,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

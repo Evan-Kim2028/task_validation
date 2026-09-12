@@ -1,5 +1,7 @@
 # Next directives (frozen after the empirical bridge)
 
+**Sequence:** [22-decision-tree.md](22-decision-tree.md) supersedes the linear list below. 20-task SWE IDs frozen, Docker not scaled. ADR-0019.
+
 Written 2026-09-11. This sequence supersedes the “future work” tone in [09-implementation-plan.md](09-implementation-plan.md) for anything after the cheap-feature AUROC.
 
 Do **not** start the 1,000-task build. Do **not** generate synthetic tasks. Part 1 certifies **validity** only.

@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-15423",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1237
+  },
+  "response": {
+    "id": "gen-1789191606-OE5p2fIXtXKXqG2oTHaJ",
+    "object": "chat.completion",
+    "created": 1789191606,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.72, \"rationale\": \"The issue only names __getitem__ and __iter__ as the broken proxy methods, while the FAIL_TO_PASS tests also require the same hasattr/getattr behavior for __setitem__, __delitem__, __len__, and __contains__. A solution that only addressed the two methods in the report would therefore fail tests that demand unstated extra methods.\", \"p_invalid\": 0.78}",
+          "refusal": null,
+          "reasoning": "The issue is about LazyObject defining magic methods that don't exist on the wrapped object, causing hasattr to return True but then failing when using them.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about LazyObject defining magic methods that don't exist on the wrapped object, causing hasattr to return True but then failing when using them.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_cdabf367-166f-9e5d-ad5c-251feb302425",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1568,
+      "completion_tokens": 487,
+      "total_tokens": 2055,
+      "cost": 0.005866,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005866,
+        "upstream_inference_prompt_cost": 0.002944,
+        "upstream_inference_completions_cost": 0.002922
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 361,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.72,
+    "rationale": "The issue only names __getitem__ and __iter__ as the broken proxy methods, while the FAIL_TO_PASS tests also require the same hasattr/getattr behavior for __setitem__, __delitem__, __len__, and __contains__. A solution that only addressed the two methods in the report would therefore fail tests that demand unstated extra methods.",
+    "p_invalid": 0.78
+  },
+  "s": 2.0,
+  "p_invalid": 0.78,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.72,
+  "rationale": "The issue only names __getitem__ and __iter__ as the broken proxy methods, while the FAIL_TO_PASS tests also require the same hasattr/getattr behavior for __setitem__, __delitem__, __len__, and __contains__. A solution that only addressed the two methods in the report would therefore fail tests that demand unstated extra methods.",
+  "prompt_tokens": 1568,
+  "completion_tokens": 487,
+  "total_tokens": 2055,
+  "cost_usd": 0.006058,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

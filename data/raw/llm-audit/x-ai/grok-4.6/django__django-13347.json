@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13347",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1244
+  },
+  "response": {
+    "id": "gen-1789191208-orS4FTI8Ip8meVhnM9o1",
+    "object": "chat.completion",
+    "created": 1789191208,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.88, \"rationale\": \"The issue clearly states that dictionary recursion should work when keys are not strings, so nested sensitive values still get cleansed. The FAIL_TO_PASS test checks exactly that behavior with a non-string key and does not impose extra unstated requirements.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about SafeExceptionReporterFilter not recursing into dictionaries with non-string keys. The test uses a tuple key like ('localhost', 8000) and expects nested password to be cleansed.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about SafeExceptionReporterFilter not recursing into dictionaries with non-string keys. The test uses a tuple key like ('localhost', 8000) and expects nested password to be cleansed.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "b8Pse+1eRzwVvAikkqlf8ibzhZy8fsPyrNCazcYtA2bOwyMYak4rzwR6e7Ltmyx7zn/pzGQE32SElGFUrKmo96PIOggp8ZZiAdhzwSIOnlW1JuQjSr6gP/GK3kvOaKkj8x2pf6piyGYuCzt/T7ydyezHI+tuUAlFZxCvczA516g4/1se1035PJt2iPvMEi33vrDGK1Wp0o6OpY2e+3ZjuHGJf+5muuRoVJhWrk4v/2LavgXT8OcshzZPSi5GQhOsHpayuuwPYbr+cqPn3mDDFhwcFeS8Ts5VI2MKz3Fm8mg2Ngifz7JbtHVbw1e/u+qHQSZiQ/nKU81/rXHHt6ul3HknNqch4HjjPJMlKvc1IxIgMOSrT0GtQledg1JiNZxalSyA8a8uQDWwYgam0s/jbRY6IpgSYM+ZLZ7dpa8d4l1oHcvYq5mr7M2ru4R8kUn4xLyG+bITgAXxSnT++K9Em14jqA9+9yQM6H5xRI0HUJpEp6sWeEn1fl+hyIfqNZP7xvuPUdQniNNacq12Flzzk8iwmzrfE9zk9+ceZVMGAMY/piHl8mJhx5RfqF9vj0xGCgbNgVvEwmgCPD7Fk1H32TTLXF+5jghWYp7QvcBxHDGAfCfVLxdYerwsL/H2YgfwYicsYjrfNv7Bko0cRhrUogLSnjD/xZPjYMYgx9tOwTYGYqu8jFdpUdJdTDWblxzhTAc2BipoowS3CNzsad0x017CpjBCcYlW2GOKCspxMpl66b21A6oTtkLQAlbxk6z28NH+sZjzTlgEb6vruylzytNbDw4ilkSE1eGvD0Tu73LM3kACr/6cmAqL6dEoF7c/4YgJIcJOMn1mIepcnYgwBR4yHyD3XzzJDJ0lQZTGVAwXFllMyIgTFK8k9kjqHx4CVJm2wdgFYuPXy2c3Ny2zVm+3/g.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6812da07-f74e-9c0a-b8a1-76ae5bd63da5",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1554,
+      "completion_tokens": 263,
+      "total_tokens": 1817,
+      "cost": 0.004494,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004494,
+        "upstream_inference_prompt_cost": 0.002916,
+        "upstream_inference_completions_cost": 0.001578
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 158,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.88,
+    "rationale": "The issue clearly states that dictionary recursion should work when keys are not strings, so nested sensitive values still get cleansed. The FAIL_TO_PASS test checks exactly that behavior with a non-string key and does not impose extra unstated requirements.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.88,
+  "rationale": "The issue clearly states that dictionary recursion should work when keys are not strings, so nested sensitive values still get cleansed. The FAIL_TO_PASS test checks exactly that behavior with a non-string key and does not impose extra unstated requirements.",
+  "prompt_tokens": 1554,
+  "completion_tokens": 263,
+  "total_tokens": 1817,
+  "cost_usd": 0.004685999999999999,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

@@ -1,0 +1,104 @@
+{
+  "task_id": "astropy__astropy-13838",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 4636
+  },
+  "response": {
+    "id": "gen-1789190670-LMNMTDyUpXQOX2E68eDl",
+    "object": "chat.completion",
+    "created": 1789190670,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly requires pprint of tables with zero-length extra dimensions not to IndexError and to show empty cells, which a competent engineer can implement. The FAIL_TO_PASS check is slightly narrower by locking exact pformat_all whitespace and dtype header for one (n,0,1) column rather than the reported empty 1-D cell case.\", \"p_invalid\": 0.2}",
+          "refusal": null,
+          "reasoning": "The issue is about printing tables with 0-length array cells causing IndexError. Expected: table should print fine with only \"bad\" events.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about printing tables with 0-length array cells causing IndexError. Expected: table should print fine with only \"bad\" events.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_75e53a53-3d40-97a5-93ac-041817d6dfd6",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5563,
+      "completion_tokens": 511,
+      "total_tokens": 6074,
+      "cost": 0.014,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.014,
+        "upstream_inference_prompt_cost": 0.010934,
+        "upstream_inference_completions_cost": 0.003066
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 383,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly requires pprint of tables with zero-length extra dimensions not to IndexError and to show empty cells, which a competent engineer can implement. The FAIL_TO_PASS check is slightly narrower by locking exact pformat_all whitespace and dtype header for one (n,0,1) column rather than the reported empty 1-D cell case.",
+    "p_invalid": 0.2
+  },
+  "s": 1.0,
+  "p_invalid": 0.2,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly requires pprint of tables with zero-length extra dimensions not to IndexError and to show empty cells, which a competent engineer can implement. The FAIL_TO_PASS check is slightly narrower by locking exact pformat_all whitespace and dtype header for one (n,0,1) column rather than the reported empty 1-D cell case.",
+  "prompt_tokens": 5563,
+  "completion_tokens": 511,
+  "total_tokens": 6074,
+  "cost_usd": 0.014192,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

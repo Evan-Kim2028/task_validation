@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-23314",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1087
+  },
+  "response": {
+    "id": "gen-1789187652-uU5HcduIBW4wQ1QMJToq",
+    "object": "chat.completion",
+    "created": 1789187652,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue clearly states that Axes3D.set_visible(False) should hide the 3D subplot, matching the image-equality test that draws an empty figure. A competent engineer would implement that visibility check without needing extra unspecified behavior.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is about set_visible() not working for 3D projection. The expected outcome is that the subplot is not visible if set to False.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about set_visible() not working for 3D projection. The expected outcome is that the subplot is not visible if set to False.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "8cvVcv2CcOaCSjvsNNjqzcYfa7Z3wOkWnFmgvwkEvROLbIdmZvFrjvYM0PenHktu9Uhml/A+EAsrnZnesu9XEPo/PfmPTn15tCEofLXo4D2xcMvzSXkOckj4mAGoEVK2hcbJ4rLUaAbPTEsCi3a+ChL9QZp20WmFpqTj+RcBCGZtWS1PILSYP2gmMVMQTR42eDNCOouf2yUznjuLBrEEuq9UWj8yiB+DuCslnqVdFJtLQwj0H9BYMq3MkH3F2lpb9ASBoMjBdxnT1IG1MVIcHAIBrbBG1+rcTDVN+UZ59jG55bCAlp0OxzKEPwsVnHZI+Mo8505CHz0g0u3r0pJ1grdA0lXzHlTVkJ+oT7699WlYZ0mbaupfcYOBA8PTqZAWjc0y/5KiXzTthk6R4BkTvKtpH68OhbZnB/lviCNTvB1SmTA+HZG+1OA97siHPFVkYrroqt8NRW8G4KGvhPrhK9cgZn/xIYisiPuCuHPm5Il48y2EKLx9PPFxO2cTr6WBSpq4SZS1or5p9/eI8nIClGIFgVWw5vGV9yFhJoB3rlbiPEJogg6z7Ys1jjNyjftOK+OmMuY2+4X+2lZY+Ym6hFCyif0qisQWEXjJkdeWktOqShn0WHvGKouhWFOppMf/hxP3ARY4J9F9BnxxYnOj/cvmiKfw6JTzv47tGDTESEcZ8k8PwEvk+l3O+JxQxVRX2r6E9kUm1T7Nw/d1UtL/y9Nke04KNUUXpLqEPTR5ICgCpOoj2dZwdWqOxLLz3g86Su9C109cCUjfGXlf2R+u/UkynpVh18sTvLkj2CUIolY+bBRooFQz85IFpCB2oyPG.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_aa4e295b-102f-94bc-acbd-971e629f567a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1529,
+      "completion_tokens": 254,
+      "total_tokens": 1783,
+      "cost": 0.00439,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00439,
+        "upstream_inference_prompt_cost": 0.002866,
+        "upstream_inference_completions_cost": 0.001524
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 151,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue clearly states that Axes3D.set_visible(False) should hide the 3D subplot, matching the image-equality test that draws an empty figure. A competent engineer would implement that visibility check without needing extra unspecified behavior.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue clearly states that Axes3D.set_visible(False) should hide the 3D subplot, matching the image-equality test that draws an empty figure. A competent engineer would implement that visibility check without needing extra unspecified behavior.",
+  "prompt_tokens": 1529,
+  "completion_tokens": 254,
+  "total_tokens": 1783,
+  "cost_usd": 0.004582,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

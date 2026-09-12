@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14387",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1838
+  },
+  "response": {
+    "id": "gen-1789191412-iimGUDZnnBr31mRO9WCv",
+    "object": "chat.completion",
+    "created": 1789191412,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue clearly describes extra .filter() on an OR-combined queryset being dropped when the predicate already appears as an OR child, which a competent engineer could target. One FAIL_TO_PASS test is a fair queryset case, but the other asserts a specific Node.add mixed-connector wrapping contract that the issue never states, so many valid query-layer fixes would fail.\", \"p_invalid\": 0.72}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit a SWE-bench task for specification validity.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_92c4cb5c-373e-9d24-9e6a-cd3086dcd87b",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2464,
+      "completion_tokens": 680,
+      "total_tokens": 3144,
+      "cost": 0.008816,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.008816,
+        "upstream_inference_prompt_cost": 0.004736,
+        "upstream_inference_completions_cost": 0.00408
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 550,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue clearly describes extra .filter() on an OR-combined queryset being dropped when the predicate already appears as an OR child, which a competent engineer could target. One FAIL_TO_PASS test is a fair queryset case, but the other asserts a specific Node.add mixed-connector wrapping contract that the issue never states, so many valid query-layer fixes would fail.",
+    "p_invalid": 0.72
+  },
+  "s": 2.0,
+  "p_invalid": 0.72,
+  "model_material": 1,
+  "underspecified": 1,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue clearly describes extra .filter() on an OR-combined queryset being dropped when the predicate already appears as an OR child, which a competent engineer could target. One FAIL_TO_PASS test is a fair queryset case, but the other asserts a specific Node.add mixed-connector wrapping contract that the issue never states, so many valid query-layer fixes would fail.",
+  "prompt_tokens": 2464,
+  "completion_tokens": 680,
+  "total_tokens": 3144,
+  "cost_usd": 0.009008,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

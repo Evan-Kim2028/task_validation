@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-11893",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 2826
+  },
+  "response": {
+    "id": "gen-1789187533-pogo42azobN56oRpoONn",
+    "object": "chat.completion",
+    "created": 1789187534,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.86, \"rationale\": \"The issue only asks that DateTimeField accept ISO 8601 strings using T as the date-time separator, but the FAIL_TO_PASS tests also require timezone offsets, microseconds, and ISO strings to be accepted even when custom input_formats are set. A competent engineer implementing only the stated T-separator change would reasonably fail those extra assertions.\", \"p_invalid\": 0.92}",
+          "refusal": null,
+          "reasoning": "The issue is about DateTimeField not accepting ISO 8601 formatted date strings with T as separator.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about DateTimeField not accepting ISO 8601 formatted date strings with T as separator.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "wLpnryTwut/bUTPGY+7cjSMxsJfy9Q0WmngzHXpuYjNJs1XryilAb+LJTc+X/iuQU5mfh0UNpBuYaal+7615zMvnN2HSZNA2oVj8AQ2+k3R95Kz1/Yz2zCn1hNA/4A2lkTxb8+Be64JJfZbWIQ6qgmmeonBWulnjfteoJP4KR5R3utbU9gZrk32IISR5DTubXHo9WT0Lqk8ARX48DVbvI5iZqkCmomQ257+/u0XnP5ybAau4xeTpwPh07L80LGuVEcMS7pNVFz7LFUG5HHY4cAoWIoyvp7NxfqRwUN0iDNqBnRxLPuiH9iw9fqzz+O2bq+XpAN0TpY0/kcysvXEcWaZBND+8hwDlVXnZ1KFrO253Z7yudpmuQrht6J5dyp0o5m7ENvU2WRNKF0BYy2yXWOJQZ1CSS/uS1i+6nb50MS24jmoQY4mqW/6dYdkHzhyptkLPgNEd+UsIvwFq+lZNGGTT/4ce2UEvfZn+rzgoJlGY/YnXSEGsdoJAenchN0kHFjAHjPSPLEb5rbT8jHOA0O+NoBFfpia4rLZDgVg+fo0ye7/JLHrMtIVW1/wNi/ragDXLdFzy0QyFn7XFkkD4mvVyUjZxFQVGqyCHVvOSsQqkTVtivhnmAhycq4MAndDfH/4ohs6N56y1V86XiKcjFx8pbcbnRJpMnKRGLD3eosRPWjtJzXo3j3FiExrwV//RbhVn0LaRh/M5/PsgVywp1ZhVm87mlBaCurxNafpilSwuctGk/fkMheEdre1J2mkjOm+zP3xubszUvgV3ilkHG/zbhyWTjYBoDAJkwF0WvTCYQYUvoGOowC5+lQR2XpbXsHfZ4y4f3agOuWkqF2F3MHtEczdr9JayhHHM+/lGh7BO6VOgcS/c3U0qfnNpAl9ODnaHukShbsnwQwgT0y2jlPyJvxHZ/IGRaFa7dTZKz5jLdJwMf5NLbecTn+AWsUCD0Z12hyiPMpCm4YjGYc1cyG9K1mf70ykdwTon7oCt/Vw+LjTO2xiCEGqPpZt+Ytxz9hJKMBXp2ilM7t8pnVAfBoEMaQ9c/bqARJ1wqepwK7gT8GUZham7bE5+WE0/v2ue2p8VIuR4p+VvOiPTksv20uk3gyOOmA735KQpVADw2SpnHuocUd/njVXhCxJtSWyJ.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_9a21e4d4-62a7-9f5c-8f4f-e86bf37a0a0a",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3905,
+      "completion_tokens": 317,
+      "total_tokens": 4222,
+      "cost": 0.00952,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00952,
+        "upstream_inference_prompt_cost": 0.007618,
+        "upstream_inference_completions_cost": 0.001902
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 191,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.86,
+    "rationale": "The issue only asks that DateTimeField accept ISO 8601 strings using T as the date-time separator, but the FAIL_TO_PASS tests also require timezone offsets, microseconds, and ISO strings to be accepted even when custom input_formats are set. A competent engineer implementing only the stated T-separator change would reasonably fail those extra assertions.",
+    "p_invalid": 0.92
+  },
+  "s": 2.0,
+  "p_invalid": 0.92,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.86,
+  "rationale": "The issue only asks that DateTimeField accept ISO 8601 strings using T as the date-time separator, but the FAIL_TO_PASS tests also require timezone offsets, microseconds, and ISO strings to be accepted even when custom input_formats are set. A competent engineer implementing only the stated T-separator change would reasonably fail those extra assertions.",
+  "prompt_tokens": 3905,
+  "completion_tokens": 317,
+  "total_tokens": 4222,
+  "cost_usd": 0.009711999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

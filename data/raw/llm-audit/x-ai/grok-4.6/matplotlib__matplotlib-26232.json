@@ -1,0 +1,104 @@
+{
+  "task_id": "matplotlib__matplotlib-26232",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1539
+  },
+  "response": {
+    "id": "gen-1789192090-vN7DXNfnoloUyGD6QwT6",
+    "object": "chat.completion",
+    "created": 1789192090,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.75, \"rationale\": \"The issue clearly asks that pcolor/pcolormesh not raise when X or Y have a read-only mask, which a competent engineer can implement by copying before mutating the mask. The FAIL_TO_PASS test is slightly extra in requiring plt.pcolor plus a specific UserWarning that the issue never mentions.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about pcolor writing to a read-only input mask. The reproduction uses pcolormesh with masked X, Y, Z. Expected: no error.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about pcolor writing to a read-only input mask. The reproduction uses pcolormesh with masked X, Y, Z. Expected: no error.\n{\n  \"underspecified\": 1,\n  \"false_negative\": 2,\n  \"other_major_issue\": 0,\n  \"other_reason\": \"\",\n  \"confidence\": 0.",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_6b69dbba-1628-91cf-b023-0e4a6c1dce63",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2205,
+      "completion_tokens": 620,
+      "total_tokens": 2825,
+      "cost": 0.007938,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.007938,
+        "upstream_inference_prompt_cost": 0.004218,
+        "upstream_inference_completions_cost": 0.00372
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 500,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.75,
+    "rationale": "The issue clearly asks that pcolor/pcolormesh not raise when X or Y have a read-only mask, which a competent engineer can implement by copying before mutating the mask. The FAIL_TO_PASS test is slightly extra in requiring plt.pcolor plus a specific UserWarning that the issue never mentions.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.75,
+  "rationale": "The issue clearly asks that pcolor/pcolormesh not raise when X or Y have a read-only mask, which a competent engineer can implement by copying before mutating the mask. The FAIL_TO_PASS test is slightly extra in requiring plt.pcolor plus a specific UserWarning that the issue never mentions.",
+  "prompt_tokens": 2205,
+  "completion_tokens": 620,
+  "total_tokens": 2825,
+  "cost_usd": 0.00813,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

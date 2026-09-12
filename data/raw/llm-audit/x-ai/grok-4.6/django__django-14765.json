@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-14765",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 877
+  },
+  "response": {
+    "id": "gen-1789191488-xdbXClezBZyQQNE2jKt3",
+    "object": "chat.completion",
+    "created": 1789191488,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 0, \"false_negative\": 0, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.92, \"rationale\": \"The issue explicitly asks to assert that real_apps is a set when it is not None rather than coercing other iterables. The FAIL_TO_PASS test only checks that a list argument raises AssertionError, which matches that requirement.\", \"p_invalid\": 0.05}",
+          "refusal": null,
+          "reasoning": "The issue is clear: ProjectState.__init__() should assert that real_apps is a set when non-None, instead of converting it.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is clear: ProjectState.__init__() should assert that real_apps is a set when non-None, instead of converting it.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "RXKqpnnGdFVk4wQea8yhcf6HOEIX4rCLRHvsdOZVEHXu55UWCjPcSFfbR9NA2sbu9jOpwepSoItg9riXpvzmMlHtYYFNC1DyXNQkM/SZ9+OeB42joDQyl6kEA2uLKUMMqHVOvrC8cK52KUE5aa45Ab+iRoDjFkAvLAYuJyX2G4xJYv0xABM8qbbD4IE3Pgh/JniSsA9jXhs4xmGTwNFLaHm0lcZcAJ5N3zNs1MWm4asagcxnwfjDVqCtFl+LM5O0WO9O4xFDq1UuNHnEgdhh6Oct3IVmtzCZ1Awfp9BRoUBsialbTJILuSVNDePmf4QPnvfU93qr79e7wRrs6noJ0KKahTR3ZnpTu10gR8/zL4YpLABsBvGC6vG1VHzwSD18KppwiiXlOvXVKEl0GEw7+EFcXNzioIbpFi3W2SmcU1giIPqT84FGLfHwEd1cm6krgu325U0pWW/gIwGARgnOqE2c/YKlZyYsgTvQJ3grBzPC93gi5hIOrD3alx8tGCTTd8kAAEN35FCgDPZXcEd3X04/2leimZMwYDGSqpu3mK9lIo5ldJnCSCaMadaKUGXDycidzo7VR3pAHHrPst2aCrecm0BI5lQulTbyVloFfCa+Vq/OWd2ptmf1GfH4iwI56bSlYYvztmyoWoVZRxWEsDaPbBhoZQrFxc3VtJ/UZ4JHan/H2IQ3Vfht2NFsobQxN5mquJw1GsolPlSaGuYP+Foz6d0LUONRlHbBOng/740BpvuHpoTJuw6c/pFcInRqk8Cm0OYYVjTz4bdf47NRyHVtImxg8ttUBhGbvLpgFqW/F2sxlweqAnDP/fsinNpDCIwjSro9HYHu0WoR4G6bhGs8vXt1a4uZMe9ysHwMIXTeNnQqF8/oknl6w8FuStwAUTNR3936nkL/abtKNAoPRVtwzU7CywfOa2zl7aCuSqN7hD4HxLZDDucOGgeUW8p3Gaww7bboZPfe0t/St/baN3Ct9Gh1erfmpn16XI+0qrHgmFhp.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_84f1e0d2-f29a-9f7d-a5f1-39aaaf9677bd",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1173,
+      "completion_tokens": 285,
+      "total_tokens": 1458,
+      "cost": 0.004056,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.004056,
+        "upstream_inference_prompt_cost": 0.002346,
+        "upstream_inference_completions_cost": 0.00171
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 182,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 0,
+    "false_negative": 0,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.92,
+    "rationale": "The issue explicitly asks to assert that real_apps is a set when it is not None rather than coercing other iterables. The FAIL_TO_PASS test only checks that a list argument raises AssertionError, which matches that requirement.",
+    "p_invalid": 0.05
+  },
+  "s": 0.0,
+  "p_invalid": 0.05,
+  "model_material": 0,
+  "underspecified": 0,
+  "false_negative": 0,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.92,
+  "rationale": "The issue explicitly asks to assert that real_apps is a set when it is not None rather than coercing other iterables. The FAIL_TO_PASS test only checks that a list argument raises AssertionError, which matches that requirement.",
+  "prompt_tokens": 1173,
+  "completion_tokens": 285,
+  "total_tokens": 1458,
+  "cost_usd": 0.004056000000000001,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

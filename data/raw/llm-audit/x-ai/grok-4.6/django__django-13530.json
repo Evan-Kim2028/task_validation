@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-13530",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 5629
+  },
+  "response": {
+    "id": "gen-1789191254-nclOfVaJbq8oi9EvKHeZ",
+    "object": "chat.completion",
+    "created": 1789191254,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 2, \"false_negative\": 2, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue only exemplifies invalid SQL from KeyTransform in ArrayAgg ordering and vaguely mentions other places, so a reasonable fix could be limited to that aggregate path. The FAIL_TO_PASS tests instead require additional unstated behaviors such as ExpressionWrapper compilation, KeyTransform values inside __in, and related JSON lookup SQL.\", \"p_invalid\": 0.85}",
+          "refusal": null,
+          "reasoning": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge if the issue is well-specified and if the tests fairly check the issue.\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The user wants me to audit whether a SWE-bench coding task is specification-valid. I need to judge if the issue is well-specified and if the tests fairly check the issue.\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "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.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_692ce0f2-8504-9d38-a19c-152493f44a82",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6433,
+      "completion_tokens": 537,
+      "total_tokens": 6970,
+      "cost": 0.015896,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 128,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.015896,
+        "upstream_inference_prompt_cost": 0.012674,
+        "upstream_inference_completions_cost": 0.003222
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 418,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 2,
+    "false_negative": 2,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue only exemplifies invalid SQL from KeyTransform in ArrayAgg ordering and vaguely mentions other places, so a reasonable fix could be limited to that aggregate path. The FAIL_TO_PASS tests instead require additional unstated behaviors such as ExpressionWrapper compilation, KeyTransform values inside __in, and related JSON lookup SQL.",
+    "p_invalid": 0.85
+  },
+  "s": 2.0,
+  "p_invalid": 0.85,
+  "model_material": 1,
+  "underspecified": 2,
+  "false_negative": 2,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue only exemplifies invalid SQL from KeyTransform in ArrayAgg ordering and vaguely mentions other places, so a reasonable fix could be limited to that aggregate path. The FAIL_TO_PASS tests instead require additional unstated behaviors such as ExpressionWrapper compilation, KeyTransform values inside __in, and related JSON lookup SQL.",
+  "prompt_tokens": 6433,
+  "completion_tokens": 537,
+  "total_tokens": 6970,
+  "cost_usd": 0.016087999999999998,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}

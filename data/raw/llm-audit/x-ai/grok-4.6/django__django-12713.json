@@ -1,0 +1,104 @@
+{
+  "task_id": "django__django-12713",
+  "model": "x-ai/grok-4.6",
+  "request": {
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "reasoning": {
+      "effort": "low"
+    },
+    "est_prompt_tokens": 1414
+  },
+  "response": {
+    "id": "gen-1789191077-WxpVr23Vs6VmhsUctvTE",
+    "object": "chat.completion",
+    "created": 1789191077,
+    "model": "x-ai/grok-4.6",
+    "provider": "xAI",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "completed",
+        "message": {
+          "role": "assistant",
+          "content": "{\"underspecified\": 1, \"false_negative\": 1, \"other_major_issue\": 0, \"other_reason\": \"\", \"confidence\": 0.78, \"rationale\": \"The issue asks that a widget passed into formfield_for_manytomany is respected like formfield_for_foreignkey, which a senior engineer would implement by not overwriting kwargs['widget']. The FAIL_TO_PASS test only covers formfield_overrides plus filter_vertical rather than a direct widget argument, so it is slightly narrower than the written request.\", \"p_invalid\": 0.15}",
+          "refusal": null,
+          "reasoning": "The issue is about allowing overriding widget in formfield_for_manytomany(). It doesn't work when setting widget param, unlike formfield_for_foreignkey().\n",
+          "reasoning_details": [
+            {
+              "type": "reasoning.summary",
+              "summary": "The issue is about allowing overriding widget in formfield_for_manytomany(). It doesn't work when setting widget param, unlike formfield_for_foreignkey().\n",
+              "format": "xai-responses-v1",
+              "index": 0
+            },
+            {
+              "type": "reasoning.encrypted",
+              "data": "Mn5ArGNSPd1chOqeMmG0oZNapXEX73vhh01ZFI9vpi+IzhdGVX80hytS+i6yKHXMF5oQo7URT9a1h3QR8hoGnjcqwbw9Kt8mVCQif1OYcIEw4XEyVcL1x7Z3P7kgg2NiEYQm5qgVy39cgmoYFf/L+jC6P0XT4e5SGoDHpAp4ng2d4aDq+m50QQ/MH7UZhbQg4l6rJ+Zajk6Vo38I7tJ+ML2VbNphKpCkOR2GAWyb01l4auIPZSpL0grtdHhs+mmuN+TWLeVajuU9egoeOfBE6pSWs+XTYeZwIYDPra44E1+7QeZznao1wa56nMbelg+xP0+IBB5d+2hWJ7gXAx4NIR7kEDuBU75OMRBRinu994yo1C30S6c8x1TS4asue3FgNvPkbSqA0O8kyCJlNqwKcjGkMm8cV/7TcLXf1Dwh/uoAQM1DqEbFulEwIy3m0uoqjTfhtiRSGRPg0BTOgJfnxhNZh4QJztGnChugu0tmDe462ixRU13PBG4zdSfkHeMJbuzDrz6dI0lxpnuFP/lwbOV+tHT38xa9Vt/fY+JQTvrx+yjrVoZJb8l5Wl64dGSBF15th7PFTimCmSyacOaENwhWRLoCvY9YyuDj24lX81ixGpFJhmRA4GNLjJyjerjIxF3uI/Jlqdgv6llBv28DdxZbchM2yxLNOLWGAI/NScoK2R1B+dUadIHQ43KqhaEe92eYehTFWGnSkWOC2bMbMu1uYWcntfFOgnqDHE88B6gMD6sTi8BEnDIxLXk5n/n5RivssR8OwZFS2Iz1PBq+jN4bPVM3HBfI8XSL/8/zVTtJLKBppe+eGm0auLkh/NCk6hIadFY70AmP49KfC2134hRGKXT34MKKUc3j9Svr53t//ZUGqSrzWOX3Q2qOZDvfj/T42fzbcpCUpXR3/BC6pGqyz+v45oKTtEIcS1QgvuCTCqDyYmE2v9uXbj84i+DUw1Mbhw4L9opd8pBDPaMGt6MMPo3DWGoEWmzlLeIQ+kNIKuzi8wZOPn9n1tUVkt4aVzHB+dg1OkX4meLbhiD3wQgq6pvdfIbDL98m2mNfu8qnxNzSODFmxqkjaiToGwPaZZh7WDIQ9TvkhKYCnI1IiFnBQ1iarhvivPXdZfHMGuFK/irf1jbKAw+f93wNE6jY8MSWXlfxHDC1XifgewDnN1itUXy8JpbGhVq1Wxb0t2O9MqCC7TI5+7jDOp7jIX8tmKtlQlbCDOyF6eqsMEt57sYSSrbJ8R+DeGaMRpIunWa1b3kT3DhdsYpesqNPE6T+poB04DHpR7NUYxI1FX0bETGALVU5R5N744sYJD7KRC+5YbIt3A3TdOXP5sHsvJn1Hb3xsI4ZUs78FgGgTUG8UfYmxPh8+x90jPyzcOUCa6pi7gEpFetodTIZcuhm0FB0HQwVk0+z+CXz1+XEew298j5qCvzCVRRCUdRiO10pUJTB46ofz5dUVXz3HoXxu8isjBXzDSrjwnCS3akzZ90WON6rmhgEkcbg/L9T3ZmCwjSzNPLxNcghNtVnaK+CpqtKatUqzf4bTXtIM/gzrBVt2qiVfqJYYidgyjLVNyhGYddodiVZuR8Z8tZFiqZc/Unb1diCZPt52Bk5uCcEQrP7lth4sVpxg4Zdze9jmATqLbCPWZoHkBCsPf7c3w60bylpem3fPKvlyx2Z7qVTwjsPV98Mvfku0LvQmcWMHnEYycnkHE4v3h8yyhMuae1Nwo1KIxSW4O4heuo4NNAhh44y7TtVe9TLGcvABtIDfSO75RscUCcBAMPA2vUEXMbWB4gJnnKlqnJebNAffsgg0hWiFRfXeoAzF7EZezEFGQojXrh2WY23A319x23CX2tpa0c9YbWZ0bk7jo+O9REgc7/ZnW5e/Yo.eyJlbmRwb2ludF9zbHVnIjoieC1haS9ncm9rLTQuNi0yMDI2MDgxMHx4YWkifQ",
+              "format": "xai-responses-v1",
+              "id": "rs_3f519bd8-989b-9f72-9ab5-8a641ab218d4",
+              "index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1697,
+      "completion_tokens": 451,
+      "total_tokens": 2148,
+      "cost": 0.005716,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 256,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.005716,
+        "upstream_inference_prompt_cost": 0.00301,
+        "upstream_inference_completions_cost": 0.002706
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 320,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "http_status": 200,
+  "parsed": {
+    "underspecified": 1,
+    "false_negative": 1,
+    "other_major_issue": 0,
+    "other_reason": "",
+    "confidence": 0.78,
+    "rationale": "The issue asks that a widget passed into formfield_for_manytomany is respected like formfield_for_foreignkey, which a senior engineer would implement by not overwriting kwargs['widget']. The FAIL_TO_PASS test only covers formfield_overrides plus filter_vertical rather than a direct widget argument, so it is slightly narrower than the written request.",
+    "p_invalid": 0.15
+  },
+  "s": 1.0,
+  "p_invalid": 0.15,
+  "model_material": 0,
+  "underspecified": 1,
+  "false_negative": 1,
+  "other_major_issue": 0,
+  "other_reason": "",
+  "confidence": 0.78,
+  "rationale": "The issue asks that a widget passed into formfield_for_manytomany is respected like formfield_for_foreignkey, which a senior engineer would implement by not overwriting kwargs['widget']. The FAIL_TO_PASS test only covers formfield_overrides plus filter_vertical rather than a direct widget argument, so it is slightly narrower than the written request.",
+  "prompt_tokens": 1697,
+  "completion_tokens": 451,
+  "total_tokens": 2148,
+  "cost_usd": 0.0060999999999999995,
+  "truncated": {
+    "issue": false,
+    "test_patch": false,
+    "fail_to_pass": false,
+    "gold_patch": false
+  },
+  "cached": false,
+  "error": null
+}
