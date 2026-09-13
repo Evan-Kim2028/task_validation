@@ -762,6 +762,64 @@ def _cmd_decontam_check(args: argparse.Namespace) -> int:
     return 1 if report["n_flagged"] else 0
 
 
+def _cmd_generator_gate_sample(args: argparse.Namespace) -> int:
+    from task_validation.evidence import generator_gate as gg
+
+    root = Path(args.root)
+    name = args.name
+    seed = args.seed or gg.default_seed(name)
+    out = Path(args.out) if args.out else gg.default_manifest_path(name)
+    extract = (
+        Path(args.extract_dir) if args.extract_dir else gg.default_extract_dir(root, name)
+    )
+    manifest = gg.sample_generator(
+        name=name,
+        root=root,
+        n=args.n,
+        seed=seed,
+        out_path=out,
+        extract_dir=extract,
+    )
+    print(
+        json.dumps(
+            {
+                "manifest": str(out),
+                "generator": name,
+                "N": manifest["N"],
+                "n": manifest["n"],
+                "seed": manifest["seed"],
+                "extract_dir": manifest["extract_dir"],
+            },
+            indent=2,
+        )
+    )
+    return 0
+
+
+def _cmd_generator_gate_run(args: argparse.Namespace) -> int:
+    from task_validation.evidence import generator_gate as gg
+
+    name = args.name
+    gg.run_gate(
+        manifest_path=Path(args.manifest) if args.manifest else gg.default_manifest_path(name),
+        out_path=Path(args.out) if args.out else gg.default_out_path(name),
+        jobs_dir=Path(args.jobs) if args.jobs else gg.default_jobs_dir(name),
+        extract_dir=Path(args.extract_dir) if args.extract_dir else None,
+        concurrency=args.concurrency,
+        k=args.k,
+        budget_sec=args.budget_sec,
+        trial_cap_sec=args.trial_cap_sec,
+        timeout_mult=args.timeout_multiplier,
+        verifier_mult=args.verifier_timeout_multiplier,
+        build_mult=args.build_timeout_multiplier,
+        prune_every=args.prune_every,
+        epsilon=args.epsilon,
+        resume=not args.no_resume,
+        redo_infra=args.redo_infra,
+    )
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="task-validation")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -1052,6 +1110,44 @@ def main(argv: list[str] | None = None) -> int:
     )
     p.add_argument("--out", default="")
     p.set_defaults(func=_cmd_decontam_check)
+
+    p = sub.add_parser(
+        "generator-gate-sample",
+        help="Freeze an SRS manifest for one generator's Harbor tasks (doc 50)",
+    )
+    p.add_argument("--name", required=True, help="generator name, e.g. rst, seta, tmax")
+    p.add_argument("--root", required=True, help="local root holding task dirs and/or *.tar files")
+    p.add_argument("--n", type=int, required=True)
+    p.add_argument("--seed", default="", help="default gen-gate-<name>-v0")
+    p.add_argument("--out", default="", help="default data/gold/gen_gate_<name>_manifest.json")
+    p.add_argument(
+        "--extract-dir",
+        default="",
+        help="where sampled tar members land; default <root>-gate-extract/<name>",
+    )
+    p.set_defaults(func=_cmd_generator_gate_sample)
+
+    p = sub.add_parser(
+        "generator-gate-run",
+        help="Oracle/nop execution gate over the frozen manifest (doc 50 gate A)",
+    )
+    p.add_argument("--name", required=True)
+    p.add_argument("--manifest", default="", help="default data/gold/gen_gate_<name>_manifest.json")
+    p.add_argument("--out", default="", help="default data/gold/gen_gate_<name>.jsonl")
+    p.add_argument("--jobs", default="", help="default /tmp/tv-gen-gate-<name>/jobs")
+    p.add_argument("--extract-dir", default="", help="default: manifest extract_dir")
+    p.add_argument("-n", "--concurrency", type=int, default=4, help="harbor --n-concurrent and runner parallelism")
+    p.add_argument("-k", type=int, default=2, help="trials per probe (oracle and nop each)")
+    p.add_argument("--budget-sec", type=float, default=24 * 60 * 60)
+    p.add_argument("--trial-cap-sec", type=int, default=60 * 60)
+    p.add_argument("--timeout-multiplier", type=float, default=1.0)
+    p.add_argument("--verifier-timeout-multiplier", type=float, default=2.0)
+    p.add_argument("--build-timeout-multiplier", type=float, default=2.0)
+    p.add_argument("--prune-every", type=int, default=20, help="docker image+builder prune cadence in tasks; 0 disables")
+    p.add_argument("--epsilon", type=float, default=0.05)
+    p.add_argument("--no-resume", action="store_true")
+    p.add_argument("--redo-infra", action="store_true", help="re-execute trials whose latest row is infra or timeout")
+    p.set_defaults(func=_cmd_generator_gate_run)
 
     args = parser.parse_args(argv)
     return args.func(args)
