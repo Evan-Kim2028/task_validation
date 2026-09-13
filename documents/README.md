@@ -58,6 +58,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [52-harbor-index-funnel-results.md](52-harbor-index-funnel-results.md) | Explanation | Harbor-Index funnel reconstructed from the public dump: 1,331 vs 1,311 stage-1 survivors, 81 of 82 matched, survived_2_to_4 LOBO AUROC 0.71 |
 | [53-generator-gate.md](53-generator-gate.md) | How-to | Oracle and nop gate over sampled generated task sets (RST, SETA, TMax) on the VPS, per-generator hypergeometric certificate |
 | [54-funnel-trajectory-features.md](54-funnel-trajectory-features.md) | Explanation | Trajectory, verifier and shortcut features added to the funnel model: family-held-out AUROC 0.61, stop rule triggered, funnel footprint is source identity |
+| [55-replication.md](55-replication.md) | How-to | Replicate the funnel reconstruction and generator gates from the public dump with coding agents: dataset, hardware, commands, traps, expected numbers |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
