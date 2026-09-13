@@ -53,6 +53,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [47-swe-srs300-certificate.md](47-swe-srs300-certificate.md) | Reference | SWE-bench SRS-300 verifier certificate (partial prefix n=190, UCB 4.65%, release) and the 11-item machine-flag human queue |
 | [48-harbor-index-funnel-run.md](48-harbor-index-funnel-run.md) | Reference | Harbor-Index funnel reconstruction: manifest verified at 6,627, fetch plan and byte estimate |
 | [49-decontamination.md](49-decontamination.md) | Reference | 13-gram and Jaccard decontamination index over TB4, Harbor-Index, TB 2.1, SWE-bench Verified |
+| [50-part2-intake-spec.md](50-part2-intake-spec.md) | Reference | Part 2 intake: lot freeze, gates A to C, model-ordered queue, strata, SRS certificate, dossier, operator checklist |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

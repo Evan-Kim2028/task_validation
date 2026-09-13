@@ -64,3 +64,7 @@ setsid nohup env PYTHONPATH=src .venv/bin/python -m task_validation.cli \
 3. Footprint extraction. Apply `layout_static_features` from `src/task_validation/evidence/footprint.py` to the candidate task packages (doc 40); task materials come from the benchmark sources, not from the reward JSONL.
 4. Leave-one-benchmark-out AUROC per label (doc 45 step 4). Compare against the 0.71 curated-vs-generated held-out number in doc 40.
 5. Stop rule (doc 45): if leave-one-benchmark-out AUROC for `survived_2_to_4` is under 0.65, the footprint is benchmark identity and the plan stops.
+
+## Relaunch 2026-09-13
+
+The 40 GB budget in doc 45 was a guess and is withdrawn. Streaming shard-at-a-time keeps disk at one shard (up to 3.5 GB), so the real cost is bandwidth, about 327 GB at roughly 19 MB/s, five to six hours. The fetch was relaunched with `--budget-gb 350` under a user unit `tv-funnel-fetch` with MemoryHigh 6G and MemoryMax 8G, because one shard is held in memory and peaked at 3.1 GB. It is resume-aware. Log: `logs/harbor_funnel_fetch.log`. Output: `data/gold/harbor_funnel_rewards.jsonl`. Status: `systemctl --user status tv-funnel-fetch`.
