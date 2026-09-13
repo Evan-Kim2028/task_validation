@@ -252,6 +252,31 @@ def run_key(row: dict) -> tuple[str, str, int]:
     return (row["task_id"], row["probe"], int(row.get("rep") or 0))
 
 
+def drop_infra_rows(out_path: Path, task_ids: list[str]) -> dict:
+    """Rewrite out_path without status=infra rows for the named tasks.
+
+    Resume keys on (task_id, probe, rep), so an infra row would otherwise be
+    skipped forever; dropping it makes the next resume re-execute the trial.
+    Executed and shim_bypassed rows are never touched.
+    """
+    out_path = Path(out_path)
+    rows = load_existing_rows(out_path)
+    wanted = set(task_ids)
+    kept = [
+        r
+        for r in rows
+        if not (r.get("status") == "infra" and r.get("task_id") in wanted)
+    ]
+    dropped = len(rows) - len(kept)
+    if out_path.is_file() and dropped:
+        tmp = out_path.with_name(out_path.name + ".tmp")
+        with tmp.open("w", encoding="utf-8") as fh:
+            for r in kept:
+                fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+        tmp.replace(out_path)
+    return {"rows_before": len(rows), "dropped": dropped, "rows_after": len(kept)}
+
+
 def summarize_swap(
     rows: list[dict], *, wall_clock_total: float, n_judge_tasks: int
 ) -> dict:
@@ -490,11 +515,18 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--devin-timeout-sec", type=float, default=480.0)
     p.add_argument("--list", action="store_true", help="print the swap plan; never runs harbor")
     p.add_argument("--no-resume", action="store_true")
+    p.add_argument(
+        "--redo-infra",
+        action="store_true",
+        help="drop status=infra rows for --task ids from --out before running, "
+        "so resume re-executes them; executed rows are untouched",
+    )
     return p
 
 
 def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
     shim_config = ShimConfig(
         port=args.port,
         host_addr=args.host_addr,
@@ -521,6 +553,15 @@ def main(argv: list[str] | None = None) -> int:
         }
         print(json.dumps(report, indent=2))
         return 0
+    if args.redo_infra:
+        if not task_filter:
+            parser.error("--redo-infra requires --task")
+        report = drop_infra_rows(args.out, task_filter)
+        print(
+            f"[judge_swap] redo_infra dropped={report['dropped']} "
+            f"rows_after={report['rows_after']} out={args.out}",
+            flush=True,
+        )
     summary = run_swap_experiment(
         dataset=args.dataset,
         jobs_dir=args.jobs,
