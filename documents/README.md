@@ -55,6 +55,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [49-decontamination.md](49-decontamination.md) | Reference | 13-gram and Jaccard decontamination index over TB4, Harbor-Index, TB 2.1, SWE-bench Verified |
 | [50-part2-intake-spec.md](50-part2-intake-spec.md) | Reference | Part 2 intake: lot freeze, gates A to C, model-ordered queue, strata, SRS certificate, dossier, operator checklist |
 | [51-judge-swap.md](51-judge-swap.md) | Explanation | Judge-swap experiment: devin swe-2-max behind an OpenAI-compatible shim as a grade-B rubric-robustness treatment on the 16 Harbor-Index judge tasks |
+| [52-harbor-index-funnel-results.md](52-harbor-index-funnel-results.md) | Explanation | Harbor-Index funnel reconstructed from the public dump: 1,331 vs 1,311 stage-1 survivors, 81 of 82 matched, survived_2_to_4 LOBO AUROC 0.71 |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
