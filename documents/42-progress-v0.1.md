@@ -26,7 +26,7 @@ Code under `src/task_validation/` (evidence, sampling, model), 130+ tests, gold 
 
 ## Rules in force
 
-Agents run through cursor-agent (composer 2.5, not fast); devin CLI for credits. No LLM scoring inside the pipeline. No api.x.ai, no OpenRouter. Docs 34 and 36 used an LLM judge before that rule and remain as a record only. Long docker runs live outside agent sessions. Model access history and infrastructure fixes are in doc 23 section 13.
+Agent and model rules are set by doc 43: implementation and research agents run through the devin CLI on swe-2-max and cmd on deepseek-v4.1-flash, and LLM scoring is permitted for ordering the review queue only. No api.x.ai, no OpenRouter. Docs 34 and 36 used an LLM judge before that rule and remain as a record only. Long docker runs live outside agent sessions. Model access history and infrastructure fixes are in doc 23 section 13.
 
 ## Open at v0.1
 

@@ -46,6 +46,9 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [40-footprint-holdout.md](40-footprint-holdout.md) | Explanation | Non-LLM validity footprint with leave-one-population-out error rates and transfer-bound coverage |
 | [41-tb21-census-certificate.md](41-tb21-census-certificate.md) | Reference | TB 2.1 89-task census certificate and SRS-30 coverage check |
 | [42-progress-v0.1.md](42-progress-v0.1.md) | Explanation | Release record for v0.1: what is established, rejected, open |
+| [43-adr-model-orders-queue.md](43-adr-model-orders-queue.md) | Explanation | ADR: a model orders the review queue, never the bound; current agent and model rules |
+| [44-judge-verifier-protocol.md](44-judge-verifier-protocol.md) | How-to | You are certifying a pool with LLM-judge or no-reference tasks |
+| [45-harbor-index-funnel-footprint.md](45-harbor-index-funnel-footprint.md) | Explanation | Harbor-Index funnel reconstruction plan, labels, and footprint feasibility |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
