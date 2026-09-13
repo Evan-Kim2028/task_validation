@@ -192,6 +192,7 @@ def run_harbor_judge(
     verifier_env: dict[str, str],
     cap_sec: int = TRIAL_CAP_SEC,
     build_heavy_sec: int = BUILD_HEAVY_SEC,
+    harbor_extra_args: list[str] | None = None,
 ) -> dict:
     """run_harbor_capped plus --verifier-env and judge detail download."""
     jobs_out.mkdir(parents=True, exist_ok=True)
@@ -215,6 +216,8 @@ def run_harbor_judge(
     for key in sorted(verifier_env):
         cmd += ["--ve", f"{key}={verifier_env[key]}"]
     cmd += ["--verifier-include-logs", JUDGE_DETAIL_GLOB]
+    if harbor_extra_args:
+        cmd += list(harbor_extra_args)
     t0 = time.monotonic()
     timed_out = False
     build_heavy = False

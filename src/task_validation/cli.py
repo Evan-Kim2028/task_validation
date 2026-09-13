@@ -528,6 +528,35 @@ def _cmd_interrogate_judge(args: argparse.Namespace) -> int:
     return judge_main(argv)
 
 
+def _cmd_judge_swap(args: argparse.Namespace) -> int:
+    from task_validation.evidence.judge_swap import main as swap_main
+
+    argv = [
+        "--dataset", args.dataset,
+        "--jobs", args.jobs,
+        "--out", args.out,
+        "--strata", args.strata,
+        "--k", str(args.k),
+        "--budget-sec", str(args.budget_sec),
+        "--trial-cap-sec", str(args.trial_cap_sec),
+        "--verifier-timeout-multiplier", str(args.verifier_timeout_multiplier),
+        "--port", str(args.port),
+        "--host-addr", args.host_addr,
+        "--shim-log", args.shim_log,
+        "--devin-model", args.devin_model,
+        "--devin-timeout-sec", str(args.devin_timeout_sec),
+    ]
+    if args.summary:
+        argv += ["--summary", args.summary]
+    if args.task:
+        argv += ["--task", args.task]
+    if args.list:
+        argv += ["--list"]
+    if args.no_resume:
+        argv += ["--no-resume"]
+    return swap_main(argv)
+
+
 def _cmd_link_human_labels(args: argparse.Namespace) -> int:
     from task_validation.ingest.human_labels import write_linkage
 
@@ -607,6 +636,20 @@ def _cmd_harbor_funnel_fetch(args: argparse.Namespace) -> int:
         work_dir=Path(args.work),
         budget_bytes=int(args.budget_gb * 1024**3),
         dry_run=args.dry_run,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+def _cmd_harbor_extract_local(args: argparse.Namespace) -> int:
+    from task_validation.ingest.harbor_adapter_local import run_extract_local
+
+    report = run_extract_local(
+        dump_dir=Path(args.dump_dir),
+        manifest_path=Path(args.manifest),
+        adapters_path=Path(args.adapters),
+        out_dir=Path(args.out),
+        workers=args.workers,
     )
     print(json.dumps(report, indent=2))
     return 0
@@ -855,6 +898,29 @@ def main(argv: list[str] | None = None) -> int:
     p.set_defaults(func=_cmd_interrogate_judge)
 
     p = sub.add_parser(
+        "judge-swap",
+        help="k=3 oracle + k=3 nop judge-swap runs on the 16 judge tasks (doc 51)",
+    )
+    p.add_argument("--dataset", default="/home/evan/Documents/harbor-index-dataset/harbor-index-1.0")
+    p.add_argument("--jobs", default="/tmp/tv-hindex/judge-swap-jobs")
+    p.add_argument("--out", default="data/gold/harbor_index_judge_swap.jsonl")
+    p.add_argument("--summary", default="")
+    p.add_argument("--strata", default="data/gold/harbor_index_strata.json")
+    p.add_argument("--task", default="", help="comma-separated task ids; default all judge tasks")
+    p.add_argument("--k", type=int, default=3)
+    p.add_argument("--budget-sec", type=float, default=48 * 60 * 60)
+    p.add_argument("--trial-cap-sec", type=int, default=2 * 60 * 60)
+    p.add_argument("--verifier-timeout-multiplier", type=float, default=6.0)
+    p.add_argument("--port", type=int, default=8477)
+    p.add_argument("--host-addr", default="172.17.0.1")
+    p.add_argument("--shim-log", default="data/gold/judge_shim_log.jsonl")
+    p.add_argument("--devin-model", default="swe-2-max")
+    p.add_argument("--devin-timeout-sec", type=float, default=480.0)
+    p.add_argument("--list", action="store_true", help="print the swap plan; never runs harbor")
+    p.add_argument("--no-resume", action="store_true")
+    p.set_defaults(func=_cmd_judge_swap)
+
+    p = sub.add_parser(
         "link-human-labels",
         help="Mine existing public labels; do not merge provenances",
     )
@@ -910,6 +976,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--budget-gb", type=float, default=40.0)
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=_cmd_harbor_funnel_fetch)
+
+    p = sub.add_parser(
+        "harbor-extract-local",
+        help="Extract every trial row from a local Harbor-Adapter dump",
+    )
+    p.add_argument("--dump-dir", required=True, help="local snapshot root (data/harbor_adapters/...)")
+    p.add_argument("--manifest", default="data/raw/harbor-adapter/harbor_adapters.manifest.parquet")
+    p.add_argument("--adapters", default="data/raw/harbor-adapter/adapters54.json")
+    p.add_argument("--out", "--out-dir", dest="out", default="data/gold/harbor_adapter_local")
+    p.add_argument("--workers", type=int, default=4, help="one shard in memory per worker")
+    p.set_defaults(func=_cmd_harbor_extract_local)
 
     p = sub.add_parser(
         "ppi-lab",

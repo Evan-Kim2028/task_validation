@@ -130,6 +130,17 @@ def build_certificate(
     protocol = str(protocol)
     if verifier_kind not in VERIFIER_KINDS:
         raise ValueError("verifier_kind must be execution, judge, or none")
+    swap_units = [
+        str(row.get("unit_id"))
+        for row in verdicts
+        if str(row.get("verifier_kind")) == "judge_swap"
+    ]
+    if swap_units:
+        raise ValueError(
+            "verifier_kind 'judge_swap' verdicts are judge-swap diagnostics "
+            "(doc 51); they never enter a certificate bound and never pool "
+            "with execution or shipped-judge strata: " + ", ".join(swap_units)
+        )
     if verifier_kind == "judge" and adjudicator == "machine":
         raise ValueError(
             "judge strata are human-adjudicated; a judge-verified stratum "
