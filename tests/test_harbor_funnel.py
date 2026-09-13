@@ -1,11 +1,19 @@
 """Tiny-fixture tests for doc 45 stage-1 aggregation (harbor_funnel.py)."""
 
+import json
+
 from task_validation.evidence.harbor_funnel import (
+    BENCHMARK_FAMILIES,
     FRONTIER_CELLS,
+    _fit_logit_fast,
     aggregate_stage1,
+    benchmark_family,
+    frontier_failed_test_stats,
+    join_task_traj,
     select_stage1_trials,
     stage1_record,
 )
+from task_validation.evidence.footprint import fit_logit
 
 
 def _row(benchmark, task, cell_idx, trial_index, reward, trial_id=None):
@@ -133,3 +141,128 @@ def test_zero_frontier_trials_not_survived():
     assert rec["frontier_solve_rate"] is None
     assert rec["survived_stage1"] is False
     assert rec["survived_stage1_n_succ_le6"] is False
+
+
+# --- Doc 54: join, family grouping, streaming stats -------------------------
+
+
+def _label(benchmark, task, s1=False, funnel=False):
+    return {
+        "benchmark": benchmark,
+        "task_name": task,
+        "index_task_id": f"idx-{task}" if funnel else None,
+        "survived_stage1": s1,
+        "survived_funnel": funnel,
+        "survived_2_to_4": (funnel if s1 else None),
+    }
+
+
+def _traj_task(benchmark, task, frontier=None):
+    return {
+        "benchmark": benchmark,
+        "task_name": task,
+        "in_scope": True,
+        "n_trials": 30,
+        "frontier": frontier or {"n_trials": 18, "n_steps_mean": 5.0},
+    }
+
+
+def test_join_task_traj_coverage():
+    labels = [
+        _label("b1", "t1", s1=True),
+        _label("b1", "t2"),
+        _label("b2", "t3", s1=True, funnel=True),
+    ]
+    traj = [
+        _traj_task("b1", "t1"),
+        _traj_task("b2", "t3"),
+        _traj_task("b9", "out-of-scope"),  # no label row: must not join
+        _traj_task("b2", "t3"),  # duplicate key: counted, last wins
+    ]
+    joined, cov = join_task_traj(labels, traj)
+    assert len(joined) == 3
+    assert cov["n_matched"] == 2
+    assert cov["n_unmatched_labels"] == 1
+    assert cov["unmatched_label_keys"] == ["b1|t2"]
+    assert cov["n_task_traj_not_in_labels"] == 1
+    assert cov["n_duplicate_task_traj_keys"] == 1
+    assert abs(cov["match_rate"] - 2 / 3) < 1e-9
+    by_key = {(r["benchmark"], r["task_name"]): r for r in joined}
+    assert by_key[("b1", "t1")]["traj"]["frontier"]["n_steps_mean"] == 5.0
+    assert by_key[("b1", "t2")]["traj"] is None
+
+
+def test_benchmark_family_grouping():
+    assert benchmark_family("swebench-verified") == "swe_family"
+    assert benchmark_family("swe-lancer") == "swe_family"
+    assert benchmark_family("multi-swe-bench") == "swe_family"
+    assert benchmark_family("terminal-bench") == "terminal_family"
+    assert benchmark_family("skillsbench") == "terminal_family"
+    assert benchmark_family("compilebench") == "terminal_family"
+    assert benchmark_family("aime") == "math_qa_family"
+    assert benchmark_family("arc-agi-2") == "math_qa_family"
+    # Everything else folds by benchmark.
+    assert benchmark_family("gaia") == "gaia"
+    assert benchmark_family("dacode") == "dacode"
+    # Families are disjoint and every member maps back.
+    seen = set()
+    for _fam, members in BENCHMARK_FAMILIES:
+        assert not (members & seen)
+        seen |= members
+        for b in members:
+            assert benchmark_family(b) == _fam
+
+
+def test_frontier_failed_test_stats(tmp_path):
+    agent, model = FRONTIER_CELLS[0]
+    agent2, model2 = FRONTIER_CELLS[1]
+    rows = [
+        # task t1: 4 frontier trials, 3 failing; all 3 contain test_a
+        {"benchmark": "b1", "task_name": "t1", "agent": agent, "model": model,
+         "in_scope": True, "n_tests_failed": 2, "failed_test_names": ["test_a", "test_b"]},
+        {"benchmark": "b1", "task_name": "t1", "agent": agent2, "model": model2,
+         "in_scope": True, "n_tests_failed": 1, "failed_test_names": ["test_a"]},
+        {"benchmark": "b1", "task_name": "t1", "agent": agent, "model": model,
+         "in_scope": True, "n_tests_failed": 1, "failed_test_names": ["test_a"]},
+        {"benchmark": "b1", "task_name": "t1", "agent": agent, "model": model,
+         "in_scope": True, "n_tests_failed": 0, "failed_test_names": []},
+        # non-frontier cell: ignored entirely
+        {"benchmark": "b1", "task_name": "t1", "agent": "openhands", "model": "x",
+         "in_scope": True, "n_tests_failed": 3, "failed_test_names": ["test_z"]},
+        # out of scope: ignored
+        {"benchmark": "b1", "task_name": "t9", "agent": agent, "model": model,
+         "in_scope": False, "n_tests_failed": 2, "failed_test_names": ["test_q"]},
+        # task t2: failing but not in `pairs` when filtered
+        {"benchmark": "b1", "task_name": "t2", "agent": agent, "model": model,
+         "in_scope": True, "n_tests_failed": 1, "failed_test_names": ["test_c"]},
+    ]
+    p = tmp_path / "traj.jsonl"
+    p.write_text("".join(json.dumps(r) + "\n" for r in rows))
+
+    stats = frontier_failed_test_stats(p)
+    s = stats[("b1", "t1")]
+    assert s["n_frontier_trials_seen"] == 4
+    assert s["n_failing_frontier_trials"] == 3
+    assert s["n_distinct_failed_tests"] == 2
+    assert s["top_failed_test"] == "test_a"
+    assert abs(s["top_failed_share"] - 1.0) < 1e-9  # 3 of 3 failing contain test_a
+    assert stats[("b1", "t2")]["top_failed_test"] == "test_c"
+    assert ("b1", "t9") not in stats
+
+    only_t1 = frontier_failed_test_stats(p, pairs={("b1", "t1")})
+    assert set(only_t1) == {("b1", "t1")}
+
+
+def test_fit_logit_fast_matches_stdlib():
+    # Same model class: coefficients and scores agree with fit_logit.
+    import random as _r
+
+    rng = _r.Random(7)
+    X = [[rng.gauss(0, 1), rng.gauss(1, 2), rng.uniform(0, 1)] for _ in range(300)]
+    y = [1 if row[0] + 0.3 * row[1] + rng.gauss(0, 1) > 1.0 else 0 for row in X]
+    m_slow = fit_logit(X, y)
+    m_fast = _fit_logit_fast(X, y)
+    assert m_fast["ok"] and m_slow["ok"]
+    assert abs(m_fast["intercept"] - m_slow["intercept"]) < 1e-6
+    for a, b in zip(m_fast["coef"], m_slow["coef"]):
+        assert abs(a - b) < 1e-6

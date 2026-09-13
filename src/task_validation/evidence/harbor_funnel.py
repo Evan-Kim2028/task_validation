@@ -20,11 +20,13 @@ from __future__ import annotations
 import json
 import math
 import random
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 
 from task_validation.evidence.footprint import (
+    LOGIT_L2,
+    LOGIT_MAX_ITER,
     design_matrix,
     fit_logit,
     predict_logit,
@@ -42,6 +44,10 @@ LABELS_PATH = GOLD / "harbor_funnel_labels.jsonl"
 STRATA_PATH = GOLD / "harbor_index_strata.json"
 MAPPER_JSON_PATH = GOLD / "harbor_funnel_mapper.json"
 MAPPER_PNG_PATH = GOLD / "harbor_funnel_mapper.png"
+TASK_TRAJ_PATH = GOLD / "harbor_adapter_task_traj.jsonl"
+TRAJ_TRIALS_PATH = GOLD / "harbor_adapter_traj.jsonl"
+TRAJ_EVAL_PATH = GOLD / "harbor_funnel_traj_eval.json"
+HIDDEN_REQ_PATH = GOLD / "harbor_funnel_hidden_requirement.jsonl"
 
 PROTOCOL = "harbor_index_funnel.reconstructed.2026-09-13"
 
@@ -513,26 +519,88 @@ def _label_vector(records: list[dict], label: str) -> tuple[list[int], list[dict
     return y, rows
 
 
+def _fit_logit_fast(X: list[list[float]], y: list[int]) -> dict:
+    """numpy mirror of footprint.fit_logit: same class weights, IRLS with L2
+    on coefficients only, same iteration cap and convergence tolerance. Used
+    for the doc 54 feature-set grid where the pure-Python path is too slow.
+    """
+    import numpy as np
+
+    n = len(y)
+    if not n:
+        return {"coef": [], "intercept": 0.0, "ok": False, "reason": "empty"}
+    n_pos = sum(y)
+    n_neg = n - n_pos
+    pdim = len(X[0]) if X else 0
+    if n_pos == 0 or n_neg == 0:
+        p = n_pos / n
+        intercept = (
+            math.log(p / (1.0 - p)) if 0.0 < p < 1.0 else (10.0 if p >= 1 else -10.0)
+        )
+        return {
+            "coef": [0.0] * pdim,
+            "intercept": intercept,
+            "ok": False,
+            "reason": "constant_y",
+        }
+    Xa = np.asarray(X, dtype=float)
+    ya = np.asarray(y, dtype=float)
+    X1 = np.concatenate([np.ones((n, 1)), Xa], axis=1)
+    w_obs = np.where(ya == 1.0, n / (2.0 * n_pos), n / (2.0 * n_neg))
+    beta = np.zeros(pdim + 1)
+    for _ in range(LOGIT_MAX_ITER):
+        eta = X1 @ beta
+        p_hat = 1.0 / (1.0 + np.exp(-np.clip(eta, -60.0, 60.0)))
+        pc = np.clip(p_hat, 1e-6, 1.0 - 1e-6)
+        wi = w_obs * pc * (1.0 - pc)
+        z = eta + (ya - pc) / (pc * (1.0 - pc))
+        WX = X1 * wi[:, None]
+        A = X1.T @ WX
+        bvec = WX.T @ z
+        A[range(1, pdim + 1), range(1, pdim + 1)] += LOGIT_L2
+        try:
+            sol = np.linalg.solve(A, bvec)
+        except np.linalg.LinAlgError:
+            break
+        delta = float(((sol - beta) ** 2).sum())
+        beta = sol
+        if delta < 1e-10:
+            break
+    return {
+        "coef": beta[1:].tolist(),
+        "intercept": float(beta[0]),
+        "ok": True,
+        "reason": None,
+    }
+
+
 def eval_label(
     rows: list[dict],
     y: list[int],
     feature_names: tuple[str, ...] = EXEC_FEATURES,
+    *,
+    fold_key: str = "benchmark",
+    fitter=fit_logit,
+    seed: int = 20260913,
 ) -> dict:
-    """Leave-one-benchmark-out logistic AUROC plus naive pooled contrast.
+    """Leave-one-fold-out logistic AUROC plus naive pooled contrast.
 
-    Same model class as doc 40: median imputation, missingness indicators,
-    standardized design matrix, L2 logit (fit_logit in footprint.py).
+    Folds are the distinct values of rows[i][fold_key]; the default
+    "benchmark" reproduces doc 52, "family" gives the doc 54
+    leave-one-benchmark-family-out variant. Same model class as doc 40:
+    median imputation, missingness indicators, standardized design matrix,
+    L2 logit (fit_logit in footprint.py, or its numpy mirror).
     """
-    by_bench = defaultdict(list)
+    by_fold = defaultdict(list)
     for i, r in enumerate(rows):
-        by_bench[r["benchmark"]].append(i)
+        by_fold[r[fold_key]].append(i)
 
     oof = [None] * len(rows)
     fold_aurocs = {}
     n_undefined = 0
-    for bench in sorted(by_bench):
-        test_set = set(by_bench[bench])
-        test_idx = by_bench[bench]
+    for fold in sorted(by_fold):
+        test_set = set(by_fold[fold])
+        test_idx = by_fold[fold]
         train_idx = [i for i in range(len(rows)) if i not in test_set]
         train_rows = [rows[i] for i in train_idx]
         test_rows = [rows[i] for i in test_idx]
@@ -540,7 +608,7 @@ def eval_label(
         yte = [y[i] for i in test_idx]
         Xtr, stats = design_matrix(train_rows, feature_names)
         Xte, _ = design_matrix(test_rows, feature_names, stats=stats)
-        model = fit_logit(Xtr, ytr)
+        model = fitter(Xtr, ytr)
         scores = predict_logit(model, Xte)
         for i, s in zip(test_idx, scores):
             oof[i] = s
@@ -548,12 +616,12 @@ def eval_label(
         if a is None:
             n_undefined += 1
         else:
-            fold_aurocs[bench] = a
+            fold_aurocs[fold] = a
 
-    boot = bootstrap_auroc(y, [s for s in oof], n_reps=400, seed=20260913)
+    boot = bootstrap_auroc(y, [s for s in oof], n_reps=400, seed=seed)
     # Naive pooled: fit and score on all rows.
     Xall, _ = design_matrix(rows, feature_names)
-    pooled_model = fit_logit(Xall, y)
+    pooled_model = fitter(Xall, y)
     pooled_scores = predict_logit(pooled_model, Xall)
     pooled = auroc(y, pooled_scores)
     return {
@@ -562,7 +630,8 @@ def eval_label(
         "lobo_auroc": boot["value"],
         "lobo_ci95": boot["ci95"],
         "pooled_auroc": pooled,
-        "n_folds": len(by_bench),
+        "fold_key": fold_key,
+        "n_folds": len(by_fold),
         "n_folds_undefined_auroc": n_undefined,
         "fold_aurocs": fold_aurocs,
     }
@@ -586,6 +655,475 @@ def eval_solve_rate_only(records: list[dict]) -> dict:
     boot = bootstrap_auroc(y, scores, n_reps=400, seed=20260913)
     return {"n": len(y), "n_pos": sum(y), "auroc_neg_rate": boot["value"], "ci95": boot["ci95"],
             "auroc_raw_rate": auroc(y, [r["frontier_solve_rate"] for r in rows])}
+
+
+# --- Doc 54: trajectory and verifier feature extension ---------------------
+#
+# Group A is the doc 52 execution set (EXEC_FEATURES from stage-1 records).
+# Groups B, C, D come from the trajectory extract: B and the rate half of C
+# and all of D are read off the "frontier" bundle of
+# harbor_adapter_task_traj.jsonl (all frontier-cell trials in the dump, not
+# only the 18 stage-1-selected). The two failed-test signature features
+# (share of failing frontier trials sharing the single most common failed
+# test; distinct failed tests) are not in the per-task aggregate, so they are
+# recomputed by streaming harbor_adapter_traj.jsonl restricted to the six
+# frontier cells.
+
+_FRONTIER_BUNDLE_MAP = {
+    "traj_n_steps_mean": "n_steps_mean",
+    "traj_n_tool_calls_mean": "n_tool_calls_mean",
+    "traj_assistant_chars_mean": "total_assistant_chars_mean",
+    "traj_observation_chars_mean": "total_observation_chars_mean",
+    "traj_hit_timeout_rate": "hit_timeout_rate",
+    "traj_exception_rate": "exception_rate",
+    "traj_agent_wall_sec_mean": "agent_wall_sec_mean",
+    "ver_has_report_json_rate": "has_report_json_rate",
+    "ver_n_tests_total_mean": "n_tests_total_mean",
+    "ver_n_tests_failed_mean": "n_tests_failed_mean",
+    "ver_reward_partial_rate": "reward_partial_rate",
+    "shortcut_answer_file_rate": "mentions_answer_file_rate",
+    "shortcut_git_probe_rate": "git_history_probe_rate",
+    "shortcut_network_fetch_rate": "network_fetch_rate",
+}
+TRAJ_FEATURES = (
+    "traj_n_steps_mean",
+    "traj_n_tool_calls_mean",
+    "traj_assistant_chars_mean",
+    "traj_observation_chars_mean",
+    "traj_hit_timeout_rate",
+    "traj_exception_rate",
+    "traj_agent_wall_sec_mean",
+)
+VERIFIER_FEATURES = (
+    "ver_has_report_json_rate",
+    "ver_n_tests_total_mean",
+    "ver_n_tests_failed_mean",
+    "ver_reward_partial_rate",
+    "ver_top_failed_share",
+    "ver_n_distinct_failed_tests",
+)
+SHORTCUT_FEATURES = (
+    "shortcut_answer_file_rate",
+    "shortcut_git_probe_rate",
+    "shortcut_network_fetch_rate",
+)
+FEATURE_GROUPS = {
+    "A": EXEC_FEATURES,
+    "B": TRAJ_FEATURES,
+    "C": VERIFIER_FEATURES,
+    "D": SHORTCUT_FEATURES,
+}
+FEATURE_SETS = {
+    "A": EXEC_FEATURES,
+    "A+B": EXEC_FEATURES + TRAJ_FEATURES,
+    "A+B+C": EXEC_FEATURES + TRAJ_FEATURES + VERIFIER_FEATURES,
+    "A+B+C+D": EXEC_FEATURES + TRAJ_FEATURES + VERIFIER_FEATURES + SHORTCUT_FEATURES,
+    "B+C+D": TRAJ_FEATURES + VERIFIER_FEATURES + SHORTCUT_FEATURES,
+}
+# Leave-one-benchmark-FAMILY-out grouping (doc 54): benchmarks that share a
+# generator or task family count as one fold, so held-out scores cannot ride
+# on within-family source recognition. Everything else folds by benchmark.
+SWE_FAMILY = frozenset(
+    {
+        "swebench-verified",
+        "swebenchpro",
+        "swesmith",
+        "swebench-multilingual",
+        "swtbench",
+        "multi-swe-bench",
+        "swe-lancer",
+    }
+)
+TERMINAL_FAMILY = frozenset({"terminal-bench", "skillsbench", "compilebench"})
+MATH_QA_FAMILY = frozenset(
+    {
+        "aime",
+        "omnimath",
+        "ineqmath",
+        "gpqa-diamond",
+        "hle",
+        "simpleqa",
+        "mmmlu",
+        "arc-agi-2",
+    }
+)
+BENCHMARK_FAMILIES = (
+    ("swe_family", SWE_FAMILY),
+    ("terminal_family", TERMINAL_FAMILY),
+    ("math_qa_family", MATH_QA_FAMILY),
+)
+_BENCH_TO_FAMILY = {b: fam for fam, members in BENCHMARK_FAMILIES for b in members}
+_FRONTIER_CELL_SET = frozenset(FRONTIER_CELLS)
+
+STOP_RULE_THRESHOLD = 0.65  # doc 45 stop rule for survived_2_to_4
+MIN_FAILING_FRONTIER_TRIALS = 6  # doc 54 hidden-requirement flag
+
+
+def benchmark_family(benchmark: str) -> str:
+    """Fold key for the family variant; unmatched benchmarks fold alone."""
+    return _BENCH_TO_FAMILY.get(benchmark, benchmark)
+
+
+def join_task_traj(
+    label_rows: list[dict], task_traj_rows: list[dict]
+) -> tuple[list[dict], dict]:
+    """Left-join per-task trajectory aggregates onto label rows.
+
+    Key is (benchmark, task_name). Unmatched label rows keep "traj" = None;
+    their B/C/D features stay missing and surface as imputation plus
+    missingness indicators in the eval matrix.
+    """
+    by_pair: dict[tuple[str, str], dict] = {}
+    n_dup = 0
+    for r in task_traj_rows:
+        key = (r["benchmark"], r["task_name"])
+        if key in by_pair:
+            n_dup += 1
+        by_pair[key] = r
+    label_keys = {(r["benchmark"], r["task_name"]) for r in label_rows}
+    joined, missing = [], []
+    for lab in label_rows:
+        key = (lab["benchmark"], lab["task_name"])
+        rec = dict(lab)
+        rec["traj"] = by_pair.get(key)
+        if rec["traj"] is None:
+            missing.append(key)
+        joined.append(rec)
+    coverage = {
+        "n_label_rows": len(label_rows),
+        "n_task_traj_rows": len(task_traj_rows),
+        "n_matched": len(label_rows) - len(missing),
+        "n_unmatched_labels": len(missing),
+        "unmatched_label_keys": [f"{b}|{t}" for b, t in missing],
+        "n_task_traj_not_in_labels": sum(
+            1 for k in by_pair if k not in label_keys
+        ),
+        "n_duplicate_task_traj_keys": n_dup,
+        "match_rate": (len(label_rows) - len(missing)) / len(label_rows)
+        if label_rows
+        else None,
+    }
+    return joined, coverage
+
+
+def frontier_failed_test_stats(
+    path: Path = TRAJ_TRIALS_PATH,
+    pairs: set[tuple[str, str]] | None = None,
+) -> dict:
+    """Stream per-trial rows; per task: failing-frontier count, distinct
+    failed tests, and the share of failing frontier trials containing the
+    single most common failed test (the hidden-requirement signature).
+
+    A failing trial is one with n_tests_failed > 0; failed test names are
+    per-trial deduped upstream, so a Counter value is a trial count.
+    """
+    states: dict[tuple[str, str], dict] = {}
+    with Path(path).open(encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if not r.get("in_scope"):
+                continue
+            if (r.get("agent"), r.get("model")) not in _FRONTIER_CELL_SET:
+                continue
+            key = (r["benchmark"], r["task_name"])
+            if pairs is not None and key not in pairs:
+                continue
+            st = states.get(key)
+            if st is None:
+                st = {"n_frontier": 0, "n_failing": 0, "failed": Counter()}
+                states[key] = st
+            st["n_frontier"] += 1
+            if (r.get("n_tests_failed") or 0) > 0:
+                st["n_failing"] += 1
+                for name in r.get("failed_test_names") or []:
+                    st["failed"][name] += 1
+    out = {}
+    for key, st in states.items():
+        top_name, top_n = (st["failed"].most_common(1)[0] if st["failed"] else (None, 0))
+        nf = st["n_failing"]
+        out[key] = {
+            "n_frontier_trials_seen": st["n_frontier"],
+            "n_failing_frontier_trials": nf,
+            "n_distinct_failed_tests": len(st["failed"]),
+            "top_failed_test": top_name,
+            "top_failed_share": (top_n / nf) if nf else None,
+        }
+    return out
+
+
+def build_traj_eval_records(
+    label_rows: list[dict],
+    stage1_rows: list[dict],
+    task_traj_rows: list[dict],
+    failed_stats: dict,
+) -> tuple[list[dict], dict]:
+    """Merge labels + stage-1 (A) + trajectory/verifier/shortcut features.
+
+    Returns (records, join_coverage). Each record carries a flat "features"
+    dict spanning groups A-D; unmatched trajectory rows leave B/C/D missing.
+    """
+    joined, coverage = join_task_traj(label_rows, task_traj_rows)
+    stage1_by_pair = {(r["benchmark"], r["task_name"]): r for r in stage1_rows}
+    n_surv_matched = 0
+    n_funnel_matched = 0
+    records = []
+    for rec in joined:
+        lab = {k: rec[k] for k in rec if k != "traj"}
+        key = (lab["benchmark"], lab["task_name"])
+        t = rec["traj"]
+        if t is not None and lab.get("survived_stage1"):
+            n_surv_matched += 1
+        if t is not None and lab.get("survived_funnel"):
+            n_funnel_matched += 1
+        fb = (t or {}).get("frontier") or {}
+        fs = failed_stats.get(key) or {}
+        s1 = stage1_by_pair.get(key) or {}
+        feats = {k: s1.get(k) for k in EXEC_FEATURES}
+        for dst, src in _FRONTIER_BUNDLE_MAP.items():
+            feats[dst] = fb.get(src)
+        feats["ver_top_failed_share"] = fs.get("top_failed_share")
+        nd = fs.get("n_distinct_failed_tests")
+        feats["ver_n_distinct_failed_tests"] = float(nd) if nd is not None else None
+        records.append(
+            {
+                "benchmark": lab["benchmark"],
+                "task_name": lab["task_name"],
+                "family": benchmark_family(lab["benchmark"]),
+                "index_task_id": lab.get("index_task_id"),
+                "survived_stage1": lab["survived_stage1"],
+                "survived_funnel": lab["survived_funnel"],
+                "survived_2_to_4": lab["survived_2_to_4"],
+                "frontier_solve_rate": s1.get("frontier_solve_rate"),
+                "n_failing_frontier_trials": fs.get("n_failing_frontier_trials", 0),
+                "n_frontier_trials_seen": fs.get("n_frontier_trials_seen", 0),
+                "n_distinct_failed_tests": fs.get("n_distinct_failed_tests", 0),
+                "top_failed_test": fs.get("top_failed_test"),
+                "top_failed_share": fs.get("top_failed_share"),
+                "features": feats,
+            }
+        )
+    coverage["n_stage1_survivors_matched"] = n_surv_matched
+    coverage["n_survived_funnel_matched"] = n_funnel_matched
+    return records, coverage
+
+
+def hidden_requirement_flags(
+    records: list[dict],
+    min_failing: int = MIN_FAILING_FRONTIER_TRIALS,
+    top_n: int = 20,
+) -> list[dict]:
+    """Stage-1 survivors whose failing frontier trials concentrate on one
+    test: a candidate machine flag for broken tasks stage 2 should catch.
+
+    Ordered by share of failing frontier trials containing the most common
+    failed test, then by failing-trial count, then key. Eval-only evidence;
+    never a bound input (doc 43).
+    """
+    cands = [
+        r
+        for r in records
+        if r["survived_stage1"]
+        and r["n_failing_frontier_trials"] >= min_failing
+        and r["top_failed_share"] is not None
+    ]
+    cands.sort(
+        key=lambda r: (
+            -r["top_failed_share"],
+            -r["n_failing_frontier_trials"],
+            r["benchmark"],
+            r["task_name"],
+        )
+    )
+    out = []
+    for rank, r in enumerate(cands[:top_n], start=1):
+        out.append(
+            {
+                "rank": rank,
+                "benchmark": r["benchmark"],
+                "task_name": r["task_name"],
+                "index_task_id": r["index_task_id"],
+                "survived_funnel": r["survived_funnel"],
+                "survived_2_to_4": r["survived_2_to_4"],
+                "frontier_solve_rate": r["frontier_solve_rate"],
+                "n_frontier_trials_seen": r["n_frontier_trials_seen"],
+                "n_failing_frontier_trials": r["n_failing_frontier_trials"],
+                "n_distinct_failed_tests": r["n_distinct_failed_tests"],
+                "top_failed_test": r["top_failed_test"],
+                "top_failed_share": r["top_failed_share"],
+                "protocol": PROTOCOL,
+                "evidence_grade": "eval-only candidate flag (doc 43, doc 54)",
+            }
+        )
+    return out
+
+
+def _load_jsonl(path: Path) -> list[dict]:
+    rows = []
+    with Path(path).open(encoding="utf-8") as fh:
+        for line in fh:
+            if line.strip():
+                rows.append(json.loads(line))
+    return rows
+
+
+def run_traj_eval(
+    labels_path: Path = LABELS_PATH,
+    stage1_path: Path = STAGE1_PATH,
+    task_traj_path: Path = TASK_TRAJ_PATH,
+    traj_trials_path: Path = TRAJ_TRIALS_PATH,
+    out_json: Path = TRAJ_EVAL_PATH,
+    out_hidden: Path = HIDDEN_REQ_PATH,
+) -> dict:
+    """Doc 54 pipeline: join, feature groups A-D, LOBO + family LOFO evals,
+    univariate table, stop-rule application, hidden-requirement flags."""
+    label_rows = _load_jsonl(labels_path)
+    stage1_rows = _load_jsonl(stage1_path)
+    task_traj_rows = _load_jsonl(task_traj_path)
+    label_pairs = {(r["benchmark"], r["task_name"]) for r in label_rows}
+    print(f"[traj_eval] labels={len(label_rows)} task_traj={len(task_traj_rows)}")
+    failed_stats = frontier_failed_test_stats(traj_trials_path, pairs=label_pairs)
+    print(f"[traj_eval] failed-test stats for {len(failed_stats)} tasks")
+    records, coverage = build_traj_eval_records(
+        label_rows, stage1_rows, task_traj_rows, failed_stats
+    )
+    coverage["n_stage1_survivors"] = sum(
+        1 for r in records if r["survived_stage1"]
+    )
+    coverage["n_survived_funnel"] = sum(
+        1 for r in records if r["survived_funnel"]
+    )
+
+    evals: dict = {}
+    for label in ("survived_2_to_4", "survived_funnel"):
+        y, rows = _label_vector(records, label)
+        per_label = {}
+        for set_name, feats in FEATURE_SETS.items():
+            per_label[set_name] = {
+                "lobo": eval_label(
+                    rows, y, feats, fold_key="benchmark", fitter=_fit_logit_fast
+                ),
+                "lofo": eval_label(
+                    rows, y, feats, fold_key="family", fitter=_fit_logit_fast
+                ),
+            }
+            print(
+                f"[traj_eval] {label} {set_name} "
+                f"lobo={per_label[set_name]['lobo']['lobo_auroc']:.4f} "
+                f"lofo={per_label[set_name]['lofo']['lobo_auroc']:.4f}",
+                flush=True,
+            )
+        evals[label] = per_label
+
+    y24, rows24 = _label_vector(records, "survived_2_to_4")
+    yfun, rowsfun = _label_vector(records, "survived_funnel")
+    all_feats = FEATURE_SETS["A+B+C+D"]
+    univariate = []
+    for f in all_feats:
+        group = next(g for g, fs in FEATURE_GROUPS.items() if f in fs)
+        e24 = eval_label(
+            rows24, y24, (f,), fold_key="benchmark", fitter=_fit_logit_fast
+        )
+        efun = eval_label(
+            rowsfun, yfun, (f,), fold_key="benchmark", fitter=_fit_logit_fast
+        )
+        univariate.append(
+            {
+                "feature": f,
+                "group": group,
+                "survived_2_to_4_lobo_auroc": e24["lobo_auroc"],
+                "survived_funnel_lobo_auroc": efun["lobo_auroc"],
+            }
+        )
+    univariate.sort(
+        key=lambda d: -(d["survived_2_to_4_lobo_auroc"] or 0.0)
+    )
+
+    flags = hidden_requirement_flags(records)
+    n_flag_among_82 = sum(1 for f in flags if f["survived_funnel"])
+    with out_hidden.open("w", encoding="utf-8") as fh:
+        for row in flags:
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+    n_eligible = sum(
+        1
+        for r in records
+        if r["survived_stage1"]
+        and r["n_failing_frontier_trials"] >= MIN_FAILING_FRONTIER_TRIALS
+    )
+    signature_computable = [
+        {
+            "benchmark": k[0],
+            "task_name": k[1],
+            "n_failing_frontier_trials": v["n_failing_frontier_trials"],
+            "n_distinct_failed_tests": v["n_distinct_failed_tests"],
+            "top_failed_test": v["top_failed_test"],
+            "top_failed_share": v["top_failed_share"],
+            "survived_stage1": next(
+                r["survived_stage1"]
+                for r in records
+                if (r["benchmark"], r["task_name"]) == k
+            ),
+        }
+        for k, v in failed_stats.items()
+        if v["n_failing_frontier_trials"] > 0
+    ]
+
+    headline = evals["survived_2_to_4"]["A+B+C+D"]["lofo"]
+    stop = {
+        "rule": "doc 45: LOBO AUROC for survived_2_to_4 under 0.65 means the funnel footprint is benchmark identity and the plan stops",
+        "applied_to": "leave-one-benchmark-family-out AUROC, survived_2_to_4, feature set A+B+C+D",
+        "threshold": STOP_RULE_THRESHOLD,
+        "value": headline["lobo_auroc"],
+        "ci95": headline["lobo_ci95"],
+        "triggers": bool(
+            headline["lobo_auroc"] is not None
+            and headline["lobo_auroc"] < STOP_RULE_THRESHOLD
+        ),
+    }
+    stop["decision"] = (
+        "STOP: the family-held-out footprint is benchmark identity"
+        if stop["triggers"]
+        else "CONTINUE: letter of the stop rule not met at family granularity"
+    )
+
+    out = {
+        "protocol": PROTOCOL,
+        "inputs": {
+            "labels": str(labels_path),
+            "stage1": str(stage1_path),
+            "task_traj": str(task_traj_path),
+            "traj_trials": str(traj_trials_path),
+        },
+        "join_coverage": coverage,
+        "feature_groups": {k: list(v) for k, v in FEATURE_GROUPS.items()},
+        "feature_sets": {k: list(v) for k, v in FEATURE_SETS.items()},
+        "benchmark_families": {
+            fam: sorted(members) for fam, members in BENCHMARK_FAMILIES
+        },
+        "evals": evals,
+        "univariate_lobo": univariate,
+        "stop_rule": stop,
+        "hidden_requirement": {
+            "path": str(out_hidden),
+            "min_failing_frontier_trials": MIN_FAILING_FRONTIER_TRIALS,
+            "n_flagged": len(flags),
+            "n_flagged_among_82": n_flag_among_82,
+            "n_flagged_rejected": len(flags) - n_flag_among_82,
+            "n_stage1_survivors_eligible": n_eligible,
+            "signature_computable_tasks": signature_computable,
+            "coverage_note": (
+                "Named failed tests exist only for skillsbench in this "
+                "extract: _report_stats parses pytest-style report.json, and "
+                "the swebench-verified and spreadsheetbench reports use other "
+                "schemas (40,093 in-scope rows carry report.json; 133 carry "
+                "parsed failed test names, all skillsbench). The flag is "
+                "therefore unevaluable on the survivor population."
+            ),
+        },
+    }
+    out_json.write_text(json.dumps(out, indent=1, sort_keys=False) + "\n")
+    return out
 
 
 def build_mapper(
@@ -757,4 +1295,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == "traj-eval":
+        run_traj_eval()
+    else:
+        main()

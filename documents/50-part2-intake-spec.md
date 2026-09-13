@@ -81,7 +81,7 @@ Report the prior with its held-out error, never as a bound. Held-out curated-vs-
 
 The lot dossier carries a Mapper coverage picture over the footprint features with solve rate as the lens (doc 45 step 5). It is diagnostic only: parameter-sensitive, no inference, never a gate and never a bound.
 
-Result 2026-09-13 (doc 52): the funnel reconstructed from the public dump matches the published stage-1 count within 1.5 percent, but execution-only features rank stage 2 to 4 survival at leave-one-benchmark-out AUROC 0.71 with a lower bound at the 0.65 stop line, and stage-1 solve rate alone is at chance inside the band. Until per-task content and trajectory features are added, the funnel prior is a benchmark-provenance sanity check, not a per-task taste score.
+Result 2026-09-13 (doc 52): the funnel reconstructed from the public dump matches the published stage-1 count within 1.5 percent, but execution-only features rank stage 2 to 4 survival at leave-one-benchmark-out AUROC 0.71 with a lower bound at the 0.65 stop line, and stage-1 solve rate alone is at chance inside the band. Doc 54 then added trajectory, verifier and shortcut features: held-out AUROC fell to 0.61 with benchmark families held out while pooled AUROC rose, and the doc 45 stop rule triggered. The funnel is not a per-task taste prior. Stage 8 keeps only the curated-vs-generated membership footprint from doc 40 and the funnel labels as provenance context.
 
 ## 9. Certificate and dossier
 
