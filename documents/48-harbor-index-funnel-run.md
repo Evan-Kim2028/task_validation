@@ -68,3 +68,7 @@ setsid nohup env PYTHONPATH=src .venv/bin/python -m task_validation.cli \
 ## Relaunch 2026-09-13
 
 The 40 GB budget in doc 45 was a guess and is withdrawn. Streaming shard-at-a-time keeps disk at one shard (up to 3.5 GB), so the real cost is bandwidth, about 327 GB at roughly 19 MB/s, five to six hours. The fetch was relaunched with `--budget-gb 350` under a user unit `tv-funnel-fetch` with MemoryHigh 6G and MemoryMax 8G, because one shard is held in memory and peaked at 3.1 GB. It is resume-aware. Log: `logs/harbor_funnel_fetch.log`. Output: `data/gold/harbor_funnel_rewards.jsonl`. Status: `systemctl --user status tv-funnel-fetch`.
+
+## Moved to lake-vps-lor-main 2026-09-13
+
+Decision (Evan): keep the whole dump, not just the extracted rewards, so later questions can be answered without refetching. The home fetch was stopped at 275 of 471 shards (182 GB streamed, 107,977 trial rows in `data/gold/harbor_funnel_rewards.jsonl`, kept as a partial). The full dataset `kendx/Harbor-Adapter` (495 files, about 340 GB) is downloading on lake-vps-lor-main as user evan into `/home/evan/harbor-adapter-dump` via `snapshot_download` with hf_transfer and 8 workers, under user unit `tv-harbor-dump` with MemoryHigh 6G, MemoryMax 8G, IOWeight 50, CPUWeight 50 so the lakehouse timers keep priority. Measured throughput 193 MB/s on 8 streams against 29 MB/s single-stream at home. Extraction of rewards runs on the VPS from local files afterwards; only the rewards table comes back to this repo. Fetcher code and manifest are at `/home/evan/task_validation` on the VPS.
