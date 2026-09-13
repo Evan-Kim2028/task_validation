@@ -60,3 +60,5 @@ SWE-Mutation (2,636 mutants from 800 instances). ProgramBench (200 rebuilds, 248
 ## What we will not claim
 
 We will not claim automated benchmark QA is new. We will not claim Harbor-Index did not already funnel with AI plus humans. We will claim an end-to-end finite-population certification of *task validity* with coverage-checked bounds and an explicit human-budget / precision tradeoff. The 2026 search did not find that demonstration on agent-eval tasks.
+
+The September 2026 generation, QC, and transfer-statistics frontier and our positioning are in [46-frontier-2026-09.md](46-frontier-2026-09.md).

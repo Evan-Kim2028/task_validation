@@ -30,3 +30,15 @@ Per doc 32, every per-lot certificate that contains non-execution verifiers adds
 ## What is not claimed
 
 A judge-verified stratum has no grade-A machine certificate. Running the judge measures verifier behavior; it does not adjudicate Y. The bound on a judge stratum is human-adjudicated, drawn under the same probability-sample design as every other stratum (doc 23 section 5, doc 32). A task with verifier_kind none contributes no execution evidence at all.
+
+## Implementation
+
+Runner: `src/task_validation/evidence/judge_verifier.py`, exposed as `task-validation interrogate-judge`. Detection is static: a task is judge-verified when `JUDGE_MODELS` or `JUDGE_REPEATS` appears in its `tests/` files or `task.toml`. The runner passes the declared judge env through `harbor run --verifier-env` and pulls the verifier's own detail JSON with `--verifier-include-logs *.json`, so per-model, per-repeat rewards land in `data/gold/harbor_index_judge.jsonl` next to the k=3 oracle and k=3 nop run rows. Missing keys produce `missing_judge_env` rows; nothing is run or imputed.
+
+Strata map: `data/gold/harbor_index_strata.json` assigns each of the 82 task ids a `verifier_kind` stratum from `data/gold/harbor_index_control.summary.json` plus detection. Counts: 53 execution, 16 judge, 13 none. The judge stratum is 16, not 15: `hle-shock-wave-density-profile` is judge-configured (same `native_judge.py` as the other hle tasks) but its control oracle went infra, so doc 28 counts it under infra, not under the judge outcome row.
+
+Certificate: `src/task_validation/sampling/certificate.py` now carries `verifier_kind`, `judge_model`, and `judge_agreement`, plus a `strata` count over the sample. A verdict that declares a different `verifier_kind` is unadjudicated in this certificate, so judge-verified units cannot pool into an execution bound. A judge certificate also requires `judge_model` on every counted unit and rejects `adjudicator=machine`, matching the no-machine-certificate rule above.
+
+Environment the 16 judge-configured tasks require, per task: `JUDGE_MODELS`, `JUDGE_REPEATS`, `JUDGE_CONCURRENCY`, and the provider key for each chosen model (`OPENAI_API_KEY` by default; `claude*` needs `ANTHROPIC_API_KEY`, `gemini*` needs `GEMINI_API_KEY` or `GOOGLE_API_KEY`, `deepseek*` needs `DEEPSEEK_API_KEY`). `omnimath-find-perfect-square-functions` defaults `JUDGE_MODELS` to `gpt-5` in its verifier code, so it needs `OPENAI_API_KEY` even unconfigured. `task-validation interrogate-judge --list` prints this audit per task.
+
+What ran (2026-09-13): detection, strata enumeration, and the env audit only. No `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `GOOGLE_API_KEY`, or `DEEPSEEK_API_KEY` is present in the environment, so no judge task was interrogated and `data/gold/harbor_index_judge.jsonl` does not exist until keys are supplied.

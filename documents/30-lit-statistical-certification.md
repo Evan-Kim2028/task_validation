@@ -126,3 +126,5 @@ Audits: Northcutt https://arxiv.org/abs/2103.14749 ; Gema et al. https://arxiv.o
 Classical (secondary; originals not opened): rule of three / ASTM E2334; Dodge-Romig LTPD; ANSI Z1.4; Stringer/MUS; Wald SPRT; Lan-DeMets 1983; Eick et al. 1992; Petersson et al. 2004; Rogan & Gladen 1978; Dawid & Skene 1979; Clopper & Pearson 1934; Särndal GREG via Mozer.
 
 Unverified: Task Verification Bench (OpenReview `QdDcI0Ftvo`); a paper literally titled "How many samples do you need to evaluate an LLM"; a paper literally titled "auditing with imperfect classifiers".
+
+The September 2026 generation, QC, and transfer-statistics frontier and our positioning are in [46-frontier-2026-09.md](46-frontier-2026-09.md).

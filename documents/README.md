@@ -49,6 +49,10 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [43-adr-model-orders-queue.md](43-adr-model-orders-queue.md) | Explanation | ADR: a model orders the review queue, never the bound; current agent and model rules |
 | [44-judge-verifier-protocol.md](44-judge-verifier-protocol.md) | How-to | You are certifying a pool with LLM-judge or no-reference tasks |
 | [45-harbor-index-funnel-footprint.md](45-harbor-index-funnel-footprint.md) | Explanation | Harbor-Index funnel reconstruction plan, labels, and footprint feasibility |
+| [46-frontier-2026-09.md](46-frontier-2026-09.md) | Explanation | September 2026 generation and QC frontier, transfer statistics, positioning table, decontamination and difficulty rules |
+| [47-swe-srs300-certificate.md](47-swe-srs300-certificate.md) | Reference | SWE-bench SRS-300 verifier certificate (partial prefix n=190, UCB 4.65%, release) and the 11-item machine-flag human queue |
+| [48-harbor-index-funnel-run.md](48-harbor-index-funnel-run.md) | Reference | Harbor-Index funnel reconstruction: manifest verified at 6,627, fetch plan and byte estimate |
+| [49-decontamination.md](49-decontamination.md) | Reference | 13-gram and Jaccard decontamination index over TB4, Harbor-Index, TB 2.1, SWE-bench Verified |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

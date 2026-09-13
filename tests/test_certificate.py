@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from task_validation.sampling.certificate import (
     SWE_EXEC_PROTOCOL,
     build_certificate,
@@ -248,3 +250,165 @@ def test_cli_writes_json_and_md(tmp_path: Path):
     text = md.read_text(encoding="utf-8")
     assert "Validity certificate" in text
     assert PROTOCOL in text
+
+
+def _judge_verdict(uid, invalid, *, model="judge-x-2026", agreement=None, protocol="judge.protocol.v0"):
+    row = _verdict(uid, invalid, protocol=protocol, adjudicator="human")
+    row["verifier_kind"] = "judge"
+    row["judge_model"] = model
+    row["judge_agreement"] = agreement or {
+        "reference": {"accepts": 3, "runs": 3},
+        "nop": {"rejects": 3, "runs": 3},
+    }
+    return row
+
+
+def test_judge_stratum_records_model_and_agreement():
+    ids = [f"j{i}" for i in range(4)]
+    verdicts = [_judge_verdict(uid, False) for uid in ids]
+    verdicts[1] = _judge_verdict(
+        "j1",
+        True,
+        agreement={
+            "reference": {"accepts": 1, "runs": 3},
+            "nop": {"rejects": 3, "runs": 3},
+        },
+    )
+    cert = build_certificate(
+        _manifest(ids, n_pop=10),
+        verdicts,
+        0.60,
+        "judge.protocol.v0",
+        "human",
+        verifier_kind="judge",
+    )
+    assert cert["complete"] is True
+    assert cert["verifier_kind"] == "judge"
+    assert cert["judge_model"] == ["judge-x-2026"]
+    assert cert["judge_agreement"]["j1"]["reference"]["accepts"] == 1
+    assert cert["judge_agreement"]["j0"]["nop"]["rejects"] == 3
+    assert cert["strata"] == {"judge": 4}
+    assert cert["k_invalid"] == 1
+    md = render_certificate_md(cert)
+    assert "Verifier kind: judge" in md
+    assert "judge-x-2026" in md
+    assert "Judge agreement" in md
+
+
+def test_judge_verdicts_never_pool_into_execution_stratum():
+    ids = ["e0", "e1", "j0", "j1"]
+    verdicts = [
+        _verdict("e0", False),
+        _verdict("e1", False),
+        _judge_verdict("j0", False, protocol=PROTOCOL),
+        _judge_verdict("j1", False, protocol=PROTOCOL),
+    ]
+    cert = build_certificate(
+        _manifest(ids, n_pop=20), verdicts, 0.05, PROTOCOL, "human"
+    )
+    assert cert["complete"] is False
+    assert set(cert["unadjudicated"]) == {"j0", "j1"}
+    assert "verifier_kind" in cert["unadjudicated_reasons"]["j0"]
+    assert cert["strata"] == {"execution": 2, "judge": 2}
+    # The judge units did not enter the bound: k and p_hat stay uncomputed.
+    assert cert["k_invalid"] is None
+
+    # Splitting the strata makes the judge certificate complete.
+    j_verdicts = [
+        _judge_verdict("j0", False, protocol=PROTOCOL),
+        _judge_verdict("j1", False, protocol=PROTOCOL),
+    ]
+    j_cert = build_certificate(
+        _manifest(["j0", "j1"], n_pop=20),
+        j_verdicts,
+        0.60,
+        PROTOCOL,
+        "human",
+        verifier_kind="judge",
+    )
+    assert j_cert["complete"] is True
+    assert j_cert["n"] == 2
+
+
+def test_judge_stratum_requires_model_and_human_adjudicator():
+    ids = ["j0"]
+    verdicts = [_judge_verdict("j0", False, model="")]
+    cert = build_certificate(
+        _manifest(ids, n_pop=5),
+        verdicts,
+        0.60,
+        "judge.protocol.v0",
+        "human",
+        verifier_kind="judge",
+    )
+    assert cert["complete"] is False
+    assert "judge_model" in cert["unadjudicated_reasons"]["j0"]
+
+    with pytest.raises(ValueError, match="machine"):
+        build_certificate(
+            _manifest(ids, n_pop=5),
+            [_judge_verdict("j0", False)],
+            0.60,
+            "judge.protocol.v0",
+            "machine",
+            verifier_kind="judge",
+        )
+
+    with pytest.raises(ValueError, match="verifier_kind"):
+        build_certificate(
+            _manifest(ids, n_pop=5),
+            [_verdict("j0", False)],
+            0.60,
+            PROTOCOL,
+            "human",
+            verifier_kind="bogus",
+        )
+
+
+def test_infer_verifier_kind_mixed_raises(tmp_path: Path):
+    ids = ["e0", "j0"]
+    manifest = _manifest(ids, n_pop=10)
+    exec_row = _verdict("e0", False)
+    exec_row["verifier_kind"] = "execution"
+    verdicts = [exec_row, _judge_verdict("j0", False, protocol=PROTOCOL)]
+    mpath = tmp_path / "m.json"
+    vpath = tmp_path / "v.jsonl"
+    mpath.write_text(json.dumps(manifest), encoding="utf-8")
+    vpath.write_text(
+        "\n".join(json.dumps(v) for v in verdicts) + "\n", encoding="utf-8"
+    )
+    with pytest.raises(ValueError, match="mix verifier_kind"):
+        main(
+            [
+                "--manifest",
+                str(mpath),
+                "--verdicts",
+                str(vpath),
+                "--protocol",
+                PROTOCOL,
+                "--adjudicator",
+                "human",
+            ]
+        )
+
+
+def test_verifier_kind_none_stratum():
+    ids = ["n0", "n1"]
+    verdicts = []
+    for uid in ids:
+        row = _verdict(uid, False, adjudicator="human")
+        row["verifier_kind"] = "none"
+        verdicts.append(row)
+    cert = build_certificate(
+        _manifest(ids, n_pop=2),
+        verdicts,
+        0.05,
+        PROTOCOL,
+        "human",
+        verifier_kind="none",
+    )
+    assert cert["complete"] is True
+    assert cert["verifier_kind"] == "none"
+    assert cert["judge_model"] is None
+    assert cert["judge_agreement"] is None
+    assert cert["strata"] == {"none": 2}

@@ -1,0 +1,85 @@
+{
+  "complete": true,
+  "decision": "release",
+  "N": 1699,
+  "n": 190,
+  "k_invalid": 4,
+  "p_hat": 0.021052631578947368,
+  "ucb95": 0.04649793996468511,
+  "method": "hypergeometric-one-sided",
+  "alpha": 0.05,
+  "epsilon": 0.05,
+  "p_certify": 0.6238938090744643,
+  "label_protocol": "verifier_invalid.fresh_environment.execution",
+  "grade": "A",
+  "adjudicator": "machine",
+  "verifier_kind": "execution",
+  "judge_model": null,
+  "judge_agreement": null,
+  "strata": {
+    "execution": 190
+  },
+  "replaces_human_sample": false,
+  "design": "SRS without replacement, sequential extension of swe_srs100_sample.json; completed prefix of the frozen swe_srs300 draw",
+  "seed": "swe-srs-v0 (sha256 -> int) + swe-srs-v0-extend-200 (sha256 -> int)",
+  "flagged": [
+    {
+      "unit_id": "django__django-10097",
+      "evidence": "empty patch resolved (false accept)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "django__django-12503",
+      "evidence": "reference fails own verifier",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "django__django-10426",
+      "evidence": "empty patch resolved (false accept)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "django__django-15521",
+      "evidence": "reference fails own verifier",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    }
+  ],
+  "unadjudicated": [],
+  "unadjudicated_reasons": {},
+  "n_unadjudicated": 0,
+  "n_adjudicated": 190,
+  "reason": "ucb below epsilon",
+  "partial": true,
+  "partial_detail": {
+    "frozen_manifest": "data/gold/swe_srs300_sample.json",
+    "n_planned": 300,
+    "n_executed_both_treatments": 297,
+    "n_in_bound": 190,
+    "unadjudicated": [
+      "matplotlib__matplotlib-22926",
+      "matplotlib__matplotlib-24849",
+      "matplotlib__matplotlib-25442"
+    ],
+    "unadjudicated_reasons": {
+      "matplotlib__matplotlib-22926": "gold run produced no report.json (harness infra); empty run executed and did not resolve",
+      "matplotlib__matplotlib-24849": "gold run produced no report.json (harness infra); empty run executed and did not resolve",
+      "matplotlib__matplotlib-25442": "gold run produced no report.json (harness infra); empty run executed and did not resolve"
+    },
+    "n_executed_beyond_prefix": 107,
+    "flagged_beyond_prefix": [
+      "mwaskom__seaborn-2766",
+      "psf__requests-774",
+      "pydata__xarray-7089",
+      "sphinx-doc__sphinx-9467"
+    ],
+    "note": "Bound uses the completed prefix of the frozen sequential draw (first 190 of 300). Units drawn after the first unadjudicated unit stay out of the bound even when they executed, so no unit is dropped on its own outcome."
+  }
+}

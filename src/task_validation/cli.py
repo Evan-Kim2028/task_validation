@@ -503,6 +503,31 @@ def _cmd_interrogate_verifier(args: argparse.Namespace) -> int:
     return 0 if report["rates"]["interrogable"] else 1
 
 
+def _cmd_interrogate_judge(args: argparse.Namespace) -> int:
+    from task_validation.evidence.judge_verifier import main as judge_main
+
+    argv = [
+        "--dataset", args.dataset,
+        "--jobs", args.jobs,
+        "--out", args.out,
+        "--control", args.control,
+        "--k", str(args.k),
+        "--budget-sec", str(args.budget_sec),
+        "--trial-cap-sec", str(args.trial_cap_sec),
+    ]
+    if args.summary:
+        argv += ["--summary", args.summary]
+    if args.strata_out:
+        argv += ["--strata-out", args.strata_out]
+    if args.task:
+        argv += ["--task", args.task]
+    if args.list:
+        argv += ["--list"]
+    if args.no_resume:
+        argv += ["--no-resume"]
+    return judge_main(argv)
+
+
 def _cmd_link_human_labels(args: argparse.Namespace) -> int:
     from task_validation.ingest.human_labels import write_linkage
 
@@ -571,6 +596,22 @@ def _cmd_validity_corpus(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_harbor_funnel_fetch(args: argparse.Namespace) -> int:
+    from task_validation.ingest.harbor_adapter import run_fetch
+
+    report = run_fetch(
+        manifest_path=Path(args.manifest),
+        adapters_path=Path(args.adapters),
+        index_path=Path(args.index),
+        out_path=Path(args.out),
+        work_dir=Path(args.work),
+        budget_bytes=int(args.budget_gb * 1024**3),
+        dry_run=args.dry_run,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
+
+
 def _cmd_ppi_lab(args: argparse.Namespace) -> int:
     from task_validation.sampling.ppi import format_key_tables, run_ppi_lab, write_ppi_lab
 
@@ -608,6 +649,74 @@ def _cmd_coverage_lab(args: argparse.Namespace) -> int:
     )
     print(json.dumps(slim, indent=2))
     return 0
+
+
+def _cmd_build_decontam_index(args: argparse.Namespace) -> int:
+    from task_validation.evidence.decontam import build_index
+
+    pops = tuple(s.strip() for s in args.populations.split(",") if s.strip())
+    report = build_index(
+        Path(args.out_dir),
+        tb4_root=Path(args.tb4_root),
+        harbor_index_root=Path(args.harbor_index_root),
+        tb21_root=Path(args.tb21_root),
+        swe_parquet=Path(args.swe_parquet),
+        swe_ids=Path(args.swe_ids),
+        swe_verified500=Path(args.swe_verified500) if args.swe_verified500 else None,
+        populations=pops,
+        ngram_n=args.ngram_n,
+        shingle=args.shingle,
+    )
+    print(json.dumps(report, indent=2))
+    return 0
+
+
+def _cmd_decontam_check(args: argparse.Namespace) -> int:
+    from task_validation.evidence.decontam import check_path
+
+    report = check_path(
+        Path(args.task),
+        Path(args.index_dir),
+        ngram_n=args.ngram_n,
+        shingle=args.shingle,
+        jaccard_threshold=args.jaccard,
+        min_ngram_hits=args.min_ngram_hits,
+        scaffold_df=args.scaffold_df,
+    )
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        if out.suffix == ".jsonl":
+            with out.open("w", encoding="utf-8") as fh:
+                for row in report["results"]:
+                    fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+        else:
+            out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    slim = {
+        "index_dir": report["index_dir"],
+        "populations": report["populations"],
+        "n_candidates": report["n_candidates"],
+        "n_flagged": report["n_flagged"],
+        "results": [
+            {
+                "task_id": r["task_id"],
+                "flagged": r["flagged"],
+                "flag_reasons": r["flag_reasons"],
+                "populations": {
+                    pop: {
+                        "max_jaccard": pr["max_jaccard"],
+                        "nearest_task_id": pr["nearest_task_id"],
+                        "max_ngram_hits": pr["max_ngram_hits"],
+                        "ngram_nearest_task_id": pr["ngram_nearest_task_id"],
+                    }
+                    for pop, pr in r["populations"].items()
+                },
+            }
+            for r in report["results"]
+        ],
+    }
+    print(json.dumps(slim, indent=2))
+    return 1 if report["n_flagged"] else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -728,6 +837,24 @@ def main(argv: list[str] | None = None) -> int:
     p.set_defaults(func=_cmd_interrogate_verifier)
 
     p = sub.add_parser(
+        "interrogate-judge",
+        help="k=3 oracle + k=3 nop judge-verifier runs per Harbor-Index judge task (doc 44)",
+    )
+    p.add_argument("--dataset", default="/home/evan/Documents/harbor-index-dataset/harbor-index-1.0")
+    p.add_argument("--jobs", default="/tmp/tv-hindex/judge-jobs")
+    p.add_argument("--out", default="data/gold/harbor_index_judge.jsonl")
+    p.add_argument("--summary", default="")
+    p.add_argument("--control", default="data/gold/harbor_index_control.jsonl")
+    p.add_argument("--strata-out", default="", dest="strata_out")
+    p.add_argument("--task", default="", help="comma-separated task ids; default all judge tasks")
+    p.add_argument("--k", type=int, default=3)
+    p.add_argument("--budget-sec", type=float, default=4 * 60 * 60)
+    p.add_argument("--trial-cap-sec", type=int, default=30 * 60)
+    p.add_argument("--list", action="store_true", help="enumerate judge tasks and audit env; never runs harbor")
+    p.add_argument("--no-resume", action="store_true")
+    p.set_defaults(func=_cmd_interrogate_judge)
+
+    p = sub.add_parser(
         "link-human-labels",
         help="Mine existing public labels; do not merge provenances",
     )
@@ -772,6 +899,19 @@ def main(argv: list[str] | None = None) -> int:
     p.set_defaults(func=_cmd_coverage_lab)
 
     p = sub.add_parser(
+        "harbor-funnel-fetch",
+        help="Fetch stage-1 frontier-cell rewards from Harbor-Adapter shards",
+    )
+    p.add_argument("--manifest", default="data/raw/harbor-adapter/harbor_adapters.manifest.parquet")
+    p.add_argument("--adapters", default="data/raw/harbor-adapter/adapters54.json")
+    p.add_argument("--index", default="data/raw/harbor-adapter/trial_shards.jsonl")
+    p.add_argument("--out", default="data/gold/harbor_funnel_rewards.jsonl")
+    p.add_argument("--work", default="data/raw/harbor-adapter/shards")
+    p.add_argument("--budget-gb", type=float, default=40.0)
+    p.add_argument("--dry-run", action="store_true")
+    p.set_defaults(func=_cmd_harbor_funnel_fetch)
+
+    p = sub.add_parser(
         "ppi-lab",
         help="PPI++ / difference / poststrat vs SRS-CP label-savings coverage lab",
     )
@@ -782,6 +922,59 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--seed", default="ppi-lab-v0")
     p.add_argument("--out", default="data/gold/ppi_lab.json")
     p.set_defaults(func=_cmd_ppi_lab)
+
+    p = sub.add_parser(
+        "build-decontam-index",
+        help="Index TB4, Harbor-Index, TB 2.1, SWE-Verified token shingles",
+    )
+    p.add_argument("--out-dir", default="data/gold/decontam_index")
+    p.add_argument("--tb4-root", default="/home/evan/Documents/eval_tasks/research/tb-ref/tasks")
+    p.add_argument(
+        "--harbor-index-root",
+        default="/home/evan/Documents/harbor-index-dataset/harbor-index-1.0",
+    )
+    p.add_argument(
+        "--tb21-root",
+        default=str(Path.home() / "Documents/tb21-dataset/terminal-bench-2-1"),
+    )
+    p.add_argument("--swe-parquet", default="data/raw/swe-bench/test.parquet")
+    p.add_argument("--swe-ids", default="data/gold/swe_verified_compact.jsonl")
+    p.add_argument(
+        "--swe-verified500",
+        default="data/raw/aba/swe_bench_verified/benchmark.json",
+        help="Released Verified-500 task list; intersected with --swe-ids. "
+        "Empty string indexes every id in --swe-ids.",
+    )
+    p.add_argument(
+        "--populations",
+        default="tb4,harbor_index,tb21,swe_verified",
+    )
+    p.add_argument("--ngram-n", type=int, default=13)
+    p.add_argument("--shingle", type=int, default=5)
+    p.set_defaults(func=_cmd_build_decontam_index)
+
+    p = sub.add_parser(
+        "decontam-check",
+        help="Flag a candidate task sharing a 13-gram or shingle Jaccard >= threshold",
+    )
+    p.add_argument(
+        "--task",
+        required=True,
+        help="Harbor task directory, or a .json/.jsonl of SWE-style records",
+    )
+    p.add_argument("--index-dir", default="data/gold/decontam_index")
+    p.add_argument("--ngram-n", type=int, default=13)
+    p.add_argument("--min-ngram-hits", type=int, default=1)
+    p.add_argument("--shingle", type=int, default=5)
+    p.add_argument("--jaccard", type=float, default=0.5)
+    p.add_argument(
+        "--scaffold-df",
+        type=float,
+        default=0.5,
+        help="grams in more than this fraction of a population are harness scaffold",
+    )
+    p.add_argument("--out", default="")
+    p.set_defaults(func=_cmd_decontam_check)
 
     args = parser.parse_args(argv)
     return args.func(args)

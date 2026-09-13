@@ -16,6 +16,7 @@ from task_validation.sampling.estimators import _hypergeom_sf, srs_estimate
 
 ASSAY_GRADES = frozenset({"A", "B"})
 ADJUDICATORS = frozenset({"machine", "human", "both"})
+VERIFIER_KINDS = frozenset({"execution", "judge", "none"})
 SWE_EXEC_PROTOCOL = "verifier_invalid.fresh_environment.execution"
 SWE_EXEC_GRADE = "A"
 SWE_EXEC_ADJUDICATOR = "machine"
@@ -114,11 +115,26 @@ def build_certificate(
     adjudicator: str,
     *,
     alpha: float = ALPHA_DEFAULT,
+    verifier_kind: str = "execution",
 ) -> dict:
-    """Assemble a release certificate, or mark it INCOMPLETE."""
+    """Assemble a release certificate, or mark it INCOMPLETE.
+
+    verifier_kind is the stratum this certificate covers: execution,
+    judge, or none (doc 44). A verdict that declares a different
+    verifier_kind is unadjudicated here, so judge-verified units never
+    pool into an execution stratum's bound. A judge certificate requires
+    judge_model on every counted unit and a human adjudicator.
+    """
     if not protocol or not str(protocol).strip():
         raise ValueError("protocol must be named")
     protocol = str(protocol)
+    if verifier_kind not in VERIFIER_KINDS:
+        raise ValueError("verifier_kind must be execution, judge, or none")
+    if verifier_kind == "judge" and adjudicator == "machine":
+        raise ValueError(
+            "judge strata are human-adjudicated; a judge-verified stratum "
+            "has no machine certificate (doc 44)"
+        )
     if not 0 < epsilon <= 1:
         raise ValueError("epsilon must be in (0, 1]")
     if not 0 < alpha < 1:
@@ -134,13 +150,19 @@ def build_certificate(
     counted: list[dict] = []
     flagged: list[dict] = []
     grades: set[str] = set()
+    strata: dict[str, int] = {}
+    judge_models: set[str] = set()
+    judge_agreement: dict[str, object] = {}
 
     for uid in ids:
         row = by_id.get(uid)
         if row is None:
             unadjudicated.append(uid)
             reasons[uid] = "missing verdict"
+            strata["missing_verdict"] = strata.get("missing_verdict", 0) + 1
             continue
+        row_kind = str(row.get("verifier_kind") or verifier_kind)
+        strata[row_kind] = strata.get(row_kind, 0) + 1
         invalid = row.get("invalid")
         grade = row.get("grade")
         row_protocol = row.get("label_protocol") or protocol
@@ -156,8 +178,23 @@ def build_certificate(
             unadjudicated.append(uid)
             reasons[uid] = "label_protocol does not match certificate protocol"
             continue
+        if row_kind != verifier_kind:
+            unadjudicated.append(uid)
+            reasons[uid] = (
+                f"verifier_kind {row_kind!r} does not match certificate "
+                f"verifier_kind {verifier_kind!r}; strata never pool"
+            )
+            continue
+        if verifier_kind == "judge" and not str(row.get("judge_model") or "").strip():
+            unadjudicated.append(uid)
+            reasons[uid] = "judge_model missing on a judge-verified unit"
+            continue
         grades.add(str(grade))
         counted.append(row)
+        if row.get("judge_model"):
+            judge_models.add(str(row["judge_model"]))
+        if row.get("judge_agreement") is not None:
+            judge_agreement[uid] = row["judge_agreement"]
         if bool(invalid):
             flagged.append(
                 {
@@ -186,6 +223,10 @@ def build_certificate(
         "label_protocol": protocol,
         "grade": _grade_label(grades),
         "adjudicator": adj,
+        "verifier_kind": verifier_kind,
+        "judge_model": sorted(judge_models) if judge_models else None,
+        "judge_agreement": judge_agreement or None,
+        "strata": strata,
         "replaces_human_sample": False,
         "design": manifest.get("design"),
         "seed": manifest.get("seed"),
@@ -251,6 +292,19 @@ def render_certificate_md(cert: dict) -> str:
     lines.append(f"- Label protocol: {cert.get('label_protocol')}")
     lines.append(f"- Grade: {cert.get('grade')}")
     lines.append(f"- Adjudicator: {cert.get('adjudicator')}")
+    lines.append(f"- Verifier kind: {cert.get('verifier_kind')}")
+    strata = cert.get("strata") or {}
+    if strata:
+        counts = ", ".join(f"{k}={v}" for k, v in sorted(strata.items()))
+        lines.append(f"- Strata: {counts}")
+    judge_model = cert.get("judge_model")
+    if judge_model:
+        lines.append(f"- Judge model: {', '.join(judge_model)}")
+    judge_agreement = cert.get("judge_agreement") or {}
+    if judge_agreement:
+        lines.append("- Judge agreement:")
+        for uid in sorted(judge_agreement):
+            lines.append(f"  - `{uid}`: {json.dumps(judge_agreement[uid])}")
     lines.append(
         f"- Replaces human sample: {bool(cert.get('replaces_human_sample'))}"
     )
@@ -461,6 +515,21 @@ def _infer_adjudicator(verdicts: list[dict]) -> str:
     raise ValueError("adjudicator is required")
 
 
+def _infer_verifier_kind(verdicts: list[dict]) -> str:
+    found = {str(v["verifier_kind"]) for v in verdicts if v.get("verifier_kind")}
+    if len(found) == 1:
+        only = next(iter(found))
+        if only not in VERIFIER_KINDS:
+            raise ValueError(f"unknown verifier_kind {only!r}")
+        return only
+    if not found:
+        return "execution"
+    raise ValueError(
+        "verdicts mix verifier_kind values; split the strata and certify "
+        "each on its own bound (doc 44)"
+    )
+
+
 def _write_json(path: Path | None, obj: dict) -> None:
     if path is None:
         return
@@ -482,6 +551,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--epsilon", type=float, default=0.05)
     p.add_argument("--protocol", default=None)
     p.add_argument("--adjudicator", default=None)
+    p.add_argument(
+        "--verifier-kind",
+        default=None,
+        choices=sorted(VERIFIER_KINDS),
+        help="verifier stratum this certificate covers (default: infer; execution when undeclared)",
+    )
     p.add_argument("--alpha", type=float, default=ALPHA_DEFAULT)
     p.add_argument("--out", type=Path, help="certificate JSON")
     p.add_argument("--md", type=Path, help="rendered markdown")
@@ -530,6 +605,7 @@ def main(argv: list[str] | None = None) -> int:
         protocol,
         adjudicator,
         alpha=args.alpha,
+        verifier_kind=args.verifier_kind or _infer_verifier_kind(verdicts),
     )
     _write_json(args.out, cert)
     _write_md(args.md, cert)
@@ -549,6 +625,9 @@ def main(argv: list[str] | None = None) -> int:
                 "label_protocol": cert["label_protocol"],
                 "grade": cert["grade"],
                 "adjudicator": cert["adjudicator"],
+                "verifier_kind": cert["verifier_kind"],
+                "judge_model": cert["judge_model"],
+                "strata": cert["strata"],
                 "n_flagged": len(cert["flagged"]),
                 "n_unadjudicated": cert["n_unadjudicated"],
                 "out": None if args.out is None else str(args.out),
