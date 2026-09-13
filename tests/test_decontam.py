@@ -270,6 +270,79 @@ def test_scaffold_boilerplate_alone_does_not_flag(tmp_path: Path):
     assert res["flagged"] is False
 
 
+IMPORT_HEADER = (
+    "from __future__ import annotations\n"
+    "import json\n"
+    "import math\n"
+    "from pathlib import Path\n"
+    "import pytest\n"
+)
+
+
+def _import_header_index(tmp_path: Path) -> Path:
+    ref_root = tmp_path / "imp-refs"
+    ref_tests = (
+        IMPORT_HEADER
+        + "def test_dispatch_window():\n"
+        + "    plan = build_dispatch_plan(flights, crews, horizon=14, slack=0.2)\n"
+        + "    assert plan['F7'] == 'crew-3'\n"
+    )
+    _mk_task(
+        ref_root,
+        "ref-dispatch",
+        "Pair cargo flights with rested crews inside a rolling horizon.",
+        ref_tests,
+        "#!/bin/sh\npython3 solve.py\n",
+    )
+    out = tmp_path / "imp-index"
+    from task_validation.evidence.decontam import build_population_rows
+
+    rows = build_population_rows(ref_root)
+    write_population(out, "mini", rows, {"kind": "harbor_task_dirs", "source": str(ref_root)})
+    return out
+
+
+def test_import_header_alone_does_not_flag(tmp_path: Path):
+    # lot-001 gate B flagged all 20 tasks on the two 13-grams bridging this
+    # header against tb4/cargo-flight-dispatch; header lines are masked.
+    idx = _import_header_index(tmp_path)
+    tests = IMPORT_HEADER + "def test_replay():\n    assert replay_log('r.json') == 3\n"
+    sig = field_signature(tests)
+    assert sig["masked"] == list(range(14))
+    cand = _mk_task(
+        tmp_path / "cand",
+        "header-only",
+        "Rotate telemetry snapshots onto cold storage every night.",
+        tests,
+        "#!/bin/sh\npython3 replay.py\n",
+    )
+    report = check_path(cand, idx, scaffold_df=1.0)
+    (res,) = report["results"]
+    assert res["flagged"] is False
+    assert res["populations"]["mini"]["max_ngram_hits"] == 0
+
+
+def test_import_header_plus_shared_code_flags(tmp_path: Path):
+    idx = _import_header_index(tmp_path)
+    cand = _mk_task(
+        tmp_path / "cand",
+        "header-plus-body",
+        "Cache rendered tiles so repeat requests skip the raster pass.",
+        IMPORT_HEADER
+        + "def test_dispatch_window():\n"
+        + "    plan = build_dispatch_plan(flights, crews, horizon=14, slack=0.2)\n"
+        + "    assert plan['F7'] == 'crew-3'\n",
+        "#!/bin/sh\npython3 tiles.py\n",
+    )
+    report = check_path(cand, idx, scaffold_df=1.0)
+    (res,) = report["results"]
+    assert res["flagged"] is True
+    assert any(
+        r["field"] == "tests" and r["metric"] == "ngram_overlap"
+        for r in res["flag_reasons"]
+    )
+
+
 def test_check_candidate_direct(tmp_path: Path):
     idx = _index_dir(tmp_path)
     index = load_index(idx)
