@@ -55,7 +55,7 @@ harbor run -p <task_dir> --agent <oracle|nop> --env docker --yes \
 
 Rows append to `data/gold/gen_gate_<name>.jsonl`, one per `(task, probe, rep)` with reward, status, wall time, and log tails. Resume is automatic: re-running skips terminal trials. Environment build failures and timeouts are recorded as `infra` and `timeout` with null reward; no reward is ever fabricated.
 
-By default the runner warms each task's image before fanning out: the first pending trial (the first oracle rep on a fresh task) runs alone to completion so its environment build populates the docker layer cache, then the remaining trials dispatch at `--concurrency`. A warmup trial that comes back `infra` is recorded, and the task's remaining trials are recorded `not_run` for the pass with no retry inside the runner. `--no-warmup` restores the old all-at-once dispatch. The change is scheduling only: probes, statuses, resume keys, row schema, prune cadence and the certificate path are unchanged, and no verdict is affected.
+By default the runner warms each task's image before fanning out: the first pending trial (the first oracle rep on a fresh task, or the first nop rep when oracle trials do not run) runs alone to completion so its environment build populates the docker layer cache, then the remaining trials dispatch at `--concurrency`. A warmup trial that comes back `infra` is recorded, and the task's remaining trials are recorded `not_run` for the pass with no retry inside the runner. `--no-warmup` restores the old all-at-once dispatch. The change is scheduling only: probes, statuses, resume keys, row schema, prune cadence and the certificate path are unchanged, and no verdict is affected.
 
 The motivation is measured in `data/gold/gen_gate_seta.jsonl` from the SETA gate at concurrency 3: the quickest executed trial per task medians 51 s (n=164) while the other three median 107 s (n=492). Under all-at-once dispatch the trials of one task build the same image concurrently, so the layer cache serves none of them and the builds contend for disk.
 
@@ -176,6 +176,17 @@ Bound (a) is the headline. It treats the 5 uncovered units as outside the frame:
 ### Run cost
 
 Wall clock about 4.1 h for the main pass (first harbor job 2026-09-13T17:32:18, last 21:38:59, from `result.json` timestamps under `/tmp/tv-gen-gate-rst/jobs/`), plus a 4 min `--redo-infra` pass and a 3.5 min closeout retry (`journalctl --user -u gen-gate-rst-200`, `-redo`, `-retry3`). Runner CPU was 1 h 25 min, 2 min, and 57 s on the three units. Summed trial time is 54,813 s, about 15.2 h, over 828 rows (`data/gold/gen_gate_rst.jsonl`). API cost is 0 dollars: oracle and nop are model-free agents and `cost_usd` is null in every job `result.json`. A second gate (SETA, then TMax) ran on the host at concurrency 3 throughout; the closeout retry ran at concurrency 1 with image pruning disabled.
+
+### Image-warmup benchmark
+
+The warmup schedule was measured on 2026-09-14 against the first 12 ids of `data/gold/gen_gate_tmax_manifest.json`, run twice on `lake-vps-lor-main` at concurrency 3 with `docker container/image/builder prune` before each arm so both started cold. Artifacts are under `/home/evan/gate_bench/` (scratch manifest `gen_gate_tmaxbench_manifest.json`, generator `tmax-warmup-bench`, a benchmark sample and not a certificate). All 12 sampled TMax tasks turned out to be `no_reference`, so each task ran only its two nop trials; the oracle reps recorded `no_reference` rows in both arms, and both arms wrote the same 48 trial keys.
+
+| Arm | Total wall | Median trial | First trial per task | Later trial per task | Sum of trial times |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `--no-warmup` | 36.3 min | 149.6 s | 149.7 s (rep 0) | 148.9 s (rep 1) | 4,301 s |
+| warmup | 42.8 min | 93.7 s | 123.8 s (rep 0) | 61.3 s (rep 1) | 2,560 s |
+
+"First" and "later" are dispatch order here. Under `--no-warmup` both nop reps build concurrently and land together (about 150 s each). Under warmup, rep 0 is the warmup trial: a solo cold build at 124 s median, faster than the contended 150 s; rep 1 then hits the image cache at 61 s. The mechanism works exactly as intended, but the change did not help wall clock on this lot: warmup was about 18 percent slower end to end (42.8 vs 36.3 min). With only two runnable trials per task, the serialized warmup costs more than the single cache hit saves. The win that does materialize is work, not wall: summed trial time fell 40 percent because each image is built once instead of twice, which means less disk and CPU contention for whatever else shares the host. On lots where all four trials run, the second wave is three cache hits rather than one and the wall trade is more favorable; this bench cannot measure that regime. Pass `--no-warmup` where per-task wall matters more than duplicate builds.
 
 ### Where this sits
 

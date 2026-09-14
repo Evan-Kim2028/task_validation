@@ -10,10 +10,11 @@ detected, recorded as their own strata, and left unadjudicated in the
 execution certificate (doc 44). Never fabricates a reward.
 
 Scheduling: by default each task's first pending trial (the first oracle
-rep on a fresh task) runs alone to completion, so its environment image
-build populates the docker layer cache before the remaining trials fan out
-at --concurrency. Without this the trials of one task all build the same
-image at once, the cache serves none of them, and they contend for disk:
+rep on a fresh task, or the first nop rep when oracle trials do not run)
+runs alone to completion, so its environment image build populates the
+docker layer cache before the remaining trials fan out at --concurrency.
+Without this the trials of one task all build the same image at once, the
+cache serves none of them, and they contend for disk:
 in the SETA gate run (concurrency 3) the quickest executed trial per task
 medians 51 s (n=164) while the other three median 107 s (n=492). A warmup
 trial that comes back infra is recorded and the rest of the task's trials
@@ -1127,9 +1128,9 @@ def run_gate(
             pending = []
 
         if pending and warmup:
-            # Warm the image first: the first pending trial (the first
-            # oracle rep on a fresh task) runs alone so its build populates
-            # the docker layer cache, then the rest fan out concurrently.
+            # Warm the image first: the first pending trial runs alone so
+            # its build populates the docker layer cache, then the rest fan
+            # out concurrently.
             warm_rows = dispatch(tid, task_dir, sha, pending[:1])
             pending = pending[1:]
             if warm_rows[0]["status"] == "infra":
