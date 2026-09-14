@@ -4,6 +4,8 @@ Statistical certification of agent-evaluation benchmark validity under a bounded
 
 This repository is a sister of [`eval_tasks`](https://github.com/Evan-Kim2028/eval_tasks). `eval_tasks` builds Harbor / Terminal-Bench tasks. This repo asks a different question: given a population of tasks, how do you know the residual rate of *materially invalid* tasks is below a stated bound without reviewing every task?
 
+[`evaltrials`](https://github.com/Evan-Kim2028/evaltrials) is the public index of the evaluation run data this repository draws on: 26 datasets, about 1 TB, 881,660 recorded agent trials, $376,563 of disclosed compute. The ingest and extraction scripts used here live there.
+
 Synthetic task generation is Part 2. This repo does not generate new tasks.
 
 ## What is locked

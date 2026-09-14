@@ -122,3 +122,7 @@ Every limitation of the evidence base, in one place.
 ## RESULT
 
 Wrote `documents/61-results.md` (this file): the standalone results document covering 12 measured populations, the epsilon-sensitivity grid, the generator comparison with confounds, six scoped negative results, the dump-reconstruction data contribution, the Lot-001 three-gate demonstration, and a single limits section. TMax-15K is marked PENDING in the certification table, the sensitivity table, and the limits, with `data/gold/gen_gate_tmax.certificate.json` as the fill-in artifact. Added a two-line pointer to `documents/56-paper-draft.md`. Full test suite: 280 passed.
+
+## Data index
+
+The public evaluation run data underlying these numbers is indexed at [`evaltrials`](https://github.com/Evan-Kim2028/evaltrials), with the ingest scripts.

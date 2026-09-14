@@ -91,3 +91,7 @@ Three things stay private. The stage-1 filtering database: the paper scored 18 t
 
 - Wrote `documents/55-replication.md`: dataset table, measured hardware and time, a 9-step pipeline with commands and expected counts, seven traps with fixes, agent-driving rules, expected numbers, and the three private gaps.
 - Anchors: docs 45, 48, 49, 52, 53, 54; `data/raw/harbor-adapter/CLAIMS.md` and `adapters54.json`; `data/gold/harbor_adapter_trials.summary.json`, `harbor_adapter_traj.summary.json`, `harbor_funnel_stage1.summary.json`, `harbor_funnel_traj_eval.json`; `logs/vps/`.
+
+## Scripts and the data index
+
+The ingest and extraction scripts, together with an index of the public evaluation run data they cover, are published at [`evaltrials`](https://github.com/Evan-Kim2028/evaltrials): 26 datasets, about 1 TB, 881,660 recorded agent trials, $376,563 of disclosed compute. Start there for what exists and how large it is, then return here for the pipeline that turns it into labels and certificates.
