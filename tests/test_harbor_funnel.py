@@ -6,14 +6,17 @@ from task_validation.evidence.harbor_funnel import (
     BENCHMARK_FAMILIES,
     FRONTIER_CELLS,
     _fit_logit_fast,
+    _pos_weighted_mean_auroc,
     aggregate_stage1,
     benchmark_family,
     frontier_failed_test_stats,
     join_task_traj,
     select_stage1_trials,
     stage1_record,
+    within_group_concordance,
 )
 from task_validation.evidence.footprint import fit_logit
+from task_validation.evidence.irt import auroc
 
 
 def _row(benchmark, task, cell_idx, trial_index, reward, trial_id=None):
@@ -251,6 +254,60 @@ def test_frontier_failed_test_stats(tmp_path):
 
     only_t1 = frontier_failed_test_stats(p, pairs={("b1", "t1")})
     assert set(only_t1) == {("b1", "t1")}
+
+
+# --- Doc 54 correction: within-benchmark concordance ------------------------
+
+
+def test_within_group_concordance_exact():
+    # Hand-computed. g1: pos 0.9 vs negs 0.5, 0.1 -> 2/2 concordant.
+    # g2: pos 0.2 vs neg 0.8 -> 0/1. g3: pos 0.5 vs neg 0.5 -> tie, 0.5/1.
+    # Within = (2 + 0 + 0.5) / (2 + 1 + 1) = 0.625.
+    y =      [1,   0,   0,   1,   0,   1,   0]
+    scores = [0.9, 0.5, 0.1, 0.2, 0.8, 0.5, 0.5]
+    groups = ["g1", "g1", "g1", "g2", "g2", "g3", "g3"]
+    out = within_group_concordance(y, scores, groups)
+    assert out["n_pairs"] == 4
+    assert abs(out["concordant_pair_equivalents"] - 2.5) < 1e-12
+    assert abs(out["value"] - 0.625) < 1e-12
+    # The pooled AUROC is a different statistic: 7/12 here.
+    assert abs(auroc(y, scores) - 7 / 12) < 1e-9
+
+
+def test_within_group_concordance_removes_group_identity_credit():
+    # g1 scores sit above g2 scores throughout, so the pooled AUROC earns
+    # cross-benchmark credit: 12/16 = 0.75. Inside each benchmark the
+    # ranking is g1 perfect (3/3) and g2 reversed (0/3): 3/6 = 0.5.
+    y =      [1,   1,   1,   0,   1,   0,   0,   0]
+    scores = [0.9, 0.85, 0.8, 0.7, 0.3, 0.6, 0.55, 0.5]
+    groups = ["g1"] * 4 + ["g2"] * 4
+    out = within_group_concordance(y, scores, groups)
+    assert out["n_pairs"] == 6
+    assert abs(out["value"] - 0.5) < 1e-12
+    assert abs(auroc(y, scores) - 0.75) < 1e-9
+
+
+def test_within_group_concordance_single_class_groups():
+    # No group has both classes -> no within-group pairs -> undefined.
+    out = within_group_concordance([1, 1, 0, 0], [0.9, 0.8, 0.2, 0.1],
+                                   ["g1", "g1", "g2", "g2"])
+    assert out["n_pairs"] == 0
+    assert out["value"] is None
+    # Missing scores are skipped, not counted.
+    out = within_group_concordance([1, 0, 0], [0.9, None, 0.1],
+                                   ["g1", "g1", "g1"])
+    assert out["n_pairs"] == 1
+    assert out["value"] == 1.0
+
+
+def test_pos_weighted_mean_auroc_exact():
+    # g1: pos 0.9 vs negs 0.5, 0.1 -> AUROC 1.0, weight 1 positive.
+    # g2: pos 0.2 vs neg 0.8 -> AUROC 0.0, weight 1 positive.
+    # Positives-weighted mean = (1.0 * 1 + 0.0 * 1) / 2 = 0.5.
+    y =      [1,   0,   0,   1,   0]
+    scores = [0.9, 0.5, 0.1, 0.2, 0.8]
+    groups = ["g1", "g1", "g1", "g2", "g2"]
+    assert abs(_pos_weighted_mean_auroc(y, scores, groups) - 0.5) < 1e-12
 
 
 def test_fit_logit_fast_matches_stdlib():

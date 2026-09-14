@@ -48,6 +48,7 @@ TASK_TRAJ_PATH = GOLD / "harbor_adapter_task_traj.jsonl"
 TRAJ_TRIALS_PATH = GOLD / "harbor_adapter_traj.jsonl"
 TRAJ_EVAL_PATH = GOLD / "harbor_funnel_traj_eval.json"
 HIDDEN_REQ_PATH = GOLD / "harbor_funnel_hidden_requirement.jsonl"
+WITHIN_EVAL_PATH = GOLD / "harbor_funnel_within_benchmark.json"
 
 PROTOCOL = "harbor_index_funnel.reconstructed.2026-09-13"
 
@@ -574,23 +575,15 @@ def _fit_logit_fast(X: list[list[float]], y: list[int]) -> dict:
     }
 
 
-def eval_label(
+def _oof_predict(
     rows: list[dict],
     y: list[int],
-    feature_names: tuple[str, ...] = EXEC_FEATURES,
-    *,
-    fold_key: str = "benchmark",
-    fitter=fit_logit,
-    seed: int = 20260913,
-) -> dict:
-    """Leave-one-fold-out logistic AUROC plus naive pooled contrast.
-
-    Folds are the distinct values of rows[i][fold_key]; the default
-    "benchmark" reproduces doc 52, "family" gives the doc 54
-    leave-one-benchmark-family-out variant. Same model class as doc 40:
-    median imputation, missingness indicators, standardized design matrix,
-    L2 logit (fit_logit in footprint.py, or its numpy mirror).
-    """
+    feature_names: tuple[str, ...],
+    fold_key: str,
+    fitter,
+) -> tuple[list[float], dict, int]:
+    """Grouped out-of-fold scores: rows[i] is scored by a model fit on all
+    rows outside its fold, so no task is scored by a model that saw it."""
     by_fold = defaultdict(list)
     for i, r in enumerate(rows):
         by_fold[r[fold_key]].append(i)
@@ -617,6 +610,33 @@ def eval_label(
             n_undefined += 1
         else:
             fold_aurocs[fold] = a
+    return oof, fold_aurocs, n_undefined
+
+
+def eval_label(
+    rows: list[dict],
+    y: list[int],
+    feature_names: tuple[str, ...] = EXEC_FEATURES,
+    *,
+    fold_key: str = "benchmark",
+    fitter=fit_logit,
+    seed: int = 20260913,
+) -> dict:
+    """Leave-one-fold-out logistic AUROC plus naive pooled contrast.
+
+    Folds are the distinct values of rows[i][fold_key]; the default
+    "benchmark" reproduces doc 52, "family" gives the doc 54
+    leave-one-benchmark-family-out variant. Same model class as doc 40:
+    median imputation, missingness indicators, standardized design matrix,
+    L2 logit (fit_logit in footprint.py, or its numpy mirror).
+    """
+    by_fold = defaultdict(list)
+    for i, r in enumerate(rows):
+        by_fold[r[fold_key]].append(i)
+
+    oof, fold_aurocs, n_undefined = _oof_predict(
+        rows, y, feature_names, fold_key, fitter
+    )
 
     boot = bootstrap_auroc(y, [s for s in oof], n_reps=400, seed=seed)
     # Naive pooled: fit and score on all rows.
@@ -1126,6 +1146,466 @@ def run_traj_eval(
     return out
 
 
+# --- Doc 54 correction: within-benchmark signal -----------------------------
+#
+# The doc 54 held-out numbers are transfer tests: leave-one-benchmark-out
+# asks whether a signature learned on other benchmarks predicts an unseen
+# one. That test cannot refute the different hypothesis that each benchmark
+# population carries its own signature. The pooled AUROC is also confounded:
+# AUROC is a pairwise ranking statistic, so pooling lets the model earn
+# credit for separating tasks from different benchmarks. This section
+# restricts every comparison pair to tasks from the same benchmark, where
+# benchmark identity carries no information, in two ways: (1) pooled-trained
+# OOF scores evaluated within each benchmark, and (2) a model trained and
+# cross-validated inside one benchmark at a time.
+
+WITHIN_MIN_POS = 5  # minimum kept tasks for a benchmark to enter either eval
+WITHIN_MIN_NEG = 5  # minimum rejected survivors for the OOF eval
+CV_5FOLD_MIN_CLASS = 10  # 5-fold needs ~2 of each class per test fold
+WITHIN_BOOT_SEED = 20260914
+WITHIN_FEATURE_SETS = ("A", "A+B", "A+B+C+D")
+
+
+def within_group_concordance(
+    y: list[int], scores: list[float], groups: list
+) -> dict:
+    """AUROC computed over same-group pairs only.
+
+    A positive scores above a same-group negative = 1, a tie = 0.5 (the
+    Mann-Whitney numerator summed over groups before dividing). Cross-group
+    pairs never enter, so group identity cannot earn credit.
+    """
+    import bisect
+
+    by_group: dict = defaultdict(lambda: [[], []])
+    for t, s, g in zip(y, scores, groups):
+        if s is None:
+            continue
+        by_group[g][0 if t == 1 else 1].append(s)
+    num = 0.0
+    den = 0
+    for pos_scores, neg_scores in by_group.values():
+        if not pos_scores or not neg_scores:
+            continue
+        neg_sorted = sorted(neg_scores)
+        n_neg = len(neg_sorted)
+        for s in pos_scores:
+            lo = bisect.bisect_left(neg_sorted, s)
+            hi = bisect.bisect_right(neg_sorted, s)
+            num += lo + 0.5 * (hi - lo)
+            den += n_neg
+    return {
+        "value": (num / den) if den else None,
+        "n_pairs": den,
+        "concordant_pair_equivalents": num,
+    }
+
+
+def _stratified_boot_idx(groups: list, rng: random.Random) -> list[int]:
+    """Resample tasks within each group, preserving per-group sizes."""
+    by_g = defaultdict(list)
+    for i, g in enumerate(groups):
+        by_g[g].append(i)
+    idx = []
+    for members in by_g.values():
+        idx.extend(rng.choice(members) for _ in members)
+    return idx
+
+
+def _pct(xs: list[float], p: float) -> float | None:
+    if not xs:
+        return None
+    ys = sorted(xs)
+    i = p * (len(ys) - 1)
+    lo = int(i)
+    hi = min(lo + 1, len(ys) - 1)
+    w = i - lo
+    return ys[lo] * (1.0 - w) + ys[hi] * w
+
+
+def _pos_weighted_mean_auroc(
+    y: list[int], scores: list[float], groups: list
+) -> float | None:
+    """Mean of per-group AUROC weighted by each group's positive count.
+
+    Groups whose (resampled) labels are single-class contribute nothing.
+    """
+    by_g = defaultdict(lambda: [[], []])
+    for t, s, g in zip(y, scores, groups):
+        by_g[g][t].append(s)
+    num = 0.0
+    wsum = 0
+    for neg_scores, pos_scores in by_g.values():
+        if not pos_scores or not neg_scores:
+            continue
+        n_pos = len(pos_scores)
+        yg = [1] * n_pos + [0] * len(neg_scores)
+        a = auroc(yg, pos_scores + neg_scores)
+        if a is not None:
+            num += a * n_pos
+            wsum += n_pos
+    return (num / wsum) if wsum else None
+
+
+def _seed_for(seed: int, tag: str) -> int:
+    return seed + sum(ord(c) for c in tag)
+
+
+def within_benchmark_eval(
+    rows: list[dict],
+    y: list[int],
+    scores: list[float],
+    *,
+    min_pos: int = WITHIN_MIN_POS,
+    min_neg: int = WITHIN_MIN_NEG,
+    n_reps: int = 400,
+    seed: int = WITHIN_BOOT_SEED,
+) -> dict:
+    """Within-benchmark AUROC of precomputed honest scores.
+
+    scores[i] must be an honest score for rows[i] (grouped OOF, so no task
+    is scored by a model that saw it). Per benchmark with at least min_pos
+    positives and min_neg negatives: AUROC plus a bootstrap interval over
+    that benchmark's tasks. Plus a positives-weighted mean across qualified
+    benchmarks, and the same statistic as one concordance over all
+    within-benchmark pairs (pair-count weighted rather than mean-of-AUROC).
+    """
+    groups = [r["benchmark"] for r in rows]
+    by_b = defaultdict(list)
+    for i, b in enumerate(groups):
+        by_b[b].append(i)
+
+    per_bench = []
+    qualified = set()
+    for b in sorted(by_b):
+        idx = by_b[b]
+        yb = [y[i] for i in idx]
+        sb = [scores[i] for i in idx]
+        n_pos = sum(yb)
+        n_neg = len(yb) - n_pos
+        qual = n_pos >= min_pos and n_neg >= min_neg
+        entry = {
+            "benchmark": b,
+            "n": len(idx),
+            "n_pos": n_pos,
+            "n_neg": n_neg,
+            "n_pairs": n_pos * n_neg,
+            "qualified": qual,
+            "auroc": auroc(yb, sb),
+            "ci95": None,
+        }
+        if qual:
+            boot = bootstrap_auroc(
+                yb, sb, n_reps=n_reps, seed=_seed_for(seed, b)
+            )
+            entry["ci95"] = boot["ci95"]
+            qualified.add(b)
+        per_bench.append(entry)
+
+    q_idx = [i for i, b in enumerate(groups) if b in qualified]
+    yq = [y[i] for i in q_idx]
+    sq = [scores[i] for i in q_idx]
+    gq = [groups[i] for i in q_idx]
+
+    rng = random.Random(seed)
+    wboots, cboots, cboots_q = [], [], []
+    for _ in range(n_reps):
+        bidx = _stratified_boot_idx(gq, rng)
+        yb_ = [yq[i] for i in bidx]
+        sb_ = [sq[i] for i in bidx]
+        gb_ = [gq[i] for i in bidx]
+        w = _pos_weighted_mean_auroc(yb_, sb_, gb_)
+        if w is not None:
+            wboots.append(w)
+        c = within_group_concordance(yb_, sb_, gb_)
+        if c["value"] is not None:
+            cboots_q.append(c["value"])
+        aidx = _stratified_boot_idx(groups, rng)
+        c = within_group_concordance(
+            [y[i] for i in aidx], [scores[i] for i in aidx], groups
+        )
+        if c["value"] is not None:
+            cboots.append(c["value"])
+
+    conc_all = within_group_concordance(y, scores, groups)
+    conc_q = within_group_concordance(yq, sq, gq)
+    # Exact pair decomposition: the pooled AUROC is a pair-count weighted
+    # mean of within-benchmark and cross-benchmark pair concordance. The
+    # cross term is the component that can ride on benchmark identity.
+    n_pos_all = sum(y)
+    n_pairs_total = n_pos_all * (len(y) - n_pos_all)
+    pooled = auroc(y, scores)
+    c_total = pooled * n_pairs_total if pooled is not None else None
+    n_cross = n_pairs_total - conc_all["n_pairs"]
+    c_cross = (
+        c_total - conc_all["concordant_pair_equivalents"]
+        if c_total is not None
+        else None
+    )
+    return {
+        "min_pos": min_pos,
+        "min_neg": min_neg,
+        "n_benchmarks_qualified": len(qualified),
+        "per_benchmark": per_bench,
+        "positives_weighted_mean": {
+            "value": _pos_weighted_mean_auroc(yq, sq, gq),
+            "ci95": [_pct(wboots, 0.025), _pct(wboots, 0.975)],
+            "n_bootstrap": n_reps,
+            "n_defined": len(wboots),
+        },
+        "concordance_all_pairs": {
+            **conc_all,
+            "ci95": [_pct(cboots, 0.025), _pct(cboots, 0.975)],
+            "n_bootstrap": n_reps,
+            "n_defined": len(cboots),
+        },
+        "concordance_qualified_pairs": {
+            **conc_q,
+            "ci95": [_pct(cboots_q, 0.025), _pct(cboots_q, 0.975)],
+            "n_bootstrap": n_reps,
+            "n_defined": len(cboots_q),
+        },
+        "concordance_cross_pairs": {
+            "value": (c_cross / n_cross) if n_cross else None,
+            "n_pairs": n_cross,
+            "concordant_pair_equivalents": c_cross,
+            "pooled_auroc": pooled,
+        },
+    }
+
+
+def _cv_folds(
+    y: list[int], n_pos: int, n_neg: int, seed: int
+) -> tuple[str, list[list[int]]]:
+    """5-fold when each test fold can carry about two of each class;
+    leave-one-out otherwise. Fold assignment is stratified and seeded."""
+    n = len(y)
+    if n_pos >= CV_5FOLD_MIN_CLASS and n_neg >= CV_5FOLD_MIN_CLASS:
+        rng = random.Random(seed)
+        pos = [i for i in range(n) if y[i] == 1]
+        neg = [i for i in range(n) if y[i] == 0]
+        rng.shuffle(pos)
+        rng.shuffle(neg)
+        folds = [[] for _ in range(5)]
+        for k, i in enumerate(pos):
+            folds[k % 5].append(i)
+        for k, i in enumerate(neg):
+            folds[k % 5].append(i)
+        return "5fold", folds
+    return "loo", [[i] for i in range(n)]
+
+
+def within_benchmark_cv(
+    rows: list[dict],
+    y: list[int],
+    feature_names: tuple[str, ...],
+    *,
+    seed: int = WITHIN_BOOT_SEED,
+    fitter=_fit_logit_fast,
+    n_reps: int = 400,
+) -> dict:
+    """Cross-validated scores fit inside one benchmark's rows only.
+
+    Honest validation needs enough kept tasks that held-out ranking is not
+    dominated by single positives; under CV_5FOLD_MIN_CLASS kept, the OOF
+    AUROC is reported as a suggestive small-n statistic, not a validated
+    per-population model.
+    """
+    n = len(y)
+    n_pos = sum(y)
+    n_neg = n - n_pos
+    method, folds = _cv_folds(y, n_pos, n_neg, seed)
+    oof = [None] * n
+    n_fit_single_class = 0
+    for test_idx in folds:
+        test_set = set(test_idx)
+        train_idx = [i for i in range(n) if i not in test_set]
+        Xtr, stats = design_matrix(
+            [rows[i] for i in train_idx], feature_names
+        )
+        ytr = [y[i] for i in train_idx]
+        model = fitter(Xtr, ytr)
+        if not model["ok"]:
+            n_fit_single_class += 1
+        Xte, _ = design_matrix(
+            [rows[i] for i in test_idx], feature_names, stats=stats
+        )
+        for i, s in zip(test_idx, predict_logit(model, Xte)):
+            oof[i] = s
+    boot = bootstrap_auroc(y, oof, n_reps=n_reps, seed=seed)
+    too_small = n_pos < CV_5FOLD_MIN_CLASS
+    return {
+        "n": n,
+        "n_pos": n_pos,
+        "n_neg": n_neg,
+        "cv_method": method,
+        "n_folds": len(folds),
+        "n_folds_fit_single_class": n_fit_single_class,
+        "oof_auroc": boot["value"],
+        "ci95": boot["ci95"],
+        "too_small_to_validate": too_small,
+        "note": (
+            f"kept tasks = {n_pos} (< {CV_5FOLD_MIN_CLASS}): the OOF AUROC is "
+            "a suggestive small-n statistic, not a fitted and validated "
+            "per-population model"
+            if too_small
+            else "sample size admits an honest fit-and-validate read"
+        ),
+    }
+
+
+def run_within_benchmark(
+    labels_path: Path = LABELS_PATH,
+    stage1_path: Path = STAGE1_PATH,
+    task_traj_path: Path = TASK_TRAJ_PATH,
+    traj_trials_path: Path = TRAJ_TRIALS_PATH,
+    out_json: Path = WITHIN_EVAL_PATH,
+    seed: int = WITHIN_BOOT_SEED,
+) -> dict:
+    """Doc 54 correction: within-benchmark AUROC on survived_2_to_4.
+
+    Population: the 1,331 reconstructed stage-1 survivors. Feature sets A,
+    A+B, A+B+C+D from FEATURE_SETS. Two analyses: (1) pooled-trained LOBO
+    OOF scores ranked inside each benchmark, and (2) per-benchmark
+    cross-validation.
+    """
+    label_rows = _load_jsonl(labels_path)
+    stage1_rows = _load_jsonl(stage1_path)
+    task_traj_rows = _load_jsonl(task_traj_path)
+    survivor_pairs = {
+        (r["benchmark"], r["task_name"])
+        for r in label_rows
+        if r["survived_stage1"]
+    }
+    print(f"[within] survivors={len(survivor_pairs)}", flush=True)
+    failed_stats = frontier_failed_test_stats(
+        traj_trials_path, pairs=survivor_pairs
+    )
+    records, _coverage = build_traj_eval_records(
+        label_rows, stage1_rows, task_traj_rows, failed_stats
+    )
+    y, rows = _label_vector(records, "survived_2_to_4")
+
+    counts = []
+    by_b = defaultdict(list)
+    for i, r in enumerate(rows):
+        by_b[r["benchmark"]].append(i)
+    for b in sorted(by_b):
+        idx = by_b[b]
+        n_pos = sum(y[i] for i in idx)
+        n_neg = len(idx) - n_pos
+        counts.append(
+            {
+                "benchmark": b,
+                "n_survivors": len(idx),
+                "n_kept": n_pos,
+                "qualifies_within_eval": (
+                    n_pos >= WITHIN_MIN_POS and n_neg >= WITHIN_MIN_NEG
+                ),
+                "qualifies_cv": n_pos >= WITHIN_MIN_POS,
+            }
+        )
+    counts.sort(key=lambda d: (-d["n_kept"], -d["n_survivors"], d["benchmark"]))
+
+    pooled_trained = {}
+    for set_name in WITHIN_FEATURE_SETS:
+        feats = FEATURE_SETS[set_name]
+        oof, _fa, _nu = _oof_predict(
+            rows, y, feats, "benchmark", _fit_logit_fast
+        )
+        pooled_trained[set_name] = within_benchmark_eval(
+            rows, y, oof, seed=seed
+        )
+        # In-sample pooled contrast: same statistic on scores from a model
+        # that saw every task. Diagnostic for how much of the pooled AUROC
+        # is within-benchmark ranking versus memorized source identity.
+        Xall, _ = design_matrix(rows, feats)
+        pooled_scores = predict_logit(_fit_logit_fast(Xall, y), Xall)
+        pooled_trained[set_name]["in_sample_pooled_concordance"] = (
+            within_group_concordance(
+                y, pooled_scores, [r["benchmark"] for r in rows]
+            )
+        )
+        print(
+            f"[within] pooled-trained {set_name} "
+            f"concordance={pooled_trained[set_name]['concordance_all_pairs']['value']}",
+            flush=True,
+        )
+
+    per_bench_cv = {}
+    for b in sorted(by_b):
+        idx = by_b[b]
+        n_pos = sum(y[i] for i in idx)
+        if n_pos < WITHIN_MIN_POS:
+            continue
+        rows_b = [rows[i] for i in idx]
+        y_b = [y[i] for i in idx]
+        per_bench_cv[b] = {
+            set_name: within_benchmark_cv(
+                rows_b, y_b, FEATURE_SETS[set_name], seed=_seed_for(seed, b)
+            )
+            for set_name in WITHIN_FEATURE_SETS
+        }
+        print(
+            f"[within] cv {b} n={len(idx)} kept={n_pos} "
+            f"A={per_bench_cv[b]['A']['oof_auroc']}",
+            flush=True,
+        )
+
+    out = {
+        "protocol": PROTOCOL,
+        "date": "2026-09-14",
+        "question": (
+            "Does the funnel footprint rank kept tasks above rejected "
+            "stage-1 survivors inside one benchmark, where benchmark "
+            "identity carries no information?"
+        ),
+        "inputs": {
+            "labels": str(labels_path),
+            "stage1": str(stage1_path),
+            "task_traj": str(task_traj_path),
+            "traj_trials": str(traj_trials_path),
+        },
+        "population": {
+            "label": "survived_2_to_4",
+            "n": len(y),
+            "n_pos": sum(y),
+            "n_benchmarks": len(by_b),
+            "n_benchmarks_zero_kept": sum(
+                1 for c in counts if c["n_kept"] == 0
+            ),
+            "n_benchmarks_ge_10_kept": sum(
+                1 for c in counts if c["n_kept"] >= 10
+            ),
+            "max_kept": max(c["n_kept"] for c in counts),
+        },
+        "benchmark_counts": counts,
+        "score_provenance": {
+            "pooled_trained": (
+                "leave-one-benchmark-out grouped OOF scores, identical "
+                "folding and model class to evals.survived_2_to_4 in "
+                "harbor_funnel_traj_eval.json; no task is scored by a "
+                "model that saw it"
+            ),
+            "in_sample_pooled": (
+                "in-sample scores from the model fit on all 1,331 "
+                "survivors; diagnostic only, tasks were seen"
+            ),
+            "within_cv": (
+                f"per-benchmark cross-validation: 5-fold when a benchmark "
+                f"has >= {CV_5FOLD_MIN_CLASS} of each class, leave-one-out "
+                "otherwise; stratified seeded fold deal"
+            ),
+        },
+        "pooled_trained_within_evaluated": pooled_trained,
+        "within_benchmark_cv": per_bench_cv,
+        "bootstrap_seed": seed,
+        "n_bootstrap": 400,
+    }
+    out_json.write_text(json.dumps(out, indent=1, sort_keys=False) + "\n")
+    return out
+
+
 def build_mapper(
     records: list[dict],
     feature_names: tuple[str, ...] = ALL_FEATURES,
@@ -1299,5 +1779,7 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 1 and sys.argv[1] == "traj-eval":
         run_traj_eval()
+    elif len(sys.argv) > 1 and sys.argv[1] == "within-eval":
+        run_within_benchmark()
     else:
         main()

@@ -1,0 +1,2292 @@
+{
+ "protocol": "harbor_index_funnel.reconstructed.2026-09-13",
+ "date": "2026-09-14",
+ "question": "Does the funnel footprint rank kept tasks above rejected stage-1 survivors inside one benchmark, where benchmark identity carries no information?",
+ "inputs": {
+  "labels": "/home/evan/Documents/task_validation/data/gold/harbor_funnel_labels.jsonl",
+  "stage1": "/home/evan/Documents/task_validation/data/gold/harbor_funnel_stage1.jsonl",
+  "task_traj": "/home/evan/Documents/task_validation/data/gold/harbor_adapter_task_traj.jsonl",
+  "traj_trials": "/home/evan/Documents/task_validation/data/gold/harbor_adapter_traj.jsonl"
+ },
+ "population": {
+  "label": "survived_2_to_4",
+  "n": 1331,
+  "n_pos": 67,
+  "n_benchmarks": 48,
+  "n_benchmarks_zero_kept": 26,
+  "n_benchmarks_ge_10_kept": 0,
+  "max_kept": 8
+ },
+ "benchmark_counts": [
+  {
+   "benchmark": "hle",
+   "n_survivors": 107,
+   "n_kept": 8,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "gso",
+   "n_survivors": 54,
+   "n_kept": 7,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "gaia2",
+   "n_survivors": 55,
+   "n_kept": 5,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "bixbench",
+   "n_survivors": 29,
+   "n_kept": 5,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "swebench-verified",
+   "n_survivors": 23,
+   "n_kept": 5,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "arc-agi-2",
+   "n_survivors": 22,
+   "n_kept": 5,
+   "qualifies_within_eval": true,
+   "qualifies_cv": true
+  },
+  {
+   "benchmark": "featurebench-modal",
+   "n_survivors": 106,
+   "n_kept": 4,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "swebenchpro",
+   "n_survivors": 42,
+   "n_kept": 4,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "labbench",
+   "n_survivors": 40,
+   "n_kept": 4,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "scicode",
+   "n_survivors": 13,
+   "n_kept": 3,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "spider2",
+   "n_survivors": 38,
+   "n_kept": 2,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "swe-lancer",
+   "n_survivors": 35,
+   "n_kept": 2,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "skillsbench",
+   "n_survivors": 33,
+   "n_kept": 2,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "omnimath",
+   "n_survivors": 18,
+   "n_kept": 2,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "terminal-bench",
+   "n_survivors": 17,
+   "n_kept": 2,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "bigcodebench",
+   "n_survivors": 75,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "swesmith",
+   "n_survivors": 56,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "gaia",
+   "n_survivors": 30,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "swtbench",
+   "n_survivors": 10,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "gpqa-diamond",
+   "n_survivors": 8,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "qcircuitbench",
+   "n_survivors": 7,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "codepde",
+   "n_survivors": 2,
+   "n_kept": 1,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "research-code-bench",
+   "n_survivors": 81,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "dacode",
+   "n_survivors": 60,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "seal0",
+   "n_survivors": 56,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "replicationbench",
+   "n_survivors": 36,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "medagentbench",
+   "n_survivors": 35,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "mmmlu",
+   "n_survivors": 33,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "aider-polyglot",
+   "n_survivors": 26,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "spreadsheetbench",
+   "n_survivors": 26,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "mmau",
+   "n_survivors": 24,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "aa-lcr",
+   "n_survivors": 22,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "reasoning-gym",
+   "n_survivors": 20,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "bfcl",
+   "n_survivors": 17,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "pixiu",
+   "n_survivors": 16,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "deepsynth",
+   "n_survivors": 11,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "swebench-multilingual",
+   "n_survivors": 10,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "financeagent_terminal",
+   "n_survivors": 7,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "kumo",
+   "n_survivors": 6,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "livecodebench",
+   "n_survivors": 6,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "simpleqa",
+   "n_survivors": 5,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "ineqmath",
+   "n_survivors": 4,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "strongreject",
+   "n_survivors": 3,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "sldbench",
+   "n_survivors": 2,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "usaco",
+   "n_survivors": 2,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "compilebench",
+   "n_survivors": 1,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "crustbench",
+   "n_survivors": 1,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  },
+  {
+   "benchmark": "widesearch",
+   "n_survivors": 1,
+   "n_kept": 0,
+   "qualifies_within_eval": false,
+   "qualifies_cv": false
+  }
+ ],
+ "score_provenance": {
+  "pooled_trained": "leave-one-benchmark-out grouped OOF scores, identical folding and model class to evals.survived_2_to_4 in harbor_funnel_traj_eval.json; no task is scored by a model that saw it",
+  "in_sample_pooled": "in-sample scores from the model fit on all 1,331 survivors; diagnostic only, tasks were seen",
+  "within_cv": "per-benchmark cross-validation: 5-fold when a benchmark has >= 10 of each class, leave-one-out otherwise; stratified seeded fold deal"
+ },
+ "pooled_trained_within_evaluated": {
+  "A": {
+   "min_pos": 5,
+   "min_neg": 5,
+   "n_benchmarks_qualified": 6,
+   "per_benchmark": [
+    {
+     "benchmark": "aa-lcr",
+     "n": 22,
+     "n_pos": 0,
+     "n_neg": 22,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "aider-polyglot",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "arc-agi-2",
+     "n": 22,
+     "n_pos": 5,
+     "n_neg": 17,
+     "n_pairs": 85,
+     "qualified": true,
+     "auroc": 0.5411764705882353,
+     "ci95": [
+      0.2586974789915967,
+      0.8020833333333334
+     ]
+    },
+    {
+     "benchmark": "bfcl",
+     "n": 17,
+     "n_pos": 0,
+     "n_neg": 17,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "bigcodebench",
+     "n": 75,
+     "n_pos": 1,
+     "n_neg": 74,
+     "n_pairs": 74,
+     "qualified": false,
+     "auroc": 0.6486486486486487,
+     "ci95": null
+    },
+    {
+     "benchmark": "bixbench",
+     "n": 29,
+     "n_pos": 5,
+     "n_neg": 24,
+     "n_pairs": 120,
+     "qualified": true,
+     "auroc": 0.6916666666666667,
+     "ci95": [
+      0.34989130434782606,
+      0.9619615384615385
+     ]
+    },
+    {
+     "benchmark": "codepde",
+     "n": 2,
+     "n_pos": 1,
+     "n_neg": 1,
+     "n_pairs": 1,
+     "qualified": false,
+     "auroc": 1.0,
+     "ci95": null
+    },
+    {
+     "benchmark": "compilebench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "crustbench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "dacode",
+     "n": 60,
+     "n_pos": 0,
+     "n_neg": 60,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "deepsynth",
+     "n": 11,
+     "n_pos": 0,
+     "n_neg": 11,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "featurebench-modal",
+     "n": 106,
+     "n_pos": 4,
+     "n_neg": 102,
+     "n_pairs": 408,
+     "qualified": false,
+     "auroc": 0.8455882352941176,
+     "ci95": null
+    },
+    {
+     "benchmark": "financeagent_terminal",
+     "n": 7,
+     "n_pos": 0,
+     "n_neg": 7,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia",
+     "n": 30,
+     "n_pos": 1,
+     "n_neg": 29,
+     "n_pairs": 29,
+     "qualified": false,
+     "auroc": 0.896551724137931,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia2",
+     "n": 55,
+     "n_pos": 5,
+     "n_neg": 50,
+     "n_pairs": 250,
+     "qualified": true,
+     "auroc": 0.348,
+     "ci95": [
+      0.11976923076923078,
+      0.6415723981900454
+     ]
+    },
+    {
+     "benchmark": "gpqa-diamond",
+     "n": 8,
+     "n_pos": 1,
+     "n_neg": 7,
+     "n_pairs": 7,
+     "qualified": false,
+     "auroc": 0.8571428571428571,
+     "ci95": null
+    },
+    {
+     "benchmark": "gso",
+     "n": 54,
+     "n_pos": 7,
+     "n_neg": 47,
+     "n_pairs": 329,
+     "qualified": true,
+     "auroc": 0.48632218844984804,
+     "ci95": [
+      0.18497569444444445,
+      0.7850865384615384
+     ]
+    },
+    {
+     "benchmark": "hle",
+     "n": 107,
+     "n_pos": 8,
+     "n_neg": 99,
+     "n_pairs": 792,
+     "qualified": true,
+     "auroc": 0.8737373737373737,
+     "ci95": [
+      0.7742312925170067,
+      0.9479432397959183
+     ]
+    },
+    {
+     "benchmark": "ineqmath",
+     "n": 4,
+     "n_pos": 0,
+     "n_neg": 4,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "kumo",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "labbench",
+     "n": 40,
+     "n_pos": 4,
+     "n_neg": 36,
+     "n_pairs": 144,
+     "qualified": false,
+     "auroc": 0.8958333333333334,
+     "ci95": null
+    },
+    {
+     "benchmark": "livecodebench",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "medagentbench",
+     "n": 35,
+     "n_pos": 0,
+     "n_neg": 35,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmau",
+     "n": 24,
+     "n_pos": 0,
+     "n_neg": 24,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmmlu",
+     "n": 33,
+     "n_pos": 0,
+     "n_neg": 33,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "omnimath",
+     "n": 18,
+     "n_pos": 2,
+     "n_neg": 16,
+     "n_pairs": 32,
+     "qualified": false,
+     "auroc": 0.875,
+     "ci95": null
+    },
+    {
+     "benchmark": "pixiu",
+     "n": 16,
+     "n_pos": 0,
+     "n_neg": 16,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "qcircuitbench",
+     "n": 7,
+     "n_pos": 1,
+     "n_neg": 6,
+     "n_pairs": 6,
+     "qualified": false,
+     "auroc": 1.0,
+     "ci95": null
+    },
+    {
+     "benchmark": "reasoning-gym",
+     "n": 20,
+     "n_pos": 0,
+     "n_neg": 20,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "replicationbench",
+     "n": 36,
+     "n_pos": 0,
+     "n_neg": 36,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "research-code-bench",
+     "n": 81,
+     "n_pos": 0,
+     "n_neg": 81,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "scicode",
+     "n": 13,
+     "n_pos": 3,
+     "n_neg": 10,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.4666666666666667,
+     "ci95": null
+    },
+    {
+     "benchmark": "seal0",
+     "n": 56,
+     "n_pos": 0,
+     "n_neg": 56,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "simpleqa",
+     "n": 5,
+     "n_pos": 0,
+     "n_neg": 5,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "skillsbench",
+     "n": 33,
+     "n_pos": 2,
+     "n_neg": 31,
+     "n_pairs": 62,
+     "qualified": false,
+     "auroc": 0.9193548387096774,
+     "ci95": null
+    },
+    {
+     "benchmark": "sldbench",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "spider2",
+     "n": 38,
+     "n_pos": 2,
+     "n_neg": 36,
+     "n_pairs": 72,
+     "qualified": false,
+     "auroc": 0.5277777777777778,
+     "ci95": null
+    },
+    {
+     "benchmark": "spreadsheetbench",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "strongreject",
+     "n": 3,
+     "n_pos": 0,
+     "n_neg": 3,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swe-lancer",
+     "n": 35,
+     "n_pos": 2,
+     "n_neg": 33,
+     "n_pairs": 66,
+     "qualified": false,
+     "auroc": 0.3181818181818182,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-multilingual",
+     "n": 10,
+     "n_pos": 0,
+     "n_neg": 10,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-verified",
+     "n": 23,
+     "n_pos": 5,
+     "n_neg": 18,
+     "n_pairs": 90,
+     "qualified": true,
+     "auroc": 0.5555555555555556,
+     "ci95": [
+      0.19909090909090912,
+      0.917261904761905
+     ]
+    },
+    {
+     "benchmark": "swebenchpro",
+     "n": 42,
+     "n_pos": 4,
+     "n_neg": 38,
+     "n_pairs": 152,
+     "qualified": false,
+     "auroc": 0.40789473684210525,
+     "ci95": null
+    },
+    {
+     "benchmark": "swesmith",
+     "n": 56,
+     "n_pos": 1,
+     "n_neg": 55,
+     "n_pairs": 55,
+     "qualified": false,
+     "auroc": 0.3090909090909091,
+     "ci95": null
+    },
+    {
+     "benchmark": "swtbench",
+     "n": 10,
+     "n_pos": 1,
+     "n_neg": 9,
+     "n_pairs": 9,
+     "qualified": false,
+     "auroc": 0.8888888888888888,
+     "ci95": null
+    },
+    {
+     "benchmark": "terminal-bench",
+     "n": 17,
+     "n_pos": 2,
+     "n_neg": 15,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.7666666666666667,
+     "ci95": null
+    },
+    {
+     "benchmark": "usaco",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "widesearch",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    }
+   ],
+   "positives_weighted_mean": {
+    "value": 0.6021756506600061,
+    "ci95": [
+     0.4867785181079872,
+     0.7058454092710584
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_all_pairs": {
+    "value": 0.6848399577910658,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 1947.0,
+    "ci95": [
+     0.5894688384555987,
+     0.7647899666979704
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_qualified_pairs": {
+    "value": 0.6710684273709484,
+    "n_pairs": 1666,
+    "concordant_pair_equivalents": 1118.0,
+    "ci95": [
+     0.5490423466575167,
+     0.7758791342503151
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_cross_pairs": {
+    "value": 0.7114545787769564,
+    "n_pairs": 81845,
+    "concordant_pair_equivalents": 58229.0,
+    "pooled_auroc": 0.7105611184583412
+   },
+   "in_sample_pooled_concordance": {
+    "value": 0.711924023918396,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 2024.0
+   }
+  },
+  "A+B": {
+   "min_pos": 5,
+   "min_neg": 5,
+   "n_benchmarks_qualified": 6,
+   "per_benchmark": [
+    {
+     "benchmark": "aa-lcr",
+     "n": 22,
+     "n_pos": 0,
+     "n_neg": 22,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "aider-polyglot",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "arc-agi-2",
+     "n": 22,
+     "n_pos": 5,
+     "n_neg": 17,
+     "n_pairs": 85,
+     "qualified": true,
+     "auroc": 0.49411764705882355,
+     "ci95": [
+      0.2185014005602241,
+      0.7619047619047619
+     ]
+    },
+    {
+     "benchmark": "bfcl",
+     "n": 17,
+     "n_pos": 0,
+     "n_neg": 17,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "bigcodebench",
+     "n": 75,
+     "n_pos": 1,
+     "n_neg": 74,
+     "n_pairs": 74,
+     "qualified": false,
+     "auroc": 0.9054054054054054,
+     "ci95": null
+    },
+    {
+     "benchmark": "bixbench",
+     "n": 29,
+     "n_pos": 5,
+     "n_neg": 24,
+     "n_pairs": 120,
+     "qualified": true,
+     "auroc": 0.625,
+     "ci95": [
+      0.44,
+      0.807724358974359
+     ]
+    },
+    {
+     "benchmark": "codepde",
+     "n": 2,
+     "n_pos": 1,
+     "n_neg": 1,
+     "n_pairs": 1,
+     "qualified": false,
+     "auroc": 1.0,
+     "ci95": null
+    },
+    {
+     "benchmark": "compilebench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "crustbench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "dacode",
+     "n": 60,
+     "n_pos": 0,
+     "n_neg": 60,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "deepsynth",
+     "n": 11,
+     "n_pos": 0,
+     "n_neg": 11,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "featurebench-modal",
+     "n": 106,
+     "n_pos": 4,
+     "n_neg": 102,
+     "n_pairs": 408,
+     "qualified": false,
+     "auroc": 0.3112745098039216,
+     "ci95": null
+    },
+    {
+     "benchmark": "financeagent_terminal",
+     "n": 7,
+     "n_pos": 0,
+     "n_neg": 7,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia",
+     "n": 30,
+     "n_pos": 1,
+     "n_neg": 29,
+     "n_pairs": 29,
+     "qualified": false,
+     "auroc": 0.896551724137931,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia2",
+     "n": 55,
+     "n_pos": 5,
+     "n_neg": 50,
+     "n_pairs": 250,
+     "qualified": true,
+     "auroc": 0.292,
+     "ci95": [
+      0.09544528301886793,
+      0.5716307277628033
+     ]
+    },
+    {
+     "benchmark": "gpqa-diamond",
+     "n": 8,
+     "n_pos": 1,
+     "n_neg": 7,
+     "n_pairs": 7,
+     "qualified": false,
+     "auroc": 0.8571428571428571,
+     "ci95": null
+    },
+    {
+     "benchmark": "gso",
+     "n": 54,
+     "n_pos": 7,
+     "n_neg": 47,
+     "n_pairs": 329,
+     "qualified": true,
+     "auroc": 0.541033434650456,
+     "ci95": [
+      0.2638222789115646,
+      0.8039255702280913
+     ]
+    },
+    {
+     "benchmark": "hle",
+     "n": 107,
+     "n_pos": 8,
+     "n_neg": 99,
+     "n_pairs": 792,
+     "qualified": true,
+     "auroc": 0.8737373737373737,
+     "ci95": [
+      0.7646587481146304,
+      0.950541237113402
+     ]
+    },
+    {
+     "benchmark": "ineqmath",
+     "n": 4,
+     "n_pos": 0,
+     "n_neg": 4,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "kumo",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "labbench",
+     "n": 40,
+     "n_pos": 4,
+     "n_neg": 36,
+     "n_pairs": 144,
+     "qualified": false,
+     "auroc": 0.8888888888888888,
+     "ci95": null
+    },
+    {
+     "benchmark": "livecodebench",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "medagentbench",
+     "n": 35,
+     "n_pos": 0,
+     "n_neg": 35,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmau",
+     "n": 24,
+     "n_pos": 0,
+     "n_neg": 24,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmmlu",
+     "n": 33,
+     "n_pos": 0,
+     "n_neg": 33,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "omnimath",
+     "n": 18,
+     "n_pos": 2,
+     "n_neg": 16,
+     "n_pairs": 32,
+     "qualified": false,
+     "auroc": 0.71875,
+     "ci95": null
+    },
+    {
+     "benchmark": "pixiu",
+     "n": 16,
+     "n_pos": 0,
+     "n_neg": 16,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "qcircuitbench",
+     "n": 7,
+     "n_pos": 1,
+     "n_neg": 6,
+     "n_pairs": 6,
+     "qualified": false,
+     "auroc": 1.0,
+     "ci95": null
+    },
+    {
+     "benchmark": "reasoning-gym",
+     "n": 20,
+     "n_pos": 0,
+     "n_neg": 20,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "replicationbench",
+     "n": 36,
+     "n_pos": 0,
+     "n_neg": 36,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "research-code-bench",
+     "n": 81,
+     "n_pos": 0,
+     "n_neg": 81,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "scicode",
+     "n": 13,
+     "n_pos": 3,
+     "n_neg": 10,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.5,
+     "ci95": null
+    },
+    {
+     "benchmark": "seal0",
+     "n": 56,
+     "n_pos": 0,
+     "n_neg": 56,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "simpleqa",
+     "n": 5,
+     "n_pos": 0,
+     "n_neg": 5,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "skillsbench",
+     "n": 33,
+     "n_pos": 2,
+     "n_neg": 31,
+     "n_pairs": 62,
+     "qualified": false,
+     "auroc": 0.9032258064516129,
+     "ci95": null
+    },
+    {
+     "benchmark": "sldbench",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "spider2",
+     "n": 38,
+     "n_pos": 2,
+     "n_neg": 36,
+     "n_pairs": 72,
+     "qualified": false,
+     "auroc": 0.5138888888888888,
+     "ci95": null
+    },
+    {
+     "benchmark": "spreadsheetbench",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "strongreject",
+     "n": 3,
+     "n_pos": 0,
+     "n_neg": 3,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swe-lancer",
+     "n": 35,
+     "n_pos": 2,
+     "n_neg": 33,
+     "n_pairs": 66,
+     "qualified": false,
+     "auroc": 0.4090909090909091,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-multilingual",
+     "n": 10,
+     "n_pos": 0,
+     "n_neg": 10,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-verified",
+     "n": 23,
+     "n_pos": 5,
+     "n_neg": 18,
+     "n_pairs": 90,
+     "qualified": true,
+     "auroc": 0.6,
+     "ci95": [
+      0.2321929824561404,
+      0.9808169934640524
+     ]
+    },
+    {
+     "benchmark": "swebenchpro",
+     "n": 42,
+     "n_pos": 4,
+     "n_neg": 38,
+     "n_pairs": 152,
+     "qualified": false,
+     "auroc": 0.34868421052631576,
+     "ci95": null
+    },
+    {
+     "benchmark": "swesmith",
+     "n": 56,
+     "n_pos": 1,
+     "n_neg": 55,
+     "n_pairs": 55,
+     "qualified": false,
+     "auroc": 0.2727272727272727,
+     "ci95": null
+    },
+    {
+     "benchmark": "swtbench",
+     "n": 10,
+     "n_pos": 1,
+     "n_neg": 9,
+     "n_pairs": 9,
+     "qualified": false,
+     "auroc": 0.8888888888888888,
+     "ci95": null
+    },
+    {
+     "benchmark": "terminal-bench",
+     "n": 17,
+     "n_pos": 2,
+     "n_neg": 15,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.6,
+     "ci95": null
+    },
+    {
+     "benchmark": "usaco",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "widesearch",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    }
+   ],
+   "positives_weighted_mean": {
+    "value": 0.5952206076498943,
+    "ci95": [
+     0.4819452825341535,
+     0.7036622765713788
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_all_pairs": {
+    "value": 0.6074569117129792,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 1727.0,
+    "ci95": [
+     0.49770444777035844,
+     0.7119249394673123
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_qualified_pairs": {
+    "value": 0.6686674669867947,
+    "n_pairs": 1666,
+    "concordant_pair_equivalents": 1114.0,
+    "ci95": [
+     0.5383909968736263,
+     0.7728099606843192
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_cross_pairs": {
+    "value": 0.6939092186449997,
+    "n_pairs": 81845,
+    "concordant_pair_equivalents": 56793.0,
+    "pooled_auroc": 0.6910069903646325
+   },
+   "in_sample_pooled_concordance": {
+    "value": 0.7013717903622934,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 1994.0
+   }
+  },
+  "A+B+C+D": {
+   "min_pos": 5,
+   "min_neg": 5,
+   "n_benchmarks_qualified": 6,
+   "per_benchmark": [
+    {
+     "benchmark": "aa-lcr",
+     "n": 22,
+     "n_pos": 0,
+     "n_neg": 22,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "aider-polyglot",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "arc-agi-2",
+     "n": 22,
+     "n_pos": 5,
+     "n_neg": 17,
+     "n_pairs": 85,
+     "qualified": true,
+     "auroc": 0.5058823529411764,
+     "ci95": [
+      0.22143790849673203,
+      0.7621148459383753
+     ]
+    },
+    {
+     "benchmark": "bfcl",
+     "n": 17,
+     "n_pos": 0,
+     "n_neg": 17,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "bigcodebench",
+     "n": 75,
+     "n_pos": 1,
+     "n_neg": 74,
+     "n_pairs": 74,
+     "qualified": false,
+     "auroc": 0.972972972972973,
+     "ci95": null
+    },
+    {
+     "benchmark": "bixbench",
+     "n": 29,
+     "n_pos": 5,
+     "n_neg": 24,
+     "n_pairs": 120,
+     "qualified": true,
+     "auroc": 0.65,
+     "ci95": [
+      0.3432523997741389,
+      0.9232193732193733
+     ]
+    },
+    {
+     "benchmark": "codepde",
+     "n": 2,
+     "n_pos": 1,
+     "n_neg": 1,
+     "n_pairs": 1,
+     "qualified": false,
+     "auroc": 1.0,
+     "ci95": null
+    },
+    {
+     "benchmark": "compilebench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "crustbench",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "dacode",
+     "n": 60,
+     "n_pos": 0,
+     "n_neg": 60,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "deepsynth",
+     "n": 11,
+     "n_pos": 0,
+     "n_neg": 11,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "featurebench-modal",
+     "n": 106,
+     "n_pos": 4,
+     "n_neg": 102,
+     "n_pairs": 408,
+     "qualified": false,
+     "auroc": 0.32598039215686275,
+     "ci95": null
+    },
+    {
+     "benchmark": "financeagent_terminal",
+     "n": 7,
+     "n_pos": 0,
+     "n_neg": 7,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia",
+     "n": 30,
+     "n_pos": 1,
+     "n_neg": 29,
+     "n_pairs": 29,
+     "qualified": false,
+     "auroc": 0.9655172413793104,
+     "ci95": null
+    },
+    {
+     "benchmark": "gaia2",
+     "n": 55,
+     "n_pos": 5,
+     "n_neg": 50,
+     "n_pairs": 250,
+     "qualified": true,
+     "auroc": 0.236,
+     "ci95": [
+      0.04748168498168498,
+      0.5293377728449873
+     ]
+    },
+    {
+     "benchmark": "gpqa-diamond",
+     "n": 8,
+     "n_pos": 1,
+     "n_neg": 7,
+     "n_pairs": 7,
+     "qualified": false,
+     "auroc": 0.8571428571428571,
+     "ci95": null
+    },
+    {
+     "benchmark": "gso",
+     "n": 54,
+     "n_pos": 7,
+     "n_neg": 47,
+     "n_pairs": 329,
+     "qualified": true,
+     "auroc": 0.5106382978723404,
+     "ci95": [
+      0.23494132653061225,
+      0.8149765579990859
+     ]
+    },
+    {
+     "benchmark": "hle",
+     "n": 107,
+     "n_pos": 8,
+     "n_neg": 99,
+     "n_pairs": 792,
+     "qualified": true,
+     "auroc": 0.8472222222222222,
+     "ci95": [
+      0.7485714285714286,
+      0.9216964827167979
+     ]
+    },
+    {
+     "benchmark": "ineqmath",
+     "n": 4,
+     "n_pos": 0,
+     "n_neg": 4,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "kumo",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "labbench",
+     "n": 40,
+     "n_pos": 4,
+     "n_neg": 36,
+     "n_pairs": 144,
+     "qualified": false,
+     "auroc": 0.8055555555555556,
+     "ci95": null
+    },
+    {
+     "benchmark": "livecodebench",
+     "n": 6,
+     "n_pos": 0,
+     "n_neg": 6,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "medagentbench",
+     "n": 35,
+     "n_pos": 0,
+     "n_neg": 35,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmau",
+     "n": 24,
+     "n_pos": 0,
+     "n_neg": 24,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "mmmlu",
+     "n": 33,
+     "n_pos": 0,
+     "n_neg": 33,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "omnimath",
+     "n": 18,
+     "n_pos": 2,
+     "n_neg": 16,
+     "n_pairs": 32,
+     "qualified": false,
+     "auroc": 0.75,
+     "ci95": null
+    },
+    {
+     "benchmark": "pixiu",
+     "n": 16,
+     "n_pos": 0,
+     "n_neg": 16,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "qcircuitbench",
+     "n": 7,
+     "n_pos": 1,
+     "n_neg": 6,
+     "n_pairs": 6,
+     "qualified": false,
+     "auroc": 0.8333333333333334,
+     "ci95": null
+    },
+    {
+     "benchmark": "reasoning-gym",
+     "n": 20,
+     "n_pos": 0,
+     "n_neg": 20,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "replicationbench",
+     "n": 36,
+     "n_pos": 0,
+     "n_neg": 36,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "research-code-bench",
+     "n": 81,
+     "n_pos": 0,
+     "n_neg": 81,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "scicode",
+     "n": 13,
+     "n_pos": 3,
+     "n_neg": 10,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.3,
+     "ci95": null
+    },
+    {
+     "benchmark": "seal0",
+     "n": 56,
+     "n_pos": 0,
+     "n_neg": 56,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "simpleqa",
+     "n": 5,
+     "n_pos": 0,
+     "n_neg": 5,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "skillsbench",
+     "n": 33,
+     "n_pos": 2,
+     "n_neg": 31,
+     "n_pairs": 62,
+     "qualified": false,
+     "auroc": 0.8387096774193549,
+     "ci95": null
+    },
+    {
+     "benchmark": "sldbench",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "spider2",
+     "n": 38,
+     "n_pos": 2,
+     "n_neg": 36,
+     "n_pairs": 72,
+     "qualified": false,
+     "auroc": 0.5138888888888888,
+     "ci95": null
+    },
+    {
+     "benchmark": "spreadsheetbench",
+     "n": 26,
+     "n_pos": 0,
+     "n_neg": 26,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "strongreject",
+     "n": 3,
+     "n_pos": 0,
+     "n_neg": 3,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swe-lancer",
+     "n": 35,
+     "n_pos": 2,
+     "n_neg": 33,
+     "n_pairs": 66,
+     "qualified": false,
+     "auroc": 0.4393939393939394,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-multilingual",
+     "n": 10,
+     "n_pos": 0,
+     "n_neg": 10,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "swebench-verified",
+     "n": 23,
+     "n_pos": 5,
+     "n_neg": 18,
+     "n_pairs": 90,
+     "qualified": true,
+     "auroc": 0.6111111111111112,
+     "ci95": [
+      0.2765873015873016,
+      1.0
+     ]
+    },
+    {
+     "benchmark": "swebenchpro",
+     "n": 42,
+     "n_pos": 4,
+     "n_neg": 38,
+     "n_pairs": 152,
+     "qualified": false,
+     "auroc": 0.375,
+     "ci95": null
+    },
+    {
+     "benchmark": "swesmith",
+     "n": 56,
+     "n_pos": 1,
+     "n_neg": 55,
+     "n_pairs": 55,
+     "qualified": false,
+     "auroc": 0.2545454545454545,
+     "ci95": null
+    },
+    {
+     "benchmark": "swtbench",
+     "n": 10,
+     "n_pos": 1,
+     "n_neg": 9,
+     "n_pairs": 9,
+     "qualified": false,
+     "auroc": 0.6666666666666666,
+     "ci95": null
+    },
+    {
+     "benchmark": "terminal-bench",
+     "n": 17,
+     "n_pos": 2,
+     "n_neg": 15,
+     "n_pairs": 30,
+     "qualified": false,
+     "auroc": 0.7333333333333333,
+     "ci95": null
+    },
+    {
+     "benchmark": "usaco",
+     "n": 2,
+     "n_pos": 0,
+     "n_neg": 2,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    },
+    {
+     "benchmark": "widesearch",
+     "n": 1,
+     "n_pos": 0,
+     "n_neg": 1,
+     "n_pairs": 0,
+     "qualified": false,
+     "auroc": null,
+     "ci95": null
+    }
+   ],
+   "positives_weighted_mean": {
+    "value": 0.5819203766613029,
+    "ci95": [
+     0.4655251349078881,
+     0.693683094933417
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_all_pairs": {
+    "value": 0.5926837847344355,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 1685.0,
+    "ci95": [
+     0.48691182706782865,
+     0.7019956104560381
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_qualified_pairs": {
+    "value": 0.6446578631452581,
+    "n_pairs": 1666,
+    "concordant_pair_equivalents": 1074.0,
+    "ci95": [
+     0.5215900046515983,
+     0.7416871685327048
+    ],
+    "n_bootstrap": 400,
+    "n_defined": 400
+   },
+   "concordance_cross_pairs": {
+    "value": 0.6344798093958092,
+    "n_pairs": 81845,
+    "concordant_pair_equivalents": 51929.0,
+    "pooled_auroc": 0.633076705082184
+   },
+   "in_sample_pooled_concordance": {
+    "value": 0.685895181146676,
+    "n_pairs": 2843,
+    "concordant_pair_equivalents": 1950.0
+   }
+  }
+ },
+ "within_benchmark_cv": {
+  "arc-agi-2": {
+   "A": {
+    "n": 22,
+    "n_pos": 5,
+    "n_neg": 17,
+    "cv_method": "loo",
+    "n_folds": 22,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.2823529411764706,
+    "ci95": [
+     0.05555555555555555,
+     0.5811309523809525
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 22,
+    "n_pos": 5,
+    "n_neg": 17,
+    "cv_method": "loo",
+    "n_folds": 22,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.7058823529411765,
+    "ci95": [
+     0.40604440789473684,
+     0.9375
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 22,
+    "n_pos": 5,
+    "n_neg": 17,
+    "cv_method": "loo",
+    "n_folds": 22,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.7058823529411765,
+    "ci95": [
+     0.40604440789473684,
+     0.9375
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  },
+  "bixbench": {
+   "A": {
+    "n": 29,
+    "n_pos": 5,
+    "n_neg": 24,
+    "cv_method": "loo",
+    "n_folds": 29,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.44166666666666665,
+    "ci95": [
+     0.07375000000000002,
+     0.8150997150997151
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 29,
+    "n_pos": 5,
+    "n_neg": 24,
+    "cv_method": "loo",
+    "n_folds": 29,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.4083333333333333,
+    "ci95": [
+     0.0,
+     0.7972222222222224
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 29,
+    "n_pos": 5,
+    "n_neg": 24,
+    "cv_method": "loo",
+    "n_folds": 29,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.6416666666666667,
+    "ci95": [
+     0.23216666666666672,
+     0.9103957636566332
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  },
+  "gaia2": {
+   "A": {
+    "n": 55,
+    "n_pos": 5,
+    "n_neg": 50,
+    "cv_method": "loo",
+    "n_folds": 55,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.656,
+    "ci95": [
+     0.31944117647058823,
+     0.936272375423319
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 55,
+    "n_pos": 5,
+    "n_neg": 50,
+    "cv_method": "loo",
+    "n_folds": 55,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.62,
+    "ci95": [
+     0.32577011936850214,
+     0.8521164021164022
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 55,
+    "n_pos": 5,
+    "n_neg": 50,
+    "cv_method": "loo",
+    "n_folds": 55,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.672,
+    "ci95": [
+     0.3477941176470588,
+     0.9104983067247219
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  },
+  "gso": {
+   "A": {
+    "n": 54,
+    "n_pos": 7,
+    "n_neg": 47,
+    "cv_method": "loo",
+    "n_folds": 54,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5927051671732523,
+    "ci95": [
+     0.3858016304347826,
+     0.7715746753246753
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 7 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 54,
+    "n_pos": 7,
+    "n_neg": 47,
+    "cv_method": "loo",
+    "n_folds": 54,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.49848024316109424,
+    "ci95": [
+     0.2714044887278583,
+     0.7388061224489796
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 7 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 54,
+    "n_pos": 7,
+    "n_neg": 47,
+    "cv_method": "loo",
+    "n_folds": 54,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5714285714285714,
+    "ci95": [
+     0.27171648550724636,
+     0.8576097105508865
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 7 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  },
+  "hle": {
+   "A": {
+    "n": 107,
+    "n_pos": 8,
+    "n_neg": 99,
+    "cv_method": "loo",
+    "n_folds": 107,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.6906565656565656,
+    "ci95": [
+     0.48799369747899163,
+     0.847523961474624
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 8 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 107,
+    "n_pos": 8,
+    "n_neg": 99,
+    "cv_method": "loo",
+    "n_folds": 107,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5492424242424242,
+    "ci95": [
+     0.2659610215053763,
+     0.8055970790378006
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 8 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 107,
+    "n_pos": 8,
+    "n_neg": 99,
+    "cv_method": "loo",
+    "n_folds": 107,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.494949494949495,
+    "ci95": [
+     0.24026582876734276,
+     0.7450043290043289
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 8 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  },
+  "swebench-verified": {
+   "A": {
+    "n": 23,
+    "n_pos": 5,
+    "n_neg": 18,
+    "cv_method": "loo",
+    "n_folds": 23,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5444444444444444,
+    "ci95": [
+     0.09523809523809523,
+     0.9527882205513785
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B": {
+    "n": 23,
+    "n_pos": 5,
+    "n_neg": 18,
+    "cv_method": "loo",
+    "n_folds": 23,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5222222222222223,
+    "ci95": [
+     0.21409774436090226,
+     0.8683333333333337
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   },
+   "A+B+C+D": {
+    "n": 23,
+    "n_pos": 5,
+    "n_neg": 18,
+    "cv_method": "loo",
+    "n_folds": 23,
+    "n_folds_fit_single_class": 0,
+    "oof_auroc": 0.5111111111111111,
+    "ci95": [
+     0.18181818181818182,
+     0.8571428571428571
+    ],
+    "too_small_to_validate": true,
+    "note": "kept tasks = 5 (< 10): the OOF AUROC is a suggestive small-n statistic, not a fitted and validated per-population model"
+   }
+  }
+ },
+ "bootstrap_seed": 20260914,
+ "n_bootstrap": 400
+}
