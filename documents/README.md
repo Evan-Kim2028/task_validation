@@ -62,6 +62,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [56-paper-draft.md](56-paper-draft.md) | Explanation | Paper draft: estimand, method, all population results, negative results, funnel data contribution, limitations |
 | [57-drift.md](57-drift.md) | Reference | Internal inconsistencies between documents and artifacts, each with its fix |
 | [58-writing-style.md](58-writing-style.md) | Reference | Voice and defensibility rules for published work: no first person, active voice, limits in one place, the thesis line |
+| [59-conditional-taste.md](59-conditional-taste.md) | Explanation | Taste measured among valid tasks only: SWE 0.59 to 0.62, TB 2.1 at chance, kept sets disjoint across populations at 0.94 to 1.00 separability |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
