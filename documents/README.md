@@ -59,6 +59,8 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [53-generator-gate.md](53-generator-gate.md) | How-to | Oracle and nop gate over sampled generated task sets (RST, SETA, TMax) on the VPS, per-generator hypergeometric certificate |
 | [54-funnel-trajectory-features.md](54-funnel-trajectory-features.md) | Explanation | Trajectory, verifier and shortcut features added to the funnel model: family-held-out AUROC 0.61, stop rule triggered, funnel footprint is source identity |
 | [55-replication.md](55-replication.md) | How-to | Replicate the funnel reconstruction and generator gates from the public dump with coding agents: dataset, hardware, commands, traps, expected numbers |
+| [56-paper-draft.md](56-paper-draft.md) | Explanation | Paper draft: estimand, method, all population results, negative results, funnel data contribution, limitations |
+| [57-drift.md](57-drift.md) | Reference | Internal inconsistencies between documents and artifacts, each with its fix |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
