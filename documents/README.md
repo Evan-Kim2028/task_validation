@@ -66,6 +66,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [60-typicality.md](60-typicality.md) | Explanation | One-class typicality of the expert-kept region: distinctive only through source identity; lot-001 outside both clouds |
 | [61-results.md](61-results.md) | Reference | **Standalone results.** All 12 populations, epsilon sensitivity, negative results, data contribution, lot-001, limits |
 | [62-reference-targets.md](62-reference-targets.md) | Explanation | Kept-set reference distributions as generation targets: 0.596 within SWE-bench over 20 seeds, at or below chance across populations, lot-001 gap report |
+| [63-durability.md](63-durability.md) | Explanation | Capability curves on 6,613 tasks: 1,035 saturating, 1,837 durable; durability not predictable from features; TB4 has 27 of 66 saturating |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 

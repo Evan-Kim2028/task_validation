@@ -1,0 +1,159 @@
+{
+ "protocol": "durability.capability_curve.2026-09-14",
+ "method": "models ordered by overall solve rate over all in-scope harbor_adapter_trials.jsonl rows; ordered list split into three contiguous tiers of sizes 6/5/5 (array_split convention, first tiers take the remainder)",
+ "circularity": "ordering models by their own aggregate performance and then measuring per-task slope against that ordering is circular at the population level (the top tier is guaranteed a higher pooled rate, so the population median slope is positive by construction) but not at the task level: a per-task slope honestly measures how that task's solve rate changes between the weaker and stronger thirds of the ordering. The population median is descriptive; only per-task slopes are measurements.",
+ "tiers": {
+  "bottom": [
+   "claude-haiku-4-5",
+   "gpt-5-nano",
+   "qwen3-max",
+   "claude-haiku-4-5-20251001",
+   "MiniMax-M2.5",
+   "gpt-5-mini"
+  ],
+  "mid": [
+   "mimo-v2-pro",
+   "deepseek-reasoner",
+   "glm-5",
+   "gemini-3-flash-preview",
+   "deepseek-chat"
+  ],
+  "top": [
+   "gpt-5.4",
+   "kimi-k2.5",
+   "claude-sonnet-4-6",
+   "claude-opus-4-6",
+   "gemini-3.1-pro-preview"
+  ]
+ },
+ "models": [
+  {
+   "model": "claude-haiku-4-5",
+   "rank": 0,
+   "tier": "bottom",
+   "n_trials": 555,
+   "n_succ": 41,
+   "solve_rate": 0.07387387387387387
+  },
+  {
+   "model": "gpt-5-nano",
+   "rank": 1,
+   "tier": "bottom",
+   "n_trials": 54740,
+   "n_succ": 20507,
+   "solve_rate": 0.374625502374863
+  },
+  {
+   "model": "qwen3-max",
+   "rank": 2,
+   "tier": "bottom",
+   "n_trials": 55128,
+   "n_succ": 28214,
+   "solve_rate": 0.5117907415469453
+  },
+  {
+   "model": "claude-haiku-4-5-20251001",
+   "rank": 3,
+   "tier": "bottom",
+   "n_trials": 61997,
+   "n_succ": 33506,
+   "solve_rate": 0.540445505427682
+  },
+  {
+   "model": "MiniMax-M2.5",
+   "rank": 4,
+   "tier": "bottom",
+   "n_trials": 54953,
+   "n_succ": 30839,
+   "solve_rate": 0.5611886521209033
+  },
+  {
+   "model": "gpt-5-mini",
+   "rank": 5,
+   "tier": "bottom",
+   "n_trials": 61681,
+   "n_succ": 35665,
+   "solve_rate": 0.5782169549780322
+  },
+  {
+   "model": "mimo-v2-pro",
+   "rank": 6,
+   "tier": "mid",
+   "n_trials": 47093,
+   "n_succ": 29886,
+   "solve_rate": 0.6346166096872147
+  },
+  {
+   "model": "deepseek-reasoner",
+   "rank": 7,
+   "tier": "mid",
+   "n_trials": 24448,
+   "n_succ": 15737,
+   "solve_rate": 0.6436927356020943
+  },
+  {
+   "model": "glm-5",
+   "rank": 8,
+   "tier": "mid",
+   "n_trials": 39559,
+   "n_succ": 25658,
+   "solve_rate": 0.6486008240855431
+  },
+  {
+   "model": "gemini-3-flash-preview",
+   "rank": 9,
+   "tier": "mid",
+   "n_trials": 60504,
+   "n_succ": 39767,
+   "solve_rate": 0.6572623297633214
+  },
+  {
+   "model": "deepseek-chat",
+   "rank": 10,
+   "tier": "mid",
+   "n_trials": 25673,
+   "n_succ": 17038,
+   "solve_rate": 0.6636544229346005
+  },
+  {
+   "model": "gpt-5.4",
+   "rank": 11,
+   "tier": "top",
+   "n_trials": 63982,
+   "n_succ": 43063,
+   "solve_rate": 0.6730486699384202
+  },
+  {
+   "model": "kimi-k2.5",
+   "rank": 12,
+   "tier": "top",
+   "n_trials": 37252,
+   "n_succ": 25482,
+   "solve_rate": 0.6840438097283368
+  },
+  {
+   "model": "claude-sonnet-4-6",
+   "rank": 13,
+   "tier": "top",
+   "n_trials": 59008,
+   "n_succ": 40464,
+   "solve_rate": 0.6857375271149675
+  },
+  {
+   "model": "claude-opus-4-6",
+   "rank": 14,
+   "tier": "top",
+   "n_trials": 60596,
+   "n_succ": 43476,
+   "solve_rate": 0.7174731005346887
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "rank": 15,
+   "tier": "top",
+   "n_trials": 61787,
+   "n_succ": 46564,
+   "solve_rate": 0.753621311926457
+  }
+ ]
+}
