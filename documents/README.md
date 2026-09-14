@@ -67,6 +67,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [61-results.md](61-results.md) | Reference | **Standalone results.** All 12 populations, epsilon sensitivity, negative results, data contribution, lot-001, limits |
 | [62-reference-targets.md](62-reference-targets.md) | Explanation | Kept-set reference distributions as generation targets: 0.596 within SWE-bench over 20 seeds, at or below chance across populations, lot-001 gap report |
 | [63-durability.md](63-durability.md) | Explanation | Capability curves on 6,613 tasks: 1,035 saturating, 1,837 durable; durability not predictable from features; TB4 has 27 of 66 saturating |
+| [64-harbor-index-replication.md](64-harbor-index-replication.md) | Reference | Replication of the two Harbor-Index reference failures, with a named cause for each |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
