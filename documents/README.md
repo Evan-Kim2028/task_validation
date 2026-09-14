@@ -63,6 +63,8 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [57-drift.md](57-drift.md) | Reference | Internal inconsistencies between documents and artifacts, each with its fix |
 | [58-writing-style.md](58-writing-style.md) | Reference | Voice and defensibility rules for published work: no first person, active voice, limits in one place, the thesis line |
 | [59-conditional-taste.md](59-conditional-taste.md) | Explanation | Taste measured among valid tasks only: SWE 0.59 to 0.62, TB 2.1 at chance, kept sets disjoint across populations at 0.94 to 1.00 separability |
+| [60-typicality.md](60-typicality.md) | Explanation | One-class typicality of the expert-kept region: distinctive only through source identity; lot-001 outside both clouds |
+| [61-results.md](61-results.md) | Reference | **Standalone results.** All 12 populations, epsilon sensitivity, negative results, data contribution, lot-001, limits |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
