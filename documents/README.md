@@ -61,6 +61,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [55-replication.md](55-replication.md) | How-to | Replicate the funnel reconstruction and generator gates from the public dump with coding agents: dataset, hardware, commands, traps, expected numbers |
 | [56-paper-draft.md](56-paper-draft.md) | Explanation | Paper draft: estimand, method, all population results, negative results, funnel data contribution, limitations |
 | [57-drift.md](57-drift.md) | Reference | Internal inconsistencies between documents and artifacts, each with its fix |
+| [58-writing-style.md](58-writing-style.md) | Reference | Voice and defensibility rules for published work: no first person, active voice, limits in one place, the thesis line |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
