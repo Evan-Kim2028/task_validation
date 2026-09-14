@@ -51,6 +51,8 @@ The estimand here is the residual rate of *material task invalidity* in a frozen
 
 Dodge-Romig LTPD tables: consumer risk 0.10 at a stated lot percent defective; hypergeometric Type A OC curves. ANSI/ASQ Z1.4 (ISO 2859): AQL-indexed switching; not a CI. Rule of three: if k=0 in n iid trials, one-sided 95% UCB ≈ 3/n (Hanley & Lippman-Hand 1983; ASTM E2334 for the finite-lot zero-response case). Stringer bound (MUS/PPS): conservative upper bound on total overstatement; too wide for a binary invalidity rate. Wald SPRT: sequential accept/reject with fixed α, β; Lan-DeMets (1983) alpha spending for unplanned looks. Capture-recapture in software inspection (Eick et al. 1992; Petersson et al. 2004 CIs): remaining-defect *count* from overlapping inspectors; needs ≥4 inspectors and underestimates with two. Secondary sources for the books/standards: not the 1959 Dodge-Romig volume itself.
 
+Nearest 2026 statistical neighbour: Kato and Nakagawa, arXiv 2604.06116, *Sequential Audit Sampling for Finite Populations with Exact and Simulation-based Guarantee* (v1 7 Apr 2026, titled *Sequential Audit Sampling with Statistical Guarantees*). It bounds a financial-statement lot deviation rate and the sequential procedure's own error probabilities. Financial auditing, not benchmark auditing; different estimand, same design family.
+
 ### 5. Dataset and benchmark quality audits (statistical claims)
 
 | Paper | Shows | Does not | URL |
@@ -65,10 +67,11 @@ Dodge-Romig LTPD tables: consumer risk 0.10 at a stated lot percent defective; h
 | UTBoost 2506.09289 | 36 insufficient-test instances; 345 false-pass patches; leaderboard rank changes. | Population UCB. | https://arxiv.org/abs/2506.09289 |
 | Harbor-Index 2609.04298 | Funnel 6627→82; exhaustive human on survivors. Funnel observation, not a bound on 6627. | CI. | https://arxiv.org/abs/2609.04298 |
 | OpenCompass 2609.08149 | Pro Verified: 102/731 repaired (leakage + quality). Census of a targeted repair set. | Probability-sample CI. | https://arxiv.org/abs/2609.08149 |
+| Dong et al. 2607.28367 | Wilson interval on the rate of wrong FAIL verdicts over 150 failure trajectories. A real CI on an audit quantity. | Residual task-invalidity bound on an accepted pool. | https://arxiv.org/abs/2607.28367 |
 
 OpenAI Verified 2024 (68.3% of 1,699/2,294 filtered) and Pro 2026 (~30% of 731) are large reviews, not designed CIs. TB 2.1/3.0 is a construction census.
 
-**Exact claim.** Nobody opened here states a *design-based, coverage-checked, one-sided finite-population confidence bound on residual task invalidity of an accepted agent-eval pool*. Closest: Gema et al. (sampled MMLU item-error *point* estimate); FAQ/NbV/PPI/Kim (scores or judges, not task Y); OpenAI/Harbor/ABA (audits without a UCB).
+**Exact claim.** Nobody opened here states a *design-based, coverage-checked, one-sided finite-population confidence bound on residual task invalidity of an accepted agent-eval pool*. Closest: Gema et al. (sampled MMLU item-error *point* estimate); FAQ/NbV/PPI/Kim (scores or judges, not task Y); OpenAI/Harbor/ABA (audits without a UCB); Kato & Nakagawa (financial lot deviation rate, accounting); Dong et al. (Wilson CI on wrong-FAIL verdicts among failure trajectories, not a pool bound).
 
 ## B. What we can directly reuse
 
@@ -121,7 +124,7 @@ Scores / IRT: FAQ https://arxiv.org/abs/2601.20251 ; Miller https://arxiv.org/ab
 
 Judges / noise: NbV https://arxiv.org/abs/2601.20913 ; Chen et al. https://arxiv.org/abs/2601.05420 ; Lee et al. https://arxiv.org/abs/2511.21140 ; Jung et al. https://arxiv.org/abs/2407.18370 ; CRC https://arxiv.org/abs/2208.02814 ; SCOPE https://arxiv.org/abs/2602.13110 ; Fogliato et al. http://proceedings.mlr.press/v108/fogliato20a.html
 
-Audits: Northcutt https://arxiv.org/abs/2103.14749 ; Gema et al. https://arxiv.org/abs/2406.04127 ; Berti-Équille https://arxiv.org/abs/2607.25356 ; ABA https://arxiv.org/abs/2605.26079 ; BenchGuard https://arxiv.org/abs/2604.24955 ; SWE-bench+ https://arxiv.org/abs/2410.06992 ; Illusion https://arxiv.org/abs/2506.12286 ; UTBoost https://arxiv.org/abs/2506.09289 ; Harbor-Index https://arxiv.org/abs/2609.04298 ; OpenCompass https://arxiv.org/abs/2609.08149
+Audits: Northcutt https://arxiv.org/abs/2103.14749 ; Gema et al. https://arxiv.org/abs/2406.04127 ; Berti-Équille https://arxiv.org/abs/2607.25356 ; ABA https://arxiv.org/abs/2605.26079 ; BenchGuard https://arxiv.org/abs/2604.24955 ; SWE-bench+ https://arxiv.org/abs/2410.06992 ; Illusion https://arxiv.org/abs/2506.12286 ; UTBoost https://arxiv.org/abs/2506.09289 ; Harbor-Index https://arxiv.org/abs/2609.04298 ; OpenCompass https://arxiv.org/abs/2609.08149 ; Dong et al. https://arxiv.org/abs/2607.28367 ; Kato & Nakagawa https://arxiv.org/abs/2604.06116
 
 Classical (secondary; originals not opened): rule of three / ASTM E2334; Dodge-Romig LTPD; ANSI Z1.4; Stringer/MUS; Wald SPRT; Lan-DeMets 1983; Eick et al. 1992; Petersson et al. 2004; Rogan & Gladen 1978; Dawid & Skene 1979; Clopper & Pearson 1934; Särndal GREG via Mozer.
 

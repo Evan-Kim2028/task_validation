@@ -9,19 +9,26 @@ machine, verifier_kind execution. Judge-configured and no-reference tasks are
 detected, recorded as their own strata, and left unadjudicated in the
 execution certificate (doc 44). Never fabricates a reward.
 
-Scheduling: by default each task's first pending trial (the first oracle
-rep on a fresh task, or the first nop rep when oracle trials do not run)
-runs alone to completion, so its environment image build populates the
-docker layer cache before the remaining trials fan out at --concurrency.
-Without this the trials of one task all build the same image at once, the
+Scheduling: by default all of a task's trials dispatch at once at
+--concurrency and each builds its own environment image, so two trials of
+one task can run against different builds. --warmup instead runs the
+first pending trial (the first oracle rep on a fresh task, or the first
+nop rep when oracle trials do not run) alone to completion, so its
+environment image build populates the docker layer cache before the
+remaining trials fan out against the same image. All-at-once dispatch
+means the trials of one task all build the same image concurrently, the
 cache serves none of them, and they contend for disk:
 in the SETA gate run (concurrency 3) the quickest executed trial per task
-medians 51 s (n=164) while the other three median 107 s (n=492). A warmup
-trial that comes back infra is recorded and the rest of the task's trials
-are skipped for the pass as not_run rows; they are not retried inside the
-runner. --no-warmup restores the old all-at-once dispatch. This is a
-scheduling change only: probes, statuses, resume keys, row schema, prune
-cadence and the certificate path are unchanged, and no verdict is affected.
+medians 51 s (n=164) while the other three median 107 s (n=492). Under
+--warmup a warmup trial that comes back infra is recorded and the rest of
+the task's trials are skipped for the pass as not_run rows; they are not
+retried inside the runner. The two schedulings measure different
+constructs -- concurrent conflates verifier and build nondeterminism,
+warmup isolates the verifier -- so the choice is recorded on the
+certificate as "scheduling" and is not interchangeable across runs
+(doc 53). Probes, statuses, resume keys, row schema, prune cadence and
+the certificate path are unchanged either way, and no verdict rule is
+affected.
 
 Probe selection: --probes takes a comma-separated subset of oracle,nop and
 defaults to both, which is the two-sided gate. With oracle absent the run
@@ -886,7 +893,7 @@ def run_gate(
     verdicts_path: Path | None = None,
     resume: bool = True,
     redo_infra: bool = False,
-    warmup: bool = True,
+    warmup: bool = False,
     trial_runner=None,
     maintenance: DockerMaintenance | None = None,
 ) -> dict:
@@ -960,6 +967,7 @@ def run_gate(
             ADJUDICATOR,
             verifier_kind="none" if one_sided else VERIFIER_KIND,
             one_sided=one_sided,
+            scheduling="warmup" if warmup else "concurrent",
         )
         summary["certificate"] = {
             "path": str(certificate_path),

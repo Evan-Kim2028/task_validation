@@ -17,6 +17,7 @@ from task_validation.sampling.estimators import _hypergeom_sf, srs_estimate
 ASSAY_GRADES = frozenset({"A", "B"})
 ADJUDICATORS = frozenset({"machine", "human", "both"})
 VERIFIER_KINDS = frozenset({"execution", "judge", "none"})
+SCHEDULINGS = frozenset({"concurrent", "warmup"})
 SWE_EXEC_PROTOCOL = "verifier_invalid.fresh_environment.execution"
 SWE_EXEC_GRADE = "A"
 SWE_EXEC_ADJUDICATOR = "machine"
@@ -124,8 +125,16 @@ def build_certificate(
     alpha: float = ALPHA_DEFAULT,
     verifier_kind: str = "execution",
     one_sided: bool = False,
+    scheduling: str = "concurrent",
 ) -> dict:
     """Assemble a release certificate, or mark it INCOMPLETE.
+
+    scheduling records how the trials behind the verdicts were dispatched
+    (doc 53): "concurrent" runs all of a task's trials at once so each
+    builds its own image; "warmup" runs the first trial alone so the rest
+    share its cached image. The two schedulings measure different
+    constructs and cross-pool comparisons must name which produced each
+    certificate.
 
     verifier_kind is the stratum this certificate covers: execution,
     judge, or none (doc 44). A verdict that declares a different
@@ -146,6 +155,8 @@ def build_certificate(
     protocol = str(protocol)
     if verifier_kind not in VERIFIER_KINDS:
         raise ValueError("verifier_kind must be execution, judge, or none")
+    if scheduling not in SCHEDULINGS:
+        raise ValueError(f"scheduling must be one of {sorted(SCHEDULINGS)}")
     swap_units = [
         str(row.get("unit_id"))
         for row in verdicts
@@ -276,6 +287,7 @@ def build_certificate(
         "grade": _grade_label(grades),
         "adjudicator": adj,
         "verifier_kind": verifier_kind,
+        "scheduling": scheduling,
         "one_sided": bool(one_sided),
         "interpretation": (
             ONE_SIDED_INTERPRETATION if one_sided else None
@@ -349,6 +361,8 @@ def render_certificate_md(cert: dict) -> str:
     lines.append(f"- Grade: {cert.get('grade')}")
     lines.append(f"- Adjudicator: {cert.get('adjudicator')}")
     lines.append(f"- Verifier kind: {cert.get('verifier_kind')}")
+    if cert.get("scheduling"):
+        lines.append(f"- Scheduling: {cert.get('scheduling')}")
     if cert.get("one_sided"):
         lines.append("- One-sided: True")
         lines.append(f"- Interpretation: {cert.get('interpretation')}")
@@ -618,6 +632,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--alpha", type=float, default=ALPHA_DEFAULT)
     p.add_argument(
+        "--scheduling",
+        default="concurrent",
+        choices=sorted(SCHEDULINGS),
+        help="how the trials behind the verdicts were dispatched (doc 53)",
+    )
+    p.add_argument(
         "--one-sided",
         action="store_true",
         help="one-sided nop-only bound over the none stratum (doc 44); "
@@ -672,6 +692,7 @@ def main(argv: list[str] | None = None) -> int:
         alpha=args.alpha,
         verifier_kind=args.verifier_kind or _infer_verifier_kind(verdicts),
         one_sided=args.one_sided or any(bool(v.get("one_sided")) for v in verdicts),
+        scheduling=args.scheduling,
     )
     _write_json(args.out, cert)
     _write_md(args.md, cert)
@@ -692,6 +713,7 @@ def main(argv: list[str] | None = None) -> int:
                 "grade": cert["grade"],
                 "adjudicator": cert["adjudicator"],
                 "verifier_kind": cert["verifier_kind"],
+                "scheduling": cert["scheduling"],
                 "judge_model": cert["judge_model"],
                 "strata": cert["strata"],
                 "n_flagged": len(cert["flagged"]),

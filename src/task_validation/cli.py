@@ -824,7 +824,7 @@ def _cmd_generator_gate_run(args: argparse.Namespace) -> int:
         epsilon=args.epsilon,
         resume=not args.no_resume,
         redo_infra=args.redo_infra,
-        warmup=not args.no_warmup,
+        warmup=args.warmup,
     )
     return 0
 
@@ -1163,9 +1163,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--no-resume", action="store_true")
     p.add_argument("--redo-infra", action="store_true", help="re-execute trials whose latest row is infra or timeout")
     p.add_argument(
-        "--no-warmup",
+        "--warmup",
         action="store_true",
-        help="dispatch all of a task's trials at once (old behaviour); default runs the first trial alone to warm the image cache",
+        help="run each task's first trial alone so its build warms the image cache for the rest; "
+        "default dispatches all trials at once so each builds its own image (doc 53)",
     )
     p.set_defaults(func=_cmd_generator_gate_run)
 

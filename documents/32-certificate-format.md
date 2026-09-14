@@ -4,6 +4,8 @@ A certificate is the release record for one frozen accepted pool. Inputs: a samp
 
 Code: `src/task_validation/sampling/certificate.py`. Estimator: hypergeometric UCB when n < N (`estimators.py`); when n = N the UCB is the observed rate (census). Clopper-Pearson is the infinite-population fallback in the estimator module, not the census path.
 
+Naming: the protocol string `verifier_invalid.fresh_environment.execution` is historical and stays unchanged in artifacts for continuity. The construct the execution assay certifies is verifier consistency, not verifier validity: passing the oracle and nop probes is necessary evidence, not sufficient. A consistent verifier may still under-test the requirement, accept a wrong implementation, be over-permissive, or depend on accidental environment state (doc 56 section 1).
+
 ## Fields
 
 | Field | Meaning |
@@ -15,6 +17,7 @@ Code: `src/task_validation/sampling/certificate.py`. Estimator: hypergeometric U
 | p_certify | OC-curve P(UCB < epsilon) if true p equals the observed p-hat |
 | label_protocol, grade | Named protocol; assay grade A or B only |
 | adjudicator | machine, human, or both |
+| scheduling | How the trials behind the verdicts were dispatched: concurrent (each trial builds its own image) or warmup (probes share one cached image). Defaults to concurrent; the two schedulings measure different constructs (doc 53) |
 | replaces_human_sample | Always false for a machine certificate |
 | flagged | Invalid unit ids with evidence text |
 | unadjudicated | Sample ids with invalid null, missing verdict, or grade not A/B. No imputation |

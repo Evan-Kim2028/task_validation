@@ -38,6 +38,8 @@ Per doc 32, every per-lot certificate that contains non-execution verifiers adds
 
 A judge-verified stratum has no grade-A machine certificate. Running the judge measures verifier behavior; it does not adjudicate Y. The bound on a judge stratum is human-adjudicated, drawn under the same probability-sample design as every other stratum (doc 23 section 5, doc 32). A task with verifier_kind none contributes one-sided nop evidence only: an accept is a grade-A invalid finding, a reject is no evidence of validity, and the unit never enters a two-sided bound.
 
+Naming: the construct certified under `verifier_invalid.fresh_environment.execution` is verifier consistency, not verifier validity. Passing the assay is necessary evidence, not sufficient; the string is historical and stays unchanged in artifacts (doc 32).
+
 ## Implementation
 
 Runner: `src/task_validation/evidence/judge_verifier.py`, exposed as `task-validation interrogate-judge`. Detection is static: a task is judge-verified when `JUDGE_MODELS` or `JUDGE_REPEATS` appears in its `tests/` files or `task.toml`. The runner passes the declared judge env through `harbor run --verifier-env` and pulls the verifier's own detail JSON with `--verifier-include-logs *.json`, so per-model, per-repeat rewards land in `data/gold/harbor_index_judge.jsonl` next to the k=3 oracle and k=3 nop run rows. Missing keys produce `missing_judge_env` rows; nothing is run or imputed.

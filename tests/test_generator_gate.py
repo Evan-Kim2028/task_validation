@@ -493,6 +493,7 @@ def test_one_sided_nop_run_records_none_stratum(tmp_path: Path):
         concurrency=2,
         k=2,
         probes="nop",
+        warmup=True,
         trial_runner=runner,
         maintenance=FakeMaintenance(),
     )

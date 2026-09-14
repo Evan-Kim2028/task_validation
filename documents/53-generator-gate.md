@@ -1,6 +1,6 @@
 # Generator gate on the remote Docker host
 
-How-to plus results placeholder. Runs gate A from doc 50 section 2 against the three generated lots on `lake-vps-lor-main`: RST, SETA-Env, and TMax-15K. Protocol `verifier_invalid.fresh_environment.execution`, grade A, adjudicator machine. No model output enters the bound (doc 43). The code is `src/task_validation/evidence/generator_gate.py` with the CLI pair `generator-gate-sample` and `generator-gate-run`.
+How-to plus results placeholder. Runs gate A from doc 50 section 2 against the three generated lots on `lake-vps-lor-main`: RST, SETA-Env, and TMax-15K. Protocol `verifier_invalid.fresh_environment.execution`, grade A, adjudicator machine. The construct this assay certifies is verifier consistency, not verifier validity: passing the oracle and nop probes is necessary evidence, not sufficient. A consistent verifier may still under-test the requirement, accept a wrong implementation, be over-permissive, or depend on accidental environment state (docs 32, 56). No model output enters the bound (doc 43). The code is `src/task_validation/evidence/generator_gate.py` with the CLI pair `generator-gate-sample` and `generator-gate-run`.
 
 ## Host and lots
 
@@ -55,9 +55,9 @@ harbor run -p <task_dir> --agent <oracle|nop> --env docker --yes \
 
 Rows append to `data/gold/gen_gate_<name>.jsonl`, one per `(task, probe, rep)` with reward, status, wall time, and log tails. Resume is automatic: re-running skips terminal trials. Environment build failures and timeouts are recorded as `infra` and `timeout` with null reward; no reward is ever fabricated.
 
-By default the runner warms each task's image before fanning out: the first pending trial (the first oracle rep on a fresh task, or the first nop rep when oracle trials do not run) runs alone to completion so its environment build populates the docker layer cache, then the remaining trials dispatch at `--concurrency`. A warmup trial that comes back `infra` is recorded, and the task's remaining trials are recorded `not_run` for the pass with no retry inside the runner. `--no-warmup` restores the old all-at-once dispatch. The change is scheduling only: probes, statuses, resume keys, row schema, prune cadence and the certificate path are unchanged, and no verdict is affected.
+By default the runner dispatches all of a task's trials at once at `--concurrency`, and each trial builds its own environment image. `--warmup` is an opt-in alternative: the first pending trial (the first oracle rep on a fresh task, or the first nop rep when oracle trials do not run) runs alone to completion so its environment build populates the docker layer cache, then the remaining trials dispatch at `--concurrency` against that cached image. A warmup trial that comes back `infra` is recorded, and the task's remaining trials are recorded `not_run` for the pass with no retry inside the runner. The choice is not interchangeable across runs — the two schedulings measure different constructs (see "Scheduling and what it measures" below) — so `build_certificate` stamps the certificate `scheduling` field with `concurrent` or `warmup`. Probes, statuses, resume keys, row schema, prune cadence and the certificate path are unchanged either way, and no verdict rule is affected.
 
-The motivation is measured in `data/gold/gen_gate_seta.jsonl` from the SETA gate at concurrency 3: the quickest executed trial per task medians 51 s (n=164) while the other three median 107 s (n=492). Under all-at-once dispatch the trials of one task build the same image concurrently, so the layer cache serves none of them and the builds contend for disk.
+The motivation for `--warmup` is measured in `data/gold/gen_gate_seta.jsonl` from the SETA gate at concurrency 3: the quickest executed trial per task medians 51 s (n=164) while the other three median 107 s (n=492). Under all-at-once dispatch the trials of one task build the same image concurrently, so the layer cache serves none of them and the builds contend for disk.
 
 ```bash
 cd ~/task_validation
@@ -132,6 +132,21 @@ systemd-run --user --collect -p MemoryMax=24G -p CPUWeight=50 \
     --name tmax --probes nop --concurrency 3
 ```
 
+## Scheduling and what it measures
+
+The gate offers two dispatches, and the choice changes what a verdict means. Under `concurrent` (default; all of a task's trials fan out at once) each trial builds its own environment image, so package installs are refetched per trial and two trials of one task can run against different images — each trial approximates an independent deployment of the task. Under `warmup` (`--warmup`) the first trial builds alone and every later probe runs against that one cached image — the task is deployed once and probed repeatedly. The per-verdict `deterministic` flag (`task_verdict` in `src/task_validation/evidence/generator_gate.py`) compares rep rewards within a task; what a disagreement means depends on which scheduling produced it.
+
+| | `concurrent` (default) | `warmup` (`--warmup`) |
+| --- | --- | --- |
+| Image per trial | Own build; installs refetched; two trials of one task can differ | One shared image from the warmup build |
+| Rep disagreement reads as | Verifier nondeterminism or build nondeterminism, pooled — the flag cannot separate them | Verifier nondeterminism only; the image is held fixed |
+| Detects | Both defect classes: a flaky verifier, and an environment that builds differently across builds or days (floating deps, repo rot between builds) | Verifier nondeterminism isolated from build |
+| Misses | Attribution — a rep-to-rep reward change cannot be assigned to the verifier or to the build | Build nondeterminism — a task that would build differently tomorrow reads deterministic today. A single `infra` warmup build also orphans the task's remaining trials as `not_run`, where concurrent gives each trial an independent build attempt |
+
+One observed case sits on the boundary. RST task `rts_task_428772f088f387a5a5931b6a` returned oracle rewards [0.0, 1.0] and is counted invalid as a nondeterministic reference (flagged table below). Its two oracle reps ran against separately built images, so under warmup scheduling — one shared image — the same task could have read as deterministic and stayed unflagged. The cause has not been isolated to the verifier or the build.
+
+Recommendation: `warmup` is for speed on re-runs, and for future lots only where a separate build-determinism probe exists — otherwise the gate stops detecting environment-build instability, a defect class the concurrent runs did catch. Any certificate comparison across pools must state which scheduling produced each certificate. Provenance: `build_certificate` writes a `scheduling` field (`concurrent` or `warmup`) onto every certificate; the RST and SETA certificates in `data/gold` were produced under `concurrent`. The TMax run in progress (unit `gen-gate-tmax`, started 2026-09-14) is running `warmup` — its certificate, when written, is not scheduling-comparable to the other two.
+
 ## Results
 
 RST lot, run 2026-09-13 on `lake-vps-lor-main`. SRS n=200 of N=37,484, seed `gen-gate-rst-v0` (`data/gold/gen_gate_rst_manifest.json`). Of 200 sampled tasks, 195 were adjudicated: 188 valid, 7 invalid, 0 nop accepts in 390 executed nop trials (`data/gold/gen_gate_rst.summary.json`). Five tasks stayed unadjudicated after one `--redo-infra` pass and one targeted retry at concurrency 1 (828 rows in `data/gold/gen_gate_rst.jsonl`). One draw, two certificates: the restricted bound (a) quotes N=37,479, n=195, k=7 with the 5 uncovered units excluded; the conservative bound (b) quotes N=37,484, n=200, k=12 with all 5 counted invalid. Any citation of this run must name which bound it quotes, since the populations and k differ.
@@ -171,7 +186,7 @@ Both bounds use `hypergeometric_upper` (`src/task_validation/sampling/estimators
 | (a) restricted population | 37,479 | 195 | 7 | 3.59% | 6.63% | reject | `data/gold/gen_gate_rst.certificate.json` |
 | (b) conservative | 37,484 | 200 | 12 | 6.00% | 9.53% | reject | `data/gold/gen_gate_rst.conservative.certificate.json` |
 
-Bound (a) is the headline. It treats the 5 uncovered units as outside the frame: coverage is 195 of 200 (0.975), the population drops to 37,479, and the claim extends to the full lot only if the uncovered units share the covered units' invalidity rate. Bound (b) needs no such assumption: it counts all 5 uncovered units invalid. The true value lies between the two bounds only under those stated readings, exchangeability for (a) and the worst case for (b). Under both bounds the lot fails the gate at epsilon 5 percent, so the decision is reject: the 7 flagged tasks must be dropped or repaired before the lot can ship (doc 50 section 2).
+Bound (a) is the headline. It treats the 5 uncovered units as outside the frame: coverage is 195 of 200 (0.975), the population drops to 37,479, and the claim extends to the full lot only if the uncovered units share the covered units' inconsistency rate. Bound (b) needs no such assumption: it counts all 5 uncovered units invalid. The true value lies between the two bounds only under those stated readings, exchangeability for (a) and the worst case for (b). Under both bounds the lot fails the gate at epsilon 5 percent, so the decision is reject: the 7 flagged tasks must be dropped or repaired before the lot can ship (doc 50 section 2).
 
 ### Run cost
 
@@ -186,7 +201,7 @@ The warmup schedule was measured on 2026-09-14 against the first 12 ids of `data
 | `--no-warmup` | 36.3 min | 149.6 s | 149.7 s (rep 0) | 148.9 s (rep 1) | 4,301 s |
 | warmup | 42.8 min | 93.7 s | 123.8 s (rep 0) | 61.3 s (rep 1) | 2,560 s |
 
-"First" and "later" are dispatch order here. Under `--no-warmup` both nop reps build concurrently and land together (about 150 s each). Under warmup, rep 0 is the warmup trial: a solo cold build at 124 s median, faster than the contended 150 s; rep 1 then hits the image cache at 61 s. The mechanism works exactly as intended, but the change did not help wall clock on this lot: warmup was about 18 percent slower end to end (42.8 vs 36.3 min). With only two runnable trials per task, the serialized warmup costs more than the single cache hit saves. The win that does materialize is work, not wall: summed trial time fell 40 percent because each image is built once instead of twice, which means less disk and CPU contention for whatever else shares the host. On lots where all four trials run, the second wave is three cache hits rather than one and the wall trade is more favorable; this bench cannot measure that regime. Pass `--no-warmup` where per-task wall matters more than duplicate builds.
+"First" and "later" are dispatch order here. Under all-at-once dispatch (the default; this arm ran with the old `--no-warmup` flag) both nop reps build concurrently and land together (about 150 s each). Under warmup, rep 0 is the warmup trial: a solo cold build at 124 s median, faster than the contended 150 s; rep 1 then hits the image cache at 61 s. The mechanism works exactly as intended, but the change did not help wall clock on this lot: warmup was about 18 percent slower end to end (42.8 vs 36.3 min). With only two runnable trials per task, the serialized warmup costs more than the single cache hit saves. The win that does materialize is work, not wall: summed trial time fell 40 percent because each image is built once instead of twice, which means less disk and CPU contention for whatever else shares the host. On lots where all four trials run, the second wave is three cache hits rather than one and the wall trade is more favorable; this bench cannot measure that regime. Default stays all-at-once; pass `--warmup` only where the scheduling construct is acceptable (see below).
 
 ### Where this sits
 
@@ -198,12 +213,14 @@ In the doc 42 ordering of populations by audit history, the RST covered-slice po
 | eval_tasks | 12.5% | doc 42 |
 | RST, conservative k=12/200 | 6.0% | `data/gold/gen_gate_rst.conservative.certificate.json` |
 | TB 2.1 post-fix | 5.6% | doc 42 |
-| Harbor-Index | 3.8% | doc 42 |
+| Harbor-Index executable stratum (53 of 82) | 3.8% | doc 42 |
 | RST, restricted k=7/195 | 3.6% | `data/gold/gen_gate_rst.certificate.json` |
 | SWE-bench random | 2% | doc 42 |
 | SETA-Env, k=1/200 | 0.5% | `data/gold/gen_gate_seta.certificate.json` |
 
-Two of the five uncovered tasks are environment rot, not verifier invalidity: `deb.debian.org` no longer resolves bullseye-security, so the image cannot be built today and the task cannot be adjudicated either way. That is a distinct construct from a verifier that runs and returns a wrong answer. The precedent is doc 23 section 7 on `django__django-10097`: a task is invalid on today's image regardless of what the 2024 environment did. The symmetric statement here is that a task whose environment cannot be built today is unadjudicated, not invalid; it enters the bound only as a worst-case unit in the conservative certificate.
+Both generator-gate rows are `scheduling=concurrent` certificates (see above); a warmup-produced certificate would not be like-for-like in this table.
+
+Two of the five uncovered tasks are environment rot, not verifier inconsistency: `deb.debian.org` no longer resolves bullseye-security, so the image cannot be built today and the task cannot be adjudicated either way. That is a distinct construct from a verifier that runs and returns a wrong answer. The precedent is doc 23 section 7 on `django__django-10097`: a task is invalid on today's image regardless of what the 2024 environment did. The symmetric statement here is that a task whose environment cannot be built today is unadjudicated, not invalid; it enters the bound only as a worst-case unit in the conservative certificate.
 
 Scope note: RST is the raw 37,484-task pool that generator T1 (arXiv 2609.11042) filtered down to about 15,000 and trained on, with a reported RL lift of 59.9 to 64.0 on TB 2.1 (doc 43, doc 46). This gate measures the raw pool. It is evidence about what T1's filter had to remove, not a claim that RST is unusable.
 
@@ -236,3 +253,19 @@ With zero uncovered units there is no restricted/conservative split: the certifi
 #### Run cost
 
 Wall clock about 10.3 h for the main pass (run start 2026-09-14T01:00:49, done 11:21:24 in `logs/gen_gate_seta.log` on the VPS; first harbor job 01:00:51, last 11:29:17 from `result.json` timestamps under `/tmp/tv-gen-gate-seta/jobs/`), plus a 7.6 min `--redo-infra` pass. Runner CPU was 1 h 33 min on the queue unit and 40 s on the redo unit. Summed trial time is 90,563 s, about 25.2 h, over 802 rows (`data/gold/gen_gate_seta.jsonl`). API cost is 0 dollars: oracle and nop are model-free agents and `cost_usd` is null in every job `result.json`.
+
+### Sensitivity to epsilon
+
+Epsilon is a policy parameter the consumer supplies, not a number the method produces; the 5 percent default carries no scientific meaning. Re-deciding every certified population at other epsilons, using the ucb95 values already in the certificate files (release iff ucb95 < epsilon):
+
+| Population | One-sided 95% UCB | epsilon 1% | epsilon 2% | epsilon 5% | epsilon 10% | Source |
+| --- | ---: | --- | --- | --- | --- | --- |
+| SETA-Env generated pool | 2.32% | reject | reject | release | release | `data/gold/gen_gate_seta.certificate.json` |
+| SWE-bench SRS-300 completed prefix | 4.65% | reject | reject | release | release | `data/gold/swe_srs300.certificate.json` |
+| TB 2.1 full pool, census | 5.62% | reject | reject | reject | release | `data/gold/tb21_census.certificate.json` |
+| SWE-bench SRS-100 | 6.06% | reject | reject | reject | release | `data/gold/swe_srs100.certificate.json` |
+| RST generated pool, restricted bound | 6.63% | reject | reject | reject | release | `data/gold/gen_gate_rst.certificate.json` |
+| TB 2.1 SRS-30, machinery check | 7.87% | reject | reject | reject | release | `data/gold/tb21_srs30.certificate.json` |
+| RST generated pool, conservative bound | 9.53% | reject | reject | reject | release | `data/gold/gen_gate_rst.conservative.certificate.json` |
+
+The TMax manifest produces no row: its certificate is incomplete with 199 of 200 units unadjudicated (`data/gold/gen_gate_tmax.certificate.json`). No bound was re-run; every decision above is the stored ucb95 compared against each epsilon.
