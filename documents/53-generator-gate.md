@@ -106,7 +106,7 @@ Invalid means an executed oracle rep returned reward below 1 or an executed nop 
 
 ## Results
 
-RST lot, run 2026-09-13 on `lake-vps-lor-main`. SRS n=200 of N=37,484, seed `gen-gate-rst-v0` (`data/gold/gen_gate_rst_manifest.json`). Of 200 sampled tasks, 195 were adjudicated: 188 valid, 7 invalid, 0 nop accepts in 390 executed nop trials (`data/gold/gen_gate_rst.summary.json`). Five tasks stayed unadjudicated after one `--redo-infra` pass and one targeted retry at concurrency 1 (828 rows in `data/gold/gen_gate_rst.jsonl`).
+RST lot, run 2026-09-13 on `lake-vps-lor-main`. SRS n=200 of N=37,484, seed `gen-gate-rst-v0` (`data/gold/gen_gate_rst_manifest.json`). Of 200 sampled tasks, 195 were adjudicated: 188 valid, 7 invalid, 0 nop accepts in 390 executed nop trials (`data/gold/gen_gate_rst.summary.json`). Five tasks stayed unadjudicated after one `--redo-infra` pass and one targeted retry at concurrency 1 (828 rows in `data/gold/gen_gate_rst.jsonl`). One draw, two certificates: the restricted bound (a) quotes N=37,479, n=195, k=7 with the 5 uncovered units excluded; the conservative bound (b) quotes N=37,484, n=200, k=12 with all 5 counted invalid. Any citation of this run must name which bound it quotes, since the populations and k differ.
 
 ### Flagged tasks (k = 7 of 195 adjudicated)
 

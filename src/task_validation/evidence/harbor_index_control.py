@@ -207,6 +207,7 @@ def _source_slot() -> dict:
         "n_oracle_executed": 0,
         "n_nop_executed": 0,
         "n_reference_fails": 0,
+        "n_judge_config_crashes": 0,
         "n_nop_passes": 0,
         "n_infra": 0,
         "n_timeout": 0,
@@ -294,7 +295,16 @@ def summarize_rows(
         for r in rows
         if r.get("probe") == "nop" and r.get("status") == "executed" and r.get("reward") is not None
     ]
-    n_reference_fails = sum(1 for r in oracle_exec if r.get("accepted") is False)
+    def is_judge_config_crash(r: dict) -> bool:
+        return (
+            r.get("accepted") is False
+            and "JudgeConfigurationError" in (r.get("test_stdout_tail") or "")
+        )
+
+    n_reference_fails = sum(
+        1 for r in oracle_exec if r.get("accepted") is False and not is_judge_config_crash(r)
+    )
+    n_judge_config_crashes = sum(1 for r in oracle_exec if is_judge_config_crash(r))
     n_nop_passes = sum(1 for r in nop_exec if r.get("accepted") is True)
     n_infra = sum(1 for r in rows if r.get("status") == "infra")
     n_timeout = sum(1 for r in rows if r.get("status") == "timeout")
@@ -328,7 +338,10 @@ def summarize_rows(
             slot["n_oracle_executed"] += 1
             oracle_bits.setdefault(src, []).append(1.0 if row.get("accepted") else 0.0)
             if row.get("accepted") is False:
-                slot["n_reference_fails"] += 1
+                if is_judge_config_crash(row):
+                    slot["n_judge_config_crashes"] += 1
+                else:
+                    slot["n_reference_fails"] += 1
         if row.get("probe") == "nop" and row.get("status") == "executed" and row.get("reward") is not None:
             slot["n_nop_executed"] += 1
             nop_bits.setdefault(src, []).append(0.0 if row.get("accepted") else 1.0)
@@ -351,7 +364,16 @@ def summarize_rows(
             "last_error_line": r.get("last_error_line") or "",
         }
         for r in oracle_exec
-        if r.get("accepted") is False
+        if r.get("accepted") is False and not is_judge_config_crash(r)
+    ]
+    judge_crashes = [
+        {
+            "task_id": r["task_id"],
+            "source_benchmark": r.get("source_benchmark"),
+            "last_error_line": r.get("last_error_line") or "",
+        }
+        for r in oracle_exec
+        if is_judge_config_crash(r)
     ]
     return {
         "n_tasks": n_tasks,
@@ -361,6 +383,7 @@ def summarize_rows(
         "correct_accept": _mean([1.0 if r.get("accepted") else 0.0 for r in oracle_exec]),
         "incorrect_reject": _mean([0.0 if r.get("accepted") else 1.0 for r in nop_exec]),
         "n_reference_fails": n_reference_fails,
+        "n_judge_config_crashes": n_judge_config_crashes,
         "n_nop_passes": n_nop_passes,
         "n_infra": n_infra,
         "n_timeout": n_timeout,
@@ -368,6 +391,7 @@ def summarize_rows(
         "n_not_run": len(not_run),
         "not_run": list(not_run),
         "reference_failures": ref_fails,
+        "judge_config_crashes": judge_crashes,
         "by_source": dict(sorted(by_source.items())),
         "wall_clock_total": float(wall_clock_total),
         "comparison": comparison_block(tb21_path),
@@ -543,7 +567,7 @@ def run_experiment(
 
     summary = dump_summary()
     public = {k: summary[k] for k in summary if k not in {"by_source", "reference_failures"}}
-    public["by_source"] = {k: {"n_tasks": v["n_tasks"], "n_run": v["n_run"], "n_reference_fails": v["n_reference_fails"], "n_nop_passes": v["n_nop_passes"], "n_infra": v["n_infra"], "n_timeout": v["n_timeout"]} for k, v in (summary.get("by_source") or {}).items()}
+    public["by_source"] = {k: {"n_tasks": v["n_tasks"], "n_run": v["n_run"], "n_reference_fails": v["n_reference_fails"], "n_judge_config_crashes": v.get("n_judge_config_crashes", 0), "n_nop_passes": v["n_nop_passes"], "n_infra": v["n_infra"], "n_timeout": v["n_timeout"]} for k, v in (summary.get("by_source") or {}).items()}
     public["n_reference_failures_listed"] = len(summary.get("reference_failures") or [])
     print(json.dumps(public, indent=2, default=str), flush=True)
     return summary

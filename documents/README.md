@@ -30,7 +30,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [23-handoff.md](23-handoff.md) | Explanation | **Start here.** Operating story, honest budget, next four experiments |
 | [24-taste.md](24-taste.md) | Reference | Taste dimensions kept out of Y; Part 2 placeholder |
 | [25-tb21-pairs.md](25-tb21-pairs.md) | Explanation | TB 2.0 vs 2.1 natural counterfactuals: 9/27 pre-fix reference failures, 7 separated, 0 false accepts |
-| [28-harbor-index-control.md](28-harbor-index-control.md) | Explanation | Harbor-Index 82 as external control: 2/53 reference failures, 15 LLM-judge verifiers, 13 no reference |
+| [28-harbor-index-control.md](28-harbor-index-control.md) | Explanation | Harbor-Index 82 as external control: 2/53 reference failures, 16 judge-configured verifiers, 13 no reference |
 | [26-swe-2x2-exec.md](26-swe-2x2-exec.md) | Explanation | Frozen 20 SWE under the official harness: 19/20 gold pass, 1 env-dependent reference failure, null vs 2024 label |
 | [27-ppi-budget.md](27-ppi-budget.md) | Explanation | PPI / GREG / poststrat vs SRS: cheap score saves ~10% labels, breaks coverage at low p |
 | [29-pro-verified-transfer.md](29-pro-verified-transfer.md) | Explanation | OpenCompass 102 repaired Pro tasks as eval-only label: AUROC 0.51, P1/P2 fail |

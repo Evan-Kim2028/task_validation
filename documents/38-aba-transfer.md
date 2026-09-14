@@ -38,7 +38,7 @@ Overlap of non-none labels on a shared join key: June Kim vs OpenCompass Jaccard
 | ID | Result |
 | --- | --- |
 | **T1** | **Fail.** 2x2 (ABA major / not): pre-fail 1/8, pre-pass 8/10. Rates 0.11 vs 0.44. Fisher two-sided p = 0.193 (greater p = 0.990). Skipped `make-doom-for-mips` (infra). |
-| **T2** | **Not enriched.** Census is incomplete (76 of 89). Flagged: `build-cython-ext`, `build-pov-ray` (reference fail, nop ok). 2x2: 0/2 vs 12/62. Rate 0 vs 0.16. |
+| **T2** | **Not enriched.** Census now complete (89 of 89; finished after the first run of this table, rerun 2026-09-13). Flagged: `build-cython-ext`, `build-pov-ray`, `mcmc-sampling-stan`, `qemu-alpine-ssh`, `qemu-startup` (all reference fail, nop ok). 2x2: 0/5 vs 16/68. Rate 0 vs 0.19. |
 | **T3** | **Pass.** Judge AUROC 0.876 (0.828 to 0.924). Solve-rate `1-p_i` 0.859 (0.784 to 0.923). 2024 conservative is constant 0 on Verified-500 (all 500 were kept), so AUROC 0.50; it is not a baseline on this slice. |
 | **T4** | Chance. `openai_style_risk` AUROC 0.51 (static) / 0.55 (traj); top-decile 1.06x / 0.96x. `cheap_risk` similar or worse. Jaccard vs OpenCompass: static 0.18 (28), traj 0.22 (57); vs June Kim: 0.18 (29) / 0.24 (63). |
 | **T5** | `django__django-10097` is in ABA Verified with major static and trajectory findings (F2P list misaligned; unrelated auth template tests). `django__django-12503` is not in the ABA 500 (it is in the 1,699, 2024-invalid). |

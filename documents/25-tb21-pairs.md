@@ -10,7 +10,7 @@ T = reward 1, F = reward 0, . = not run.
 
 | Task | Change | pre oracle | pre oracle 2 | pre nop | post oracle | post oracle 2 | post nop | Outcome |
 | --- | --- | :-: | :-: | :-: | :-: | :-: | :-: | --- |
-| build-pmars | solution | F | . | F | T | T | F | separated |
+| build-pmars | solution, misspec | F | . | F | T | T | F | separated |
 | caffe-cifar-10 | test, misspec, env | F | . | F | T | . | F | separated |
 | hf-model-inference | test, env | F | T | F | T | T | F | separated, pre flaky |
 | protein-assembly | solution | F | F | F | T | T | F | separated |
@@ -56,7 +56,7 @@ Counts:
 
 The answer to the doc 23 question is yes for the defect classes that execution can see. Seven of the nine pre-fix reference failures disappear in 2.1, and every one of the seven corresponds to a maintainer change in the solution, tests, environment, or resource budget. Reference plus nop, no LLM, no mutation heuristics, no reading of tests.
 
-What execution does not see: the eight tasks whose only 2.1 change is the instruction (`misspec` without a test or solution change) pass reference and reject nop in both versions. Specification defects are invisible to this instrument, which is consistent with doc 18 and doc 26.
+What execution does not see: the six tasks whose only 2.1 change is the instruction (`misspec` without `test_fix` or `solution_fix` in `data/gold/tb21_pairs.summary.json`: torch-tensor-parallelism, mteb-retrieve, mteb-leaderboard, extract-moves-from-video, filter-js-from-html, query-optimize) pass reference and reject nop in both versions. Specification defects are invisible to this instrument, which is consistent with doc 18 and doc 26.
 
 Residual invalidity after the fix: `build-pov-ray` and `mcmc-sampling-stan` references still fail in this environment after the 2.1 repair. Both are apt or package pins; whether they fail upstream or only on this host is not established here. They are flagged for human review, not claimed as 2.1 bugs.
 

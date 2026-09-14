@@ -16,6 +16,7 @@
 - Design: SRS without replacement, completed prefix of the frozen sequential SRS-300 draw
 - Seed: swe-srs-v0 (sha256 -> int) + swe-srs-v0-extend-200 (sha256 -> int)
 - Partial: true. Frozen manifest `data/gold/swe_srs300_sample.json` is n=300; 297 of 300 executed both treatments (`data/gold/swe_srs300_exec.summary.json`); the bound is computed on the completed prefix of the frozen draw order, n=190 (`data/gold/swe_srs300.certificate.json`).
+- Complete: true **in the artifact** is scoped to the certificate's own manifest, the 190-unit completed prefix, where every in-bound unit is adjudicated. It does not describe the frozen 300-unit draw, for which `partial` is true. This is the `build_certificate` semantics in `src/task_validation/sampling/certificate.py`; the two fields are not contradictory.
 
 ## Flagged units
 

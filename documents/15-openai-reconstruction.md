@@ -27,7 +27,7 @@ Available **without** an agent: instruction, requirements, interface, gold patch
 
 Visible spec = problem_statement + requirements + interface. Signals: exact string literals in tests not in spec, `match=`, whitespace asserts, test-only identifiers, gold files unmentioned in spec/tests, instruction/test token conflicts (e.g. “single space” vs `"  "`).
 
-**Family argmax is not a reconstruction of OpenAI’s mix.** Mean family scores: underspec 0.71, low-coverage 0.57, strict 0.33, misleading 0.04. Almost every row’s argmax is underspec. Do not quote 622/731 underspec as an OpenAI-taxonomy recovery. The ranking `cheap_risk` is the object we evaluate.
+**Family argmax is not a reconstruction of OpenAI’s mix.** Mean family scores: underspec 0.71, low-coverage 0.57, strict 0.33, misleading 0.04. Almost every row’s argmax is underspec. Do not quote 622/731 underspec as an OpenAI-taxonomy recovery. The ranking `openai_style_risk` is the object we evaluate (`data/gold/pro_reconstruction.json` is scored under the doc-16 prompt-vs-test audit features; the earlier `cheap_risk` ranking is kept only as `rank_by_cheap_risk_desc` on the named example).
 
 ## Workstream 3–4: execution / mutation
 
@@ -35,29 +35,29 @@ Not run on 731. Hello-world Harbor stack is ~32s/trial; 731 × 4 trials is about
 
 ## Workstream 5–6: external comparison
 
-**Exact task-level overlap with OpenAI:** they published one worked example (OpenLibrary TOC, one vs two spaces). We matched `instance_internetarchive__openlibrary-77c16d53…`. It ranks **257 / 731** by `cheap_risk` (35th percentile from the top), family argmax underspec, risk 0.47. We **did not** independently put that example in an extreme tail. That is not a task-level reproduction.
+**Exact task-level overlap with OpenAI:** they published one worked example (OpenLibrary TOC, one vs two spaces). We matched `instance_internetarchive__openlibrary-77c16d53…`. It ranks **38 / 731** by `openai_style_risk` (5.2% from the top), family argmax underspec, `openai_style_risk` 0.635, `cheap_risk` 0.467 (`data/gold/pro_reconstruction.json`). Under the pre-doc-16 `cheap_risk` ranking it was 257 / 731 (`rank_by_cheap_risk_desc`); the doc-16 prompt-vs-test scoring is what places it in the top tail.
 
 **Independent audit with IDs (June Kim):** 109 prefixes in CLAIMS.md matched 109/731 Pro IDs (base rate 14.9%).
 
 | Slice | June Kim rate | Enrichment vs 14.9% |
 | --- | ---: | ---: |
-| Top 10% `cheap_risk` | 24.7% (18/73) | **1.65×** |
-| Top 15% | 22.7% | 1.52× |
-| Top 20% | 20.5% | 1.38× |
-| Lowest-risk 5% retained | 8.1% | 0.54× |
-| Lowest-risk 10% retained | 6.8% | 0.46× |
+| Top 10% `openai_style_risk` | 23.3% (17/73) | **1.56×** |
+| Top 15% | 19.1% (21/110) | 1.28× |
+| Top 20% | 15.8% (23/146) | 1.06× |
+| Lowest-risk 5% retained | 8.1% (3/37) | 0.54× |
+| Lowest-risk 10% retained | 12.3% (9/73) | 0.83× |
 | All 731 | 14.9% | 1.00× |
 
 That is **enrichment**, not validation. We did not use those 109 IDs as X. Aggregate agreement with OpenAI’s 30% is not reported as a win.
 
 ## Workstream 7: retain-tail (June Kim floor as eval Y only)
 
-| Retain lowest `cheap_risk` | n | Residual June Kim rate |
+| Retain lowest `openai_style_risk` | n | Residual June Kim rate |
 | ---: | ---: | ---: |
 | 1% | 7 | 0.00 |
 | 5% | 37 | 0.081 |
-| 10% | 73 | 0.068 |
-| 20% | 146 | 0.103 |
+| 10% | 73 | 0.123 |
+| 20% | 146 | 0.130 |
 | 100% | 731 | 0.149 |
 
 The tail is cleaner than 15%. It is not a 5% residual on a 15% floor except at tiny n.
@@ -66,10 +66,10 @@ The tail is cleaner than 15%. It is not a 5% residual on a 15% floor except at t
 
 | # | Question | Answer |
 | --- | --- | --- |
-| 1 | Do cheap signals reproduce known defect *structure*? | **Partial.** Ranking enriches June Kim’s determinacy floor 1.65× in the top 10%. Four-way family mix does **not** match OpenAI (underspec saturates). The one published OpenAI example is mid-pack. |
+| 1 | Do cheap signals reproduce known defect *structure*? | **Partial.** Ranking enriches June Kim’s determinacy floor 1.56× in the top 10%. Four-way family mix does **not** match OpenAI (underspec saturates). The one published OpenAI example sits at rank 38 (top 5.2%) under `openai_style_risk`. |
 | 2 | Does execution-grounded evidence materially improve separation? | **Unknown.** Not run on Pro. Hello-world only. |
 | 3 | Does the signal transfer beyond SWE-bench 2024? | **Weak yes** on June Kim IDs (independent of OpenAI’s method). Not a trained transfer AUROC. |
-| 4 | Is there a sufficiently clean low-risk tail for economical certification? | **No** for a 5% residual on this 15% floor at a useful retain fraction (5–20% retain still 7–10% June Kim). |
+| 4 | Is there a sufficiently clean low-risk tail for economical certification? | **No** for a 5% residual on this 15% floor at a useful retain fraction (5–20% retain still 8–13% June Kim). |
 
 Per the frozen rule: if #4 is negative, **stop and investigate the evidence layer** before any 1,000-task work. Next evidence step is lakehouse mutation cost, then a **small** Pro execution subset (not 731), not population sampling.
 

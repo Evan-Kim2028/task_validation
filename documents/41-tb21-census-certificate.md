@@ -32,12 +32,12 @@ Census rate 5.6%, so TB 2.1 does not clear epsilon = 5% on the verifier construc
 
 ## Coverage check of the sample bound against the census
 
-The census is a known truth, so it validates the sampling machinery on a benchmark built by someone else. A frozen SRS of 30 (`data/gold/tb21_srs30_manifest.json`, seed `tb21-srs30-v0`) drew 0 of the 5 invalid units; its one-sided 95% hypergeometric UCB is 7.9%, which covers the census 5.6%. Monte Carlo over 4,000 SRS draws from the census:
+The census is a known truth, so it validates the sampling machinery on a benchmark built by someone else. A frozen SRS of 30 (`data/gold/tb21_srs30_manifest.json`, seed `tb21-srs30-v0`) drew 0 of the 5 invalid units; its one-sided 95% hypergeometric UCB is 7.9%, which covers the census 5.6%. Monte Carlo over 4,000 SRS draws from the census (`data/gold/tb21_census_montecarlo.json`; `simple_random` with seed scheme `tb21-census-mc:n{n}:r{r}`, `srs_estimate` hypergeometric UCB):
 
 | n | coverage of 5.6% | mean UCB | P(UCB < 5%) |
 | ---: | ---: | ---: | ---: |
-| 20 | 1.000 | 0.206 | 0.000 |
-| 30 | 1.000 | 0.164 | 0.000 |
-| 50 | 0.985 | 0.119 | 0.015 |
+| 20 | 1.000 | 0.208 | 0.000 |
+| 30 | 1.000 | 0.163 | 0.000 |
+| 50 | 0.9875 | 0.120 | 0.0125 |
 
-The bound covers at or above nominal. It also almost never certifies at 5% when the true rate is 5.6%, which is the correct behavior. Artifacts: `data/gold/tb21_census_verdicts.jsonl`, `tb21_census.certificate.json`, `tb21_srs30.certificate.json`.
+The bound covers at or above nominal. It also almost never certifies at 5% when the true rate is 5.6%, which is the correct behavior. Artifacts: `data/gold/tb21_census_verdicts.jsonl`, `tb21_census.certificate.json`, `tb21_srs30.certificate.json`, `tb21_census_montecarlo.json`.

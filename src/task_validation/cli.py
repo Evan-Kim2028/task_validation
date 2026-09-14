@@ -308,9 +308,15 @@ def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
             fam_in_kim[r["suspected_family"]] = fam_in_kim.get(r["suspected_family"], 0) + 1
     openai_ex = [r for r in rows if "77c16d53" in r["task_id"]]
     openai_rank = None
+    openai_rank_cheap = None
     if openai_ex:
         order = [r["task_id"] for r in ranked_high]
         openai_rank = order.index(openai_ex[0]["task_id"]) + 1
+        order_cheap = [
+            r["task_id"]
+            for r in sorted(rows, key=lambda r: -float(r["features"]["cheap_risk"]))
+        ]
+        openai_rank_cheap = order_cheap.index(openai_ex[0]["task_id"]) + 1
     report = {
         "n_pro": len(rows),
         "n_june_kim_prefixes": len(prefixes),
@@ -325,7 +331,8 @@ def _cmd_reconstruct_pro(args: argparse.Namespace) -> int:
         "openai_published_example": {
             "pattern": "77c16d53",
             "matched_ids": [r["task_id"] for r in openai_ex],
-            "rank_by_cheap_risk_desc": openai_rank,
+            "rank_by_openai_style_risk_desc": openai_rank,
+            "rank_by_cheap_risk_desc": openai_rank_cheap,
             "n": len(rows),
             "percentile_from_top": (openai_rank / len(rows)) if openai_rank else None,
             "family": openai_ex[0]["suspected_family"] if openai_ex else None,

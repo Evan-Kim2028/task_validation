@@ -30,7 +30,7 @@ After it runs:
 | Track | Now | Blocked on |
 | --- | --- | --- |
 | **A** evaluator validity | Harbor 16 done; treatments graded; 20 IDs frozen | Docker for A1 |
-| **B** certification | B1 rater-noise + B2 coverage lab (draft reps) | 5000-rep lab before picking the release estimator |
+| **B** certification | B1 rater-noise + B2 coverage lab (5000 reps done, `data/gold/coverage_lab_r5000.json`) | nothing |
 | **C** evidence → risk | Static OOF retain-tail exists | execution on *labeled* SWE (A1) |
 | **D** transfer | Pro reconstruction YES (reject, not 30%) | Gate 2 |
 
@@ -41,7 +41,7 @@ After it runs:
 | **1** behavior beyond oracle/nop | **Partial.** Harbor: preserve_comments adds 0 bits vs reference; nop/revert discriminate; 2/16 references fail. Not 2024 Y. |
 | **2** retain-tail vs static | **Open.** Conservative 5% tail still ~34% invalid on static OOF. No labeled execution ablation. |
 | **3** transfer | **Partial.** Cheap prompt-vs-test recovered OpenAI’s *decision* to distrust Pro. Interrogation not transferred. |
-| **4** UCB coverage at low p | **Open (estimator not selected).** Draft lab n=100, 500 reps. SRS-hypergeometric coverage ≥0.95 down to p=0.5%. Stratified-normal **0.89 at 2%, 0.63 at 1%, 0.41 at 0.5%** — not a release rule. 5000-rep run required before picking the estimator. |
+| **4** UCB coverage at low p | **Closed.** 5000-rep lab n=100, `data/gold/coverage_lab_r5000.json` (seed `coverage-lab-v0`). SRS-hypergeometric coverage 0.972–1.00 at p ≤ 5%. Stratified-normal **0.91 at 5%, 0.89 at 2%, 0.63 at 1%, 0.47 at 0.5%** — not a release rule. Release estimator: SRS hypergeometric one-sided UCB (docs 32, 35, 41). |
 | **5** small-n certify | **Closed for now.** Tail is not clean. Human packets deferred. |
 
 ## Do not
@@ -62,17 +62,17 @@ One rater vs **conservative (union)**: FPR 0 (by construction), FNR **0.34**. A 
 
 Pairwise agreement 0.70, Fleiss κ 0.39 (already).
 
-## B2 coverage lab (draft, 500 reps — 5000 before estimator pick)
+## B2 coverage lab (5000 reps, `data/gold/coverage_lab_r5000.json`; 500-rep draft kept at `data/gold/coverage_lab.json`)
 
 | true p | SRS-HG cover | Stratified-normal cover |
 | ---: | ---: | ---: |
-| 0.68 | 0.95 | 0.96 |
-| 0.20 | 0.95 | 0.92 |
-| 0.10 | 0.95 | 0.91 |
-| 0.05 | 0.98 | 0.90 |
+| 0.68 | 0.95 | 0.95 |
+| 0.20 | 0.97 | 0.93 |
+| 0.10 | 0.96 | 0.91 |
+| 0.05 | 0.97 | 0.91 |
 | 0.02 | 1.00 | **0.89** |
-| 0.01 | 1.00 | **0.63** |
-| 0.005 | 1.00 | **0.41** |
+| 0.009 | 1.00 | **0.63** |
+| 0.006 | 1.00 | **0.47** |
 
 Risk-guided is discovery-only (no UCB). Hybrid certifies from the SRS arm only.
 

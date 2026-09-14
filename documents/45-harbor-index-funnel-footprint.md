@@ -1,6 +1,6 @@
 # Harbor-Index funnel footprint: plan and feasibility
 
-Status: plan, not run.
+Status: executed 2026-09-13. This page is the dated plan; results are in doc 52 (`data/gold/harbor_funnel_stage1.summary.json`, `harbor_funnel_labels.jsonl`, `harbor_funnel_traj_eval.json`).
 
 ## The funnel and what is public
 

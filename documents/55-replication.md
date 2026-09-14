@@ -85,7 +85,7 @@ The stop rule (doc 45): family-held-out AUROC for `survived_2_to_4` under 0.65 m
 
 ## Not reproducible from public data
 
-Three things stay private. The stage-1 filtering database: the paper scored 18 trials per task from a private store, so the public dump approximates the input and lands within 1.5 percent, not exactly (doc 45, doc 52). The rejected task ids for stages 2 to 4: only the 82 survivors are published, so the funnel labels are reconstructed, not recovered (doc 45). The shipped judge keys: 15 of 82 tasks grade through `JUDGE_MODELS` env vars, and the judge configuration the authors ran is not public (doc 28).
+Three things stay private. The stage-1 filtering database: the paper scored 18 trials per task from a private store, so the public dump approximates the input and lands within 1.5 percent, not exactly (doc 45, doc 52). The rejected task ids for stages 2 to 4: only the 82 survivors are published, so the funnel labels are reconstructed, not recovered (doc 45). The shipped judge keys: 16 of 82 tasks grade through `JUDGE_MODELS` env vars (`data/gold/harbor_index_strata.json`), and the judge configuration the authors ran is not public (doc 28).
 
 ## RESULT
 

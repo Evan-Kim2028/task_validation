@@ -34,13 +34,13 @@ If A fails, the cheap layer cannot see the defect class OpenAI used to explain t
 | **B** | June Kim ≥1.5× in top 10% | **Pass.** 17/73 = 23.3% vs 14.9% base → **1.56×**. |
 | **C** | Refuse to release Pro at ε=5% | **Pass** on the residual clause: lowest-risk 20% still **13.0%** June Kim (need <5%). Do **not** use `prompt_missing_lit_frac ≥ 0.3` (it flags 713/731; the 8-character literal heuristic is too blunt). |
 
-**Verdict: YES** on the frozen predicates. Cheap evidence independently (1) surfaces the named OpenAI example, (2) enriches a second lab’s determinacy floor, and (3) would refuse to certify Pro at 5%.
+**Verdict: YES** on predicates **A and B** only. C is vacuous at the 14.9% June Kim base rate: any 20% slice of the population exceeds the 5% residual clause whether or not the ranking carries signal, so C contributes no evidence and is dropped from the claim (doc 23 "On predicate C"). Cheap evidence independently (1) surfaces the named OpenAI example at rank 38/731, and (2) enriches a second lab’s determinacy floor 1.56× in the top decile.
 
 What this is **not**:
 
 - Not a recovery of OpenAI’s 30%, 200, or 249 counts.
 - Not a recovery of their 4-way mix (family argmax still saturates on underspec).
 - Not execution-grounded (no Pro Docker).
-- Not a license to start the 1,000-task build. The cheap layer is good enough to *distrust this population*. It is not yet good enough to *certify a clean accepted tail* (C is a rejection, not a certificate).
+- Not a license to start the 1,000-task build. The cheap layer is good enough to *distrust this population*. It is not yet good enough to *certify a clean accepted tail* (a refusal is not a certificate).
 
 Next if we stay on this milestone: execution on a handful of high `openai_style_risk` Pro tasks (including 77c16d53) to see whether mutation/oracle adds anything the static prompt-vs-test gap already shows. Not 731. Not 1K synthetic.

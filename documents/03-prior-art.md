@@ -14,7 +14,7 @@ Search date: 2026-09-11. Citations were opened and checked. Task Verification Be
 
 **Harbor-Index** ([harbor-index.org](https://harbor-index.org/), [arXiv 2609.04298](https://arxiv.org/abs/2609.04298)). 6,627 → 1,311 (difficulty) → 307 (AI audit) → 100 (human) → 82 (audit-and-fix). This is the strongest operational neighbor. They still reviewed every survivor. The "about a third of the hardest tasks are broken" remark is a funnel observation, not a bound on 6,627.
 
-**Terminal-Bench 2.1 / 3.0.** TB 2.1 fixed 28 of 89 TB 2.0 tasks (the GitHub README says 26; use 28 from the project news page and record the discrepancy). TB 3.0 ships static checks, a 35-criterion rubric, oracle, nop, live trials, and cheat trials, then maintainer sign-off. Census of incoming tasks, not a population CI.
+**Terminal-Bench 2.1 / 3.0.** TB 2.1 fixed 28 of 89 TB 2.0 tasks (the GitHub README says 26; use 28 from the project news page and record the discrepancy). TB 3.0 ships static checks, a 28-criterion rubric (marketing pages say 35; the opened toml names 28, doc 31), oracle, nop, live trials, and cheat trials, then maintainer sign-off. Census of incoming tasks, not a population CI.
 
 ### Generators (Part 2 neighbors, not this study)
 

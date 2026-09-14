@@ -53,7 +53,8 @@ External validation population, not primary gold. They already reviewed survivor
 ### E. eval_tasks Harbor packages (loaded, unlabeled)
 
 - File: `data/gold/eval_tasks.jsonl`
-- Complete packages queued: 16 (hello-world and planted `scripts/checks/test-tasks` excluded)
+- Rows: 82, all `PENDING_HUMAN` (planted `scripts/checks/test-tasks` excluded; hello-world is included)
+- The 16 complete packages the doc-20 pilot interrogated are the task ids in `data/gold/harbor_interrogate.jsonl`: nine `experimental/*` (bootstrap-merge-resume, catalog-contention-recovery, catalog-shift-closure, catalog-shift-replay, gold-retry-publisher, logged-bandit-ope, payments-ledger-reconciliation, schema-evolution-cdc, warehouse-drift-closure) and seven `tasks/*` (durable-prefix-ack, hello-world, keydir-merge, lakehouse-publish-recovery, late-session-gc, shared-limit-si, week-hours)
 - Provenance: `PENDING_HUMAN`
 
 ## Dedup rule

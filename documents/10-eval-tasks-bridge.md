@@ -8,7 +8,7 @@ This repo does not own that incident, the OPE generator, or friend-pilot OAuth p
 
 - Quality bar Q1–Q7 from `eval_tasks/research/notes/04-direction-1000-tasks.md` (local, gitignored there)
 - 7-item human checklist from note 05
-- Harbor gates: static, oracle, nop, separate verifier, cheat prompt, 35-criterion rubric as a *screen*
+- Harbor gates: static, oracle, nop, separate verifier, cheat prompt, 28-criterion rubric as a *screen* (28 named in the opened toml; 35 is a marketing count, doc 31)
 - The Q20 residual-rate question: that question is the reason this repo exists
 
 ## What stayed in eval_tasks

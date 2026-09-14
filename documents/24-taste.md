@@ -20,7 +20,7 @@ None of these is binary. None enters the material-invalidity label. A task can b
 - Taste needs frontier-agent runs. Validity does not. Keep the cost separate.
 - Difficulty and discrimination reuse the raw trial schema from the interrogation harness (`data/gold/harbor_interrogate.matrix.jsonl` shape). Realism needs human rubric labels that do not yet exist.
 - Do not build a composite taste score. Report the dimensions separately, as the five evaluator rates are.
-- Harbor-Index's difficulty stage (6,627 → 1,311) is the nearest precedent. Terminal-Bench 3.0's 35-criterion rubric is the nearest realism rubric.
+- Harbor-Index's difficulty stage (6,627 → 1,311) is the nearest precedent. Terminal-Bench 3.0's 28-criterion rubric (the opened toml names 28; 35 is a marketing count, doc 31) is the nearest realism rubric.
 
 ## Operational definition
 

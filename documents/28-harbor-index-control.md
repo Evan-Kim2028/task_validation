@@ -10,10 +10,12 @@ Run 2026-09-12 on the Harbor Hub dataset `harbor-index/harbor-index-1.0` (82 tas
 | --- | ---: | --- |
 | Reference accepted, nop rejected | 51 | 46 via `reward.txt` plus the 5 `bix` tasks via `reward.json` |
 | Reference rejected | 2 | `featurebench-add-feature-xarray-backend-chunks` (NameError `_contains_cftime_datetimes` in 9 tests), `sldbench-discover-vocab-scaling-law` |
-| Verifier is an LLM judge (`JUDGE_MODELS` / `JUDGE_REPEATS` env required) | 15 | hle 7, gaia2 5, omnimath 2, widesearch 1 |
+| Verifier is an LLM judge (`JUDGE_MODELS` / `JUDGE_REPEATS` env required) | 15 | hle 7, gaia2 5, omnimath 2, widesearch 1; outcome rows observed. A 16th judge-configured task sits in the infra row below, so the judge stratum is 16 (`data/gold/harbor_index_strata.json`) |
 | No reference solution shipped | 13 | algotune 5, gso 7, codepde 1; nop rejected on all 13 |
 | Infra after the buildx fix | 1 | `hle-shock-wave-density-profile` (judge task) |
 | nop accepted (false accept) | 0 | of 82 nop trials |
+
+Six of the 15 judge outcome rows (the five gaia2 tasks plus widesearch) ran to `JudgeConfigurationError` (`JUDGE_MODELS` unset in the control run): the verifier crashed before judging, so their reward-0 rows are not verifier decisions. `data/gold/harbor_index_control.summary.json` splits these as `n_judge_config_crashes` (6); `n_reference_fails` is the real verifier rejections (2).
 
 Reference failure rate among executable, model-free verifiers: **2 of 53 (3.8%)**.
 
@@ -27,7 +29,7 @@ Reference failure rate among executable, model-free verifiers: **2 of 53 (3.8%)*
 | bix | 5 | 0 | 0 | 0 |
 | build, dacode, gpqadiamond, qcircuitbench, replicationbench, usaco | 6 | 0 | 0 | 0 |
 | sldbench | 0 | 1 | 0 | 0 |
-| hle | 0 | 0 | 7 (+1 infra) | 0 |
+| hle | 0 | 0 | 8 (one went infra) | 0 |
 | gaia2 | 0 | 0 | 5 | 0 |
 | omnimath, widesearch | 0 | 0 | 3 | 0 |
 | algotune, gso, codepde | 0 | 0 | 0 | 13 |
@@ -46,7 +48,7 @@ The instrument orders these populations the way their audit history predicts. Au
 
 ## Two boundaries the control exposed
 
-1. **LLM-judge verifiers.** 15 of 82 Harbor-Index tasks (18%) are graded by a model ensemble configured by environment variables. Reference/nop interrogation cannot run without supplying a judge, and supplying one puts a model inside the evaluator being certified. These tasks need a separate protocol: run the official judge as configured, treat judge nondeterminism as a verifier property, and keep the human sample.
+1. **LLM-judge verifiers.** 16 of 82 Harbor-Index tasks (19.5%) are judge-configured: a model ensemble driven by environment variables (`data/gold/harbor_index_strata.json`). 15 returned a judge outcome row in this run; `hle-shock-wave-density-profile` went infra on the oracle. Reference/nop interrogation cannot run without supplying a judge, and supplying one puts a model inside the evaluator being certified. These tasks need a separate protocol: run the official judge as configured, treat judge nondeterminism as a verifier property, and keep the human sample.
 2. **Tasks without a reference.** 13 of 82 ship no solution (optimization and speed-up families). Only the nop probe applies; correct acceptance is unmeasured. A certification intake should require a reference or an equivalent positive control.
 
 ## What is not established

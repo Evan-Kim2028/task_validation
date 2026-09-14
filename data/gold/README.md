@@ -8,9 +8,12 @@
 | `eval_tasks.jsonl` | Harbor packages discovered under the sister repo |
 | `eval_tasks_with_evidence.jsonl` | Static + mutant menu + attached jobs |
 | `coverage_n50.json` | 200-rep UCB coverage at n=50 |
-| `coverage_n100.json` | 200-rep UCB coverage at n=100 |
+| `coverage_n100_r200.json` | 200-rep UCB coverage at n=100 |
 | `coverage_n100_r2000.json` | 2,000-rep coverage at n=100 |
 | `coverage_n100_p02.json` | 2,000-rep coverage on a 2% invalid population |
+| `coverage_lab.json` / `coverage_lab.summary.json` | 500-rep five-design lab, n=100 (draft) |
+| `coverage_lab_r5000.json` / `coverage_lab_r5000.summary.json` | 5,000-rep five-design lab, n=100, seed `coverage-lab-v0` |
+| `tb21_census_montecarlo.json` | 4,000-draw SRS coverage check against the TB 2.1 census, seed scheme `tb21-census-mc:n{n}:r{r}` |
 | `sample_size_ucb.json` | n required for UCB < epsilon |
 | `swe_rater_targets.jsonl` | conservative / majority / unanimous + votes |
 | `oof_*.json` | grouped-CV metrics, retain curves, SRC |

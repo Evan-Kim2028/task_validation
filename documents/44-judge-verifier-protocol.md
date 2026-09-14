@@ -1,6 +1,6 @@
 # Judge-verifier and no-reference protocol
 
-Use this when a pool under certification contains tasks whose verifier is an LLM-judge ensemble, or tasks that ship no reference solution. Harbor-Index 1.0 has 15 of the first (hle 7, gaia2 5, omnimath 2, widesearch 1) and 13 of the second (algotune 5, gso 7, codepde 1): doc 28, `data/gold/harbor_index_control.summary.json`.
+Use this when a pool under certification contains tasks whose verifier is an LLM-judge ensemble, or tasks that ship no reference solution. Harbor-Index 1.0 has 16 of the first (hle 8, gaia2 5, omnimath 2, widesearch 1) and 13 of the second (algotune 5, gso 7, codepde 1): doc 28, `data/gold/harbor_index_strata.json`.
 
 ## Judge-verified tasks
 

@@ -75,7 +75,7 @@ The per-lot certificate uses the doc 32 fields plus the doc 44 fields: `verifier
 
 Compute the footprint on every task with `src/task_validation/evidence/footprint.py`: execution gate fields, instruction length, test file count, assertion count, literal pins in tests not in the instruction, solution size, resource limits, network mode, judge-verifier flag, and solve rate where public submissions exist (doc 40).
 
-Once the Harbor-Index funnel fetch finishes, the funnel labels join the prior: `survived_stage1`, `survived_funnel`, `survived_2_to_4`, protocol `harbor-index-funnel-v1`, grade `external-audit, eval-only` (doc 45, doc 48). The fetch is currently blocked: 327.1 GB at shard granularity against a 40 GB budget (doc 48).
+The Harbor-Index funnel labels join the prior: `survived_stage1`, `survived_funnel`, `survived_2_to_4`, protocol `harbor_index_funnel.reconstructed.2026-09-13`, with `survived_stage1` grade B (reconstructed), `survived_funnel` and `survived_2_to_4` grade A (published list), all external and eval-only (doc 45, doc 48, doc 52). The fetch completed on 2026-09-13; the earlier "blocked at 327.1 GB against a 40 GB budget" note is stale (docs 48, 52, 55).
 
 Report the prior with its held-out error, never as a bound. Held-out curated-vs-generated AUROC is 0.71 on Harbor-Index, 0.75 on TB 2.1, 0.57 on SWE-bench Verified, and 0.41 on SWE-rebench (doc 40). Cross-population transfer of any validity bound fails in 8 of 10 cells (doc 40), so the prior orders attention; it certifies nothing.
 

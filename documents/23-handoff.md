@@ -44,11 +44,11 @@ Realism, difficulty, diversity, coverage, novelty are population-design properti
 | Static spec/test structure predicts the 2024 label | No, AUROC 0.41 / 0.42 | `data/gold/causal_ablation.summary.json` |
 | Cheap evidence recovers OpenAI's Pro rejection | Weakly. A passes (named example rank 38/731). B is a 1.4 to 1.6x top-decile enrichment of June Kim / OpenCompass repairs, but AUROC against the 102 OpenCompass repairs is 0.51 (0.45 to 0.57). **C is vacuous** (see below) | `data/gold/pro_reconstruction.json`, `data/gold/pro_verified_transfer.json` |
 | Real evaluators can be interrogated mechanically | Yes, 16/16, ~3 min/task, no LLM | `data/gold/harbor_interrogate.summary.json` |
-| Interrogation finds verifier invalidity on unaudited populations | Yes. eval_tasks 2/16; SWE-bench SRS-100 2/100 (1 false-accept, 1 env-dependent reference failure); frozen SWE 20: 1/20 env-dependent; TB 2.0 pre-fix: 9/28 reference failures (doc 25) | `harbor_outlier_diagnosis.json`, `swe_srs100.certificate.json`, `swe_2x2_exec.summary.json`, `tb21_pairs.jsonl` |
+| Interrogation finds verifier invalidity on unaudited populations | Yes. eval_tasks 2/16; SWE-bench SRS-100 2/100 (1 false-accept, 1 env-dependent reference failure); frozen SWE 20: 1/20 env-dependent; TB 2.0 pre-fix: 9/27 reference failures on the diffable pairs (doc 25) | `harbor_outlier_diagnosis.json`, `swe_srs100.certificate.json`, `swe_2x2_exec.summary.json`, `tb21_pairs.jsonl` |
 | Interrogation separates pre-fix from post-fix TB 2.1 | Partial: `build-pmars` separates; `build-pov-ray` fails both; several pre-fix failures are environment drift on this machine. Full table in doc 25 once the post-fix rerun lands | `tb21_pairs.summary.json` |
-| Model-free interrogation coverage boundary | Harbor-Index: 15 of 82 verifiers are LLM judges (`JUDGE_MODELS`), not interrogable without a model; egress-control tasks need docker buildx (fixed) | doc 28 |
+| Model-free interrogation coverage boundary | Harbor-Index: 16 of 82 verifiers are judge-configured (`JUDGE_MODELS`), not interrogable without a model; egress-control tasks need docker buildx (fixed) | doc 28, `data/gold/harbor_index_strata.json` |
 | First population certificate | SWE-bench 1,699, SRS n=100, k=2, p-hat 2.0%, UCB95 6.1%, REJECT at 5%, machine-adjudicated grade A | doc 35 |
-| Census plus coverage check on someone else's benchmark | TB 2.1: 5 of 89 references fail (5.6%), nop rejected 89/89; SRS-30 UCB 7.9% covers; Monte Carlo coverage 0.985 to 1.00 | doc 41 |
+| Census plus coverage check on someone else's benchmark | TB 2.1: 5 of 89 references fail (5.6%), nop rejected 89/89; SRS-30 UCB 7.9% covers; Monte Carlo coverage 0.9875 to 1.00 | doc 41, `data/gold/tb21_census_montecarlo.json` |
 | 2026 per-task labels exist | ABA (agent audit, expert-sampled) covers SWE-Verified 500, Pro 731, TB2 89 by ID; BenchGuard 29, tau2 78, Z.ai 20 are human. OpenAI's 138/249 IDs and Harbor-Index rejects are not public | docs 37, 38 |
 | ABA agrees with our instruments | On spec (SWE Verified): solve rate 0.86 AUROC vs ABA majors. On verifier: no (TB pre-fix failures are not ABA majors). Static Pro scores are chance vs ABA | doc 38 |
 | Calibration transfers across benchmarks without new labels | **No.** Leave-one-population-out: static spec AUROC 0.58 to 0.69, verifier at chance; Rogan-Gladen from other benches undercovers or is vacuous in 8 of 10 cells (F1 FAIL) | doc 40 |
@@ -58,7 +58,7 @@ Realism, difficulty, diversity, coverage, novelty are population-design properti
 | Agent solve rate (public submissions) ranks the 2024 label | Yes: AUROC 0.76; 649 never-solved items are 89% invalid; broken tests are tasks agents never solve | doc 33 |
 | Any instrument produces a certifiable spec tail | No: best combination 27.5% invalid at retain-20% on conservative Y | docs 33, 34 |
 | Judge-calibrated bound (humans calibrate the judge) | No. On the full 1,699 the judge reaches AUROC 0.81 vs majority, but Rogan-Gladen, calibrated FPR/FNR, judge-stratified, and PPI bounds are all wider than SRS-CP or undercover at p=0.02. The judge orders the queue; the human SRS sets the bound. Spend $15.37 for 1,699 audits | doc 36 |
-| SRS hypergeometric bound covers at low p | Yes (0.98–1.00 at p ≤ 5%). Stratified-normal does not (0.41–0.90) | `data/gold/coverage_lab.json` |
+| SRS hypergeometric bound covers at low p | Yes (0.97–1.00 at p ≤ 5%, 5,000 reps). Stratified-normal does not (0.47–0.91) | `data/gold/coverage_lab_r5000.json` |
 | Any population certified | No | |
 
 **On the Pro transfer (doc 29).** OpenCompass's SWE-Bench Pro Verified repaired 102 tasks. Those IDs are almost the same set as June Kim's 109 (Jaccard 0.88), so it is one audit lineage seen twice, not two. Against it the static prompt-vs-test score has AUROC 0.51 and the frozen enrichment predicate fails (1.37x versus the 1.5x threshold). The static layer surfaces one named example and a modest top-decile enrichment; it does not rank Pro defects. That is consistent with doc 18: static evidence is not the instrument.
@@ -75,7 +75,7 @@ Realism, difficulty, diversity, coverage, novelty are population-design properti
 
 Two of sixteen tasks we wrote ourselves are materially invalid and the reference probe alone flagged both. The third flag was a treatment-label error, which is the case ADR-0018 predicted for grade-C probes. A/B-only false-accept stays 0. That is the first live verifier-invalidity evidence.
 
-**On TB 2.1 as gold.** The 2.1 tasks live in a separate repo (`harbor-framework/terminal-bench-2-1`, also `harbor datasets download terminal-bench/terminal-bench-2-1`). Diffed against TB 2.0 at `f5b891c`, 26 of the 28 maintained tasks differ: 8 test fixes, 9 solution fixes, 13 instruction changes, 8 environment changes, several resource-only. That is enough pairs. PR #53 on terminal-bench-2 carries the per-task rationale. Z.ai's `terminal-bench-2-verified` on Hugging Face is the upstream for many fixes and is a second provenance. SWE-Bench Pro Verified (arXiv 2609.08149, 102 of 731 repaired) is a third pair source for later.
+**On TB 2.1 as gold.** The 2.1 tasks live in a separate repo (`harbor-framework/terminal-bench-2-1`, also `harbor datasets download terminal-bench/terminal-bench-2-1`). Diffed against TB 2.0 at `f5b891c`, all 28 maintained tasks differ; the mechanical change classes are multi-tag: test_fix 9, solution_fix 10, misspec 11, docker_env 9, resource_timeout 8 (`data/gold/tb21_pairs.summary.json`). That is enough pairs. PR #53 on terminal-bench-2 carries the per-task rationale. Z.ai's `terminal-bench-2-verified` on Hugging Face is the upstream for many fixes and is a second provenance. SWE-Bench Pro Verified (arXiv 2609.08149, 102 of 731 repaired) is a third pair source for later.
 
 ## 4. Rules that earned their place
 
@@ -138,7 +138,7 @@ Rater noise: one rater vs majority agrees 0.85 with FNR 0.16. One rater is not c
 
 > When a benchmark maintainer fixes a known verifier defect, does the interrogation profile change in a way we can measure cheaply, with no LLM?
 
-Partly yes, and the more useful finding is different. On every unaudited population we ran, model-free interrogation (reference, nop, empty patch, in a fresh container) found materially invalid tasks at 2 to 12 percent: our own 16 Harbor tasks (2), the frozen SWE 20 (1), a random 100 of SWE-bench (2), and TB 2.0 pre-fix (9 of 28 references fail, several fixed in 2.1). One of those (`django__django-10097`, in Verified-500) is a false-accept under the current official image that three human raters marked valid, because tests passing on the base commit is an execution property, not a reading property. Its 15% public solve rate suggests the 2024 environment behaved differently, so this may be image drift; it is invalid on today's image regardless. The instrument is cheap (30 s to 3 min per trial) and grade A.
+Partly yes, and the more useful finding is different. On every unaudited population we ran, model-free interrogation (reference, nop, empty patch, in a fresh container) found materially invalid tasks at 2 to 12 percent: our own 16 Harbor tasks (2), the frozen SWE 20 (1), a random 100 of SWE-bench (2), and TB 2.0 pre-fix (9 of 27 diffable references fail, several fixed in 2.1). One of those (`django__django-10097`, in Verified-500) is a false-accept under the current official image that three human raters marked valid, because tests passing on the base commit is an execution property, not a reading property. Its 15% public solve rate suggests the 2024 environment behaved differently, so this may be image drift; it is invalid on today's image regardless. The instrument is cheap (30 s to 3 min per trial) and grade A.
 
 What it does not do: it does not touch specification invalidity, which is 45 to 68 percent of SWE-bench by the 2024 raters. For that construct the cheap model auditor (doc 34) and the agent solve rate (doc 33) each reach AUROC ~0.8 and together still leave 27.5 percent invalid in the safest fifth. The human sample remains the bound for spec validity; doc 36 tests whether humans can calibrate the judge instead of adjudicating every unit.
 
@@ -153,7 +153,7 @@ Evan's constraint (2026-09-12): no new human ratings; use existing human labels,
 
 Next, in order, none requiring ratings:
 
-1. Human review queue from machine flags only: 5 TB 2.1, 2 Harbor-Index, 2 SWE SRS-100, 2 eval_tasks. Confirm upstream or environment. Ten items.
+1. Human review queue from machine flags only: 5 TB 2.1, 2 Harbor-Index, 2 SWE SRS-100, 2 eval_tasks. Confirm upstream or environment. Eleven items.
 2. Extend the SWE verifier certificate to n=300 on the frozen design so it can pass at 5% if p is ~2%.
 3. Define Part 2 intake as: execution gate (reference twice, nop, environment) plus footprint prior plus quotas. Ship the machine verifier certificate with every pool. Track spec validity through repairs and issues as they accrue, and re-certify from that log.
 4. Stop building instruments for the spec construct until a label set with a single protocol exists; ABA-style agent audits are the nearest 2026 thing and are eval-only.
@@ -186,11 +186,11 @@ Generators (Part 2 neighbors): SWE-Universe; InfoSynth; CLI-Universe; Endless Te
 Verifier strength: SWE-Mutation; ProgramBench; Reward Hacking Benchmark; GateTruth.
 Statistics: FAQ (2601.20251); Noisy but Valid (2601.20913); PRECISE / PPI (2606.05308) and Angelopoulos et al. prediction-powered inference; Berti-Équille progressive sampling (2607.25356); classical acceptance sampling (Dodge-Romig, ANSI Z1.4); model-assisted survey estimation (Särndal).
 
-## 12. Known drift to clean up
+## 12. Known drift, resolved 2026-09-13 (doc 57)
 
-- Doc 15 tables no longer match `pro_reconstruction.json`, which was regenerated under doc 16 scoring.
-- `data/gold/coverage_n100.json` (200 reps) sits beside the cited 2,000-rep file unmarked.
-- `rank_by_cheap_risk_desc` in `pro_reconstruction.json` is ranked by `openai_style_risk`.
+- Doc 15 tables were regenerated from `pro_reconstruction.json`, which is scored under doc 16's `openai_style_risk`; the doc now notes the scoring change.
+- `data/gold/coverage_n100.json` (200 reps) was renamed `coverage_n100_r200.json`; the cited 2,000-rep file is `coverage_n100_r2000.json`.
+- `pro_reconstruction.json` now emits `rank_by_openai_style_risk_desc` (the value doc 16 uses) plus a true `rank_by_cheap_risk_desc` (257).
 
 
 ## 13. Operational notes from the overnight run
