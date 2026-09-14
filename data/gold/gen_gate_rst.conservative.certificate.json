@@ -1,0 +1,131 @@
+{
+  "complete": true,
+  "decision": "reject",
+  "N": 37484,
+  "n": 200,
+  "k_invalid": 12,
+  "p_hat": 0.06,
+  "ucb95": 0.09532067015259844,
+  "method": "hypergeometric-one-sided",
+  "alpha": 0.05,
+  "epsilon": 0.05,
+  "p_certify": 0.0062778230098452514,
+  "label_protocol": "verifier_invalid.fresh_environment.execution",
+  "grade": "A",
+  "adjudicator": "machine",
+  "verifier_kind": "execution",
+  "judge_model": null,
+  "judge_agreement": null,
+  "strata": {
+    "execution": 200
+  },
+  "replaces_human_sample": false,
+  "design": "SRS without replacement",
+  "seed": "gen-gate-rst-v0",
+  "flagged": [
+    {
+      "unit_id": "tasks/rts_task_428772f088f387a5a5931b6a",
+      "evidence": "oracle_rewards=[0.0, 1.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=False; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_0e78f51893db713eac1293e7",
+      "evidence": "UNADJUDICATED counted invalid for the worst-case bound (doc 53): env container exits 255 at start (deterministic, 12/12 trials)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_ba03cac8d7d5c174ce9410e9",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_e8aeaad81227334457f583a7",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_26236daa49379d10832f9905",
+      "evidence": "UNADJUDICATED counted invalid for the worst-case bound (doc 53): task defect: test.sh set -e exits before reward write on failure (RewardFileNotFoundError, 4/4 nop trials)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_c7388d1bd61a8c0dbb452c37",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_e645413836bf454030b0e9cd",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_641f1e4025984f695f5de157",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_f7d8f7e15e98c120be6eea7d",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_b5a102c27aae10a41d70205a",
+      "evidence": "UNADJUDICATED counted invalid for the worst-case bound (doc 53): env container exits 255 at start (deterministic, 8/8 after build); earlier attempt also hit CentOS-7 vault 403",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_1f272b2057dfd63ab48abd38",
+      "evidence": "UNADJUDICATED counted invalid for the worst-case bound (doc 53): environment build failure: deb.debian.org bullseye-security 404 (apt exit 100)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    },
+    {
+      "unit_id": "tasks/rts_task_61ddd41585b5a4b23d5eb46a",
+      "evidence": "UNADJUDICATED counted invalid for the worst-case bound (doc 53): environment build failure: deb.debian.org bullseye-security 404 (apt exit 100)",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    }
+  ],
+  "unadjudicated": [],
+  "unadjudicated_reasons": {},
+  "n_unadjudicated": 0,
+  "n_adjudicated": 200,
+  "reason": "ucb at or above epsilon",
+  "bound_kind": "conservative_all_uncovered_invalid",
+  "coverage": {
+    "sampled": 200,
+    "adjudicated": 195,
+    "uncovered": 5,
+    "fraction": 0.975,
+    "uncovered_ids": [
+      "tasks/rts_task_0e78f51893db713eac1293e7",
+      "tasks/rts_task_26236daa49379d10832f9905",
+      "tasks/rts_task_b5a102c27aae10a41d70205a",
+      "tasks/rts_task_1f272b2057dfd63ab48abd38",
+      "tasks/rts_task_61ddd41585b5a4b23d5eb46a"
+    ],
+    "assumption": "Worst case: every uncovered unit is counted invalid. No claim about the uncovered units is needed; the true k lies between the restricted and this bound."
+  }
+}
