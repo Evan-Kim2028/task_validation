@@ -29,7 +29,7 @@ PYTHONPATH=src python3 -m task_validation.cli ingest-swe \
   --out data/gold/swe_verified.jsonl
 PYTHONPATH=src python3 -m task_validation.cli simulate-coverage \
   --gold data/gold/swe_verified_compact.jsonl \
-  --out data/gold/coverage_n100.json --n 100 --replicates 200
+  --out data/gold/coverage_n100_r200.json --n 100 --replicates 200
 ```
 
 Re-download the OpenAI 2024 annotations if the CSV is missing:

@@ -1,5 +1,8 @@
 # A design-based bound on residual task invalidity in agent benchmarks
 
+All consolidated numbers live in `documents/61-results.md`.
+This draft cites the same artifacts; doc 61 is the reference table.
+
 Status: draft. Every number cites a document or a `data/gold/` artifact. Anything that could not be verified against an artifact is marked TODO-VERIFY.
 
 ## Abstract

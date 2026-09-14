@@ -398,6 +398,14 @@ def test_warmup_dispatches_first_trial_alone_then_rest(tmp_path: Path):
     assert warm_keys == nowarm_keys == expected
 
 
+def test_warmup_defaults_off():
+    # Certificates are comparable only within one scheduling; warmup must be
+    # opt-in so gate runs default to all-at-once dispatch (doc 53).
+    import inspect
+
+    assert inspect.signature(gg.run_gate).parameters["warmup"].default is False
+
+
 def test_warmup_infra_skips_remaining_trials(tmp_path: Path):
     manifest_path = _run_manifest(tmp_path, ["alpha-task"], N=10)
     calls: list[str] = []
