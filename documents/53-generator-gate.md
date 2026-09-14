@@ -269,3 +269,11 @@ Epsilon is a policy parameter the consumer supplies, not a number the method pro
 | RST generated pool, conservative bound | 9.53% | reject | reject | reject | release | `data/gold/gen_gate_rst.conservative.certificate.json` |
 
 The TMax manifest produces no row: its certificate is incomplete with 199 of 200 units unadjudicated (`data/gold/gen_gate_tmax.certificate.json`). No bound was re-run; every decision above is the stored ucb95 compared against each epsilon.
+
+## TMax scheduling, recorded 2026-09-14
+
+The TMax run uses warmup scheduling. RST and SETA used concurrent scheduling. The TMax process loaded the warmup-on-by-default build before the default was flipped to opt-in, and its certificate is stamped `warmup` rather than rewritten, because restating it as concurrent would fabricate provenance.
+
+The run was not restarted. Two reasons. The TMax measurement is one-sided already, covering only the accepts-an-empty-solution defect class, so it is not scheduling-matched to RST and SETA regardless. And scheduling changes what the oracle-determinism flag conflates, which a nop-only gate does not measure: an empty submission either passes the verifier or it does not, and that outcome does not depend on whether the image was built alone or under contention.
+
+What the difference does cost: both nop trials of a task run against one cached image, so a task whose environment builds differently on different days cannot be detected. Any comparison of the TMax rate to the RST or SETA rate must state both the one-sided coverage and the scheduling difference.
