@@ -7,8 +7,8 @@ How-to plus results placeholder. Runs gate A from doc 50 section 2 against the t
 | Lot | Source | Task count | Root on the VPS |
 | --- | --- | ---: | --- |
 | RST | `Zhongzhi1228/Recursive-Task-Synthesis`, `metadata/tasks.parquet` plus `data/tasks-*.tar` | 37,484 | `/home/evan/gen-sets/rst` |
-| SETA-Env | `camel-ai/SETA-Env` Harbor task dirs with `solution/solve.sh` | 4,567 | `/home/evan/gen-sets/seta` |
-| TMax-15K | `allenai/TMax-15K`, Harbor form `tmax/TMax-15K-Harbor` | pending count | `/home/evan/gen-sets/tmax` |
+| SETA-Env | `camel-ai/SETA-Env` Harbor task dirs with `solution/solve.sh` | 4,569 | `/home/evan/gen-sets/seta` |
+| TMax-15K | `allenai/TMax-15K`, Harbor form `tmax/TMax-15K-Harbor` | 8,047 Harbor dirs | `/home/evan/gen-sets/tmax-harbor` |
 
 The task counts above are from the generator manifests; the runner re-enumerates the root and records its own `N` in each manifest under `data/gold/gen_gate_<name>_manifest.json`. RST ships tasks inside tar archives; enumeration reads tar member names only, and only sampled tasks are unpacked into `<root>-gate-extract/<name>`.
 
@@ -54,6 +54,10 @@ harbor run -p <task_dir> --agent <oracle|nop> --env docker --yes \
 ```
 
 Rows append to `data/gold/gen_gate_<name>.jsonl`, one per `(task, probe, rep)` with reward, status, wall time, and log tails. Resume is automatic: re-running skips terminal trials. Environment build failures and timeouts are recorded as `infra` and `timeout` with null reward; no reward is ever fabricated.
+
+By default the runner warms each task's image before fanning out: the first pending trial (the first oracle rep on a fresh task) runs alone to completion so its environment build populates the docker layer cache, then the remaining trials dispatch at `--concurrency`. A warmup trial that comes back `infra` is recorded, and the task's remaining trials are recorded `not_run` for the pass with no retry inside the runner. `--no-warmup` restores the old all-at-once dispatch. The change is scheduling only: probes, statuses, resume keys, row schema, prune cadence and the certificate path are unchanged, and no verdict is affected.
+
+The motivation is measured in `data/gold/gen_gate_seta.jsonl` from the SETA gate at concurrency 3: the quickest executed trial per task medians 51 s (n=164) while the other three median 107 s (n=492). Under all-at-once dispatch the trials of one task build the same image concurrently, so the layer cache serves none of them and the builds contend for disk.
 
 ```bash
 cd ~/task_validation
@@ -104,6 +108,30 @@ Invalid means an executed oracle rep returned reward below 1 or an executed nop 
 - Leftover containers are removed per task; `docker ps -a | grep <task-slug>` should come back empty.
 - Judge-verifier tasks (detected by `JUDGE_MODELS` markers, doc 44) are skipped to their own stratum and tasks without `solution/` are recorded `no_reference`; neither enters the execution bound.
 
+## Coverage and one-sided gating
+
+The gate has two probes. The oracle probe asks the reference to pass its own verifier. The nop probe asks the verifier to reject an empty solution. A task takes a probe only if the probe has something to run, so coverage splits three ways (doc 44).
+
+| Stratum | Oracle probe | Nop probe | How it enters a bound |
+| --- | --- | --- | --- |
+| execution | runs; a fail is grade-A invalid | runs; an accept is grade-A invalid | two-sided: all 2k trials adjudicate the unit |
+| judge | needs `JUDGE_MODELS`; skipped to its own stratum | needs `JUDGE_MODELS`; skipped to its own stratum | no machine certificate; the human design only (doc 44) |
+| none | impossible: no `solution/` shipped | runs; an accept is grade-A invalid, a reject is not evidence | one-sided only: accepts count invalid, rejects count toward n of the one-sided bound but are never clean units in a two-sided bound |
+
+The none stratum is half-covered, not uncovered. A nop accept convicts with no reference needed. A nop reject cannot acquit, so the unit never counts as a clean unit in a two-sided bound (doc 44).
+
+TMax-15K is the limiting case. The Harbor form on the Hub (`tmax/TMax-15K-Harbor`) holds 8,047 task directories and publishes no references by design: a spot check found 0 of the first 200 dirs with `solution/` (checked 2026-09-14), and the frozen SRS manifest records `has_reference` false on all 200 sampled tasks (`data/gold/gen_gate_tmax_manifest.json`, N=8,047, n=200, seed `gen-gate-tmax-v0`). The staged raw download `/home/evan/gen-sets/tmax/tasks.zip` agrees: its task dirs carry `solutions/` model summaries (for example `solutions/gemini_gemini-3-flash-preview_summary.json`), not `solution/` reference dirs. With no reference anywhere, the oracle probe is impossible on TMax as distributed, and the reference-fails-its-own-verifier defect class is unmeasurable. That class supplied all 7 flagged RST tasks and the 1 flagged SETA task (`data/gold/gen_gate_rst_verdicts.jsonl`, `data/gold/gen_gate_seta_verdicts.jsonl`). The TMax paper (arXiv 2606.23321) argues reinforcement learning soft-filters broken tasks so teacher correctness is unnecessary; this gate cannot test that claim in either direction.
+
+A nop-only run remains possible and is deferred (decision 2026-09-14). The manifest is already frozen, so the one command is the run with `--probes nop`: every verdict lands in the none stratum with `one_sided` true, a nop acceptance is the only invalid finding, and the certificate is a one-sided bound over the accepts-an-empty-solution defect class only (`src/task_validation/evidence/generator_gate.py`, `src/task_validation/sampling/certificate.py`).
+
+```bash
+cd ~/task_validation
+systemd-run --user --collect -p MemoryMax=24G -p CPUWeight=50 \
+    --unit=gen-gate-tmax --same-dir \
+    env PYTHONPATH=src .venv/bin/python -m task_validation.cli generator-gate-run \
+    --name tmax --probes nop --concurrency 3
+```
+
 ## Results
 
 RST lot, run 2026-09-13 on `lake-vps-lor-main`. SRS n=200 of N=37,484, seed `gen-gate-rst-v0` (`data/gold/gen_gate_rst_manifest.json`). Of 200 sampled tasks, 195 were adjudicated: 188 valid, 7 invalid, 0 nop accepts in 390 executed nop trials (`data/gold/gen_gate_rst.summary.json`). Five tasks stayed unadjudicated after one `--redo-infra` pass and one targeted retry at concurrency 1 (828 rows in `data/gold/gen_gate_rst.jsonl`). One draw, two certificates: the restricted bound (a) quotes N=37,479, n=195, k=7 with the 5 uncovered units excluded; the conservative bound (b) quotes N=37,484, n=200, k=12 with all 5 counted invalid. Any citation of this run must name which bound it quotes, since the populations and k differ.
@@ -151,7 +179,7 @@ Wall clock about 4.1 h for the main pass (first harbor job 2026-09-13T17:32:18, 
 
 ### Where this sits
 
-In the doc 42 ordering of populations by audit history, the RST covered-slice point estimate of 3.6 percent lands between TB 2.1 post-fix and Harbor-Index, and the conservative 6.0 percent lands just above TB 2.1.
+In the doc 42 ordering of populations by audit history, the RST covered-slice point estimate of 3.6 percent lands between TB 2.1 post-fix and Harbor-Index, and the conservative 6.0 percent lands just above TB 2.1. SETA-Env at 0.5 percent lands below every other measured pool.
 
 | Population | Invalid rate | Source |
 | --- | ---: | --- |
@@ -162,7 +190,38 @@ In the doc 42 ordering of populations by audit history, the RST covered-slice po
 | Harbor-Index | 3.8% | doc 42 |
 | RST, restricted k=7/195 | 3.6% | `data/gold/gen_gate_rst.certificate.json` |
 | SWE-bench random | 2% | doc 42 |
+| SETA-Env, k=1/200 | 0.5% | `data/gold/gen_gate_seta.certificate.json` |
 
 Two of the five uncovered tasks are environment rot, not verifier invalidity: `deb.debian.org` no longer resolves bullseye-security, so the image cannot be built today and the task cannot be adjudicated either way. That is a distinct construct from a verifier that runs and returns a wrong answer. The precedent is doc 23 section 7 on `django__django-10097`: a task is invalid on today's image regardless of what the 2024 environment did. The symmetric statement here is that a task whose environment cannot be built today is unadjudicated, not invalid; it enters the bound only as a worst-case unit in the conservative certificate.
 
 Scope note: RST is the raw 37,484-task pool that generator T1 (arXiv 2609.11042) filtered down to about 15,000 and trained on, with a reported RL lift of 59.9 to 64.0 on TB 2.1 (doc 43, doc 46). This gate measures the raw pool. It is evidence about what T1's filter had to remove, not a claim that RST is unusable.
+
+### SETA-Env lot
+
+SETA-Env lot, run 2026-09-14 on `lake-vps-lor-main`. SRS n=200 of N=4,569, seed `gen-gate-seta-v0` (`data/gold/gen_gate_seta_manifest.json`). All 200 sampled tasks were adjudicated: 199 valid, 1 invalid, 0 nop accepts in 400 executed nop trials (`data/gold/gen_gate_seta.summary.json`). One task needed a `--redo-infra` pass to close out: `SETA_Evolve/ask_ubuntu__13__d1` lost its two rep-0 trials to a transient infra exit at about 15 s and re-executed clean (802 rows in `data/gold/gen_gate_seta.jsonl`). One draw, one certificate: N=4,569, n=200, k=1.
+
+#### Flagged tasks (k = 1 of 200 adjudicated)
+
+The single flag is the same defect class as all seven RST flags: the reference fails its own verifier. Rewards are from `data/gold/gen_gate_seta_verdicts.jsonl`; the observed failure is from the oracle trials' `test_stdout_tail` in `data/gold/gen_gate_seta.jsonl`.
+
+| Task | Oracle | Nop | Deterministic | Observed failure |
+| --- | --- | --- | --- | --- |
+| `SETA_Synth/kaggle_notebook__crawford_exercise-time-series-modeling` | [0, 0] | [0, 0] | yes | 10 failed assertions in `tests/test_outputs.py` |
+
+#### Uncovered tasks (0 of 200)
+
+None. Coverage is 200 of 200 (`data/gold/gen_gate_seta.certificate.json` carries `n_unadjudicated=0`).
+
+#### Bound
+
+Same machinery as RST: `hypergeometric_upper` inside `build_certificate`, one-sided alpha 0.05, release iff ucb95 < epsilon = 0.05.
+
+| Bound | N | n | k invalid | p-hat | UCB 95 | Decision | Artifact |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| complete | 4,569 | 200 | 1 | 0.50% | 2.32% | release | `data/gold/gen_gate_seta.certificate.json` |
+
+With zero uncovered units there is no restricted/conservative split: the certificate is complete and the decision at epsilon 5 percent is release.
+
+#### Run cost
+
+Wall clock about 10.3 h for the main pass (run start 2026-09-14T01:00:49, done 11:21:24 in `logs/gen_gate_seta.log` on the VPS; first harbor job 01:00:51, last 11:29:17 from `result.json` timestamps under `/tmp/tv-gen-gate-seta/jobs/`), plus a 7.6 min `--redo-infra` pass. Runner CPU was 1 h 33 min on the queue unit and 40 s on the redo unit. Summed trial time is 90,563 s, about 25.2 h, over 802 rows (`data/gold/gen_gate_seta.jsonl`). API cost is 0 dollars: oracle and nop are model-free agents and `cost_usd` is null in every job `result.json`.

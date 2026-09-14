@@ -814,6 +814,7 @@ def _cmd_generator_gate_run(args: argparse.Namespace) -> int:
         extract_dir=Path(args.extract_dir) if args.extract_dir else None,
         concurrency=args.concurrency,
         k=args.k,
+        probes=args.probes,
         budget_sec=args.budget_sec,
         trial_cap_sec=args.trial_cap_sec,
         timeout_mult=args.timeout_multiplier,
@@ -823,6 +824,7 @@ def _cmd_generator_gate_run(args: argparse.Namespace) -> int:
         epsilon=args.epsilon,
         resume=not args.no_resume,
         redo_infra=args.redo_infra,
+        warmup=not args.no_warmup,
     )
     return 0
 
@@ -1145,6 +1147,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--extract-dir", default="", help="default: manifest extract_dir")
     p.add_argument("-n", "--concurrency", type=int, default=4, help="harbor --n-concurrent and runner parallelism")
     p.add_argument("-k", type=int, default=2, help="trials per probe (oracle and nop each)")
+    p.add_argument(
+        "--probes",
+        default="oracle,nop",
+        help="comma-separated subset of oracle,nop; 'nop' alone runs the one-sided "
+        "empty-solution gate and every verdict lands in the none stratum (doc 44)",
+    )
     p.add_argument("--budget-sec", type=float, default=24 * 60 * 60)
     p.add_argument("--trial-cap-sec", type=int, default=60 * 60)
     p.add_argument("--timeout-multiplier", type=float, default=1.0)
@@ -1154,6 +1162,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--epsilon", type=float, default=0.05)
     p.add_argument("--no-resume", action="store_true")
     p.add_argument("--redo-infra", action="store_true", help="re-execute trials whose latest row is infra or timeout")
+    p.add_argument(
+        "--no-warmup",
+        action="store_true",
+        help="dispatch all of a task's trials at once (old behaviour); default runs the first trial alone to warm the image cache",
+    )
     p.set_defaults(func=_cmd_generator_gate_run)
 
     args = parser.parse_args(argv)

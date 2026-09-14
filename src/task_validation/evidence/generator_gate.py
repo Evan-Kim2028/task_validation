@@ -8,6 +8,27 @@ protocol verifier_invalid.fresh_environment.execution, grade A, adjudicator
 machine, verifier_kind execution. Judge-configured and no-reference tasks are
 detected, recorded as their own strata, and left unadjudicated in the
 execution certificate (doc 44). Never fabricates a reward.
+
+Scheduling: by default each task's first pending trial (the first oracle
+rep on a fresh task) runs alone to completion, so its environment image
+build populates the docker layer cache before the remaining trials fan out
+at --concurrency. Without this the trials of one task all build the same
+image at once, the cache serves none of them, and they contend for disk:
+in the SETA gate run (concurrency 3) the quickest executed trial per task
+medians 51 s (n=164) while the other three median 107 s (n=492). A warmup
+trial that comes back infra is recorded and the rest of the task's trials
+are skipped for the pass as not_run rows; they are not retried inside the
+runner. --no-warmup restores the old all-at-once dispatch. This is a
+scheduling change only: probes, statuses, resume keys, row schema, prune
+cadence and the certificate path are unchanged, and no verdict is affected.
+
+Probe selection: --probes takes a comma-separated subset of oracle,nop and
+defaults to both, which is the two-sided gate. With oracle absent the run
+is one-sided (doc 44): every task is recorded in the none stratum with
+one_sided true, a nop acceptance is the only invalid finding, and a nop
+rejection leaves the task unadjudicated rather than clean. The run's
+certificate is a one-sided bound over the accepts-an-empty-solution defect
+class only.
 """
 
 from __future__ import annotations
@@ -60,6 +81,7 @@ TERMINAL_STATUSES = frozenset(
     {"executed", "infra", "timeout", "no_reference", "judge_stratum"}
 )
 REDO_STATUSES = frozenset({"infra", "timeout"})
+PROBE_NAMES = ("oracle", "nop")
 
 _DEFAULT_OUT = Path("data/gold")
 
@@ -637,17 +659,31 @@ def detect_verifier_kind(task_dir: Path, trials: list[dict]) -> str:
     return "execution"
 
 
-def task_verdict(task_id: str, trials: list[dict], task_dir: Path, k: int) -> dict:
+def task_verdict(
+    task_id: str,
+    trials: list[dict],
+    task_dir: Path,
+    k: int,
+    *,
+    one_sided: bool = False,
+) -> dict:
     """One doc-32 verdict row per manifest task.
 
     invalid = True when an executed oracle rep accepted False or an executed
     nop rep accepted True. invalid = False only when all 2k trials executed
     clean. Anything else (infra, timeout, not_run, missing) is None and the
     task stays unadjudicated: infra is excluded from the bound and counted.
+
+    Under one_sided (oracle probe not scheduled) every non-judge task sits
+    in the none stratum: invalid = True when an executed nop rep accepted
+    True, else invalid stays None. A nop rejection is not evidence of
+    validity, so one-sided verdicts never read clean (doc 44).
     """
     oracle = [t for t in trials if t.get("probe") == "oracle"]
     nop = [t for t in trials if t.get("probe") == "nop"]
     kind = detect_verifier_kind(task_dir, trials)
+    if one_sided and kind != "judge":
+        kind = "none"
     oracle_rewards = [t.get("reward") for t in oracle if t.get("status") == "executed"]
     nop_rewards = [t.get("reward") for t in nop if t.get("status") == "executed"]
     statuses = sorted({str(t.get("status") or "") for t in trials})
@@ -663,9 +699,19 @@ def task_verdict(task_id: str, trials: list[dict], task_dir: Path, k: int) -> di
         else None
     )
 
-    if kind != "execution":
+    if kind != "execution" and not (one_sided and kind == "none"):
         invalid = None
         reason = f"verifier_kind {kind} is not execution"
+    elif one_sided:
+        if nop_passed:
+            invalid = True
+            reason = "nop accepted an empty solution at least once"
+        elif nop_rewards:
+            invalid = None
+            reason = "one-sided: nop rejected; a reject is not evidence of validity (doc 44)"
+        else:
+            invalid = None
+            reason = "one-sided: no executed nop trial: " + ",".join(statuses or ["none"])
     elif oracle_failed or nop_passed:
         invalid = True
         reason = "clean" if all_executed else "defect seen; some trials not executed"
@@ -684,9 +730,12 @@ def task_verdict(task_id: str, trials: list[dict], task_dir: Path, k: int) -> di
         evidence += "; oracle failed own verifier at least once"
     if nop_passed:
         evidence += "; nop passed at least once"
+    if one_sided:
+        evidence += "; one-sided nop-only probe set"
     return {
         "unit_id": task_id,
         "invalid": invalid,
+        "one_sided": bool(one_sided),
         "label_protocol": PROTOCOL,
         "grade": GRADE,
         "adjudicator": ADJUDICATOR,
@@ -702,6 +751,14 @@ def task_verdict(task_id: str, trials: list[dict], task_dir: Path, k: int) -> di
 
 
 def verdicts_from_rows(manifest: dict, rows: list[dict]) -> list[dict]:
+    planned = manifest.get("probes")
+    if planned is None:
+        # The frozen manifest does not record the probe set. Under the
+        # two-sided gate every touched task writes at least one oracle row,
+        # so a rows file with only nop rows can only come from --probes nop.
+        probes_seen = {str(r.get("probe")) for r in rows if r.get("probe")}
+        planned = ["nop"] if probes_seen == {"nop"} else list(PROBE_NAMES)
+    one_sided = "oracle" not in planned
     by_task: dict[str, list[dict]] = {}
     for row in latest_rows(rows).values():
         by_task.setdefault(str(row["task_id"]), []).append(row)
@@ -711,7 +768,15 @@ def verdicts_from_rows(manifest: dict, rows: list[dict]) -> list[dict]:
         tid = str(tid)
         meta = tasks_meta.get(tid) or {}
         task_dir = Path(meta.get("path") or "")
-        verdicts.append(task_verdict(tid, by_task.get(tid, []), task_dir, int(manifest.get("k") or K_DEFAULT)))
+        verdicts.append(
+            task_verdict(
+                tid,
+                by_task.get(tid, []),
+                task_dir,
+                int(manifest.get("k") or K_DEFAULT),
+                one_sided=one_sided,
+            )
+        )
     return verdicts
 
 
@@ -743,11 +808,13 @@ def summarize(manifest: dict, rows: list[dict], *, wall_clock_total: float, main
         by_task.setdefault(str(row["task_id"]), []).append(row)
     verdicts = verdicts_from_rows(manifest, rows)
     tasks = {v["unit_id"]: v for v in verdicts}
+    one_sided = "oracle" not in (manifest.get("probes") or PROBE_NAMES)
+    counted_kinds = ("execution", "none") if one_sided else ("execution",)
     n_infra_tasks = sum(
         1
         for v in verdicts
         if v["invalid"] is None
-        and v["verifier_kind"] == "execution"
+        and v["verifier_kind"] in counted_kinds
         and any(s in {"infra", "timeout"} for s in v["statuses"])
     )
     return {
@@ -756,6 +823,8 @@ def summarize(manifest: dict, rows: list[dict], *, wall_clock_total: float, main
         "grade": GRADE,
         "verifier_kind": VERIFIER_KIND,
         "adjudicator": ADJUDICATOR,
+        "probes": manifest.get("probes") or list(PROBE_NAMES),
+        "one_sided": "oracle" not in (manifest.get("probes") or PROBE_NAMES),
         "n": manifest.get("n"),
         "N": manifest.get("N"),
         "seed": manifest.get("seed"),
@@ -781,6 +850,20 @@ def summarize(manifest: dict, rows: list[dict], *, wall_clock_total: float, main
     }
 
 
+def _parse_probes(probes) -> list[str]:
+    """Comma string or iterable -> validated ordered subset of PROBE_NAMES."""
+    if isinstance(probes, str):
+        probes = probes.split(",")
+    out = [str(p).strip() for p in probes if str(p).strip()]
+    out = list(dict.fromkeys(out))
+    bad = [p for p in out if p not in PROBE_NAMES]
+    if not out or bad:
+        raise ValueError(
+            f"probes must be a non-empty subset of {PROBE_NAMES}; got {out or probes!r}"
+        )
+    return out
+
+
 def run_gate(
     *,
     manifest_path: Path,
@@ -789,6 +872,7 @@ def run_gate(
     extract_dir: Path | None = None,
     concurrency: int = CONCURRENCY_DEFAULT,
     k: int = K_DEFAULT,
+    probes=("oracle", "nop"),
     budget_sec: float = BUDGET_SEC,
     trial_cap_sec: int = TRIAL_CAP_SEC,
     timeout_mult: float = TIMEOUT_MULT,
@@ -801,12 +885,16 @@ def run_gate(
     verdicts_path: Path | None = None,
     resume: bool = True,
     redo_infra: bool = False,
+    warmup: bool = True,
     trial_runner=None,
     maintenance: DockerMaintenance | None = None,
 ) -> dict:
     manifest_path = Path(manifest_path)
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["k"] = k
+    probe_list = _parse_probes(probes)
+    one_sided = "oracle" not in probe_list
+    manifest["probes"] = probe_list
     out_path = Path(out_path)
     jobs_dir = Path(jobs_dir)
     jobs_dir.mkdir(parents=True, exist_ok=True)
@@ -869,7 +957,8 @@ def run_gate(
             epsilon,
             PROTOCOL,
             ADJUDICATOR,
-            verifier_kind=VERIFIER_KIND,
+            verifier_kind="none" if one_sided else VERIFIER_KIND,
+            one_sided=one_sided,
         )
         summary["certificate"] = {
             "path": str(certificate_path),
@@ -890,12 +979,65 @@ def run_gate(
         write_json(summary_path, summary)
         return summary
 
+    def dispatch(tid: str, task_dir: Path, sha: str | None, batch: list[tuple[str, str, int]]) -> list[dict]:
+        """Run one batch of (task, probe, rep) trials concurrently; persist rows."""
+        batch_rows: list[dict] = []
+        with ThreadPoolExecutor(max_workers=max(1, int(concurrency))) as pool:
+            futures = {}
+            for _tid, probe, rep in batch:
+                stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+                job_name = f"{slug_for(tid)}-{probe}-r{rep}-{stamp}"
+                agent = "nop" if probe == "nop" else "oracle"
+                futures[
+                    pool.submit(
+                        trial_runner, task_dir, agent, jobs_dir, job_name
+                    )
+                ] = (tid, probe, rep, job_name)
+            for fut in as_completed(futures):
+                _tid, probe, rep, job_name = futures[fut]
+                try:
+                    run = fut.result()
+                except Exception as exc:
+                    run = {
+                        "status": "infra",
+                        "reward": None,
+                        "elapsed_sec": 0.0,
+                        "stderr_tail": f"{type(exc).__name__}: {exc}",
+                        "test_stdout_tail": "",
+                        "skip_reason": "runner_exception",
+                    }
+                status = run.get("status") or "infra"
+                if status == "skipped_heavy":
+                    status = "infra"
+                row = build_trial_row(
+                    task_id=tid,
+                    probe=probe,
+                    rep=rep,
+                    reward=run.get("reward"),
+                    status=status,
+                    elapsed_sec=float(run.get("elapsed_sec") or 0.0),
+                    test_stdout_tail=tail_lines(run.get("test_stdout_tail") or "", STDOUT_TAIL_LINES),
+                    stderr_tail=(run.get("stderr_tail") or "")[-STDERR_TAIL_CHARS:],
+                    skip_reason=run.get("skip_reason"),
+                    job_name=job_name,
+                    path=str(task_dir),
+                    sha256=sha,
+                )
+                persist(row)
+                batch_rows.append(row)
+                _progress(
+                    f"{tid} {probe} r{rep} status={row['status']} "
+                    f"reward={row['reward']} elapsed={row['elapsed_sec']:.1f}s "
+                    f"remaining={remaining():.0f}s"
+                )
+        return batch_rows
+
     ids = [str(x) for x in manifest["ids"]]
-    probes = (("oracle", k), ("nop", k))
+    planned = tuple((p, k) for p in probe_list)
     n_since_prune = 0
 
     _progress(
-        f"tasks={len(ids)} k={k} concurrency={concurrency} "
+        f"tasks={len(ids)} k={k} probes={probe_list} concurrency={concurrency} "
         f"resume_rows={len(existing)} done={len(done)} budget_sec={budget_sec}"
     )
 
@@ -911,7 +1053,7 @@ def run_gate(
             except (OSError, tarfile.TarError, KeyError) as exc:
                 _progress(f"{tid} re-extract failed: {type(exc).__name__}: {exc}")
         sha = meta.get("sha256")
-        wanted = [(tid, probe, rep) for probe, kk in probes for rep in range(kk)]
+        wanted = [(tid, probe, rep) for probe, kk in planned for rep in range(kk)]
         pending = [key for key in wanted if key not in done]
 
         if pending and not task_dir.is_dir():
@@ -984,54 +1126,35 @@ def run_gate(
                 )
             pending = []
 
-        if pending:
-            with ThreadPoolExecutor(max_workers=max(1, int(concurrency))) as pool:
-                futures = {}
+        if pending and warmup:
+            # Warm the image first: the first pending trial (the first
+            # oracle rep on a fresh task) runs alone so its build populates
+            # the docker layer cache, then the rest fan out concurrently.
+            warm_rows = dispatch(tid, task_dir, sha, pending[:1])
+            pending = pending[1:]
+            if warm_rows[0]["status"] == "infra":
+                _progress(
+                    f"{tid} warmup trial infra; recording {len(pending)} "
+                    "remaining trials not_run"
+                )
                 for _tid, probe, rep in pending:
-                    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
-                    job_name = f"{slug_for(tid)}-{probe}-r{rep}-{stamp}"
-                    agent = "nop" if probe == "nop" else "oracle"
-                    futures[
-                        pool.submit(
-                            trial_runner, task_dir, agent, jobs_dir, job_name
+                    persist(
+                        build_trial_row(
+                            task_id=tid,
+                            probe=probe,
+                            rep=rep,
+                            reward=None,
+                            status="not_run",
+                            elapsed_sec=0.0,
+                            skip_reason="warmup trial infra; same failed build expected",
+                            path=str(task_dir),
+                            sha256=sha,
                         )
-                    ] = (tid, probe, rep, job_name)
-                for fut in as_completed(futures):
-                    _tid, probe, rep, job_name = futures[fut]
-                    try:
-                        run = fut.result()
-                    except Exception as exc:
-                        run = {
-                            "status": "infra",
-                            "reward": None,
-                            "elapsed_sec": 0.0,
-                            "stderr_tail": f"{type(exc).__name__}: {exc}",
-                            "test_stdout_tail": "",
-                            "skip_reason": "runner_exception",
-                        }
-                    status = run.get("status") or "infra"
-                    if status == "skipped_heavy":
-                        status = "infra"
-                    row = build_trial_row(
-                        task_id=tid,
-                        probe=probe,
-                        rep=rep,
-                        reward=run.get("reward"),
-                        status=status,
-                        elapsed_sec=float(run.get("elapsed_sec") or 0.0),
-                        test_stdout_tail=tail_lines(run.get("test_stdout_tail") or "", STDOUT_TAIL_LINES),
-                        stderr_tail=(run.get("stderr_tail") or "")[-STDERR_TAIL_CHARS:],
-                        skip_reason=run.get("skip_reason"),
-                        job_name=job_name,
-                        path=str(task_dir),
-                        sha256=sha,
                     )
-                    persist(row)
-                    _progress(
-                        f"{tid} {probe} r{rep} status={row['status']} "
-                        f"reward={row['reward']} elapsed={row['elapsed_sec']:.1f}s "
-                        f"remaining={remaining():.0f}s"
-                    )
+                pending = []
+
+        if pending:
+            dispatch(tid, task_dir, sha, pending)
 
         removed = maintenance.rm_task_containers(task_dir)
         if removed:

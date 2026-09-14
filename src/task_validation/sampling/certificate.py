@@ -21,6 +21,13 @@ SWE_EXEC_PROTOCOL = "verifier_invalid.fresh_environment.execution"
 SWE_EXEC_GRADE = "A"
 SWE_EXEC_ADJUDICATOR = "machine"
 ALPHA_DEFAULT = 0.05
+ONE_SIDED_INTERPRETATION = (
+    "One-sided bound over the nop probe only: it covers the "
+    "accepts-an-empty-solution defect class (incorrect_accept) and no "
+    "other. A nop rejection is not evidence of validity, and the "
+    "reference-fails-its-own-verifier defect class is unmeasured on this "
+    "stratum (doc 44)."
+)
 
 
 def _as_ids(manifest: dict) -> tuple[int, int, list[str]]:
@@ -116,6 +123,7 @@ def build_certificate(
     *,
     alpha: float = ALPHA_DEFAULT,
     verifier_kind: str = "execution",
+    one_sided: bool = False,
 ) -> dict:
     """Assemble a release certificate, or mark it INCOMPLETE.
 
@@ -124,6 +132,14 @@ def build_certificate(
     verifier_kind is unadjudicated here, so judge-verified units never
     pool into an execution stratum's bound. A judge certificate requires
     judge_model on every counted unit and a human adjudicator.
+
+    one_sided is the nop-only gate (doc 44): it requires verifier_kind
+    "none" and one_sided verdict rows. A unit counts when its nop probe
+    produced at least one executed reward; k_invalid counts nop
+    acceptances only. A nop rejection is not evidence of validity, so a
+    rejected unit is counted but never called clean, and a unit whose nop
+    probe never executed stays unadjudicated. One-sided verdict rows can
+    never enter a two-sided bound.
     """
     if not protocol or not str(protocol).strip():
         raise ValueError("protocol must be named")
@@ -140,6 +156,22 @@ def build_certificate(
             "verifier_kind 'judge_swap' verdicts are judge-swap diagnostics "
             "(doc 51); they never enter a certificate bound and never pool "
             "with execution or shipped-judge strata: " + ", ".join(swap_units)
+        )
+    one_sided_units = [
+        str(row.get("unit_id"))
+        for row in verdicts
+        if row.get("one_sided")
+    ]
+    if one_sided_units and not one_sided:
+        raise ValueError(
+            "one-sided verdict rows carry nop-probe evidence only; refusing "
+            "to emit a two-sided bound from them (doc 44). Build the "
+            "certificate with one_sided=True: " + ", ".join(one_sided_units)
+        )
+    if one_sided and verifier_kind != "none":
+        raise ValueError(
+            "a one-sided certificate covers the none stratum only; "
+            "verifier_kind must be 'none' (doc 44)"
         )
     if verifier_kind == "judge" and adjudicator == "machine":
         raise ValueError(
@@ -177,7 +209,7 @@ def build_certificate(
         invalid = row.get("invalid")
         grade = row.get("grade")
         row_protocol = row.get("label_protocol") or protocol
-        if invalid is None:
+        if invalid is None and not one_sided:
             unadjudicated.append(uid)
             reasons[uid] = "invalid is null"
             continue
@@ -196,6 +228,15 @@ def build_certificate(
                 f"verifier_kind {verifier_kind!r}; strata never pool"
             )
             continue
+        if one_sided:
+            if not row.get("one_sided"):
+                unadjudicated.append(uid)
+                reasons[uid] = "verdict is not a one-sided row"
+                continue
+            if not invalid and not (row.get("nop_rewards") or []):
+                unadjudicated.append(uid)
+                reasons[uid] = "nop probe produced no executed reward"
+                continue
         if verifier_kind == "judge" and not str(row.get("judge_model") or "").strip():
             unadjudicated.append(uid)
             reasons[uid] = "judge_model missing on a judge-verified unit"
@@ -235,6 +276,10 @@ def build_certificate(
         "grade": _grade_label(grades),
         "adjudicator": adj,
         "verifier_kind": verifier_kind,
+        "one_sided": bool(one_sided),
+        "interpretation": (
+            ONE_SIDED_INTERPRETATION if one_sided else None
+        ),
         "judge_model": sorted(judge_models) if judge_models else None,
         "judge_agreement": judge_agreement or None,
         "strata": strata,
@@ -304,6 +349,9 @@ def render_certificate_md(cert: dict) -> str:
     lines.append(f"- Grade: {cert.get('grade')}")
     lines.append(f"- Adjudicator: {cert.get('adjudicator')}")
     lines.append(f"- Verifier kind: {cert.get('verifier_kind')}")
+    if cert.get("one_sided"):
+        lines.append("- One-sided: True")
+        lines.append(f"- Interpretation: {cert.get('interpretation')}")
     strata = cert.get("strata") or {}
     if strata:
         counts = ", ".join(f"{k}={v}" for k, v in sorted(strata.items()))
@@ -569,6 +617,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="verifier stratum this certificate covers (default: infer; execution when undeclared)",
     )
     p.add_argument("--alpha", type=float, default=ALPHA_DEFAULT)
+    p.add_argument(
+        "--one-sided",
+        action="store_true",
+        help="one-sided nop-only bound over the none stratum (doc 44); "
+        "auto-enabled when verdicts carry one_sided rows",
+    )
     p.add_argument("--out", type=Path, help="certificate JSON")
     p.add_argument("--md", type=Path, help="rendered markdown")
     p.add_argument(
@@ -617,6 +671,7 @@ def main(argv: list[str] | None = None) -> int:
         adjudicator,
         alpha=args.alpha,
         verifier_kind=args.verifier_kind or _infer_verifier_kind(verdicts),
+        one_sided=args.one_sided or any(bool(v.get("one_sided")) for v in verdicts),
     )
     _write_json(args.out, cert)
     _write_md(args.md, cert)

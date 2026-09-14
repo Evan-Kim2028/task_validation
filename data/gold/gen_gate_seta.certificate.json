@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "decision": "release",
+  "N": 4569,
+  "n": 200,
+  "k_invalid": 1,
+  "p_hat": 0.005,
+  "ucb95": 0.023199824906981834,
+  "method": "hypergeometric-one-sided",
+  "alpha": 0.05,
+  "epsilon": 0.05,
+  "p_certify": 0.9973027225348774,
+  "label_protocol": "verifier_invalid.fresh_environment.execution",
+  "grade": "A",
+  "adjudicator": "machine",
+  "verifier_kind": "execution",
+  "one_sided": false,
+  "interpretation": null,
+  "judge_model": null,
+  "judge_agreement": null,
+  "strata": {
+    "execution": 200
+  },
+  "replaces_human_sample": false,
+  "design": "SRS without replacement",
+  "seed": "gen-gate-seta-v0",
+  "flagged": [
+    {
+      "unit_id": "SETA_Synth/kaggle_notebook__crawford_exercise-time-series-modeling",
+      "evidence": "oracle_rewards=[0.0, 0.0] nop_rewards=[0.0, 0.0] statuses=['executed'] deterministic=True; oracle failed own verifier at least once",
+      "grade": "A",
+      "adjudicator": "machine",
+      "label_protocol": "verifier_invalid.fresh_environment.execution"
+    }
+  ],
+  "unadjudicated": [],
+  "unadjudicated_reasons": {},
+  "n_unadjudicated": 0,
+  "n_adjudicated": 200,
+  "reason": "ucb below epsilon"
+}

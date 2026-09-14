@@ -10,12 +10,19 @@ Use this when a pool under certification contains tasks whose verifier is an LLM
 4. Record the judge model id and version for every run.
 5. Keep judge-verified tasks in their own stratum with their own bound. Never pool them with execution-verified tasks (doc 32: do not pool protocols into one Y).
 
-## No-reference tasks
+## No-reference tasks: one-sided gating
 
-Pick one per task:
+A task that ships no `solution/` cannot take the oracle probe, because there is no reference to run. It still takes the nop probe, and it must. The rule is three-way:
 
-1. Obtain or write a reference solution, then grade it as a treatment A/B/C/D per doc 21. Only A/B references enter the assay.
-2. Or hold the task out of the certified population and report it as uncovered. A nop probe alone measures incorrect_reject only; correct acceptance stays unmeasured (doc 28).
+1. The task is half-covered. It sits in its own stratum (`verifier_kind: none`) and carries a one-sided verdict. It never pools into the execution stratum (doc 32).
+2. A nop acceptance is a grade-A invalid finding under `verifier_invalid.fresh_environment.execution`. A verifier that accepts an empty solution is invalid with no reference needed. The unit is flagged and reported invalid in the none stratum.
+3. A nop rejection is not evidence of validity. The nop probe measures incorrect_accept only; correct acceptance is unmeasured (doc 28). A rejected nop leaves the unit unadjudicated, and it must never be counted as a clean unit in a two-sided bound.
+
+What this licenses: a one-sided incorrect_accept measurement over the none stratum, reported as its own count against its own artifact; flagging and dropping any task that accepts the empty solution; and keeping the stratum inside the manifest so the uncovered share is measured rather than assumed away.
+
+What this does not license: calling a nop-rejected task valid; counting a rejected nop toward n or k of an execution bound; or any claim about correct acceptance on the stratum. A two-sided verdict still needs a reference: obtain or write one and grade it A/B/C/D per doc 21 (only A/B references enter the assay), or accept that the unit is measured one-sided only.
+
+First application (Harbor-Index 1.0, doc 28): all 13 no-reference tasks received a nop trial and all 13 rejected the empty solution (`data/gold/harbor_index_control.jsonl`: oracle rows `no_reference`, nop rows executed with `accepted=false`; strata in `data/gold/harbor_index_strata.json`). The one-sided finding is 0 invalid of 13. The stratum stays uncovered on the two-sided construct.
 
 ## Certificate fields
 
@@ -29,11 +36,13 @@ Per doc 32, every per-lot certificate that contains non-execution verifiers adds
 
 ## What is not claimed
 
-A judge-verified stratum has no grade-A machine certificate. Running the judge measures verifier behavior; it does not adjudicate Y. The bound on a judge stratum is human-adjudicated, drawn under the same probability-sample design as every other stratum (doc 23 section 5, doc 32). A task with verifier_kind none contributes no execution evidence at all.
+A judge-verified stratum has no grade-A machine certificate. Running the judge measures verifier behavior; it does not adjudicate Y. The bound on a judge stratum is human-adjudicated, drawn under the same probability-sample design as every other stratum (doc 23 section 5, doc 32). A task with verifier_kind none contributes one-sided nop evidence only: an accept is a grade-A invalid finding, a reject is no evidence of validity, and the unit never enters a two-sided bound.
 
 ## Implementation
 
 Runner: `src/task_validation/evidence/judge_verifier.py`, exposed as `task-validation interrogate-judge`. Detection is static: a task is judge-verified when `JUDGE_MODELS` or `JUDGE_REPEATS` appears in its `tests/` files or `task.toml`. The runner passes the declared judge env through `harbor run --verifier-env` and pulls the verifier's own detail JSON with `--verifier-include-logs *.json`, so per-model, per-repeat rewards land in `data/gold/harbor_index_judge.jsonl` next to the k=3 oracle and k=3 nop run rows. Missing keys produce `missing_judge_env` rows; nothing is run or imputed.
+
+The generator gate implements the one-sided rule: `generator-gate-run --probes nop` skips the oracle probe, emits `one_sided` verdict rows that all land in the none stratum, and builds a `verifier_kind: none` certificate that bounds the accepts-an-empty-solution defect class only (`src/task_validation/evidence/generator_gate.py`, `src/task_validation/sampling/certificate.py`). A one-sided verdict row can never enter a two-sided bound; `build_certificate` refuses to mix them.
 
 Strata map: `data/gold/harbor_index_strata.json` assigns each of the 82 task ids a `verifier_kind` stratum from `data/gold/harbor_index_control.summary.json` plus detection. Counts: 53 execution, 16 judge, 13 none. The judge stratum is 16, not 15: `hle-shock-wave-density-profile` is judge-configured (same `native_judge.py` as the other hle tasks) but its control oracle went infra, so doc 28 counts it under infra, not under the judge outcome row.
 

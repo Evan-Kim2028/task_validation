@@ -1,11 +1,13 @@
 import json
 import tarfile
+import time
 from pathlib import Path
 
 import pytest
 
 from task_validation.evidence import generator_gate as gg
 from task_validation.evidence.tb21_pairs import append_jsonl, load_existing_rows
+from task_validation.sampling.certificate import build_certificate
 from task_validation.sampling.estimators import hypergeometric_upper
 
 
@@ -160,10 +162,10 @@ def test_manifest_ids_cover_full_population(tmp_path: Path):
         gg.draw_sample_ids(ids, 4, "s0")
 
 
-def _run_manifest(tmp_path: Path, ids: list[str], N: int) -> Path:
+def _run_manifest(tmp_path: Path, ids: list[str], N: int, *, reference: bool = True) -> Path:
     tasks = {}
     for tid in ids:
-        d = _mk_task(tmp_path / "tasks", tid)
+        d = _mk_task(tmp_path / "tasks", tid, reference=reference)
         tasks[tid] = {
             "path": str(d),
             "sha256": gg.dir_sha256(d),
@@ -332,6 +334,277 @@ def test_certificate_ucb_matches_hypergeometric_upper(tmp_path: Path):
     assert cert["ucb95"] == pytest.approx(hypergeometric_upper(1, 3, 200, alpha=0.05))
     assert cert["method"] == "hypergeometric-one-sided"
     assert [f["unit_id"] for f in cert["flagged"]] == ["gamma-task"]
+
+
+def test_warmup_dispatches_first_trial_alone_then_rest(tmp_path: Path):
+    manifest_path = _run_manifest(tmp_path, ["alpha-task"], N=10)
+    events: list[tuple[str, str]] = []
+
+    def runner(task_dir, agent, jobs_out, name):
+        events.append(("start", name))
+        time.sleep(0.1)
+        events.append(("end", name))
+        return {
+            "status": "executed",
+            "reward": 1.0 if agent == "oracle" else 0.0,
+            "elapsed_sec": 0.1,
+            "stderr_tail": "",
+            "test_stdout_tail": "ok",
+            "skip_reason": None,
+        }
+
+    out = tmp_path / "warm.jsonl"
+    gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out,
+        jobs_dir=tmp_path / "jobs-warm",
+        concurrency=3,
+        k=2,
+        warmup=True,
+        trial_runner=runner,
+        maintenance=FakeMaintenance(),
+    )
+    # The warmup trial is the first oracle rep; it starts and ends alone.
+    assert events[0][0] == "start" and "-oracle-r0-" in events[0][1]
+    assert events[1] == ("end", events[0][1])
+    # Only then do the remaining three trials dispatch, together.
+    rest = events[2:]
+    assert [k for k, _ in rest[:3]] == ["start", "start", "start"]
+    warm_keys = {gg.trial_key(r) for r in load_existing_rows(out)}
+
+    events.clear()
+    out2 = tmp_path / "nowarm.jsonl"
+    gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out2,
+        jobs_dir=tmp_path / "jobs-nowarm",
+        concurrency=3,
+        k=2,
+        warmup=False,
+        trial_runner=runner,
+        maintenance=FakeMaintenance(),
+    )
+    # Old behaviour: the whole batch fans out; three trials start before
+    # any ends (concurrency 3).
+    assert [k for k, _ in events[:3]] == ["start", "start", "start"]
+    nowarm_keys = {gg.trial_key(r) for r in load_existing_rows(out2)}
+
+    expected = {
+        ("alpha-task", "oracle", 0),
+        ("alpha-task", "oracle", 1),
+        ("alpha-task", "nop", 0),
+        ("alpha-task", "nop", 1),
+    }
+    assert warm_keys == nowarm_keys == expected
+
+
+def test_warmup_infra_skips_remaining_trials(tmp_path: Path):
+    manifest_path = _run_manifest(tmp_path, ["alpha-task"], N=10)
+    calls: list[str] = []
+
+    def runner(task_dir, agent, jobs_out, name):
+        calls.append(name)
+        return {
+            "status": "infra",
+            "reward": None,
+            "elapsed_sec": 1.0,
+            "stderr_tail": "build failed",
+            "test_stdout_tail": "",
+            "skip_reason": "environment_build_exceeded_cap",
+        }
+
+    out = tmp_path / "rows.jsonl"
+    gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out,
+        jobs_dir=tmp_path / "jobs",
+        concurrency=3,
+        k=2,
+        warmup=True,
+        trial_runner=runner,
+        maintenance=FakeMaintenance(),
+    )
+    # Only the warmup trial ran; the rest were recorded not_run, not retried.
+    assert len(calls) == 1 and "-oracle-r0-" in calls[0]
+    rows = load_existing_rows(out)
+    assert sorted(r["status"] for r in rows) == ["infra", "not_run", "not_run", "not_run"]
+    assert {gg.trial_key(r) for r in rows} == {
+        ("alpha-task", "oracle", 0),
+        ("alpha-task", "oracle", 1),
+        ("alpha-task", "nop", 0),
+        ("alpha-task", "nop", 1),
+    }
+
+
+def test_parse_probes_subset_and_validation():
+    assert gg._parse_probes("nop") == ["nop"]
+    assert gg._parse_probes("oracle,nop") == ["oracle", "nop"]
+    assert gg._parse_probes(["nop"]) == ["nop"]
+    assert gg._parse_probes(" nop , oracle ,nop ") == ["nop", "oracle"]
+    with pytest.raises(ValueError):
+        gg._parse_probes("bogus")
+    with pytest.raises(ValueError):
+        gg._parse_probes("nop,bogus")
+    with pytest.raises(ValueError):
+        gg._parse_probes("")
+
+
+def _nop_runner(accept: set[str], infra: set[str] | None = None):
+    infra = infra or set()
+
+    def runner(task_dir, agent, jobs_out, name):
+        name_ = Path(task_dir).name
+        if name_ in infra:
+            return {
+                "status": "infra",
+                "reward": None,
+                "elapsed_sec": 0.01,
+                "stderr_tail": "build failed",
+                "test_stdout_tail": "",
+                "skip_reason": "environment_build_exceeded_cap",
+            }
+        return {
+            "status": "executed",
+            "reward": 1.0 if name_ in accept else 0.0,
+            "elapsed_sec": 0.01,
+            "stderr_tail": "",
+            "test_stdout_tail": "",
+            "skip_reason": None,
+        }
+
+    return runner
+
+
+def test_one_sided_nop_run_records_none_stratum(tmp_path: Path):
+    manifest_path = _run_manifest(
+        tmp_path, ["alpha-task", "beta-task", "gamma-task"], N=100, reference=False
+    )
+    out = tmp_path / "rows.jsonl"
+    calls: list[str] = []
+
+    def runner(task_dir, agent, jobs_out, name):
+        calls.append(agent)
+        return _nop_runner(accept={"beta-task"}, infra={"gamma-task"})(task_dir, agent, jobs_out, name)
+
+    summary = gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out,
+        jobs_dir=tmp_path / "jobs",
+        concurrency=2,
+        k=2,
+        probes="nop",
+        trial_runner=runner,
+        maintenance=FakeMaintenance(),
+    )
+    # Only the nop agent ran; no oracle trial exists.
+    assert calls and set(calls) == {"nop"}
+    rows = load_existing_rows(out)
+    assert {r["probe"] for r in rows} == {"nop"}
+    # gamma's warmup nop came back infra; its second rep was skipped.
+    gamma = [r for r in rows if r["task_id"] == "gamma-task"]
+    assert sorted(r["status"] for r in gamma) == ["infra", "not_run"]
+
+    verdicts = [
+        json.loads(l)
+        for l in gg.verdicts_path_for(out).read_text().splitlines()
+        if l.strip()
+    ]
+    by_id = {v["unit_id"]: v for v in verdicts}
+    for v in verdicts:
+        assert v["verifier_kind"] == "none"
+        assert v["one_sided"] is True
+    assert by_id["alpha-task"]["invalid"] is None
+    assert by_id["beta-task"]["invalid"] is True
+    assert by_id["gamma-task"]["invalid"] is None
+    # A nop rejection never reads clean.
+    assert all(v["invalid"] is not False for v in verdicts)
+
+    cert = json.loads(gg.certificate_path_for(out).read_text())
+    assert cert["one_sided"] is True
+    assert cert["verifier_kind"] == "none"
+    assert cert["complete"] is False  # gamma's nop probe never executed
+    assert "gamma-task" in cert["unadjudicated"]
+    assert "accepts-an-empty-solution" in cert["interpretation"]
+    assert summary["one_sided"] is True
+    assert summary["probes"] == ["nop"]
+    assert summary["n_invalid"] == 1
+
+
+def test_one_sided_certificate_counts_only_nop_accepts(tmp_path: Path):
+    manifest_path = _run_manifest(
+        tmp_path, ["alpha-task", "beta-task"], N=100, reference=False
+    )
+    out = tmp_path / "rows.jsonl"
+    gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out,
+        jobs_dir=tmp_path / "jobs",
+        concurrency=2,
+        k=2,
+        probes=["nop"],
+        trial_runner=_nop_runner(accept={"beta-task"}),
+        maintenance=FakeMaintenance(),
+    )
+    cert = json.loads(gg.certificate_path_for(out).read_text())
+    assert cert["complete"] is True
+    assert cert["one_sided"] is True
+    assert cert["verifier_kind"] == "none"
+    assert cert["n"] == 2  # covered units count, rejected or not
+    assert cert["k_invalid"] == 1  # only beta's nop acceptance
+    assert cert["p_hat"] == pytest.approx(0.5)
+    assert cert["ucb95"] == pytest.approx(hypergeometric_upper(1, 2, 100, alpha=0.05))
+    assert [f["unit_id"] for f in cert["flagged"]] == ["beta-task"]
+    assert "accepts-an-empty-solution" in cert["interpretation"]
+
+
+def test_two_sided_certificate_refuses_one_sided_rows(tmp_path: Path):
+    manifest_path = _run_manifest(tmp_path, ["alpha-task"], N=10, reference=False)
+    manifest = json.loads(manifest_path.read_text())
+    manifest["k"] = 2
+    out = tmp_path / "rows.jsonl"
+    gg.run_gate(
+        manifest_path=manifest_path,
+        out_path=out,
+        jobs_dir=tmp_path / "jobs",
+        concurrency=2,
+        k=2,
+        probes="nop",
+        trial_runner=_nop_runner(accept=set()),
+        maintenance=FakeMaintenance(),
+    )
+    verdicts = gg.verdicts_from_rows(manifest, load_existing_rows(out))
+    assert verdicts[0]["one_sided"] is True
+    with pytest.raises(ValueError, match="two-sided"):
+        build_certificate(
+            manifest,
+            verdicts,
+            0.05,
+            gg.PROTOCOL,
+            "machine",
+            verifier_kind="execution",
+        )
+    cert = build_certificate(
+        manifest,
+        verdicts,
+        0.05,
+        gg.PROTOCOL,
+        "machine",
+        verifier_kind="none",
+        one_sided=True,
+    )
+    assert cert["complete"] is True
+    assert cert["one_sided"] is True
+    assert cert["k_invalid"] == 0
+    with pytest.raises(ValueError, match="none stratum"):
+        build_certificate(
+            manifest,
+            verdicts,
+            0.05,
+            gg.PROTOCOL,
+            "machine",
+            verifier_kind="execution",
+            one_sided=True,
+        )
 
 
 def test_parse_reclaimed_bytes():
