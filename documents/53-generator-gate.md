@@ -36,7 +36,7 @@ PYTHONPATH=src .venv/bin/python -m task_validation.cli generator-gate-sample \
 PYTHONPATH=src .venv/bin/python -m task_validation.cli generator-gate-sample \
     --name seta --root /home/evan/gen-sets/seta --n 200
 PYTHONPATH=src .venv/bin/python -m task_validation.cli generator-gate-sample \
-    --name tmax --root /home/evan/gen-sets/tmax --n 200
+    --name tmax --root /home/evan/gen-sets/tmax-harbor --n 200
 ```
 
 Artifacts: `data/gold/gen_gate_rst_manifest.json`, `data/gold/gen_gate_seta_manifest.json`, `data/gold/gen_gate_tmax_manifest.json`. Each records `ids`, per-task `path` and `sha256`, `seed`, `N`, `n`.
@@ -122,11 +122,11 @@ The none stratum is half-covered, not uncovered. A nop accept convicts with no r
 
 TMax-15K is the limiting case. The Harbor form on the Hub (`tmax/TMax-15K-Harbor`) holds 8,047 task directories and publishes no references by design: a spot check found 0 of the first 200 dirs with `solution/` (checked 2026-09-14), and the frozen SRS manifest records `has_reference` false on all 200 sampled tasks (`data/gold/gen_gate_tmax_manifest.json`, N=8,047, n=200, seed `gen-gate-tmax-v0`). The staged raw download `/home/evan/gen-sets/tmax/tasks.zip` agrees: its task dirs carry `solutions/` model summaries (for example `solutions/gemini_gemini-3-flash-preview_summary.json`), not `solution/` reference dirs. With no reference anywhere, the oracle probe is impossible on TMax as distributed, and the reference-fails-its-own-verifier defect class is unmeasurable. That class supplied all 7 flagged RST tasks and the 1 flagged SETA task (`data/gold/gen_gate_rst_verdicts.jsonl`, `data/gold/gen_gate_seta_verdicts.jsonl`). The TMax paper (arXiv 2606.23321) argues reinforcement learning soft-filters broken tasks so teacher correctness is unnecessary; this gate cannot test that claim in either direction.
 
-A nop-only run remains possible and is deferred (decision 2026-09-14). The manifest is already frozen, so the one command is the run with `--probes nop`: every verdict lands in the none stratum with `one_sided` true, a nop acceptance is the only invalid finding, and the certificate is a one-sided bound over the accepts-an-empty-solution defect class only (`src/task_validation/evidence/generator_gate.py`, `src/task_validation/sampling/certificate.py`).
+The nop-only run took place on 2026-09-14. Results are in the TMax-15K lot section below. The manifest was already frozen, so the one command was the run with `--probes nop`: every verdict lands in the none stratum with `one_sided` true, a nop acceptance is the only invalid finding, and the certificate is a one-sided bound over the accepts-an-empty-solution defect class only (`src/task_validation/evidence/generator_gate.py`, `src/task_validation/sampling/certificate.py`).
 
 ```bash
 cd ~/task_validation
-systemd-run --user --collect -p MemoryMax=24G -p CPUWeight=50 \
+systemd-run --user --collect -p MemoryHigh=22G -p MemoryMax=24G -p CPUWeight=50 -p IOWeight=50 \
     --unit=gen-gate-tmax --same-dir \
     env PYTHONPATH=src .venv/bin/python -m task_validation.cli generator-gate-run \
     --name tmax --probes nop --concurrency 3
@@ -145,7 +145,7 @@ The gate offers two dispatches, and the choice changes what a verdict means. Und
 
 One observed case sits on the boundary. RST task `rts_task_428772f088f387a5a5931b6a` returned oracle rewards [0.0, 1.0] and is counted invalid as a nondeterministic reference (flagged table below). Its two oracle reps ran against separately built images, so under warmup scheduling (one shared image) the same task could have read as deterministic and stayed unflagged. The cause has not been isolated to the verifier or the build.
 
-Recommendation: `warmup` is for speed on re-runs, and for future lots only where a separate build-determinism probe exists; otherwise the gate stops detecting environment-build instability, a defect class the concurrent runs did catch. Any certificate comparison across pools must state which scheduling produced each certificate. Provenance: `build_certificate` writes a `scheduling` field (`concurrent` or `warmup`) onto every certificate; the RST and SETA certificates in `data/gold` were produced under `concurrent`. The TMax run in progress (unit `gen-gate-tmax`, started 2026-09-14) is running `warmup`; its certificate, when written, is not scheduling-comparable to the other two.
+Recommendation: `warmup` is for speed on re-runs, and for future lots only where a separate build-determinism probe exists; otherwise the gate stops detecting environment-build instability, a defect class the concurrent runs did catch. Any certificate comparison across pools must state which scheduling produced each certificate. Provenance: `build_certificate` writes a `scheduling` field (`concurrent` or `warmup`) onto every certificate; the RST and SETA certificates in `data/gold` were produced under `concurrent`. The TMax run (unit `gen-gate-tmax`, 2026-09-14) ran `warmup`. Its certificate (`data/gold/gen_gate_tmax.certificate.json`) is stamped accordingly and is not scheduling-comparable to the other two.
 
 ## Results
 
@@ -254,6 +254,37 @@ With zero uncovered units there is no restricted/conservative split: the certifi
 
 Wall clock about 10.3 h for the main pass (run start 2026-09-14T01:00:49, done 11:21:24 in `logs/gen_gate_seta.log` on the VPS; first harbor job 01:00:51, last 11:29:17 from `result.json` timestamps under `/tmp/tv-gen-gate-seta/jobs/`), plus a 7.6 min `--redo-infra` pass. Runner CPU was 1 h 33 min on the queue unit and 40 s on the redo unit. Summed trial time is 90,563 s, about 25.2 h, over 802 rows (`data/gold/gen_gate_seta.jsonl`). API cost is 0 dollars: oracle and nop are model-free agents and `cost_usd` is null in every job `result.json`.
 
+### TMax-15K lot
+
+TMax-15K lot, run 2026-09-14 on `lake-vps-lor-main`. SRS n=200 of N=8,047, seed `gen-gate-tmax-v0` (`data/gold/gen_gate_tmax_manifest.json`). No task in the pool ships a reference, so the run used `--probes nop`: all 200 verdicts sit in the none stratum with `one_sided` true, protocol `verifier_invalid.fresh_environment.execution`, grade A, adjudicator machine (`data/gold/gen_gate_tmax_verdicts.jsonl`). The run ran under warmup scheduling (see "Scheduling and what it measures"). The operator stopped it inside its 3 h budget after 41 tasks were covered, each with two executed nop trials. The other 159 sampled tasks were never dispatched (`logs/gen_gate_tmax.log`, `data/gold/gen_gate_tmax.summary.json`).
+
+#### Accepted empty solutions (0 of 41 covered)
+
+None. All 82 executed nop trials returned reward 0.0, two per covered task (`data/gold/gen_gate_tmax.jsonl`). There are no ids or rewards to list. A nop rejection is not evidence of validity, so the 41 covered tasks count in the bound but are never called valid (doc 44).
+
+#### Uncovered tasks (159 of 200)
+
+All 159 are undispatched, not failed. No retained row is `infra` or `timeout` (`data/gold/gen_gate_tmax.summary.json`: `n_infra_trials` 0, `n_timeout_trials` 0). An earlier attempt the same day wrote an infra row per trial in under a second when `harbor` was missing from the unit PATH. Those rows were wiped before the restart and the manifest was reused unchanged (`logs/gen_gate_tmax.log`).
+
+#### Bound
+
+One draw, two certificates, both one-sided over the accepts-an-empty-solution defect class only (doc 44). The restricted bound (a) drops the 159 uncovered units from the sample and the frame, so N falls from 8,047 to 7,888. The conservative bound (b) keeps the full frame and counts all 159 uncovered units invalid. Any citation of this run must name which bound it quotes, since the populations and k differ.
+
+| Bound | N | n | k invalid | p-hat | UCB 95 | Decision | Artifact |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| (a) restricted population | 7,888 | 41 | 0 | 0% | 7.04% | reject | `data/gold/gen_gate_tmax.certificate.json` |
+| (b) conservative | 8,047 | 200 | 159 | 79.5% | 84.04% | reject | `data/gold/gen_gate_tmax.conservative.certificate.json` |
+
+Bound (a) is the headline. With zero acceptances in 41 covered units its one-sided 95 percent bound is 7.04 percent, above epsilon 5 percent, so the decision is reject. Bound (b) needs no exchangeability assumption: it counts every undispatched unit as an acceptance and rejects at 84.04 percent. The true one-sided rate lies between the two bounds only under those stated readings, exchangeability for (a) and the worst case for (b). Both certificates carry `one_sided` true, `verifier_kind` none, `scheduling` warmup, and an `interpretation` field naming the covered defect class. Nothing is imputed under (a): the 159 units leave the frame rather than receiving labels (doc 32).
+
+#### Run cost
+
+Wall clock about 2.5 h: the restart is logged at 2026-09-14T12:48:53 and the stop at 15:17:31 (`logs/gen_gate_tmax.log`). Runner-measured wall clock is 8,748 s (`data/gold/gen_gate_tmax.summary.json`). Summed trial time is 8,689 s over 82 rows (`data/gold/gen_gate_tmax.jsonl`). API cost is 0 dollars: the oracle probe did not run and nop is a model-free agent. Two builder prunes fired, after tasks 20 and 40 (`data/gold/gen_gate_tmax.summary.json`).
+
+#### What this measures and what it cannot
+
+The result is a bound on one defect class on a covered subpopulation: how often a TMax verifier returns a passing reward to an empty submission. Zero accepts in 41 covered tasks means the class was not observed there. At n=41 the bound cannot reach epsilon 5 percent even with zero findings, so TMax does not release. Three things are unmeasured. First, the reference-fails-its-own-verifier class: TMax ships no references, and that class supplied all 7 RST flags and the 1 SETA flag (`data/gold/gen_gate_rst_verdicts.jsonl`, `data/gold/gen_gate_seta_verdicts.jsonl`). Second, validity in either direction for the 41 covered tasks: a nop rejection is consistent with a correct verifier and with a verifier that accepts nothing. Third, the 159 uncovered units: the restricted bound reaches them only under exchangeability with the covered units. The warmup scheduling does not confound this bound, because a nop outcome does not depend on whether the image was built alone or under contention. It does mean the certificate is not scheduling-comparable to the RST and SETA certificates.
+
 ### Sensitivity to epsilon
 
 Epsilon is a policy parameter the consumer supplies, not a number the method produces; the 5 percent default carries no scientific meaning. Re-deciding every certified population at other epsilons, using the ucb95 values already in the certificate files (release iff ucb95 < epsilon):
@@ -268,7 +299,7 @@ Epsilon is a policy parameter the consumer supplies, not a number the method pro
 | TB 2.1 SRS-30, machinery check | 7.87% | reject | reject | reject | release | `data/gold/tb21_srs30.certificate.json` |
 | RST generated pool, conservative bound | 9.53% | reject | reject | reject | release | `data/gold/gen_gate_rst.conservative.certificate.json` |
 
-The TMax manifest produces no row: its certificate is incomplete with 199 of 200 units unadjudicated (`data/gold/gen_gate_tmax.certificate.json`). No bound was re-run; every decision above is the stored ucb95 compared against each epsilon.
+The TMax certificate produces no row: its bound is one-sided over the accepts-an-empty-solution defect class only, a different estimand from the verifier-consistency bounds above (restricted N=7,888 covered, n=41, k=0, ucb95 7.04 percent, and conservative N=8,047, n=200, k=159, ucb95 84.04 percent; reject at epsilon 5 percent under both, `data/gold/gen_gate_tmax.certificate.json`, `data/gold/gen_gate_tmax.conservative.certificate.json`, TMax-15K lot section). No bound was re-run. Every decision above is the stored ucb95 compared against each epsilon.
 
 ## TMax scheduling, recorded 2026-09-14
 

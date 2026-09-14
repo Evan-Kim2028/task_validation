@@ -68,9 +68,10 @@ Every population certified or measured so far, ordered by measured invalidity. T
 | SWE-bench SRS-300 completed prefix | certificate, partial | SRS prefix of the frozen 300 draw | 1,699 | 190 of 300 planned | 4 | 0.0211 | 0.0465 | release, partial | `verifier_invalid.fresh_environment.execution`, A, machine | `data/gold/swe_srs300.certificate.json`, doc 47 |
 | SWE-bench SRS-100 | certificate | SRS | 1,699 | 100 | 2 | 0.020 | 0.0606 | reject | `verifier_invalid.fresh_environment.execution`, A, machine | `data/gold/swe_srs100.certificate.json`, doc 35 |
 | SETA-Env generated pool | certificate | SRS of frozen manifest | 4,569 | 200 | 1 | 0.005 | 0.0232 | release | `verifier_invalid.fresh_environment.execution`, A, machine | `data/gold/gen_gate_seta.certificate.json`, doc 53 |
+| TMax-15K generated pool | certificate, one-sided | SRS of frozen manifest; nop probe only, warmup scheduling; coverage 41 of 200 | 8,047 | 200 | 0 restricted; 159 conservative | 0.0; 0.795 | 0.0704 restricted; 0.8404 conservative | reject under both; accepts-an-empty-solution class only | `verifier_invalid.fresh_environment.execution`, A, machine | `data/gold/gen_gate_tmax.certificate.json`, `data/gold/gen_gate_tmax.conservative.certificate.json`, doc 53 |
 | TB 2.1 SRS-30 | certificate, machinery check | SRS against a pool with known census truth | 89 | 30 | 0 | 0.0 | 0.0787 | covers truth | `verifier_invalid.fresh_environment.execution`, A, machine | `data/gold/tb21_srs30.certificate.json`, doc 41 |
 
-Three qualifications belong next to the table.
+Four qualifications belong next to the table.
 
 The SRS-300 row is a completed-prefix certificate. The frozen manifest drew 300 units; 297 executed both treatments; three matplotlib units returned no gold report; the bound covers the first 190 adjudicated units of the draw, not all 300 (`data/gold/swe_srs300.certificate.json`, `data/gold/swe_srs300_exec.summary.json`, doc 47).
 
@@ -78,7 +79,9 @@ The RST row reports two bounds, not a disagreement. Five of the 200 sampled unit
 
 The Harbor-Index row covers only the executable stratum: 29 of the 82 published tasks sit outside it, 16 judge-configured and 13 with no reference (`data/gold/harbor_index_strata.json`, doc 44). Its 3.8% is a measurement on the executable stratum of an externally curated population, not a certificate.
 
-Every certified row uses the identical execution assay on a frozen manifest under one protocol string, so the cross-population comparison is one estimand measured on several pools, not a comparison of different definitions. Label disagreement across external audit sources (docs 37, 38, 40) is a caveat on the specification construct, not on this table.
+The TMax row is the only certified row that does not measure verifier consistency. TMax ships no reference solutions, so the oracle probe cannot run there. Its two certificates are one-sided bounds over the accepts-an-empty-solution defect class: the restricted bound covers a subpopulation of 7,888 with the 159 undispatched sample units outside its frame, and the conservative bound counts all 159 invalid over the full 8,047 (doc 53). Its trials also ran under warmup scheduling, so the row is not scheduling-comparable to the concurrent certificates even on its covered class.
+
+Every certified row except TMax uses the identical execution assay on a frozen manifest under one protocol string. TMax runs only the nop treatment of that assay, so its estimand is a single defect class rather than verifier consistency. The remaining rows are one estimand measured on several pools, not a comparison of different definitions. Label disagreement across external audit sources (docs 37, 38, 40) is a caveat on the specification construct, not on this table.
 
 The generated pools measured so far are not worse than the human-curated ones on verifier consistency. RST measures 3.6% on the restricted bound and SETA-Env measures 0.5% (`data/gold/gen_gate_rst.certificate.json`, `data/gold/gen_gate_seta.certificate.json`), against Terminal-Bench 2.1 at 5.6% (`data/gold/tb21_census.certificate.json`) and the Harbor-Index executable stratum at 3.8% (`data/gold/harbor_index_control.summary.json`). That is an observation across four pools, not an established effect. The populations differ on every axis that could produce it: task complexity, verifier design, authoring pipeline, environment and base image, benchmark age and maintenance state, domain mix, test count, task size, and the selection effects of each pool's keep rule. One hypothesis consistent with the observation is construction order: a generator that builds the solution first and wraps a task around it gets oracle-passes-nop-fails by construction, while a human author writes the reference and the tests separately and must make them agree by hand. The comparison motivates the solution-first explanation. It does not establish it. And the observation covers one defect class only: the bound is on verifier consistency, not on specification invalidity, taste, or the judge and no-reference strata (docs 24, 44).
 
@@ -98,7 +101,7 @@ The decision rule is release iff the bound is below epsilon. Epsilon is a policy
 | TB 2.1 SRS-30, machinery check | 7.87% | reject | reject | reject | release | `data/gold/tb21_srs30.certificate.json` |
 | RST generated pool, conservative bound | 9.53% | reject | reject | reject | release | `data/gold/gen_gate_rst.conservative.certificate.json` |
 
-The TMax-15K manifest produces no row: its certificate is incomplete with 199 of 200 units unadjudicated (`data/gold/gen_gate_tmax.certificate.json`, doc 53). The diagnostic rows of the results table carry no bound, so no decision.
+The TMax-15K certificates produce no row: their bound is one-sided over the accepts-an-empty-solution defect class only, a different estimand from the verifier-consistency bounds above. Re-decided anyway, the restricted ucb95 of 7.04 percent rejects at epsilon 1, 2, and 5 percent and releases at 10, while the conservative ucb95 of 84.04 percent rejects at all four (`data/gold/gen_gate_tmax.certificate.json`, `data/gold/gen_gate_tmax.conservative.certificate.json`, doc 53). The diagnostic rows of the results table carry no bound, so no decision.
 
 ## 5. Negative results
 
@@ -159,8 +162,8 @@ These labels are provenance and a queue-ordering prior. They are external labels
 | Execution-assay false negatives | A consistent verifier can still under-test the requirement, accept a wrong implementation, be over-permissive, or depend on accidental environment state; none of the four modes enters the bound | section 1, doc 32 |
 | Per-population taste hypothesis untested | The funnel and conditional-taste results motivate measuring taste inside each population; no per-population taste instrument has run on any pool | docs 52, 59 |
 | No human ratings collected | Every bound in this draft is machine-adjudicated grade A; no new human rating was collected | doc 23 section 8, docs 43, 50 |
-| TMax one-sided coverage | TMax-15K ships no reference solutions; at most a one-sided bound on the accepts-an-empty-solution class is possible there, and the run is deferred | doc 53, `data/gold/gen_gate_tmax_manifest.json` |
-| Partial certificates | SRS-300 covers 190 of 300 drawn units; the RST restricted bound covers 195 of 200 | docs 47, 53 |
+| TMax one-sided coverage | TMax-15K ships no reference solutions; its certificates cover the accepts-an-empty-solution class only, and both bounds (restricted n=41 of 200 covered, conservative all-uncovered-invalid) reject at epsilon 5 percent | doc 53, `data/gold/gen_gate_tmax.certificate.json`, `data/gold/gen_gate_tmax.conservative.certificate.json` |
+| Partial certificates | SRS-300 covers 190 of 300 drawn units; the RST restricted bound covers 195 of 200; the TMax restricted bound covers 41 of 200 | docs 47, 53 |
 | Environment dependence | Execution verdicts are per-image; drift can change a verdict | doc 23 |
 | Specification invalidity unbounded on new pools | Human spec review has not run on the RST or Harbor pools | doc 50 |
 

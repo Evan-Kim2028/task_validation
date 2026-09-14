@@ -1,0 +1,50 @@
+{
+  "code": "src/task_validation/evidence/content_features.py",
+  "features": [
+    "n_instr_tokens",
+    "n_instr_sentences",
+    "instr_mean_sentence_tokens",
+    "n_instr_imperative_openers",
+    "has_instr_code_block",
+    "n_instr_code_blocks",
+    "has_instr_expected_output",
+    "n_instr_acceptance_phrases",
+    "has_instr_repro_steps",
+    "has_instr_error_text",
+    "n_instr_named_files",
+    "instr_named_files_touched_frac",
+    "n_tests",
+    "n_assert_lines",
+    "assert_mean_tokens",
+    "assert_literal_frac",
+    "ref_patch_n_lines",
+    "ref_patch_n_files",
+    "test_to_ref_line_ratio"
+  ],
+  "inputs": {
+    "lot_root": "/home/evan/Documents/eval_tasks/lots/lot-001",
+    "swe_labels": "/home/evan/Documents/task_validation/data/gold/swe_taste_labels.jsonl",
+    "swe_parquet": "/home/evan/Documents/task_validation/data/raw/swe-bench/test.parquet"
+  },
+  "n_rows": 1719,
+  "outputs": {
+    "rows": "/home/evan/Documents/task_validation/data/gold/content_features.jsonl"
+  },
+  "protocol": "content_features.text_artifacts.2026-09-14",
+  "unavailable_by_source": {
+    "lot001": {
+      "features_never_observed": [],
+      "n_missing_by_feature": {},
+      "n_tasks": 20
+    },
+    "swe": {
+      "features_never_observed": [],
+      "n_missing_by_feature": {
+        "assert_literal_frac": 195,
+        "assert_mean_tokens": 195,
+        "instr_named_files_touched_frac": 875
+      },
+      "n_tasks": 1699
+    }
+  }
+}

@@ -65,6 +65,7 @@ One mode per file. Explanation files argue. Reference files describe. How-to fil
 | [59-conditional-taste.md](59-conditional-taste.md) | Explanation | Taste measured among valid tasks only: SWE 0.59 to 0.62, TB 2.1 at chance, kept sets disjoint across populations at 0.94 to 1.00 separability |
 | [60-typicality.md](60-typicality.md) | Explanation | One-class typicality of the expert-kept region: distinctive only through source identity; lot-001 outside both clouds |
 | [61-results.md](61-results.md) | Reference | **Standalone results.** All 12 populations, epsilon sensitivity, negative results, data contribution, lot-001, limits |
+| [62-reference-targets.md](62-reference-targets.md) | Explanation | Kept-set reference distributions as generation targets: 0.596 within SWE-bench over 20 seeds, at or below chance across populations, lot-001 gap report |
 | [adrs/](adrs/) | Decisions | You need why a choice was frozen |
 | [internal/](internal/) | Working notes | You need search logs and open questions |
 
