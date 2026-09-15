@@ -1,0 +1,134 @@
+2026-09-12 15:11:41,296 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:12:12,760 - INFO - Creating container for sympy__sympy-20049...
+2026-09-12 15:12:12,902 - INFO - Container for sympy__sympy-20049 created: 06202cb63b1ad026ef15c3f56b5a5a73dde5dad6447dd10d13ea6b16c0661497
+2026-09-12 15:12:13,079 - INFO - Container for sympy__sympy-20049 started: 06202cb63b1ad026ef15c3f56b5a5a73dde5dad6447dd10d13ea6b16c0661497
+2026-09-12 15:12:13,080 - INFO - Intermediate patch for sympy__sympy-20049 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-20049/patch.diff, now applying to container...
+2026-09-12 15:12:13,175 - INFO - >>>>> Applied Patch:
+Checking patch sympy/physics/vector/point.py...
+Hunk #1 succeeded at 508 (offset 25 lines).
+Applied patch sympy/physics/vector/point.py cleanly.
+
+2026-09-12 15:12:13,611 - INFO - Git diff before:
+diff --git a/sympy/physics/vector/point.py b/sympy/physics/vector/point.py
+index d4e3cfcc90..e49a978839 100755
+--- a/sympy/physics/vector/point.py
++++ b/sympy/physics/vector/point.py
+@@ -508,19 +508,49 @@ def vel(self, frame):
+         Examples
+         ========
+ 
+-        >>> from sympy.physics.vector import Point, ReferenceFrame
++        >>> from sympy.physics.vector import Point, ReferenceFrame, dynamicsymbols
+         >>> N = ReferenceFrame('N')
+         >>> p1 = Point('p1')
+         >>> p1.set_vel(N, 10 * N.x)
+         >>> p1.vel(N)
+         10*N.x
+ 
++        Velocities will be automatically calculated if possible, otherwise a ``ValueError`` will be returned. If it is possible to calculate multiple different velocities from the relative points, the points defined most directly relative to this point will be used. In the case of inconsistent relative positions of points, incorrect velocities may be returned. It is up to the user to define prior relative positions and velocities of points in a self-consistent way.
++
++        >>> p = Point('p')
++        >>> q = dynamicsymbols('q')
++        >>> p.set_vel(N, 10 * N.x)
++        >>> p2 = Point('p2')
++        >>> p2.set_pos(p, q*N.x)
++        >>> p2.vel(N)
++        (Derivative(q(t), t) + 10)*N.x
++
+         """
+ 
+         _check_frame(frame)
+         if not (frame in self._vel_dict):
+-            raise ValueError('Velocity of point ' + self.name + ' has not been'
++            visited = []
++            queue = [self]
++            while queue: #BFS to find nearest point
++                node = queue.pop(0)
++                if node not in visited:
++                    visited.append(node)
++                    for neighbor, neighbor_pos in node._pos_dict.items():
++                        try:
++                            neighbor_pos.express(frame) #Checks if pos vector is valid
++                        except ValueError:
++                            continue
++                        try :
++                            neighbor_velocity = neighbor._vel_dict[frame] #Checks if point has its vel defined in req frame
++                        except KeyError:
++                            queue.append(neighbor)
++                            continue
++                        self.set_vel(frame, self.pos_from(neighbor).dt(frame) + neighbor_velocity)
++                        return self._vel_dict[frame]
++            else:
++                raise ValueError('Velocity of point ' + self.name + ' has not been'
+                              ' defined in ReferenceFrame ' + frame.name)
++
+         return self._vel_dict[frame]
+ 
+     def partial_velocity(self, frame, *gen_speeds):
+2026-09-12 15:12:13,611 - INFO - Eval script for sympy__sympy-20049 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-20049/eval.sh; copying to container...
+2026-09-12 15:12:23,803 - INFO - Test runtime: 10.14 seconds
+2026-09-12 15:12:23,803 - INFO - Test output for sympy__sympy-20049 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-20049/test_output.txt
+2026-09-12 15:12:23,846 - INFO - Git diff after:
+diff --git a/sympy/physics/vector/point.py b/sympy/physics/vector/point.py
+index d4e3cfcc90..e49a978839 100755
+--- a/sympy/physics/vector/point.py
++++ b/sympy/physics/vector/point.py
+@@ -508,19 +508,49 @@ def vel(self, frame):
+         Examples
+         ========
+ 
+-        >>> from sympy.physics.vector import Point, ReferenceFrame
++        >>> from sympy.physics.vector import Point, ReferenceFrame, dynamicsymbols
+         >>> N = ReferenceFrame('N')
+         >>> p1 = Point('p1')
+         >>> p1.set_vel(N, 10 * N.x)
+         >>> p1.vel(N)
+         10*N.x
+ 
++        Velocities will be automatically calculated if possible, otherwise a ``ValueError`` will be returned. If it is possible to calculate multiple different velocities from the relative points, the points defined most directly relative to this point will be used. In the case of inconsistent relative positions of points, incorrect velocities may be returned. It is up to the user to define prior relative positions and velocities of points in a self-consistent way.
++
++        >>> p = Point('p')
++        >>> q = dynamicsymbols('q')
++        >>> p.set_vel(N, 10 * N.x)
++        >>> p2 = Point('p2')
++        >>> p2.set_pos(p, q*N.x)
++        >>> p2.vel(N)
++        (Derivative(q(t), t) + 10)*N.x
++
+         """
+ 
+         _check_frame(frame)
+         if not (frame in self._vel_dict):
+-            raise ValueError('Velocity of point ' + self.name + ' has not been'
++            visited = []
++            queue = [self]
++            while queue: #BFS to find nearest point
++                node = queue.pop(0)
++                if node not in visited:
++                    visited.append(node)
++                    for neighbor, neighbor_pos in node._pos_dict.items():
++                        try:
++                            neighbor_pos.express(frame) #Checks if pos vector is valid
++                        except ValueError:
++                            continue
++                        try :
++                            neighbor_velocity = neighbor._vel_dict[frame] #Checks if point has its vel defined in req frame
++                        except KeyError:
++                            queue.append(neighbor)
++                            continue
++                        self.set_vel(frame, self.pos_from(neighbor).dt(frame) + neighbor_velocity)
++                        return self._vel_dict[frame]
++            else:
++                raise ValueError('Velocity of point ' + self.name + ' has not been'
+                              ' defined in ReferenceFrame ' + frame.name)
++
+         return self._vel_dict[frame]
+ 
+     def partial_velocity(self, frame, *gen_speeds):
+2026-09-12 15:12:23,846 - INFO - Grading answer for sympy__sympy-20049...
+2026-09-12 15:12:23,847 - INFO - report: {'sympy__sympy-20049': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_auto_point_vel', 'test_auto_point_vel_multiple_point_path', 'test_auto_vel_dont_overwrite', 'test_auto_point_vel_shortest_path'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_point_v1pt_theorys', 'test_point_a1pt_theorys', 'test_point_v2pt_theorys', 'test_point_a2pt_theorys', 'test_point_funcs', 'test_point_pos', 'test_point_partial_velocity', 'test_point_vel', 'test_auto_point_vel_if_tree_has_vel_but_inappropriate_pos_vector'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-20049: resolved: True
+2026-09-12 15:12:23,847 - INFO - Attempting to stop container sweb.eval.sympy__sympy-20049.tv300-gold...
+2026-09-12 15:12:39,081 - INFO - Container sweb.eval.sympy__sympy-20049.tv300-gold stopped successfully.
+2026-09-12 15:12:39,081 - INFO - Attempting to remove container sweb.eval.sympy__sympy-20049.tv300-gold...
+2026-09-12 15:12:39,142 - INFO - Container sweb.eval.sympy__sympy-20049.tv300-gold removed successfully.

@@ -1,0 +1,40 @@
+2026-09-12 14:58:39,382 - INFO - Creating container for sphinx-doc__sphinx-10673...
+2026-09-12 14:58:39,515 - INFO - Container for sphinx-doc__sphinx-10673 created: 1c8f2e2caf69bddff04eec44045719b4fbe7b365f52c09443d46ecbb4a7b7b6b
+2026-09-12 14:58:39,694 - INFO - Container for sphinx-doc__sphinx-10673 started: 1c8f2e2caf69bddff04eec44045719b4fbe7b365f52c09443d46ecbb4a7b7b6b
+2026-09-12 14:58:39,694 - INFO - Skipping model patch for sphinx-doc__sphinx-10673 (--no-patch mode)
+2026-09-12 14:58:40,219 - INFO - Git diff before:
+
+2026-09-12 14:58:40,220 - INFO - Eval script for sphinx-doc__sphinx-10673 written to logs/run_evaluation/tv300-empty/tv-empty/sphinx-doc__sphinx-10673/eval.sh; copying to container...
+2026-09-12 14:58:49,300 - INFO - Test runtime: 9.02 seconds
+2026-09-12 14:58:49,301 - INFO - Test output for sphinx-doc__sphinx-10673 written to logs/run_evaluation/tv300-empty/tv-empty/sphinx-doc__sphinx-10673/test_output.txt
+2026-09-12 14:58:49,342 - INFO - Git diff after:
+diff --git a/tests/test_environment_toctree.py b/tests/test_environment_toctree.py
+index 60a9826fd..8d5cfc0b9 100644
+--- a/tests/test_environment_toctree.py
++++ b/tests/test_environment_toctree.py
+@@ -346,3 +346,17 @@ def test_get_toctree_for_includehidden(app):
+ 
+     assert_node(toctree[2],
+                 [bullet_list, list_item, compact_paragraph, reference, "baz"])
++
++
++@pytest.mark.sphinx('xml', testroot='toctree-index')
++def test_toctree_index(app):
++    app.build()
++    toctree = app.env.tocs['index']
++    assert_node(toctree,
++                [bullet_list, ([list_item, (compact_paragraph,  # [0][0]
++                                            [bullet_list, (addnodes.toctree,  # [0][1][0]
++                                                           addnodes.toctree)])])])  # [0][1][1]
++    assert_node(toctree[0][1][1], addnodes.toctree,
++                caption="Indices", glob=False, hidden=False,
++                titlesonly=False, maxdepth=-1, numbered=0,
++                entries=[(None, 'genindex'), (None, 'modindex'), (None, 'search')])
+2026-09-12 14:58:49,342 - INFO - Git diff changed after running eval script
+2026-09-12 14:58:49,342 - INFO - Grading answer for sphinx-doc__sphinx-10673...
+2026-09-12 14:58:49,344 - INFO - report: {'sphinx-doc__sphinx-10673': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['tests/test_environment_toctree.py::test_toctree_index']}, 'PASS_TO_PASS': {'success': ['tests/test_environment_toctree.py::test_process_doc', 'tests/test_environment_toctree.py::test_glob', 'tests/test_environment_toctree.py::test_get_toc_for', 'tests/test_environment_toctree.py::test_get_toc_for_only', 'tests/test_environment_toctree.py::test_get_toc_for_tocdepth', 'tests/test_environment_toctree.py::test_get_toctree_for', 'tests/test_environment_toctree.py::test_get_toctree_for_collapse', 'tests/test_environment_toctree.py::test_get_toctree_for_maxdepth', 'tests/test_environment_toctree.py::test_get_toctree_for_includehidden'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sphinx-doc__sphinx-10673: resolved: False
+2026-09-12 14:58:49,344 - INFO - Attempting to stop container sweb.eval.sphinx-doc__sphinx-10673.tv300-empty...
+2026-09-12 14:59:04,571 - INFO - Container sweb.eval.sphinx-doc__sphinx-10673.tv300-empty stopped successfully.
+2026-09-12 14:59:04,571 - INFO - Attempting to remove container sweb.eval.sphinx-doc__sphinx-10673.tv300-empty...
+2026-09-12 14:59:04,617 - INFO - Container sweb.eval.sphinx-doc__sphinx-10673.tv300-empty removed successfully.

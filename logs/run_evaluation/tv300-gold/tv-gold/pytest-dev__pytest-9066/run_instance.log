@@ -1,0 +1,47 @@
+2026-09-12 14:43:54,804 - INFO - Image not found locally, attempting to pull...
+2026-09-12 14:44:08,497 - INFO - Creating container for pytest-dev__pytest-9066...
+2026-09-12 14:44:08,698 - INFO - Container for pytest-dev__pytest-9066 created: e131ae092ede1af853ced18e8234686c0c84169882cd498ebfb2a6ce00877ff0
+2026-09-12 14:44:08,888 - INFO - Container for pytest-dev__pytest-9066 started: e131ae092ede1af853ced18e8234686c0c84169882cd498ebfb2a6ce00877ff0
+2026-09-12 14:44:08,888 - INFO - Intermediate patch for pytest-dev__pytest-9066 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-9066/patch.diff, now applying to container...
+2026-09-12 14:44:08,985 - INFO - >>>>> Applied Patch:
+Checking patch src/_pytest/nodes.py...
+Applied patch src/_pytest/nodes.py cleanly.
+
+2026-09-12 14:44:09,125 - INFO - Git diff before:
+diff --git a/src/_pytest/nodes.py b/src/_pytest/nodes.py
+index e695f89bb..d3f0ddceb 100644
+--- a/src/_pytest/nodes.py
++++ b/src/_pytest/nodes.py
+@@ -123,7 +123,7 @@ class NodeMeta(type):
+             "See "
+             "https://docs.pytest.org/en/stable/deprecations.html#node-construction-changed-to-node-from-parent"
+             " for more details."
+-        ).format(name=self.__name__)
++        ).format(name=f"{self.__module__}.{self.__name__}")
+         fail(msg, pytrace=False)
+ 
+     def _create(self, *k, **kw):
+2026-09-12 14:44:09,125 - INFO - Eval script for pytest-dev__pytest-9066 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-9066/eval.sh; copying to container...
+2026-09-12 14:44:30,430 - INFO - Test runtime: 21.26 seconds
+2026-09-12 14:44:30,430 - INFO - Test output for pytest-dev__pytest-9066 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-9066/test_output.txt
+2026-09-12 14:44:30,477 - INFO - Git diff after:
+diff --git a/src/_pytest/nodes.py b/src/_pytest/nodes.py
+index e695f89bb..d3f0ddceb 100644
+--- a/src/_pytest/nodes.py
++++ b/src/_pytest/nodes.py
+@@ -123,7 +123,7 @@ class NodeMeta(type):
+             "See "
+             "https://docs.pytest.org/en/stable/deprecations.html#node-construction-changed-to-node-from-parent"
+             " for more details."
+-        ).format(name=self.__name__)
++        ).format(name=f"{self.__module__}.{self.__name__}")
+         fail(msg, pytrace=False)
+ 
+     def _create(self, *k, **kw):
+2026-09-12 14:44:30,477 - INFO - Grading answer for pytest-dev__pytest-9066...
+2026-09-12 14:44:30,477 - INFO - report: {'pytest-dev__pytest-9066': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['testing/test_nodes.py::test_node_direct_construction_deprecated'], 'failure': []}, 'PASS_TO_PASS': {'success': ['testing/test_nodes.py::test_iterparentnodeids[-expected0]', 'testing/test_nodes.py::test_iterparentnodeids[a-expected1]', 'testing/test_nodes.py::test_iterparentnodeids[aa/b-expected2]', 'testing/test_nodes.py::test_iterparentnodeids[a/b/c-expected3]', 'testing/test_nodes.py::test_iterparentnodeids[a/bbb/c::D-expected4]', 'testing/test_nodes.py::test_iterparentnodeids[a/b/c::D::eee-expected5]', 'testing/test_nodes.py::test_iterparentnodeids[::xx-expected6]', 'testing/test_nodes.py::test_iterparentnodeids[a/b/c::D/d::e-expected7]', 'testing/test_nodes.py::test_iterparentnodeids[a/b::D:e:f::g-expected8]', 'testing/test_nodes.py::test_iterparentnodeids[a/b::c/d::e[/test]-expected9]', 'testing/test_nodes.py::test_node_from_parent_disallowed_arguments', 'testing/test_nodes.py::test_subclassing_both_item_and_collector_deprecated', 'testing/test_nodes.py::test__check_initialpaths_for_relpath', 'testing/test_nodes.py::test_node_warn_is_no_longer_only_pytest_warnings[DeprecationWarning-deprecated]', 'testing/test_nodes.py::test_node_warn_is_no_longer_only_pytest_warnings[PytestWarning-pytest]', 'testing/test_nodes.py::test_node_warning_enforces_warning_types', 'testing/test_nodes.py::test_failure_with_changed_cwd'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for pytest-dev__pytest-9066: resolved: True
+2026-09-12 14:44:30,478 - INFO - Attempting to stop container sweb.eval.pytest-dev__pytest-9066.tv300-gold...
+2026-09-12 14:44:45,756 - INFO - Container sweb.eval.pytest-dev__pytest-9066.tv300-gold stopped successfully.
+2026-09-12 14:44:45,756 - INFO - Attempting to remove container sweb.eval.pytest-dev__pytest-9066.tv300-gold...
+2026-09-12 14:44:45,801 - INFO - Container sweb.eval.pytest-dev__pytest-9066.tv300-gold removed successfully.

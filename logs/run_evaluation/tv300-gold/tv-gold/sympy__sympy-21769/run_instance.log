@@ -1,0 +1,137 @@
+2026-09-12 15:12:10,238 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:12:20,083 - INFO - Creating container for sympy__sympy-21769...
+2026-09-12 15:12:20,372 - INFO - Container for sympy__sympy-21769 created: 0a5dcd578c6214a0f21b55dc07d5f000a10e7d15a793e70a3d24d836139d79ab
+2026-09-12 15:12:20,588 - INFO - Container for sympy__sympy-21769 started: 0a5dcd578c6214a0f21b55dc07d5f000a10e7d15a793e70a3d24d836139d79ab
+2026-09-12 15:12:20,588 - INFO - Intermediate patch for sympy__sympy-21769 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-21769/patch.diff, now applying to container...
+2026-09-12 15:12:20,728 - INFO - >>>>> Applied Patch:
+Checking patch sympy/physics/quantum/cg.py...
+Applied patch sympy/physics/quantum/cg.py cleanly.
+
+2026-09-12 15:12:21,256 - INFO - Git diff before:
+diff --git a/sympy/physics/quantum/cg.py b/sympy/physics/quantum/cg.py
+index 6d726e9a49..9c88d07438 100644
+--- a/sympy/physics/quantum/cg.py
++++ b/sympy/physics/quantum/cg.py
+@@ -10,6 +10,7 @@
+ 
+ from sympy.functions.special.tensor_functions import KroneckerDelta
+ from sympy.physics.wigner import clebsch_gordan, wigner_3j, wigner_6j, wigner_9j
++from sympy.printing.precedence import PRECEDENCE
+ 
+ __all__ = [
+     'CG',
+@@ -159,14 +160,16 @@ class CG(Wigner3j):
+     coefficients are defined as [1]_:
+ 
+     .. math ::
+-        C^{j_1,m_1}_{j_2,m_2,j_3,m_3} = \left\langle j_1,m_1;j_2,m_2 | j_3,m_3\right\rangle
++        C^{j_3,m_3}_{j_1,m_1,j_2,m_2} = \left\langle j_1,m_1;j_2,m_2 | j_3,m_3\right\rangle
+ 
+     Parameters
+     ==========
+ 
+-    j1, m1, j2, m2, j3, m3 : Number, Symbol
+-        Terms determining the angular momentum of coupled angular momentum
+-        systems.
++    j1, m1, j2, m2 : Number, Symbol
++        Angular momenta of states 1 and 2.
++
++    j3, m3: Number, Symbol
++        Total angular momentum of the coupled system.
+ 
+     Examples
+     ========
+@@ -180,6 +183,11 @@ class CG(Wigner3j):
+         CG(3/2, 3/2, 1/2, -1/2, 1, 1)
+         >>> cg.doit()
+         sqrt(3)/2
++        >>> CG(j1=S(1)/2, m1=-S(1)/2, j2=S(1)/2, m2=+S(1)/2, j3=1, m3=0).doit()
++        sqrt(2)/2
++
++
++    Compare [2]_.
+ 
+     See Also
+     ========
+@@ -190,7 +198,12 @@ class CG(Wigner3j):
+     ==========
+ 
+     .. [1] Varshalovich, D A, Quantum Theory of Angular Momentum. 1988.
++    .. [2] `Clebsch-Gordan Coefficients, Spherical Harmonics, and d Functions
++        <https://pdg.lbl.gov/2020/reviews/rpp2020-rev-clebsch-gordan-coefs.pdf>`_
++        in P.A. Zyla *et al.* (Particle Data Group), Prog. Theor. Exp. Phys.
++        2020, 083C01 (2020).
+     """
++    precedence = PRECEDENCE["Pow"] - 1
+ 
+     def doit(self, **hints):
+         if self.is_symbolic:
+2026-09-12 15:12:21,256 - INFO - Eval script for sympy__sympy-21769 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-21769/eval.sh; copying to container...
+2026-09-12 15:12:30,403 - INFO - Test runtime: 9.09 seconds
+2026-09-12 15:12:30,403 - INFO - Test output for sympy__sympy-21769 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-21769/test_output.txt
+2026-09-12 15:12:30,446 - INFO - Git diff after:
+diff --git a/sympy/physics/quantum/cg.py b/sympy/physics/quantum/cg.py
+index 6d726e9a49..9c88d07438 100644
+--- a/sympy/physics/quantum/cg.py
++++ b/sympy/physics/quantum/cg.py
+@@ -10,6 +10,7 @@
+ 
+ from sympy.functions.special.tensor_functions import KroneckerDelta
+ from sympy.physics.wigner import clebsch_gordan, wigner_3j, wigner_6j, wigner_9j
++from sympy.printing.precedence import PRECEDENCE
+ 
+ __all__ = [
+     'CG',
+@@ -159,14 +160,16 @@ class CG(Wigner3j):
+     coefficients are defined as [1]_:
+ 
+     .. math ::
+-        C^{j_1,m_1}_{j_2,m_2,j_3,m_3} = \left\langle j_1,m_1;j_2,m_2 | j_3,m_3\right\rangle
++        C^{j_3,m_3}_{j_1,m_1,j_2,m_2} = \left\langle j_1,m_1;j_2,m_2 | j_3,m_3\right\rangle
+ 
+     Parameters
+     ==========
+ 
+-    j1, m1, j2, m2, j3, m3 : Number, Symbol
+-        Terms determining the angular momentum of coupled angular momentum
+-        systems.
++    j1, m1, j2, m2 : Number, Symbol
++        Angular momenta of states 1 and 2.
++
++    j3, m3: Number, Symbol
++        Total angular momentum of the coupled system.
+ 
+     Examples
+     ========
+@@ -180,6 +183,11 @@ class CG(Wigner3j):
+         CG(3/2, 3/2, 1/2, -1/2, 1, 1)
+         >>> cg.doit()
+         sqrt(3)/2
++        >>> CG(j1=S(1)/2, m1=-S(1)/2, j2=S(1)/2, m2=+S(1)/2, j3=1, m3=0).doit()
++        sqrt(2)/2
++
++
++    Compare [2]_.
+ 
+     See Also
+     ========
+@@ -190,7 +198,12 @@ class CG(Wigner3j):
+     ==========
+ 
+     .. [1] Varshalovich, D A, Quantum Theory of Angular Momentum. 1988.
++    .. [2] `Clebsch-Gordan Coefficients, Spherical Harmonics, and d Functions
++        <https://pdg.lbl.gov/2020/reviews/rpp2020-rev-clebsch-gordan-coefs.pdf>`_
++        in P.A. Zyla *et al.* (Particle Data Group), Prog. Theor. Exp. Phys.
++        2020, 083C01 (2020).
+     """
++    precedence = PRECEDENCE["Pow"] - 1
+ 
+     def doit(self, **hints):
+         if self.is_symbolic:
+2026-09-12 15:12:30,446 - INFO - Grading answer for sympy__sympy-21769...
+2026-09-12 15:12:30,446 - INFO - report: {'sympy__sympy-21769': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_cg'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_anticommutator', 'test_commutator', 'test_constants', 'test_dagger', 'test_gate', 'test_hilbert', 'test_innerproduct', 'test_operator', 'test_qexpr', 'test_qubit', 'test_spin', 'test_state', 'test_tensorproduct'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-21769: resolved: True
+2026-09-12 15:12:30,446 - INFO - Attempting to stop container sweb.eval.sympy__sympy-21769.tv300-gold...
+2026-09-12 15:12:45,677 - INFO - Container sweb.eval.sympy__sympy-21769.tv300-gold stopped successfully.
+2026-09-12 15:12:45,678 - INFO - Attempting to remove container sweb.eval.sympy__sympy-21769.tv300-gold...
+2026-09-12 15:12:45,742 - INFO - Container sweb.eval.sympy__sympy-21769.tv300-gold removed successfully.

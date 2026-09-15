@@ -1,0 +1,81 @@
+2026-09-12 13:37:10,004 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:38:16,583 - INFO - Creating container for matplotlib__matplotlib-13859...
+2026-09-12 13:38:16,826 - INFO - Container for matplotlib__matplotlib-13859 created: b3cadabaedb093e870210bfe2f64acd7d15c346e5f7adb76bbbc293d84d80466
+2026-09-12 13:38:17,021 - INFO - Container for matplotlib__matplotlib-13859 started: b3cadabaedb093e870210bfe2f64acd7d15c346e5f7adb76bbbc293d84d80466
+2026-09-12 13:38:17,021 - INFO - Intermediate patch for matplotlib__matplotlib-13859 written to logs/run_evaluation/tv300-gold/tv-gold/matplotlib__matplotlib-13859/patch.diff, now applying to container...
+2026-09-12 13:38:17,119 - INFO - >>>>> Applied Patch:
+Checking patch lib/matplotlib/figure.py...
+Applied patch lib/matplotlib/figure.py cleanly.
+
+2026-09-12 13:38:19,011 - INFO - Git diff before:
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 7875b70aad..08f71a895b 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -345,9 +345,9 @@ class Figure(Artist):
+         if frameon is None:
+             frameon = rcParams['figure.frameon']
+ 
+-        if not np.isfinite(figsize).all():
+-            raise ValueError('figure size must be finite not '
+-                             '{}'.format(figsize))
++        if not np.isfinite(figsize).all() or (np.array(figsize) <= 0).any():
++            raise ValueError('figure size must be positive finite not '
++                             f'{figsize}')
+         self.bbox_inches = Bbox.from_bounds(0, 0, *figsize)
+ 
+         self.dpi_scale_trans = Affine2D().scale(dpi, dpi)
+@@ -895,9 +895,9 @@ default: 'top'
+         # argument, so unpack them
+         if h is None:
+             w, h = w
+-        if not all(np.isfinite(_) for _ in (w, h)):
+-            raise ValueError('figure size must be finite not '
+-                             '({}, {})'.format(w, h))
++        size = w, h
++        if not np.isfinite(size).all() or (np.array(size) <= 0).any():
++            raise ValueError(f'figure size must be positive finite not {size}')
+         self.bbox_inches.p1 = w, h
+ 
+         if forward:
+2026-09-12 13:38:19,011 - INFO - Eval script for matplotlib__matplotlib-13859 written to logs/run_evaluation/tv300-gold/tv-gold/matplotlib__matplotlib-13859/eval.sh; copying to container...
+2026-09-12 13:38:35,754 - INFO - Test runtime: 16.70 seconds
+2026-09-12 13:38:35,754 - INFO - Test output for matplotlib__matplotlib-13859 written to logs/run_evaluation/tv300-gold/tv-gold/matplotlib__matplotlib-13859/test_output.txt
+2026-09-12 13:38:35,798 - INFO - Git diff after:
+diff --git a/lib/matplotlib/figure.py b/lib/matplotlib/figure.py
+index 7875b70aad..08f71a895b 100644
+--- a/lib/matplotlib/figure.py
++++ b/lib/matplotlib/figure.py
+@@ -345,9 +345,9 @@ class Figure(Artist):
+         if frameon is None:
+             frameon = rcParams['figure.frameon']
+ 
+-        if not np.isfinite(figsize).all():
+-            raise ValueError('figure size must be finite not '
+-                             '{}'.format(figsize))
++        if not np.isfinite(figsize).all() or (np.array(figsize) <= 0).any():
++            raise ValueError('figure size must be positive finite not '
++                             f'{figsize}')
+         self.bbox_inches = Bbox.from_bounds(0, 0, *figsize)
+ 
+         self.dpi_scale_trans = Affine2D().scale(dpi, dpi)
+@@ -895,9 +895,9 @@ default: 'top'
+         # argument, so unpack them
+         if h is None:
+             w, h = w
+-        if not all(np.isfinite(_) for _ in (w, h)):
+-            raise ValueError('figure size must be finite not '
+-                             '({}, {})'.format(w, h))
++        size = w, h
++        if not np.isfinite(size).all() or (np.array(size) <= 0).any():
++            raise ValueError(f'figure size must be positive finite not {size}')
+         self.bbox_inches.p1 = w, h
+ 
+         if forward:
+2026-09-12 13:38:35,798 - INFO - Grading answer for matplotlib__matplotlib-13859...
+2026-09-12 13:38:35,800 - INFO - report: {'matplotlib__matplotlib-13859': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[0-1]', 'lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[-1-1]'], 'failure': []}, 'PASS_TO_PASS': {'success': ['lib/matplotlib/tests/test_figure.py::test_figure_label', 'lib/matplotlib/tests/test_figure.py::test_fignum_exists', 'lib/matplotlib/tests/test_figure.py::test_clf_keyword', 'lib/matplotlib/tests/test_figure.py::test_gca', 'lib/matplotlib/tests/test_figure.py::test_suptitle_fontproperties', 'lib/matplotlib/tests/test_figure.py::test_alpha[png]', 'lib/matplotlib/tests/test_figure.py::test_too_many_figures', 'lib/matplotlib/tests/test_figure.py::test_iterability_axes_argument', 'lib/matplotlib/tests/test_figure.py::test_set_fig_size', 'lib/matplotlib/tests/test_figure.py::test_axes_remove', 'lib/matplotlib/tests/test_figure.py::test_figaspect', 'lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[None]', 'lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[both]', 'lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[major]', 'lib/matplotlib/tests/test_figure.py::test_autofmt_xdate[minor]', 'lib/matplotlib/tests/test_figure.py::test_change_dpi', 'lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[1-nan]', 'lib/matplotlib/tests/test_figure.py::test_invalid_figure_size[inf-1]', 'lib/matplotlib/tests/test_figure.py::test_invalid_figure_add_axes', 'lib/matplotlib/tests/test_figure.py::test_subplots_shareax_loglabels', 'lib/matplotlib/tests/test_figure.py::test_savefig', 'lib/matplotlib/tests/test_figure.py::test_figure_repr', 'lib/matplotlib/tests/test_figure.py::test_warn_cl_plus_tl', 'lib/matplotlib/tests/test_figure.py::test_add_artist[png]', 'lib/matplotlib/tests/test_figure.py::test_fspath[png]', 'lib/matplotlib/tests/test_figure.py::test_fspath[pdf]', 'lib/matplotlib/tests/test_figure.py::test_fspath[ps]', 'lib/matplotlib/tests/test_figure.py::test_fspath[eps]', 'lib/matplotlib/tests/test_figure.py::test_fspath[svg]', 'lib/matplotlib/tests/test_figure.py::test_tightbbox'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for matplotlib__matplotlib-13859: resolved: True
+2026-09-12 13:38:35,800 - INFO - Attempting to stop container sweb.eval.matplotlib__matplotlib-13859.tv300-gold...
+2026-09-12 13:38:51,095 - INFO - Container sweb.eval.matplotlib__matplotlib-13859.tv300-gold stopped successfully.
+2026-09-12 13:38:51,095 - INFO - Attempting to remove container sweb.eval.matplotlib__matplotlib-13859.tv300-gold...
+2026-09-12 13:38:51,142 - INFO - Container sweb.eval.matplotlib__matplotlib-13859.tv300-gold removed successfully.

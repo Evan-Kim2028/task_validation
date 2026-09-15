@@ -1,0 +1,43 @@
+2026-09-12 13:10:03,268 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:10:10,400 - INFO - Creating container for django__django-12113...
+2026-09-12 13:10:12,271 - INFO - Container for django__django-12113 created: 4b83a68b02dc8dc4246257980cfa673eb4be5e383bd12223ebf4b6e39bc4d272
+2026-09-12 13:10:12,495 - INFO - Container for django__django-12113 started: 4b83a68b02dc8dc4246257980cfa673eb4be5e383bd12223ebf4b6e39bc4d272
+2026-09-12 13:10:12,495 - INFO - Intermediate patch for django__django-12113 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12113/patch.diff, now applying to container...
+2026-09-12 13:10:12,582 - INFO - >>>>> Applied Patch:
+Checking patch django/db/backends/sqlite3/creation.py...
+Applied patch django/db/backends/sqlite3/creation.py cleanly.
+
+2026-09-12 13:10:13,397 - INFO - Git diff before:
+diff --git a/django/db/backends/sqlite3/creation.py b/django/db/backends/sqlite3/creation.py
+index d97052f52d..f3bb8dd3b2 100755
+--- a/django/db/backends/sqlite3/creation.py
++++ b/django/db/backends/sqlite3/creation.py
+@@ -98,4 +98,6 @@ class DatabaseCreation(BaseDatabaseCreation):
+         sig = [self.connection.settings_dict['NAME']]
+         if self.is_in_memory_db(test_database_name):
+             sig.append(self.connection.alias)
++        else:
++            sig.append(test_database_name)
+         return tuple(sig)
+2026-09-12 13:10:13,397 - INFO - Eval script for django__django-12113 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12113/eval.sh; copying to container...
+2026-09-12 13:10:30,525 - INFO - Test runtime: 16.78 seconds
+2026-09-12 13:10:30,527 - INFO - Test output for django__django-12113 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12113/test_output.txt
+2026-09-12 13:10:30,617 - INFO - Git diff after:
+diff --git a/django/db/backends/sqlite3/creation.py b/django/db/backends/sqlite3/creation.py
+index d97052f52d..f3bb8dd3b2 100755
+--- a/django/db/backends/sqlite3/creation.py
++++ b/django/db/backends/sqlite3/creation.py
+@@ -98,4 +98,6 @@ class DatabaseCreation(BaseDatabaseCreation):
+         sig = [self.connection.settings_dict['NAME']]
+         if self.is_in_memory_db(test_database_name):
+             sig.append(self.connection.alias)
++        else:
++            sig.append(test_database_name)
+         return tuple(sig)
+2026-09-12 13:10:30,617 - INFO - Grading answer for django__django-12113...
+2026-09-12 13:10:30,623 - INFO - report: {'django__django-12113': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_custom_test_name (backends.sqlite.test_creation.TestDbSignatureTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': [], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12113: resolved: True
+2026-09-12 13:10:30,624 - INFO - Attempting to stop container sweb.eval.django__django-12113.tv300-gold...
+2026-09-12 13:10:45,963 - INFO - Container sweb.eval.django__django-12113.tv300-gold stopped successfully.
+2026-09-12 13:10:45,963 - INFO - Attempting to remove container sweb.eval.django__django-12113.tv300-gold...
+2026-09-12 13:10:46,023 - INFO - Container sweb.eval.django__django-12113.tv300-gold removed successfully.

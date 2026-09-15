@@ -1,0 +1,73 @@
+2026-09-12 15:03:51,493 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:04:07,545 - INFO - Creating container for sympy__sympy-13840...
+2026-09-12 15:04:07,799 - INFO - Container for sympy__sympy-13840 created: dc0281d13664d12b80132fba83f3e930a64d52615fe8bacbe844f00ef6b3732b
+2026-09-12 15:04:08,016 - INFO - Container for sympy__sympy-13840 started: dc0281d13664d12b80132fba83f3e930a64d52615fe8bacbe844f00ef6b3732b
+2026-09-12 15:04:08,016 - INFO - Intermediate patch for sympy__sympy-13840 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-13840/patch.diff, now applying to container...
+2026-09-12 15:04:08,119 - INFO - >>>>> Applied Patch:
+Checking patch sympy/printing/rcode.py...
+Applied patch sympy/printing/rcode.py cleanly.
+
+2026-09-12 15:04:08,519 - INFO - Git diff before:
+diff --git a/sympy/printing/rcode.py b/sympy/printing/rcode.py
+index 0e56f1b108..aa9c3b0e64 100644
+--- a/sympy/printing/rcode.py
++++ b/sympy/printing/rcode.py
+@@ -22,7 +22,6 @@
+ known_functions = {
+     #"Abs": [(lambda x: not x.is_integer, "fabs")],
+     "Abs": "abs",
+-    "gamma": "gamma",
+     "sin": "sin",
+     "cos": "cos",
+     "tan": "tan",
+@@ -42,6 +41,13 @@
+     "floor": "floor",
+     "ceiling": "ceiling",
+     "sign": "sign",
++    "Max": "max",
++    "Min": "min",
++    "factorial": "factorial",
++    "gamma": "gamma",
++    "digamma": "digamma",
++    "trigamma": "trigamma",
++    "beta": "beta",
+ }
+ 
+ # These are the core reserved words in the R language. Taken from:
+2026-09-12 15:04:08,519 - INFO - Eval script for sympy__sympy-13840 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-13840/eval.sh; copying to container...
+2026-09-12 15:04:17,162 - INFO - Test runtime: 8.59 seconds
+2026-09-12 15:04:17,163 - INFO - Test output for sympy__sympy-13840 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-13840/test_output.txt
+2026-09-12 15:04:17,211 - INFO - Git diff after:
+diff --git a/sympy/printing/rcode.py b/sympy/printing/rcode.py
+index 0e56f1b108..aa9c3b0e64 100644
+--- a/sympy/printing/rcode.py
++++ b/sympy/printing/rcode.py
+@@ -22,7 +22,6 @@
+ known_functions = {
+     #"Abs": [(lambda x: not x.is_integer, "fabs")],
+     "Abs": "abs",
+-    "gamma": "gamma",
+     "sin": "sin",
+     "cos": "cos",
+     "tan": "tan",
+@@ -42,6 +41,13 @@
+     "floor": "floor",
+     "ceiling": "ceiling",
+     "sign": "sign",
++    "Max": "max",
++    "Min": "min",
++    "factorial": "factorial",
++    "gamma": "gamma",
++    "digamma": "digamma",
++    "trigamma": "trigamma",
++    "beta": "beta",
+ }
+ 
+ # These are the core reserved words in the R language. Taken from:
+2026-09-12 15:04:17,211 - INFO - Grading answer for sympy__sympy-13840...
+2026-09-12 15:04:17,212 - INFO - report: {'sympy__sympy-13840': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_rcode_functions'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_printmethod', 'test_rcode_sqrt', 'test_rcode_Pow', 'test_rcode_Max', 'test_rcode_constants_mathh', 'test_rcode_constants_other', 'test_rcode_Rational', 'test_rcode_Integer', 'test_rcode_exceptions', 'test_rcode_user_functions', 'test_rcode_boolean', 'test_rcode_Relational', 'test_rcode_Piecewise', 'test_rcode_sinc', 'test_rcode_Piecewise_deep', 'test_rcode_ITE', 'test_rcode_settings', 'test_dereference_printing', 'test_Matrix_printing', 'test_rcode_sgn', 'test_rcode_Assignment', 'test_rcode_For'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-13840: resolved: True
+2026-09-12 15:04:17,213 - INFO - Attempting to stop container sweb.eval.sympy__sympy-13840.tv300-gold...
+2026-09-12 15:04:32,457 - INFO - Container sweb.eval.sympy__sympy-13840.tv300-gold stopped successfully.
+2026-09-12 15:04:32,457 - INFO - Attempting to remove container sweb.eval.sympy__sympy-13840.tv300-gold...
+2026-09-12 15:04:32,508 - INFO - Container sweb.eval.sympy__sympy-13840.tv300-gold removed successfully.

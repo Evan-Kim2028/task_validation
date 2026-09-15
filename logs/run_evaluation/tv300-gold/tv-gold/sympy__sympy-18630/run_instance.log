@@ -1,0 +1,99 @@
+2026-09-12 15:10:39,113 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:10:47,174 - INFO - Creating container for sympy__sympy-18630...
+2026-09-12 15:10:47,320 - INFO - Container for sympy__sympy-18630 created: 0ceca818eb8cc4426b87ca7f105ad23d24ee36765dcd4bb83d9771a1d391e03c
+2026-09-12 15:10:47,515 - INFO - Container for sympy__sympy-18630 started: 0ceca818eb8cc4426b87ca7f105ad23d24ee36765dcd4bb83d9771a1d391e03c
+2026-09-12 15:10:47,515 - INFO - Intermediate patch for sympy__sympy-18630 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-18630/patch.diff, now applying to container...
+2026-09-12 15:10:47,609 - INFO - >>>>> Applied Patch:
+Checking patch sympy/functions/special/hyper.py...
+Applied patch sympy/functions/special/hyper.py cleanly.
+
+2026-09-12 15:10:47,965 - INFO - Git diff before:
+diff --git a/sympy/functions/special/hyper.py b/sympy/functions/special/hyper.py
+index ffda6bac2b..1923476dc3 100644
+--- a/sympy/functions/special/hyper.py
++++ b/sympy/functions/special/hyper.py
+@@ -220,6 +220,34 @@ def _eval_rewrite_as_Sum(self, ap, bq, z, **kwargs):
+         return Piecewise((Sum(coeff * z**n / factorial(n), (n, 0, oo)),
+                          self.convergence_statement), (self, True))
+ 
++    def _eval_nseries(self, x, n, logx):
++
++        from sympy.functions import factorial, RisingFactorial
++        from sympy import Order, Add
++
++        arg = self.args[2]
++        x0 = arg.limit(x, 0)
++        ap = self.args[0]
++        bq = self.args[1]
++
++        if x0 != 0:
++            return super(hyper, self)._eval_nseries(x, n, logx)
++
++        terms = []
++
++        for i in range(n):
++            num = 1
++            den = 1
++            for a in ap:
++                num *= RisingFactorial(a, i)
++
++            for b in bq:
++                den *= RisingFactorial(b, i)
++
++            terms.append(((num/den) * (arg**i)) / factorial(i))
++
++        return (Add(*terms) + Order(x**n,x))
++
+     @property
+     def argument(self):
+         """ Argument of the hypergeometric function. """
+2026-09-12 15:10:47,965 - INFO - Eval script for sympy__sympy-18630 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-18630/eval.sh; copying to container...
+2026-09-12 15:11:12,535 - INFO - Test runtime: 24.52 seconds
+2026-09-12 15:11:12,535 - INFO - Test output for sympy__sympy-18630 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-18630/test_output.txt
+2026-09-12 15:11:12,582 - INFO - Git diff after:
+diff --git a/sympy/functions/special/hyper.py b/sympy/functions/special/hyper.py
+index ffda6bac2b..1923476dc3 100644
+--- a/sympy/functions/special/hyper.py
++++ b/sympy/functions/special/hyper.py
+@@ -220,6 +220,34 @@ def _eval_rewrite_as_Sum(self, ap, bq, z, **kwargs):
+         return Piecewise((Sum(coeff * z**n / factorial(n), (n, 0, oo)),
+                          self.convergence_statement), (self, True))
+ 
++    def _eval_nseries(self, x, n, logx):
++
++        from sympy.functions import factorial, RisingFactorial
++        from sympy import Order, Add
++
++        arg = self.args[2]
++        x0 = arg.limit(x, 0)
++        ap = self.args[0]
++        bq = self.args[1]
++
++        if x0 != 0:
++            return super(hyper, self)._eval_nseries(x, n, logx)
++
++        terms = []
++
++        for i in range(n):
++            num = 1
++            den = 1
++            for a in ap:
++                num *= RisingFactorial(a, i)
++
++            for b in bq:
++                den *= RisingFactorial(b, i)
++
++            terms.append(((num/den) * (arg**i)) / factorial(i))
++
++        return (Add(*terms) + Order(x**n,x))
++
+     @property
+     def argument(self):
+         """ Argument of the hypergeometric function. """
+2026-09-12 15:11:12,582 - INFO - Grading answer for sympy__sympy-18630...
+2026-09-12 15:11:12,583 - INFO - report: {'sympy__sympy-18630': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_limits'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_TupleParametersBase', 'test_hyper', 'test_expand_func', 'test_hyper_rewrite_sum', 'test_radius_of_convergence', 'test_meijer', 'test_meijerg_derivative', 'test_meijerg_period', 'test_hyper_unpolarify', 'test_appellf1', 'test_derivative_appellf1'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-18630: resolved: True
+2026-09-12 15:11:12,583 - INFO - Attempting to stop container sweb.eval.sympy__sympy-18630.tv300-gold...
+2026-09-12 15:11:27,824 - INFO - Container sweb.eval.sympy__sympy-18630.tv300-gold stopped successfully.
+2026-09-12 15:11:27,825 - INFO - Attempting to remove container sweb.eval.sympy__sympy-18630.tv300-gold...
+2026-09-12 15:11:27,877 - INFO - Container sweb.eval.sympy__sympy-18630.tv300-gold removed successfully.

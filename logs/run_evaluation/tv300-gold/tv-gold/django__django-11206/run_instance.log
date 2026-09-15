@@ -1,0 +1,59 @@
+2026-09-12 13:03:16,859 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:03:23,594 - INFO - Creating container for django__django-11206...
+2026-09-12 13:03:23,745 - INFO - Container for django__django-11206 created: 4c8861eb8daf8c9d553890844dac32fd8f86967207f666ae8a0b3b6552345669
+2026-09-12 13:03:23,931 - INFO - Container for django__django-11206 started: 4c8861eb8daf8c9d553890844dac32fd8f86967207f666ae8a0b3b6552345669
+2026-09-12 13:03:23,932 - INFO - Intermediate patch for django__django-11206 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-11206/patch.diff, now applying to container...
+2026-09-12 13:03:24,050 - INFO - >>>>> Applied Patch:
+Checking patch django/utils/numberformat.py...
+Applied patch django/utils/numberformat.py cleanly.
+
+2026-09-12 13:03:25,150 - INFO - Git diff before:
+diff --git a/django/utils/numberformat.py b/django/utils/numberformat.py
+index 88b35fc435..961a60e37d 100644
+--- a/django/utils/numberformat.py
++++ b/django/utils/numberformat.py
+@@ -27,6 +27,14 @@ def format(number, decimal_sep, decimal_pos=None, grouping=0, thousand_sep='',
+     # sign
+     sign = ''
+     if isinstance(number, Decimal):
++
++        if decimal_pos is not None:
++            # If the provided number is too small to affect any of the visible
++            # decimal places, consider it equal to '0'.
++            cutoff = Decimal('0.' + '1'.rjust(decimal_pos, '0'))
++            if abs(number) < cutoff:
++                number = Decimal('0')
++
+         # Format values with more than 200 digits (an arbitrary cutoff) using
+         # scientific notation to avoid high memory usage in {:f}'.format().
+         _, digits, exponent = number.as_tuple()
+2026-09-12 13:03:25,150 - INFO - Eval script for django__django-11206 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-11206/eval.sh; copying to container...
+2026-09-12 13:03:36,693 - INFO - Test runtime: 11.49 seconds
+2026-09-12 13:03:36,693 - INFO - Test output for django__django-11206 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-11206/test_output.txt
+2026-09-12 13:03:36,765 - INFO - Git diff after:
+diff --git a/django/utils/numberformat.py b/django/utils/numberformat.py
+index 88b35fc435..961a60e37d 100644
+--- a/django/utils/numberformat.py
++++ b/django/utils/numberformat.py
+@@ -27,6 +27,14 @@ def format(number, decimal_sep, decimal_pos=None, grouping=0, thousand_sep='',
+     # sign
+     sign = ''
+     if isinstance(number, Decimal):
++
++        if decimal_pos is not None:
++            # If the provided number is too small to affect any of the visible
++            # decimal places, consider it equal to '0'.
++            cutoff = Decimal('0.' + '1'.rjust(decimal_pos, '0'))
++            if abs(number) < cutoff:
++                number = Decimal('0')
++
+         # Format values with more than 200 digits (an arbitrary cutoff) using
+         # scientific notation to avoid high memory usage in {:f}'.format().
+         _, digits, exponent = number.as_tuple()
+2026-09-12 13:03:36,765 - INFO - Grading answer for django__django-11206...
+2026-09-12 13:03:36,765 - INFO - report: {'django__django-11206': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_decimal_numbers (utils_tests.test_numberformat.TestNumberFormat)', 'test_decimal_subclass (utils_tests.test_numberformat.TestNumberFormat)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_float_numbers (utils_tests.test_numberformat.TestNumberFormat)', 'test_format_number (utils_tests.test_numberformat.TestNumberFormat)', 'test_format_string (utils_tests.test_numberformat.TestNumberFormat)', 'test_large_number (utils_tests.test_numberformat.TestNumberFormat)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11206: resolved: True
+2026-09-12 13:03:36,765 - INFO - Attempting to stop container sweb.eval.django__django-11206.tv300-gold...
+2026-09-12 13:03:52,059 - INFO - Container sweb.eval.django__django-11206.tv300-gold stopped successfully.
+2026-09-12 13:03:52,059 - INFO - Attempting to remove container sweb.eval.django__django-11206.tv300-gold...
+2026-09-12 13:03:52,117 - INFO - Container sweb.eval.django__django-11206.tv300-gold removed successfully.

@@ -1,0 +1,287 @@
+2026-09-12 13:10:51,945 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:11:16,754 - INFO - Creating container for django__django-12928...
+2026-09-12 13:11:17,392 - INFO - Container for django__django-12928 created: c55f4551227dfc1af44ae7597f7b4a0d23b4803bc0c70b146eef3f1e7d7b70dd
+2026-09-12 13:11:17,634 - INFO - Container for django__django-12928 started: c55f4551227dfc1af44ae7597f7b4a0d23b4803bc0c70b146eef3f1e7d7b70dd
+2026-09-12 13:11:17,634 - INFO - Intermediate patch for django__django-12928 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12928/patch.diff, now applying to container...
+2026-09-12 13:11:17,744 - INFO - >>>>> Applied Patch:
+Checking patch django/template/__init__.py...
+Checking patch django/template/autoreload.py...
+Checking patch django/template/loaders/cached.py...
+Checking patch django/utils/autoreload.py...
+Checking patch django/utils/translation/reloader.py...
+Applied patch django/template/__init__.py cleanly.
+Applied patch django/template/autoreload.py cleanly.
+Applied patch django/template/loaders/cached.py cleanly.
+Applied patch django/utils/autoreload.py cleanly.
+Applied patch django/utils/translation/reloader.py cleanly.
+
+2026-09-12 13:11:18,603 - INFO - Git diff before:
+diff --git a/django/template/__init__.py b/django/template/__init__.py
+index e5ac524a5a..7414d0fef5 100644
+--- a/django/template/__init__.py
++++ b/django/template/__init__.py
+@@ -64,5 +64,8 @@ from .base import (                                                     # NOQA i
+ # Library management
+ from .library import Library                                            # NOQA isort:skip
+ 
++# Import the .autoreload module to trigger the registrations of signals.
++from . import autoreload                                                # NOQA isort:skip
++
+ 
+ __all__ += ('Template', 'Context', 'RequestContext')
+diff --git a/django/template/loaders/cached.py b/django/template/loaders/cached.py
+index 2ee659127e..bb47682d7f 100644
+--- a/django/template/loaders/cached.py
++++ b/django/template/loaders/cached.py
+@@ -18,6 +18,11 @@ class Loader(BaseLoader):
+         self.loaders = engine.get_template_loaders(loaders)
+         super().__init__(engine)
+ 
++    def get_dirs(self):
++        for loader in self.loaders:
++            if hasattr(loader, "get_dirs"):
++                yield from loader.get_dirs()
++
+     def get_contents(self, origin):
+         return origin.loader.get_contents(origin)
+ 
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 442ece1f6d..bb5bdf107e 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -14,6 +14,7 @@ from pathlib import Path
+ from types import ModuleType
+ from zipimport import zipimporter
+ 
++import django
+ from django.apps import apps
+ from django.core.signals import request_finished
+ from django.dispatch import Signal
+@@ -45,6 +46,16 @@ except ImportError:
+     pywatchman = None
+ 
+ 
++def is_django_module(module):
++    """Return True if the given module is nested under Django."""
++    return module.__name__.startswith('django.')
++
++
++def is_django_path(path):
++    """Return True if the given file path is nested under Django."""
++    return Path(django.__file__).parent in Path(path).parents
++
++
+ def check_errors(fn):
+     @functools.wraps(fn)
+     def wrapper(*args, **kwargs):
+@@ -431,8 +442,15 @@ class WatchmanReloader(BaseReloader):
+ 
+     def _subscribe(self, directory, name, expression):
+         root, rel_path = self._watch_root(directory)
++        # Only receive notifications of files changing, filtering out other types
++        # like special files: https://facebook.github.io/watchman/docs/type
++        only_files_expression = [
++            'allof',
++            ['anyof', ['type', 'f'], ['type', 'l']],
++            expression
++        ]
+         query = {
+-            'expression': expression,
++            'expression': only_files_expression,
+             'fields': ['name'],
+             'since': self._get_clock(root),
+             'dedup_results': True,
+diff --git a/django/utils/translation/reloader.py b/django/utils/translation/reloader.py
+index 695f769e5f..d8afa89270 100644
+--- a/django/utils/translation/reloader.py
++++ b/django/utils/translation/reloader.py
+@@ -3,11 +3,7 @@ from pathlib import Path
+ from asgiref.local import Local
+ 
+ from django.apps import apps
+-
+-
+-def _is_django_module(module):
+-    """Return True if the given module is nested under Django."""
+-    return module.__name__.startswith('django.')
++from django.utils.autoreload import is_django_module
+ 
+ 
+ def watch_for_translation_changes(sender, **kwargs):
+@@ -19,7 +15,7 @@ def watch_for_translation_changes(sender, **kwargs):
+         directories.extend(
+             Path(config.path) / 'locale'
+             for config in apps.get_app_configs()
+-            if not _is_django_module(config.module)
++            if not is_django_module(config.module)
+         )
+         directories.extend(Path(p) for p in settings.LOCALE_PATHS)
+         for path in directories:
+2026-09-12 13:11:18,603 - INFO - Eval script for django__django-12928 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12928/eval.sh; copying to container...
+2026-09-12 13:11:30,340 - INFO - Test runtime: 11.68 seconds
+2026-09-12 13:11:30,340 - INFO - Test output for django__django-12928 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12928/test_output.txt
+2026-09-12 13:11:30,393 - INFO - Git diff after:
+diff --git a/django/template/__init__.py b/django/template/__init__.py
+index e5ac524a5a..7414d0fef5 100644
+--- a/django/template/__init__.py
++++ b/django/template/__init__.py
+@@ -64,5 +64,8 @@ from .base import (                                                     # NOQA i
+ # Library management
+ from .library import Library                                            # NOQA isort:skip
+ 
++# Import the .autoreload module to trigger the registrations of signals.
++from . import autoreload                                                # NOQA isort:skip
++
+ 
+ __all__ += ('Template', 'Context', 'RequestContext')
+diff --git a/django/template/loaders/cached.py b/django/template/loaders/cached.py
+index 2ee659127e..bb47682d7f 100644
+--- a/django/template/loaders/cached.py
++++ b/django/template/loaders/cached.py
+@@ -18,6 +18,11 @@ class Loader(BaseLoader):
+         self.loaders = engine.get_template_loaders(loaders)
+         super().__init__(engine)
+ 
++    def get_dirs(self):
++        for loader in self.loaders:
++            if hasattr(loader, "get_dirs"):
++                yield from loader.get_dirs()
++
+     def get_contents(self, origin):
+         return origin.loader.get_contents(origin)
+ 
+diff --git a/django/utils/autoreload.py b/django/utils/autoreload.py
+index 442ece1f6d..bb5bdf107e 100644
+--- a/django/utils/autoreload.py
++++ b/django/utils/autoreload.py
+@@ -14,6 +14,7 @@ from pathlib import Path
+ from types import ModuleType
+ from zipimport import zipimporter
+ 
++import django
+ from django.apps import apps
+ from django.core.signals import request_finished
+ from django.dispatch import Signal
+@@ -45,6 +46,16 @@ except ImportError:
+     pywatchman = None
+ 
+ 
++def is_django_module(module):
++    """Return True if the given module is nested under Django."""
++    return module.__name__.startswith('django.')
++
++
++def is_django_path(path):
++    """Return True if the given file path is nested under Django."""
++    return Path(django.__file__).parent in Path(path).parents
++
++
+ def check_errors(fn):
+     @functools.wraps(fn)
+     def wrapper(*args, **kwargs):
+@@ -431,8 +442,15 @@ class WatchmanReloader(BaseReloader):
+ 
+     def _subscribe(self, directory, name, expression):
+         root, rel_path = self._watch_root(directory)
++        # Only receive notifications of files changing, filtering out other types
++        # like special files: https://facebook.github.io/watchman/docs/type
++        only_files_expression = [
++            'allof',
++            ['anyof', ['type', 'f'], ['type', 'l']],
++            expression
++        ]
+         query = {
+-            'expression': expression,
++            'expression': only_files_expression,
+             'fields': ['name'],
+             'since': self._get_clock(root),
+             'dedup_results': True,
+diff --git a/django/utils/translation/reloader.py b/django/utils/translation/reloader.py
+index 695f769e5f..d8afa89270 100644
+--- a/django/utils/translation/reloader.py
++++ b/django/utils/translation/reloader.py
+@@ -3,11 +3,7 @@ from pathlib import Path
+ from asgiref.local import Local
+ 
+ from django.apps import apps
+-
+-
+-def _is_django_module(module):
+-    """Return True if the given module is nested under Django."""
+-    return module.__name__.startswith('django.')
++from django.utils.autoreload import is_django_module
+ 
+ 
+ def watch_for_translation_changes(sender, **kwargs):
+@@ -19,7 +15,7 @@ def watch_for_translation_changes(sender, **kwargs):
+         directories.extend(
+             Path(config.path) / 'locale'
+             for config in apps.get_app_configs()
+-            if not _is_django_module(config.module)
++            if not is_django_module(config.module)
+         )
+         directories.extend(Path(p) for p in settings.LOCALE_PATHS)
+         for path in directories:
+diff --git a/tests/template_tests/test_loaders.py b/tests/template_tests/test_loaders.py
+index 258b18fca0..6f9c4c938e 100644
+--- a/tests/template_tests/test_loaders.py
++++ b/tests/template_tests/test_loaders.py
+@@ -93,6 +93,10 @@ class CachedLoaderTests(SimpleTestCase):
+         """
+         self.assertEqual(self.engine.template_loaders[0].cache_key(lazystr('template.html'), []), 'template.html')
+ 
++    def test_get_dirs(self):
++        inner_dirs = self.engine.template_loaders[0].loaders[0].get_dirs()
++        self.assertSequenceEqual(list(self.engine.template_loaders[0].get_dirs()), list(inner_dirs))
++
+ 
+ class FileSystemLoaderTests(SimpleTestCase):
+ 
+diff --git a/tests/utils_tests/test_autoreload.py b/tests/utils_tests/test_autoreload.py
+index 5b1a733b47..e21414f702 100644
+--- a/tests/utils_tests/test_autoreload.py
++++ b/tests/utils_tests/test_autoreload.py
+@@ -14,6 +14,8 @@ from pathlib import Path
+ from subprocess import CompletedProcess
+ from unittest import mock, skip, skipIf
+ 
++import pytz
++
+ import django.__main__
+ from django.apps.registry import Apps
+ from django.test import SimpleTestCase
+@@ -201,6 +203,26 @@ class TestChildArguments(SimpleTestCase):
+             autoreload.get_child_arguments()
+ 
+ 
++class TestUtilities(SimpleTestCase):
++    def test_is_django_module(self):
++        for module, expected in (
++            (pytz, False),
++            (sys, False),
++            (autoreload, True)
++        ):
++            with self.subTest(module=module):
++                self.assertIs(autoreload.is_django_module(module), expected)
++
++    def test_is_django_path(self):
++        for module, expected in (
++            (pytz.__file__, False),
++            (contextlib.__file__, False),
++            (autoreload.__file__, True)
++        ):
++            with self.subTest(module=module):
++                self.assertIs(autoreload.is_django_path(module), expected)
++
++
+ class TestCommonRoots(SimpleTestCase):
+     def test_common_roots(self):
+         paths = (
+2026-09-12 13:11:30,393 - INFO - Git diff changed after running eval script
+2026-09-12 13:11:30,393 - INFO - Grading answer for django__django-12928...
+2026-09-12 13:11:30,394 - INFO - report: {'django__django-12928': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_is_django_module (utils_tests.test_autoreload.TestUtilities)', 'test_is_django_path (utils_tests.test_autoreload.TestUtilities)', 'test_get_dirs (template_tests.test_loaders.CachedLoaderTests)', 'test_sys_paths_absolute (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_directories (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_non_existing (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_sys_paths_with_directories (utils_tests.test_autoreload.TestSysPathDirectories)', 'test_get_template_directories (template_tests.test_autoreloader.TemplateReloadTests)', 'test_non_template_changed (template_tests.test_autoreloader.TemplateReloadTests)', 'test_reset_all_loaders (template_tests.test_autoreloader.TemplateReloadTests)', 'test_template_changed (template_tests.test_autoreloader.TemplateReloadTests)', 'test_watch_for_template_changes (template_tests.test_autoreloader.TemplateReloadTests)', 'test_get_template_directories (template_tests.test_autoreloader.Jinja2TemplateReloadTests)', 'test_reset_all_loaders (template_tests.test_autoreloader.Jinja2TemplateReloadTests)', 'test_watch_for_template_changes (template_tests.test_autoreloader.Jinja2TemplateReloadTests)', 'test_run_loop_catches_stopiteration (utils_tests.test_autoreload.BaseReloaderTests)', 'test_run_loop_stop_and_return (utils_tests.test_autoreload.BaseReloaderTests)', 'test_wait_for_apps_ready_checks_for_exception (utils_tests.test_autoreload.BaseReloaderTests)', 'test_wait_for_apps_ready_without_exception (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_dir_with_unresolvable_path (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_files_with_recursive_glob (utils_tests.test_autoreload.BaseReloaderTests)', 'test_watch_with_glob (utils_tests.test_autoreload.BaseReloaderTests)', 'test_glob (utils_tests.test_autoreload.StatReloaderTests)', 'test_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_multiple_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_multiple_recursive_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_nested_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_overlapping_glob_recursive (utils_tests.test_autoreload.StatReloaderTests)', 'test_overlapping_globs (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_ignores_missing_files (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_updates (utils_tests.test_autoreload.StatReloaderTests)', 'test_snapshot_files_with_duplicates (utils_tests.test_autoreload.StatReloaderTests)', 'test_tick_does_not_trigger_twice (utils_tests.test_autoreload.StatReloaderTests)', 'test_check_errors_called (utils_tests.test_autoreload.StartDjangoTests)', 'test_echo_on_called (utils_tests.test_autoreload.StartDjangoTests)', 'test_starts_thread_with_args (utils_tests.test_autoreload.StartDjangoTests)', 'test_watchman_becomes_unavailable (utils_tests.test_autoreload.StartDjangoTests)', '.pyc and .pyo files are included in the files list.', 'test_check_errors (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_check_errors_catches_all_exceptions (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_file_added (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_main_module_is_resolved (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_main_module_without_file_is_not_resolved (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_module_without_spec (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_path_with_embedded_null_bytes (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'test_paths_are_pathlib_instances (utils_tests.test_autoreload.TestIterModulesAndFiles)', 'iter_all_python_module_file() ignores weakref modules.', 'test_zip_reload (utils_tests.test_autoreload.TestIterModulesAndFiles)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_common_roots (utils_tests.test_autoreload.TestCommonRoots)', 'test_no_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_raises_custom_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_raises_exception (utils_tests.test_autoreload.TestRaiseLastException)', 'test_raises_exception_with_context (utils_tests.test_autoreload.TestRaiseLastException)', 'test_manage_py (utils_tests.test_autoreload.RestartWithReloaderTests)', 'test_python_m_django (utils_tests.test_autoreload.RestartWithReloaderTests)', 'test_watchman_available (utils_tests.test_autoreload.GetReloaderTests)', 'test_watchman_unavailable (utils_tests.test_autoreload.GetReloaderTests)', 'test_get_template (template_tests.test_loaders.AppDirectoriesLoaderTests)', 'test_not_installed (template_tests.test_loaders.AppDirectoriesLoaderTests)', 'test_cached_exception_no_traceback (template_tests.test_loaders.CachedLoaderTests)', 'test_get_template (template_tests.test_loaders.CachedLoaderTests)', 'test_get_template_missing_debug_off (template_tests.test_loaders.CachedLoaderTests)', 'test_get_template_missing_debug_on (template_tests.test_loaders.CachedLoaderTests)', 'test_template_name_lazy_string (template_tests.test_loaders.CachedLoaderTests)', 'test_template_name_leading_dash_caching (template_tests.test_loaders.CachedLoaderTests)', 'test_entrypoint_fallback (utils_tests.test_autoreload.TestChildArguments)', 'test_exe_fallback (utils_tests.test_autoreload.TestChildArguments)', 'test_raises_runtimeerror (utils_tests.test_autoreload.TestChildArguments)', 'test_run_as_module (utils_tests.test_autoreload.TestChildArguments)', 'test_warnoptions (utils_tests.test_autoreload.TestChildArguments)', 'test_get_template (template_tests.test_loaders.LocmemLoaderTests)', 'test_bytestring (template_tests.test_loaders.FileSystemLoaderTests)', 'test_directory_security (template_tests.test_loaders.FileSystemLoaderTests)', 'test_file_does_not_exist (template_tests.test_loaders.FileSystemLoaderTests)', 'test_get_template (template_tests.test_loaders.FileSystemLoaderTests)', 'test_loaders_dirs (template_tests.test_loaders.FileSystemLoaderTests)', 'An empty dirs list in loaders overrides top level dirs.', 'test_notafile_error (template_tests.test_loaders.FileSystemLoaderTests)', 'test_unicode_dir_name (template_tests.test_loaders.FileSystemLoaderTests)', 'test_unicode_template_name (template_tests.test_loaders.FileSystemLoaderTests)', 'test_mutates_error_files (utils_tests.test_autoreload.TestCheckErrors)', 'test_calls_start_django (utils_tests.test_autoreload.RunWithReloaderTests)', 'test_calls_sys_exit (utils_tests.test_autoreload.RunWithReloaderTests)', 'test_swallows_keyboard_interrupt (utils_tests.test_autoreload.RunWithReloaderTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12928: resolved: True
+2026-09-12 13:11:30,395 - INFO - Attempting to stop container sweb.eval.django__django-12928.tv300-gold...
+2026-09-12 13:11:45,679 - INFO - Container sweb.eval.django__django-12928.tv300-gold stopped successfully.
+2026-09-12 13:11:45,679 - INFO - Attempting to remove container sweb.eval.django__django-12928.tv300-gold...
+2026-09-12 13:11:45,745 - INFO - Container sweb.eval.django__django-12928.tv300-gold removed successfully.

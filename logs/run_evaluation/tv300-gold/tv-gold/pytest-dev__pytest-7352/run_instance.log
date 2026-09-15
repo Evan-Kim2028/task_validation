@@ -1,0 +1,79 @@
+2026-09-12 14:42:37,264 - INFO - Image not found locally, attempting to pull...
+2026-09-12 14:43:17,054 - INFO - Creating container for pytest-dev__pytest-7352...
+2026-09-12 14:43:17,333 - INFO - Container for pytest-dev__pytest-7352 created: e8a6787af459e9458e2023e6f51d9577f6574fc197a3804d5fd7bf21bd41b284
+2026-09-12 14:43:17,625 - INFO - Container for pytest-dev__pytest-7352 started: e8a6787af459e9458e2023e6f51d9577f6574fc197a3804d5fd7bf21bd41b284
+2026-09-12 14:43:17,626 - INFO - Intermediate patch for pytest-dev__pytest-7352 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-7352/patch.diff, now applying to container...
+2026-09-12 14:43:17,733 - INFO - >>>>> Applied Patch:
+Checking patch src/_pytest/pathlib.py...
+Applied patch src/_pytest/pathlib.py cleanly.
+
+2026-09-12 14:43:17,869 - INFO - Git diff before:
+diff --git a/src/_pytest/pathlib.py b/src/_pytest/pathlib.py
+index 29d8c4dc9..98ec936a1 100644
+--- a/src/_pytest/pathlib.py
++++ b/src/_pytest/pathlib.py
+@@ -1,4 +1,5 @@
+ import atexit
++import contextlib
+ import fnmatch
+ import itertools
+ import os
+@@ -290,10 +291,14 @@ def ensure_deletable(path: Path, consider_lock_dead_if_created_before: float) ->
+         return False
+     else:
+         if lock_time < consider_lock_dead_if_created_before:
+-            lock.unlink()
+-            return True
+-        else:
+-            return False
++            # wa want to ignore any errors while trying to remove the lock such as:
++            # - PermissionDenied, like the file permissions have changed since the lock creation
++            # - FileNotFoundError, in case another pytest process got here first.
++            # and any other cause of failure.
++            with contextlib.suppress(OSError):
++                lock.unlink()
++                return True
++        return False
+ 
+ 
+ def try_cleanup(path: Path, consider_lock_dead_if_created_before: float) -> None:
+2026-09-12 14:43:17,869 - INFO - Eval script for pytest-dev__pytest-7352 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-7352/eval.sh; copying to container...
+2026-09-12 14:43:39,498 - INFO - Test runtime: 21.58 seconds
+2026-09-12 14:43:39,498 - INFO - Test output for pytest-dev__pytest-7352 written to logs/run_evaluation/tv300-gold/tv-gold/pytest-dev__pytest-7352/test_output.txt
+2026-09-12 14:43:39,550 - INFO - Git diff after:
+diff --git a/src/_pytest/pathlib.py b/src/_pytest/pathlib.py
+index 29d8c4dc9..98ec936a1 100644
+--- a/src/_pytest/pathlib.py
++++ b/src/_pytest/pathlib.py
+@@ -1,4 +1,5 @@
+ import atexit
++import contextlib
+ import fnmatch
+ import itertools
+ import os
+@@ -290,10 +291,14 @@ def ensure_deletable(path: Path, consider_lock_dead_if_created_before: float) ->
+         return False
+     else:
+         if lock_time < consider_lock_dead_if_created_before:
+-            lock.unlink()
+-            return True
+-        else:
+-            return False
++            # wa want to ignore any errors while trying to remove the lock such as:
++            # - PermissionDenied, like the file permissions have changed since the lock creation
++            # - FileNotFoundError, in case another pytest process got here first.
++            # and any other cause of failure.
++            with contextlib.suppress(OSError):
++                lock.unlink()
++                return True
++        return False
+ 
+ 
+ def try_cleanup(path: Path, consider_lock_dead_if_created_before: float) -> None:
+2026-09-12 14:43:39,550 - INFO - Grading answer for pytest-dev__pytest-7352...
+2026-09-12 14:43:39,550 - INFO - report: {'pytest-dev__pytest-7352': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['testing/test_pathlib.py::test_suppress_error_removing_lock'], 'failure': []}, 'PASS_TO_PASS': {'success': ['testing/test_pathlib.py::TestPort::test_matching[pathlib-*.py-foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-*.py-bar/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-test_*.py-foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-tests/*.py-tests/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-/c/*.py-/c/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-/c/foo/*.py-/c/foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-tests/**/test*.py-tests/foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-tests/**/doc/test*.py-tests/foo/bar/doc/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[pathlib-tests/**/doc/**/test*.py-tests/foo/doc/bar/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-*.py-foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-*.py-bar/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-test_*.py-foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-tests/*.py-tests/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-/c/*.py-/c/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-/c/foo/*.py-/c/foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-tests/**/test*.py-tests/foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-tests/**/doc/test*.py-tests/foo/bar/doc/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching[py.path-tests/**/doc/**/test*.py-tests/foo/doc/bar/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_matching_abspath[pathlib]', 'testing/test_pathlib.py::TestPort::test_matching_abspath[py.path]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-*.py-foo.pyc]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-*.py-foo/foo.pyc]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-tests/*.py-foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-/c/*.py-/d/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-/c/foo/*.py-/d/foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-tests/**/test*.py-tests/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-tests/**/test*.py-foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-tests/**/doc/test*.py-tests/foo/bar/doc/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[pathlib-tests/**/doc/test*.py-tests/foo/bar/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-*.py-foo.pyc]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-*.py-foo/foo.pyc]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-tests/*.py-foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-/c/*.py-/d/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-/c/foo/*.py-/d/foo/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-tests/**/test*.py-tests/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-tests/**/test*.py-foo/test_foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-tests/**/doc/test*.py-tests/foo/bar/doc/foo.py]', 'testing/test_pathlib.py::TestPort::test_not_matching[py.path-tests/**/doc/test*.py-tests/foo/bar/test_foo.py]', 'testing/test_pathlib.py::test_access_denied_during_cleanup', 'testing/test_pathlib.py::test_long_path_during_cleanup', 'testing/test_pathlib.py::test_get_extended_length_path_str'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for pytest-dev__pytest-7352: resolved: True
+2026-09-12 14:43:39,550 - INFO - Attempting to stop container sweb.eval.pytest-dev__pytest-7352.tv300-gold...
+2026-09-12 14:43:54,757 - INFO - Container sweb.eval.pytest-dev__pytest-7352.tv300-gold stopped successfully.
+2026-09-12 14:43:54,757 - INFO - Attempting to remove container sweb.eval.pytest-dev__pytest-7352.tv300-gold...
+2026-09-12 14:43:54,802 - INFO - Container sweb.eval.pytest-dev__pytest-7352.tv300-gold removed successfully.

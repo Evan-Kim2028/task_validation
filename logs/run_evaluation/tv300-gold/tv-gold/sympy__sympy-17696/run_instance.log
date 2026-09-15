@@ -1,0 +1,141 @@
+2026-09-12 15:10:30,320 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:10:40,071 - INFO - Creating container for sympy__sympy-17696...
+2026-09-12 15:10:40,297 - INFO - Container for sympy__sympy-17696 created: bab25c99c7f1b92eb588eb3c331ee11831413e41080537ea0a78b4db20c86e8f
+2026-09-12 15:10:40,532 - INFO - Container for sympy__sympy-17696 started: bab25c99c7f1b92eb588eb3c331ee11831413e41080537ea0a78b4db20c86e8f
+2026-09-12 15:10:40,533 - INFO - Intermediate patch for sympy__sympy-17696 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-17696/patch.diff, now applying to container...
+2026-09-12 15:10:40,628 - INFO - >>>>> Applied Patch:
+Checking patch sympy/assumptions/refine.py...
+Applied patch sympy/assumptions/refine.py cleanly.
+
+2026-09-12 15:10:40,986 - INFO - Git diff before:
+diff --git a/sympy/assumptions/refine.py b/sympy/assumptions/refine.py
+index 1dc3b5e1dd..efc753ee4d 100644
+--- a/sympy/assumptions/refine.py
++++ b/sympy/assumptions/refine.py
+@@ -291,6 +291,47 @@ def _refine_reim(expr, assumptions):
+     return None
+ 
+ 
++def refine_sign(expr, assumptions):
++    """
++    Handler for sign
++
++    Examples
++    ========
++
++    >>> from sympy.assumptions.refine import refine_sign
++    >>> from sympy import Symbol, Q, sign, im
++    >>> x = Symbol('x', real = True)
++    >>> expr = sign(x)
++    >>> refine_sign(expr, Q.positive(x) & Q.nonzero(x))
++    1
++    >>> refine_sign(expr, Q.negative(x) & Q.nonzero(x))
++    -1
++    >>> refine_sign(expr, Q.zero(x))
++    0
++    >>> y = Symbol('y', imaginary = True)
++    >>> expr = sign(y)
++    >>> refine_sign(expr, Q.positive(im(y)))
++    I
++    >>> refine_sign(expr, Q.negative(im(y)))
++    -I
++    """
++    arg = expr.args[0]
++    if ask(Q.zero(arg), assumptions):
++        return S.Zero
++    if ask(Q.real(arg)):
++        if ask(Q.positive(arg), assumptions):
++            return S.One
++        if ask(Q.negative(arg), assumptions):
++            return S.NegativeOne
++    if ask(Q.imaginary(arg)):
++        arg_re, arg_im = arg.as_real_imag()
++        if ask(Q.positive(arg_im), assumptions):
++            return S.ImaginaryUnit
++        if ask(Q.negative(arg_im), assumptions):
++            return -S.ImaginaryUnit
++    return expr
++
++
+ handlers_dict = {
+     'Abs': refine_abs,
+     'Pow': refine_Pow,
+@@ -302,5 +343,6 @@ def _refine_reim(expr, assumptions):
+     'StrictGreaterThan': refine_Relational,
+     'StrictLessThan': refine_Relational,
+     're': refine_re,
+-    'im': refine_im
++    'im': refine_im,
++    'sign': refine_sign
+ }
+2026-09-12 15:10:40,986 - INFO - Eval script for sympy__sympy-17696 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-17696/eval.sh; copying to container...
+2026-09-12 15:10:53,205 - INFO - Test runtime: 12.17 seconds
+2026-09-12 15:10:53,205 - INFO - Test output for sympy__sympy-17696 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-17696/test_output.txt
+2026-09-12 15:10:53,259 - INFO - Git diff after:
+diff --git a/sympy/assumptions/refine.py b/sympy/assumptions/refine.py
+index 1dc3b5e1dd..efc753ee4d 100644
+--- a/sympy/assumptions/refine.py
++++ b/sympy/assumptions/refine.py
+@@ -291,6 +291,47 @@ def _refine_reim(expr, assumptions):
+     return None
+ 
+ 
++def refine_sign(expr, assumptions):
++    """
++    Handler for sign
++
++    Examples
++    ========
++
++    >>> from sympy.assumptions.refine import refine_sign
++    >>> from sympy import Symbol, Q, sign, im
++    >>> x = Symbol('x', real = True)
++    >>> expr = sign(x)
++    >>> refine_sign(expr, Q.positive(x) & Q.nonzero(x))
++    1
++    >>> refine_sign(expr, Q.negative(x) & Q.nonzero(x))
++    -1
++    >>> refine_sign(expr, Q.zero(x))
++    0
++    >>> y = Symbol('y', imaginary = True)
++    >>> expr = sign(y)
++    >>> refine_sign(expr, Q.positive(im(y)))
++    I
++    >>> refine_sign(expr, Q.negative(im(y)))
++    -I
++    """
++    arg = expr.args[0]
++    if ask(Q.zero(arg), assumptions):
++        return S.Zero
++    if ask(Q.real(arg)):
++        if ask(Q.positive(arg), assumptions):
++            return S.One
++        if ask(Q.negative(arg), assumptions):
++            return S.NegativeOne
++    if ask(Q.imaginary(arg)):
++        arg_re, arg_im = arg.as_real_imag()
++        if ask(Q.positive(arg_im), assumptions):
++            return S.ImaginaryUnit
++        if ask(Q.negative(arg_im), assumptions):
++            return -S.ImaginaryUnit
++    return expr
++
++
+ handlers_dict = {
+     'Abs': refine_abs,
+     'Pow': refine_Pow,
+@@ -302,5 +343,6 @@ def _refine_reim(expr, assumptions):
+     'StrictGreaterThan': refine_Relational,
+     'StrictLessThan': refine_Relational,
+     're': refine_re,
+-    'im': refine_im
++    'im': refine_im,
++    'sign': refine_sign
+ }
+2026-09-12 15:10:53,260 - INFO - Grading answer for sympy__sympy-17696...
+2026-09-12 15:10:53,260 - INFO - report: {'sympy__sympy-17696': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_sign'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_Abs', 'test_pow1', 'test_pow2', 'test_exp', 'test_Relational', 'test_Piecewise', 'test_atan2', 'test_re', 'test_im', 'test_complex', 'test_func_args', 'test_eval_refine'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-17696: resolved: True
+2026-09-12 15:10:53,260 - INFO - Attempting to stop container sweb.eval.sympy__sympy-17696.tv300-gold...
+2026-09-12 15:11:08,480 - INFO - Container sweb.eval.sympy__sympy-17696.tv300-gold stopped successfully.
+2026-09-12 15:11:08,480 - INFO - Attempting to remove container sweb.eval.sympy__sympy-17696.tv300-gold...
+2026-09-12 15:11:08,548 - INFO - Container sweb.eval.sympy__sympy-17696.tv300-gold removed successfully.

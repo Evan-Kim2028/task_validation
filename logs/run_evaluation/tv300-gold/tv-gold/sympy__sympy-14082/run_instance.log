@@ -1,0 +1,63 @@
+2026-09-12 15:04:07,944 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:04:16,030 - INFO - Creating container for sympy__sympy-14082...
+2026-09-12 15:04:16,253 - INFO - Container for sympy__sympy-14082 created: 7ae710e77be4d45ab46287ff8379c205a5f8f68793f0f0657893a52f337c286b
+2026-09-12 15:04:16,442 - INFO - Container for sympy__sympy-14082 started: 7ae710e77be4d45ab46287ff8379c205a5f8f68793f0f0657893a52f337c286b
+2026-09-12 15:04:16,443 - INFO - Intermediate patch for sympy__sympy-14082 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-14082/patch.diff, now applying to container...
+2026-09-12 15:04:16,535 - INFO - >>>>> Applied Patch:
+Checking patch sympy/integrals/rationaltools.py...
+Applied patch sympy/integrals/rationaltools.py cleanly.
+
+2026-09-12 15:04:16,893 - INFO - Git diff before:
+diff --git a/sympy/integrals/rationaltools.py b/sympy/integrals/rationaltools.py
+index 43cd7953de..108733b197 100644
+--- a/sympy/integrals/rationaltools.py
++++ b/sympy/integrals/rationaltools.py
+@@ -358,9 +358,15 @@ def log_to_real(h, q, x, t):
+         if len(R_v) != C.count_roots():
+             return None
+ 
++        R_v_paired = [] # take one from each pair of conjugate roots
+         for r_v in R_v:
+-            if not r_v.is_positive:
+-                continue
++            if r_v not in R_v_paired and -r_v not in R_v_paired:
++                if r_v.is_negative or r_v.could_extract_minus_sign():
++                    R_v_paired.append(-r_v)
++                elif not r_v.is_zero:
++                    R_v_paired.append(r_v)
++
++        for r_v in R_v_paired:
+ 
+             D = d.subs({u: r_u, v: r_v})
+2026-09-12 15:04:16,894 - INFO - Eval script for sympy__sympy-14082 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-14082/eval.sh; copying to container...
+2026-09-12 15:04:31,570 - INFO - Test runtime: 14.63 seconds
+2026-09-12 15:04:31,570 - INFO - Test output for sympy__sympy-14082 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-14082/test_output.txt
+2026-09-12 15:04:31,626 - INFO - Git diff after:
+diff --git a/sympy/integrals/rationaltools.py b/sympy/integrals/rationaltools.py
+index 43cd7953de..108733b197 100644
+--- a/sympy/integrals/rationaltools.py
++++ b/sympy/integrals/rationaltools.py
+@@ -358,9 +358,15 @@ def log_to_real(h, q, x, t):
+         if len(R_v) != C.count_roots():
+             return None
+ 
++        R_v_paired = [] # take one from each pair of conjugate roots
+         for r_v in R_v:
+-            if not r_v.is_positive:
+-                continue
++            if r_v not in R_v_paired and -r_v not in R_v_paired:
++                if r_v.is_negative or r_v.could_extract_minus_sign():
++                    R_v_paired.append(-r_v)
++                elif not r_v.is_zero:
++                    R_v_paired.append(r_v)
++
++        for r_v in R_v_paired:
+ 
+             D = d.subs({u: r_u, v: r_v})
+2026-09-12 15:04:31,626 - INFO - Grading answer for sympy__sympy-14082...
+2026-09-12 15:04:31,627 - INFO - report: {'sympy__sympy-14082': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_issues_8246_12050_13501_14080', 'test_issue_6308', 'test_issue_5907'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_ratint_logpart', 'test_issue_5414', 'test_issue_5249', 'test_issue_5817', 'test_issue_5981', 'test_issue_10488'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-14082: resolved: True
+2026-09-12 15:04:31,627 - INFO - Attempting to stop container sweb.eval.sympy__sympy-14082.tv300-gold...
+2026-09-12 15:04:46,878 - INFO - Container sweb.eval.sympy__sympy-14082.tv300-gold stopped successfully.
+2026-09-12 15:04:46,879 - INFO - Attempting to remove container sweb.eval.sympy__sympy-14082.tv300-gold...
+2026-09-12 15:04:46,942 - INFO - Container sweb.eval.sympy__sympy-14082.tv300-gold removed successfully.

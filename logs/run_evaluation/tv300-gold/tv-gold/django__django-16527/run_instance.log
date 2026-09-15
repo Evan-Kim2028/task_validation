@@ -1,0 +1,47 @@
+2026-09-12 13:30:24,281 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:30:49,254 - INFO - Creating container for django__django-16527...
+2026-09-12 13:30:50,106 - INFO - Container for django__django-16527 created: bcd9fdfc4f1fc76495dc0aaf5a72b606ab2423aea2cf2434d8d4d76897440ba7
+2026-09-12 13:30:50,277 - INFO - Container for django__django-16527 started: bcd9fdfc4f1fc76495dc0aaf5a72b606ab2423aea2cf2434d8d4d76897440ba7
+2026-09-12 13:30:50,277 - INFO - Intermediate patch for django__django-16527 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-16527/patch.diff, now applying to container...
+2026-09-12 13:30:50,361 - INFO - >>>>> Applied Patch:
+Checking patch django/contrib/admin/templatetags/admin_modify.py...
+Applied patch django/contrib/admin/templatetags/admin_modify.py cleanly.
+
+2026-09-12 13:30:51,252 - INFO - Git diff before:
+diff --git a/django/contrib/admin/templatetags/admin_modify.py b/django/contrib/admin/templatetags/admin_modify.py
+index 9df4b7aadb..0e3046ae5a 100755
+--- a/django/contrib/admin/templatetags/admin_modify.py
++++ b/django/contrib/admin/templatetags/admin_modify.py
+@@ -100,7 +100,7 @@ def submit_row(context):
+                 and context.get("show_delete", True)
+             ),
+             "show_save_as_new": not is_popup
+-            and has_change_permission
++            and has_add_permission
+             and change
+             and save_as,
+             "show_save_and_add_another": can_save_and_add_another,
+2026-09-12 13:30:51,252 - INFO - Eval script for django__django-16527 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-16527/eval.sh; copying to container...
+2026-09-12 13:31:08,906 - INFO - Test runtime: 17.60 seconds
+2026-09-12 13:31:08,909 - INFO - Test output for django__django-16527 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-16527/test_output.txt
+2026-09-12 13:31:08,972 - INFO - Git diff after:
+diff --git a/django/contrib/admin/templatetags/admin_modify.py b/django/contrib/admin/templatetags/admin_modify.py
+index 9df4b7aadb..0e3046ae5a 100755
+--- a/django/contrib/admin/templatetags/admin_modify.py
++++ b/django/contrib/admin/templatetags/admin_modify.py
+@@ -100,7 +100,7 @@ def submit_row(context):
+                 and context.get("show_delete", True)
+             ),
+             "show_save_as_new": not is_popup
+-            and has_change_permission
++            and has_add_permission
+             and change
+             and save_as,
+             "show_save_and_add_another": can_save_and_add_another,
+2026-09-12 13:31:08,972 - INFO - Grading answer for django__django-16527...
+2026-09-12 13:31:08,978 - INFO - report: {'django__django-16527': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_submit_row_save_as_new_add_permission_required (admin_views.test_templatetags.AdminTemplateTagsTest.test_submit_row_save_as_new_add_permission_required)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_choice_links (admin_views.test_templatetags.DateHierarchyTests.test_choice_links)', 'test_choice_links_datetime (admin_views.test_templatetags.DateHierarchyTests.test_choice_links_datetime)', 'admin_modify template tags follow the standard search pattern', 'admin_list template tags follow the standard search pattern', 'test_override_show_save_and_add_another (admin_views.test_templatetags.AdminTemplateTagsTest.test_override_show_save_and_add_another)', 'submit_row template tag should pass whole context.'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-16527: resolved: True
+2026-09-12 13:31:08,978 - INFO - Attempting to stop container sweb.eval.django__django-16527.tv300-gold...
+2026-09-12 13:31:24,249 - INFO - Container sweb.eval.django__django-16527.tv300-gold stopped successfully.
+2026-09-12 13:31:24,249 - INFO - Attempting to remove container sweb.eval.django__django-16527.tv300-gold...
+2026-09-12 13:31:24,312 - INFO - Container sweb.eval.django__django-16527.tv300-gold removed successfully.

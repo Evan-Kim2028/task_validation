@@ -1,0 +1,55 @@
+2026-09-12 15:12:45,744 - INFO - Image not found locally, attempting to pull...
+2026-09-12 15:12:51,567 - INFO - Creating container for sympy__sympy-22005...
+2026-09-12 15:12:51,725 - INFO - Container for sympy__sympy-22005 created: 11a55f9a82d4499e6044196f3eef2c3fe78d11c43b807138b7dd69096d3f8b26
+2026-09-12 15:12:51,921 - INFO - Container for sympy__sympy-22005 started: 11a55f9a82d4499e6044196f3eef2c3fe78d11c43b807138b7dd69096d3f8b26
+2026-09-12 15:12:51,922 - INFO - Intermediate patch for sympy__sympy-22005 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-22005/patch.diff, now applying to container...
+2026-09-12 15:12:52,025 - INFO - >>>>> Applied Patch:
+Checking patch sympy/solvers/polysys.py...
+Applied patch sympy/solvers/polysys.py cleanly.
+
+2026-09-12 15:12:52,474 - INFO - Git diff before:
+diff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py
+index b9809fd4e9..249b43536c 100755
+--- a/sympy/solvers/polysys.py
++++ b/sympy/solvers/polysys.py
+@@ -240,6 +240,12 @@ def _solve_reduced_system(system, gens, entry=False):
+ 
+         univariate = list(filter(_is_univariate, basis))
+ 
++        if len(basis) < len(gens):
++            raise NotImplementedError(filldedent('''
++                only zero-dimensional systems supported
++                (finite number of solutions)
++                '''))
++
+         if len(univariate) == 1:
+             f = univariate.pop()
+         else:
+2026-09-12 15:12:52,474 - INFO - Eval script for sympy__sympy-22005 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-22005/eval.sh; copying to container...
+2026-09-12 15:13:05,612 - INFO - Test runtime: 13.08 seconds
+2026-09-12 15:13:05,612 - INFO - Test output for sympy__sympy-22005 written to logs/run_evaluation/tv300-gold/tv-gold/sympy__sympy-22005/test_output.txt
+2026-09-12 15:13:05,676 - INFO - Git diff after:
+diff --git a/sympy/solvers/polysys.py b/sympy/solvers/polysys.py
+index b9809fd4e9..249b43536c 100755
+--- a/sympy/solvers/polysys.py
++++ b/sympy/solvers/polysys.py
+@@ -240,6 +240,12 @@ def _solve_reduced_system(system, gens, entry=False):
+ 
+         univariate = list(filter(_is_univariate, basis))
+ 
++        if len(basis) < len(gens):
++            raise NotImplementedError(filldedent('''
++                only zero-dimensional systems supported
++                (finite number of solutions)
++                '''))
++
+         if len(univariate) == 1:
+             f = univariate.pop()
+         else:
+2026-09-12 15:13:05,676 - INFO - Grading answer for sympy__sympy-22005...
+2026-09-12 15:13:05,678 - INFO - report: {'sympy__sympy-22005': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_solve_poly_system'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_solve_biquadratic', 'test_solve_triangulated'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-22005: resolved: True
+2026-09-12 15:13:05,678 - INFO - Attempting to stop container sweb.eval.sympy__sympy-22005.tv300-gold...
+2026-09-12 15:13:20,943 - INFO - Container sweb.eval.sympy__sympy-22005.tv300-gold stopped successfully.
+2026-09-12 15:13:20,943 - INFO - Attempting to remove container sweb.eval.sympy__sympy-22005.tv300-gold...
+2026-09-12 15:13:21,004 - INFO - Container sweb.eval.sympy__sympy-22005.tv300-gold removed successfully.

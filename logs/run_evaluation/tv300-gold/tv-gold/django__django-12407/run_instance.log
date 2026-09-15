@@ -1,0 +1,69 @@
+2026-09-12 13:10:03,845 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:10:18,220 - INFO - Creating container for django__django-12407...
+2026-09-12 13:10:18,921 - INFO - Container for django__django-12407 created: e0545d2b701755b2bc9324d244b291814adf4fe8eeb0eff86cc422b34c1ebc85
+2026-09-12 13:10:19,279 - INFO - Container for django__django-12407 started: e0545d2b701755b2bc9324d244b291814adf4fe8eeb0eff86cc422b34c1ebc85
+2026-09-12 13:10:19,280 - INFO - Intermediate patch for django__django-12407 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12407/patch.diff, now applying to container...
+2026-09-12 13:10:19,466 - INFO - >>>>> Applied Patch:
+Checking patch django/template/loader_tags.py...
+Applied patch django/template/loader_tags.py cleanly.
+
+2026-09-12 13:10:20,496 - INFO - Git diff before:
+diff --git a/django/template/loader_tags.py b/django/template/loader_tags.py
+index 8fa3a14087..b96214cad1 100644
+--- a/django/template/loader_tags.py
++++ b/django/template/loader_tags.py
+@@ -168,12 +168,16 @@ class IncludeNode(Node):
+         template = self.template.resolve(context)
+         # Does this quack like a Template?
+         if not callable(getattr(template, 'render', None)):
+-            # If not, try the cache and get_template().
+-            template_name = template
++            # If not, try the cache and select_template().
++            template_name = template or ()
++            if isinstance(template_name, str):
++                template_name = (template_name,)
++            else:
++                template_name = tuple(template_name)
+             cache = context.render_context.dicts[0].setdefault(self, {})
+             template = cache.get(template_name)
+             if template is None:
+-                template = context.template.engine.get_template(template_name)
++                template = context.template.engine.select_template(template_name)
+                 cache[template_name] = template
+         # Use the base.Template of a backends.django.Template.
+         elif hasattr(template, 'template'):
+2026-09-12 13:10:20,496 - INFO - Eval script for django__django-12407 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12407/eval.sh; copying to container...
+2026-09-12 13:10:32,357 - INFO - Test runtime: 11.81 seconds
+2026-09-12 13:10:32,358 - INFO - Test output for django__django-12407 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12407/test_output.txt
+2026-09-12 13:10:32,410 - INFO - Git diff after:
+diff --git a/django/template/loader_tags.py b/django/template/loader_tags.py
+index 8fa3a14087..b96214cad1 100644
+--- a/django/template/loader_tags.py
++++ b/django/template/loader_tags.py
+@@ -168,12 +168,16 @@ class IncludeNode(Node):
+         template = self.template.resolve(context)
+         # Does this quack like a Template?
+         if not callable(getattr(template, 'render', None)):
+-            # If not, try the cache and get_template().
+-            template_name = template
++            # If not, try the cache and select_template().
++            template_name = template or ()
++            if isinstance(template_name, str):
++                template_name = (template_name,)
++            else:
++                template_name = tuple(template_name)
+             cache = context.render_context.dicts[0].setdefault(self, {})
+             template = cache.get(template_name)
+             if template is None:
+-                template = context.template.engine.get_template(template_name)
++                template = context.template.engine.select_template(template_name)
+                 cache[template_name] = template
+         # Use the base.Template of a backends.django.Template.
+         elif hasattr(template, 'template'):
+2026-09-12 13:10:32,410 - INFO - Grading answer for django__django-12407...
+2026-09-12 13:10:32,410 - INFO - report: {'django__django-12407': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_include_template_iterable (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_template_none (template_tests.syntax_tests.test_include.IncludeTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_include01 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include02 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include03 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include04 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include06 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include07 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include08 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include09 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include10 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include11 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include12 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include13 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include14 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_empty (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error01 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error02 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error03 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error04 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error05 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error06 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error07 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error08 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error09 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_error10 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_fail1 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_include_fail2 (template_tests.syntax_tests.test_include.IncludeTagTests)', 'test_extends_include_missing_baseloader (template_tests.syntax_tests.test_include.IncludeTests)', 'test_extends_include_missing_cachedloader (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_cache (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_from_loader_get_template (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_immediate_missing (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_missing_template (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_recursive (template_tests.syntax_tests.test_include.IncludeTests)', 'test_include_template_argument (template_tests.syntax_tests.test_include.IncludeTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12407: resolved: True
+2026-09-12 13:10:32,411 - INFO - Attempting to stop container sweb.eval.django__django-12407.tv300-gold...
+2026-09-12 13:10:47,665 - INFO - Container sweb.eval.django__django-12407.tv300-gold stopped successfully.
+2026-09-12 13:10:47,666 - INFO - Attempting to remove container sweb.eval.django__django-12407.tv300-gold...
+2026-09-12 13:10:47,741 - INFO - Container sweb.eval.django__django-12407.tv300-gold removed successfully.

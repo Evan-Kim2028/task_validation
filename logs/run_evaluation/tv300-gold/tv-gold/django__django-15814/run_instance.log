@@ -1,0 +1,45 @@
+2026-09-12 13:29:07,528 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:29:39,717 - INFO - Creating container for django__django-15814...
+2026-09-12 13:29:40,213 - INFO - Container for django__django-15814 created: e1b2888802e7cf964c0ca03492e962f34f6224fe34d3ce5ab667bc8381f095f1
+2026-09-12 13:29:40,416 - INFO - Container for django__django-15814 started: e1b2888802e7cf964c0ca03492e962f34f6224fe34d3ce5ab667bc8381f095f1
+2026-09-12 13:29:40,416 - INFO - Intermediate patch for django__django-15814 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-15814/patch.diff, now applying to container...
+2026-09-12 13:29:40,519 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/sql/query.py...
+Applied patch django/db/models/sql/query.py cleanly.
+
+2026-09-12 13:29:41,288 - INFO - Git diff before:
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 33cc636b22..cf7566d771 100755
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -748,6 +748,7 @@ class Query(BaseExpression):
+                     cur_model = source.related_model
+                 else:
+                     cur_model = source.remote_field.model
++                cur_model = cur_model._meta.concrete_model
+                 opts = cur_model._meta
+                 # Even if we're "just passing through" this model, we must add
+                 # both the current model's pk and the related reference field
+2026-09-12 13:29:41,288 - INFO - Eval script for django__django-15814 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-15814/eval.sh; copying to container...
+2026-09-12 13:29:59,399 - INFO - Test runtime: 18.06 seconds
+2026-09-12 13:29:59,401 - INFO - Test output for django__django-15814 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-15814/test_output.txt
+2026-09-12 13:29:59,480 - INFO - Git diff after:
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 33cc636b22..cf7566d771 100755
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -748,6 +748,7 @@ class Query(BaseExpression):
+                     cur_model = source.related_model
+                 else:
+                     cur_model = source.remote_field.model
++                cur_model = cur_model._meta.concrete_model
+                 opts = cur_model._meta
+                 # Even if we're "just passing through" this model, we must add
+                 # both the current model's pk and the related reference field
+2026-09-12 13:29:59,480 - INFO - Grading answer for django__django-15814...
+2026-09-12 13:29:59,484 - INFO - report: {'django__django-15814': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_select_related_only (proxy_models.tests.ProxyModelTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_abstract_base_with_model_fields (proxy_models.tests.ProxyModelTests)', 'Creating a Person makes them accessible through the MyPerson proxy.', 'A new MyPerson also shows up as a standard Person.', 'test_concrete_model (proxy_models.tests.ProxyModelTests)', 'test_content_type (proxy_models.tests.ProxyModelTests)', 'Correct type when querying a proxy of proxy', 'test_eq (proxy_models.tests.ProxyModelTests)', 'test_filter_proxy_relation_reverse (proxy_models.tests.ProxyModelTests)', "The StatusPerson models should have its own table (it's using ORM-level", 'test_myperson_manager (proxy_models.tests.ProxyModelTests)', 'test_new_fields (proxy_models.tests.ProxyModelTests)', 'test_no_base_classes (proxy_models.tests.ProxyModelTests)', 'Person is not proxied by StatusPerson subclass.', 'test_otherperson_manager (proxy_models.tests.ProxyModelTests)', 'test_permissions_created (proxy_models.tests.ProxyModelTests)', 'test_proxy_bug (proxy_models.tests.ProxyModelTests)', 'Proxy objects can be deleted', 'test_proxy_for_model (proxy_models.tests.ProxyModelTests)', "Proxy models are included in the ancestors for a model's DoesNotExist", 'test_proxy_load_from_fixture (proxy_models.tests.ProxyModelTests)', 'Test save signals for proxy models', 'test_proxy_update (proxy_models.tests.ProxyModelTests)', 'The MyPerson model should be generating the same database queries as', 'We can still use `select_related()` to include related models in our', 'test_swappable (proxy_models.tests.ProxyModelTests)', 'test_too_many_concrete_classes (proxy_models.tests.ProxyModelTests)', 'test_user_proxy_models (proxy_models.tests.ProxyModelTests)', 'Test if admin gives warning about cascade deleting models referenced', 'Test if the admin delete page shows the correct string representation'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-15814: resolved: True
+2026-09-12 13:29:59,485 - INFO - Attempting to stop container sweb.eval.django__django-15814.tv300-gold...
+2026-09-12 13:30:14,763 - INFO - Container sweb.eval.django__django-15814.tv300-gold stopped successfully.
+2026-09-12 13:30:14,763 - INFO - Attempting to remove container sweb.eval.django__django-15814.tv300-gold...
+2026-09-12 13:30:14,819 - INFO - Container sweb.eval.django__django-15814.tv300-gold removed successfully.

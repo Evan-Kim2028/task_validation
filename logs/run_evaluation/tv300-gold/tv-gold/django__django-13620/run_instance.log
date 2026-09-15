@@ -1,0 +1,163 @@
+2026-09-12 13:17:13,097 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:18:00,681 - INFO - Creating container for django__django-13620...
+2026-09-12 13:18:00,923 - INFO - Container for django__django-13620 created: f07d47f963975ba9645adc20a71500a2e1f8720a481b2121d07865c7a40b7d6b
+2026-09-12 13:18:01,229 - INFO - Container for django__django-13620 started: f07d47f963975ba9645adc20a71500a2e1f8720a481b2121d07865c7a40b7d6b
+2026-09-12 13:18:01,231 - INFO - Intermediate patch for django__django-13620 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13620/patch.diff, now applying to container...
+2026-09-12 13:18:01,320 - INFO - >>>>> Applied Patch:
+Checking patch django/core/management/__init__.py...
+Applied patch django/core/management/__init__.py cleanly.
+
+2026-09-12 13:18:02,324 - INFO - Git diff before:
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index aff9be4e85..1ba093e51f 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -120,7 +120,12 @@ def call_command(command_name, *args, **options):
+         for s_opt in parser._actions if s_opt.option_strings
+     }
+     arg_options = {opt_mapping.get(key, key): value for key, value in options.items()}
+-    parse_args = [str(a) for a in args]
++    parse_args = []
++    for arg in args:
++        if isinstance(arg, (list, tuple)):
++            parse_args += map(str, arg)
++        else:
++            parse_args.append(str(arg))
+ 
+     def get_actions(parser):
+         # Parser actions and actions from sub-parser choices.
+@@ -139,15 +144,19 @@ def call_command(command_name, *args, **options):
+     }
+     # Any required arguments which are passed in via **options must be passed
+     # to parse_args().
+-    parse_args += [
+-        min(opt.option_strings)
+-        if isinstance(opt, (_AppendConstAction, _CountAction, _StoreConstAction))
+-        else '{}={}'.format(min(opt.option_strings), arg_options[opt.dest])
+-        for opt in parser_actions if (
++    for opt in parser_actions:
++        if (
+             opt.dest in options and
+             (opt.required or opt in mutually_exclusive_required_options)
+-        )
+-    ]
++        ):
++            parse_args.append(min(opt.option_strings))
++            if isinstance(opt, (_AppendConstAction, _CountAction, _StoreConstAction)):
++                continue
++            value = arg_options[opt.dest]
++            if isinstance(value, (list, tuple)):
++                parse_args += map(str, value)
++            else:
++                parse_args.append(str(value))
+     defaults = parser.parse_args(args=parse_args)
+     defaults = dict(defaults._get_kwargs(), **arg_options)
+     # Raise an error if any unknown options were passed.
+2026-09-12 13:18:02,325 - INFO - Eval script for django__django-13620 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13620/eval.sh; copying to container...
+2026-09-12 13:18:19,961 - INFO - Test runtime: 17.58 seconds
+2026-09-12 13:18:19,978 - INFO - Test output for django__django-13620 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13620/test_output.txt
+2026-09-12 13:18:20,029 - INFO - Git diff after:
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index aff9be4e85..1ba093e51f 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -120,7 +120,12 @@ def call_command(command_name, *args, **options):
+         for s_opt in parser._actions if s_opt.option_strings
+     }
+     arg_options = {opt_mapping.get(key, key): value for key, value in options.items()}
+-    parse_args = [str(a) for a in args]
++    parse_args = []
++    for arg in args:
++        if isinstance(arg, (list, tuple)):
++            parse_args += map(str, arg)
++        else:
++            parse_args.append(str(arg))
+ 
+     def get_actions(parser):
+         # Parser actions and actions from sub-parser choices.
+@@ -139,15 +144,19 @@ def call_command(command_name, *args, **options):
+     }
+     # Any required arguments which are passed in via **options must be passed
+     # to parse_args().
+-    parse_args += [
+-        min(opt.option_strings)
+-        if isinstance(opt, (_AppendConstAction, _CountAction, _StoreConstAction))
+-        else '{}={}'.format(min(opt.option_strings), arg_options[opt.dest])
+-        for opt in parser_actions if (
++    for opt in parser_actions:
++        if (
+             opt.dest in options and
+             (opt.required or opt in mutually_exclusive_required_options)
+-        )
+-    ]
++        ):
++            parse_args.append(min(opt.option_strings))
++            if isinstance(opt, (_AppendConstAction, _CountAction, _StoreConstAction)):
++                continue
++            value = arg_options[opt.dest]
++            if isinstance(value, (list, tuple)):
++                parse_args += map(str, value)
++            else:
++                parse_args.append(str(value))
+     defaults = parser.parse_args(args=parse_args)
+     defaults = dict(defaults._get_kwargs(), **arg_options)
+     # Raise an error if any unknown options were passed.
+diff --git a/tests/user_commands/management/commands/mutually_exclusive_required.py b/tests/user_commands/management/commands/mutually_exclusive_required.py
+index 3fbf514c4d..8e48f12658 100644
+--- a/tests/user_commands/management/commands/mutually_exclusive_required.py
++++ b/tests/user_commands/management/commands/mutually_exclusive_required.py
+@@ -7,6 +7,7 @@ class Command(BaseCommand):
+         group = parser.add_mutually_exclusive_group(required=True)
+         group.add_argument('--foo-id', type=int, nargs='?', default=None)
+         group.add_argument('--foo-name', type=str, nargs='?', default=None)
++        group.add_argument('--foo-list', type=int, nargs='+')
+         group.add_argument('--append_const', action='append_const', const=42)
+         group.add_argument('--const', action='store_const', const=31)
+         group.add_argument('--count', action='count')
+diff --git a/tests/user_commands/tests.py b/tests/user_commands/tests.py
+index eb2d38fbfb..9262e2717a 100644
+--- a/tests/user_commands/tests.py
++++ b/tests/user_commands/tests.py
+@@ -244,8 +244,9 @@ class CommandTests(SimpleTestCase):
+         management.call_command('mutually_exclusive_required', foo_name='foo', stdout=out)
+         self.assertIn('foo_name', out.getvalue())
+         msg = (
+-            'Error: one of the arguments --foo-id --foo-name --append_const '
+-            '--const --count --flag_false --flag_true is required'
++            'Error: one of the arguments --foo-id --foo-name --foo-list '
++            '--append_const --const --count --flag_false --flag_true is '
++            'required'
+         )
+         with self.assertRaisesMessage(CommandError, msg):
+             management.call_command('mutually_exclusive_required', stdout=out)
+@@ -275,6 +276,22 @@ class CommandTests(SimpleTestCase):
+                 )
+                 self.assertIn(expected_output, out.getvalue())
+ 
++    def test_required_list_option(self):
++        tests = [
++            (('--foo-list', [1, 2]), {}),
++            ((), {'foo_list': [1, 2]}),
++        ]
++        for command in ['mutually_exclusive_required', 'required_list_option']:
++            for args, kwargs in tests:
++                with self.subTest(command=command, args=args, kwargs=kwargs):
++                    out = StringIO()
++                    management.call_command(
++                        command,
++                        *args,
++                        **{**kwargs, 'stdout': out},
++                    )
++                    self.assertIn('foo_list=[1, 2]', out.getvalue())
++
+     def test_required_const_options(self):
+         args = {
+             'append_const': [42],
+2026-09-12 13:18:20,029 - INFO - Git diff changed after running eval script
+2026-09-12 13:18:20,029 - INFO - Grading answer for django__django-13620...
+2026-09-12 13:18:20,030 - INFO - report: {'django__django-13620': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_required_list_option (user_commands.tests.CommandTests)', 'test_requires_system_checks_empty (user_commands.tests.CommandTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_requires_system_checks_false (user_commands.tests.DeprecationTests)', 'test_requires_system_checks_true (user_commands.tests.DeprecationTests)', 'test_requires_system_checks_warning (user_commands.tests.DeprecationTests)', 'test_get_random_secret_key (user_commands.tests.UtilsTests)', 'test_is_ignored_path_false (user_commands.tests.UtilsTests)', 'test_is_ignored_path_true (user_commands.tests.UtilsTests)', 'test_no_existent_external_program (user_commands.tests.UtilsTests)', 'test_normalize_path_patterns_truncates_wildcard_base (user_commands.tests.UtilsTests)', 'test_call_command_no_checks (user_commands.tests.CommandTests)', 'test_call_command_option_parsing (user_commands.tests.CommandTests)', 'test_call_command_option_parsing_non_string_arg (user_commands.tests.CommandTests)', 'test_call_command_unrecognized_option (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_mixed_options (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_options (user_commands.tests.CommandTests)', 'test_calling_a_command_with_no_app_labels_and_parameters_should_raise_a_command_error (user_commands.tests.CommandTests)', 'test_calling_a_command_with_only_empty_parameter_should_ends_gracefully (user_commands.tests.CommandTests)', 'test_calling_command_with_app_labels_and_parameters_should_be_ok (user_commands.tests.CommandTests)', 'test_calling_command_with_parameters_and_app_labels_at_the_end_should_be_ok (user_commands.tests.CommandTests)', 'test_check_migrations (user_commands.tests.CommandTests)', 'test_command (user_commands.tests.CommandTests)', 'test_command_add_arguments_after_common_arguments (user_commands.tests.CommandTests)', 'test_command_style (user_commands.tests.CommandTests)', 'BaseCommand.create_parser() passes kwargs to CommandParser.', 'test_discover_commands_in_eggs (user_commands.tests.CommandTests)', 'An unknown command raises CommandError', 'test_find_command_without_PATH (user_commands.tests.CommandTests)', 'test_language_preserved (user_commands.tests.CommandTests)', 'test_mutually_exclusive_group_required_const_options (user_commands.tests.CommandTests)', 'test_mutually_exclusive_group_required_options (user_commands.tests.CommandTests)', 'test_no_translations_deactivate_translations (user_commands.tests.CommandTests)', 'test_output_transaction (user_commands.tests.CommandTests)', 'test_outputwrapper_flush (user_commands.tests.CommandTests)', 'test_required_const_options (user_commands.tests.CommandTests)', 'test_requires_system_checks_invalid (user_commands.tests.CommandTests)', 'test_requires_system_checks_specific (user_commands.tests.CommandTests)', 'test_subparser (user_commands.tests.CommandTests)', 'test_subparser_dest_args (user_commands.tests.CommandTests)', 'test_subparser_dest_required_args (user_commands.tests.CommandTests)', 'test_subparser_invalid_option (user_commands.tests.CommandTests)', 'Exception raised in a command should raise CommandError with', 'test_disallowed_abbreviated_options (user_commands.tests.CommandRunTests)', 'test_script_prefix_set_in_commands (user_commands.tests.CommandRunTests)', 'test_skip_checks (user_commands.tests.CommandRunTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13620: resolved: True
+2026-09-12 13:18:20,030 - INFO - Attempting to stop container sweb.eval.django__django-13620.tv300-gold...
+2026-09-12 13:18:35,309 - INFO - Container sweb.eval.django__django-13620.tv300-gold stopped successfully.
+2026-09-12 13:18:35,309 - INFO - Attempting to remove container sweb.eval.django__django-13620.tv300-gold...
+2026-09-12 13:18:35,362 - INFO - Container sweb.eval.django__django-13620.tv300-gold removed successfully.

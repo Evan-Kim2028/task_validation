@@ -1,0 +1,69 @@
+2026-09-12 13:22:42,152 - INFO - Creating container for django__django-13620...
+2026-09-12 13:22:42,378 - INFO - Container for django__django-13620 created: 1c0536cc319267e38531151577dedf87ff28ae2353a45be0d156824a118f87d9
+2026-09-12 13:22:42,765 - INFO - Container for django__django-13620 started: 1c0536cc319267e38531151577dedf87ff28ae2353a45be0d156824a118f87d9
+2026-09-12 13:22:42,765 - INFO - Skipping model patch for django__django-13620 (--no-patch mode)
+2026-09-12 13:22:43,838 - INFO - Git diff before:
+
+2026-09-12 13:22:43,838 - INFO - Eval script for django__django-13620 written to logs/run_evaluation/tv300-empty/tv-empty/django__django-13620/eval.sh; copying to container...
+2026-09-12 13:22:55,189 - INFO - Test runtime: 11.30 seconds
+2026-09-12 13:22:55,189 - INFO - Test output for django__django-13620 written to logs/run_evaluation/tv300-empty/tv-empty/django__django-13620/test_output.txt
+2026-09-12 13:22:55,236 - INFO - Git diff after:
+diff --git a/tests/user_commands/management/commands/mutually_exclusive_required.py b/tests/user_commands/management/commands/mutually_exclusive_required.py
+index 3fbf514c4d..8e48f12658 100644
+--- a/tests/user_commands/management/commands/mutually_exclusive_required.py
++++ b/tests/user_commands/management/commands/mutually_exclusive_required.py
+@@ -7,6 +7,7 @@ class Command(BaseCommand):
+         group = parser.add_mutually_exclusive_group(required=True)
+         group.add_argument('--foo-id', type=int, nargs='?', default=None)
+         group.add_argument('--foo-name', type=str, nargs='?', default=None)
++        group.add_argument('--foo-list', type=int, nargs='+')
+         group.add_argument('--append_const', action='append_const', const=42)
+         group.add_argument('--const', action='store_const', const=31)
+         group.add_argument('--count', action='count')
+diff --git a/tests/user_commands/tests.py b/tests/user_commands/tests.py
+index eb2d38fbfb..9262e2717a 100644
+--- a/tests/user_commands/tests.py
++++ b/tests/user_commands/tests.py
+@@ -244,8 +244,9 @@ class CommandTests(SimpleTestCase):
+         management.call_command('mutually_exclusive_required', foo_name='foo', stdout=out)
+         self.assertIn('foo_name', out.getvalue())
+         msg = (
+-            'Error: one of the arguments --foo-id --foo-name --append_const '
+-            '--const --count --flag_false --flag_true is required'
++            'Error: one of the arguments --foo-id --foo-name --foo-list '
++            '--append_const --const --count --flag_false --flag_true is '
++            'required'
+         )
+         with self.assertRaisesMessage(CommandError, msg):
+             management.call_command('mutually_exclusive_required', stdout=out)
+@@ -275,6 +276,22 @@ class CommandTests(SimpleTestCase):
+                 )
+                 self.assertIn(expected_output, out.getvalue())
+ 
++    def test_required_list_option(self):
++        tests = [
++            (('--foo-list', [1, 2]), {}),
++            ((), {'foo_list': [1, 2]}),
++        ]
++        for command in ['mutually_exclusive_required', 'required_list_option']:
++            for args, kwargs in tests:
++                with self.subTest(command=command, args=args, kwargs=kwargs):
++                    out = StringIO()
++                    management.call_command(
++                        command,
++                        *args,
++                        **{**kwargs, 'stdout': out},
++                    )
++                    self.assertIn('foo_list=[1, 2]', out.getvalue())
++
+     def test_required_const_options(self):
+         args = {
+             'append_const': [42],
+2026-09-12 13:22:55,236 - INFO - Git diff changed after running eval script
+2026-09-12 13:22:55,236 - INFO - Grading answer for django__django-13620...
+2026-09-12 13:22:55,237 - INFO - report: {'django__django-13620': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_required_list_option (user_commands.tests.CommandTests)', 'test_requires_system_checks_empty (user_commands.tests.CommandTests)']}, 'PASS_TO_PASS': {'success': ['test_requires_system_checks_false (user_commands.tests.DeprecationTests)', 'test_requires_system_checks_true (user_commands.tests.DeprecationTests)', 'test_requires_system_checks_warning (user_commands.tests.DeprecationTests)', 'test_get_random_secret_key (user_commands.tests.UtilsTests)', 'test_is_ignored_path_false (user_commands.tests.UtilsTests)', 'test_is_ignored_path_true (user_commands.tests.UtilsTests)', 'test_no_existent_external_program (user_commands.tests.UtilsTests)', 'test_normalize_path_patterns_truncates_wildcard_base (user_commands.tests.UtilsTests)', 'test_call_command_no_checks (user_commands.tests.CommandTests)', 'test_call_command_option_parsing (user_commands.tests.CommandTests)', 'test_call_command_option_parsing_non_string_arg (user_commands.tests.CommandTests)', 'test_call_command_unrecognized_option (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_mixed_options (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_options (user_commands.tests.CommandTests)', 'test_calling_a_command_with_no_app_labels_and_parameters_should_raise_a_command_error (user_commands.tests.CommandTests)', 'test_calling_a_command_with_only_empty_parameter_should_ends_gracefully (user_commands.tests.CommandTests)', 'test_calling_command_with_app_labels_and_parameters_should_be_ok (user_commands.tests.CommandTests)', 'test_calling_command_with_parameters_and_app_labels_at_the_end_should_be_ok (user_commands.tests.CommandTests)', 'test_check_migrations (user_commands.tests.CommandTests)', 'test_command (user_commands.tests.CommandTests)', 'test_command_add_arguments_after_common_arguments (user_commands.tests.CommandTests)', 'test_command_style (user_commands.tests.CommandTests)', 'BaseCommand.create_parser() passes kwargs to CommandParser.', 'test_discover_commands_in_eggs (user_commands.tests.CommandTests)', 'An unknown command raises CommandError', 'test_find_command_without_PATH (user_commands.tests.CommandTests)', 'test_language_preserved (user_commands.tests.CommandTests)', 'test_mutually_exclusive_group_required_const_options (user_commands.tests.CommandTests)', 'test_mutually_exclusive_group_required_options (user_commands.tests.CommandTests)', 'test_no_translations_deactivate_translations (user_commands.tests.CommandTests)', 'test_output_transaction (user_commands.tests.CommandTests)', 'test_outputwrapper_flush (user_commands.tests.CommandTests)', 'test_required_const_options (user_commands.tests.CommandTests)', 'test_requires_system_checks_invalid (user_commands.tests.CommandTests)', 'test_requires_system_checks_specific (user_commands.tests.CommandTests)', 'test_subparser (user_commands.tests.CommandTests)', 'test_subparser_dest_args (user_commands.tests.CommandTests)', 'test_subparser_dest_required_args (user_commands.tests.CommandTests)', 'test_subparser_invalid_option (user_commands.tests.CommandTests)', 'Exception raised in a command should raise CommandError with', 'test_disallowed_abbreviated_options (user_commands.tests.CommandRunTests)', 'test_script_prefix_set_in_commands (user_commands.tests.CommandRunTests)', 'test_skip_checks (user_commands.tests.CommandRunTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13620: resolved: False
+2026-09-12 13:22:55,237 - INFO - Attempting to stop container sweb.eval.django__django-13620.tv300-empty...
+2026-09-12 13:23:10,542 - INFO - Container sweb.eval.django__django-13620.tv300-empty stopped successfully.
+2026-09-12 13:23:10,542 - INFO - Attempting to remove container sweb.eval.django__django-13620.tv300-empty...
+2026-09-12 13:23:10,603 - INFO - Container sweb.eval.django__django-13620.tv300-empty removed successfully.

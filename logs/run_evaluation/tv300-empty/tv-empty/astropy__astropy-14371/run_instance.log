@@ -1,0 +1,38 @@
+2026-09-12 13:05:06,344 - INFO - Creating container for astropy__astropy-14371...
+2026-09-12 13:05:06,514 - INFO - Container for astropy__astropy-14371 created: 9d21488a5d88f969ce23bceefd41a890b86f389da0e2a8be5aba0f3622e004d1
+2026-09-12 13:05:06,811 - INFO - Container for astropy__astropy-14371 started: 9d21488a5d88f969ce23bceefd41a890b86f389da0e2a8be5aba0f3622e004d1
+2026-09-12 13:05:06,811 - INFO - Skipping model patch for astropy__astropy-14371 (--no-patch mode)
+2026-09-12 13:05:07,632 - INFO - Git diff before:
+diff --git a/pyproject.toml b/pyproject.toml
+index 1dba3d1adc..56208011d9 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "wheel",
+             "cython==0.29.30",
+2026-09-12 13:05:07,632 - INFO - Eval script for astropy__astropy-14371 written to logs/run_evaluation/tv300-empty/tv-empty/astropy__astropy-14371/eval.sh; copying to container...
+2026-09-12 13:06:09,364 - INFO - Test runtime: 61.64 seconds
+2026-09-12 13:06:09,365 - INFO - Test output for astropy__astropy-14371 written to logs/run_evaluation/tv300-empty/tv-empty/astropy__astropy-14371/test_output.txt
+2026-09-12 13:06:09,418 - INFO - Git diff after:
+diff --git a/pyproject.toml b/pyproject.toml
+index 1dba3d1adc..56208011d9 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "wheel",
+             "cython==0.29.30",
+2026-09-12 13:06:09,418 - INFO - Grading answer for astropy__astropy-14371...
+2026-09-12 13:06:09,419 - INFO - report: {'astropy__astropy-14371': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/coordinates/tests/test_matrix_utilities.py::test_is_O3', 'astropy/coordinates/tests/test_matrix_utilities.py::test_is_rotation']}, 'PASS_TO_PASS': {'success': ['astropy/coordinates/tests/test_matrix_utilities.py::test_rotation_matrix', 'astropy/coordinates/tests/test_matrix_utilities.py::test_angle_axis', 'astropy/coordinates/tests/test_matrix_utilities.py::test_matrix_product_deprecation'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-14371: resolved: False
+2026-09-12 13:06:09,420 - INFO - Attempting to stop container sweb.eval.astropy__astropy-14371.tv300-empty...
+2026-09-12 13:06:24,791 - INFO - Container sweb.eval.astropy__astropy-14371.tv300-empty stopped successfully.
+2026-09-12 13:06:24,791 - INFO - Attempting to remove container sweb.eval.astropy__astropy-14371.tv300-empty...
+2026-09-12 13:06:24,897 - INFO - Container sweb.eval.astropy__astropy-14371.tv300-empty removed successfully.

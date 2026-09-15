@@ -1,0 +1,91 @@
+2026-09-12 14:56:10,824 - INFO - Image not found locally, attempting to pull...
+2026-09-12 14:56:29,378 - INFO - Creating container for sphinx-doc__sphinx-8273...
+2026-09-12 14:56:29,594 - INFO - Container for sphinx-doc__sphinx-8273 created: cae9066a84ec983007ac88d2b5077327c5b88c47a8080a578e58a31a1c623a37
+2026-09-12 14:56:29,825 - INFO - Container for sphinx-doc__sphinx-8273 started: cae9066a84ec983007ac88d2b5077327c5b88c47a8080a578e58a31a1c623a37
+2026-09-12 14:56:29,825 - INFO - Intermediate patch for sphinx-doc__sphinx-8273 written to logs/run_evaluation/tv300-gold/tv-gold/sphinx-doc__sphinx-8273/patch.diff, now applying to container...
+2026-09-12 14:56:29,923 - INFO - >>>>> Applied Patch:
+Checking patch sphinx/builders/manpage.py...
+Applied patch sphinx/builders/manpage.py cleanly.
+
+2026-09-12 14:56:30,149 - INFO - Git diff before:
+diff --git a/sphinx/builders/manpage.py b/sphinx/builders/manpage.py
+index 4166dece9..2a10ba62f 100755
+--- a/sphinx/builders/manpage.py
++++ b/sphinx/builders/manpage.py
+@@ -24,7 +24,7 @@ from sphinx.util import logging
+ from sphinx.util import progress_message
+ from sphinx.util.console import darkgreen  # type: ignore
+ from sphinx.util.nodes import inline_all_toctrees
+-from sphinx.util.osutil import make_filename_from_project
++from sphinx.util.osutil import ensuredir, make_filename_from_project
+ from sphinx.writers.manpage import ManualPageWriter, ManualPageTranslator
+ 
+ 
+@@ -80,7 +80,12 @@ class ManualPageBuilder(Builder):
+             docsettings.authors = authors
+             docsettings.section = section
+ 
+-            targetname = '%s.%s' % (name, section)
++            if self.config.man_make_section_directory:
++                ensuredir(path.join(self.outdir, str(section)))
++                targetname = '%s/%s.%s' % (section, name, section)
++            else:
++                targetname = '%s.%s' % (name, section)
++
+             logger.info(darkgreen(targetname) + ' { ', nonl=True)
+             destination = FileOutput(
+                 destination_path=path.join(self.outdir, targetname),
+@@ -115,6 +120,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
+ 
+     app.add_config_value('man_pages', default_man_pages, None)
+     app.add_config_value('man_show_urls', False, None)
++    app.add_config_value('man_make_section_directory', False, None)
+ 
+     return {
+         'version': 'builtin',
+2026-09-12 14:56:30,149 - INFO - Eval script for sphinx-doc__sphinx-8273 written to logs/run_evaluation/tv300-gold/tv-gold/sphinx-doc__sphinx-8273/eval.sh; copying to container...
+2026-09-12 14:56:39,477 - INFO - Test runtime: 9.28 seconds
+2026-09-12 14:56:39,477 - INFO - Test output for sphinx-doc__sphinx-8273 written to logs/run_evaluation/tv300-gold/tv-gold/sphinx-doc__sphinx-8273/test_output.txt
+2026-09-12 14:56:39,529 - INFO - Git diff after:
+diff --git a/sphinx/builders/manpage.py b/sphinx/builders/manpage.py
+index 4166dece9..2a10ba62f 100755
+--- a/sphinx/builders/manpage.py
++++ b/sphinx/builders/manpage.py
+@@ -24,7 +24,7 @@ from sphinx.util import logging
+ from sphinx.util import progress_message
+ from sphinx.util.console import darkgreen  # type: ignore
+ from sphinx.util.nodes import inline_all_toctrees
+-from sphinx.util.osutil import make_filename_from_project
++from sphinx.util.osutil import ensuredir, make_filename_from_project
+ from sphinx.writers.manpage import ManualPageWriter, ManualPageTranslator
+ 
+ 
+@@ -80,7 +80,12 @@ class ManualPageBuilder(Builder):
+             docsettings.authors = authors
+             docsettings.section = section
+ 
+-            targetname = '%s.%s' % (name, section)
++            if self.config.man_make_section_directory:
++                ensuredir(path.join(self.outdir, str(section)))
++                targetname = '%s/%s.%s' % (section, name, section)
++            else:
++                targetname = '%s.%s' % (name, section)
++
+             logger.info(darkgreen(targetname) + ' { ', nonl=True)
+             destination = FileOutput(
+                 destination_path=path.join(self.outdir, targetname),
+@@ -115,6 +120,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
+ 
+     app.add_config_value('man_pages', default_man_pages, None)
+     app.add_config_value('man_show_urls', False, None)
++    app.add_config_value('man_make_section_directory', False, None)
+ 
+     return {
+         'version': 'builtin',
+2026-09-12 14:56:39,529 - INFO - Grading answer for sphinx-doc__sphinx-8273...
+2026-09-12 14:56:39,534 - INFO - report: {'sphinx-doc__sphinx-8273': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['tests/test_build_manpage.py::test_man_make_section_directory'], 'failure': []}, 'PASS_TO_PASS': {'success': ['tests/test_build_manpage.py::test_all', 'tests/test_build_manpage.py::test_default_man_pages', 'tests/test_build_manpage.py::test_rubric'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sphinx-doc__sphinx-8273: resolved: True
+2026-09-12 14:56:39,535 - INFO - Attempting to stop container sweb.eval.sphinx-doc__sphinx-8273.tv300-gold...
+2026-09-12 14:56:54,823 - INFO - Container sweb.eval.sphinx-doc__sphinx-8273.tv300-gold stopped successfully.
+2026-09-12 14:56:54,823 - INFO - Attempting to remove container sweb.eval.sphinx-doc__sphinx-8273.tv300-gold...
+2026-09-12 14:56:54,885 - INFO - Container sweb.eval.sphinx-doc__sphinx-8273.tv300-gold removed successfully.

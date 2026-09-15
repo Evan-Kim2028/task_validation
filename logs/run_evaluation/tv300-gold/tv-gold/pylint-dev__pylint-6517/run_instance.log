@@ -1,0 +1,47 @@
+2026-09-12 14:12:48,347 - INFO - Image not found locally, attempting to pull...
+2026-09-12 14:13:07,188 - INFO - Creating container for pylint-dev__pylint-6517...
+2026-09-12 14:13:07,744 - INFO - Container for pylint-dev__pylint-6517 created: 81338a8422e23b7f3420d55de78c8eefba58fe0525bf5a58fd43f873b981f695
+2026-09-12 14:13:07,949 - INFO - Container for pylint-dev__pylint-6517 started: 81338a8422e23b7f3420d55de78c8eefba58fe0525bf5a58fd43f873b981f695
+2026-09-12 14:13:07,949 - INFO - Intermediate patch for pylint-dev__pylint-6517 written to logs/run_evaluation/tv300-gold/tv-gold/pylint-dev__pylint-6517/patch.diff, now applying to container...
+2026-09-12 14:13:08,076 - INFO - >>>>> Applied Patch:
+Checking patch pylint/config/argument.py...
+Applied patch pylint/config/argument.py cleanly.
+
+2026-09-12 14:13:08,414 - INFO - Git diff before:
+diff --git a/pylint/config/argument.py b/pylint/config/argument.py
+index 8eb6417dc..bbaa7d0d8 100644
+--- a/pylint/config/argument.py
++++ b/pylint/config/argument.py
+@@ -44,6 +44,8 @@ _ArgumentTypes = Union[
+ 
+ def _confidence_transformer(value: str) -> Sequence[str]:
+     """Transforms a comma separated string of confidence values."""
++    if not value:
++        return interfaces.CONFIDENCE_LEVEL_NAMES
+     values = pylint_utils._check_csv(value)
+     for confidence in values:
+         if confidence not in interfaces.CONFIDENCE_LEVEL_NAMES:
+2026-09-12 14:13:08,414 - INFO - Eval script for pylint-dev__pylint-6517 written to logs/run_evaluation/tv300-gold/tv-gold/pylint-dev__pylint-6517/eval.sh; copying to container...
+2026-09-12 14:13:18,104 - INFO - Test runtime: 9.63 seconds
+2026-09-12 14:13:18,104 - INFO - Test output for pylint-dev__pylint-6517 written to logs/run_evaluation/tv300-gold/tv-gold/pylint-dev__pylint-6517/test_output.txt
+2026-09-12 14:13:18,153 - INFO - Git diff after:
+diff --git a/pylint/config/argument.py b/pylint/config/argument.py
+index 8eb6417dc..bbaa7d0d8 100644
+--- a/pylint/config/argument.py
++++ b/pylint/config/argument.py
+@@ -44,6 +44,8 @@ _ArgumentTypes = Union[
+ 
+ def _confidence_transformer(value: str) -> Sequence[str]:
+     """Transforms a comma separated string of confidence values."""
++    if not value:
++        return interfaces.CONFIDENCE_LEVEL_NAMES
+     values = pylint_utils._check_csv(value)
+     for confidence in values:
+         if confidence not in interfaces.CONFIDENCE_LEVEL_NAMES:
+2026-09-12 14:13:18,154 - INFO - Grading answer for pylint-dev__pylint-6517...
+2026-09-12 14:13:18,158 - INFO - report: {'pylint-dev__pylint-6517': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['tests/config/test_config.py::test_empty_confidence'], 'failure': []}, 'PASS_TO_PASS': {'success': ['tests/config/test_config.py::test_can_read_toml_env_variable', 'tests/config/test_config.py::test_unknown_message_id', 'tests/config/test_config.py::test_unknown_option_name', 'tests/config/test_config.py::test_unknown_short_option_name', 'tests/config/test_config.py::test_unknown_confidence', 'tests/config/test_config.py::test_unknown_yes_no', 'tests/config/test_config.py::test_unknown_py_version', 'tests/config/test_config.py::test_short_verbose'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for pylint-dev__pylint-6517: resolved: True
+2026-09-12 14:13:18,159 - INFO - Attempting to stop container sweb.eval.pylint-dev__pylint-6517.tv300-gold...
+2026-09-12 14:13:33,516 - INFO - Container sweb.eval.pylint-dev__pylint-6517.tv300-gold stopped successfully.
+2026-09-12 14:13:33,516 - INFO - Attempting to remove container sweb.eval.pylint-dev__pylint-6517.tv300-gold...
+2026-09-12 14:13:33,569 - INFO - Container sweb.eval.pylint-dev__pylint-6517.tv300-gold removed successfully.

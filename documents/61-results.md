@@ -4,7 +4,7 @@ This document consolidates every measured result of the task-validity project. T
 
 ## What was certified and what was not
 
-Two pools released at epsilon 5 percent. The completed prefix of the SWE-bench SRS-300 draw bounded execution-verifier invalidity at 4.65 percent (`data/gold/swe_srs300.certificate.json`), and the SETA-Env pool bounded it at 2.32 percent (`data/gold/gen_gate_seta.certificate.json`). Four certificates rejected: Terminal-Bench 2.1 at a census rate of 5.62 percent, the RST generator pool at 6.63 percent restricted and 9.53 percent conservative, and the SWE SRS-100 draw at 6.06 percent. TMax-15K is PENDING. No specification-invalidity bound exists on any pool. Human invalidity labels cover only the 1,699 annotated SWE-bench tasks (`data/gold/swe_rater_targets.jsonl`, doc 33). Every other pool's specification-invalidity rate is unmeasured. No taste measurement exists as a gate anywhere.
+Two pools released at epsilon 5 percent. The completed prefix of the SWE-bench SRS-300 draw bounded execution-verifier invalidity at 4.65 percent (`data/gold/swe_srs300.certificate.json`), and the SETA-Env pool bounded it at 2.32 percent (`data/gold/gen_gate_seta.certificate.json`). Four certificates rejected: Terminal-Bench 2.1 at a census rate of 5.62 percent, the RST generator pool at 6.63 percent restricted and 9.53 percent conservative, and the SWE SRS-100 draw at 6.06 percent. TMax-15K was stopped before completion and issues no bound. No specification-invalidity bound exists on any pool. Human invalidity labels cover only the 1,699 annotated SWE-bench tasks (`data/gold/swe_rater_targets.jsonl`, doc 33). Every other pool's specification-invalidity rate is unmeasured. No taste measurement exists as a gate anywhere.
 
 The estimator itself was verified before use. In 5,000-replicate coverage experiments at true invalidity at or below 5 percent, the SRS-hypergeometric bound covered 97.2 to 100 percent of the time. The stratified-normal bound covered 46.9 to 90.6 percent and is not a release rule (`data/gold/coverage_lab_r5000.summary.json`).
 
@@ -25,7 +25,7 @@ One row per population. Diagnostic rows are censuses or targeted samples without
 | SWE SRS-100 | certificate | SWE-bench test pool | 1,699 | 100 | 100 | 2 | 2.00% | 6.06% | reject | `swe_srs100.certificate.json` |
 | SETA-Env | certificate | frozen manifest | 4,569 | 200 | 200 | 1 | 0.50% | 2.32% | release | `gen_gate_seta.certificate.json` |
 | TB 2.1 SRS-30 check | certificate | same 89-task pool vs known census | 89 | 30 | 30 | 0 | 0.0% | 7.87% | covers census | `tb21_srs30.certificate.json` |
-| TMax-15K | certificate, one-sided | accepts-an-empty-solution share of frozen manifest | 8,047 | 200 | 1 | PENDING | PENDING | PENDING | PENDING | `gen_gate_tmax.certificate.json` |
+| TMax-15K | stopped, no certificate | accepts-an-empty-solution share of frozen manifest | 8,047 | 200 | 1 | n/a | n/a | stopped | `gen_gate_tmax.certificate.json` (`complete: false`) |
 
 Three qualifications fix the scope of these rows.
 
@@ -48,7 +48,7 @@ Decisions at epsilon 1, 2, 5, and 10 percent from the existing bounds. Release r
 | TB 2.1 census | 5.62% | reject | reject | reject | release |
 | SWE SRS-300 prefix | 4.65% | reject | reject | release | release |
 | SETA-Env | 2.32% | reject | reject | release | release |
-| TMax-15K | PENDING | PENDING | PENDING | PENDING | PENDING |
+| TMax-15K | stopped | stopped | stopped | stopped | stopped |
 
 Five bounds sit above the 5 percent threshold, between 5.6 and 9.5 percent. All five would release at epsilon 10 percent and none at 2 percent. The two released pools sit between 2.3 and 4.7 percent, so both would reject at epsilon 2 percent.
 
@@ -118,11 +118,11 @@ Every limitation of the evidence base, in one place.
 - The trajectory evaluation has 82 positives, and the Monte-Carlo checks ran on TB 2.1 only.
 - Funnel labels are external and evaluation-only. They never enter a certificate.
 - Terminal-Bench versions are separate populations. TB 4 and the TB 2.1 census share 0 task names after prefix and case normalization, 66 against 89 (`data/gold/durability_tb4.json`, `data/gold/tb21_census_manifest.json`). The TB 2.1 certificate says nothing about TB 4, and the TB 4 durability figures say nothing about the pool that was certified.
-- TMax-15K is pending. Its row, its epsilon row, and its mention in section one fill from `data/gold/gen_gate_tmax.certificate.json` when the running gate lands.
+- TMax-15K issues no bound. The operator stopped the gate on 2026-09-14 after 1 of 200 units adjudicated, on the grounds that the accepts-an-empty-solution defect class had fired 0 times in 956 probes across four populations, so a one-sided bound on that class would carry no information (`logs/gen_gate_tmax.log`). Partial rows are retained and `gen_gate_tmax.certificate.json` records `complete: false`. The TMax manifest is entirely no-reference, so the nop probe was the only instrument available to it.
 
 ## RESULT
 
-Wrote `documents/61-results.md` (this file): the standalone results document covering 12 measured populations, the epsilon-sensitivity grid, the generator comparison with confounds, six scoped negative results, the dump-reconstruction data contribution, the Lot-001 three-gate demonstration, and a single limits section. TMax-15K is marked PENDING in the certification table, the sensitivity table, and the limits, with `data/gold/gen_gate_tmax.certificate.json` as the fill-in artifact. Added a two-line pointer to `documents/56-paper-draft.md`. Full test suite: 280 passed.
+Wrote `documents/61-results.md` (this file): the standalone results document covering 12 measured populations, the epsilon-sensitivity grid, the generator comparison with confounds, six scoped negative results, the dump-reconstruction data contribution, the Lot-001 three-gate demonstration, and a single limits section. TMax-15K is marked stopped in the certification table, the sensitivity table, and the limits, with the operator's rationale recorded in the limits section. Added a two-line pointer to `documents/56-paper-draft.md`. Full test suite: 280 passed.
 
 ## Data index
 

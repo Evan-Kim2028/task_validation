@@ -1,0 +1,179 @@
+2026-09-12 13:17:13,084 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:18:00,999 - INFO - Creating container for django__django-13667...
+2026-09-12 13:18:01,195 - INFO - Container for django__django-13667 created: 55ad814ce52c272829f141c0bf41725c11e647ab12dc1cd72805cbbd533cca77
+2026-09-12 13:18:01,423 - INFO - Container for django__django-13667 started: 55ad814ce52c272829f141c0bf41725c11e647ab12dc1cd72805cbbd533cca77
+2026-09-12 13:18:01,423 - INFO - Intermediate patch for django__django-13667 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13667/patch.diff, now applying to container...
+2026-09-12 13:18:01,531 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/expressions.py...
+Checking patch django/db/models/sql/query.py...
+Applied patch django/db/models/expressions.py cleanly.
+Applied patch django/db/models/sql/query.py cleanly.
+
+2026-09-12 13:18:02,529 - INFO - Git diff before:
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index c596ccfe5d..97045d2f49 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -1116,10 +1116,11 @@ class Subquery(Expression):
+     def external_aliases(self):
+         return self.query.external_aliases
+ 
+-    def as_sql(self, compiler, connection, template=None, **extra_context):
++    def as_sql(self, compiler, connection, template=None, query=None, **extra_context):
+         connection.ops.check_expression_support(self)
+         template_params = {**self.extra, **extra_context}
+-        subquery_sql, sql_params = self.query.as_sql(compiler, connection)
++        query = query or self.query
++        subquery_sql, sql_params = query.as_sql(compiler, connection)
+         template_params['subquery'] = subquery_sql[1:-1]
+ 
+         template = template or template_params.get('template', self.template)
+@@ -1142,7 +1143,6 @@ class Exists(Subquery):
+     def __init__(self, queryset, negated=False, **kwargs):
+         self.negated = negated
+         super().__init__(queryset, **kwargs)
+-        self.query = self.query.exists()
+ 
+     def __invert__(self):
+         clone = self.copy()
+@@ -1150,7 +1150,14 @@ class Exists(Subquery):
+         return clone
+ 
+     def as_sql(self, compiler, connection, template=None, **extra_context):
+-        sql, params = super().as_sql(compiler, connection, template, **extra_context)
++        query = self.query.exists(using=connection.alias)
++        sql, params = super().as_sql(
++            compiler,
++            connection,
++            template=template,
++            query=query,
++            **extra_context,
++        )
+         if self.negated:
+             sql = 'NOT {}'.format(sql)
+         return sql, params
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 5a7dc25fd9..b7f8053cb1 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -525,7 +525,7 @@ class Query(BaseExpression):
+     def has_filters(self):
+         return self.where
+ 
+-    def exists(self):
++    def exists(self, using, limit=True):
+         q = self.clone()
+         if not q.distinct:
+             if q.group_by is True:
+@@ -534,14 +534,21 @@ class Query(BaseExpression):
+                 # SELECT clause which is about to be cleared.
+                 q.set_group_by(allow_aliases=False)
+             q.clear_select_clause()
++        if q.combined_queries and q.combinator == 'union':
++            limit_combined = connections[using].features.supports_slicing_ordering_in_compound
++            q.combined_queries = tuple(
++                combined_query.exists(using, limit=limit_combined)
++                for combined_query in q.combined_queries
++            )
+         q.clear_ordering(True)
+-        q.set_limits(high=1)
++        if limit:
++            q.set_limits(high=1)
+         q.add_extra({'a': 1}, None, None, None, None, None)
+         q.set_extra_mask(['a'])
+         return q
+ 
+     def has_results(self, using):
+-        q = self.exists()
++        q = self.exists(using)
+         compiler = q.get_compiler(using=using)
+         return compiler.has_results()
+2026-09-12 13:18:02,529 - INFO - Eval script for django__django-13667 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13667/eval.sh; copying to container...
+2026-09-12 13:18:18,577 - INFO - Test runtime: 16.01 seconds
+2026-09-12 13:18:18,578 - INFO - Test output for django__django-13667 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-13667/test_output.txt
+2026-09-12 13:18:18,641 - INFO - Git diff after:
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index c596ccfe5d..97045d2f49 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -1116,10 +1116,11 @@ class Subquery(Expression):
+     def external_aliases(self):
+         return self.query.external_aliases
+ 
+-    def as_sql(self, compiler, connection, template=None, **extra_context):
++    def as_sql(self, compiler, connection, template=None, query=None, **extra_context):
+         connection.ops.check_expression_support(self)
+         template_params = {**self.extra, **extra_context}
+-        subquery_sql, sql_params = self.query.as_sql(compiler, connection)
++        query = query or self.query
++        subquery_sql, sql_params = query.as_sql(compiler, connection)
+         template_params['subquery'] = subquery_sql[1:-1]
+ 
+         template = template or template_params.get('template', self.template)
+@@ -1142,7 +1143,6 @@ class Exists(Subquery):
+     def __init__(self, queryset, negated=False, **kwargs):
+         self.negated = negated
+         super().__init__(queryset, **kwargs)
+-        self.query = self.query.exists()
+ 
+     def __invert__(self):
+         clone = self.copy()
+@@ -1150,7 +1150,14 @@ class Exists(Subquery):
+         return clone
+ 
+     def as_sql(self, compiler, connection, template=None, **extra_context):
+-        sql, params = super().as_sql(compiler, connection, template, **extra_context)
++        query = self.query.exists(using=connection.alias)
++        sql, params = super().as_sql(
++            compiler,
++            connection,
++            template=template,
++            query=query,
++            **extra_context,
++        )
+         if self.negated:
+             sql = 'NOT {}'.format(sql)
+         return sql, params
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 5a7dc25fd9..b7f8053cb1 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -525,7 +525,7 @@ class Query(BaseExpression):
+     def has_filters(self):
+         return self.where
+ 
+-    def exists(self):
++    def exists(self, using, limit=True):
+         q = self.clone()
+         if not q.distinct:
+             if q.group_by is True:
+@@ -534,14 +534,21 @@ class Query(BaseExpression):
+                 # SELECT clause which is about to be cleared.
+                 q.set_group_by(allow_aliases=False)
+             q.clear_select_clause()
++        if q.combined_queries and q.combinator == 'union':
++            limit_combined = connections[using].features.supports_slicing_ordering_in_compound
++            q.combined_queries = tuple(
++                combined_query.exists(using, limit=limit_combined)
++                for combined_query in q.combined_queries
++            )
+         q.clear_ordering(True)
+-        q.set_limits(high=1)
++        if limit:
++            q.set_limits(high=1)
+         q.add_extra({'a': 1}, None, None, None, None, None)
+         q.set_extra_mask(['a'])
+         return q
+ 
+     def has_results(self, using):
+-        q = self.exists()
++        q = self.exists(using)
+         compiler = q.get_compiler(using=using)
+         return compiler.has_results()
+2026-09-12 13:18:18,641 - INFO - Grading answer for django__django-13667...
+2026-09-12 13:18:18,643 - INFO - report: {'django__django-13667': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_exists_union (queries.test_qs_combinators.QuerySetSetOperationTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_combining_multiple_models (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_union (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_union_empty_result (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_difference_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_difference_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_empty_qs_union_with_ordered_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_exists_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_exists_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_exists_union_empty_result (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_get_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_get_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_get_union (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_get_with_filters_unsupported_on_combined_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_intersection_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_intersection_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_limits (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_order_by_same_type (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_order_raises_on_non_selected_column (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering_by_alias (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering_by_f_expression (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering_by_f_expression_and_alias (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_qs_with_subcompound_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_union (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_distinct (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_none (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_extra_and_values_list (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_two_annotated_values_list (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values_list_and_order (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values_list_and_order_on_annotation (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values_list_on_annotated_and_unannotated (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_unsupported_operations_on_combined_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_unsupported_ordering_slicing_raises_db_error (queries.test_qs_combinators.QuerySetSetOperationTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13667: resolved: True
+2026-09-12 13:18:18,643 - INFO - Attempting to stop container sweb.eval.django__django-13667.tv300-gold...
+2026-09-12 13:18:35,034 - INFO - Container sweb.eval.django__django-13667.tv300-gold stopped successfully.
+2026-09-12 13:18:35,035 - INFO - Attempting to remove container sweb.eval.django__django-13667.tv300-gold...
+2026-09-12 13:18:35,092 - INFO - Container sweb.eval.django__django-13667.tv300-gold removed successfully.

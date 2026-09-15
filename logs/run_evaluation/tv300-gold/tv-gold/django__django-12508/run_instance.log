@@ -1,0 +1,607 @@
+2026-09-12 13:10:09,320 - INFO - Image not found locally, attempting to pull...
+2026-09-12 13:10:22,960 - INFO - Creating container for django__django-12508...
+2026-09-12 13:10:23,129 - INFO - Container for django__django-12508 created: 8c74a0f8148a97065c24083d4d9ca41419073d0d02fc3bb9dbede7e2a61336be
+2026-09-12 13:10:23,353 - INFO - Container for django__django-12508 started: 8c74a0f8148a97065c24083d4d9ca41419073d0d02fc3bb9dbede7e2a61336be
+2026-09-12 13:10:23,354 - INFO - Intermediate patch for django__django-12508 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12508/patch.diff, now applying to container...
+2026-09-12 13:10:23,469 - INFO - >>>>> Applied Patch:
+Checking patch django/core/management/base.py...
+Checking patch django/core/management/commands/dbshell.py...
+Checking patch django/db/backends/base/client.py...
+Checking patch django/db/backends/mysql/client.py...
+Checking patch django/db/backends/mysql/creation.py...
+Checking patch django/db/backends/oracle/client.py...
+Checking patch django/db/backends/postgresql/client.py...
+Checking patch django/db/backends/sqlite3/client.py...
+Applied patch django/core/management/base.py cleanly.
+Applied patch django/core/management/commands/dbshell.py cleanly.
+Applied patch django/db/backends/base/client.py cleanly.
+Applied patch django/db/backends/mysql/client.py cleanly.
+Applied patch django/db/backends/mysql/creation.py cleanly.
+Applied patch django/db/backends/oracle/client.py cleanly.
+Applied patch django/db/backends/postgresql/client.py cleanly.
+Applied patch django/db/backends/sqlite3/client.py cleanly.
+
+2026-09-12 13:10:24,399 - INFO - Git diff before:
+diff --git a/django/core/management/base.py b/django/core/management/base.py
+index 74ffc94dcf..0091908fed 100644
+--- a/django/core/management/base.py
++++ b/django/core/management/base.py
+@@ -26,7 +26,9 @@ class CommandError(Exception):
+     error) is the preferred way to indicate that something has gone
+     wrong in the execution of a command.
+     """
+-    pass
++    def __init__(self, *args, returncode=1, **kwargs):
++        self.returncode = returncode
++        super().__init__(*args, **kwargs)
+ 
+ 
+ class SystemCheckError(CommandError):
+@@ -326,8 +328,8 @@ class BaseCommand:
+         handle_default_options(options)
+         try:
+             self.execute(*args, **cmd_options)
+-        except Exception as e:
+-            if options.traceback or not isinstance(e, CommandError):
++        except CommandError as e:
++            if options.traceback:
+                 raise
+ 
+             # SystemCheckError takes care of its own formatting.
+@@ -335,7 +337,7 @@ class BaseCommand:
+                 self.stderr.write(str(e), lambda x: x)
+             else:
+                 self.stderr.write('%s: %s' % (e.__class__.__name__, e))
+-            sys.exit(1)
++            sys.exit(e.returncode)
+         finally:
+             try:
+                 connections.close_all()
+diff --git a/django/core/management/commands/dbshell.py b/django/core/management/commands/dbshell.py
+index 1cb6b52f04..fb3caed12a 100644
+--- a/django/core/management/commands/dbshell.py
++++ b/django/core/management/commands/dbshell.py
+@@ -1,3 +1,5 @@
++import subprocess
++
+ from django.core.management.base import BaseCommand, CommandError
+ from django.db import DEFAULT_DB_ALIAS, connections
+ 
+@@ -15,17 +17,27 @@ class Command(BaseCommand):
+             '--database', default=DEFAULT_DB_ALIAS,
+             help='Nominates a database onto which to open a shell. Defaults to the "default" database.',
+         )
++        parameters = parser.add_argument_group('parameters', prefix_chars='--')
++        parameters.add_argument('parameters', nargs='*')
+ 
+     def handle(self, **options):
+         connection = connections[options['database']]
+         try:
+-            connection.client.runshell()
+-        except OSError:
+-            # Note that we're assuming OSError means that the client program
+-            # isn't installed. There's a possibility OSError would be raised
+-            # for some other reason, in which case this error message would be
+-            # inaccurate. Still, this message catches the common case.
++            connection.client.runshell(options['parameters'])
++        except FileNotFoundError:
++            # Note that we're assuming the FileNotFoundError relates to the
++            # command missing. It could be raised for some other reason, in
++            # which case this error message would be inaccurate. Still, this
++            # message catches the common case.
+             raise CommandError(
+                 'You appear not to have the %r program installed or on your path.' %
+                 connection.client.executable_name
+             )
++        except subprocess.CalledProcessError as e:
++            raise CommandError(
++                '"%s" returned non-zero exit status %s.' % (
++                    ' '.join(e.cmd),
++                    e.returncode,
++                ),
++                returncode=e.returncode,
++            )
+diff --git a/django/db/backends/base/client.py b/django/db/backends/base/client.py
+index f6a0cda35d..32901764aa 100644
+--- a/django/db/backends/base/client.py
++++ b/django/db/backends/base/client.py
+@@ -8,5 +8,5 @@ class BaseDatabaseClient:
+         # connection is an instance of BaseDatabaseWrapper.
+         self.connection = connection
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         raise NotImplementedError('subclasses of BaseDatabaseClient must provide a runshell() method')
+diff --git a/django/db/backends/mysql/client.py b/django/db/backends/mysql/client.py
+index a596a650b3..e5b6a59fb2 100644
+--- a/django/db/backends/mysql/client.py
++++ b/django/db/backends/mysql/client.py
+@@ -7,7 +7,7 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'mysql'
+ 
+     @classmethod
+-    def settings_to_cmd_args(cls, settings_dict):
++    def settings_to_cmd_args(cls, settings_dict, parameters):
+         args = [cls.executable_name]
+         db = settings_dict['OPTIONS'].get('db', settings_dict['NAME'])
+         user = settings_dict['OPTIONS'].get('user', settings_dict['USER'])
+@@ -41,8 +41,9 @@ class DatabaseClient(BaseDatabaseClient):
+             args += ["--ssl-key=%s" % client_key]
+         if db:
+             args += [db]
++        args.extend(parameters)
+         return args
+ 
+-    def runshell(self):
+-        args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)
++    def runshell(self, parameters):
++        args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, parameters)
+         subprocess.run(args, check=True)
+diff --git a/django/db/backends/mysql/creation.py b/django/db/backends/mysql/creation.py
+index 79d2959d5f..99372fd7ee 100644
+--- a/django/db/backends/mysql/creation.py
++++ b/django/db/backends/mysql/creation.py
+@@ -55,9 +55,9 @@ class DatabaseCreation(BaseDatabaseCreation):
+         self._clone_db(source_database_name, target_database_name)
+ 
+     def _clone_db(self, source_database_name, target_database_name):
+-        dump_args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)[1:]
++        dump_args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, [])[1:]
+         dump_cmd = ['mysqldump', *dump_args[:-1], '--routines', '--events', source_database_name]
+-        load_cmd = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)
++        load_cmd = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, [])
+         load_cmd[-1] = target_database_name
+ 
+         with subprocess.Popen(dump_cmd, stdout=subprocess.PIPE) as dump_proc:
+diff --git a/django/db/backends/oracle/client.py b/django/db/backends/oracle/client.py
+index 243c018d03..434481ba81 100644
+--- a/django/db/backends/oracle/client.py
++++ b/django/db/backends/oracle/client.py
+@@ -8,10 +8,11 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'sqlplus'
+     wrapper_name = 'rlwrap'
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         conn_string = self.connection._connect_string()
+         args = [self.executable_name, "-L", conn_string]
+         wrapper_path = shutil.which(self.wrapper_name)
+         if wrapper_path:
+             args = [wrapper_path, *args]
++        args.extend(parameters)
+         subprocess.run(args, check=True)
+diff --git a/django/db/backends/postgresql/client.py b/django/db/backends/postgresql/client.py
+index 0efe0d47f0..9d390b3807 100644
+--- a/django/db/backends/postgresql/client.py
++++ b/django/db/backends/postgresql/client.py
+@@ -9,7 +9,7 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'psql'
+ 
+     @classmethod
+-    def runshell_db(cls, conn_params):
++    def runshell_db(cls, conn_params, parameters):
+         args = [cls.executable_name]
+ 
+         host = conn_params.get('host', '')
+@@ -29,6 +29,7 @@ class DatabaseClient(BaseDatabaseClient):
+         if port:
+             args += ['-p', str(port)]
+         args += [dbname]
++        args.extend(parameters)
+ 
+         sigint_handler = signal.getsignal(signal.SIGINT)
+         subprocess_env = os.environ.copy()
+@@ -50,5 +51,5 @@ class DatabaseClient(BaseDatabaseClient):
+             # Restore the original SIGINT handler.
+             signal.signal(signal.SIGINT, sigint_handler)
+ 
+-    def runshell(self):
+-        DatabaseClient.runshell_db(self.connection.get_connection_params())
++    def runshell(self, parameters):
++        self.runshell_db(self.connection.get_connection_params(), parameters)
+diff --git a/django/db/backends/sqlite3/client.py b/django/db/backends/sqlite3/client.py
+index f6b7077a0c..a71005fd5b 100644
+--- a/django/db/backends/sqlite3/client.py
++++ b/django/db/backends/sqlite3/client.py
+@@ -6,9 +6,10 @@ from django.db.backends.base.client import BaseDatabaseClient
+ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'sqlite3'
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         # TODO: Remove str() when dropping support for PY37.
+         # args parameter accepts path-like objects on Windows since Python 3.8.
+         args = [self.executable_name,
+                 str(self.connection.settings_dict['NAME'])]
++        args.extend(parameters)
+         subprocess.run(args, check=True)
+2026-09-12 13:10:24,399 - INFO - Eval script for django__django-12508 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12508/eval.sh; copying to container...
+2026-09-12 13:10:36,510 - INFO - Test runtime: 12.06 seconds
+2026-09-12 13:10:36,511 - INFO - Test output for django__django-12508 written to logs/run_evaluation/tv300-gold/tv-gold/django__django-12508/test_output.txt
+2026-09-12 13:10:36,559 - INFO - Git diff after:
+diff --git a/django/core/management/base.py b/django/core/management/base.py
+index 74ffc94dcf..0091908fed 100644
+--- a/django/core/management/base.py
++++ b/django/core/management/base.py
+@@ -26,7 +26,9 @@ class CommandError(Exception):
+     error) is the preferred way to indicate that something has gone
+     wrong in the execution of a command.
+     """
+-    pass
++    def __init__(self, *args, returncode=1, **kwargs):
++        self.returncode = returncode
++        super().__init__(*args, **kwargs)
+ 
+ 
+ class SystemCheckError(CommandError):
+@@ -326,8 +328,8 @@ class BaseCommand:
+         handle_default_options(options)
+         try:
+             self.execute(*args, **cmd_options)
+-        except Exception as e:
+-            if options.traceback or not isinstance(e, CommandError):
++        except CommandError as e:
++            if options.traceback:
+                 raise
+ 
+             # SystemCheckError takes care of its own formatting.
+@@ -335,7 +337,7 @@ class BaseCommand:
+                 self.stderr.write(str(e), lambda x: x)
+             else:
+                 self.stderr.write('%s: %s' % (e.__class__.__name__, e))
+-            sys.exit(1)
++            sys.exit(e.returncode)
+         finally:
+             try:
+                 connections.close_all()
+diff --git a/django/core/management/commands/dbshell.py b/django/core/management/commands/dbshell.py
+index 1cb6b52f04..fb3caed12a 100644
+--- a/django/core/management/commands/dbshell.py
++++ b/django/core/management/commands/dbshell.py
+@@ -1,3 +1,5 @@
++import subprocess
++
+ from django.core.management.base import BaseCommand, CommandError
+ from django.db import DEFAULT_DB_ALIAS, connections
+ 
+@@ -15,17 +17,27 @@ class Command(BaseCommand):
+             '--database', default=DEFAULT_DB_ALIAS,
+             help='Nominates a database onto which to open a shell. Defaults to the "default" database.',
+         )
++        parameters = parser.add_argument_group('parameters', prefix_chars='--')
++        parameters.add_argument('parameters', nargs='*')
+ 
+     def handle(self, **options):
+         connection = connections[options['database']]
+         try:
+-            connection.client.runshell()
+-        except OSError:
+-            # Note that we're assuming OSError means that the client program
+-            # isn't installed. There's a possibility OSError would be raised
+-            # for some other reason, in which case this error message would be
+-            # inaccurate. Still, this message catches the common case.
++            connection.client.runshell(options['parameters'])
++        except FileNotFoundError:
++            # Note that we're assuming the FileNotFoundError relates to the
++            # command missing. It could be raised for some other reason, in
++            # which case this error message would be inaccurate. Still, this
++            # message catches the common case.
+             raise CommandError(
+                 'You appear not to have the %r program installed or on your path.' %
+                 connection.client.executable_name
+             )
++        except subprocess.CalledProcessError as e:
++            raise CommandError(
++                '"%s" returned non-zero exit status %s.' % (
++                    ' '.join(e.cmd),
++                    e.returncode,
++                ),
++                returncode=e.returncode,
++            )
+diff --git a/django/db/backends/base/client.py b/django/db/backends/base/client.py
+index f6a0cda35d..32901764aa 100644
+--- a/django/db/backends/base/client.py
++++ b/django/db/backends/base/client.py
+@@ -8,5 +8,5 @@ class BaseDatabaseClient:
+         # connection is an instance of BaseDatabaseWrapper.
+         self.connection = connection
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         raise NotImplementedError('subclasses of BaseDatabaseClient must provide a runshell() method')
+diff --git a/django/db/backends/mysql/client.py b/django/db/backends/mysql/client.py
+index a596a650b3..e5b6a59fb2 100644
+--- a/django/db/backends/mysql/client.py
++++ b/django/db/backends/mysql/client.py
+@@ -7,7 +7,7 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'mysql'
+ 
+     @classmethod
+-    def settings_to_cmd_args(cls, settings_dict):
++    def settings_to_cmd_args(cls, settings_dict, parameters):
+         args = [cls.executable_name]
+         db = settings_dict['OPTIONS'].get('db', settings_dict['NAME'])
+         user = settings_dict['OPTIONS'].get('user', settings_dict['USER'])
+@@ -41,8 +41,9 @@ class DatabaseClient(BaseDatabaseClient):
+             args += ["--ssl-key=%s" % client_key]
+         if db:
+             args += [db]
++        args.extend(parameters)
+         return args
+ 
+-    def runshell(self):
+-        args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)
++    def runshell(self, parameters):
++        args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, parameters)
+         subprocess.run(args, check=True)
+diff --git a/django/db/backends/mysql/creation.py b/django/db/backends/mysql/creation.py
+index 79d2959d5f..99372fd7ee 100644
+--- a/django/db/backends/mysql/creation.py
++++ b/django/db/backends/mysql/creation.py
+@@ -55,9 +55,9 @@ class DatabaseCreation(BaseDatabaseCreation):
+         self._clone_db(source_database_name, target_database_name)
+ 
+     def _clone_db(self, source_database_name, target_database_name):
+-        dump_args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)[1:]
++        dump_args = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, [])[1:]
+         dump_cmd = ['mysqldump', *dump_args[:-1], '--routines', '--events', source_database_name]
+-        load_cmd = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict)
++        load_cmd = DatabaseClient.settings_to_cmd_args(self.connection.settings_dict, [])
+         load_cmd[-1] = target_database_name
+ 
+         with subprocess.Popen(dump_cmd, stdout=subprocess.PIPE) as dump_proc:
+diff --git a/django/db/backends/oracle/client.py b/django/db/backends/oracle/client.py
+index 243c018d03..434481ba81 100644
+--- a/django/db/backends/oracle/client.py
++++ b/django/db/backends/oracle/client.py
+@@ -8,10 +8,11 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'sqlplus'
+     wrapper_name = 'rlwrap'
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         conn_string = self.connection._connect_string()
+         args = [self.executable_name, "-L", conn_string]
+         wrapper_path = shutil.which(self.wrapper_name)
+         if wrapper_path:
+             args = [wrapper_path, *args]
++        args.extend(parameters)
+         subprocess.run(args, check=True)
+diff --git a/django/db/backends/postgresql/client.py b/django/db/backends/postgresql/client.py
+index 0efe0d47f0..9d390b3807 100644
+--- a/django/db/backends/postgresql/client.py
++++ b/django/db/backends/postgresql/client.py
+@@ -9,7 +9,7 @@ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'psql'
+ 
+     @classmethod
+-    def runshell_db(cls, conn_params):
++    def runshell_db(cls, conn_params, parameters):
+         args = [cls.executable_name]
+ 
+         host = conn_params.get('host', '')
+@@ -29,6 +29,7 @@ class DatabaseClient(BaseDatabaseClient):
+         if port:
+             args += ['-p', str(port)]
+         args += [dbname]
++        args.extend(parameters)
+ 
+         sigint_handler = signal.getsignal(signal.SIGINT)
+         subprocess_env = os.environ.copy()
+@@ -50,5 +51,5 @@ class DatabaseClient(BaseDatabaseClient):
+             # Restore the original SIGINT handler.
+             signal.signal(signal.SIGINT, sigint_handler)
+ 
+-    def runshell(self):
+-        DatabaseClient.runshell_db(self.connection.get_connection_params())
++    def runshell(self, parameters):
++        self.runshell_db(self.connection.get_connection_params(), parameters)
+diff --git a/django/db/backends/sqlite3/client.py b/django/db/backends/sqlite3/client.py
+index f6b7077a0c..a71005fd5b 100644
+--- a/django/db/backends/sqlite3/client.py
++++ b/django/db/backends/sqlite3/client.py
+@@ -6,9 +6,10 @@ from django.db.backends.base.client import BaseDatabaseClient
+ class DatabaseClient(BaseDatabaseClient):
+     executable_name = 'sqlite3'
+ 
+-    def runshell(self):
++    def runshell(self, parameters):
+         # TODO: Remove str() when dropping support for PY37.
+         # args parameter accepts path-like objects on Windows since Python 3.8.
+         args = [self.executable_name,
+                 str(self.connection.settings_dict['NAME'])]
++        args.extend(parameters)
+         subprocess.run(args, check=True)
+diff --git a/tests/dbshell/test_mysql.py b/tests/dbshell/test_mysql.py
+index 6b60e2722e..91c1a6cd50 100644
+--- a/tests/dbshell/test_mysql.py
++++ b/tests/dbshell/test_mysql.py
+@@ -76,5 +76,23 @@ class MySqlDbshellCommandTestCase(SimpleTestCase):
+                 },
+             }))
+ 
+-    def get_command_line_arguments(self, connection_settings):
+-        return DatabaseClient.settings_to_cmd_args(connection_settings)
++    def test_parameters(self):
++        self.assertEqual(
++            ['mysql', 'somedbname', '--help'],
++            self.get_command_line_arguments(
++                {
++                    'NAME': 'somedbname',
++                    'USER': None,
++                    'PASSWORD': None,
++                    'HOST': None,
++                    'PORT': None,
++                    'OPTIONS': {},
++                },
++                ['--help'],
++            ),
++        )
++
++    def get_command_line_arguments(self, connection_settings, parameters=None):
++        if parameters is None:
++            parameters = []
++        return DatabaseClient.settings_to_cmd_args(connection_settings, parameters)
+diff --git a/tests/dbshell/test_oracle.py b/tests/dbshell/test_oracle.py
+index 431134e3ac..41fbc07455 100644
+--- a/tests/dbshell/test_oracle.py
++++ b/tests/dbshell/test_oracle.py
+@@ -8,17 +8,19 @@ from django.test import SimpleTestCase
+ 
+ @skipUnless(connection.vendor == 'oracle', 'Oracle tests')
+ class OracleDbshellTests(SimpleTestCase):
+-    def _run_dbshell(self, rlwrap=False):
++    def _run_dbshell(self, rlwrap=False, parameters=None):
+         """Run runshell command and capture its arguments."""
+         def _mock_subprocess_run(*args, **kwargs):
+             self.subprocess_args = list(*args)
+             return CompletedProcess(self.subprocess_args, 0)
+ 
++        if parameters is None:
++            parameters = []
+         client = DatabaseClient(connection)
+         self.subprocess_args = None
+         with mock.patch('subprocess.run', new=_mock_subprocess_run):
+             with mock.patch('shutil.which', return_value='/usr/bin/rlwrap' if rlwrap else None):
+-                client.runshell()
++                client.runshell(parameters)
+         return self.subprocess_args
+ 
+     def test_without_rlwrap(self):
+@@ -32,3 +34,9 @@ class OracleDbshellTests(SimpleTestCase):
+             self._run_dbshell(rlwrap=True),
+             ['/usr/bin/rlwrap', 'sqlplus', '-L', connection._connect_string()],
+         )
++
++    def test_parameters(self):
++        self.assertEqual(
++            self._run_dbshell(parameters=['-HELP']),
++            ['sqlplus', '-L', connection._connect_string(), '-HELP'],
++        )
+diff --git a/tests/dbshell/test_postgresql.py b/tests/dbshell/test_postgresql.py
+index 7047283bb3..6de60eaef2 100644
+--- a/tests/dbshell/test_postgresql.py
++++ b/tests/dbshell/test_postgresql.py
+@@ -9,7 +9,7 @@ from django.test import SimpleTestCase
+ 
+ class PostgreSqlDbshellCommandTestCase(SimpleTestCase):
+ 
+-    def _run_it(self, dbinfo):
++    def _run_it(self, dbinfo, parameters=None):
+         """
+         That function invokes the runshell command, while mocking
+         subprocess.run(). It returns a 2-tuple with:
+@@ -21,8 +21,11 @@ class PostgreSqlDbshellCommandTestCase(SimpleTestCase):
+             # PostgreSQL environment variables.
+             self.pg_env = {key: env[key] for key in env if key.startswith('PG')}
+             return subprocess.CompletedProcess(self.subprocess_args, 0)
++
++        if parameters is None:
++            parameters = []
+         with mock.patch('subprocess.run', new=_mock_subprocess_run):
+-            DatabaseClient.runshell_db(dbinfo)
++            DatabaseClient.runshell_db(dbinfo, parameters)
+         return self.subprocess_args, self.pg_env
+ 
+     def test_basic(self):
+@@ -104,6 +107,12 @@ class PostgreSqlDbshellCommandTestCase(SimpleTestCase):
+             )
+         )
+ 
++    def test_parameters(self):
++        self.assertEqual(
++            self._run_it({'database': 'dbname'}, ['--help']),
++            (['psql', 'dbname', '--help'], {}),
++        )
++
+     def test_sigint_handler(self):
+         """SIGINT is ignored in Python and passed to psql to abort queries."""
+         def _mock_subprocess_run(*args, **kwargs):
+@@ -114,6 +123,6 @@ class PostgreSqlDbshellCommandTestCase(SimpleTestCase):
+         # The default handler isn't SIG_IGN.
+         self.assertNotEqual(sigint_handler, signal.SIG_IGN)
+         with mock.patch('subprocess.run', new=_mock_subprocess_run):
+-            DatabaseClient.runshell_db({})
++            DatabaseClient.runshell_db({}, [])
+         # dbshell restores the original handler.
+         self.assertEqual(sigint_handler, signal.getsignal(signal.SIGINT))
+diff --git a/tests/dbshell/test_sqlite.py b/tests/dbshell/test_sqlite.py
+index 46d09895c8..c3b2b1e28d 100644
+--- a/tests/dbshell/test_sqlite.py
++++ b/tests/dbshell/test_sqlite.py
+@@ -9,15 +9,17 @@ from django.test import SimpleTestCase
+ 
+ @skipUnless(connection.vendor == 'sqlite', 'SQLite tests.')
+ class SqliteDbshellCommandTestCase(SimpleTestCase):
+-    def _run_dbshell(self):
++    def _run_dbshell(self, parameters=None):
+         """Run runshell command and capture its arguments."""
+         def _mock_subprocess_run(*args, **kwargs):
+             self.subprocess_args = list(*args)
+             return CompletedProcess(self.subprocess_args, 0)
+ 
++        if parameters is None:
++            parameters = []
+         client = DatabaseClient(connection)
+         with mock.patch('subprocess.run', new=_mock_subprocess_run):
+-            client.runshell()
++            client.runshell(parameters)
+         return self.subprocess_args
+ 
+     def test_path_name(self):
+@@ -29,3 +31,13 @@ class SqliteDbshellCommandTestCase(SimpleTestCase):
+                 self._run_dbshell(),
+                 ['sqlite3', 'test.db.sqlite3'],
+             )
++
++    def test_parameters(self):
++        with mock.patch.dict(
++            connection.settings_dict,
++            {'NAME': Path('test.db.sqlite3')},
++        ):
++            self.assertEqual(
++                self._run_dbshell(['-help']),
++                ['sqlite3', 'test.db.sqlite3', '-help'],
++            )
+diff --git a/tests/user_commands/management/commands/dance.py b/tests/user_commands/management/commands/dance.py
+index 81d6ec9c26..82cfc3338a 100644
+--- a/tests/user_commands/management/commands/dance.py
++++ b/tests/user_commands/management/commands/dance.py
+@@ -15,7 +15,7 @@ class Command(BaseCommand):
+     def handle(self, *args, **options):
+         example = options["example"]
+         if example == "raise":
+-            raise CommandError()
++            raise CommandError(returncode=3)
+         if options['verbosity'] > 0:
+             self.stdout.write("I don't feel like dancing %s." % options["style"])
+             self.stdout.write(','.join(options))
+diff --git a/tests/user_commands/tests.py b/tests/user_commands/tests.py
+index b770e8e459..b1d00f278d 100644
+--- a/tests/user_commands/tests.py
++++ b/tests/user_commands/tests.py
+@@ -57,12 +57,14 @@ class CommandTests(SimpleTestCase):
+         """ Exception raised in a command should raise CommandError with
+             call_command, but SystemExit when run from command line
+         """
+-        with self.assertRaises(CommandError):
++        with self.assertRaises(CommandError) as cm:
+             management.call_command('dance', example="raise")
++        self.assertEqual(cm.exception.returncode, 3)
+         dance.Command.requires_system_checks = False
+         try:
+-            with captured_stderr() as stderr, self.assertRaises(SystemExit):
++            with captured_stderr() as stderr, self.assertRaises(SystemExit) as cm:
+                 management.ManagementUtility(['manage.py', 'dance', '--example=raise']).execute()
++            self.assertEqual(cm.exception.code, 3)
+         finally:
+             dance.Command.requires_system_checks = True
+         self.assertIn("CommandError", stderr.getvalue())
+2026-09-12 13:10:36,559 - INFO - Git diff changed after running eval script
+2026-09-12 13:10:36,559 - INFO - Grading answer for django__django-12508...
+2026-09-12 13:10:36,560 - INFO - report: {'django__django-12508': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'infra_failure': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_basic_params_specified_in_settings (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_can_connect_using_sockets (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_fails_with_keyerror_on_incomplete_config (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_options_override_settings_proper_values (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_parameters (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_ssl_certificate_is_added (dbshell.test_mysql.MySqlDbshellCommandTestCase)', 'test_accent (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'test_basic (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'test_column (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'test_nopass (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'test_parameters (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'SIGINT is ignored in Python and passed to psql to abort queries.', 'test_ssl_certificate (dbshell.test_postgresql.PostgreSqlDbshellCommandTestCase)', 'test_parameters (dbshell.test_sqlite.SqliteDbshellCommandTestCase)', 'test_path_name (dbshell.test_sqlite.SqliteDbshellCommandTestCase)', 'Exception raised in a command should raise CommandError with'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_get_random_secret_key (user_commands.tests.UtilsTests)', 'test_is_ignored_path_false (user_commands.tests.UtilsTests)', 'test_is_ignored_path_true (user_commands.tests.UtilsTests)', 'test_no_existent_external_program (user_commands.tests.UtilsTests)', 'test_normalize_path_patterns_truncates_wildcard_base (user_commands.tests.UtilsTests)', 'test_command_missing (dbshell.tests.DbshellCommandTestCase)', 'test_call_command_no_checks (user_commands.tests.CommandTests)', 'test_call_command_option_parsing (user_commands.tests.CommandTests)', 'test_call_command_option_parsing_non_string_arg (user_commands.tests.CommandTests)', 'test_call_command_unrecognized_option (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_mixed_options (user_commands.tests.CommandTests)', 'test_call_command_with_required_parameters_in_options (user_commands.tests.CommandTests)', 'test_calling_a_command_with_no_app_labels_and_parameters_should_raise_a_command_error (user_commands.tests.CommandTests)', 'test_calling_a_command_with_only_empty_parameter_should_ends_gracefully (user_commands.tests.CommandTests)', 'test_calling_command_with_app_labels_and_parameters_should_be_ok (user_commands.tests.CommandTests)', 'test_calling_command_with_parameters_and_app_labels_at_the_end_should_be_ok (user_commands.tests.CommandTests)', 'test_check_migrations (user_commands.tests.CommandTests)', 'test_command (user_commands.tests.CommandTests)', 'test_command_add_arguments_after_common_arguments (user_commands.tests.CommandTests)', 'test_command_style (user_commands.tests.CommandTests)', 'BaseCommand.create_parser() passes kwargs to CommandParser.', 'test_discover_commands_in_eggs (user_commands.tests.CommandTests)', 'An unknown command raises CommandError', 'test_find_command_without_PATH (user_commands.tests.CommandTests)', 'test_language_preserved (user_commands.tests.CommandTests)', 'test_mutually_exclusive_group_required_options (user_commands.tests.CommandTests)', 'test_no_translations_deactivate_translations (user_commands.tests.CommandTests)', 'test_output_transaction (user_commands.tests.CommandTests)', 'test_subparser (user_commands.tests.CommandTests)', 'test_subparser_dest_args (user_commands.tests.CommandTests)', 'test_subparser_dest_required_args (user_commands.tests.CommandTests)', 'test_subparser_invalid_option (user_commands.tests.CommandTests)', 'test_disallowed_abbreviated_options (user_commands.tests.CommandRunTests)', 'test_script_prefix_set_in_commands (user_commands.tests.CommandRunTests)', 'test_skip_checks (user_commands.tests.CommandRunTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12508: resolved: True
+2026-09-12 13:10:36,560 - INFO - Attempting to stop container sweb.eval.django__django-12508.tv300-gold...
+2026-09-12 13:10:51,845 - INFO - Container sweb.eval.django__django-12508.tv300-gold stopped successfully.
+2026-09-12 13:10:51,846 - INFO - Attempting to remove container sweb.eval.django__django-12508.tv300-gold...
+2026-09-12 13:10:51,941 - INFO - Container sweb.eval.django__django-12508.tv300-gold removed successfully.
