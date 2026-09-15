@@ -143,6 +143,8 @@ The kept tasks are not flatter than the survivors the funnel rejected. Their med
 
 Terminal-Bench 4, 66 tasks, scored over its 13 submissions (one model each, five scored trials per task) with the same tier machinery (`data/gold/durability_tb4.json`).
 
+TB 4 and TB 2.1 share no tasks. Normalizing the `terminal-bench/` prefix and case, the 66 TB 4 task names and the 89 TB 2.1 census ids intersect in 0 elements (`data/gold/durability_tb4.json`, `data/gold/tb21_census_manifest.json`). The soundness figures in this repository come from the 2.x pools and the durability figures here come from TB 4, so the two describe different task sets rather than one set measured twice. No figure from one carries to the other.
+
 | Tier | Models | Overall solve rates |
 | --- | --- | --- |
 | bottom | gemini-3.7-flash, claude-sonnet-5, grok-4.5, gpt-5.6-luna, gemini-3.8-flash | 0.112 to 0.191 |

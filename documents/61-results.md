@@ -117,6 +117,7 @@ Every limitation of the evidence base, in one place.
 - Gate C exclusions. 8 of the 60 planned Lot-001 trials hit harness exceptions and were excluded, so solve rates rest on 52 usable trials (`eval_tasks/lots/lot-001/gate_c/gate_c.summary.json`).
 - The trajectory evaluation has 82 positives, and the Monte-Carlo checks ran on TB 2.1 only.
 - Funnel labels are external and evaluation-only. They never enter a certificate.
+- Terminal-Bench versions are separate populations. TB 4 and the TB 2.1 census share 0 task names after prefix and case normalization, 66 against 89 (`data/gold/durability_tb4.json`, `data/gold/tb21_census_manifest.json`). The TB 2.1 certificate says nothing about TB 4, and the TB 4 durability figures say nothing about the pool that was certified.
 - TMax-15K is pending. Its row, its epsilon row, and its mention in section one fill from `data/gold/gen_gate_tmax.certificate.json` when the running gate lands.
 
 ## RESULT
